@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-11-03T13:04:47+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Two Points Make a Line",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-11-03T13:04:47+08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
