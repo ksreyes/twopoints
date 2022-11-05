@@ -2,18 +2,17 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "title": "About",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-11-05T18:20:10+08:00"
+      "contents": "\r\nHello! So you’ve landed on my blog. How did that happen? Ask yourself this. Then turn around and walk away. Just walk away bro. I’m kind of a big deal.\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-11-05T22:06:46+08:00"
     },
     {
       "path": "index.html",
       "title": "Two Points Make a Line",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-11-05T18:20:11+08:00"
+      "last_modified": "2022-11-05T22:06:47+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
