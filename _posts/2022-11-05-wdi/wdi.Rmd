@@ -1,5 +1,5 @@
 ---
-title: "Exercises in Plotting WDI Data"
+title: "Exercises in plotting WDI data"
 date: 2022-11-05
 output:
   distill::distill_article:
@@ -12,9 +12,7 @@ library(DiagrammeR)
 knitr::opts_chunk$set(comment=NA, message=FALSE, warning=FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+Load it up!
 
 ```{r}
 library(tidyverse)
@@ -25,6 +23,8 @@ df <- WDI(country = c("PH","VN"),
           indicator = "NY.GDP.PCAP.KD",
           start = 1990)
 ```
+
+Plot it!
 
 ```{r}
 plot <- ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +

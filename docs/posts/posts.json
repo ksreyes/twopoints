@@ -1,36 +1,31 @@
 [
   {
-    "path": "posts/2022-11-03-test/",
-    "title": "Test",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2022-11-03",
+    "path": "posts/2022-11-05-wdi/",
+    "title": "Exercises in plotting WDI data",
+    "description": {},
+    "author": [],
+    "date": "2022-11-05",
     "categories": [],
-    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2022-11-03T13:07:27+08:00",
-    "input_file": "test.knit.md"
+    "contents": "\r\nLoad it up!\r\n\r\n\r\nlibrary(tidyverse)\r\nlibrary(ggplot2)\r\nlibrary(WDI)\r\n\r\ndf <- WDI(country = c(\"PH\",\"VN\"),\r\n          indicator = \"NY.GDP.PCAP.KD\",\r\n          start = 1990)\r\n\r\n\r\nPlot it!\r\n\r\n\r\nplot <- ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +\r\n  geom_line()\r\n\r\nplot\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2022-11-05T18:20:04+08:00",
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
-    "title": "Welcome to Two Points Make a Line",
+    "title": "Two Points Make a Line",
     "description": "Welcome to our new blog, Two Points Make a Line. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
         "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "url": {}
       }
     ],
     "date": "2022-11-03",
     "categories": [],
     "contents": "\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2022-11-03T13:08:01+08:00",
-    "input_file": "welcome.knit.md"
+    "last_modified": "2022-11-04T08:29:33+08:00",
+    "input_file": {}
   }
 ]

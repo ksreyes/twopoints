@@ -4,10 +4,7 @@ description: |
   Welcome to our new blog, Two Points Make a Line. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Nora Jones
 date: 11-03-2022
 output:
   distill::distill_article:
