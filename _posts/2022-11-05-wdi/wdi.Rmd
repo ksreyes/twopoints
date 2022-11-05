@@ -1,0 +1,35 @@
+---
+title: "Exercises in Plotting WDI Data"
+date: 2022-11-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+library(DiagrammeR)
+
+knitr::opts_chunk$set(comment=NA, message=FALSE, warning=FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(WDI)
+
+df <- WDI(country = c("PH","VN"),
+          indicator = "NY.GDP.PCAP.KD",
+          start = 1990)
+```
+
+```{r}
+plot <- ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +
+  geom_line()
+
+plot
+```
+
