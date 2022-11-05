@@ -1,7 +1,7 @@
 name: "tpmal"
 title: "Two Points Make a Line"
 description: |
-  Two Points Make a Line
+  Documenting my excursions into visualizing data
 output_dir: "docs"
 navbar:
   right:

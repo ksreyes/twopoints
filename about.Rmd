@@ -1,9 +1,9 @@
 ---
-title: "About this blog"
-description: |
-  Some additional details about the blog
+title: "About"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+Hello! So you've landed on my blog. How did that happen? Ask yourself this. Then turn around and walk away. Just walk away bro. I'm kind of a big deal.
