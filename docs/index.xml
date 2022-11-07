@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Two Points Make a Line</title>
+    <link>https://ksreyes.github.io/twopoints/</link>
+    <atom:link href="https://ksreyes.github.io/twopoints/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Documenting my excursions into visualizing data
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Exercises in plotting WDI data</title>
+      <link>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</link>
+      <description/>
+      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</guid>
+      <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+  </channel>
+</rss>

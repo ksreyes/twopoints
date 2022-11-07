@@ -2,6 +2,7 @@ name: "tpmal"
 title: "Two Points Make a Line"
 description: |
   Documenting my excursions into visualizing data
+base_url: https://ksreyes.github.io/twopoints/
 output_dir: "docs"
 navbar:
   right:
@@ -10,3 +11,4 @@ navbar:
     - text: "About"
       href: about.html
 output: distill::distill_article
+css: theme.css
