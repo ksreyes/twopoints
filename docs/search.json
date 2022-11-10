@@ -4,15 +4,15 @@
       "path": "about.html",
       "title": "About",
       "author": [],
-      "contents": "\r\nHello! So you’ve landed on my blog. How did that happen? Ask yourself this. Then turn around and walk away. Just walk away bro. I’m kind of a big deal.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-11-07T21:42:02+08:00"
+      "contents": "\r\n\r\n\r\n\r\n\r\nHello! My name is Ken.\r\nI work a lot with data, which means I often engage in the fun, frustrating, highly consequential—yet frequently dismissed!—art of data visualization.\r\nTwo Points Make a Line documents my journey in mastering this art. I share my thoughts on what makes a chart work and what doesn’t, the tools I use for chart-crafting, and the jambalaya of tidbits I learn along the way.\r\nEnjoy!\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-11-10T22:11:43+08:00"
     },
     {
       "path": "index.html",
       "title": "Two Points Make a Line",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-11-07T21:42:03+08:00"
+      "last_modified": "2022-11-10T22:11:44+08:00"
     }
   ],
   "collections": ["posts/posts.json"]

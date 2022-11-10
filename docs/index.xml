@@ -7,7 +7,14 @@
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 05 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Mapping the Metro Manila Subway</title>
+      <link>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</link>
+      <description/>
+      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</guid>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Exercises in plotting WDI data</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</link>
