@@ -21,7 +21,7 @@ library(ggplot2)
 library(WDI)
 ```
 
-### A simple line chart
+## A simple line chart
 
 To start, let's try plotting the GDP per capita of the Philippines and Vietnam in constant 2015 US$.
 
@@ -52,7 +52,7 @@ ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +
 
 It's a serviceable chart, but not a particularly *attractive* chart. Let's spend some more time glamming it up. The numbers on the y-axis could use a thousands separator. The plot lines could be a little thicker. We can also make tweaks to the text sizes, the colors, the margins, and so forth.
 
-```{r}
+```{r, code_folding=TRUE}
 ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +
   geom_line(size = 1) +
   labs(title = "GDP per capita in constant 2015 US$") +
@@ -75,7 +75,7 @@ ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +
 
 Now this to me is pleasing to the eye. A document populated with charts like this---as opposed to charts like the first two above---would be much more motivating to read.
 
-### A labeled scatterplot
+## A labeled scatterplot
 
 I think one useful way to categorize countries is according to whether they are big and rich, big and poor, small and rich, or small and poor. We can visualize this in a scatterplot with population on one axis and GDP per capita on the other. Let's load up the data and plot the scatter.
 
@@ -110,7 +110,7 @@ ggplot(df, aes(x = log10(pop), y = log2(gpc))) +
 
 Better! Let's make further tweaks to the colors and so on to make it more attractive. In addition, let's include some dividing lines to group big, small, rich, and poor countries. Some sensible definitions would be that "big" countries are those with 100 million people and above while "rich" countries are those with GDP per capita of $30,000 and above. 
 
-```{r}
+```{r, code_folding=TRUE}
 ggplot(df, aes(x = log10(pop), y = log2(gpc))) +
   geom_point(shape = 16, size = 3, color = "#076fe4") + 
   labs(title = "Big and small, rich and poor") +
@@ -133,11 +133,11 @@ ggplot(df, aes(x = log10(pop), y = log2(gpc))) +
         panel.grid = element_blank())
 ```
 
-And here's the interesting result. Under this set of definitions, there are really only two big and rich countries: the United States and Japan. The biggest small and rich country is Germany, with a population of 82 million, while the richest small and poor country is Mexico, with a GDP per capita of $9,600. In short, no country in the near future is expected to join the big-and-rich club.^[Not that this should be taken too seriously! Some would say 81 million people would make you a pretty big country. And there are PPP-flavored quibbles to be made about GDP per capita.]
+And here's the interesting result. Under this set of definitions, there are really only two big and rich countries: the United States and Japan. The biggest small and rich country is Germany, with a population of 82 million, while the richest small and poor country is Mexico, with a GDP per capita of $9,600. In short, no country in the near future is expected to join the big-and-rich club.^[Not that this should be taken too seriously! The thresholds I used are completely arbitrary.]
 
-Now let's make some finishing touches to the chart. First, let's add the labels "big", "small", "rich", and "poor" on either side of the dotted lines to make it clear what they are indicating. Second, let's bold the axis labels "30,000" and "100 million" to highlight the chosen thresholds for bigness and richness. Third, let's label the points for the U.S., Japan, Germany, and Mexico to facilitate the discussion accompanying the chart. We also highlight these four points by making all other points transparent.
+Now let's make some finishing touches to the chart. First, let's add the labels "big", "small", "rich", and "poor" on either side of the dashed lines to make it clear what they're indicating. Second, let's bold the axis labels "30,000" and "100 million" to highlight the chosen thresholds for bigness and richness. Third, let's label the points for the U.S., Japan, Germany, and Mexico to facilitate the discussion accompanying the chart. We also highlight these four points by making all other points transparent.
 
-```{r, preview=TRUE}
+```{r, preview=TRUE, code_folding=TRUE}
 ggplot(df, aes(x = log10(pop), y = log2(gpc))) +
   geom_point(shape = 16, size = 3, color = "#076fe4", alpha = ifelse(df$country %in% c("United States", "Japan", "Germany", "Mexico"), 1, .25)) +
   labs(title = "Big and small, rich and poor") +

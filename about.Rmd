@@ -6,4 +6,17 @@ title: "About"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Hello! So you've landed on my blog. How did that happen? Ask yourself this. Then turn around and walk away. Just walk away bro. I'm kind of a big deal.
+:::{.floatting}
+
+```{r out.width='35%', out.extra='style="float:left; padding-right:20px; padding-top:5px"'}
+knitr::include_graphics("images/me.jpg")
+```
+
+Hello! My name is Ken. 
+
+I work a lot with [data](https://www.linkedin.com/in/ksreyes/), which means I often engage in the fun, frustrating, highly consequential---yet frequently dismissed!---art of data visualization. 
+
+*Two Points Make a Line* documents my journey in mastering this art. I share my thoughts on what makes a chart work and what doesn't, the tools I use for chart-crafting, and the jambalaya of tidbits I learn along the way.
+
+Enjoy!
+:::
