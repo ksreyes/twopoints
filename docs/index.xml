@@ -7,7 +7,15 @@
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Should you dual wield y axes?</title>
+      <link>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</link>
+      <description/>
+      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</guid>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield/dual-wield_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Mapping the Metro Manila Subway</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</link>
