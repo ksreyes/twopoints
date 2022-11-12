@@ -2472,7 +2472,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 
 <div class="d-article">
-<p>Consider this: all charts are essentially squiggles on a Cartesian plane. There’s a horizontal, or x, axis and there’s a vertical, or y, axis. This implies that the underlying dataset ever only needs two columns, corresponding to the two axes. Many chart enthusiasts seem to be guided by this principle, which is why they detest charts that violate this setup, like pie charts.</p>
+<p>Consider this: all charts are essentially squiggles on a Cartesian plane. There’s a horizontal, or x, axis and there’s a vertical, or y, axis. This implies that the underlying datasets ever only need two columns, corresponding to the two axes. Many chart enthusiasts seem to be guided by this principle, which is why they detest charts that violate this setup, like pie charts.</p>
 <p>Another example are charts with two different y axes, or what Excel calls a secondary axis. These charts are very popular. Today, Planning Secretary Arsenio Balisacan accompanied his <a href="https://twitter.com/ambalisacan/status/1590612635791560705">tweet</a> on the Philippine third quarter GDP numbers with this chart:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="phgdp_q3.jpg" /><!-- --></p>
@@ -2493,7 +2493,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p>The first problem is that there isn’t really a reason why it has to be a dual axis chart at all. The level of real GDP is not meaningful to most people and visualizing it doesn’t provide much insight.</p>
 <p>The second problem is that it’s sloppily made. In the legend, “Real GDP” (the bars) is on the left and “GDP growth” (the line) is on the right, so the natural inclination is to use the left axis for the bars and the right axis for the line. But woe to you if you do—the positions are reversed. This is because for “combo charts” in Excel (i.e. where you combine two chart types), bar layers always go first before lines, hence they are listed first in the legend.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> But you can choose which axis the bar series is assigned to, so it should have been assigned to the left one.</p>
 <p>More importantly: the two axes clash. Look at 5.0 on the left axis. If you follow the grid line all the way to the right axis, you get… nothing? It <em>just</em> misses 4.0, so the grid line marks 4.something I guess. In short, the grid lines really just mark the axis labels on the left, not the right. That’s confusing! This is again a trait of Excel. If you tick the check box that puts a series on the secondary axis, it automatically scales its axis independent of the primary axis. So you basically end up with two charts sharing the same x axis superimposed on top of each other.</p>
-<p>Below is my own quick fix of the chart (data source <a href="https://psa.gov.ph/national-accounts/base-2018/data-series">here</a>.</p>
+<p>Below is my own quick fix of the chart (data source <a href="https://psa.gov.ph/national-accounts/base-2018/data-series">here</a>).</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2540,6 +2540,7 @@ Show code
 <p><img src="dual-wield_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <p>I personally don’t have anything against dual axis charts, and I have used them a lot in my work. What I <em>am</em> against are sloppily made charts, and perhaps, by being inherently more complex, sloppiness in dual axis charts tends to be extra noticeable.</p>
+<p>One essential to keep in mind is that both y axes must coexist in the same Cartesian plane, meaning one is just a transformation of the other. In the chart I made, <span class="math inline">\(y_{\text{right}} = ( y_{\text{left}} - 4 ) \times 5\)</span>. This is something you manually have to specify in <code>ggplot</code>, making it harder to make dual axis charts there. But that’s by design. Excel makes it too easy, and so you get people hitting that secondary axis check box and calling it a day.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <section class="footnotes" role="doc-endnotes">
 <hr />
@@ -2554,6 +2555,15 @@ Show code
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
