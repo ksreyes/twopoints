@@ -2472,9 +2472,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 
 <div class="d-article">
-<p>Elon Musk tweets a lot. Like, a lot. According to <a href="https://www.kaggle.com/datasets/marta99/elon-musks-tweets-dataset-2022">this Kaggle dataset</a>, Musk sent out about 11 tweets a day between January and October 2022. He tweeted every 2 hours and 8 minutes for 10 months. Some of them dabble in <a href="https://twitter.com/elonmusk/status/1576969255031296000">great power diplomacy</a>, some of them are <a href="https://twitter.com/elonmusk/status/1526246899606601730">poop emojis</a>.</p>
-<p>Looking at the sheer volume of tweets Musk produces, I got to wondering: when does this guy work? Elon Musk is famously a workaholic who <a href="https://www.cnbc.com/2018/12/03/elon-musk-works-80-hour-weeks--heres-how-that-impacts--your-health.html">claims to work 80-90 hours a week</a>. But… is he just tweeting the whole time?</p>
-<p>Let’s investigate.</p>
+<p>Elon Musk tweets a lot. Like, a lot. We can quantify it using <a href="https://www.kaggle.com/datasets/marta99/elon-musks-tweets-dataset-2022">this Kaggle dataset</a> that contains all of Musk’s tweets between 27 January and 27 October 2022.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -2485,10 +2483,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>Date</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/date.html'>date</a></span><span class='op'>(</span><span class='va'>Date</span><span class='op'>)</span>,</span>
 <span>         hour <span class='op'>=</span> <span class='fu'><a href='https://lubridate.tidyverse.org/reference/hour.html'>hour</a></span><span class='op'>(</span><span class='va'>Date</span><span class='op'>)</span>,</span>
-<span>         gap <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/difftime.html'>difftime</a></span><span class='op'>(</span><span class='va'>Date</span>, <span class='fu'>lag</span><span class='op'>(</span><span class='va'>Date</span><span class='op'>)</span>, units <span class='op'>=</span> <span class='st'>"mins"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span>         gap <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/difftime.html'>difftime</a></span><span class='op'>(</span><span class='va'>Date</span>, <span class='fu'>lag</span><span class='op'>(</span><span class='va'>Date</span><span class='op'>)</span>, units <span class='op'>=</span> <span class='st'>"mins"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Tweets per day: nrow(df) / as.numeric(as.Date("2022-10-27") - as.Date("2022-01-27"))</span></span>
+<span><span class='co'># Average time between tweets: mean(df$gap[-1])</span></span></code></pre>
 </div>
 </div>
-<p>Let’s first chart his tweets per day to see what we’re dealing with.</p>
+<p>During this 10-month period, Musk sent out about 11 tweets per day. Put another way, he tweeted every 2 hours and 8 minutes for 10 months. Some of the tweets dabble in <a href="https://twitter.com/elonmusk/status/1576969255031296000">great power diplomacy</a>, some are <a href="https://twitter.com/elonmusk/status/1526246899606601730">poop emojis</a>.</p>
+<p>Looking at the sheer volume of tweets Musk produces, I got to wondering: when does this guy work? Elon Musk is famously a workaholic who <a href="https://www.cnbc.com/2018/12/03/elon-musk-works-80-hour-weeks--heres-how-that-impacts--your-health.html">claims to work 80-90 hours a week</a>. But… is he just tweeting the whole time? Let’s investigate.</p>
+<p>First let’s chart his tweets per day to see what we’re dealing with.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2511,8 +2514,8 @@ Show code
 </details>
 <p><img src="elon_files/figure-html5/unnamed-chunk-2-1.png" width="720" /></p>
 </div>
-<p>Interestingly, Musk does take breaks from time to time, notably a 10-day stretch in late June. Maybe work picked up?</p>
-<p>Not let’s plot an hourly histogram of his tweets.</p>
+<p>Interestingly, Musk does take breaks from time to time, like a 10-day stretch in late June. Maybe work picked up?</p>
+<p>Now let’s plot an hourly histogram of his tweets.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2569,6 +2572,7 @@ Show code
 <p><img src="https://media.tenor.com/dT8haFvTVyEAAAAd/elon-musk-funny-dance-party.gif" /><!-- --></p>
 </div>
 </aside>
+<p>Looking through the dataset, what’s more remarkable is that most of his tweets are replies to other tweets. Anyone can tweet 11 tweets per day, but what Musk is doing involves actually browsing Twitter and reading other people’s tweets. How does he do this? <em>Why</em> does he do this?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
