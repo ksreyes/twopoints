@@ -7,7 +7,15 @@
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Visualizing Elon Musk's Twitter addiction</title>
+      <link>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</link>
+      <description/>
+      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</guid>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-13-elon/elon_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1440" height="576"/>
+    </item>
     <item>
       <title>Should you dual wield y axes?</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</link>
@@ -22,6 +30,7 @@
       <description/>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</guid>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway/subwaymap.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Exercises in plotting WDI data</title>

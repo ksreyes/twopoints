@@ -2473,7 +2473,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 <div class="d-article">
 <p>Consider this: all charts are essentially squiggles on a Cartesian plane. There’s a horizontal, or x, axis and there’s a vertical, or y, axis. This implies that the underlying datasets ever only need two columns, corresponding to the two axes. Many chart enthusiasts seem to be guided by this principle, which is why they detest charts that violate this setup, like pie charts.</p>
-<p>Another example are charts with two different y axes, or what Excel calls a secondary axis. These charts are very popular. Today, Planning Secretary Arsenio Balisacan accompanied his <a href="https://twitter.com/ambalisacan/status/1590612635791560705">tweet</a> on the Philippine third quarter GDP numbers with this chart:</p>
+<p>Another chart that <em>maybe</em> violates this setup are those with two different y axes, or dual axis charts. These are very popular. Today, Planning Secretary Arsenio Balisacan accompanied his <a href="https://twitter.com/ambalisacan/status/1590612635791560705">tweet</a> on the Philippine third quarter GDP numbers with this chart:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="phgdp_q3.jpg" /><!-- --></p>
 </div>
@@ -2489,10 +2489,10 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p><img src="https://media.tenor.com/kNwZslnPna8AAAAC/michael-scott-steve-carell.gif" /><!-- --></p>
 </div>
 </aside>
-<p>If that makes you cringe but are not sure why (or you think it’s fine but you’re wondering why it makes some people cringe), let me take a stab at an explanation.</p>
+<p>What’s wrong with this chart?</p>
 <p>The first problem is that there isn’t really a reason why it has to be a dual axis chart at all. The level of real GDP is not meaningful to most people and visualizing it doesn’t provide much insight.</p>
 <p>The second problem is that it’s sloppily made. In the legend, “Real GDP” (the bars) is on the left and “GDP growth” (the line) is on the right, so the natural inclination is to use the left axis for the bars and the right axis for the line. But woe to you if you do—the positions are reversed. This is because for “combo charts” in Excel (i.e. where you combine two chart types), bar layers always go first before lines, hence they are listed first in the legend.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> But you can choose which axis the bar series is assigned to, so it should have been assigned to the left one.</p>
-<p>More importantly: the two axes clash. Look at 5.0 on the left axis. If you follow the grid line all the way to the right axis, you get… nothing? It <em>just</em> misses 4.0, so the grid line marks 4.something I guess. In short, the grid lines really just mark the axis labels on the left, not the right. That’s confusing! This is again a trait of Excel. If you tick the check box that puts a series on the secondary axis, it automatically scales its axis independent of the primary axis. So you basically end up with two charts sharing the same x axis superimposed on top of each other.</p>
+<p>More importantly: the two axes clash. Look at 5.0 on the left axis. If you follow the grid line all the way to the right axis, you get… 4.something. You quickly realize that the grid lines really just mark the axis labels on the left, not the right. The right axis exists in its own parallel grid in the nether regions of the chart. That’s confusing! This is again a trait of Excel. If you tick the check box that puts a series on the secondary axis, it automatically scales its axis independent of the primary axis. So you basically end up with two charts sharing the same x axis superimposed on top of each other.</p>
 <p>Below is my own quick fix of the chart (data source <a href="https://psa.gov.ph/national-accounts/base-2018/data-series">here</a>).</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
