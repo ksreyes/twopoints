@@ -7,7 +7,15 @@
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>That FTX balance sheet</title>
+      <link>https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx</link>
+      <description/>
+      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx</guid>
+      <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx/ftx_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Visualizing Elon Musk's Twitter addiction</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</link>
