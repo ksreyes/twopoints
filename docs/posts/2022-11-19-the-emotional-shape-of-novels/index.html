@@ -105,7 +105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/"/>
 <meta property="og:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/shape-of-novels_files/figure-html5/unnamed-chunk-5-1.png"/>
 <meta property="og:image:width" content="1440"/>
-<meta property="og:image:height" content="576"/>
+<meta property="og:image:height" content="614"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Two Points Make a Line"/>
 
@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/"/>
 <meta property="twitter:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/shape-of-novels_files/figure-html5/unnamed-chunk-5-1.png"/>
 <meta property="twitter:image:width" content="1440"/>
-<meta property="twitter:image:height" content="576"/>
+<meta property="twitter:image:height" content="614"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
@@ -2474,7 +2474,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="d-article">
 <p>Novels can take you for such a ride.</p>
 <p>Today I’m experimenting with sentiment analysis on some novels I’ve recently read. I’ll be using <code>tidytext</code> with data from <code>gutenbergr</code> (i.e. Project Gutenberg), which means I’m restricted to the classics. I read three this year: <em>Swann’s Way</em> by Marcel Proust, <em>Tess of the d’Urbervilles</em> by Thomas Hardy, and <em>The Age of Innocence</em> by Edith Wharton.</p>
-<p>Quick review of each. (1) It takes a certain mood to be reading Proust. I got through <em>Within a Budding Grove</em> but found halfway through that oops I’m not in the mood anymore, so I stopped searching for that lost time. (2) While I enjoyed Hardy’s <em>Far from the Madding Crowd</em>, <em>Tess</em> was such an unrelenting depression parade that I was feeling numb by the end of it. (3) Ah, <em>Age of Innocence</em> is one of my all-time favorite. I have been, at various points in my life, Newland, Ellen, and May. My God, I might have even been a Julius Beaufort.</p>
+<p>Quick review of each. (1) It takes a certain mood to be reading Proust. I got through <em>Within a Budding Grove</em> but found halfway through that oops I’m not in the mood anymore, so I stopped searching for that lost time. (2) While I enjoyed Hardy’s <em>Far from the Madding Crowd</em>, <em>Tess</em> was such an unrelenting depression parade that I was feeling numb by the end of it. (3) Ah, <em>Age of Innocence</em> is one of my all-time favorites. I have been, at various points in my life, Newland, Ellen, and May. My God, I might have even been a Julius Beaufort.</p>
 <p>Let’s load up these works.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2523,7 +2523,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <p><img src="shape-of-novels_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <p>It worked! But the chart is ugly! The problem is that net sentiment swings so wildly up and down from chunk to chunk that the result looks more like a seismograph than the “shape” of the novel.</p>
-<p>Let’s try a different approach. When you read a chapter and the chapter is a happy one, you enter the next chapter starting from a position of positive sentiment. Then maybe the next chapter is a sad one, so it brings down your overall sentiment back to something like neutral. Working off this idea, let’s try and map <em>cumulative</em> sentiment across the novel instead of the isolated sentiment of each chunk.</p>
+<p>Let’s try a different approach. When you read a chapter and it’s a happy one, you enter the next chapter starting from a position of positive sentiment. Then maybe the next chapter is a sad one, so it brings down your overall sentiment back to something like neutral. The point is, the emotional weight of a novel <em>builds</em>, it doesn’t reset every chapter. Working off this idea, let’s try and map <em>cumulative</em> sentiment across the novel instead of the isolated sentiment of each chunk.</p>
 <p>The chart that works best for this is a waterfall chart, for which the <code>waterfalls</code> package will be helpful.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2595,7 +2595,7 @@ Show code
 </details>
 <p><img src="shape-of-novels_files/figure-html5/unnamed-chunk-5-1.png" width="720" data-distill-preview=1 /></p>
 </div>
-<p>It’s a reasonably happy ride for the first half of the novel as we follow Madame Olenska’s disruptions of the self-satisfied New York upper-class society of the 19th century. The turning point is right about where Newland Archer decides not to call her from up the hill. There’s a steady descent as passions clash with idealistic notions of the world before ending on a bittersweet note. You end the book on a net positive—all in all I’d say that makes sense.</p>
+<p>It’s a reasonably happy ride for the first half of the novel as we follow Madame Olenska’s disruptions of the self-satisfied New York upper-class society of the 19th century. The turning point is right about where Newland Archer decides not to call her from up the hill. There’s a steady descent as passions clash with idealistic notions of the world before ending on a bittersweet note. You end the book on a net positive, and all in all I’d say that makes sense.</p>
 <p>Finally, here is <em>Swann’s Way</em>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
