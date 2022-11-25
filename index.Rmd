@@ -1,5 +1,0 @@
----
-title: "Two Points Make a Line"
-site: distill::distill_website
-listing: posts
----
