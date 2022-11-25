@@ -97,10 +97,6 @@ d-article div.sourceCode pre {
   overflow: auto !important;
 }
 
-d-article div.bk-root { 
-  height: auto; 
-}
-
 d-article ul.panel-tabs {
   margin-top: 20px;
 }
