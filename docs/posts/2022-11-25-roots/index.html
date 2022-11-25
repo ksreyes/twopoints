@@ -1,0 +1,2720 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>Two Points Make a Line: The roots of comparative economic development</title>
+
+<meta property="description" itemprop="description" content=""/>
+
+<link rel="canonical" href="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2022-11-25"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-11-25"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Two Points Make a Line: The roots of comparative economic development"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/"/>
+<meta property="og:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/roots_files/figure-html5/unnamed-chunk-4-1.png"/>
+<meta property="og:image:width" content="1440"/>
+<meta property="og:image:height" content="768"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Two Points Make a Line"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="Two Points Make a Line: The roots of comparative economic development"/>
+<meta property="twitter:description" content=""/>
+<meta property="twitter:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/"/>
+<meta property="twitter:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/roots_files/figure-html5/unnamed-chunk-4-1.png"/>
+<meta property="twitter:image:width" content="1440"/>
+<meta property="twitter:image:height" content="768"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["The roots of comparative economic development"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2022-11-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/"]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["2013_longterm.dta","matrix version 1.1.xls","roots_files/anchor-4.2.2/anchor.min.js","roots_files/bokehjs-0.12.5/bokeh-widgets.min.css","roots_files/bokehjs-0.12.5/bokeh-widgets.min.js","roots_files/bokehjs-0.12.5/bokeh.min.css","roots_files/bokehjs-0.12.5/bokeh.min.js","roots_files/bokehjs-0.12.5/icons-classic/label.png","roots_files/bokehjs-0.12.5/icons-classic/resultset_next.png","roots_files/bokehjs-0.12.5/icons-classic/resultset_previous.png","roots_files/bokehjs-0.12.5/images/actions.gif","roots_files/bokehjs-0.12.5/images/ajax-loader-small.gif","roots_files/bokehjs-0.12.5/images/arrow_redo.png","roots_files/bokehjs-0.12.5/images/arrow_right_peppermint.png","roots_files/bokehjs-0.12.5/images/arrow_right_spearmint.png","roots_files/bokehjs-0.12.5/images/arrow_undo.png","roots_files/bokehjs-0.12.5/images/bullet_blue.png","roots_files/bokehjs-0.12.5/images/bullet_star.png","roots_files/bokehjs-0.12.5/images/bullet_toggle_minus.png","roots_files/bokehjs-0.12.5/images/bullet_toggle_plus.png","roots_files/bokehjs-0.12.5/images/calendar.gif","roots_files/bokehjs-0.12.5/images/collapse.gif","roots_files/bokehjs-0.12.5/images/comment_yellow.gif","roots_files/bokehjs-0.12.5/images/down.gif","roots_files/bokehjs-0.12.5/images/drag-handle.png","roots_files/bokehjs-0.12.5/images/editor-helper-bg.gif","roots_files/bokehjs-0.12.5/images/expand.gif","roots_files/bokehjs-0.12.5/images/header-bg.gif","roots_files/bokehjs-0.12.5/images/header-columns-bg.gif","roots_files/bokehjs-0.12.5/images/header-columns-over-bg.gif","roots_files/bokehjs-0.12.5/images/help.png","roots_files/bokehjs-0.12.5/images/info.gif","roots_files/bokehjs-0.12.5/images/listview.gif","roots_files/bokehjs-0.12.5/images/pencil.gif","roots_files/bokehjs-0.12.5/images/row-over-bg.gif","roots_files/bokehjs-0.12.5/images/sort-asc.gif","roots_files/bokehjs-0.12.5/images/sort-asc.png","roots_files/bokehjs-0.12.5/images/sort-desc.gif","roots_files/bokehjs-0.12.5/images/sort-desc.png","roots_files/bokehjs-0.12.5/images/stripes.png","roots_files/bokehjs-0.12.5/images/tag_red.png","roots_files/bokehjs-0.12.5/images/tick.png","roots_files/bokehjs-0.12.5/images/ui-bg_flat_0_aaaaaa_40x100.png","roots_files/bokehjs-0.12.5/images/ui-bg_flat_75_ffffff_40x100.png","roots_files/bokehjs-0.12.5/images/ui-bg_glass_55_fbf9ee_1x400.png","roots_files/bokehjs-0.12.5/images/ui-bg_glass_65_ffffff_1x400.png","roots_files/bokehjs-0.12.5/images/ui-bg_glass_75_dadada_1x400.png","roots_files/bokehjs-0.12.5/images/ui-bg_glass_75_e6e6e6_1x400.png","roots_files/bokehjs-0.12.5/images/ui-bg_glass_95_fef1ec_1x400.png","roots_files/bokehjs-0.12.5/images/ui-bg_highlight-soft_75_cccccc_1x100.png","roots_files/bokehjs-0.12.5/images/ui-icons_222222_256x240.png","roots_files/bokehjs-0.12.5/images/ui-icons_2e83ff_256x240.png","roots_files/bokehjs-0.12.5/images/ui-icons_454545_256x240.png","roots_files/bokehjs-0.12.5/images/ui-icons_888888_256x240.png","roots_files/bokehjs-0.12.5/images/ui-icons_cd0a0a_256x240.png","roots_files/bokehjs-0.12.5/images/user_identity.gif","roots_files/bokehjs-0.12.5/images/user_identity_plus.gif","roots_files/bokehjs-0.12.5/loader.css","roots_files/bowser-1.9.3/bowser.min.js","roots_files/distill-2.2.21/template.v2.js","roots_files/figure-html5/unnamed-chunk-4-1.png","roots_files/header-attrs-2.18/header-attrs.js","roots_files/htmlwidgets-1.5.4/htmlwidgets.js","roots_files/jquery-3.6.0/jquery-3.6.0.js","roots_files/jquery-3.6.0/jquery-3.6.0.min.js","roots_files/jquery-3.6.0/jquery-3.6.0.min.map","roots_files/panelset-0.2.6/panelset.css","roots_files/panelset-0.2.6/panelset.js","roots_files/popper-2.6.0/popper.min.js","roots_files/rbokeh-binding-0.5.2/rbokeh.js","roots_files/tippy-6.2.7/tippy-bundle.umd.min.js","roots_files/tippy-6.2.7/tippy-light-border.css","roots_files/tippy-6.2.7/tippy.css","roots_files/tippy-6.2.7/tippy.umd.min.js","roots_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+  font-size: 100%;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      const citeChild = $(this).children()[0]
+      // Do not process if @xyz has been used without escaping and without bibliography activated
+      // https://github.com/rstudio/distill/issues/466
+      if (citeChild === undefined) return true
+
+      if (citeChild.nodeName == "D-FOOTNOTE") {
+        var fn = citeChild
+        $(this).html(fn.shadowRoot.querySelector("sup"))
+        $(this).id = fn.id
+        fn.remove()
+      }
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        // Could use CSS.escape too here, we insure backward compatibility in navigator
+        return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // fix footnotes in tables (#411)
+    // replacing broken distill.pub feature
+    $('table d-footnote').each(function() {
+      // we replace internal showAtNode methode which is triggered when hovering a footnote
+      this.hoverBox.showAtNode = function(node) {
+        // ported from https://github.com/distillpub/template/pull/105/files
+        calcOffset = function(elem) {
+            let x = elem.offsetLeft;
+            let y = elem.offsetTop;
+            // Traverse upwards until an `absolute` element is found or `elem`
+            // becomes null.
+            while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                x += elem.offsetLeft;
+                y += elem.offsetTop;
+            }
+
+            return { left: x, top: y };
+        }
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+        const bbox = node.getBoundingClientRect();
+        const offset = calcOffset(node);
+        this.show([offset.left + bbox.width, offset.top + bbox.height]);
+      }
+    })
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    // ignore leaflet img layers (#106)
+    figures = figures.filter(':not(img[class*="leaflet"])')
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       12px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+/* making code chunks with scroll bar */
+
+/* the code below will change output chunk properties */
+d-article pre { 
+  border-radius: 5px; /* rounded chunk window*/
+  font-size: 12px; /* output text size */
+  color: black; /* output text colour */
+  background-color: #F5F5F5; /* output chunk background colour */
+  padding: 5px 5px 5px 18px; /* top,right,bottom,left padding values */
+  overflow: auto !important; /* enables scroll bar */ 
+}
+
+/* the code below will change source code chunk properties */
+d-article div.sourceCode pre { 
+  border-radius: 5px;
+  background-color: #F8F8FF;
+  color: black;
+  padding: 5px 5px 5px 18px;
+  overflow: auto !important;
+}
+
+d-article div.bk-root { 
+  height: auto; 
+}
+
+d-article ul.panel-tabs {
+  margin-top: 20px;
+}
+
+d-article section.panel.panel-active {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <link href="../../site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+  <script src="../../site_libs/panelset-0.2.6/panelset.js"></script>
+  <script src="../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <link href="../../site_libs/bokehjs-0.12.5/bokeh.min.css" rel="stylesheet" />
+  <link href="../../site_libs/bokehjs-0.12.5/loader.css" rel="stylesheet" />
+  <script src="../../site_libs/bokehjs-0.12.5/bokeh.min.js"></script>
+  <script src="../../site_libs/rbokeh-binding-0.5.2/rbokeh.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"The roots of comparative economic development","description":"","authors":[],"publishedDate":"2022-11-25T00:00:00.000+08:00"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Two Points Make a Line</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>The roots of comparative economic development</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<p>One of the most interesting economics papers I’ve ever read is the 2013 survey by Enrico Spolaore and Romain Wacziarg titled <a href="https://www.anderson.ucla.edu/faculty_pages/romain.wacziarg/downloads/2013_roots.pdf">“How Deep Are the Roots of Economic Development?”</a> There has long been an active, highly contentious discussion over why some countries today are rich while others are poor. As a citizen of a “poor” country, this was a big motivation for me to study economics.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The <em>proximate</em> causes are relatively uncontroversial—<a href="http://piketty.pse.ens.fr/files/Solow1956.pdf">Solow</a> had it all laid out in 1956. Production turns inputs into output. More inputs mean more output. Some of your output are consumed, some are saved (“invested”) and turned into capital, which is then used as an input to produce more output. You can keep accumulating capital to grow your output, but over time, for a given state of technology, your capital accumulation will hit diminishing returns. You will then need to make technological progress to continue increasing output. Repeat until rich.</p>
+<p>The Solow model is elegant, but it has the flavor of saying that a business is successful because it makes a lot of money. The deeper question is why come countries have managed to perform these pro-growth activities while others have not. Is it something in their culture? Maybe their geography? Maybe they had a Great Leader who put all the pieces in place?</p>
+<p>This has been the research agenda of a number of empirical economic historians. Their work supplements that of traditional economic historians by quantifying the evidence for various hypothesized root causes of development. Spolaore and Wacziarg (SW) survey their findings as of 2013 using a unified dataset available <a href="https://www.anderson.ucla.edu/faculty_pages/romain.wacziarg/papersum.html">here</a>. What I want to do is chart some of the more interesting results.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://svn.r-project.org/R-packages/trunk/foreign/'>foreign</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/foreign/man/read.dta.html'>read.dta</a></span><span class='op'>(</span><span class='st'>"2013_longterm.dta"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Geography is a natural candidate for explaining the relative wealth of nations. Ever notice that cold countries tend to be richer than hot ones? In fact, it’s empirically well-founded:</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://hafen.github.io/rbokeh/'>rbokeh</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>pretty</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>n</span>, <span class='va'>d</span> <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/format.html'>format</a></span><span class='op'>(</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>n</span>, digits <span class='op'>=</span> <span class='va'>d</span><span class='op'>)</span>, nsmall <span class='op'>=</span> <span class='va'>d</span> <span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://rdrr.io/r/base/formatc.html'>prettyNum</a></span><span class='op'>(</span><span class='va'>n</span>, big.mark <span class='op'>=</span> <span class='st'>","</span>, scientific <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>avelat</span>, data <span class='op'>=</span> <span class='va'>df</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>df1</span> <span class='op'>&lt;-</span> <span class='va'>df</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span>Country <span class='op'>=</span> <span class='va'>country</span>, <span class='va'>rgdpch_2005</span>, <span class='va'>avelat</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>GDP.per.capita <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"$"</span>, <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://hafen.github.io/rbokeh/reference/figure.html'>figure</a></span><span class='op'>(</span>xlab <span class='op'>=</span> <span class='st'>"Absolute latitude"</span>, ylab <span class='op'>=</span> <span class='st'>"Log GDP per capita 2005"</span>, </span>
+<span>       width <span class='op'>=</span> <span class='fl'>700</span>, height <span class='op'>=</span> <span class='fl'>450</span>,</span>
+<span>       tools <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pan"</span>, <span class='st'>"wheel_zoom"</span>, <span class='st'>"hover"</span>, <span class='st'>"reset"</span><span class='op'>)</span>,</span>
+<span>       toolbar_location <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_points.html'>ly_points</a></span><span class='op'>(</span><span class='va'>avelat</span>, <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span><span class='op'>)</span>, data <span class='op'>=</span> <span class='va'>df1</span>, hover <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>Country</span>, <span class='va'>GDP.per.capita</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_abline.html'>ly_abline</a></span><span class='op'>(</span><span class='va'>z</span><span class='op'>)</span></span></code></pre>
+</div>
+</details>
+<div id="htmlwidget-4cff707a4d80db71c8a3" style="width:700px;height:450px;" class="rbokeh html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4cff707a4d80db71c8a3">{"x":{"elementid":"41f7cb22c9aacce77ceab328ddb308df","modeltype":"Plot","modelid":"d08b69414d1ebbc6238d5bd18badfb45","docid":"4302420f1c6c5eea9252d440edefdf6c","docs_json":{"4302420f1c6c5eea9252d440edefdf6c":{"version":"0.12.5","title":"Bokeh Figure","roots":{"root_ids":["d08b69414d1ebbc6238d5bd18badfb45"],"references":[{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","attributes":{"id":"d08b69414d1ebbc6238d5bd18badfb45","plot_width":700,"plot_height":450,"sizing_mode":"scale_both","x_range":{"type":"Range1d","id":"a5c5d75f85ba6f0ceca96ff71ef7847d"},"y_range":{"type":"Range1d","id":"d05b5856bff79498c4d891f8c9676b1a"},"left":[{"type":"LinearAxis","id":"d36d5962bf0078bbb1cb355844fb920a"}],"below":[{"type":"LinearAxis","id":"64091aac8e08d419cb03ebe1c891d7dd"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"2c2931dae1e2efaca535aee552337571"},{"type":"GlyphRenderer","id":"9cc4afb6c0627fe1554e7d3d6517639a"},{"type":"LinearAxis","id":"64091aac8e08d419cb03ebe1c891d7dd"},{"type":"Grid","id":"08520d50702f2533210fca062de62d68"},{"type":"LinearAxis","id":"d36d5962bf0078bbb1cb355844fb920a"},{"type":"Grid","id":"67cea5f5b16d956e9b2e78ab2f65078b"}],"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"toolbar_location":null,"min_border_left":4,"min_border_right":4,"min_border_top":4,"min_border_bottom":4,"lod_threshold":null,"toolbar":{"type":"Toolbar","id":"05e3f3045bbff9b9d4598b60eea15176"},"tool_events":{"type":"ToolEvents","id":"d24eeb15d6daec54404c127cfb711b2e"}},"subtype":"Figure"},{"type":"Toolbar","id":"05e3f3045bbff9b9d4598b60eea15176","attributes":{"id":"05e3f3045bbff9b9d4598b60eea15176","tags":[],"active_drag":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"type":"PanTool","id":"e5435fc953715a6ae83c90fc036d4785"},{"type":"WheelZoomTool","id":"ccfb7a82879ccf8272dca915d76b7f98"},{"type":"ResetTool","id":"d866d446f3eef2b4231bd50aafbcfcf9"},{"type":"HoverTool","id":"d9ba5373c80087974f392ad4d9afeff3"}],"logo":null}},{"type":"PanTool","id":"e5435fc953715a6ae83c90fc036d4785","attributes":{"id":"e5435fc953715a6ae83c90fc036d4785","tags":[],"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"dimensions":"both"}},{"type":"ToolEvents","id":"d24eeb15d6daec54404c127cfb711b2e","attributes":{"id":"d24eeb15d6daec54404c127cfb711b2e","tags":[]},"geometries":[]},{"type":"WheelZoomTool","id":"ccfb7a82879ccf8272dca915d76b7f98","attributes":{"id":"ccfb7a82879ccf8272dca915d76b7f98","tags":[],"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"dimensions":"both"}},{"type":"ResetTool","id":"d866d446f3eef2b4231bd50aafbcfcf9","attributes":{"id":"d866d446f3eef2b4231bd50aafbcfcf9","tags":[],"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"}}},{"type":"HoverTool","id":"d9ba5373c80087974f392ad4d9afeff3","attributes":{"id":"d9ba5373c80087974f392ad4d9afeff3","tags":[],"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"2c2931dae1e2efaca535aee552337571"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Country","@hover_col_1"],["GDP.per.capita","@hover_col_2"]]}},{"type":"ColumnDataSource","id":"8fe62f78ba7b5ab57d452fa96c6cccfc","attributes":{"id":"8fe62f78ba7b5ab57d452fa96c6cccfc","tags":[],"column_names":["x","y","hover_col_1","hover_col_2"],"selected":[],"data":{"x":[32.7457809448242,26.5711097717285,34.9876098632812,39.1635208129883,26.997709274292,46.7434310913086,39.3284301757812,22.7182998657227,12,52.4701309204102,49.5,8.59379959106445,26.5,17.6538696289062,23.1002292633057,11.8282699584961,41.7459907531738,11.3526496887207,4.24107217788696,11.7481098175049,4.53003311157227,55.6025695800781,15,5.51508092880249,14.2442302703857,36.8574981689453,35.0768508911133,3.24517297744751,11.6999998092651,2.40081095695496,9.04644393920898,6.53739309310913,35,54.5,18.6000003814697,2.5170910358429,25.0747604370117,12.5,0.5,58.0558090209961,7.32100677490234,18,63.4549598693848,45.3035507202148,1.7491090297699,13,41.1598587036133,6.99071598052979,39.1013107299805,14.8040399551392,9.4012565612793,12.3000001907349,2.9060959815979,19,13.2543001174927,23,46.1925201416016,63.2584609985352,21.9398708343506,3.4621479511261,31.2928295135498,31.8763904571533,51.9715614318848,31.0043792724609,43.8356094360352,34.9807281494141,30.1150302886963,47.0129585266113,1.829097032547,34.679988861084,28.5,40.4871215820312,55.8755798339844,32.5,30.5,5.49873876571655,25.3411998748779,54.1613082885742,49,20.9514007568359,14.4703302383423,2.14573097229004,16.2117500305176,35,19.3147106170654,20,23.2546100616455,45.9954795837402,45.7503204345703,30.5638103485107,18.0849304199219,23.1735992431641,27.1848793029785,50.7110786437988,44.2604713439941,11.7675399780273,16.372049331665,8.48536682128906,60.6017417907715,18.9798908233643,28.7365207672119,7.5,7.76415681838989,24.0313205718994,9.96630859375,11.0276298522949,50.6371002197266,38.6518592834473,18,44.9411201477051,58.3470802307129,2.83737206459045,22.765209197998,13.4932498931885,5,7.49846696853638,2,4.14322185516357,29.8845405578613,38.9087104797363,5.5,12.5778303146362,2.47452998161316,27.5,61.7464485168457,45.8293304443359,33.9285583496094,37.6150894165039,7.39703798294067,15.2362604141235,7.49540376663208,11,32.2472190856934,37.4557189941406,37.898868560791,1.23876297473907,47.9146194458008,22.5,52.1694412231445,41.6087913513184,33.626880645752,40.3633689880371,5.24372911453247,17.215030670166,4.71170520782471,14.6270799636841,20.0365200042725,13.0966901779175,39.5,11.5,24,18.0788192749023,45.5,47.6969108581543,44.3688583374023,50,14.2582902908325,49.7293815612793,40.5],"y":[6.4963051024268,8.74689782791034,9.51805805526611,8.9509035371522,10.4435823431568,10.4178168749253,8.71290580622599,7.68064114714803,10.0770902204617,9.84091231123618,10.3656521258675,7.23001125393541,8.2999624229493,8.18216172303045,9.0545833408082,9.10501316739548,9.0606295771159,7.16299659792817,6.47887006906848,7.82917988028028,7.85533183655894,10.4513339051578,8.83205325713827,6.71812716253309,7.79165920576908,9.73894843125083,8.77693744009946,8.87161093158306,7.52440752314117,8.21138725753325,9.27742724852075,7.74757860177006,10.0527054107559,10.3785448577081,9.00690926744057,8.65798661589708,8.56217710686589,8.5732021221539,10.0623784585131,9.66770031876826,6.87024581564908,8.70010693936685,10.3009696440099,10.2674119563081,8.97423834316004,7.23433517169893,8.80341203566846,7.33308484547633,10.1451411528672,8.65024611265799,8.19207754230601,6.40091361138271,7.7384840800709,7.29512909248023,8.12204588705096,10.5494411647826,9.69380782638559,10.5491065457363,8.12128350520796,8.49371283690809,9.15886593453848,8.21136319220842,10.5625427672798,10.0135581983289,10.2326062977423,10.3016024718806,8.46845983715653,9.45472959590547,7.60956224284373,10.0009949792665,10.6278559119256,8.20185644802621,9.40247809414146,8.95960197056128,7.63552288118679,5.88568551397942,9.77604140185624,9.43160661537507,11.1733783338276,6.76017115732608,7.07294493700311,9.70999346322662,7.13414093228061,9.88090328467187,7.62116262614629,9.81694016589769,9.26350108668759,8.11556261661055,7.79947481911677,8.53630001526964,7.59483311391467,8.68082664120703,7.54210064211318,10.3932348066864,10.108527594735,7.65553986927254,6.74699261884008,7.50120985155647,10.7297326211265,10.0298084292397,8.09235672774696,8.9802455312757,7.66225831669813,8.4318453802175,8.6541645589742,8.30969708560671,9.44668561496449,9.88133160757756,10.1869685520834,9.0132597306275,9.35871878813698,7.01725245390587,9.93940202484371,7.53316677563041,9.68483013926051,7.43820184419301,10.5568865839979,6.14433559123754,9.17053592598403,10.2802259372593,8.58085180895059,7.58060844444485,9.12660947480125,8.86700470416374,10.3306312717693,10.4757131224769,7.8616780792177,7.87381792881082,6.75628385788917,9.06721038127612,6.78985093622469,9.9712871993928,9.13651059129189,8.87246349696845,9.20074852080681,7.06241325896136,9.05515432561276,10.7631870993715,10.3181038247859,10.642334654911,9.31981800612712,7.5217162981767,9.30318239830886,8.08835632225228,5.90299380942703,7.49093771919741,7.67156260896819,8.20730571669009,8.35559892619642,8.46799833111056,10.1096555656318,7.61715330235701,10.0369602276165,9.59790666438825,9.43082406086561,9.87407593965701,6.40248022163071,10.2937625473001,8.77768536206103],"hover_col_1":["Afghanistan             ","Algeria                 ","Argentina               ","Armenia                 ","Australia               ","Austria                 ","Azerbaijan              ","Bangladesh              ","Barbados                ","Belarus                 ","Belgium                 ","Benin                   ","Bhutan                  ","Bolivia                 ","Botswana                ","Brazil                  ","Bulgaria                ","Burkina Faso            ","Burundi                 ","Kampuchea, Democratic   ","Cameroon                ","Canada                  ","Cape Verde              ","Central African Republic","Chad                    ","Chile                   ","China                   ","Colombia                ","Comoros                 ","Congo                   ","Costa Rica              ","Cote d'Ivoire           ","Cyprus                  ","Denmark                 ","Dominican Republic      ","Ecuador                 ","Egypt                   ","El Salvador             ","Equatorial Guinea       ","Estonia                 ","Ethiopia                ","Fiji                    ","Finland                 ","France                  ","Gabon                   ","The Gambia              ","Georgia                 ","Ghana                   ","Greece                  ","Guatemala               ","Guinea                  ","Guinea Bissau           ","Guyana                  ","Haiti                   ","Honduras                ","Hong Kong               ","Hungary                 ","Iceland                 ","India                   ","Indonesia               ","Iran                    ","Iraq                    ","Ireland                 ","Israel                  ","Italy                   ","Japan                   ","Jordan                  ","Kazakhstan              ","Kenya                   ","Korea                   ","Kuwait                  ","Kyrgyzstan              ","Latvia                  ","Lebanon                 ","Lesotho                 ","Liberia                 ","Libya                   ","Lithuania               ","Luxembourg              ","Madagascar              ","Malawi                  ","Malaysia                ","Mali                    ","Malta                   ","Mauritania              ","Mauritius               ","Mexico                  ","Moldova                 ","Mongolia                ","Morocco                 ","Mozambique              ","Namibia                 ","Nepal                   ","Netherlands             ","New Zealand             ","Nicaragua               ","Niger                   ","Nigeria                 ","Norway                  ","Oman                    ","Pakistan                ","Panama                  ","Papua New Guinea        ","Paraguay                ","Peru                    ","Philippines             ","Poland                  ","Portugal                ","Puerto Rico             ","Romania                 ","Russian Federation      ","Rwanda                  ","Saudi Arabia            ","Senegal                 ","Seychelles              ","Sierra Leone            ","Singapore               ","Somalia                 ","South Africa            ","Spain                   ","Sri Lanka               ","Sudan                   ","Suriname                ","Swaziland               ","Sweden                  ","Switzerland             ","Syria                   ","Tajikistan              ","Tanzania                ","Thailand                ","Togo                    ","Trinidad and Tobago     ","Tunisia                 ","Turkey                  ","Turkmenistan            ","Uganda                  ","Ukraine                 ","United Arab Emirates    ","United Kingdom          ","U.S.A                   ","Uruguay                 ","Uzbekistan              ","Venezuela               ","Vietnam                 ","Zaire                   ","Zambia                  ","Zimbabwe                ","Angola                  ","Albania                 ","Djibouti                ","Taiwan                  ","Laos                    ","Slovenia                ","Slovakia                ","Croatia                 ","Czech Republic          ","Eritrea                 ","Germany                 ","Macedonia               "],"hover_col_2":["$   663","$ 6,291","$13,603","$ 7,715","$34,323","$33,450","$ 6,081","$ 2,166","$23,792","$18,787","$31,750","$ 1,380","$ 4,024","$ 3,577","$ 8,558","$ 9,000","$ 8,610","$ 1,291","$   651","$ 2,513","$ 2,579","$34,590","$ 6,850","$   827","$ 2,420","$16,966","$ 6,483","$ 7,127","$ 1,853","$ 3,683","$10,694","$ 2,316","$23,219","$32,162","$ 8,159","$ 5,756","$ 5,230","$ 5,288","$23,444","$15,799","$   963","$ 6,004","$29,761","$28,779","$ 7,897","$ 1,386","$ 6,657","$ 1,530","$25,467","$ 5,712","$ 3,612","$   602","$ 2,295","$ 1,473","$ 3,368","$38,156","$16,217","$38,143","$ 3,365","$ 4,884","$ 9,498","$ 3,683","$38,659","$22,327","$27,795","$29,780","$ 4,762","$12,768","$ 2,017","$22,048","$41,269","$ 3,648","$12,118","$ 7,782","$ 2,070","$   360","$17,607","$12,477","$71,209","$   863","$ 1,180","$16,481","$ 1,254","$19,553","$ 2,041","$18,342","$10,546","$ 3,346","$ 2,439","$ 5,096","$ 1,988","$ 5,889","$ 1,886","$32,638","$24,551","$ 2,112","$   851","$ 1,810","$45,694","$22,693","$ 3,269","$ 7,945","$ 2,127","$ 4,591","$ 5,734","$ 4,063","$12,666","$19,562","$26,555","$ 8,211","$11,600","$ 1,116","$20,731","$ 1,869","$16,072","$ 1,700","$38,441","$   466","$ 9,610","$29,150","$ 5,329","$ 1,960","$ 9,197","$ 7,094","$30,657","$35,444","$ 2,596","$ 2,628","$   859","$ 8,666","$   889","$21,403","$ 9,288","$ 7,133","$ 9,905","$ 1,167","$ 8,563","$47,249","$30,276","$41,870","$11,157","$ 1,848","$10,973","$ 3,256","$   366","$ 1,792","$ 2,146","$ 3,668","$ 4,254","$ 4,760","$24,579","$ 2,033","$22,856","$14,734","$12,467","$19,420","$   603","$29,548","$ 6,488"]}}},{"type":"Circle","id":"00eb32db5c29a47cc60097516fba6591","attributes":{"id":"00eb32db5c29a47cc60097516fba6591","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"e96bb80a5826f6fab084381a0d9ca151","attributes":{"id":"e96bb80a5826f6fab084381a0d9ca151","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"4ea7915a7ad33f627d3a4e2295686488","attributes":{"id":"4ea7915a7ad33f627d3a4e2295686488","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"2c2931dae1e2efaca535aee552337571","attributes":{"id":"2c2931dae1e2efaca535aee552337571","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"e96bb80a5826f6fab084381a0d9ca151"},"hover_glyph":{"type":"Circle","id":"4ea7915a7ad33f627d3a4e2295686488"},"name":null,"data_source":{"type":"ColumnDataSource","id":"8fe62f78ba7b5ab57d452fa96c6cccfc"},"glyph":{"type":"Circle","id":"00eb32db5c29a47cc60097516fba6591"}}},{"type":"ColumnDataSource","id":"00dae7dd9597e62d49313a8f3e486c7f","attributes":{"id":"00dae7dd9597e62d49313a8f3e486c7f","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[0],"y0":[7.69263325369035],"x1":[1],"y1":[7.73384755608719]}}},{"type":"Segment","id":"8bb23245198eadd8cd70e91fbeedc211","attributes":{"id":"8bb23245198eadd8cd70e91fbeedc211","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"299b20df8f3898b14c9962cd77013d2e","attributes":{"id":"299b20df8f3898b14c9962cd77013d2e","tags":[],"line_color":{"units":"data","value":"#e1e1e1"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"ab88c70e9ef9d4eccfe6dad3e3ba4d3a","attributes":{"id":"ab88c70e9ef9d4eccfe6dad3e3ba4d3a","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"GlyphRenderer","id":"9cc4afb6c0627fe1554e7d3d6517639a","attributes":{"id":"9cc4afb6c0627fe1554e7d3d6517639a","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Segment","id":"299b20df8f3898b14c9962cd77013d2e"},"hover_glyph":{"type":"Segment","id":"ab88c70e9ef9d4eccfe6dad3e3ba4d3a"},"name":null,"data_source":{"type":"ColumnDataSource","id":"5d690a1bb73cb7692fc57724e9a1cfcc"},"glyph":{"type":"Segment","id":"8bb23245198eadd8cd70e91fbeedc211"}}},{"type":"Range1d","id":"a5c5d75f85ba6f0ceca96ff71ef7847d","attributes":{"id":"a5c5d75f85ba6f0ceca96ff71ef7847d","tags":[],"start":-3.90684719085693,"end":67.8618070602417}},{"type":"Range1d","id":"d05b5856bff79498c4d891f8c9676b1a","attributes":{"id":"d05b5856bff79498c4d891f8c9676b1a","tags":[],"start":5.51554701659005,"end":11.543516831217}},{"type":"LinearAxis","id":"64091aac8e08d419cb03ebe1c891d7dd","attributes":{"id":"64091aac8e08d419cb03ebe1c891d7dd","tags":[],"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"axis_label":"Absolute latitude","formatter":{"type":"BasicTickFormatter","id":"7d6f9edb310f53cfd31282975be34dff"},"ticker":{"type":"BasicTicker","id":"c98e3826b471964d5a390d1801b12b33"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"7d6f9edb310f53cfd31282975be34dff","attributes":{"id":"7d6f9edb310f53cfd31282975be34dff","tags":[]}},{"type":"BasicTicker","id":"c98e3826b471964d5a390d1801b12b33","attributes":{"id":"c98e3826b471964d5a390d1801b12b33","tags":[],"num_minor_ticks":5}},{"type":"Grid","id":"08520d50702f2533210fca062de62d68","attributes":{"id":"08520d50702f2533210fca062de62d68","tags":[],"dimension":0,"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"c98e3826b471964d5a390d1801b12b33"}}},{"type":"LinearAxis","id":"d36d5962bf0078bbb1cb355844fb920a","attributes":{"id":"d36d5962bf0078bbb1cb355844fb920a","tags":[],"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"axis_label":"Log GDP per capita 2005","formatter":{"type":"BasicTickFormatter","id":"f2ff4f9cfe97b08a457df80aa5f8aaab"},"ticker":{"type":"BasicTicker","id":"9ee087f2bd533c36a79bad864beb6b2f"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"f2ff4f9cfe97b08a457df80aa5f8aaab","attributes":{"id":"f2ff4f9cfe97b08a457df80aa5f8aaab","tags":[]}},{"type":"BasicTicker","id":"9ee087f2bd533c36a79bad864beb6b2f","attributes":{"id":"9ee087f2bd533c36a79bad864beb6b2f","tags":[],"num_minor_ticks":5}},{"type":"Grid","id":"67cea5f5b16d956e9b2e78ab2f65078b","attributes":{"id":"67cea5f5b16d956e9b2e78ab2f65078b","tags":[],"dimension":1,"plot":{"type":"Plot","id":"d08b69414d1ebbc6238d5bd18badfb45","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"9ee087f2bd533c36a79bad864beb6b2f"}}},{"type":"ColumnDataSource","id":"5d690a1bb73cb7692fc57724e9a1cfcc","attributes":{"id":"5d690a1bb73cb7692fc57724e9a1cfcc","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[-3.90684719085693],"y0":[7.53161527214815],"x1":[67.8618070602417],"y1":[10.4895102910668]}}}]}}},"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>What explains this intriguing correlation? SW divide proposed mechanisms into direct and indirect channels. Geography may have a <em>direct</em> influence on economic development through the effects of climate and diseases on agricultural and labor productivity. Or in cruder form, this is the argument that hotter weather makes for lazier people, which Rizal refuted in “<a href="https://web.seducoahuila.gob.mx/biblioweb/upload/the_indolence_of_the_filipino_by_jos%C3%83%C2%A9_rizal.pdf">The Indolence of the Filipino</a>”.</p>
+<p>Arguments for an indirect channel are, for me, more convincing. Geography influenced <em>x</em>, and <em>x</em> in turn influenced economic development. There may even be additional layers (<em>x</em> influenced <em>y</em>, <em>y</em> influenced <em>z</em>, etc.). A famous hypothesis comes from Jared Diamond’s 1997 book <em>Guns, Germs, and Steel</em>, which argues that climate and the ecosystems it supported influenced the onset of agriculture and domestication in a society, what is known as the Neolithic Revolution. In turn, societies that transitioned earlier would have had a head start in technological progress and centralized governments. This explains why Europeans had the advantage of “guns, germs, and steel” as they were conquering the civilizations of New World America in the 16th century.</p>
+<p>To illustrate the Diamond hypothesis, the following plots population density in the year 1500 against the years since a country had undergone its Neolithic Revolution—population density being the best proxy available for relative economic development in a pre-industrial world. Again, a positive correlation is established.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df1</span> <span class='op'>&lt;-</span> <span class='va'>df</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span>Country <span class='op'>=</span> <span class='va'>country</span>, <span class='va'>pd1500</span>, <span class='va'>agyears</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Pop.density.1500 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>pd1500</span>, <span class='fl'>2</span><span class='op'>)</span>,</span>
+<span>         Years.since.transition <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>agyears</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>pd1500</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>agyears</span>, data <span class='op'>=</span> <span class='va'>df1</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://hafen.github.io/rbokeh/reference/figure.html'>figure</a></span><span class='op'>(</span>xlab <span class='op'>=</span> <span class='st'>"Years since neolitic revolution"</span>, ylab <span class='op'>=</span> <span class='st'>"Log population density 1500"</span>, </span>
+<span>       width <span class='op'>=</span> <span class='fl'>700</span>, height <span class='op'>=</span> <span class='fl'>450</span>,</span>
+<span>       tools <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pan"</span>, <span class='st'>"wheel_zoom"</span>, <span class='st'>"hover"</span>, <span class='st'>"reset"</span><span class='op'>)</span>,</span>
+<span>       toolbar_location <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_points.html'>ly_points</a></span><span class='op'>(</span><span class='va'>agyears</span>, <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>pd1500</span><span class='op'>)</span>, data <span class='op'>=</span> <span class='va'>df1</span>, hover <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>Country</span>, <span class='va'>Pop.density.1500</span>, <span class='va'>Years.since.transition</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_abline.html'>ly_abline</a></span><span class='op'>(</span><span class='va'>z</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/x_axis.html'>x_axis</a></span><span class='op'>(</span>num_minor_ticks <span class='op'>=</span> <span class='fl'>0</span>,</span>
+<span>         number_formatter <span class='op'>=</span> <span class='st'>"numeral"</span>,</span>
+<span>         format <span class='op'>=</span> <span class='st'>"0,0"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/y_axis.html'>y_axis</a></span><span class='op'>(</span>num_minor_ticks <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></span></code></pre>
+</div>
+</details>
+<div id="htmlwidget-53c99b3838877dbcb268" style="width:700px;height:450px;" class="rbokeh html-widget"></div>
+<script type="application/json" data-for="htmlwidget-53c99b3838877dbcb268">{"x":{"elementid":"016b3059ca762f8e1b3303327d7d3f4e","modeltype":"Plot","modelid":"6b427db905dfc6cfe1247c8f25262337","docid":"99a0a530870ff0b9a178115182212d87","docs_json":{"99a0a530870ff0b9a178115182212d87":{"version":"0.12.5","title":"Bokeh Figure","roots":{"root_ids":["6b427db905dfc6cfe1247c8f25262337"],"references":[{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","attributes":{"id":"6b427db905dfc6cfe1247c8f25262337","plot_width":700,"plot_height":450,"sizing_mode":"scale_both","x_range":{"type":"Range1d","id":"09f3ca15934834980591c3d2b07d3bf6"},"y_range":{"type":"Range1d","id":"280d850c5d177494573d4e0ff361b3d4"},"left":[{"type":"LinearAxis","id":"734e9b904602770a6455793b1dcc2c8e"}],"below":[{"type":"LinearAxis","id":"61742dad1eda4816d2d18ac25aee7c7b"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"19af118a001674ac1ade077b28b928f5"},{"type":"GlyphRenderer","id":"33d7dab97474341f004deb9fa71d9227"},{"type":"LinearAxis","id":"61742dad1eda4816d2d18ac25aee7c7b"},{"type":"Grid","id":"808f1b2279c77461175517e1faa1f198"},{"type":"LinearAxis","id":"734e9b904602770a6455793b1dcc2c8e"},{"type":"Grid","id":"84e6c69405fc1bfca41a07e3281535ef"}],"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"toolbar_location":null,"min_border_left":4,"min_border_right":4,"min_border_top":4,"min_border_bottom":4,"lod_threshold":null,"toolbar":{"type":"Toolbar","id":"4840d896b6b9d074dfc100431f81a534"},"tool_events":{"type":"ToolEvents","id":"3056d502b6c054ffe0c466402b9cc11b"}},"subtype":"Figure"},{"type":"Toolbar","id":"4840d896b6b9d074dfc100431f81a534","attributes":{"id":"4840d896b6b9d074dfc100431f81a534","tags":[],"active_drag":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"type":"PanTool","id":"f2b9aae0d9a1086495eb9e3439742f56"},{"type":"WheelZoomTool","id":"af989af87450b7403923dcd4018ec186"},{"type":"ResetTool","id":"7e15504e0741c8362834642f5df5fd1f"},{"type":"HoverTool","id":"982664afce20bf3eac8c5633bd7eed57"}],"logo":null}},{"type":"PanTool","id":"f2b9aae0d9a1086495eb9e3439742f56","attributes":{"id":"f2b9aae0d9a1086495eb9e3439742f56","tags":[],"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"dimensions":"both"}},{"type":"ToolEvents","id":"3056d502b6c054ffe0c466402b9cc11b","attributes":{"id":"3056d502b6c054ffe0c466402b9cc11b","tags":[]},"geometries":[]},{"type":"WheelZoomTool","id":"af989af87450b7403923dcd4018ec186","attributes":{"id":"af989af87450b7403923dcd4018ec186","tags":[],"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"dimensions":"both"}},{"type":"ResetTool","id":"7e15504e0741c8362834642f5df5fd1f","attributes":{"id":"7e15504e0741c8362834642f5df5fd1f","tags":[],"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"}}},{"type":"HoverTool","id":"982664afce20bf3eac8c5633bd7eed57","attributes":{"id":"982664afce20bf3eac8c5633bd7eed57","tags":[],"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"19af118a001674ac1ade077b28b928f5"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Country","@hover_col_1"],["Pop.density.1500","@hover_col_2"],["Years.since.transition","@hover_col_3"]]}},{"type":"ColumnDataSource","id":"eb58eb9597b82f688c9d795741995243","attributes":{"id":"eb58eb9597b82f688c9d795741995243","tags":[],"column_names":["x","y","hover_col_1","hover_col_2","hover_col_3"],"selected":[],"data":{"x":[9000,4000,3800,8000,400,6500,8000,7500,5500,1700,4500,5500,3300,3100,4000,1000,3500,7500,2900,3500,4500,3000,1500,538,3000,2700,4000,9000,3400,3000,2500,3500,800,8500,5500,1500,4000,7200,3000,3700,4000,3500,7500,3000,3000,6000,3500,8500,2000,3500,3250,3000,3800,1000,3000,7400,8500,4000,9500,10000,5000,10500,8000,1000,4500,10500,6500,3500,4500,9500,6500,3700,10500,1500,3250,5500,3700,5500,2000,1800,4500,3000,7600,3500,4100,7000,5000,3500,1400,1250,6000,6000,800,3000,4000,2700,5000,7500,9000,2400,4000,4000,4300,5000,6000,6500,7500,5000,2500,7600,3000,3250,4500,3500,1700,7200,5000,5000,3600,1500,5500,5500,10500,7000,2500,5500,3100,2000,4500,10000,8000,3500,6500,7500,5500,3500,3600,6500,3800,6000,3000,1800,1400,1250,7500,5000,6000,7000,6500,7000,6500,8000,7500],"y":[1.12071983466797,-0.462366185711938,-2.27271334184794,0.978166150851032,-3.64835686277826,3.18871042388791,0.978166150851032,-0.123367394107898,3.25082066759953,0.285151905559829,0.92256032819845,3.56362214728248,0.448751105494159,1.46603434142,-0.186368880686709,-1.93875601918378,-2.13528063941685,1.97842045790027,1.46603434142,3.21190018130084,2.13978619284704,0.424970973999322,-3.81699878795616,0.908818694624107,0.424970973999322,-0.464008623325421,-0.221542273761933,2.46752192297134,-0.0379699078687268,0.424970973999322,0.448751105494159,1.46603434142,0.285151905559829,3.0747754713577,2.64907398112459,0.285151905559829,0.773489957179709,1.39085478833533,0.448751105494159,0.92256032819845,0.596928344396284,-1.11379641130332,3.30570537685699,0.424970973999322,1.46603434142,0.978166150851032,1.46603434142,2.04871834786543,0.285151905559829,0.448751105494159,1.46603434142,1.46603434142,-1.47441966468775,0.285151905559829,0.448751105494159,2.60791528296283,3.25082066759953,1.45349895755307,0.89391783343408,0.826975747584954,2.45210068059866,2.62600948488501,3.52638655397638,0.285151905559829,3.84244208898017,0.818256986452948,-0.115059336607202,0.969093977896723,2.90433886880451,-0.123367394107898,-0.115059336607202,0.92256032819845,2.04531068314489,-0.743539232315891,1.46603434142,-1.25819961210521,0.92256032819845,3.56362214728248,0.185400597055566,-0.20238560655986,0.19473831548416,-0.464008623325421,4.13516655674236,-0.464008623325421,0.963020746216665,0.92256032819845,-0.959669436971848,1.21222899038934,0.243231473525494,-1.93875601918378,2.63805785646189,3.27956988074003,-0.985779451717972,0.448751105494159,-0.464008623325421,1.46603434142,0.267062764759948,-0.436640689366793,3.25082066759953,0.448751105494159,0.425667805888941,-0.686374285305262,0.44628710262842,0.516944308963182,2.57583840396956,2.61455987594395,-0.123367394107898,-0.294706896755334,3.21190018130084,-0.0721764749282642,1.46603434142,1.46603434142,0.19473831548416,0.206839717056448,-0.743539232315891,2.56695138859572,2.73907657203979,0.520875981554001,-1.47441966468775,-0.743539232315891,0.667650016814513,2.99573227355399,2.04531068314489,-0.115059336607202,0.683377919971999,1.36474814612862,1.46603434142,0.285151905559829,1.63886672875159,2.09442691220122,-0.115059336607202,2.02950918027492,0.92256032819845,-0.123367394107898,2.86602580145862,-2.43787621678944,-2.27271334184794,-0.115059336607202,-0.790784187518648,1.81557068451635,0.424970973999322,-0.20238560655986,-0.20238560655986,0.424970973999322,1.98777436412127,1.80552883163916,0.549912983267761,2.17863842251429,3.17525772543476,2.17863842251429,3.17525772543476,3.25005119582953,2.17863842251429],"hover_col_1":["Afghanistan             ","Algeria                 ","Argentina               ","Armenia                 ","Australia               ","Austria                 ","Azerbaijan              ","Bahrain                 ","Bangladesh              ","Barbados                ","Belarus                 ","Belgium                 ","Belize                  ","Benin                   ","Bolivia                 ","Botswana                ","Brazil                  ","Bulgaria                ","Burkina Faso            ","Burundi                 ","Kampuchea, Democratic   ","Cameroon                ","Canada                  ","Cape Verde              ","Central African Republic","Chad                    ","Chile                   ","China                   ","Colombia                ","Congo                   ","Costa Rica              ","Cote d'Ivoire           ","Cuba                    ","Cyprus                  ","Denmark                 ","Dominican Republic      ","Ecuador                 ","Egypt                   ","El Salvador             ","Estonia                 ","Ethiopia                ","Finland                 ","France                  ","Gabon                   ","The Gambia              ","Georgia                 ","Ghana                   ","Greece                  ","Grenada                 ","Guatemala               ","Guinea                  ","Guinea Bissau           ","Guyana                  ","Haiti                   ","Honduras                ","Hungary                 ","India                   ","Indonesia               ","Iran                    ","Iraq                    ","Ireland                 ","Israel                  ","Italy                   ","Jamaica                 ","Japan                   ","Jordan                  ","Kazakhstan              ","Kenya                   ","Korea                   ","Kuwait                  ","Kyrgyzstan              ","Latvia                  ","Lebanon                 ","Lesotho                 ","Liberia                 ","Libya                   ","Lithuania               ","Luxembourg              ","Madagascar              ","Malawi                  ","Malaysia                ","Mali                    ","Malta                   ","Mauritania              ","Mexico                  ","Moldova                 ","Mongolia                ","Morocco                 ","Mozambique              ","Namibia                 ","Nepal                   ","Netherlands             ","New Zealand             ","Nicaragua               ","Niger                   ","Nigeria                 ","Norway                  ","Oman                    ","Pakistan                ","Panama                  ","Papua New Guinea        ","Paraguay                ","Peru                    ","Philippines             ","Poland                  ","Portugal                ","Qatar                   ","Russian Federation      ","Rwanda                  ","Saudi Arabia            ","Senegal                 ","Sierra Leone            ","Singapore               ","Somalia                 ","South Africa            ","Spain                   ","Sri Lanka               ","Sudan                   ","Suriname                ","Swaziland               ","Sweden                  ","Switzerland             ","Syria                   ","Tajikistan              ","Tanzania                ","Thailand                ","Togo                    ","Trinidad and Tobago     ","Tunisia                 ","Turkey                  ","Turkmenistan            ","Uganda                  ","Ukraine                 ","United Arab Emirates    ","United Kingdom          ","U.S.A                   ","Uruguay                 ","Uzbekistan              ","Venezuela               ","Vietnam                 ","Zaire                   ","Zambia                  ","Zimbabwe                ","Angola                  ","Albania                 ","Myanmar(Burma)          ","Laos                    ","Slovenia                ","Slovakia                ","Croatia                 ","Czech Republic          ","Germany                 ","Macedonia               "],"hover_col_2":[" 3.07"," 0.63"," 0.10"," 2.66"," 0.03","24.26"," 2.66"," 0.88","25.81"," 1.33"," 2.52","35.29"," 1.57"," 4.33"," 0.83"," 0.14"," 0.12"," 7.23"," 4.33","24.83"," 8.50"," 1.53"," 0.02"," 2.48"," 1.53"," 0.63"," 0.80","11.79"," 0.96"," 1.53"," 1.57"," 4.33"," 1.33","21.65","14.14"," 1.33"," 2.17"," 4.02"," 1.57"," 2.52"," 1.82"," 0.33","27.27"," 1.53"," 4.33"," 2.66"," 4.33"," 7.76"," 1.33"," 1.57"," 4.33"," 4.33"," 0.23"," 1.33"," 1.57","13.57","25.81"," 4.28"," 2.44"," 2.29","11.61","13.82","34.00"," 1.33","46.64"," 2.27"," 0.89"," 2.64","18.25"," 0.88"," 0.89"," 2.52"," 7.73"," 0.48"," 4.33"," 0.28"," 2.52","35.29"," 1.20"," 0.82"," 1.21"," 0.63","62.50"," 0.63"," 2.62"," 2.52"," 0.38"," 3.36"," 1.28"," 0.14","13.99","26.56"," 0.37"," 1.57"," 0.63"," 4.33"," 1.31"," 0.65","25.81"," 1.57"," 1.53"," 0.50"," 1.56"," 1.68","13.14","13.66"," 0.88"," 0.74","24.83"," 0.93"," 4.33"," 4.33"," 1.21"," 1.23"," 0.48","13.03","15.47"," 1.68"," 0.23"," 0.48"," 1.95","20.00"," 7.73"," 0.89"," 1.98"," 3.91"," 4.33"," 1.33"," 5.15"," 8.12"," 0.89"," 7.61"," 2.52"," 0.88","17.57"," 0.09"," 0.10"," 0.89"," 0.45"," 6.14"," 1.53"," 0.82"," 0.82"," 1.53"," 7.30"," 6.08"," 1.73"," 8.83","23.93"," 8.83","23.93","25.79"," 8.83"],"hover_col_3":[" 9,000"," 4,000"," 3,800"," 8,000","   400"," 6,500"," 8,000"," 7,500"," 5,500"," 1,700"," 4,500"," 5,500"," 3,300"," 3,100"," 4,000"," 1,000"," 3,500"," 7,500"," 2,900"," 3,500"," 4,500"," 3,000"," 1,500","   538"," 3,000"," 2,700"," 4,000"," 9,000"," 3,400"," 3,000"," 2,500"," 3,500","   800"," 8,500"," 5,500"," 1,500"," 4,000"," 7,200"," 3,000"," 3,700"," 4,000"," 3,500"," 7,500"," 3,000"," 3,000"," 6,000"," 3,500"," 8,500"," 2,000"," 3,500"," 3,250"," 3,000"," 3,800"," 1,000"," 3,000"," 7,400"," 8,500"," 4,000"," 9,500","10,000"," 5,000","10,500"," 8,000"," 1,000"," 4,500","10,500"," 6,500"," 3,500"," 4,500"," 9,500"," 6,500"," 3,700","10,500"," 1,500"," 3,250"," 5,500"," 3,700"," 5,500"," 2,000"," 1,800"," 4,500"," 3,000"," 7,600"," 3,500"," 4,100"," 7,000"," 5,000"," 3,500"," 1,400"," 1,250"," 6,000"," 6,000","   800"," 3,000"," 4,000"," 2,700"," 5,000"," 7,500"," 9,000"," 2,400"," 4,000"," 4,000"," 4,300"," 5,000"," 6,000"," 6,500"," 7,500"," 5,000"," 2,500"," 7,600"," 3,000"," 3,250"," 4,500"," 3,500"," 1,700"," 7,200"," 5,000"," 5,000"," 3,600"," 1,500"," 5,500"," 5,500","10,500"," 7,000"," 2,500"," 5,500"," 3,100"," 2,000"," 4,500","10,000"," 8,000"," 3,500"," 6,500"," 7,500"," 5,500"," 3,500"," 3,600"," 6,500"," 3,800"," 6,000"," 3,000"," 1,800"," 1,400"," 1,250"," 7,500"," 5,000"," 6,000"," 7,000"," 6,500"," 7,000"," 6,500"," 8,000"," 7,500"]}}},{"type":"Circle","id":"c6088726d91ab011e20ae7edebd3ad02","attributes":{"id":"c6088726d91ab011e20ae7edebd3ad02","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"7d82cac67fe915d7c0979660a484c33a","attributes":{"id":"7d82cac67fe915d7c0979660a484c33a","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"db63d1f70bb31d090d3717a696c04303","attributes":{"id":"db63d1f70bb31d090d3717a696c04303","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"19af118a001674ac1ade077b28b928f5","attributes":{"id":"19af118a001674ac1ade077b28b928f5","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"7d82cac67fe915d7c0979660a484c33a"},"hover_glyph":{"type":"Circle","id":"db63d1f70bb31d090d3717a696c04303"},"name":null,"data_source":{"type":"ColumnDataSource","id":"eb58eb9597b82f688c9d795741995243"},"glyph":{"type":"Circle","id":"c6088726d91ab011e20ae7edebd3ad02"}}},{"type":"ColumnDataSource","id":"80a5082699deaeaee105915fc1570074","attributes":{"id":"80a5082699deaeaee105915fc1570074","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[0],"y0":[-0.477378606240213],"x1":[1],"y1":[-0.477092925034487]}}},{"type":"Segment","id":"370b4b9695c710821c8c54df5a0cd8a8","attributes":{"id":"370b4b9695c710821c8c54df5a0cd8a8","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"1b44962aad4802da3bb8fe1d17949ec1","attributes":{"id":"1b44962aad4802da3bb8fe1d17949ec1","tags":[],"line_color":{"units":"data","value":"#e1e1e1"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"e990ca5d2567e20aa952fb884e751c16","attributes":{"id":"e990ca5d2567e20aa952fb884e751c16","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"GlyphRenderer","id":"33d7dab97474341f004deb9fa71d9227","attributes":{"id":"33d7dab97474341f004deb9fa71d9227","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Segment","id":"1b44962aad4802da3bb8fe1d17949ec1"},"hover_glyph":{"type":"Segment","id":"e990ca5d2567e20aa952fb884e751c16"},"name":null,"data_source":{"type":"ColumnDataSource","id":"d637e4d81ebd1bf2ad02ee00b02edcde"},"glyph":{"type":"Segment","id":"370b4b9695c710821c8c54df5a0cd8a8"}}},{"type":"LinearAxis","id":"61742dad1eda4816d2d18ac25aee7c7b","attributes":{"id":"61742dad1eda4816d2d18ac25aee7c7b","tags":[],"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"axis_label":"Years since neolitic revolution","formatter":{"type":"NumeralTickFormatter","id":"b2d57421b761eb3dc1d4d5e6505a7095"},"ticker":{"type":"BasicTicker","id":"a0830e3b05a9beab367d1048c1125298"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"NumeralTickFormatter","id":"b2d57421b761eb3dc1d4d5e6505a7095","attributes":{"id":"b2d57421b761eb3dc1d4d5e6505a7095","tags":[],"format":"0,0"}},{"type":"BasicTicker","id":"a0830e3b05a9beab367d1048c1125298","attributes":{"id":"a0830e3b05a9beab367d1048c1125298","tags":[],"num_minor_ticks":0}},{"type":"Grid","id":"808f1b2279c77461175517e1faa1f198","attributes":{"id":"808f1b2279c77461175517e1faa1f198","tags":[],"dimension":0,"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"a0830e3b05a9beab367d1048c1125298"}}},{"type":"LinearAxis","id":"734e9b904602770a6455793b1dcc2c8e","attributes":{"id":"734e9b904602770a6455793b1dcc2c8e","tags":[],"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"axis_label":"Log population density 1500","formatter":{"type":"BasicTickFormatter","id":"8f2f631faa1abc04120212de8f793293"},"ticker":{"type":"BasicTicker","id":"ee96175e6c9320f0c44f9a3fd135cd8d"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"8f2f631faa1abc04120212de8f793293","attributes":{"id":"8f2f631faa1abc04120212de8f793293","tags":[]}},{"type":"BasicTicker","id":"ee96175e6c9320f0c44f9a3fd135cd8d","attributes":{"id":"ee96175e6c9320f0c44f9a3fd135cd8d","tags":[],"num_minor_ticks":0}},{"type":"Grid","id":"84e6c69405fc1bfca41a07e3281535ef","attributes":{"id":"84e6c69405fc1bfca41a07e3281535ef","tags":[],"dimension":1,"plot":{"type":"Plot","id":"6b427db905dfc6cfe1247c8f25262337","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"ee96175e6c9320f0c44f9a3fd135cd8d"}}},{"type":"Range1d","id":"09f3ca15934834980591c3d2b07d3bf6","attributes":{"id":"09f3ca15934834980591c3d2b07d3bf6","tags":[],"start":-307,"end":11207}},{"type":"Range1d","id":"280d850c5d177494573d4e0ff361b3d4","attributes":{"id":"280d850c5d177494573d4e0ff361b3d4","tags":[],"start":-4.37365036208506,"end":4.69181813087125}},{"type":"ColumnDataSource","id":"d637e4d81ebd1bf2ad02ee00b02edcde","attributes":{"id":"d637e4d81ebd1bf2ad02ee00b02edcde","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[-307],"y0":[-0.565082736397985],"x1":[11207],"y1":[2.72425066632704]}}}]}}},"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>There is another reason why it makes more sense to use economic development as of 1500 rather than as of today. If geography shapes economic destinies, then how do we account for countries whose peoples are, in the grand scale of things, relative newcomers to the environments they now inhabit? These include European migrants to the New World as well as African slaves forcibly transported to New World colonies. If it takes thousands of years for geography to shape human cultures and institutions, then an English colonist who settled in what is now the United States would have been influenced by English rather than American geography.</p>
+<p>In short, one must take into account the historical composition of a given country’s population when correlating geographic factors to contemporary development. This motivates the <a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000">World Migration Matrix</a> constructed by Louis Putterman and David N. Weil, which, for 165 countries, gives “an estimate of the proportion of the ancestors in 1500 of that country’s population today that were living within what are now the borders of that and each of the other countries”. To take one example, among the present-day inhabitants of Cuba, 63% of their ancestors originate from Spain, 5.6% from Nigeria, 5.1% from Ghana, 4.9% from Angola, and so on. Cuba today would exhibit the effects of the weighted average of all these different geographies.</p>
+<p>The following map shows the countries with the highest proportion of “immigrants” relative to their present-day populations. In countries like Australia, Singapore, Taiwan, and Jamaica, basically none of their current citizens have ancestors that were living in that country in 1500. On the opposite extreme are countries like China, Japan, Algeria, and Greece.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/ropenscilabs/rnaturalearth'>rnaturalearth</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>mm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"matrix version 1.1.xls"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>wbcode</span>, <span class='va'>wbname</span><span class='op'>)</span>,</span>
+<span>               names_to <span class='op'>=</span> <span class='st'>"ancestry"</span>,</span>
+<span>               values_to <span class='op'>=</span> <span class='st'>"share"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ancestry <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/chartr.html'>toupper</a></span><span class='op'>(</span><span class='va'>ancestry</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>wbcode</span> <span class='op'>==</span> <span class='va'>ancestry</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>immigrant <span class='op'>=</span> <span class='fl'>1</span> <span class='op'>-</span> <span class='va'>share</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>map</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rnaturalearth/man/ne_countries.html'>ne_countries</a></span><span class='op'>(</span>scale <span class='op'>=</span> <span class='st'>"small"</span>, returnclass <span class='op'>=</span> <span class='st'>"sf"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>wb_a3</span>, <span class='va'>name</span>, <span class='va'>name_long</span>, <span class='va'>geometry</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>name</span> <span class='op'>!=</span> <span class='st'>"Antarctica"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>map</span> <span class='op'>&lt;-</span> <span class='va'>map</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>wb_a3 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>map</span><span class='op'>$</span><span class='va'>name</span> <span class='op'>==</span> <span class='st'>"Taiwan"</span>, <span class='st'>"OAN"</span>, <span class='va'>map</span><span class='op'>$</span><span class='va'>wb_a3</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>mm</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"wb_a3"</span> <span class='op'>=</span> <span class='st'>"wbcode"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>map</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggsf.html'>geom_sf</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>immigrant</span><span class='op'>)</span>, color <span class='op'>=</span> <span class='st'>"gray50"</span>, lwd <span class='op'>=</span> <span class='fl'>.1</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_gradient.html'>scale_fill_gradient</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Share of population that arrived after 1500 CE"</span>,</span>
+<span>                      low <span class='op'>=</span> <span class='st'>"white"</span>, high <span class='op'>=</span> <span class='st'>"#1046b1"</span>,</span>
+<span>                      labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>100</span><span class='op'>)</span>,</span>
+<span>                      breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guides.html'>guides</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/guide_colourbar.html'>guide_colorbar</a></span><span class='op'>(</span>ticks <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>axis.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        axis.ticks <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        axis.text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        legend.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>12</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>20</span>, <span class='fl'>10</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>        legend.position <span class='op'>=</span> <span class='st'>"top"</span>,</span>
+<span>        legend.text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>,</span>
+<span>        legend.key <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span>,</span>
+<span>        legend.key.height <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grid/unit.html'>unit</a></span><span class='op'>(</span><span class='fl'>.5</span>, <span class='st'>"cm"</span><span class='op'>)</span>,</span>
+<span>        legend.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>,</span>
+<span>        plot.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"aliceblue"</span><span class='op'>)</span>,</span>
+<span>        panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        plot.margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>30</span>, <span class='fl'>0</span>, <span class='op'>-</span><span class='fl'>30</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</details>
+<p><img src="roots_files/figure-html5/unnamed-chunk-4-1.png" width="720" data-distill-preview=1 /></p>
+</div>
+<p>Applying an “ancestry adjustment” to the Diamond hypothesis makes a significant difference. The first chart below plots GDP per capita today and the years since the Neolithic Revolution. There is a positive correlation, albeit a weak one. The second chart plots GDP per capita against the ancestry-adjusted years since the Neolithic Revolution. Doing this strengthens the correlation. This suggests that (1) people were shaped by their environment, and (2) they brought their cultures and institutions with them during the great post-1500 migrations.</p>
+<div class="panelset">
+<section id="unadjusted" class="panel-name panel">
+<h2 class="panel-name">Unadjusted</h2>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df1</span> <span class='op'>&lt;-</span> <span class='va'>df</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span>Country <span class='op'>=</span> <span class='va'>country</span>, <span class='va'>rgdpch_2005</span>, <span class='va'>agyears</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>GDP.per.capita <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"$"</span>, <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>         Years.since.transition <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>agyears</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>agyears</span>, data <span class='op'>=</span> <span class='va'>df1</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://hafen.github.io/rbokeh/reference/figure.html'>figure</a></span><span class='op'>(</span>xlab <span class='op'>=</span> <span class='st'>"Years since Neolithic Revolution"</span>, ylab <span class='op'>=</span> <span class='st'>"Log GDP per capita 2005"</span>, </span>
+<span>       width <span class='op'>=</span> <span class='fl'>700</span>, height <span class='op'>=</span> <span class='fl'>450</span>,</span>
+<span>       xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>11000</span><span class='op'>)</span>,</span>
+<span>       tools <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pan"</span>, <span class='st'>"wheel_zoom"</span>, <span class='st'>"hover"</span>, <span class='st'>"reset"</span><span class='op'>)</span>,</span>
+<span>       toolbar_location <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_points.html'>ly_points</a></span><span class='op'>(</span><span class='va'>agyears</span>, <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span><span class='op'>)</span>, data <span class='op'>=</span> <span class='va'>df1</span>, hover <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>Country</span>, <span class='va'>GDP.per.capita</span>, <span class='va'>Years.since.transition</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_abline.html'>ly_abline</a></span><span class='op'>(</span><span class='va'>z</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/x_axis.html'>x_axis</a></span><span class='op'>(</span>num_minor_ticks <span class='op'>=</span> <span class='fl'>0</span>,</span>
+<span>         number_formatter <span class='op'>=</span> <span class='st'>"numeral"</span>,</span>
+<span>         format <span class='op'>=</span> <span class='st'>"0,0"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/y_axis.html'>y_axis</a></span><span class='op'>(</span>num_minor_ticks <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></span></code></pre>
+</div>
+</details>
+<div id="htmlwidget-446d867e4dc014403484" style="width:700px;height:450px;" class="rbokeh html-widget"></div>
+<script type="application/json" data-for="htmlwidget-446d867e4dc014403484">{"x":{"elementid":"111941393271fab2a24cbf9c225ef819","modeltype":"Plot","modelid":"692d7475236c7a27f4fb8de8cb57b034","docid":"ff11bbc1e7facb619d1b48febf6c1e07","docs_json":{"ff11bbc1e7facb619d1b48febf6c1e07":{"version":"0.12.5","title":"Bokeh Figure","roots":{"root_ids":["692d7475236c7a27f4fb8de8cb57b034"],"references":[{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","attributes":{"id":"692d7475236c7a27f4fb8de8cb57b034","plot_width":700,"plot_height":450,"sizing_mode":"scale_both","x_range":{"type":"Range1d","id":"16f59a7327ea7cb011049754e51cd583"},"y_range":{"type":"Range1d","id":"4815589c15cea489c8879c418e37a9d9"},"left":[{"type":"LinearAxis","id":"72e9fc2ecc411c99c69e2b1ea5953df8"}],"below":[{"type":"LinearAxis","id":"03c2636ac78b00d584153d3e2d4bd0c3"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"c04229f196f820e65ef36506d401be7f"},{"type":"GlyphRenderer","id":"74785f7e6653db71daf6fe10ff9036ce"},{"type":"LinearAxis","id":"03c2636ac78b00d584153d3e2d4bd0c3"},{"type":"Grid","id":"7d2d98c7274d56935ba06c940c8638e4"},{"type":"LinearAxis","id":"72e9fc2ecc411c99c69e2b1ea5953df8"},{"type":"Grid","id":"5c77d55021eae2814a899ad99f2c1deb"}],"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"toolbar_location":null,"min_border_left":4,"min_border_right":4,"min_border_top":4,"min_border_bottom":4,"lod_threshold":null,"toolbar":{"type":"Toolbar","id":"e4c6e4f3a53b25709ab4913881ae95e0"},"tool_events":{"type":"ToolEvents","id":"7fd786618520b16b4eb46a62e7715c4f"}},"subtype":"Figure"},{"type":"Toolbar","id":"e4c6e4f3a53b25709ab4913881ae95e0","attributes":{"id":"e4c6e4f3a53b25709ab4913881ae95e0","tags":[],"active_drag":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"type":"PanTool","id":"ac6478f9eb976dcc5aebbc204e6d6499"},{"type":"WheelZoomTool","id":"de970a64e012eec91e97311c523d31ac"},{"type":"ResetTool","id":"bc995c951c48637f857e2d6215978636"},{"type":"HoverTool","id":"ea8c54087365386f4790454852f3f035"}],"logo":null}},{"type":"PanTool","id":"ac6478f9eb976dcc5aebbc204e6d6499","attributes":{"id":"ac6478f9eb976dcc5aebbc204e6d6499","tags":[],"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"dimensions":"both"}},{"type":"ToolEvents","id":"7fd786618520b16b4eb46a62e7715c4f","attributes":{"id":"7fd786618520b16b4eb46a62e7715c4f","tags":[]},"geometries":[]},{"type":"WheelZoomTool","id":"de970a64e012eec91e97311c523d31ac","attributes":{"id":"de970a64e012eec91e97311c523d31ac","tags":[],"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"dimensions":"both"}},{"type":"ResetTool","id":"bc995c951c48637f857e2d6215978636","attributes":{"id":"bc995c951c48637f857e2d6215978636","tags":[],"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"}}},{"type":"HoverTool","id":"ea8c54087365386f4790454852f3f035","attributes":{"id":"ea8c54087365386f4790454852f3f035","tags":[],"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"c04229f196f820e65ef36506d401be7f"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Country","@hover_col_1"],["GDP.per.capita","@hover_col_2"],["Years.since.transition","@hover_col_3"]]}},{"type":"ColumnDataSource","id":"3e3200761dfc1be5f6dccb6eabdbaf55","attributes":{"id":"3e3200761dfc1be5f6dccb6eabdbaf55","tags":[],"column_names":["x","y","hover_col_1","hover_col_2","hover_col_3"],"selected":[],"data":{"x":[9000,4000,3800,8000,400,6500,8000,7500,5500,1700,4500,5500,3300,3100,5500,4000,1000,3500,4000,7500,2900,3500,4500,3000,1500,538,3000,2700,4000,9000,3400,3000,2500,3500,800,8500,5500,1500,4000,7200,3000,3700,4000,3500,7500,3000,3000,6000,3500,8500,2000,3500,3250,3000,3800,1000,3000,5000,7400,8500,4000,9500,10000,5000,10500,8000,1000,4500,10500,6500,3500,4500,9500,6500,3700,10500,1500,3250,5500,3700,5500,2000,1800,4500,3000,7600,3500,362,4100,7000,5000,3500,1400,1250,6000,6000,800,3000,4000,2700,5000,7500,9000,2400,4000,4000,4300,5000,6000,6500,7500,7500,5000,2500,7600,3000,3250,4500,3500,1700,7200,5000,5000,3600,1500,5500,5500,10500,7000,2500,5500,3100,2000,4500,10000,8000,3500,6500,7500,5500,3500,3600,6500,3800,6000,3000,1800,1400,1250,7500,5500,6000,7000,6500,7000,6500,8000,7500],"y":[6.4963051024268,8.74689782791034,9.51805805526611,8.9509035371522,10.4435823431568,10.4178168749253,8.71290580622599,10.1141894166759,7.68064114714803,10.0770902204617,9.84091231123618,10.3656521258675,9.1179488876177,7.23001125393541,8.2999624229493,8.18216172303045,9.0545833408082,9.10501316739548,10.7899107188813,9.0606295771159,7.16299659792817,6.47887006906848,7.82917988028028,7.85533183655894,10.4513339051578,8.83205325713827,6.71812716253309,7.79165920576908,9.73894843125083,8.77693744009946,8.87161093158306,8.21138725753325,9.27742724852075,7.74757860177006,9.10597209392249,10.0527054107559,10.3785448577081,9.00690926744057,8.65798661589708,8.56217710686589,8.5732021221539,9.66770031876826,6.87024581564908,10.3009696440099,10.2674119563081,8.97423834316004,7.23433517169893,8.80341203566846,7.33308484547633,10.1451411528672,9.57986075958593,8.65024611265799,8.19207754230601,6.40091361138271,7.7384840800709,7.29512909248023,8.12204588705096,10.5494411647826,9.69380782638559,8.12128350520796,8.49371283690809,9.15886593453848,8.21136319220842,10.5625427672798,10.0135581983289,10.2326062977423,9.00064191757334,10.3016024718806,8.46845983715653,9.45472959590547,7.60956224284373,10.0009949792665,10.6278559119256,8.20185644802621,9.40247809414146,8.95960197056128,7.63552288118679,5.88568551397942,9.77604140185624,9.43160661537507,11.1733783338276,6.76017115732608,7.07294493700311,9.70999346322662,7.13414093228061,9.88090328467187,7.62116262614629,9.81694016589769,9.26350108668759,8.11556261661055,7.79947481911677,8.53630001526964,7.59483311391467,8.68082664120703,7.54210064211318,10.3932348066864,10.108527594735,7.65553986927254,6.74699261884008,7.50120985155647,10.7297326211265,10.0298084292397,8.09235672774696,8.9802455312757,7.66225831669813,8.4318453802175,8.6541645589742,8.30969708560671,9.44668561496449,9.88133160757756,11.1971319423574,9.0132597306275,9.35871878813698,7.01725245390587,9.93940202484371,7.53316677563041,7.43820184419301,10.5568865839979,6.14433559123754,9.17053592598403,10.2802259372593,8.58085180895059,7.58060844444485,9.12660947480125,8.86700470416374,10.3306312717693,10.4757131224769,7.8616780792177,7.87381792881082,6.75628385788917,9.06721038127612,6.78985093622469,9.9712871993928,9.13651059129189,8.87246349696845,9.20074852080681,7.06241325896136,9.05515432561276,10.7631870993715,10.3181038247859,10.642334654911,9.31981800612712,7.5217162981767,9.30318239830886,8.08835632225228,5.90299380942703,7.49093771919741,7.67156260896819,8.20730571669009,8.35559892619642,10.1096555656318,7.61715330235701,10.0369602276165,9.59790666438825,9.43082406086561,9.87407593965701,10.2937625473001,8.77768536206103],"hover_col_1":["Afghanistan             ","Algeria                 ","Argentina               ","Armenia                 ","Australia               ","Austria                 ","Azerbaijan              ","Bahrain                 ","Bangladesh              ","Barbados                ","Belarus                 ","Belgium                 ","Belize                  ","Benin                   ","Bhutan                  ","Bolivia                 ","Botswana                ","Brazil                  ","Brunei                  ","Bulgaria                ","Burkina Faso            ","Burundi                 ","Kampuchea, Democratic   ","Cameroon                ","Canada                  ","Cape Verde              ","Central African Republic","Chad                    ","Chile                   ","China                   ","Colombia                ","Congo                   ","Costa Rica              ","Cote d'Ivoire           ","Cuba                    ","Cyprus                  ","Denmark                 ","Dominican Republic      ","Ecuador                 ","Egypt                   ","El Salvador             ","Estonia                 ","Ethiopia                ","Finland                 ","France                  ","Gabon                   ","The Gambia              ","Georgia                 ","Ghana                   ","Greece                  ","Grenada                 ","Guatemala               ","Guinea                  ","Guinea Bissau           ","Guyana                  ","Haiti                   ","Honduras                ","Hong Kong               ","Hungary                 ","India                   ","Indonesia               ","Iran                    ","Iraq                    ","Ireland                 ","Israel                  ","Italy                   ","Jamaica                 ","Japan                   ","Jordan                  ","Kazakhstan              ","Kenya                   ","Korea                   ","Kuwait                  ","Kyrgyzstan              ","Latvia                  ","Lebanon                 ","Lesotho                 ","Liberia                 ","Libya                   ","Lithuania               ","Luxembourg              ","Madagascar              ","Malawi                  ","Malaysia                ","Mali                    ","Malta                   ","Mauritania              ","Mauritius               ","Mexico                  ","Moldova                 ","Mongolia                ","Morocco                 ","Mozambique              ","Namibia                 ","Nepal                   ","Netherlands             ","New Zealand             ","Nicaragua               ","Niger                   ","Nigeria                 ","Norway                  ","Oman                    ","Pakistan                ","Panama                  ","Papua New Guinea        ","Paraguay                ","Peru                    ","Philippines             ","Poland                  ","Portugal                ","Qatar                   ","Romania                 ","Russian Federation      ","Rwanda                  ","Saudi Arabia            ","Senegal                 ","Sierra Leone            ","Singapore               ","Somalia                 ","South Africa            ","Spain                   ","Sri Lanka               ","Sudan                   ","Suriname                ","Swaziland               ","Sweden                  ","Switzerland             ","Syria                   ","Tajikistan              ","Tanzania                ","Thailand                ","Togo                    ","Trinidad and Tobago     ","Tunisia                 ","Turkey                  ","Turkmenistan            ","Uganda                  ","Ukraine                 ","United Arab Emirates    ","United Kingdom          ","U.S.A                   ","Uruguay                 ","Uzbekistan              ","Venezuela               ","Vietnam                 ","Zaire                   ","Zambia                  ","Zimbabwe                ","Angola                  ","Albania                 ","Taiwan                  ","Laos                    ","Slovenia                ","Slovakia                ","Croatia                 ","Czech Republic          ","Germany                 ","Macedonia               "],"hover_col_2":["$   663","$ 6,291","$13,603","$ 7,715","$34,323","$33,450","$ 6,081","$24,691","$ 2,166","$23,792","$18,787","$31,750","$ 9,117","$ 1,380","$ 4,024","$ 3,577","$ 8,558","$ 9,000","$48,529","$ 8,610","$ 1,291","$   651","$ 2,513","$ 2,579","$34,590","$ 6,850","$   827","$ 2,420","$16,966","$ 6,483","$ 7,127","$ 3,683","$10,694","$ 2,316","$ 9,009","$23,219","$32,162","$ 8,159","$ 5,756","$ 5,230","$ 5,288","$15,799","$   963","$29,761","$28,779","$ 7,897","$ 1,386","$ 6,657","$ 1,530","$25,467","$14,470","$ 5,712","$ 3,612","$   602","$ 2,295","$ 1,473","$ 3,368","$38,156","$16,217","$ 3,365","$ 4,884","$ 9,498","$ 3,683","$38,659","$22,327","$27,795","$ 8,108","$29,780","$ 4,762","$12,768","$ 2,017","$22,048","$41,269","$ 3,648","$12,118","$ 7,782","$ 2,070","$   360","$17,607","$12,477","$71,209","$   863","$ 1,180","$16,481","$ 1,254","$19,553","$ 2,041","$18,342","$10,546","$ 3,346","$ 2,439","$ 5,096","$ 1,988","$ 5,889","$ 1,886","$32,638","$24,551","$ 2,112","$   851","$ 1,810","$45,694","$22,693","$ 3,269","$ 7,945","$ 2,127","$ 4,591","$ 5,734","$ 4,063","$12,666","$19,562","$72,921","$ 8,211","$11,600","$ 1,116","$20,731","$ 1,869","$ 1,700","$38,441","$   466","$ 9,610","$29,150","$ 5,329","$ 1,960","$ 9,197","$ 7,094","$30,657","$35,444","$ 2,596","$ 2,628","$   859","$ 8,666","$   889","$21,403","$ 9,288","$ 7,133","$ 9,905","$ 1,167","$ 8,563","$47,249","$30,276","$41,870","$11,157","$ 1,848","$10,973","$ 3,256","$   366","$ 1,792","$ 2,146","$ 3,668","$ 4,254","$24,579","$ 2,033","$22,856","$14,734","$12,467","$19,420","$29,548","$ 6,488"],"hover_col_3":[" 9,000"," 4,000"," 3,800"," 8,000","   400"," 6,500"," 8,000"," 7,500"," 5,500"," 1,700"," 4,500"," 5,500"," 3,300"," 3,100"," 5,500"," 4,000"," 1,000"," 3,500"," 4,000"," 7,500"," 2,900"," 3,500"," 4,500"," 3,000"," 1,500","   538"," 3,000"," 2,700"," 4,000"," 9,000"," 3,400"," 3,000"," 2,500"," 3,500","   800"," 8,500"," 5,500"," 1,500"," 4,000"," 7,200"," 3,000"," 3,700"," 4,000"," 3,500"," 7,500"," 3,000"," 3,000"," 6,000"," 3,500"," 8,500"," 2,000"," 3,500"," 3,250"," 3,000"," 3,800"," 1,000"," 3,000"," 5,000"," 7,400"," 8,500"," 4,000"," 9,500","10,000"," 5,000","10,500"," 8,000"," 1,000"," 4,500","10,500"," 6,500"," 3,500"," 4,500"," 9,500"," 6,500"," 3,700","10,500"," 1,500"," 3,250"," 5,500"," 3,700"," 5,500"," 2,000"," 1,800"," 4,500"," 3,000"," 7,600"," 3,500","   362"," 4,100"," 7,000"," 5,000"," 3,500"," 1,400"," 1,250"," 6,000"," 6,000","   800"," 3,000"," 4,000"," 2,700"," 5,000"," 7,500"," 9,000"," 2,400"," 4,000"," 4,000"," 4,300"," 5,000"," 6,000"," 6,500"," 7,500"," 7,500"," 5,000"," 2,500"," 7,600"," 3,000"," 3,250"," 4,500"," 3,500"," 1,700"," 7,200"," 5,000"," 5,000"," 3,600"," 1,500"," 5,500"," 5,500","10,500"," 7,000"," 2,500"," 5,500"," 3,100"," 2,000"," 4,500","10,000"," 8,000"," 3,500"," 6,500"," 7,500"," 5,500"," 3,500"," 3,600"," 6,500"," 3,800"," 6,000"," 3,000"," 1,800"," 1,400"," 1,250"," 7,500"," 5,500"," 6,000"," 7,000"," 6,500"," 7,000"," 6,500"," 8,000"," 7,500"]}}},{"type":"Circle","id":"fbc3248e4b61b2c8f69348afaa9fa045","attributes":{"id":"fbc3248e4b61b2c8f69348afaa9fa045","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"e93145713a26476580eebf9bb10942ea","attributes":{"id":"e93145713a26476580eebf9bb10942ea","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"cb58e50183ec517f87097bf160a8d0c5","attributes":{"id":"cb58e50183ec517f87097bf160a8d0c5","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"c04229f196f820e65ef36506d401be7f","attributes":{"id":"c04229f196f820e65ef36506d401be7f","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"e93145713a26476580eebf9bb10942ea"},"hover_glyph":{"type":"Circle","id":"cb58e50183ec517f87097bf160a8d0c5"},"name":null,"data_source":{"type":"ColumnDataSource","id":"3e3200761dfc1be5f6dccb6eabdbaf55"},"glyph":{"type":"Circle","id":"fbc3248e4b61b2c8f69348afaa9fa045"}}},{"type":"ColumnDataSource","id":"72252e3744375472de8cba308ba59403","attributes":{"id":"72252e3744375472de8cba308ba59403","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[0],"y0":[8.17592683499591],"x1":[1],"y1":[8.176057971866]}}},{"type":"Segment","id":"0dc46c3131bf2e318c9c8cca2ba38113","attributes":{"id":"0dc46c3131bf2e318c9c8cca2ba38113","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"67f2a7fda13792edb1d2089d9ca73160","attributes":{"id":"67f2a7fda13792edb1d2089d9ca73160","tags":[],"line_color":{"units":"data","value":"#e1e1e1"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"5c934bcd66b79a60ea1ea9ba56bcf0b6","attributes":{"id":"5c934bcd66b79a60ea1ea9ba56bcf0b6","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"GlyphRenderer","id":"74785f7e6653db71daf6fe10ff9036ce","attributes":{"id":"74785f7e6653db71daf6fe10ff9036ce","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Segment","id":"67f2a7fda13792edb1d2089d9ca73160"},"hover_glyph":{"type":"Segment","id":"5c934bcd66b79a60ea1ea9ba56bcf0b6"},"name":null,"data_source":{"type":"ColumnDataSource","id":"31b95a825d2e896e2234819746681544"},"glyph":{"type":"Segment","id":"0dc46c3131bf2e318c9c8cca2ba38113"}}},{"type":"LinearAxis","id":"03c2636ac78b00d584153d3e2d4bd0c3","attributes":{"id":"03c2636ac78b00d584153d3e2d4bd0c3","tags":[],"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"axis_label":"Years since Neolithic Revolution","formatter":{"type":"NumeralTickFormatter","id":"870b6fe9bb8f16f861a599d5db21a83c"},"ticker":{"type":"BasicTicker","id":"3e45d2022fe8946de9f8a97c924aacf6"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"NumeralTickFormatter","id":"870b6fe9bb8f16f861a599d5db21a83c","attributes":{"id":"870b6fe9bb8f16f861a599d5db21a83c","tags":[],"format":"0,0"}},{"type":"BasicTicker","id":"3e45d2022fe8946de9f8a97c924aacf6","attributes":{"id":"3e45d2022fe8946de9f8a97c924aacf6","tags":[],"num_minor_ticks":0}},{"type":"Grid","id":"7d2d98c7274d56935ba06c940c8638e4","attributes":{"id":"7d2d98c7274d56935ba06c940c8638e4","tags":[],"dimension":0,"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"3e45d2022fe8946de9f8a97c924aacf6"}}},{"type":"LinearAxis","id":"72e9fc2ecc411c99c69e2b1ea5953df8","attributes":{"id":"72e9fc2ecc411c99c69e2b1ea5953df8","tags":[],"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"axis_label":"Log GDP per capita 2005","formatter":{"type":"BasicTickFormatter","id":"89794be98ea6d1542ea493a3c2003ea5"},"ticker":{"type":"BasicTicker","id":"1c1e59a7e401acf8bccf56ddf9f023f9"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"89794be98ea6d1542ea493a3c2003ea5","attributes":{"id":"89794be98ea6d1542ea493a3c2003ea5","tags":[]}},{"type":"BasicTicker","id":"1c1e59a7e401acf8bccf56ddf9f023f9","attributes":{"id":"1c1e59a7e401acf8bccf56ddf9f023f9","tags":[],"num_minor_ticks":0}},{"type":"Grid","id":"5c77d55021eae2814a899ad99f2c1deb","attributes":{"id":"5c77d55021eae2814a899ad99f2c1deb","tags":[],"dimension":1,"plot":{"type":"Plot","id":"692d7475236c7a27f4fb8de8cb57b034","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"1c1e59a7e401acf8bccf56ddf9f023f9"}}},{"type":"Range1d","id":"16f59a7327ea7cb011049754e51cd583","attributes":{"id":"16f59a7327ea7cb011049754e51cd583","tags":[],"start":0,"end":11000}},{"type":"Range1d","id":"4815589c15cea489c8879c418e37a9d9","attributes":{"id":"4815589c15cea489c8879c418e37a9d9","tags":[],"start":5.51388426399296,"end":11.5689331923438}},{"type":"ColumnDataSource","id":"31b95a825d2e896e2234819746681544","attributes":{"id":"31b95a825d2e896e2234819746681544","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[0],"y0":[8.17592683499591],"x1":[11000],"y1":[9.61843240600579]}}}]}}},"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</section>
+<section id="ancestry-adjusted" class="panel-name panel">
+<h2 class="panel-name">Ancestry-adjusted</h2>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df1</span> <span class='op'>&lt;-</span> <span class='va'>df</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span>Country <span class='op'>=</span> <span class='va'>country</span>, <span class='va'>rgdpch_2005</span>, <span class='va'>adjagyears</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>GDP.per.capita <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"$"</span>, <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>         Years.since.transition <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/pretty.html'>pretty</a></span><span class='op'>(</span><span class='va'>adjagyears</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>adjagyears</span>, data <span class='op'>=</span> <span class='va'>df1</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://hafen.github.io/rbokeh/reference/figure.html'>figure</a></span><span class='op'>(</span>xlab <span class='op'>=</span> <span class='st'>"Years since Neolithic Revolution (ancestry-adjusted)"</span>, ylab <span class='op'>=</span> <span class='st'>"Log GDP per capita 2005"</span>, </span>
+<span>       width <span class='op'>=</span> <span class='fl'>700</span>, height <span class='op'>=</span> <span class='fl'>450</span>,</span>
+<span>       xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>11000</span><span class='op'>)</span>,</span>
+<span>       tools <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pan"</span>, <span class='st'>"wheel_zoom"</span>, <span class='st'>"hover"</span>, <span class='st'>"reset"</span><span class='op'>)</span>,</span>
+<span>       toolbar_location <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_points.html'>ly_points</a></span><span class='op'>(</span><span class='va'>adjagyears</span>, <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>rgdpch_2005</span><span class='op'>)</span>, data <span class='op'>=</span> <span class='va'>df1</span>, hover <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>Country</span>, <span class='va'>GDP.per.capita</span>, <span class='va'>Years.since.transition</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/ly_abline.html'>ly_abline</a></span><span class='op'>(</span><span class='va'>z</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>  <span class='fu'><a href='https://hafen.github.io/rbokeh/reference/x_axis.html'>x_axis</a></span><span class='op'>(</span>number_formatter <span class='op'>=</span> <span class='st'>"numeral"</span>,</span>
+<span>         format <span class='op'>=</span> <span class='st'>"0,0"</span><span class='op'>)</span></span></code></pre>
+</div>
+</details>
+<div id="htmlwidget-be5b58ba513da4696c49" style="width:700px;height:450px;" class="rbokeh html-widget"></div>
+<script type="application/json" data-for="htmlwidget-be5b58ba513da4696c49">{"x":{"elementid":"c1becc46ab421e9f5e6abcc8415d71fb","modeltype":"Plot","modelid":"61aeb03470336421842ae49d0672a9b8","docid":"ff11bbc1e7facb619d1b48febf6c1e07","docs_json":{"ff11bbc1e7facb619d1b48febf6c1e07":{"version":"0.12.5","title":"Bokeh Figure","roots":{"root_ids":["61aeb03470336421842ae49d0672a9b8"],"references":[{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","attributes":{"id":"61aeb03470336421842ae49d0672a9b8","plot_width":700,"plot_height":450,"sizing_mode":"scale_both","x_range":{"type":"Range1d","id":"f2c9abddea03189db28af9342292e237"},"y_range":{"type":"Range1d","id":"a14f84381c949eb6a7a85d15f33e227e"},"left":[{"type":"LinearAxis","id":"1f332ad783f7d13c353c39e44a6736b3"}],"below":[{"type":"LinearAxis","id":"db5dc9696941e2094a14649e3501fee2"}],"right":[],"above":[],"renderers":[{"type":"GlyphRenderer","id":"f7ca434a5db3b93f2d1a349a72f1da47"},{"type":"GlyphRenderer","id":"6d4e29f3cd42ae64e14a4d8b8078d897"},{"type":"LinearAxis","id":"db5dc9696941e2094a14649e3501fee2"},{"type":"Grid","id":"c888bda2165c1e2aebd11cf62399dd87"},{"type":"LinearAxis","id":"1f332ad783f7d13c353c39e44a6736b3"},{"type":"Grid","id":"dff294f6ac173044a5e117938c4639bd"}],"extra_y_ranges":{},"extra_x_ranges":{},"tags":[],"toolbar_location":null,"min_border_left":4,"min_border_right":4,"min_border_top":4,"min_border_bottom":4,"lod_threshold":null,"toolbar":{"type":"Toolbar","id":"8f7df82760dcf5606a0eb90954093739"},"tool_events":{"type":"ToolEvents","id":"5ad88896b2554a60ba45150144f42e6c"}},"subtype":"Figure"},{"type":"Toolbar","id":"8f7df82760dcf5606a0eb90954093739","attributes":{"id":"8f7df82760dcf5606a0eb90954093739","tags":[],"active_drag":"auto","active_scroll":"auto","active_tap":"auto","tools":[{"type":"PanTool","id":"28f2a75c351d687f819f247eb436fb7d"},{"type":"WheelZoomTool","id":"a8a45f9b5abcbc96c3e7504212e4b399"},{"type":"ResetTool","id":"99450b9d1e600966bff88a221179cd5f"},{"type":"HoverTool","id":"312bab11cdaf75d3ed2a178d2f8478e5"}],"logo":null}},{"type":"PanTool","id":"28f2a75c351d687f819f247eb436fb7d","attributes":{"id":"28f2a75c351d687f819f247eb436fb7d","tags":[],"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"dimensions":"both"}},{"type":"ToolEvents","id":"5ad88896b2554a60ba45150144f42e6c","attributes":{"id":"5ad88896b2554a60ba45150144f42e6c","tags":[]},"geometries":[]},{"type":"WheelZoomTool","id":"a8a45f9b5abcbc96c3e7504212e4b399","attributes":{"id":"a8a45f9b5abcbc96c3e7504212e4b399","tags":[],"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"dimensions":"both"}},{"type":"ResetTool","id":"99450b9d1e600966bff88a221179cd5f","attributes":{"id":"99450b9d1e600966bff88a221179cd5f","tags":[],"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"}}},{"type":"HoverTool","id":"312bab11cdaf75d3ed2a178d2f8478e5","attributes":{"id":"312bab11cdaf75d3ed2a178d2f8478e5","tags":[],"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"renderers":[{"type":"GlyphRenderer","id":"f7ca434a5db3b93f2d1a349a72f1da47"}],"names":[],"anchor":"center","attachment":"horizontal","line_policy":"prev","mode":"mouse","point_policy":"snap_to_data","tooltips":[["Country","@hover_col_1"],["GDP.per.capita","@hover_col_2"],["Years.since.transition","@hover_col_3"]]}},{"type":"ColumnDataSource","id":"d7a0ad4ddbc744a4ad9edd0a75d9b728","attributes":{"id":"d7a0ad4ddbc744a4ad9edd0a75d9b728","tags":[],"column_names":["x","y","hover_col_1","hover_col_2","hover_col_3"],"selected":[],"data":{"x":[8750,4000,7272.58203125,8015,5875.408203125,6577.5,7905,7669.5,5560,4557.5,5539.39990234375,4693.28076171875,3099.89990234375,5580.5,4866.1435546875,1563.59997558594,5773.546875,7521.9599609375,2900,3484,4620,2996.09985351562,6342.13037109375,4169.1728515625,3568.14990234375,2708.39990234375,6013.9736328125,9000,4983.1259765625,3000,5413.67578125,3549,5522.3974609375,8732.5,5561,4959.5537109375,4921.0966796875,7079,5100,4118,4000,3500,7321.400390625,3045.14990234375,3017.5,6365,3486.60009765625,8500,4239.88232421875,3151.5,3142.5,5840.48486328125,2737.609375,4922.69677734375,8876,7401.919921875,8475.5,4100,9492.5,9773.0400390625,5021.61962890625,8764.48046875,7948.5,3047.83984375,4500,10400,6057,3593.5,4500,8330.75,6390,4257.89990234375,10325,1500,3220.07934570312,5609.39990234375,3987.40014648438,5657.5,2033,1808.40002441406,5962.5,3014.5,7548.80029296875,3500,7471.88818359375,4979.056640625,6896.41015625,5072,3799.5,1400,2140.97509765625,6000,6004.87109375,4752.39990234375,5069.79248046875,3599,2734.5,5000,7753.8251953125,8960,4960.9111328125,4000,5708.04833984375,5061.30908203125,5000,6022.5,6500.55517578125,8124.15234375,7513.2998046875,5061,2540,7596.93505859375,3096,3187.16674804688,8187.5,3545.10009765625,2790.55004882812,7203.580078125,5175,4869.60009765625,1609.59997558594,5459.5,5803.5,10373,6943,2500,5990,3152.89990234375,5609.45166015625,4500,9638,7857.5,3500,6214,7500,5545.9599609375,5900.6396484375,7145.779296875,6397.5,5519.7763671875,6075,3054.5,2237.69995117188,1480,1356.98999023438,7518,8930,6270,7003.5,6611.35009765625,7055.1904296875,6502.5,8026.5,7577.77001953125],"y":[6.4963051024268,8.74689782791034,9.51805805526611,8.9509035371522,10.4435823431568,10.4178168749253,8.71290580622599,10.1141894166759,7.68064114714803,9.84091231123618,10.3656521258675,9.1179488876177,7.23001125393541,8.2999624229493,8.18216172303045,9.0545833408082,9.10501316739548,9.0606295771159,7.16299659792817,6.47887006906848,7.82917988028028,7.85533183655894,10.4513339051578,8.83205325713827,6.71812716253309,7.79165920576908,9.73894843125083,8.77693744009946,8.87161093158306,8.21138725753325,9.27742724852075,7.74757860177006,9.10597209392249,10.0527054107559,10.3785448577081,9.00690926744057,8.65798661589708,8.56217710686589,8.5732021221539,9.66770031876826,6.87024581564908,10.3009696440099,10.2674119563081,8.97423834316004,7.23433517169893,8.80341203566846,7.33308484547633,10.1451411528672,8.65024611265799,8.19207754230601,6.40091361138271,7.7384840800709,7.29512909248023,8.12204588705096,10.5494411647826,9.69380782638559,8.12128350520796,8.49371283690809,9.15886593453848,8.21136319220842,10.5625427672798,10.0135581983289,10.2326062977423,9.00064191757334,10.3016024718806,8.46845983715653,9.45472959590547,7.60956224284373,10.0009949792665,10.6278559119256,8.20185644802621,9.40247809414146,8.95960197056128,7.63552288118679,5.88568551397942,9.77604140185624,9.43160661537507,11.1733783338276,6.76017115732608,7.07294493700311,9.70999346322662,7.13414093228061,9.88090328467187,7.62116262614629,9.81694016589769,9.26350108668759,8.11556261661055,7.79947481911677,8.53630001526964,7.59483311391467,8.68082664120703,7.54210064211318,10.3932348066864,10.108527594735,7.65553986927254,6.74699261884008,7.50120985155647,10.7297326211265,10.0298084292397,8.09235672774696,8.9802455312757,7.66225831669813,8.4318453802175,8.6541645589742,8.30969708560671,9.44668561496449,9.88133160757756,11.1971319423574,9.0132597306275,9.35871878813698,7.01725245390587,9.93940202484371,7.53316677563041,7.43820184419301,10.5568865839979,6.14433559123754,9.17053592598403,10.2802259372593,8.58085180895059,7.58060844444485,8.86700470416374,10.3306312717693,10.4757131224769,7.8616780792177,7.87381792881082,6.75628385788917,9.06721038127612,6.78985093622469,9.9712871993928,9.13651059129189,8.87246349696845,9.20074852080681,7.06241325896136,9.05515432561276,10.7631870993715,10.3181038247859,10.642334654911,9.31981800612712,7.5217162981767,9.30318239830886,8.08835632225228,5.90299380942703,7.49093771919741,7.67156260896819,8.20730571669009,8.35559892619642,10.1096555656318,7.61715330235701,10.0369602276165,9.59790666438825,9.43082406086561,9.87407593965701,10.2937625473001,8.77768536206103],"hover_col_1":["Afghanistan             ","Algeria                 ","Argentina               ","Armenia                 ","Australia               ","Austria                 ","Azerbaijan              ","Bahrain                 ","Bangladesh              ","Belarus                 ","Belgium                 ","Belize                  ","Benin                   ","Bhutan                  ","Bolivia                 ","Botswana                ","Brazil                  ","Bulgaria                ","Burkina Faso            ","Burundi                 ","Kampuchea, Democratic   ","Cameroon                ","Canada                  ","Cape Verde              ","Central African Republic","Chad                    ","Chile                   ","China                   ","Colombia                ","Congo                   ","Costa Rica              ","Cote d'Ivoire           ","Cuba                    ","Cyprus                  ","Denmark                 ","Dominican Republic      ","Ecuador                 ","Egypt                   ","El Salvador             ","Estonia                 ","Ethiopia                ","Finland                 ","France                  ","Gabon                   ","The Gambia              ","Georgia                 ","Ghana                   ","Greece                  ","Guatemala               ","Guinea                  ","Guinea Bissau           ","Guyana                  ","Haiti                   ","Honduras                ","Hong Kong               ","Hungary                 ","India                   ","Indonesia               ","Iran                    ","Iraq                    ","Ireland                 ","Israel                  ","Italy                   ","Jamaica                 ","Japan                   ","Jordan                  ","Kazakhstan              ","Kenya                   ","Korea                   ","Kuwait                  ","Kyrgyzstan              ","Latvia                  ","Lebanon                 ","Lesotho                 ","Liberia                 ","Libya                   ","Lithuania               ","Luxembourg              ","Madagascar              ","Malawi                  ","Malaysia                ","Mali                    ","Malta                   ","Mauritania              ","Mauritius               ","Mexico                  ","Moldova                 ","Mongolia                ","Morocco                 ","Mozambique              ","Namibia                 ","Nepal                   ","Netherlands             ","New Zealand             ","Nicaragua               ","Niger                   ","Nigeria                 ","Norway                  ","Oman                    ","Pakistan                ","Panama                  ","Papua New Guinea        ","Paraguay                ","Peru                    ","Philippines             ","Poland                  ","Portugal                ","Qatar                   ","Romania                 ","Russian Federation      ","Rwanda                  ","Saudi Arabia            ","Senegal                 ","Sierra Leone            ","Singapore               ","Somalia                 ","South Africa            ","Spain                   ","Sri Lanka               ","Sudan                   ","Swaziland               ","Sweden                  ","Switzerland             ","Syria                   ","Tajikistan              ","Tanzania                ","Thailand                ","Togo                    ","Trinidad and Tobago     ","Tunisia                 ","Turkey                  ","Turkmenistan            ","Uganda                  ","Ukraine                 ","United Arab Emirates    ","United Kingdom          ","U.S.A                   ","Uruguay                 ","Uzbekistan              ","Venezuela               ","Vietnam                 ","Zaire                   ","Zambia                  ","Zimbabwe                ","Angola                  ","Albania                 ","Taiwan                  ","Laos                    ","Slovenia                ","Slovakia                ","Croatia                 ","Czech Republic          ","Germany                 ","Macedonia               "],"hover_col_2":["$   663","$ 6,291","$13,603","$ 7,715","$34,323","$33,450","$ 6,081","$24,691","$ 2,166","$18,787","$31,750","$ 9,117","$ 1,380","$ 4,024","$ 3,577","$ 8,558","$ 9,000","$ 8,610","$ 1,291","$   651","$ 2,513","$ 2,579","$34,590","$ 6,850","$   827","$ 2,420","$16,966","$ 6,483","$ 7,127","$ 3,683","$10,694","$ 2,316","$ 9,009","$23,219","$32,162","$ 8,159","$ 5,756","$ 5,230","$ 5,288","$15,799","$   963","$29,761","$28,779","$ 7,897","$ 1,386","$ 6,657","$ 1,530","$25,467","$ 5,712","$ 3,612","$   602","$ 2,295","$ 1,473","$ 3,368","$38,156","$16,217","$ 3,365","$ 4,884","$ 9,498","$ 3,683","$38,659","$22,327","$27,795","$ 8,108","$29,780","$ 4,762","$12,768","$ 2,017","$22,048","$41,269","$ 3,648","$12,118","$ 7,782","$ 2,070","$   360","$17,607","$12,477","$71,209","$   863","$ 1,180","$16,481","$ 1,254","$19,553","$ 2,041","$18,342","$10,546","$ 3,346","$ 2,439","$ 5,096","$ 1,988","$ 5,889","$ 1,886","$32,638","$24,551","$ 2,112","$   851","$ 1,810","$45,694","$22,693","$ 3,269","$ 7,945","$ 2,127","$ 4,591","$ 5,734","$ 4,063","$12,666","$19,562","$72,921","$ 8,211","$11,600","$ 1,116","$20,731","$ 1,869","$ 1,700","$38,441","$   466","$ 9,610","$29,150","$ 5,329","$ 1,960","$ 7,094","$30,657","$35,444","$ 2,596","$ 2,628","$   859","$ 8,666","$   889","$21,403","$ 9,288","$ 7,133","$ 9,905","$ 1,167","$ 8,563","$47,249","$30,276","$41,870","$11,157","$ 1,848","$10,973","$ 3,256","$   366","$ 1,792","$ 2,146","$ 3,668","$ 4,254","$24,579","$ 2,033","$22,856","$14,734","$12,467","$19,420","$29,548","$ 6,488"],"hover_col_3":[" 8,750"," 4,000"," 7,273"," 8,015"," 5,875"," 6,578"," 7,905"," 7,670"," 5,560"," 4,558"," 5,539"," 4,693"," 3,100"," 5,580"," 4,866"," 1,564"," 5,774"," 7,522"," 2,900"," 3,484"," 4,620"," 2,996"," 6,342"," 4,169"," 3,568"," 2,708"," 6,014"," 9,000"," 4,983"," 3,000"," 5,414"," 3,549"," 5,522"," 8,732"," 5,561"," 4,960"," 4,921"," 7,079"," 5,100"," 4,118"," 4,000"," 3,500"," 7,321"," 3,045"," 3,018"," 6,365"," 3,487"," 8,500"," 4,240"," 3,152"," 3,142"," 5,840"," 2,738"," 4,923"," 8,876"," 7,402"," 8,476"," 4,100"," 9,492"," 9,773"," 5,022"," 8,764"," 7,948"," 3,048"," 4,500","10,400"," 6,057"," 3,594"," 4,500"," 8,331"," 6,390"," 4,258","10,325"," 1,500"," 3,220"," 5,609"," 3,987"," 5,658"," 2,033"," 1,808"," 5,962"," 3,014"," 7,549"," 3,500"," 7,472"," 4,979"," 6,896"," 5,072"," 3,800"," 1,400"," 2,141"," 6,000"," 6,005"," 4,752"," 5,070"," 3,599"," 2,734"," 5,000"," 7,754"," 8,960"," 4,961"," 4,000"," 5,708"," 5,061"," 5,000"," 6,022"," 6,501"," 8,124"," 7,513"," 5,061"," 2,540"," 7,597"," 3,096"," 3,187"," 8,188"," 3,545"," 2,791"," 7,204"," 5,175"," 4,870"," 1,610"," 5,460"," 5,804","10,373"," 6,943"," 2,500"," 5,990"," 3,153"," 5,609"," 4,500"," 9,638"," 7,858"," 3,500"," 6,214"," 7,500"," 5,546"," 5,901"," 7,146"," 6,398"," 5,520"," 6,075"," 3,054"," 2,238"," 1,480"," 1,357"," 7,518"," 8,930"," 6,270"," 7,004"," 6,611"," 7,055"," 6,502"," 8,026"," 7,578"]}}},{"type":"Circle","id":"47f7b4b0b32b168e80548caaf0a25c04","attributes":{"id":"47f7b4b0b32b168e80548caaf0a25c04","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"747d92fb20ad482fcb0bf0ec1f62c857","attributes":{"id":"747d92fb20ad482fcb0bf0ec1f62c857","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#e1e1e1"},"fill_color":{"units":"data","value":"#e1e1e1"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":0.5},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"Circle","id":"466a9c32e573354660940f3fc38af053","attributes":{"id":"466a9c32e573354660940f3fc38af053","tags":[],"size":{"units":"screen","value":10},"line_color":{"units":"data","value":"#1F77B4"},"fill_color":{"units":"data","value":"#1F77B4"},"line_alpha":{"units":"data","value":1},"fill_alpha":{"units":"data","value":1},"x":{"units":"data","field":"x"},"y":{"units":"data","field":"y"}}},{"type":"GlyphRenderer","id":"f7ca434a5db3b93f2d1a349a72f1da47","attributes":{"id":"f7ca434a5db3b93f2d1a349a72f1da47","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Circle","id":"747d92fb20ad482fcb0bf0ec1f62c857"},"hover_glyph":{"type":"Circle","id":"466a9c32e573354660940f3fc38af053"},"name":null,"data_source":{"type":"ColumnDataSource","id":"d7a0ad4ddbc744a4ad9edd0a75d9b728"},"glyph":{"type":"Circle","id":"47f7b4b0b32b168e80548caaf0a25c04"}}},{"type":"ColumnDataSource","id":"790a5d565ab645289de5483b975de417","attributes":{"id":"790a5d565ab645289de5483b975de417","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[0],"y0":[7.27829037251616],"x1":[1],"y1":[7.27856546373649]}}},{"type":"Segment","id":"84441ef20e7642ced95455cf3c3eb51c","attributes":{"id":"84441ef20e7642ced95455cf3c3eb51c","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"4579c1bf2f7cbb7fd97c4b923aa2c5b8","attributes":{"id":"4579c1bf2f7cbb7fd97c4b923aa2c5b8","tags":[],"line_color":{"units":"data","value":"#e1e1e1"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"Segment","id":"5420b6f79a948c0dd04696e4bece59f3","attributes":{"id":"5420b6f79a948c0dd04696e4bece59f3","tags":[],"line_color":{"units":"data","value":"black"},"line_width":{"units":"data","value":1},"x0":{"units":"data","field":"x0"},"y0":{"units":"data","field":"y0"},"x1":{"units":"data","field":"x1"},"y1":{"units":"data","field":"y1"}}},{"type":"GlyphRenderer","id":"6d4e29f3cd42ae64e14a4d8b8078d897","attributes":{"id":"6d4e29f3cd42ae64e14a4d8b8078d897","tags":[],"selection_glyph":null,"nonselection_glyph":{"type":"Segment","id":"4579c1bf2f7cbb7fd97c4b923aa2c5b8"},"hover_glyph":{"type":"Segment","id":"5420b6f79a948c0dd04696e4bece59f3"},"name":null,"data_source":{"type":"ColumnDataSource","id":"1d5e48f8ec98d877f963fda08692f445"},"glyph":{"type":"Segment","id":"84441ef20e7642ced95455cf3c3eb51c"}}},{"type":"LinearAxis","id":"db5dc9696941e2094a14649e3501fee2","attributes":{"id":"db5dc9696941e2094a14649e3501fee2","tags":[],"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"axis_label":"Years since Neolithic Revolution (ancestry-adjusted)","formatter":{"type":"NumeralTickFormatter","id":"393d49d705c8adae0265e48d6e45a70a"},"ticker":{"type":"BasicTicker","id":"3e8baeb73fe3794b9d175dff38107038"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"NumeralTickFormatter","id":"393d49d705c8adae0265e48d6e45a70a","attributes":{"id":"393d49d705c8adae0265e48d6e45a70a","tags":[],"format":"0,0"}},{"type":"BasicTicker","id":"3e8baeb73fe3794b9d175dff38107038","attributes":{"id":"3e8baeb73fe3794b9d175dff38107038","tags":[],"num_minor_ticks":5}},{"type":"Grid","id":"c888bda2165c1e2aebd11cf62399dd87","attributes":{"id":"c888bda2165c1e2aebd11cf62399dd87","tags":[],"dimension":0,"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"3e8baeb73fe3794b9d175dff38107038"}}},{"type":"Range1d","id":"f2c9abddea03189db28af9342292e237","attributes":{"id":"f2c9abddea03189db28af9342292e237","tags":[],"start":0,"end":11000}},{"type":"Range1d","id":"a14f84381c949eb6a7a85d15f33e227e","attributes":{"id":"a14f84381c949eb6a7a85d15f33e227e","tags":[],"start":5.51388426399296,"end":11.5689331923438}},{"type":"LinearAxis","id":"1f332ad783f7d13c353c39e44a6736b3","attributes":{"id":"1f332ad783f7d13c353c39e44a6736b3","tags":[],"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"axis_label":"Log GDP per capita 2005","formatter":{"type":"BasicTickFormatter","id":"45551c61c866e150431b590ac6c2ad37"},"ticker":{"type":"BasicTicker","id":"534e6ccb27f8977387542e888a69a901"},"visible":true,"axis_label_text_font_size":"12pt"}},{"type":"BasicTickFormatter","id":"45551c61c866e150431b590ac6c2ad37","attributes":{"id":"45551c61c866e150431b590ac6c2ad37","tags":[]}},{"type":"BasicTicker","id":"534e6ccb27f8977387542e888a69a901","attributes":{"id":"534e6ccb27f8977387542e888a69a901","tags":[],"num_minor_ticks":5}},{"type":"Grid","id":"dff294f6ac173044a5e117938c4639bd","attributes":{"id":"dff294f6ac173044a5e117938c4639bd","tags":[],"dimension":1,"plot":{"type":"Plot","id":"61aeb03470336421842ae49d0672a9b8","subtype":"Figure"},"ticker":{"type":"BasicTicker","id":"534e6ccb27f8977387542e888a69a901"}}},{"type":"ColumnDataSource","id":"1d5e48f8ec98d877f963fda08692f445","attributes":{"id":"1d5e48f8ec98d877f963fda08692f445","tags":[],"column_names":["x0","y0","x1","y1"],"selected":[],"data":{"x0":[0],"y0":[7.27829037251616],"x1":[11000],"y1":[10.3042937961582]}}}]}}},"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</section>
+</div>
+<p>I think the correlations above provide pretty fascinating insights, but they are all flawed, of course. Countries are not random realizations of a well-defined stochastic process. Nor are they equal: it’s not clear that the experiences of a Singapore or a Cape Verde should hold equal weight to the experiences of an India or a China when generalizing about long-run economic development. Which are the exceptions and which are the rules? Do rules even exist?</p>
+<p>The field of empirical economic history have done much to extend, refine, and qualify the basic results shown here. Hopefully I’ll write about them in future posts.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Ten years later and I still don’t have clear answers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
