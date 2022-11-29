@@ -11,7 +11,7 @@
     <item>
       <title>More on the great post-1500 migrations</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-26-migration</link>
-      <description/>
+      <description>Which countries have the most diverse ancestors? Which countries have the most descendants around the world today?</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-26-migration</guid>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
       <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-26-migration/immigrant.jpg" medium="image" type="image/jpeg"/>
@@ -19,7 +19,7 @@
     <item>
       <title>The roots of economic development</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-25-roots</link>
-      <description/>
+      <description>Visualizing some key results in Spolaore and Wacziarg's 2013 survey</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-25-roots</guid>
       <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
       <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/ancestry.jpg" medium="image" type="image/jpeg"/>
@@ -27,15 +27,15 @@
     <item>
       <title>The emotional shape of novels</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels</link>
-      <description/>
+      <description>Using sentiment analysis, I chart the emotional highs and lows of three classic novels</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels</guid>
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/shape-of-novels_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1440" height="614"/>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/shape-of-novels_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1440" height="672"/>
     </item>
     <item>
       <title>That FTX balance sheet</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx</link>
-      <description/>
+      <description>SBF shops around for investors with a balance sheet that is emphatically not GAAP</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx</guid>
       <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
       <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx/ftx_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
@@ -43,23 +43,23 @@
     <item>
       <title>Visualizing Elon Musk's Twitter addiction</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</link>
-      <description/>
+      <description>The world's busiest billionaire finds the time to tweet at all hours of the day</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</guid>
       <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-13-elon/elon_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1440" height="576"/>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-13-elon/elon_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1440" height="816"/>
     </item>
     <item>
       <title>Should you dual wield y axes?</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</link>
-      <description/>
+      <description>Points to keep in mind when resorting to a secondary axis</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</guid>
       <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield/dual-wield_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield/dual-wield_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1440" height="768"/>
     </item>
     <item>
-      <title>Mapping the Metro Manila Subway</title>
+      <title>Mapping the Metro Manila subway</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</link>
-      <description/>
+      <description>In a fit of wishful thinking, I use Leaflet to map the Metro Manila subway as if it existed</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</guid>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
       <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway/subwaymap.jpg" medium="image" type="image/jpeg"/>
@@ -67,7 +67,7 @@
     <item>
       <title>Exercises in plotting WDI data</title>
       <link>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</link>
-      <description/>
+      <description>Pull the data with R instead of downloading spreadsheet after spreadsheet</description>
       <guid>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</guid>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
       <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
