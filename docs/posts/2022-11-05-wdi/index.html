@@ -90,7 +90,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
 <title>Two Points Make a Line: Exercises in plotting WDI data</title>
 
-<meta property="description" itemprop="description" content=""/>
+<meta property="description" itemprop="description" content="Pull the data with R instead of downloading spreadsheet after spreadsheet"/>
 
 <link rel="canonical" href="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"/>
 
@@ -101,7 +101,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="Two Points Make a Line: Exercises in plotting WDI data"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content=""/>
+<meta property="og:description" content="Pull the data with R instead of downloading spreadsheet after spreadsheet"/>
 <meta property="og:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"/>
 <meta property="og:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png"/>
 <meta property="og:image:width" content="1248"/>
@@ -112,7 +112,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Two Points Make a Line: Exercises in plotting WDI data"/>
-<meta property="twitter:description" content=""/>
+<meta property="twitter:description" content="Pull the data with R instead of downloading spreadsheet after spreadsheet"/>
 <meta property="twitter:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"/>
 <meta property="twitter:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png"/>
 <meta property="twitter:image:width" content="1248"/>
@@ -122,7 +122,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Exercises in plotting WDI data"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2022-11-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Exercises in plotting WDI data"]},{"type":"character","attributes":{},"value":["Pull the data with R instead of downloading spreadsheet after spreadsheet"]},{"type":"character","attributes":{},"value":["2022-11-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2264,6 +2264,15 @@ d-article div.sourceCode pre {
   color: black;
   padding: 5px 5px 5px 18px;
   overflow: auto !important;
+}
+
+d-article ul.panel-tabs {
+  margin-top: 20px;
+}
+
+d-article section.panel.panel-active {
+  margin-top: 0px;
+  margin-bottom: 20px;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2420,7 +2429,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.17/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.18/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2441,7 +2450,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Exercises in plotting WDI data","description":"","authors":[],"publishedDate":"2022-11-05T00:00:00.000+08:00"}
+{"title":"Exercises in plotting WDI data","description":"Pull the data with R instead of downloading spreadsheet after spreadsheet","authors":[],"publishedDate":"2022-11-05T00:00:00.000+08:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2467,7 +2476,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <h1>Exercises in plotting WDI data</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p>Pull the data with R instead of downloading spreadsheet after spreadsheet</p>
 </div>
 
 
@@ -2480,7 +2489,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://vincentarelbundock.github.io/WDI/'>WDI</a></span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<h2 id="a-simple-line-chart">A simple line chart</h2>
 <p>To start, let’s try plotting the GDP per capita of the Philippines and Vietnam in constant 2015 US$.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2540,8 +2548,7 @@ Show code
 <p><img src="wdi_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <p>Now this to me is pleasing to the eye. A document populated with charts like this—as opposed to charts like the first two above—would be much more motivating to read.</p>
-<h2 id="a-labeled-scatterplot">A labeled scatterplot</h2>
-<p>I think one useful way to categorize countries is according to whether they are big and rich, big and poor, small and rich, or small and poor. We can visualize this in a scatterplot with population on one axis and GDP per capita on the other. Let’s load up the data and plot the scatter.</p>
+<p>Here’s a second exercise. I think one useful way to categorize countries is according to whether they are big and rich, big and poor, small and rich, or small and poor. We can visualize this in a scatterplot with population on one axis and GDP per capita on the other. Let’s load up the data and plot the scatter.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://vincentarelbundock.github.io/WDI/reference/WDI.html'>WDI</a></span><span class='op'>(</span>country <span class='op'>=</span> <span class='st'>"all"</span>,</span>
