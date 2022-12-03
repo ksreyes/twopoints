@@ -2,75 +2,83 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
     <title>Two Points Make a Line</title>
-    <link>https://ksreyes.github.io/twopoints/</link>
-    <atom:link href="https://ksreyes.github.io/twopoints/index.xml" rel="self" type="application/rss+xml"/>
+    <link>https://twopoints.blog/</link>
+    <atom:link href="https://twopoints.blog/index.xml" rel="self" type="application/rss+xml"/>
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 26 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>War is over (if you want it?)</title>
+      <link>https://twopoints.blog/posts/2022-12-03-war-is-over</link>
+      <description>A tally of active armed conflicts as of Christmas Day, since 1946</description>
+      <guid>https://twopoints.blog/posts/2022-12-03-war-is-over</guid>
+      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://twopoints.blog/posts/2022-12-03-war-is-over/war-is-over_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1440" height="864"/>
+    </item>
     <item>
       <title>More on the great post-1500 migrations</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-26-migration</link>
+      <link>https://twopoints.blog/posts/2022-11-26-migration</link>
       <description>Which countries have the most diverse ancestors? Which countries have the most descendants around the world today?</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-26-migration</guid>
+      <guid>https://twopoints.blog/posts/2022-11-26-migration</guid>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-26-migration/immigrant.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-26-migration/immigrant.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>The roots of economic development</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-25-roots</link>
+      <link>https://twopoints.blog/posts/2022-11-25-roots</link>
       <description>Visualizing some key results in Spolaore and Wacziarg's 2013 survey</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-25-roots</guid>
+      <guid>https://twopoints.blog/posts/2022-11-25-roots</guid>
       <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/ancestry.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-25-roots/ancestry.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>The emotional shape of novels</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels</link>
+      <link>https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels</link>
       <description>Using sentiment analysis, I chart the emotional highs and lows of three classic novels</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels</guid>
+      <guid>https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels</guid>
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-19-the-emotional-shape-of-novels/shape-of-novels_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1440" height="768"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/shape-of-novels_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1440" height="768"/>
     </item>
     <item>
       <title>That FTX balance sheet</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx</link>
+      <link>https://twopoints.blog/posts/2022-11-15-ftx</link>
       <description>SBF shops around for investors with a balance sheet that is emphatically not GAAP</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx</guid>
+      <guid>https://twopoints.blog/posts/2022-11-15-ftx</guid>
       <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-15-ftx/ftx_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-15-ftx/ftx_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Visualizing Elon Musk's Twitter addiction</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</link>
+      <link>https://twopoints.blog/posts/2022-11-13-elon</link>
       <description>The world's busiest billionaire finds the time to tweet at all hours of the day</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-13-elon</guid>
+      <guid>https://twopoints.blog/posts/2022-11-13-elon</guid>
       <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-13-elon/elon_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1440" height="816"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-13-elon/elon_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1440" height="816"/>
     </item>
     <item>
       <title>Should you dual wield y axes?</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</link>
+      <link>https://twopoints.blog/posts/2022-11-10-dual-wield</link>
       <description>Points to keep in mind when resorting to a secondary axis</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield</guid>
+      <guid>https://twopoints.blog/posts/2022-11-10-dual-wield</guid>
       <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-10-dual-wield/dual-wield_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1440" height="768"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-10-dual-wield/dual-wield_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1440" height="768"/>
     </item>
     <item>
       <title>Mapping the Metro Manila subway</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</link>
+      <link>https://twopoints.blog/posts/2022-11-08-metro-manila-subway</link>
       <description>In a fit of wishful thinking, I use Leaflet to map the Metro Manila subway as if it existed</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway</guid>
+      <guid>https://twopoints.blog/posts/2022-11-08-metro-manila-subway</guid>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-08-metro-manila-subway/subwaymap.jpg" medium="image" type="image/jpeg"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-08-metro-manila-subway/subwaymap.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Exercises in plotting WDI data</title>
-      <link>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</link>
+      <link>https://twopoints.blog/posts/2022-11-05-wdi</link>
       <description>Pull the data with R instead of downloading spreadsheet after spreadsheet</description>
-      <guid>https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi</guid>
+      <guid>https://twopoints.blog/posts/2022-11-05-wdi</guid>
       <pubDate>Sat, 05 Nov 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://twopoints.blog/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>
