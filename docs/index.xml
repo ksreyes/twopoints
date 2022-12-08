@@ -7,7 +7,15 @@
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>I'm gonna carry that weight</title>
+      <link>https://twopoints.blog/posts/2022-12-07-im-gonna-carry-that-weight</link>
+      <description>Using a massive dataset of powerlifting competitors to set my gym goals for next year</description>
+      <guid>https://twopoints.blog/posts/2022-12-07-im-gonna-carry-that-weight</guid>
+      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://twopoints.blog/posts/2022-12-07-im-gonna-carry-that-weight/benchmark_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1440" height="998"/>
+    </item>
     <item>
       <title>War is over (if you want it?)</title>
       <link>https://twopoints.blog/posts/2022-12-03-war-is-over</link>
