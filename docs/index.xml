@@ -7,7 +7,15 @@
     <description>Documenting my excursions into visualizing data
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Luzon's hiking trails</title>
+      <link>https://twopoints.blog/posts/2022-12-15-mountains</link>
+      <description>Creating a stylized map of mountains using ridgelines</description>
+      <guid>https://twopoints.blog/posts/2022-12-15-mountains</guid>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://twopoints.blog/posts/2022-12-15-mountains/mountains_files/figure-html5/unnamed-chunk-9-1.png" medium="image" type="image/png" width="1440" height="960"/>
+    </item>
     <item>
       <title>I'm gonna carry that weight</title>
       <link>https://twopoints.blog/posts/2022-12-07-im-gonna-carry-that-weight</link>
