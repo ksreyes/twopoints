@@ -1,0 +1,94 @@
+---
+title: "War is over (if you want it?)"
+description: "A tally of active armed conflicts as of Christmas Day, since 1946"
+date: 2022-12-03
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(showtext)
+
+opts_chunk$set(comment=NA, message=FALSE, warning=FALSE, fig.showtext=TRUE, dev="png", dev.args=list(type="cairo-png"))
+
+font_add_google("Karla", "karla")
+```
+
+People's feelings about the Christmas season span a wide range, from very positive to very negative. 
+
+As for where I fall, well: 
+
+```{r, code_folding=TRUE, fig.width=7.5, fig.height=4.5, preview=TRUE}
+library(tidyverse)
+library(lubridate)
+
+df <- read_csv("ucdp-prio-acd-221.csv") %>%
+  select(conflict_id, location, year, type_of_conflict, region, ep_end_date, region) %>%
+  mutate(type_of_conflict = factor(type_of_conflict),
+         xmas = as.Date(paste0(year, "-12-25")),
+         count = ifelse(!(ep_end_date > xmas), 0, 1)) %>%
+  replace_na(list(count = 1))
+
+conflicts <- df %>%
+  group_by(year, type_of_conflict) %>%
+  summarize(count = sum(count)) %>%
+  ungroup()
+
+ggplot(conflicts, aes(x = year, y = count, fill = type_of_conflict)) + 
+  geom_bar(stat = "identity", position = "stack", width = .7) +
+  geom_hline(yintercept = 0, linewidth = .25, color = "black") + 
+  labs(title = "Another year over",
+       subtitle = "Active armed conflicts as of Christmas Day, 1946-2021") +
+  scale_fill_manual(name = "Type of conflict",
+                    labels = c("Extrasystemtic", "Interstate", "Intrastate", "Internationalized intrastate"),
+                    values = rev(c("#1046b1", "#c52e9b", "#ff505b", "#ffa600"))) +
+  theme_minimal(base_family = "karla") +
+  theme(plot.title = element_text(size = 16, face = "bold", hjust = .5),
+        plot.subtitle = element_text(size = 14, hjust = .5, margin = margin(b = 15)),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_text(size = 12, margin = margin(t = 5)),
+        axis.text.y = element_text(size = 12, margin = margin(r = 5)),
+        legend.position = "bottom",
+        legend.title = element_text(size = 11, face = "bold", margin = margin(r = 10)),
+        legend.text = element_text(size = 11),
+        legend.key.size = unit(.4, "lines"),
+        panel.background = element_rect(fill = "gray97", color = NA),
+        panel.grid.major.x = element_blank(),
+        panel.grid.major.y = element_line(color = "white"),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.minor.y = element_blank())
+
+```
+
+The data is from the [UCDP/PRIO Armed Conflict Dataset version 22.1](https://ucdp.uu.se/downloads/index.html). I'll go through how I constructed the above chart. 
+
+First, some words about the dataset. Each observation is a conflict-year. A conflict is dated from its first battle-related death, but only active "episodes"---defined as 25 battle-related deaths---are recorded in the database. For example, the Basque conflict has the following entries:
+
+```{r}
+library(knitr)
+
+read_csv("ucdp-prio-acd-221.csv") %>%
+  select(conflict_id, side_a, side_b, year, start_date, start_date2, ep_end_date) %>%
+  filter(conflict_id == "342") %>%
+  kable()
+```
+
+While it is recorded as starting on 7 June 1968, its first active episode started on 22 October 1978 and lasted until 29 December 1982. A second episode occurred from 23 December 1985 to 31 December 1987, then a third from 28 June to 13 December 1991. For my purposes, this would count as an active conflict for the Christmas Days of 1978-1982 and 1985-1987. Not 1991 however, since that episode ended right before Christmas.
+
+For each conflict-year, I therefore need to construct a dummy to indicate whether it is a Christmas conflict or not. I do it in three steps. First, I construct the variable `xmas` to set the Christmas Day for each year. Second, I set the variable `count` to 0 if the conflict-year's `ep_end_date` occurs before Christmas. Finally, for all cases where `ep_end_date` is NA, I set `count` to 1. 
+
+```{r}
+df <- read_csv("ucdp-prio-acd-221.csv") %>%
+  mutate(xmas = as.Date(paste0(year, "-12-25")),
+         count = ifelse(!(ep_end_date > xmas), 0, 1)) %>%
+  replace_na(list(count = 1))
+```
+
+Then it's a simple matter of counting the active conflicts per year and constructing a bar chart.  to illustrate the depressing fact that Christmas 2021 saw an all-time high in active conflicts worldwide.
+
+To end, here's the song that inspired this post. Have a bad Christmas season everybody.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zr9EOFuuIk4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

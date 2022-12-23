@@ -1,0 +1,212 @@
+---
+title: "The emotional shape of novels"
+description: "Using sentiment analysis, I chart the emotional highs and lows of three classic novels"
+date: 2022-11-19
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(showtext)
+
+opts_chunk$set(comment=NA, message=FALSE, warning=FALSE, fig.showtext=TRUE, dev="png", dev.args=list(type="cairo-png"))
+
+font_add_google("Karla", "karla")
+```
+
+Novels can take you for such a ride. 
+
+Today I'm experimenting with sentiment analysis on some novels I've recently read. I'll be using `tidytext` with data from `gutenbergr` (i.e. Project Gutenberg), which means I'm restricted to the classics. I read three this year: *Swann's Way* by Marcel Proust, *Tess of the d'Urbervilles* by Thomas Hardy, and *The Age of Innocence* by Edith Wharton.
+
+Quick review of each. (1) It takes a certain mood to be reading Proust. I got through *Within a Budding Grove* but found halfway through that oops I'm not in the mood anymore, so I stopped searching for that lost time. (2) While I enjoyed Hardy's *Far from the Madding Crowd*, *Tess* was such an unrelenting depression parade that I was feeling numb by the end of it. (3) Ah, *Age of Innocence* is one of my all-time favorites. I have been, at various points in my life, Newland, Ellen, and May. My God, I might have even been a Julius Beaufort.
+
+Let's load up these works.
+
+```{r}
+library(tidyverse)
+library(tidytext)
+library(gutenbergr)
+
+# Get the IDs
+gutenberg_works(title %in% c("Swann's Way", 
+                             "Tess of the d'Urbervilles: A Pure Woman", 
+                             "The Age of Innocence"))
+
+books <- gutenberg_download(c(110, 541, 7178)) %>%
+  filter(text != "") %>%
+  group_by(gutenberg_id) %>%
+  mutate(line = row_number()) %>%
+  ungroup() %>%
+  left_join(tibble(gutenberg_id = c(110, 541, 7178),
+                   title = c("Tess of the d'Urbervilles", 
+                             "The Age of Innocence", 
+                             "Swann's Way"))) %>%
+  select(title, line, text)
+```
+
+Lines refer to lines on the printed page. What I want to do is split each work into 100 equal sized groups of lines, quantify the sentiment of each, and map the emotional shape of the novel. I'm using the AFINN lexicon, which assigns a score between -5 and 5 to about 2500 English words. More negative scores imply more negative sentiments, and vice nersa. 
+
+The following code breaks up the works so that each row corresponds to one word. Uninteresting words like "the" are removed with `anti_join(stop_words)`. The remaining words are then assigned a sentiment score according to AFINN.
+
+```{r}
+books_df <- books %>%
+  unnest_tokens(word, text) %>%
+  anti_join(stop_words) %>%
+  inner_join(get_sentiments("afinn"))
+```
+
+Let's try it out first with *Tess*. It has 13,776 lines, so I split it into 100 chunks of 138 lines.
+
+```{r, echo=FALSE}
+library(ggplot2)
+
+tess <- books_df %>%
+  filter(title == "Tess of the d'Urbervilles") %>%
+  group_by(chunk = line %/% 138) %>% 
+  summarise(sentiment = sum(value))
+
+ggplot(tess, aes(x = chunk, y = sentiment)) + 
+  geom_bar(stat = "identity")
+```
+It worked! But the chart is ugly! The problem is that net sentiment swings so wildly up and down from chunk to chunk that the result looks more like a seismograph than the "shape" of the novel.
+
+Let's try a different approach. When you read a chapter and it's a happy one, you enter the next chapter starting from a position of positive sentiment. Then maybe the next chapter is a sad one, so it brings down your overall sentiment back to something like neutral. The point is, the emotional weight of a novel *builds*, it doesn't reset every chapter. Working off this idea, let's try and map *cumulative* sentiment across the novel instead of the isolated sentiment of each chunk. 
+
+The chart that works best for this is a waterfall chart, for which the `waterfalls` package will be helpful.
+
+```{r, fig.width=7.5, fig.height=4}
+library(waterfalls)
+
+tess <- tess %>%
+  mutate(chunk = factor(chunk),
+         fill = ifelse(sentiment >= 0, "#1046b1", "#d1241a"))
+
+wf <- waterfall(tess, 
+                rect_width = 1, 
+                rect_border = NA, 
+                rect_text_labels = rep(NA, nrow(tess)),
+                draw_axis.x = "none",
+                fill_by_sign = FALSE, 
+                fill_colours = tess$fill) + 
+  geom_hline(yintercept = 0, color = "gray50", size = .5, linetype = "dashed") + 
+  scale_y_continuous(name = "Sentiment (AFINN lexicon)") + 
+  theme_minimal(base_family = "karla") +
+  theme(axis.title = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 12, margin = margin(r = 10)),
+        axis.text.x = element_blank(),
+        axis.text.y = element_text(size = 12),
+        axis.ticks = element_blank(),
+        panel.background = element_rect(fill = "gray97", color = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+wf
+```
+
+Now the shape is more discernible. You can see the ups and downs of Tess' life (it's mostly downs). By the end of the book, you are at about a -600 sentiment score.
+
+For a bit of extra fanciness let's annotate the chart with the book's title, author, and cover, the last one taken from Goodreads.
+
+```{r, fig.width=7.5, fig.height=4}
+library(cowplot)
+library(magick)
+
+ggdraw(wf) + 
+  draw_image("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543250144l/42959097._SY475_.jpg",
+             x = .15, y = .1, halign = 0, valign = 0, scale = .4) + 
+  draw_label("Tess of the d'Urbervilles",
+             x = .15 + .16, y = .1 + .17, hjust = 0, vjust = .5, 
+             size = 14, fontfamily = "karla", fontface = "bold") + 
+  draw_label("by Thomas Hardy",
+             x = .15 + .16, y = .1 + .10, hjust = 0, vjust = .5, 
+             size = 12, fontfamily = "karla")
+    
+```
+
+Let's do the same for *The Age of Innocence*.
+
+```{r, code_folding=TRUE, fig.width=7.5, fig.height=4, preview=TRUE}
+age <- books_df %>%
+  filter(title == "The Age of Innocence") %>%
+  group_by(chunk = line %/% 94) %>% 
+  summarise(sentiment = sum(value)) %>%
+  mutate(chunk = factor(chunk),
+         fill = ifelse(sentiment >= 0, "#1046b1", "#d1241a"))
+
+wf <- waterfall(age, 
+                rect_width = 1, 
+                rect_border = NA, 
+                rect_text_labels = rep(NA, nrow(age)),
+                draw_axis.x = "none",
+                fill_by_sign = FALSE, 
+                fill_colours = age$fill) + 
+  geom_hline(yintercept = 0, color = "gray50", size = .5, linetype = "dashed") + 
+  scale_y_continuous(name = "Sentiment (AFINN lexicon)") + 
+  theme_minimal(base_family = "karla") +
+  theme(axis.title = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 12, margin = margin(0, 10, 0, 0)),
+        axis.text.x = element_blank(),
+        axis.text.y = element_text(size = 11),
+        axis.ticks = element_blank(),
+        panel.background = element_rect(fill = "gray97", color = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+ggdraw(wf) + 
+  draw_image("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320402548l/545294.jpg",
+             x = .53, y = .18, halign = 0, valign = 0, scale = .4) + 
+  draw_label("The Age of Innocence",
+             x = .53 + .16, y = .18 + .17, hjust = 0, vjust = .5, 
+             size = 14, fontfamily = "karla", fontface = "bold") + 
+  draw_label("by Edith Wharton",
+             x = .53 + .16, y = .18 + .10, hjust = 0, vjust = .5, 
+             size = 12, fontfamily = "karla")
+```
+
+It's a reasonably happy ride for the first half of the novel as we follow Madame Olenska's disruptions of the self-satisfied New York upper-class society of the 19th century. The turning point is right about where Newland Archer decides not to call her from up the hill. There's a steady descent as passions clash with idealistic notions of the world before ending on a bittersweet note. You end the book on a net positive, and all in all I'd say that makes sense.
+
+Finally, here is *Swann's Way*.
+
+```{r, code_folding=TRUE, fig.width=7.5, fig.height=4}
+swann <- books_df %>%
+  filter(title == "Swann's Way") %>%
+  group_by(chunk = line %/% 159) %>% 
+  summarise(sentiment = sum(value)) %>%
+  mutate(chunk = factor(chunk),
+         fill = ifelse(sentiment >= 0, "#1046b1", "#d1241a"))
+
+wf <- waterfall(swann, 
+                rect_width = 1, 
+                rect_border = NA, 
+                rect_text_labels = rep(NA, nrow(swann)),
+                draw_axis.x = "none",
+                fill_by_sign = FALSE, 
+                fill_colours = swann$fill) + 
+  geom_hline(yintercept = 0, color = "gray50", size = .5, linetype = "dashed") + 
+  scale_y_continuous(name = "Sentiment (AFINN lexicon)") + 
+  theme_minimal(base_family = "karla") +
+  theme(axis.title = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 12, margin = margin(0, 10, 0, 0)),
+        axis.text.x = element_blank(),
+        axis.text.y = element_text(size = 11),
+        axis.ticks = element_blank(),
+        panel.background = element_rect(fill = "gray97", color = NA),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+
+ggdraw(wf) + 
+  draw_image("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657565006l/133539._SY475_.jpg",
+             x = .15, y = .3, halign = 0, valign = 0, scale = .4) + 
+  draw_label("Swann's Way",
+             x = .15 + .16, y = .3 + .17, hjust = 0, vjust = .5, 
+             size = 14, fontfamily = "karla", fontface = "bold") + 
+  draw_label("by Marcel Proust",
+             x = .15 + .16, y = .3 + .10, hjust = 0, vjust = .5, 
+             size = 12, fontfamily = "karla")
+```
+
+This one surprised me. Odette's unending torment of Swann didn't strike me as particularly happy? I guess this demonstrates the limitations of literal-minded approaches to coding sentiments. If the work is heavy on irony, a word-based lexicon like AFINN wouldn't really be able to catch that.
