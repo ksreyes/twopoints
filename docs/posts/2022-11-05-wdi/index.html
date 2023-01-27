@@ -92,8 +92,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <meta property="description" itemprop="description" content="Pull the data with R instead of downloading spreadsheet after spreadsheet"/>
 
-<link rel="canonical" href="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"/>
+<link rel="canonical" href="https://twopoints.blog/posts/2022-11-05-wdi/"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="icon" type="image/png" href="../../images/logo-icon.png"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2022-11-05"/>
@@ -103,8 +104,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:title" content="Two Points Make a Line: Exercises in plotting WDI data"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Pull the data with R instead of downloading spreadsheet after spreadsheet"/>
-<meta property="og:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"/>
-<meta property="og:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png"/>
+<meta property="og:url" content="https://twopoints.blog/posts/2022-11-05-wdi/"/>
+<meta property="og:image" content="https://twopoints.blog/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png"/>
 <meta property="og:image:width" content="1248"/>
 <meta property="og:image:height" content="768"/>
 <meta property="og:locale" content="en_US"/>
@@ -114,8 +115,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Two Points Make a Line: Exercises in plotting WDI data"/>
 <meta property="twitter:description" content="Pull the data with R instead of downloading spreadsheet after spreadsheet"/>
-<meta property="twitter:url" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"/>
-<meta property="twitter:image" content="https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png"/>
+<meta property="twitter:url" content="https://twopoints.blog/posts/2022-11-05-wdi/"/>
+<meta property="twitter:image" content="https://twopoints.blog/posts/2022-11-05-wdi/wdi_files/figure-html5/unnamed-chunk-8-1.png"/>
 <meta property="twitter:image:width" content="1248"/>
 <meta property="twitter:image:height" content="768"/>
 
@@ -123,7 +124,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Exercises in plotting WDI data"]},{"type":"character","attributes":{},"value":["Pull the data with R instead of downloading spreadsheet after spreadsheet"]},{"type":"character","attributes":{},"value":["2022-11-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"]},{"type":"character","attributes":{},"value":["https://ksreyes.github.io/twopoints/posts/2022-11-05-wdi/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Exercises in plotting WDI data"]},{"type":"character","attributes":{},"value":["Pull the data with R instead of downloading spreadsheet after spreadsheet"]},{"type":"character","attributes":{},"value":["2022-11-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://twopoints.blog/posts/2022-11-05-wdi/"]},{"type":"character","attributes":{},"value":["https://twopoints.blog/posts/2022-11-05-wdi/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2671,10 +2672,10 @@ Show code
   <p class="social_footer">
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://twitter.com/share?text=Exercises%20in%20plotting%20WDI%20data&amp;url=https%3A%2F%2Fksreyes.github.io%2Ftwopoints%2Fposts%2F2022-11-05-wdi%2F" aria-label="share on twitter">
+      <a href="https://twitter.com/share?text=Exercises%20in%20plotting%20WDI%20data&amp;url=https%3A%2F%2Ftwopoints.blog%2Fposts%2F2022-11-05-wdi%2F" aria-label="share on twitter">
         <i class="fab fa-twitter" aria-hidden="true"></i>
       </a>
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fksreyes.github.io%2Ftwopoints%2Fposts%2F2022-11-05-wdi%2F&amp;title=Exercises%20in%20plotting%20WDI%20data" aria-label="share on linkedin">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ftwopoints.blog%2Fposts%2F2022-11-05-wdi%2F&amp;title=Exercises%20in%20plotting%20WDI%20data" aria-label="share on linkedin">
         <i class="fab fa-linkedin" aria-hidden="true"></i>
       </a>
     </span>
