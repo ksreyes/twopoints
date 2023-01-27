@@ -94,6 +94,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <link rel="canonical" href="https://twopoints.blog/posts/2022-12-03-war-is-over/"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
+<link rel="icon" type="image/png" href="../../images/logo-icon.png"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2022-12-03"/>
@@ -128,7 +129,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["ucdp-prio-acd-221.csv","war-is-over_files/anchor-4.2.2/anchor.min.js","war-is-over_files/bowser-1.9.3/bowser.min.js","war-is-over_files/distill-2.2.21/template.v2.js","war-is-over_files/figure-html5/unnamed-chunk-1-1.png","war-is-over_files/header-attrs-2.18/header-attrs.js","war-is-over_files/jquery-3.6.0/jquery-3.6.0.js","war-is-over_files/jquery-3.6.0/jquery-3.6.0.min.js","war-is-over_files/jquery-3.6.0/jquery-3.6.0.min.map","war-is-over_files/popper-2.6.0/popper.min.js","war-is-over_files/tippy-6.2.7/tippy-bundle.umd.min.js","war-is-over_files/tippy-6.2.7/tippy-light-border.css","war-is-over_files/tippy-6.2.7/tippy.css","war-is-over_files/tippy-6.2.7/tippy.umd.min.js","war-is-over_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["ucdp-prio-acd-221.csv","war-is-over_files/anchor-4.2.2/anchor.min.js","war-is-over_files/bowser-1.9.3/bowser.min.js","war-is-over_files/distill-2.2.21/template.v2.js","war-is-over_files/figure-html5/unnamed-chunk-1-1.png","war-is-over_files/header-attrs-2.18/header-attrs.js","war-is-over_files/header-attrs-2.20/header-attrs.js","war-is-over_files/jquery-3.6.0/jquery-3.6.0.js","war-is-over_files/jquery-3.6.0/jquery-3.6.0.min.js","war-is-over_files/jquery-3.6.0/jquery-3.6.0.min.map","war-is-over_files/popper-2.6.0/popper.min.js","war-is-over_files/tippy-6.2.7/tippy-bundle.umd.min.js","war-is-over_files/tippy-6.2.7/tippy-light-border.css","war-is-over_files/tippy-6.2.7/tippy.css","war-is-over_files/tippy-6.2.7/tippy.umd.min.js","war-is-over_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2430,7 +2431,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2482,8 +2483,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 
 
 <div class="d-article">
-<p>People’s feelings about the Christmas season span a wide range, from very positive to very negative.</p>
-<p>As for where I fall, well:</p>
+<p>People’s feelings about the Christmas season span a wide range, from very positive to very negative. As for where I fall, well:</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2509,29 +2509,33 @@ Show code
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span>, position <span class='op'>=</span> <span class='st'>"stack"</span>, width <span class='op'>=</span> <span class='fl'>.7</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0</span>, linewidth <span class='op'>=</span> <span class='fl'>.25</span>, color <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Another year over"</span>,</span>
-<span>       subtitle <span class='op'>=</span> <span class='st'>"Active armed conflicts as of Christmas Day, 1946-2021"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>       subtitle <span class='op'>=</span> <span class='st'>"Active armed conflicts as of Christmas Day, 1946-2021"</span>,</span>
+<span>       caption <span class='op'>=</span> <span class='st'>"Source: UCDP/PRIO Armed Conflict Dataset v.22.1"</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>"Type of conflict"</span>,</span>
-<span>                      labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Extrasystemtic"</span>, <span class='st'>"Interstate"</span>, <span class='st'>"Intrastate"</span>, <span class='st'>"Internationalized intrastate"</span><span class='op'>)</span>,</span>
-<span>                      values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#1046b1"</span>, <span class='st'>"#c52e9b"</span>, <span class='st'>"#ff505b"</span>, <span class='st'>"#ffa600"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>14</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, hjust <span class='op'>=</span> <span class='fl'>.5</span><span class='op'>)</span>,</span>
-<span>        plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>12</span>, hjust <span class='op'>=</span> <span class='fl'>.5</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>15</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>                    labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Extrasystemtic"</span>, <span class='st'>"Interstate"</span>, <span class='st'>"Intrastate"</span>, <span class='st'>"Internationalized intrastate"</span><span class='op'>)</span>,</span>
+<span>                    values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#1046b1"</span>, <span class='st'>"#c52e9b"</span>, <span class='st'>"#ff505b"</span>, <span class='st'>"#ffa600"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span>base_family <span class='op'>=</span> <span class='st'>"karla"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>16</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, hjust <span class='op'>=</span> <span class='fl'>.5</span><span class='op'>)</span>,</span>
+<span>        plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>14</span>, hjust <span class='op'>=</span> <span class='fl'>.5</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span>b <span class='op'>=</span> <span class='fl'>15</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>        plot.caption <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>8</span>, hjust <span class='op'>=</span> <span class='fl'>0</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>,</span>
 <span>        axis.ticks <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
 <span>        axis.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
-<span>        axis.text.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='fl'>5</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
-<span>        axis.text.y <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>5</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>        axis.text.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>12</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>        axis.text.y <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>12</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span>r <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>,</span>
 <span>        legend.position <span class='op'>=</span> <span class='st'>"bottom"</span>,</span>
-<span>        legend.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>        legend.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, margin <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>margin</a></span><span class='op'>(</span>r <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>,</span>
 <span>        legend.text <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span>,</span>
-<span>        legend.key.size <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grid/unit.html'>unit</a></span><span class='op'>(</span><span class='fl'>.4</span>, <span class='st'>"cm"</span><span class='op'>)</span>,</span>
-<span>        panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"gray97"</span><span class='op'>)</span>,</span>
+<span>        legend.key.size <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/grid/unit.html'>unit</a></span><span class='op'>(</span><span class='fl'>.4</span>, <span class='st'>"lines"</span><span class='op'>)</span>,</span>
+<span>        panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_rect</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"gray97"</span>, color <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>,</span>
 <span>        panel.grid.major.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>        panel.grid.major.y <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_line</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span>,</span>
 <span>        panel.grid.minor.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
 <span>        panel.grid.minor.y <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
 </div>
 </details>
 <p><img src="war-is-over_files/figure-html5/unnamed-chunk-1-1.png" width="720" data-distill-preview=1 /></p>
 </div>
-<p>The data is from the <a href="https://ucdp.uu.se/downloads/index.html">UCDP/PRIO Armed Conflict Dataset version 22.1</a>. I’ll go through how I constructed the above chart.</p>
+<p>The data is from the <a href="https://ucdp.uu.se/downloads/index.html">UCDP/PRIO Armed Conflict Dataset</a>. I’ll go through how I constructed the above chart.</p>
 <p>First, some words about the dataset. Each observation is a conflict-year. A conflict is dated from its first battle-related death, but only active “episodes”—defined as 25 battle-related deaths—are recorded in the database. For example, the Basque conflict has the following entries:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2543,6 +2547,15 @@ Show code
 <span>  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
 <table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 25%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: right;">conflict_id</th>
@@ -2649,7 +2662,7 @@ Show code
 <span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/replace_na.html'>replace_na</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>count <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p>Then it’s a simple matter of constructing a stacked bar chart to illustrate the depressing fact that Christmas 2021 saw an all-time high in active conflicts worldwide.</p>
+<p>Then it’s a simple matter of counting the active conflicts per year and constructing a bar chart. to illustrate the depressing fact that Christmas 2021 saw an all-time high in active conflicts worldwide.</p>
 <p>To end, here’s the song that inspired this post. Have a bad Christmas season everybody.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zr9EOFuuIk4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
