@@ -2,19 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://twopoints.blog/about.html</loc>
-    <lastmod>2022-12-01T12:47:51+08:00</lastmod>
+    <lastmod>2023-01-23T20:56:28+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/</loc>
-    <lastmod>2022-11-18T19:25:52+08:00</lastmod>
+    <lastmod>2023-01-24T01:42:25+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2023-01-26-oscars/</loc>
+    <lastmod>2023-01-27T16:36:10+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-12-21-avatar/</loc>
-    <lastmod>2022-12-23T14:53:17+08:00</lastmod>
+    <lastmod>2023-01-30T11:35:29+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-12-15-mountains/</loc>
-    <lastmod>2022-12-23T16:45:07+08:00</lastmod>
+    <lastmod>2023-01-27T15:55:00+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-12-07-im-gonna-carry-that-weight/</loc>
@@ -22,11 +26,11 @@
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-12-03-war-is-over/</loc>
-    <lastmod>2022-12-23T16:16:48+08:00</lastmod>
+    <lastmod>2023-01-27T17:06:11+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-11-26-migration/</loc>
-    <lastmod>2022-11-28T22:41:19+08:00</lastmod>
+    <lastmod>2023-01-27T16:29:33+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-11-25-roots/</loc>
@@ -50,7 +54,7 @@
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-11-08-metro-manila-subway/</loc>
-    <lastmod>2022-11-29T10:05:26+08:00</lastmod>
+    <lastmod>2023-01-30T11:59:01+08:00</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2022-11-05-wdi/</loc>
