@@ -2151,20 +2151,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /*-- Additional custom styles --*/
   /* Add any additional CSS rules below                      */
   </style>
-  <style type="text/css">
-  /* base variables */
+  <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700');
 
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
+  :root {
+    --color-primary:      #3F75DC;
+    --color-secondary:    #8BB1F7;
+    --color-white:        #FFFFFF;
+  }
 
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@700');
+  #092E75
 
   html {
     /*-- Main font sizes --*/
@@ -2183,7 +2178,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --heading-font:    Karla,sans-serif;
     --mono-font:       monospace;
     --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
+    --navbar-font:     sans-serif;
   }
 
   /*-- ARTICLE METADATA --*/
@@ -2248,6 +2243,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: black;
     padding: 5px 5px 5px 18px;
     overflow: auto !important;
+  }
+
+  .icon-link {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    font-size: 18px;
+    color: var(--color-white);
+    padding: 5px 7px 5px 7px;
+    margin: 0 5px 0 5px;
+    border-radius: 3px;
+  }
+
+  .icon-link:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
   }
 
   d-article ul.panel-tabs {
@@ -2439,8 +2450,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
-  <script type="text/javascript" cookie-consent="tracking">
+  <script type="text/javascript" src="https://www.cookieconsent.com/releases/3.1.0/cookie-consent.js"></script>
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({
+  'notice_banner_type':'simple',
+  'consent_type': 'express',
+  'palette': 'light',
+  'language': 'en',
+  'website_name': 'tpmal',
+  'cookies_policy_url': 'url',
+  'change_preferences_selector':'#CookiePreferences'
+  });});</script>
+  <script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
+  <script type="text/plain" cookie-consent="tracking">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -2464,14 +2487,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="https://twopoints.blog">
+<img src="images/logo-icon-invert.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">Two Points Make a Line</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="index.xml">
 <i class="fa fa-rss" aria-hidden="true"></i>
+</a>
+<a href="https://github.com/ksreyes/twopoints">
+<i class="fab fa-github" aria-hidden="true"></i>
 </a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -3074,8 +3102,10 @@ function init_posts_list() {
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/ksreyes/twopoints/issues/new">create an issue</a> on the source repository.</p>
 <h3 id="reuse">Reuse</h3>
-<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/ksreyes/twopoints">https://github.com/ksreyes/twopoints</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
 </div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
