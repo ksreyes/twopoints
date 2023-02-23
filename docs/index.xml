@@ -4,8 +4,7 @@
     <title>Two Points Make a Line</title>
     <link>https://twopoints.blog/</link>
     <atom:link href="https://twopoints.blog/index.xml" rel="self" type="application/rss+xml"/>
-    <description>Documenting my excursions into visualizing data
-</description>
+    <description>A blog about visualizing data</description>
     <image>
       <title>Two Points Make a Line</title>
       <url>https://twopoints.blog/images/logo-icon.png</url>
