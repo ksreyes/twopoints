@@ -1,0 +1,22 @@
+name: "tpmal"
+title: "Two Points Make a Line"
+description: "A blog about visualizing data"
+base_url: https://twopoints.blog/
+output_dir: "docs"
+creative_commons: CC BY-SA
+google_analytics: "G-EJMC44PZ56"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - icon: fa fa-rss
+      href: index.xml
+output: distill::distill_article
+theme: theme.css
+favicon: images/logo-icon.png
+collections:
+  posts:
+    share: [twitter, linkedin]
+    custom: _sidebar.html
