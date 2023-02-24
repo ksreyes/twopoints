@@ -68,28 +68,42 @@ d-appendix {
 }
 
 /*-- Additional custom styles --*/
-/* Add any additional CSS rules below                      */
 
-/* making code chunks with scroll bar */
+/* Links */
 
-/* the code below will change output chunk properties */
-d-article pre { 
-  border-radius: 5px; /* rounded chunk window*/
-  font-size: 12px; /* output text size */
-  color: black; /* output text colour */
-  background-color: #F5F5F5; /* output chunk background colour */
-  padding: 5px 5px 5px 18px; /* top,right,bottom,left padding values */
-  overflow: auto !important; /* enables scroll bar */ 
+a {
+  color: var(--color-primary);
+  border-bottom: 0px;
+  text-decoration: none;
 }
 
-/* the code below will change source code chunk properties */
-d-article div.sourceCode pre { 
-  border-radius: 5px;
-  background-color: #F8F8FF;
-  color: black;
-  padding: 5px 5px 5px 18px;
-  overflow: auto !important;
+d-article a {
+  color: var(--color-primary);
+  border-bottom: 0px;
+  text-decoration: none;
 }
+
+a:hover, a:focus {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+d-article a:hover, a:focus {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+d-article a.post-preview {
+  color: var(--body-color);
+}
+
+/* Navigation */
+
+.nav-search {
+  font-size: 14px;
+}
+
+/* Icons */
 
 .icon-link {
   background-color: var(--color-primary);
@@ -107,6 +121,27 @@ d-article div.sourceCode pre {
   color: var(--color-white);
 }
 
+/* Code chunks */
+
+d-article pre { 
+  border-radius: 5px; /* rounded chunk window*/
+  font-size: 12px; /* output text size */
+  color: black; /* output text colour */
+  background-color: #F5F5F5; /* output chunk background colour */
+  padding: 5px 5px 5px 18px; /* top,right,bottom,left padding values */
+  overflow: auto !important; /* enables scroll bar */ 
+}
+
+d-article div.sourceCode pre { 
+  border-radius: 5px;
+  background-color: #F8F8FF;
+  color: black;
+  padding: 5px 5px 5px 18px;
+  overflow: auto !important;
+}
+
+/* Panels */
+
 d-article ul.panel-tabs {
   margin-top: 20px;
 }
@@ -119,7 +154,4 @@ d-article section.panel.panel-active {
 d-article hr {
   margin-top: 30px;
   margin-bottom: 30px;
-}
-.nav-search {
-  font-size: 14px;
 }
