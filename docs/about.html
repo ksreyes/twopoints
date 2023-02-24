@@ -109,7 +109,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","css"]}},"value":[{"type":"character","attributes":{},"value":["About"]},{"type":"character","attributes":{},"value":["subpage.css"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","css"]}},"value":[{"type":"character","attributes":{},"value":["About"]},{"type":"character","attributes":{},"value":["css/subpage.css"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2153,12 +2153,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700');
 
   :root {
+    --font-header:        Karla,Helvetica,Arial,sans-serif;
     --color-primary:      #3F75DC;
-    --color-secondary:    #8BB1F7;
+    --color-secondary:    #5486E5;
     --color-white:        #FFFFFF;
   }
-
-  #092E75
 
   html {
     /*-- Main font sizes --*/
@@ -2174,7 +2173,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --aside-color:     rgba(0, 0, 0, 0.6);
     --fig-cap-color:   rgba(0, 0, 0, 0.6);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    Karla,sans-serif;
+    --heading-font:    var(--font-header);
     --mono-font:       monospace;
     --body-font:       sans-serif;
     --navbar-font:     sans-serif;
@@ -2247,7 +2246,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .icon-link {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    font-size: 18px;
+    font-size: 20px;
     color: var(--color-white);
     padding: 5px 7px 5px 7px;
     margin: 0 5px 0 5px;
@@ -2267,6 +2266,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article section.panel.panel-active {
     margin-top: 0px;
     margin-bottom: 20px;
+  }
+
+  d-article hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .nav-search {
+    font-size: 14px;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2454,7 +2461,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="subpage.css" type="text/css"/>
+  <link rel="stylesheet" href="css/subpage.css" type="text/css"/>
 
 </head>
 
@@ -2516,7 +2523,7 @@ Hello! My name is Ken.
 <p>I work a lot with data, which means I often engage in the fun, frustrating, highly consequential—yet frequently dismissed!—art of data visualization.</p>
 <p><em>Two Points Make a Line</em> documents my journey in mastering this art. I take an interesting dataset and tell a story about it using charts. Along the way, I share my thoughts on what makes a chart work and what doesn’t, the tools I use, and other tidbits. Enjoy!</p>
 <hr style="width:40%">
-<p><a href="mailto:kenneth.rejes@gmail.com" class="icon-link"><i class="fas fa-envelope"></i></a> <a href="https://twopoints.blog/files/kenneth-reyes-cv.pdf" class="icon-link"><i class="fas fa-file"></i></a> <a href="https://www.linkedin.com/in/ksreyes" class="icon-link"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/ksreyes" class="icon-link"><i class="fab fa-github"></i></a> <a href="https://www.goodreads.com/krejes" class="icon-link"><i class="fab fa-goodreads-g"></i></a></p>
+<p><a href="mailto:kenneth.rejes@gmail.com" class="icon-link" title="Email"><i class="far fa-envelope"></i></a> <a href="https://twopoints.blog/files/kenneth-reyes-cv.pdf" class="icon-link" title="CV"><i class="fas fa-user-tie"></i></a> <a href="https://www.linkedin.com/in/ksreyes" class="icon-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a> <a href="https://github.com/ksreyes" class="icon-link" title="GitHub"><i class="fab fa-github"></i></a> <a href="https://www.goodreads.com/krejes" class="icon-link" title="Goodreads"><i class="fab fa-goodreads"></i></a></p>
 </center>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
