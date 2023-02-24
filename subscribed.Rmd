@@ -1,0 +1,27 @@
+---
+title: "Subscription confirmed!"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css}
+d-title {
+    display: none;
+  }
+  
+d-appendix {
+  display: none !important;
+}
+```
+
+<center>
+
+<h1 style="padding: 3em 0 1em 0">Subscription confirmed!</h1>
+
+<img src="images/logo-round-2.png" title="The Plotting Cats"/>
+
+<p style="padding: 2em 0 0 0"> You will receive an email whenever there is a new post.</p>
+
+</center>
