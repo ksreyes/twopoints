@@ -2154,12 +2154,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700');
 
   :root {
+    --font-header:        Karla,Helvetica,Arial,sans-serif;
     --color-primary:      #3F75DC;
-    --color-secondary:    #8BB1F7;
+    --color-secondary:    #5486E5;
     --color-white:        #FFFFFF;
   }
-
-  #092E75
 
   html {
     /*-- Main font sizes --*/
@@ -2175,7 +2174,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --aside-color:     rgba(0, 0, 0, 0.6);
     --fig-cap-color:   rgba(0, 0, 0, 0.6);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    Karla,sans-serif;
+    --heading-font:    var(--font-header);
     --mono-font:       monospace;
     --body-font:       sans-serif;
     --navbar-font:     sans-serif;
@@ -2248,7 +2247,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .icon-link {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    font-size: 18px;
+    font-size: 20px;
     color: var(--color-white);
     padding: 5px 7px 5px 7px;
     margin: 0 5px 0 5px;
@@ -2268,6 +2267,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article section.panel.panel-active {
     margin-top: 0px;
     margin-bottom: 20px;
+  }
+
+  d-article hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .nav-search {
+    font-size: 14px;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2920,18 +2927,21 @@ function init_posts_list() {
   #sib-container input:-ms-input-placeholder {
     text-align: left;
     font-family: "Helvetica", sans-serif;
+    font-size: 14px;
     color: #c0ccda;
   }
 
   #sib-container input::placeholder {
     text-align: left;
     font-family: "Helvetica", sans-serif;
+    font-size: 14px;
     color: #c0ccda;
   }
 
   #sib-container textarea::placeholder {
     text-align: left;
     font-family: "Helvetica", sans-serif;
+    font-size: 14px;
     color: #c0ccda;
   }
 </style>
@@ -2965,7 +2975,7 @@ function init_posts_list() {
     <div></div>
     <div id="sib-container" class="sib-container--medium sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:350px; border-radius:3px; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
       <form id="sib-form" method="POST" action="https://8cb4bfca.sibforms.com/serve/MUIEAObrxdbROL2n6AeMwhcDugTCS5v96k1h_cceWJczZv_PnlMSO8GzrkzI_hxnlOEtZFX5D4_xLogNY5AEHj9-87phtThf-RD370hbhicRaxOT9zqoSsJ7r1-9mjhUdZDxtvG0Ys1CIoQQ6aUDdi7ilmsroY_CWceVHz0lAZFhNd4ityc6QbZkCipn9uhOGpyhc7IYM0WWZWt3" data-type="subscription">
-        <div style="padding: 2px 0;">
+        <div>
           <div class="sib-input sib-form-block">
             <div class="form__entry entry_block">
               <div class="form__label-row ">
@@ -2975,12 +2985,12 @@ function init_posts_list() {
                 </div>
               </div>
 
-              <label class="entry__error entry__error--primary" style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:red;">
+              <label class="entry__error entry__error--primary" style="font-size:12px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:red; margin-top: 3px;">
               </label>
             </div>
           </div>
         </div>
-        <div style="padding: 2px 0;">
+        <div>
           <div class="sib-input sib-form-block">
             <div class="form__entry entry_block">
               <div class="form__label-row ">
@@ -2995,7 +3005,7 @@ function init_posts_list() {
             </div>
           </div>
         </div>
-        <div style="padding: 2px 0;">
+        <div>
           <div class="sib-input sib-form-block">
             <div class="form__entry entry_block">
               <div class="form__label-row ">
