@@ -2165,20 +2165,14 @@ d-appendix {
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 </style>
-<style type="text/css">
-/* base variables */
+<style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700');
 
-/* Edit the CSS properties in this file to create a custom
-   Distill theme. Only edit values in the right column
-   for each row; values shown are the CSS defaults.
-   To return any property to the default,
-   you may set its value to: unset
-   All rows must end with a semi-colon.                      */
-
-/* Optional: embed custom fonts here with `@import`          */
-/* This must remain at the top of this file.                 */
-
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700');
+:root {
+  --font-header:        Karla,Helvetica,Arial,sans-serif;
+  --color-primary:      #3F75DC;
+  --color-secondary:    #5486E5;
+  --color-white:        #FFFFFF;
+}
 
 html {
   /*-- Main font sizes --*/
@@ -2194,10 +2188,10 @@ html {
   --aside-color:     rgba(0, 0, 0, 0.6);
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
-  --heading-font:    Karla,sans-serif;
+  --heading-font:    var(--font-header);
   --mono-font:       monospace;
   --body-font:       sans-serif;
-  --navbar-font:     sans-serif;  /* websites + blogs only */
+  --navbar-font:     sans-serif;
 }
 
 /*-- ARTICLE METADATA --*/
@@ -2241,11 +2235,61 @@ d-appendix {
 }
 
 /*-- Additional custom styles --*/
-/* Add any additional CSS rules below                      */
 
-/* making code chunks with scroll bar */
+/* Links */
 
-/* the code below will change output chunk properties */
+a {
+  color: var(--color-primary);
+  border-bottom: 0px;
+  text-decoration: none;
+}
+
+d-article a {
+  color: var(--color-primary);
+  border-bottom: 0px;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+d-article a:hover, a:focus {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+d-article a.post-preview {
+  color: var(--body-color);
+}
+
+/* Navigation */
+
+.nav-search {
+  font-size: 14px;
+}
+
+/* Icons */
+
+.icon-link {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  font-size: 20px;
+  color: var(--color-white);
+  padding: 5px 7px 5px 7px;
+  margin: 0 5px 0 5px;
+  border-radius: 3px;
+}
+
+.icon-link:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* Code chunks */
+
 d-article pre { 
   border-radius: 5px; /* rounded chunk window*/
   font-size: 12px; /* output text size */
@@ -2255,7 +2299,6 @@ d-article pre {
   overflow: auto !important; /* enables scroll bar */ 
 }
 
-/* the code below will change source code chunk properties */
 d-article div.sourceCode pre { 
   border-radius: 5px;
   background-color: #F8F8FF;
@@ -2264,6 +2307,8 @@ d-article div.sourceCode pre {
   overflow: auto !important;
 }
 
+/* Panels */
+
 d-article ul.panel-tabs {
   margin-top: 20px;
 }
@@ -2271,6 +2316,11 @@ d-article ul.panel-tabs {
 d-article section.panel.panel-active {
   margin-top: 0px;
   margin-bottom: 20px;
+}
+
+d-article hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2482,8 +2532,20 @@ d-appendix d-footnote-list a.footnote-backlink {
   <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-<script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
-<script type="text/javascript" cookie-consent="tracking">
+<script type="text/javascript" src="https://www.cookieconsent.com/releases/3.1.0/cookie-consent.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+'notice_banner_type':'simple',
+'consent_type': 'express',
+'palette': 'light',
+'language': 'en',
+'website_name': 'tpmal',
+'cookies_policy_url': 'url',
+'change_preferences_selector':'#CookiePreferences'
+});});</script>
+<script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
+<script type="text/plain" cookie-consent="tracking">
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
@@ -2507,14 +2569,19 @@ gtag('config', 'G-EJMC44PZ56');
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="https://twopoints.blog">
+<img src="../../images/logo-icon-invert.png" alt="Logo"/>
+</a>
 <a href="../../index.html" class="title">Two Points Make a Line</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="../../index.html">Home</a>
 <a href="../../about.html">About</a>
 <a href="../../index.xml">
 <i class="fa fa-rss" aria-hidden="true"></i>
+</a>
+<a href="https://github.com/ksreyes/twopoints">
+<i class="fab fa-github" aria-hidden="true"></i>
 </a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -2955,6 +3022,9 @@ Show code
   <p class="social_footer">
     <span class="article-sharing">
       Share: &nbsp;
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Ftwopoints.blog%2Fposts%2F2022-11-26-migration%2F" aria-label="share on facebook">
+        <i class="fab fa-facebook" aria-hidden="true"></i>
+      </a>
       <a href="https://twitter.com/share?text=More%20on%20the%20great%20post-1500%20migrations&amp;url=https%3A%2F%2Ftwopoints.blog%2Fposts%2F2022-11-26-migration%2F" aria-label="share on twitter">
         <i class="fab fa-twitter" aria-hidden="true"></i>
       </a>
@@ -2975,8 +3045,10 @@ Show code
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
+  <h3 id="updates-and-corrections">Corrections</h3>
+  <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/ksreyes/twopoints/issues/new">create an issue</a> on the source repository.</p>
   <h3 id="reuse">Reuse</h3>
-  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/ksreyes/twopoints">https://github.com/ksreyes/twopoints</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
 </div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
