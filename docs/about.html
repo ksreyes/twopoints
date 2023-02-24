@@ -2220,28 +2220,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
 
-  /* making code chunks with scroll bar */
+  /* Links */
 
-  /* the code below will change output chunk properties */
-  d-article pre { 
-    border-radius: 5px; /* rounded chunk window*/
-    font-size: 12px; /* output text size */
-    color: black; /* output text colour */
-    background-color: #F5F5F5; /* output chunk background colour */
-    padding: 5px 5px 5px 18px; /* top,right,bottom,left padding values */
-    overflow: auto !important; /* enables scroll bar */ 
+  a {
+    color: var(--color-primary);
+    border-bottom: 0px;
+    text-decoration: none;
   }
 
-  /* the code below will change source code chunk properties */
-  d-article div.sourceCode pre { 
-    border-radius: 5px;
-    background-color: #F8F8FF;
-    color: black;
-    padding: 5px 5px 5px 18px;
-    overflow: auto !important;
+  d-article a {
+    color: var(--color-primary);
+    border-bottom: 0px;
+    text-decoration: none;
   }
+
+  a:hover, a:focus {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+
+  d-article a:hover, a:focus {
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+
+  d-article a.post-preview {
+    color: var(--body-color);
+  }
+
+  /* Navigation */
+
+  .nav-search {
+    font-size: 14px;
+  }
+
+  /* Icons */
 
   .icon-link {
     background-color: var(--color-primary);
@@ -2259,6 +2273,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--color-white);
   }
 
+  /* Code chunks */
+
+  d-article pre { 
+    border-radius: 5px; /* rounded chunk window*/
+    font-size: 12px; /* output text size */
+    color: black; /* output text colour */
+    background-color: #F5F5F5; /* output chunk background colour */
+    padding: 5px 5px 5px 18px; /* top,right,bottom,left padding values */
+    overflow: auto !important; /* enables scroll bar */ 
+  }
+
+  d-article div.sourceCode pre { 
+    border-radius: 5px;
+    background-color: #F8F8FF;
+    color: black;
+    padding: 5px 5px 5px 18px;
+    overflow: auto !important;
+  }
+
+  /* Panels */
+
   d-article ul.panel-tabs {
     margin-top: 20px;
   }
@@ -2271,9 +2306,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article hr {
     margin-top: 30px;
     margin-bottom: 30px;
-  }
-  .nav-search {
-    font-size: 14px;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2529,7 +2561,7 @@ Hello! My name is Ken.
 <p>I work a lot with data, which means I often engage in the fun, frustrating, highly consequential—yet frequently dismissed!—art of data visualization.</p>
 <p><em>Two Points Make a Line</em> documents my journey in mastering this art. I take an interesting dataset and tell a story about it using charts. Along the way, I share my thoughts on what makes a chart work and what doesn’t, the tools I use, and other tidbits. Enjoy!</p>
 <hr style="width:40%">
-<p><a href="mailto:kenneth.rejes@gmail.com" class="icon-link" title="Email"><i class="far fa-envelope"></i></a> <a href="https://twopoints.blog/files/kenneth-reyes-cv.pdf" class="icon-link" title="CV"><i class="fas fa-user-tie"></i></a> <a href="https://www.linkedin.com/in/ksreyes" class="icon-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a> <a href="https://github.com/ksreyes" class="icon-link" title="GitHub"><i class="fab fa-github"></i></a> <a href="https://www.goodreads.com/krejes" class="icon-link" title="Goodreads"><i class="fab fa-goodreads"></i></a></p>
+<p><a href="mailto:kenneth.rejes@gmail.com" class="icon-link" title="Email" target="_self"><i class="far fa-envelope"></i></a> <a href="https://twopoints.blog/files/kenneth-reyes-cv.pdf" class="icon-link" title="CV" target="_blank"><i class="fas fa-user-tie"></i></a> <a href="https://www.linkedin.com/in/ksreyes" class="icon-link" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a> <a href="https://github.com/ksreyes" class="icon-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a> <a href="https://www.goodreads.com/krejes" class="icon-link" title="Goodreads" target="_blank"><i class="fab fa-goodreads"></i></a></p>
 </center>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
