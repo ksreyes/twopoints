@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Two Points Make a Line"
+  site-url: https://twopoints.blog
+  description: "A blog about visualizing data"
+  favicon: images/logo-icon.png
+  repo-url: https://github.com/ksreyes/twopoints
+  image: logo-icon.png
+  google-analytics: "G-EJMC44PZ56"
+  cookie-consent: true
+  search: true
+  navbar:
+    logo: images/logo-icon-invert.png
+    left: 
+      - text: "A blog about visualizing data\nby Kenneth S. Reyes"
+    right:
+      - href: subscribe.qmd
+        text: "Subscribe"
+      - href: about.qmd
+        text: "About"
+      - icon: github
+        href: https://github.com/ksreyes/twopoints
+      - icon: rss
+        href: index.xml
+        
+format:
+  html:
+    theme: 
+      - default
+      - custom.scss
+
+editor: visual
+

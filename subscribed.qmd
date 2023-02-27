@@ -1,0 +1,15 @@
+---
+title: ""
+---
+
+<center>
+
+<h1>Subscription confirmed</h1>
+
+<p style="font-size: 16pt; margin: 0">
+
+You're all set!
+
+</p>
+
+</center>

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@0,100;0,500;0,700&display=swap');
+
+/*-- scss:defaults --*/
+
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-size-base:              1.1rem !default;
+$line-height-base:            1.6 !default;
+$paragraph-margin-bottom:     1.75rem !default;
+
+$headings-font-family:        Karla, Helvetica, Arial, sans-serif !default;
+$h1-font-size:                $font-size-base * 2.8 !default;
+
+$small-font-size:             .85em !default;
+$code-font-size:              $small-font-size !default;
+
+$link-decoration:             none !default;
+
+/*-- scss:rules --*/
+
+// Navbar
+
+nav.navbar-dark {
+  background-color: #1046b1;
+}
+
+.navbar-brand.navbar-brand-logo {
+  margin-right: 15px;
+}
+
+.navbar-logo {
+  max-height: 35px;
+}
+
+.navbar-brand-container {
+  margin-left: 10px;
+}
+
+.navbar-brand {
+  padding: 0.2rem 0 0.2rem 0;
+  margin: 0;
+}
+
+span.navbar-title {
+  font-family: Karla, Helvetica, Arial, sans-serif;
+  font-size: $font-size-base * 1.5;
+  font-weight: 700;
+}
+
+.navbar .dropdown-header {
+  color: white;
+  font-size: 1rem;
+  opacity: .6;
+  text-transform: none;
+  padding-top: 3px;
+}
+
+// Body
+
+#quarto-content {
+  margin-top: 3em;
+}
+
+// Listing
+
+div.quarto-post .body {
+  padding-top: 10px;
+}
+
+div.quarto-post .body h3.listing-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+div.quarto-post .body .listing-subtitle {
+  line-height: 1.5;
+}
+
+div.quarto-post .listing-categories {
+  padding: 10px 0 20px 0;
+}
+
+div.quarto-post .metadata {
+  margin-top: 15px;
+}
+
+div.quarto-post .thumbnail a {
+  border: solid 8px #e9ecef;
+  border-radius: 0.25rem;
+}
+
+#quarto-margin-sidebar.sidebar.margin-sidebar {
+  padding-left: 30px;
+}
+
+div.category {
+  border: solid 1px #dee2e6;
+  border-radius: 0.25rem;
+  color: #6c757d;
+  font-size: .65em;
+  text-transform: uppercase;
+  margin: 5px 40px 10px 0;
+  padding: .25em .75em;
+}
+
+div.category.active {
+  background-color: #e9ecef;
+}
+
+div.quarto-post .thumbnail img {
+  margin: 0;
+}
+
+// Blog post
+
+h1 {
+  font-weight: 700;
+}
+
+div.quarto-title {
+  margin-top: 1em;
+}
+
+p.subtitle.lead {
+  font-size: 1.65rem;
+  line-height: 1.5;
+  margin: .4em 0 1em 0;
+}
+
+div.quarto-title-meta {
+  margin: 1em 0 3em 0;
+}
+
+div.quarto-title-meta-heading {
+  display: none;
+}
+
+div.quarto-title-meta-contents p.date {
+  color: #adb5bd;
+}
+
+blockquote.blockquote {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 1.5rem 0 1rem;
+  margin: 0 0 1.75rem 0;
+}
+
+span.inline {
+  font-family: Karla, Helvetica, Arial, sans-serif;
+  font-size: $font-size-base * 1.1;
+  font-weight: 700;
+  color: #1046b1;
+}
+
+// Code chunks
+
+div.cell {
+  margin-bottom: 1.7rem;
+}
+
+div.sourceCode {
+  margin: 0;
+}
+
+pre.sourceCode {
+  padding: 1em;
+}
+
+.sourceCode.cell-code {
+  font-size: $font-size-base * .85;
+}
+
+div.cell-output {
+  margin-top: 1.5rem;
+}
+
+div.cell-output code {
+  font-size: $font-size-base * .75;
+}
+
+div.cell-output-display {
+  margin-top: 1.5rem;
+}
+
+div.cell-output-display table {
+  font-size: .8rem;
+}
+
+// Highcharts
+
+text.highcharts-title {
+  font-family: $headings-font-family !important;
+  font-size: $font-size-base * 1.1 !important;
+  font-weight: 700 !important;
+}
+
+text.highcharts-subtitle {
+  font-family: $headings-font-family !important;
+  font-size: $font-size-base !important;
+}
+
+span.highcharts-caption {
+  font-family: $headings-font-family !important;
+  font-size: $font-size-base * .6 !important;
+}
+
+g.highcharts-axis {
+  font-family: $headings-font-family !important;
+  font-size: $font-size-base * .85 !important;
+}
+
+// Subscription form
+
+div.sib-form .entry__field {
+  border: solid 1px #6c757d;
+}
+
+// YouTube video
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+ 
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Icon line
+
+a.icon-link {
+  background-color: #1046b1;
+  border: none;
+  font-size: $font-size-base;
+  color: $white;
+  padding: 5px 7px 5px 7px;
+  margin: 0 5px 0 5px;
+  border-radius: 3px;
+}
+
+a.icon-link:hover {
+  background-color: shift-color(#1046b1, -20%);
+}
