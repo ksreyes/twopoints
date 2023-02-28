@@ -20,6 +20,7 @@ $font-size-listing-title:        1.5rem;
 $font-size-listing-subtitle:     .95rem;
 $font-size-listing-date:         .88rem;
 $font-size-categories:           .65rem;
+$font-size-rbloggers:            .75rem;
 
 $font-size-post-title:           2.5rem;
 $font-size-post-subtitle:        calc(1.25rem + .15vw);
@@ -114,6 +115,16 @@ li.nav-item > span.menu-text {
 }
 
 /* --- Home page listings ------------------------------------------- */
+
+.rblogger {
+  font-size: $font-size-rbloggers;
+  text-align: center;
+  line-height: 1.25;
+  background-color: shift-color($color-blue, -90%);
+  border-radius: .25rem;
+  margin: 0 3rem 1rem 0;
+  padding: .25rem 0;
+}
 
 #quarto-content.page-layout-full #title-block-header {
   display: none;
