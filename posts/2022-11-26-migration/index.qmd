@@ -1,0 +1,483 @@
+---
+title: "More on the great post-1500 migrations"
+subtitle: "Which countries have the most diverse ancestors? Which countries have the most descendants around the world today?"
+date: 2022-11-26
+categories: [map, bar, scatter, interactive]
+image: thumbnail.png
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(xaringanExtra)
+library(showtext)
+library(here)
+
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+xaringanExtra::use_panelset()
+
+source(here("R", "functions.R"))
+
+font_add_google("Karla", "karla")
+```
+
+In my [last post](https://ksreyes.github.io/twopoints/posts/2022-11-25-roots/) I brought up the [World Migration Matrix](https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000), an ambitious dataset constructed in 2009 by Louis Putterman and David N. Weil that attempts to trace the ancestral origins of the present-day populations of nearly every country on Earth. It's a complete matrix, so that you can pick any pair of countries and obtain the share of one country's ancestors that originated from the other, and vice versa. It's a deeply fascinating dataset and I thought I'd play around with it some more. (It's also a chance to familiarize myself further with Highcharts.)
+
+Previously, I plotted the immigrant share of each country, i.e. the share of its current population whose ancestors were not living in that country in the year 1500 (using modern borders). A related question to ask is, what is the ancestral diversity of each country? We encountered cases like Taiwan where nearly all inhabitants have "foreign" ancestors, but since a huge portion come from China, its resulting ancestral diversity is quite low. Contrast that with, say, the United States, where both the immigrant share is high and the ancestral country sources are very diverse.
+
+To quantify this more formally, I use 1 minus the HH index as a measure of ancestral diversity. It takes a bit of data processing so I'm hiding the code below.
+
+```{r}
+#| code-fold: true
+
+library(tidyverse)
+library(readxl)
+library(countrycode)
+
+mm_raw <- here::here("datasets", "matrix version 1.1.xls") %>% 
+  read_excel() %>%
+  select(-update) %>%
+  pivot_longer(
+    cols = !c(wbcode, wbname),
+    names_to = "origin",
+    values_to = "share"
+  )
+
+# Convert to ISO names and codes
+
+mm <- mm_raw %>%
+  mutate(
+    origin = toupper(origin),
+    country_iso3 = countrycode(wbcode, "wb", "iso3c"),
+    origin_iso3 = countrycode(origin, "wb", "iso3c")
+  )
+
+mm$country_iso3[mm$wbcode == "ZAR"] <- mm$origin_iso3[mm$origin == "ZAR"] <- "COD"
+mm$country_iso3[mm$wbcode == "TMP"] <- mm$origin_iso3[mm$origin == "TMP"] <- "TLS"
+mm$country_iso3[mm$wbcode == "ROM"] <- mm$origin_iso3[mm$origin == "ROM"] <- "ROU"
+mm$country_iso3[mm$wbcode == "OAN"] <- mm$origin_iso3[mm$origin == "OAN"] <- "TWN"
+
+mm <- mm %>%
+  mutate(
+    country_name = countrycode(country_iso3, "iso3c", "country.name"),
+    origin_name = countrycode(origin_iso3, "iso3c", "country.name"),
+    country_region = countrycode(country_iso3, "iso3c", "continent"),
+    origin_region = countrycode(origin_iso3, "iso3c", "continent")
+  ) %>%
+  select(country_iso3, country_name, country_region, origin_iso3, origin_name, origin_region, share) %>%
+  drop_na()
+
+# Compute immigrant share
+
+mm_immig <- mm %>%
+  filter(country_iso3 == origin_iso3) %>%
+  mutate(immig = 1 - share) %>%
+  select(country_iso3, country_name, country_region, immig)
+
+# Compute ancestral diversity
+
+mm_hhi <- mm %>%
+  mutate(share2 = share^2) %>%
+  group_by(country_iso3, country_name, country_region) %>%
+  summarize(hhi = 1 - sum(share2)) %>%
+  ungroup()
+
+mm_immig_hhi <- mm_immig %>%
+  left_join(mm_hhi)
+```
+
+The following scatter plots ancestral diversity against the immigrant share of ancestors. They go hand-in-hand up to a point, and then we encounter enormous variety. I was surprised to find that the country with the most diverse set of ancestors is Jamaica, followed very closely by the United States. The other panels below showcase the ancestral origins of Jamaica and the U.S.
+
+:::{.panelset}
+:::{.panel}
+
+## Immigrant share vs diversity {.panel-name}
+
+```{r}
+#| code-fold: true
+
+library(highcharter)
+
+x <- c("Country", "Continent", "Immigrant share of ancestors", "Ancestral diversity")
+y <- c("{point.country_name:s}", "{point.country_region:s}", "{point.immig:.2f}", "{point.hhi:.2f}")
+tltip <- tooltip_table(x, y)
+
+hchart(mm_immig_hhi, "scatter",
+  hcaes(x = immig, y = hhi, group = country_region),
+  color = c("#1046b1", "#a835a6", "#f0307d", "#ff6549", "#ffa600"),
+  stickyTracking = FALSE,
+  jitter = list(x = .005, y = .005)
+) %>%
+  hc_xAxis(
+    title = list(text = "Immigrant share of ancestors"),
+    gridLineWidth = 1
+  ) %>%
+  hc_yAxis(
+    title = list(text = "Ancestral diversity"),
+    gridLineWidth = 1
+  ) %>%
+  hc_tooltip(
+    useHTML = TRUE,
+    pointFormat = tltip,
+    headerFormat = ""
+  )
+```
+
+:::
+
+:::{.panel}
+
+## Jamaica's ancestors {.panel-name}
+
+```{r}
+#| code-fold: true
+
+jamaica <- mm %>%
+  filter(country_name == "Jamaica")
+
+formattp <- JS("function() {
+  if (this.point.value < 0.01) {
+    return '<b>' + this.point.name + '</b>: <0.01';
+  }
+  else {
+    return '<b>' + this.point.name + '</b>: ' + Highcharts.numberFormat(this.point.value, 2);
+  }
+}")
+
+hcmap(
+  map = "custom/world-highres3",
+  data = jamaica,
+  name = "origin_name",
+  value = "share",
+  borderWidth = .5,
+  joinBy = c("iso-a3", "origin_iso3")
+) %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_legend(
+    align = "left",
+    title = list(text = "Ancestral contribution to Jamaica's population")
+  ) %>%
+  hc_tooltip(
+    headerFormat = "",
+    formatter = formattp
+  )
+```
+
+:::
+
+:::{.panel}
+
+## America's ancestors {.panel-name}
+
+```{r}
+#| code-fold: true
+
+usa <- mm %>%
+  filter(country_name == "United States")
+
+hcmap(
+  map = "custom/world-highres3",
+  data = usa,
+  name = "origin_name",
+  value = "share",
+  borderWidth = .5,
+  joinBy = c("iso-a3", "origin_iso3")
+) %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_legend(
+    align = "left",
+    title = list(text = "Ancestral contribution to U.S. population")
+  ) %>%
+  hc_tooltip(
+    headerFormat = "",
+    formatter = formattp
+  )
+```
+
+:::
+:::
+
+Now let's flip things around: which countries contributed the most to the immigrant share of populations worldwide? Here are the top 10 in terms of absolute amounts:
+
+```{r}
+#| code-fold: true
+
+library(WDI)
+
+pop <- WDI(
+  country = "all",
+  indicator = c("pop" = "SP.POP.TOTL"),
+  start = 2009,
+  end = 2009,
+) %>%
+  as_tibble() %>%
+  select(iso3c, pop) %>%
+  bind_rows(tibble(
+    iso3c = "TWN",
+    pop = 23119772
+  ))
+
+mm_origin <- mm %>%
+  left_join(pop, by = c("country_iso3" = "iso3c")) %>%
+  mutate(
+    absolute = share * pop,
+    absolute_out = ifelse(country_iso3 == origin_iso3, 0, share * pop)
+  )
+
+mm_origin_sum <- mm_origin %>%
+  group_by(origin_iso3, origin_name, origin_region) %>%
+  summarize(
+    share = mean(share),
+    absolute = sum(absolute),
+    absolute_out = sum(absolute_out)
+  ) %>%
+  ungroup() %>%
+  filter(absolute_out > 0) %>%
+  arrange(-absolute_out) %>%
+  slice(1:10)
+
+mm_origin_sum <- mm_origin_sum %>%
+  mutate(origin_name = factor(origin_name, levels = mm_origin_sum$origin_name))
+
+hchart(mm_origin_sum, "bar",
+  hcaes(y = absolute_out, x = origin_name),
+  color = "#1046b1",
+  stickyTracking = FALSE
+) %>%
+  hc_yAxis(
+    title = list(text = "Global descendants outside of own country"),
+    gridLineWidth = 1
+  ) %>%
+  hc_xAxis(title = list(text = "")) %>%
+  hc_tooltip(
+    useHTML = TRUE,
+    pointFormat = "{point.absolute_out:,.0f}",
+    headerFormat = ""
+  )
+```
+
+Around the world, some 167 million people^[Not meant to be literal since a person can be of mixed ancestry. Perhaps it is more proper to say there are 167 million "people-equivalent" whose ancestors came from Spain. But hey, we're just having fun here!] not living in Spain have ancestors who lived in Spain in the year 1500. It speaks to the legacy of European colonization and migration that the top 5 largest sources of immigrant ancestry are European countries.  
+
+Where did the descendants of these prolific exporters of people settle? Here are some more maps to give you an idea.
+
+:::{.panelset}
+:::{.panel}
+
+## Spain {.panel-name}
+
+```{r}
+#| code-fold: true
+
+library(CoordinateCleaner)
+
+centroids <- as_tibble(countryref) %>%
+  filter(type == "country") %>%
+  select(iso3, centroid.lon, centroid.lat) %>%
+  group_by(iso3) %>%
+  summarize(
+    lon = mean(centroid.lon),
+    lat = mean(centroid.lat)
+  ) %>%
+  ungroup()
+
+spain <- mm_origin %>%
+  filter(origin_name == "Spain") %>%
+  left_join(centroids, by = c("country_iso3" = "iso3")) %>%
+  mutate(z = absolute_out)
+
+hcmap(
+  map = "custom/world",
+  borderWidth = .5,
+  showInLegend = FALSE
+) %>%
+  hc_add_series(
+    data = spain,
+    type = "mapbubble",
+    maxSize = "40",
+    minSize = "0",
+    showInLegend = FALSE,
+    color = hex_to_rgba("#1046b1", alpha = 0.3),
+    tooltip = list(
+      headerFormat = "",
+      pointFormat = "<b>{point.country_name}</b>: {point.absolute_out:,.0f}"
+    )
+  ) %>%
+  hc_title(text = "Distribution of Spanish descendants")
+```
+
+:::
+
+:::{.panel}
+
+## Portugal {.panel-name}
+
+```{r}
+#| code-fold: true
+
+portugal <- mm_origin %>%
+  filter(origin_name == "Portugal") %>%
+  left_join(centroids, by = c("country_iso3" = "iso3")) %>%
+  mutate(z = absolute_out)
+
+hcmap(
+  map = "custom/world",
+  borderWidth = .5,
+  showInLegend = FALSE
+) %>%
+  hc_add_series(
+    data = portugal,
+    type = "mapbubble",
+    maxSize = "40",
+    minSize = "0",
+    showInLegend = FALSE,
+    color = hex_to_rgba("#1046b1", alpha = 0.3),
+    tooltip = list(
+      headerFormat = "",
+      pointFormat = "<b>{point.country_name}</b>: {point.absolute_out:,.0f}"
+    )
+  ) %>%
+  hc_title(text = "Distribution of Portuguese descendants")
+```
+
+:::
+
+:::{.panel}
+
+## United Kingdom {.panel-name}
+
+```{r}
+#| code-fold: true
+
+uk <- mm_origin %>%
+  filter(origin_name == "United Kingdom") %>%
+  left_join(centroids, by = c("country_iso3" = "iso3")) %>%
+  mutate(z = absolute_out)
+
+hcmap(
+  map = "custom/world",
+  borderWidth = .5,
+  showInLegend = FALSE
+) %>%
+  hc_add_series(
+    data = uk,
+    type = "mapbubble",
+    maxSize = "40",
+    minSize = "0",
+    showInLegend = FALSE,
+    color = hex_to_rgba("#1046b1", alpha = 0.3),
+    tooltip = list(
+      headerFormat = "",
+      pointFormat = "<b>{point.country_name}</b>: {point.absolute_out:,.0f}"
+    )
+  ) %>%
+  hc_title(text = "Distribution of British descendants")
+```
+
+:::
+
+:::{.panel}
+
+## China {.panel-name}
+
+```{r}
+#| code-fold: true
+
+china <- mm_origin %>%
+  filter(origin_name == "China") %>%
+  left_join(centroids, by = c("country_iso3" = "iso3")) %>%
+  mutate(z = absolute_out)
+
+hcmap(
+  map = "custom/world",
+  borderWidth = .5,
+  showInLegend = FALSE
+) %>%
+  hc_add_series(
+    data = china,
+    type = "mapbubble",
+    maxSize = "40",
+    minSize = "0",
+    showInLegend = FALSE,
+    color = hex_to_rgba("#1046b1", alpha = 0.3),
+    tooltip = list(
+      headerFormat = "",
+      pointFormat = "<b>{point.country_name}</b>: {point.absolute_out:,.0f}"
+    )
+  ) %>%
+  hc_title(text = "Distribution of Chinese descendants")
+```
+
+:::
+
+
+:::{.panel}
+
+## India {.panel-name}
+
+```{r}
+#| code-fold: true
+
+india <- mm_origin %>%
+  filter(origin_name == "India") %>%
+  left_join(centroids, by = c("country_iso3" = "iso3")) %>%
+  mutate(z = absolute_out)
+
+hcmap(
+  map = "custom/world",
+  borderWidth = .5,
+  showInLegend = FALSE
+) %>%
+  hc_add_series(
+    data = india,
+    type = "mapbubble",
+    maxSize = "40",
+    minSize = "0",
+    showInLegend = FALSE,
+    color = hex_to_rgba("#1046b1", alpha = 0.3),
+    tooltip = list(
+      headerFormat = "",
+      pointFormat = "<b>{point.country_name}</b>: {point.absolute_out:,.0f}"
+    )
+  ) %>%
+  hc_title(text = "Distribution of Indian descendants")
+```
+
+:::
+
+:::{.panel}
+
+## Angola {.panel-name}
+
+```{r}
+#| code-fold: true
+
+angola <- mm_origin %>%
+  filter(origin_name == "Angola") %>%
+  left_join(centroids, by = c("country_iso3" = "iso3")) %>%
+  mutate(z = absolute_out)
+
+hcmap(
+  map = "custom/world",
+  borderWidth = .5,
+  showInLegend = FALSE
+) %>%
+  hc_add_series(
+    data = angola,
+    type = "mapbubble",
+    maxSize = "40",
+    minSize = "0",
+    showInLegend = FALSE,
+    color = hex_to_rgba("#1046b1", alpha = 0.3),
+    tooltip = list(
+      headerFormat = "",
+      pointFormat = "<b>{point.country_name}</b>: {point.absolute_out:,.0f}"
+    )
+  ) %>%
+  hc_title(text = "Distribution of Angolan descendants")
+```
+
+:::
+:::

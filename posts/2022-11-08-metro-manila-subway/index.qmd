@@ -1,0 +1,69 @@
+---
+title: "Mapping the Metro Manila subway"
+subtitle: "In a fit of wishful thinking, I use Leaflet to map the Metro Manila subway as if it existed"
+date: 2022-11-08
+categories: [map, interactive]
+image: thumbnail.jpg
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+
+font_add_google("Karla", "karla")
+```
+
+Today I'll experiment with making maps via `leaflet`, which I'm using for the first time. I'm relying mainly on [this tutorial](https://rstudio.github.io/leaflet).
+
+```{r}
+library(tidyverse)
+library(leaflet)
+```
+
+Below is a map pointing out some of the planned stations of the future Metro Manila Subway, which will be built... sometime... maybe? Back in June the first tunnel boring machine was "[ceremonially lowered](https://newsinfo.inquirer.net/1609693/duterte-leads-commissioning-of-brp-melchora-aquino-lowering-of-ncr-subways-tunnel-boring-machine)" but no digging has actually taken place.
+
+Anyway, I map the stations from Quirino Highway to 11th Avenue in BGC. I got the locations from trawling through news articles and project documents, then I used Google Maps to get their coordinates.
+
+```{r}
+leaflet(options = leafletOptions(minZoom = 10, maxZoom = 15)) %>%
+  addTiles() %>%
+  addMarkers(lng=121.028460, lat=14.689541, label="Quirino Highway Station") %>%
+  addMarkers(lng=121.032355, lat=14.676936, label="Tandang Sora Station") %>%
+  addMarkers(lng=121.035685, lat=14.654850, label="North Avenue Station") %>%
+  addMarkers(lng=121.037591, lat=14.644747, label="Quezon Avenue Station") %>%
+  addMarkers(lng=121.051628, lat=14.640692, label="East Avenue Station") %>%
+  addMarkers(lng=121.065282, lat=14.627151, label="Anonas Station") %>%
+  addMarkers(lng=121.069868, lat=14.613690, label="Camp Aguinaldo Station") %>%
+  addMarkers(lng=121.063565, lat=14.588103, label="Ortigas Station") %>%
+  addMarkers(lng=121.061238, lat=14.575162, label="Shaw Station") %>%
+  addMarkers(lng=121.055859, lat=14.558327, label="11th Avenue Station")
+```
+
+And here's the map! It's fine? It's a little busy, so let's change the map tile from the default OpenStreetMap to a nice minimalist one from [this list](http://leaflet-extras.github.io/leaflet-providers/preview/index.html).
+
+```{r}
+leaflet(options = leafletOptions(minZoom = 10, maxZoom = 15)) %>%
+  addProviderTiles(providers$CartoDB.Voyager) %>%
+  addMarkers(lng=121.028460, lat=14.689541, label="Quirino Highway Station") %>%
+  addMarkers(lng=121.032355, lat=14.676936, label="Tandang Sora Station") %>%
+  addMarkers(lng=121.035685, lat=14.654850, label="North Avenue Station") %>%
+  addMarkers(lng=121.037591, lat=14.644747, label="Quezon Avenue Station") %>%
+  addMarkers(lng=121.051628, lat=14.640692, label="East Avenue Station") %>%
+  addMarkers(lng=121.065282, lat=14.627151, label="Anonas Station") %>%
+  addMarkers(lng=121.069868, lat=14.613690, label="Camp Aguinaldo Station") %>%
+  addMarkers(lng=121.063565, lat=14.588103, label="Ortigas Station") %>%
+  addMarkers(lng=121.061238, lat=14.575162, label="Shaw Station") %>%
+  addMarkers(lng=121.055859, lat=14.558327, label="11th Avenue Station")
+```
+
+Neat. I'll revisit this later on to see what else I can add.
+
+**Update 17 Nov 2022:** Transportation Undersecretary Cesar Chavez [has said](https://news.abs-cbn.com/business/11/17/22/metro-manila-subway-excavation-to-start-in-december) that "the actual excavation is on December 12". He added: "Actually, this is for real. The excavation is real." Well, there you have it. The excavation is "real".

@@ -1,0 +1,346 @@
+---
+title: "The roots of economic development"
+subtitle: "Visualizing some key results in Spolaore and Wacziarg's 2013 survey"
+date: 2022-11-25
+categories: [scatter, map, interactive]
+image: thumbnail.jpg
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(xaringanExtra)
+library(showtext)
+library(here)
+
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+xaringanExtra::use_panelset()
+
+source(here("R", "functions.R"))
+
+font_add_google("Karla", "karla")
+```
+
+One of the most interesting economics papers I've ever read is the 2013 survey by Enrico Spolaore and Romain Wacziarg (SW) titled ["How Deep Are the Roots of Economic Development?"](https://www.anderson.ucla.edu/faculty_pages/romain.wacziarg/downloads/2013_roots.pdf) There has long been an active, highly contentious discussion over why some countries today are rich while others are poor. As a citizen of a "poor" country, this was a big motivation for me to study economics.^[Ten years later and I still don't have clear answers.]
+
+The *proximate* causes are relatively uncontroversial---[Solow](http://piketty.pse.ens.fr/files/Solow1956.pdf) had it all laid out in 1956. Production turns inputs into output. More inputs mean more output. Some output are consumed, some are saved ("invested") and turned into capital, which are then used as inputs to produce more output. You can keep accumulating capital to grow your output, but over time, for a given state of technology, capital accumulation will hit diminishing returns. You will then need to move up the technological ladder to continue increasing output. Repeat until rich.
+
+The Solow model is elegant, but it has the flavor of saying that a business is successful because it makes a lot of money. The deeper question is why some countries have managed to perform these pro-growth activities while others have not. Is it something in their culture? Maybe their geography? Maybe they had a Great Leader who put all the pieces in place?
+
+This has been the research agenda of a number of empirical economic historians. Their work supplements that of traditional economic historians by quantifying the evidence for various hypothesized root causes of development. SW survey their findings as of 2013 using a unified dataset available [here](https://www.anderson.ucla.edu/faculty_pages/romain.wacziarg/papersum.html). What I want to do is chart some of the more interesting results.
+
+```{r}
+library(tidyverse)
+library(foreign)
+
+df <- here::here("datasets", "2013_longterm.dta") %>%
+  read.dta() %>%
+  as_tibble()
+```
+
+Geography is a natural candidate for explaining the relative wealth of nations. Ever notice that cold countries tend to be richer than hot ones? In fact, it's empirically well-founded:
+
+```{r}
+#| code-fold: true
+
+library(highcharter)
+library(broom)
+
+pretty <- function(n, d = 0) {
+  n <- format(round(n, digits = d), nsmall = d)
+  prettyNum(n, big.mark = ",", scientific = FALSE)
+}
+
+df1 <- df %>%
+  select(country, rgdpch_2005, avelat) %>%
+  drop_na() %>%
+  mutate(rgdpch_2005_pretty = pretty(rgdpch_2005, 0))
+
+fit <- lm(log10(rgdpch_2005) ~ avelat, data = df1) %>%
+  augment() %>%
+  arrange(avelat) %>%
+  slice(c(1, nrow(df1)))
+
+x <- c("Country", "GDP per capita", "Absolute latitude")
+y <- c("{point.country:s}", "${point.rgdpch_2005_pretty:s}", "{point.avelat:.1f}")
+tltip <- tooltip_table(x, y)
+
+hchart(df1, "scatter",
+  hcaes(x = avelat, y = rgdpch_2005),
+  color = hex_to_rgba("#1046b1", 0.5),
+  size = 20,
+  stickyTracking = FALSE
+) %>%
+  hc_xAxis(
+    title = list(text = "Absolute latitude"),
+    gridLineWidth = 1
+  ) %>%
+  hc_yAxis(
+    title = list(text = "GDP per capita 2005"),
+    type = "logarithmic",
+    gridLineWidth = 1
+  ) %>%
+  hc_tooltip(
+    useHTML = TRUE,
+    pointFormat = tltip,
+    headerFormat = ""
+  ) %>%
+  hc_add_series(
+    data = fit,
+    type = "spline",
+    hcaes(x = avelat, y = 10^.fitted),
+    color = "black",
+    lineWidth = 1,
+    marker = FALSE,
+    enableMouseTracking = FALSE
+  )
+```
+
+What explains this intriguing correlation? SW divide proposed mechanisms into direct and indirect channels. Geography may have a *direct* influence on economic development through the effects of climate and diseases on agricultural and labor productivity. Or in cruder form, this is the argument that hotter weather makes for lazier people, which Rizal refuted in "[The Indolence of the Filipino](https://web.seducoahuila.gob.mx/biblioweb/upload/the_indolence_of_the_filipino_by_jos%C3%83%C2%A9_rizal.pdf)". 
+
+Arguments for an indirect channel are, for me, more convincing. Geography influenced *x*, and *x* in turn influenced economic development. There may even be additional layers (*x* influenced *y*, *y* influenced *z*, etc.). A famous hypothesis comes from Jared Diamond's 1997 book *Guns, Germs, and Steel*, which argues that climate and the ecosystems it supported influenced the onset of agriculture and domestication in a society, what is known as the Neolithic Revolution. In turn, societies that transitioned earlier would have had a head start in technological progress and centralized governments. This explains why Europeans had the advantage of "guns, germs, and steel" as they were conquering the civilizations of New World America in the 16th century.
+
+To illustrate the Diamond hypothesis, the following plots population density in the year 1500 against the years since a country had undergone its Neolithic Revolution---population density being the best proxy available for relative economic development in a pre-industrial world. Again, a positive correlation is established.
+
+```{r}
+#| code-fold: true
+
+df1 <- df %>%
+  select(country, pd1500, agyears) %>%
+  drop_na() %>%
+  mutate(
+    pd1500_pretty = pretty(pd1500, 2),
+    agyears_pretty = pretty(agyears, 0)
+  )
+
+fit <- lm(log10(pd1500) ~ agyears, data = df1) %>%
+  augment() %>%
+  arrange(agyears) %>%
+  slice(c(1, nrow(df1)))
+
+x <- c("Country", "Population density in 1500", "Years since Neolithic Revolution")
+y <- c("{point.country:s}", "{point.pd1500_pretty:s}", "{point.agyears_pretty:s}")
+tltip <- tooltip_table(x, y)
+
+hchart(df1, "scatter",
+  hcaes(x = agyears, y = pd1500),
+  color = hex_to_rgba("#1046b1", 0.5),
+  size = 20,
+  stickyTracking = FALSE
+) %>%
+  hc_xAxis(
+    title = list(text = "Years since Neolithic Revolution"),
+    gridLineWidth = 1
+  ) %>%
+  hc_yAxis(
+    title = list(text = "Population density 1500"),
+    type = "logarithmic",
+    gridLineWidth = 1
+  ) %>%
+  hc_tooltip(
+    useHTML = TRUE,
+    pointFormat = tltip,
+    headerFormat = ""
+  ) %>%
+  hc_add_series(
+    data = fit,
+    type = "spline",
+    hcaes(x = agyears, y = 10^.fitted),
+    color = "black",
+    lineWidth = 1,
+    marker = FALSE,
+    enableMouseTracking = FALSE
+  )
+```
+
+There is another reason why it makes more sense to use economic development as of 1500 rather than as of today. If geography shapes economic destinies, then how do we account for countries whose peoples are, in the grand scale of things, relative newcomers to the environments they now inhabit? These include European migrants to the New World as well as African slaves forcibly transported to New World colonies. If it takes thousands of years for geography to shape human cultures and institutions, then an English colonist who settled in what is now the United States would have been influenced by English rather than American geography. 
+
+In short, one must take into account the historical composition of a given country's population when correlating geographic factors to contemporary development. This motivates the [World Migration Matrix](https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000) constructed by Louis Putterman and David N. Weil, which, for 165 countries, gives "an estimate of the proportion of the ancestors in 1500 of that country's population today that were living within what are now the borders of that and each of the other countries". To take one example, among the present-day inhabitants of Cuba, Putterman and Weil estimate that 63% of their ancestors originate from Spain, 5.6% from Nigeria, 5.1% from Ghana, 4.9% from Angola, and so on. Cuba today would exhibit the effects of the weighted average of all these different geographies.
+
+The following map shows the countries with the highest proportion of "immigrants" relative to their present-day populations. In countries like Australia, Singapore, Taiwan, and Jamaica, very few of their current citizens have ancestors that were living in that country in 1500. On the opposite extreme are countries like China, Japan, Algeria, and Greece.
+
+```{r}
+#| code-fold: true
+
+library(readxl)
+library(countrycode)
+
+mm <- here::here("datasets", "matrix version 1.1.xls") %>% 
+  read_excel() %>%
+  pivot_longer(
+    cols = !c(wbcode, wbname),
+    names_to = "ancestry",
+    values_to = "share"
+  ) %>%
+  mutate(ancestry = toupper(ancestry)) %>%
+  filter(wbcode == ancestry) %>%
+  mutate(
+    immigrant = 1 - share,
+    iso_3 = countrycode(wbcode, "wb", "iso3c")
+  ) %>%
+  select(iso_3, wbname, immigrant)
+
+mm$iso_3[mm$wbname == "Congo, Dem. Rep."] <- "COD"
+mm$iso_3[mm$wbname == "East Timor"] <- "TLS"
+mm$iso_3[mm$wbname == "Romania"] <- "ROU"
+mm$iso_3[mm$wbname == "Taiwan, China"] <- "TWN"
+
+formattp <- JS("function() {
+  if (this.point.value < 0.01) {
+    return '<b>' + this.point.name + '</b>: <0.01';
+  }
+  else {
+    if (this.point.value > 0.99) {
+      return '<b>' + this.point.name + '</b>: >0.99';
+    }
+    else {
+      return '<b>' + this.point.name + '</b>: ' + Highcharts.numberFormat(this.point.value, 2);
+    }
+  }
+}")
+
+hcmap(
+  map = "custom/world-highres3",
+  data = mm,
+  name = "Share of population that arrived after 1500",
+  value = "immigrant",
+  borderWidth = .5,
+  joinBy = c("iso-a3", "iso_3")
+) %>%
+  hc_legend(
+    align = "left",
+    title = list(text = "Share of population that arrived after 1500")
+  ) %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(
+    headerFormat = "",
+    formatter = formattp
+  )
+```
+
+Applying an "ancestry adjustment" to the Diamond hypothesis makes a significant difference. The first chart below plots GDP per capita today and the years since the Neolithic Revolution. There is a positive correlation, albeit a weak one. The second chart plots GDP per capita against the ancestry-adjusted years since the Neolithic Revolution. Doing this strengthens the correlation. This suggests that (1) people were shaped by their environment, and (2) they brought their cultures and institutions with them during the great post-1500 migrations.
+
+:::{.panelset}
+:::{.panel}
+
+## Unadjusted {.panel-name}
+
+```{r}
+#| code-fold: true
+
+df1 <- df %>%
+  select(country, rgdpch_2005, agyears) %>%
+  drop_na() %>%
+  mutate(
+    rgdpch_2005_pretty = pretty(rgdpch_2005, 0),
+    agyears_pretty = pretty(agyears, 0)
+  )
+
+fit <- lm(log10(rgdpch_2005) ~ agyears, data = df1) %>%
+  augment() %>%
+  arrange(agyears) %>%
+  slice(c(1, nrow(df1)))
+
+x <- c("Country", "GDP per capita", "Years since Neolithic Revolution")
+y <- c("{point.country:s}", "${point.rgdpch_2005_pretty:s}", "{point.agyears_pretty:s}")
+tltip <- tooltip_table(x, y)
+
+hchart(df1, "scatter",
+  hcaes(x = agyears, y = rgdpch_2005),
+  color = hex_to_rgba("#1046b1", 0.5),
+  size = 20,
+  stickyTracking = FALSE
+) %>%
+  hc_xAxis(
+    title = list(text = "Years since Neolithic Revolution"),
+    gridLineWidth = 1,
+    min = 0, max = 11000
+  ) %>%
+  hc_yAxis(
+    title = list(text = "GDP per capita 2005"),
+    type = "logarithmic",
+    gridLineWidth = 1
+  ) %>%
+  hc_tooltip(
+    useHTML = TRUE,
+    pointFormat = tltip,
+    headerFormat = ""
+  ) %>%
+  hc_add_series(
+    data = fit,
+    type = "spline",
+    hcaes(x = agyears, y = 10^.fitted),
+    color = "black",
+    lineWidth = 1,
+    marker = FALSE,
+    enableMouseTracking = FALSE
+  )
+```
+
+:::
+
+:::{.panel}
+
+## Ancestry-adjusted {.panel-name}
+
+```{r}
+#| code-fold: true
+
+df1 <- df %>%
+  select(country, rgdpch_2005, adjagyears) %>%
+  drop_na() %>%
+  mutate(
+    rgdpch_2005_pretty = pretty(rgdpch_2005, 0),
+    adjagyears_pretty = pretty(adjagyears, 0)
+  )
+
+fit <- lm(log10(rgdpch_2005) ~ adjagyears, data = df1) %>%
+  augment() %>%
+  arrange(adjagyears) %>%
+  slice(c(1, nrow(df1)))
+
+x <- c("Country", "GDP per capita", "Years since Neolithic Revolution")
+y <- c("{point.country:s}", "${point.rgdpch_2005_pretty:s}", "{point.adjagyears_pretty:s}")
+tltip <- tooltip_table(x, y)
+
+hchart(df1, "scatter",
+  hcaes(x = adjagyears, y = rgdpch_2005),
+  color = hex_to_rgba("#1046b1", 0.5),
+  size = 20,
+  stickyTracking = FALSE
+) %>%
+  hc_xAxis(
+    title = list(text = "Years since Neolithic Revolution (ancestry-adjusted)"),
+    gridLineWidth = 1,
+    min = 0, max = 11000
+  ) %>%
+  hc_yAxis(
+    title = list(text = "GDP per capita 2005"),
+    type = "logarithmic",
+    gridLineWidth = 1
+  ) %>%
+  hc_tooltip(
+    useHTML = TRUE,
+    pointFormat = tltip,
+    headerFormat = ""
+  ) %>%
+  hc_add_series(
+    data = fit,
+    type = "spline",
+    hcaes(x = adjagyears, y = 10^.fitted),
+    color = "black",
+    lineWidth = 1,
+    marker = FALSE,
+    enableMouseTracking = FALSE
+  )
+```
+
+:::
+:::
+
+The correlations above provide pretty fascinating insights. But they are all flawed, of course. Countries are not random realizations of a well-defined stochastic process. Nor are they equal: when generalizing about long-run economic development, it's not clear that the experiences of a Singapore or a Cape Verde should hold equal weight to the experiences of an India or a China. Which are the exceptions and which are the rules? Do rules even exist?
+
+The field of empirical economic history has done much to extend, refine, and qualify the basic results shown here. Hopefully I'll write about them in future posts.
