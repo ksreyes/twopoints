@@ -1,0 +1,13 @@
+group1,group2,billions
+liabilities,total,8.859042572
+assets,total,9.581432152
+assets,liquid,0.899859124
+assets,liquid-robinhood,0.472291833
+assets,liquid-others,0.427567291
+assets,lessliquid,5.44951309
+assets,lessliquid-ftt,0.553903773
+assets,lessliquid-serum,2.187876172
+assets,lessliquid-sol,0.981902267
+assets,lessliquid-maps,0.616372827
+assets,lessliquid-others,1.109458051
+assets,illiquid,3.232059943
