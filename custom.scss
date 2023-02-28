@@ -404,6 +404,7 @@ a.icon-link:hover {
   
   span.navbar-title {
     font-size: $font-size-navbar-title * .55;
+    font-family: $font-family-headings;
     font-weight: 700;
   }
   
@@ -430,6 +431,8 @@ a.icon-link:hover {
   
   div.quarto-post .body h3.listing-title {
     font-size: $font-size-listing-title * .9;
+    font-family: $font-family-headings;
+    font-weight: 700;
     margin-bottom: 5px;
   }
   
@@ -456,6 +459,8 @@ a.icon-link:hover {
   
   #title-block-header h1.title {
     font-size: $font-size-post-title * .8;
+    font-family: $font-family-headings;
+    font-weight: 700;
     line-height: $line-height-smaller * .7;
   }
 
@@ -504,26 +509,50 @@ a.icon-link:hover {
   div.cell-output-display > p {
     margin-bottom: $paragraph-margin-bottom * .25;
   }
+  
+  /* --- Panel set ------------------------------------------- */
+  
+  .panelset {
+    font-size: $font-size-base * .7;
+  }
+  
+  .panelset .panel-tabs .panel-tab {
+    min-height: 30px !important;
+    padding: .25em .5em;
+  }
+  
+  .panelset .panel-tabs .panel-tab-active {
+    border-top: 1.5px solid;
+    border-bottom: 1.5px solid;
+  }
 
   /* --- Subpages ------------------------------------------- */
   
   main.content h1.subpage-header {
     font-size: $font-size-subpage-header * .8;
+    font-family: $font-family-headings;
+    font-weight: 700;
     margin-bottom: 1.5rem;
   }
   
   main.content h1.subpage-subscribe-header {
     font-size: $font-size-subpage-header * .8;
+    font-family: $font-family-headings;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
 
   main.content p.subpage-header-2 {
     font-size: $font-size-subpage-text;
+    font-family: $font-family-headings;
+    font-weight: 700;
     margin: 2rem 0 .75rem 0
   }
 
   span.subpage-inline {
     font-size: $font-size-subpage-inline *.7;
+    font-family: $font-family-headings;
+    font-weight: 700;
   }
 
   main.content p.subpage-note {
@@ -540,6 +569,31 @@ a.icon-link:hover {
   div.sib-form__declaration p {
     font-size: $font-size-base * .6 !important;
     margin-bottom: 0 !important;
+  }
+  
+  .highchart {
+    height: auto !important;
+  }
+  
+  text.highcharts-title {
+    font-family: $font-family-headings !important;
+    font-size: $font-size-base * .7 !important;
+    font-weight: 700 !important;
+  }
+
+  text.highcharts-subtitle {
+    font-family: $font-family-headings !important;
+    font-size: $font-size-base * .6 !important;
+  }
+
+  span.highcharts-caption {
+    font-family: $font-family-headings !important;
+    font-size: $font-size-base * .3 !important;
+  }
+
+  g.highcharts-axis, g.highcharts-axis-labels text {
+    font-family: $font-family-headings !important;
+    font-size: $font-size-base * .6 !important;
   }
   
 }
