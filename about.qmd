@@ -4,14 +4,11 @@ title: ""
 
 ```{r}
 #| label: setup
+#| echo: false
 #| include: false
 
-library(knitr)
 library(here)
-
-knitr::opts_chunk$set(echo = FALSE)
-
-source(here("R", "functions.R"))
+source(here::here("R", "functions.R"))
 ```
 
 <div class="subpage">

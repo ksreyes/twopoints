@@ -91,7 +91,7 @@ nav.navbar-dark {
 }
 
 .navbar-brand {
-  padding: 0.2rem 0 0.2rem 0;
+  padding: 0.2rem 0;
   margin: 0;
 }
 
@@ -383,16 +383,23 @@ a.icon-link:hover {
   }
   
   .navbar-logo {
-    max-height: 20px;
+    max-height: 15px;
     padding-right: 0;
   }
   
+  .navbar-brand.navbar-brand-logo {
+    margin-right: 10px;
+  }
+  
   a.navbar-brand {
+    display: flex;
+    align-items: center;
     padding: 0;
   }
   
   span.navbar-title {
-    font-size: $font-size-navbar-title * .7;
+    font-size: $font-size-navbar-title * .55;
+    font-weight: 700;
   }
   
   .navbar-toggler {
