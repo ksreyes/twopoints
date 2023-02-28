@@ -1,5 +1,7 @@
 ---
-title: ""
+title: "About"
+page-layout: full
+editor: source
 ---
 
 ```{r}

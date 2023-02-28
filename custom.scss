@@ -115,6 +115,11 @@ li.nav-item > span.menu-text {
 
 /* --- Home page listings ------------------------------------------- */
 
+#quarto-content.page-layout-full #title-block-header {
+  display: none;
+  margin: 0;
+}
+
 div.quarto-post .body {
   padding-top: 10px;
 }

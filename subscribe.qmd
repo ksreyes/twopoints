@@ -1,5 +1,7 @@
 ---
-title: ""
+title: "Subscribe"
+page-layout: full
+editor: source
 ---
 
 <div class="subpage-subscribe">
@@ -216,4 +218,5 @@ title: ""
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Sendinblue Form -->
 ```
+
 </div>

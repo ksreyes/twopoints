@@ -6,14 +6,14 @@ website:
   title: "Two Points Make a Line"
   site-url: https://twopoints.blog
   description: "A blog about visualizing data"
-  favicon: images/logo-icon.png
+  favicon: /images/logo-icon.png
   repo-url: https://github.com/ksreyes/twopoints
-  image: images/logo-icon.png
+  image: /images/logo-icon.png
   google-analytics: "G-EJMC44PZ56"
   cookie-consent: true
   search: true
   navbar:
-    logo: images/logo-icon-invert.png
+    logo: /images/logo-icon-invert.png
     left: 
       - text: "A blog about visualizing data by Kenneth S. Reyes"
     right:
@@ -32,5 +32,5 @@ format:
       - default
       - custom.scss
 
-editor: visual
+editor: source
 
