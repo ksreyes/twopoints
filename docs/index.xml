@@ -10,7 +10,7 @@
 <atom:link href="https://twopoints.blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog about visualizing data</description>
 <image>
-<url>https://twopoints.blog/logo-icon.png</url>
+<url>https://twopoints.blog/images/logo-icon.png</url>
 <title>Two Points Make a Line</title>
 <link>https://twopoints.blog/index.html</link>
 </image>
@@ -18,7 +18,7 @@
 <lastBuildDate>Tue, 21 Feb 2023 16:00:00 GMT</lastBuildDate>
 <item>
   <title>Putin’s leverage, Putin’s folly</title>
-  <link>https://twopoints.blog/posts/2023-02-22-putin/index.html</link>
+  <link>https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/index.html</link>
   <description><![CDATA[ 
 
 
@@ -287,7 +287,7 @@
 <span id="cb5-59">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="https://twopoints.blog/posts/2023-02-22-putin/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>In net value terms for the commodities in question, Russia was the biggest exporter in 2021. Receipts from these would finance its war the following year and have naturally become the primary targets of Western sanctions. Over on the other end, the pronounced reliance of Chinese industry on energy imports <a href="https://www.bloomberg.com/opinion/articles/2023-02-02/china-russia-friendship-is-too-big-to-fail">adds another strategic reason</a> why the Xi–Putin friendship would continue to have “no limits”.</p>
@@ -520,7 +520,7 @@
 <span id="cb9-47">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="https://twopoints.blog/posts/2023-02-22-putin/index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>The centrality of Russia is evident, making efforts to rapidly disentangle it from supply networks a daunting task. If it can be done at all, it will have to be done gradually, with plenty of near-term pain.</p>
@@ -598,7 +598,7 @@
 <span id="cb10-68">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="https://twopoints.blog/posts/2023-02-22-putin/index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>The fruits of <a href="https://www.theguardian.com/world/2022/jun/02/germany-dependence-russian-energy-gas-oil-nord-stream">Germany’s enthusiastic rapproachment with Russia</a> had, by 2021, translated into a dependence on Russian energy that exceeded France and the UK. It has unsurprisingly <a href="https://www.theguardian.com/commentisfree/2023/jan/26/germany-u-turn-tanks-ukraine-reluctant-olaf-scholz">dragged its feet</a> in providing military aid to Ukraine. But even higher was Finland’s, which in contrast has opted to <a href="https://www.cer.eu/insights/new-era-finnish-foreign-policy-begins">irrevocably defy Moscow by moving to join NATO</a>. This after decades of steadfast neutrality, demonstrating how past alignments can shift—and have shifted—dramatically.</p>
@@ -609,9 +609,9 @@
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section></div> ]]></description>
   <category>bar</category>
   <category>network</category>
-  <guid>https://twopoints.blog/posts/2023-02-22-putin/index.html</guid>
+  <guid>https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/index.html</guid>
   <pubDate>Tue, 21 Feb 2023 16:00:00 GMT</pubDate>
-  <media:content url="https://twopoints.blog/posts/2023-02-22-putin/thumbnail.png" medium="image" type="image/png" height="108" width="144"/>
+  <media:content url="https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/thumbnail.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>The standard age</title>
