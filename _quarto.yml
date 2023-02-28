@@ -15,7 +15,7 @@ website:
   navbar:
     logo: images/logo-icon-invert.png
     left: 
-      - text: "A blog about visualizing data\nby Kenneth S. Reyes"
+      - text: "A blog about visualizing data by Kenneth S. Reyes"
     right:
       - href: subscribe.qmd
         text: "Subscribe"

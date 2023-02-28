@@ -2,25 +2,80 @@
 
 /*-- scss:defaults --*/
 
+/* --- Fonts ------------------------------------------- */
+
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
-$font-size-base:              1.1rem !default;
-$line-height-base:            1.6 !default;
-$paragraph-margin-bottom:     1.75rem !default;
+$font-family-headings:        Karla, Helvetica, Arial, sans-serif !default;
 
-$headings-font-family:        Karla, Helvetica, Arial, sans-serif !default;
-$h1-font-size:                $font-size-base * 2.8 !default;
+/* --- Font sizes ------------------------------------------- */
 
-$small-font-size:             .85em !default;
-$code-font-size:              $small-font-size !default;
+$font-size-base:                 1.1rem !default;
+$font-size-smaller:              1rem;
 
-$link-decoration:             none !default;
+$font-size-navbar-title:         1.65rem;
+$font-size-navbar-subtitle:      1rem;
+$font-size-navbar-item:          1.1rem;
+
+$font-size-listing-title:        1.5rem;
+$font-size-listing-subtitle:     .95rem;
+$font-size-listing-date:         .88rem;
+$font-size-categories:           .65rem;
+
+$font-size-post-title:           2.5rem;
+$font-size-post-subtitle:        calc(1.25rem + .15vw);
+$font-size-post-date:            .9rem;
+
+$font-size-code:                 .9rem;
+$font-size-code-output:          .9rem;
+
+$font-size-blockquote:           1rem;
+
+$font-size-subpage-header:       2rem;
+$font-size-subpage-inline:       1.2rem;
+$font-size-subpage-text:         1.1rem;
+$font-size-subpage-note:         .75rem;
+
+/* --- Line heights ------------------------------------------- */
+
+$line-height-base:               1.6 !default;
+$line-height-smaller:            1.5;
+
+/* --- Text margins ------------------------------------------- */
+
+$paragraph-margin-bottom:        1.75rem !default;
+
+/* --- Colors ------------------------------------------- */
+
+$color-blue:                     #1046b1;
+$color-listing-thumbnail-border: #e9ecef;
+$color-category-text:            #6c757d;
+$color-category-border:          #dee2e6;
+$color-category-active:          #e9ecef;
+
+$link-decoration:                none !default;
+
 
 /*-- scss:rules --*/
 
-// Navbar
+/* --- General ------------------------------------------- */
+
+#quarto-content {
+  margin-top: 3em;
+}
+
+main {
+  font: $font-family-sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: $font-family-headings;
+  font-weight: 700;
+}
+
+/* --- Navbar ------------------------------------------- */
 
 nav.navbar-dark {
-  background-color: #1046b1;
+  background-color: $color-blue;
 }
 
 .navbar-brand.navbar-brand-logo {
@@ -41,37 +96,37 @@ nav.navbar-dark {
 }
 
 span.navbar-title {
-  font-family: Karla, Helvetica, Arial, sans-serif;
-  font-size: $font-size-base * 1.5;
+  font-family: $font-family-headings;
+  font-size: $font-size-navbar-title;
   font-weight: 700;
 }
 
-.navbar .dropdown-header {
+.navbar .dropdown-header {        /* Subtitle */
   color: white;
-  font-size: 1rem;
-  opacity: .6;
+  font-size: $font-size-navbar-subtitle;
   text-transform: none;
+  opacity: .6;
   padding-top: 3px;
 }
 
-// Body
-
-#quarto-content {
-  margin-top: 3em;
+li.nav-item > span.menu-text {
+  font-size: $font-size-navbar-item;
 }
 
-// Listing
+/* --- Home page listings ------------------------------------------- */
 
 div.quarto-post .body {
   padding-top: 10px;
 }
 
 div.quarto-post .body h3.listing-title {
+  font-size: $font-size-listing-title;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
 div.quarto-post .body .listing-subtitle {
+  font-size: $font-size-listing-subtitle;
   line-height: 1.5;
 }
 
@@ -80,142 +135,191 @@ div.quarto-post .listing-categories {
 }
 
 div.quarto-post .metadata {
+  font-size: $font-size-listing-date;
   margin-top: 15px;
 }
 
 div.quarto-post .thumbnail a {
-  border: solid 8px #e9ecef;
+  border: solid 8px $color-listing-thumbnail-border;
   border-radius: 0.25rem;
-}
-
-#quarto-margin-sidebar.sidebar.margin-sidebar {
-  padding-left: 30px;
-}
-
-div.category {
-  border: solid 1px #dee2e6;
-  border-radius: 0.25rem;
-  color: #6c757d;
-  font-size: .65em;
-  text-transform: uppercase;
-  margin: 5px 40px 10px 0;
-  padding: .25em .75em;
-}
-
-div.category.active {
-  background-color: #e9ecef;
 }
 
 div.quarto-post .thumbnail img {
   margin: 0;
 }
 
-// Blog post
+#quarto-margin-sidebar.sidebar.margin-sidebar {
+  padding-left: 30px;
+}
 
-h1 {
-  font-weight: 700;
+#quarto-margin-sidebar .quarto-listing-category div.category {
+  border: solid 1px $color-category-border;
+  border-radius: 0.25rem;
+  color: $color-category-text;
+  font-size: $font-size-categories;
+  text-transform: uppercase;
+  margin: 5px 40px 10px 0;
+  padding: .25em .75em;
+}
+
+div.category:hover, div.category.active {
+  background-color: $color-category-active;
+}
+
+/* --- Blog posts ------------------------------------------- */
+
+#title-block-header h1.title {
+  font-size: $font-size-post-title;
 }
 
 div.quarto-title {
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 p.subtitle.lead {
-  font-size: 1.65rem;
-  line-height: 1.5;
+  font-size: $font-size-post-subtitle;
+  line-height: $line-height-smaller;
   margin: .4em 0 1em 0;
 }
 
 div.quarto-title-meta {
   margin: 1em 0 3em 0;
-}
-
-div.quarto-title-meta-heading {
-  display: none;
-}
-
-div.quarto-title-meta-contents p.date {
   color: #adb5bd;
 }
 
+#title-block-header.quarto-title-block.default .quarto-title-meta-contents {
+  font-size: $font-size-post-date;
+}
+
+div.quarto-title-meta-heading {
+  display: none;  /* Remove "Published" */
+}
+
 blockquote.blockquote {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: $font-size-blockquote;
+  line-height: $line-height-smaller;
   padding: 0 1.5rem 0 1rem;
   margin: 0 0 1.75rem 0;
 }
 
-span.inline {
-  font-family: Karla, Helvetica, Arial, sans-serif;
-  font-size: $font-size-base * 1.1;
-  font-weight: 700;
-  color: #1046b1;
-}
-
-// Code chunks
+/* --- Code chunks ------------------------------------------- */
 
 div.cell {
-  margin-bottom: 1.7rem;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 div.sourceCode {
-  margin: 0;
+  margin-bottom: $paragraph-margin-bottom * .5;
 }
 
-pre.sourceCode {
-  padding: 1em;
-}
-
-.sourceCode.cell-code {
-  font-size: $font-size-base * .85;
-}
-
-div.cell-output {
+div.cell-output, div.cell-output-display {
+  font-size: $font-size-code-output;
   margin-top: 1.5rem;
 }
 
-div.cell-output code {
-  font-size: $font-size-base * .75;
+div.cell-output-display > table.table {
+  margin-bottom: 0;
 }
 
-div.cell-output-display {
-  margin-top: 1.5rem;
+div.sourceCode > pre.sourceCode {
+  padding: 15px;
 }
 
-div.cell-output-display table {
-  font-size: .8rem;
+div.sourceCode > pre.sourceCode > code {
+  font-size: $font-size-code;
 }
 
-// Highcharts
+div.cell-output-display > p {
+  margin-bottom: $paragraph-margin-bottom * .5;
+}
+
+/* --- Highcharts ------------------------------------------- */
 
 text.highcharts-title {
-  font-family: $headings-font-family !important;
+  font-family: $font-family-headings !important;
   font-size: $font-size-base * 1.1 !important;
   font-weight: 700 !important;
 }
 
 text.highcharts-subtitle {
-  font-family: $headings-font-family !important;
+  font-family: $font-family-headings !important;
   font-size: $font-size-base !important;
 }
 
 span.highcharts-caption {
-  font-family: $headings-font-family !important;
+  font-family: $font-family-headings !important;
   font-size: $font-size-base * .6 !important;
 }
 
 g.highcharts-axis {
-  font-family: $headings-font-family !important;
+  font-family: $font-family-headings !important;
   font-size: $font-size-base * .85 !important;
 }
 
-// Subscription form
+/* --- Subpage ------------------------------------------- */
+
+.subpage {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+
+.subpage-subscribe {
+  text-align: center;
+  max-width: 550px;
+  margin: auto;
+}
+
+.subpage-subscribe p {
+  margin-bottom: $paragraph-margin-bottom * .5;
+}
+
+h1.subpage-header {
+  font-size: $font-size-subpage-header;
+  font-family: $font-family-headings;
+  margin-bottom: 2rem;
+}
+
+h1.subpage-subscribe-header {
+  font-size: $font-size-subpage-header;
+  font-family: $font-family-headings;
+  margin-bottom: 1.5rem;
+}
+
+p.subpage-header-2 {
+  font-size: $font-size-subpage-text * 1.2;
+  font-family: $font-family-headings;
+  font-weight: 700;
+  margin: 2rem 0 .75rem 0
+}
+
+span.subpage-inline {
+  font-family: Karla, Helvetica, Arial, sans-serif;
+  font-size: $font-size-subpage-inline;
+  font-weight: 700;
+  color: $color-blue;
+}
+
+p.subpage-text {
+  font-size: $font-size-subpage-text;
+}
+
+p.subpage-note {
+  font-size: $font-size-subpage-note;
+  margin: 1rem 0 0 0
+}
+
+/* --- Subscription ------------------------------------------- */
 
 div.sib-form .entry__field {
   border: solid 1px #6c757d;
 }
 
-// YouTube video
+#sib-container {
+  padding: 1rem 0 !important;
+}
+
+/* --- YouTube embed ------------------------------------------- */
 
 .container {
   position: relative;
@@ -232,7 +336,7 @@ div.sib-form .entry__field {
   height: 100%;
 }
 
-// Icon line
+/* --- Icon link ------------------------------------------- */
 
 a.icon-link {
   background-color: #1046b1;
@@ -246,4 +350,184 @@ a.icon-link {
 
 a.icon-link:hover {
   background-color: shift-color(#1046b1, -20%);
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+  
+  #quarto-content {
+    margin-top: 0 !important;
+  }
+  
+  main.content p {
+    font-size: $font-size-base * .7;
+    margin-bottom: $paragraph-margin-bottom * .7;
+  }
+  
+  #quarto-appendix.default {
+    font-size: $font-size-base * .7;
+  }
+  
+  div.cookie-consent-footer {
+    font-size: $font-size-base * .6;
+  }
+  
+  /* --- Navbar ------------------------------------------- */
+  
+  div.navbar-brand-container {
+    margin: 0;
+  }
+  
+  .navbar-logo {
+    max-height: 20px;
+    padding-right: 0;
+  }
+  
+  a.navbar-brand {
+    padding: 0;
+  }
+  
+  span.navbar-title {
+    font-size: $font-size-navbar-title * .7;
+  }
+  
+  .navbar-toggler {
+    padding: .2rem .6rem;
+  }
+  
+  span.navbar-toggler-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  nav.navbar li.dropdown-header {
+    font-size: $font-size-navbar-subtitle * .75;
+    padding: 0 .5rem .5rem .5rem;
+  }
+  
+  li.nav-item a {
+    font-size: $font-size-navbar-item * .75;
+    padding: .1rem 1rem;
+  }
+  
+  /* --- Home page listings ------------------------------------------- */
+  
+  div.quarto-post .body h3.listing-title {
+    font-size: $font-size-listing-title * .9;
+    margin-bottom: 5px;
+  }
+  
+  div.quarto-post .body div.listing-subtitle {
+    font-size: $font-size-listing-subtitle * .9;
+  }
+  
+  div.quarto-post .thumbnail a {
+    border: solid 5px #e9ecef !important;
+    border-radius: 0.25rem;
+  }
+  
+  div.quarto-post .listing-categories {
+    padding: 5px 0 5px 0 !important;
+  }
+  
+  
+  div.quarto-post .metadata {
+    font-size: $font-size-listing-date * .8;
+    margin: 5px 0 2px 0 !important;
+  }
+  
+  /* --- Blog posts ------------------------------------------- */
+  
+  #title-block-header h1.title {
+    font-size: $font-size-post-title * .8;
+    line-height: $line-height-smaller * .7;
+  }
+
+  #title-block-header p.subtitle.lead {
+    font-size: $font-size-base;
+    line-height: $line-height-smaller * .9;
+    margin: 0 0 1em 0;
+  }
+
+  div.quarto-title-meta {
+    margin: 1em 0 1em 0;
+    color: #adb5bd;
+  }
+
+  #title-block-header.quarto-title-block.default .quarto-title-meta-contents {
+    font-size: $font-size-post-date * .8;
+  }
+  
+  /* --- Code chunks ------------------------------------------- */
+
+  div.cell {
+    margin-bottom: $paragraph-margin-bottom * .7;
+  }
+
+  div.sourceCode {
+    margin: $paragraph-margin-bottom * .35 0;
+  }
+
+  div.cell-output, div.cell-output-display {
+    font-size: $font-size-code-output * .7;
+    margin-top: 1.5rem * .7;
+  }
+
+  div.sourceCode > pre.sourceCode {
+    padding: 10px;
+  }
+
+  div.sourceCode > pre.sourceCode > code {
+    font-size: $font-size-code * .7;
+  }
+  
+  details > summary {
+    font-size: $font-size-base * .7;
+  }
+  
+  div.cell-output-display > p {
+    margin-bottom: $paragraph-margin-bottom * .25;
+  }
+
+  /* --- Subpages ------------------------------------------- */
+  
+  main.content h1.subpage-header {
+    font-size: $font-size-subpage-header * .8;
+    margin-bottom: 1.5rem;
+  }
+  
+  main.content h1.subpage-subscribe-header {
+    font-size: $font-size-subpage-header * .8;
+    margin-bottom: 1rem;
+  }
+
+  main.content p.subpage-header-2 {
+    font-size: $font-size-subpage-text;
+    margin: 2rem 0 .75rem 0
+  }
+
+  span.subpage-inline {
+    font-size: $font-size-subpage-inline *.7;
+  }
+
+  main.content p.subpage-note {
+    font-size: $font-size-subpage-note * .8;
+  }
+  
+  img.subpage-img {
+    width: auto;
+    height: 200px;
+  }
+  
+  /* --- Misc ------------------------------------------- */
+
+  div.sib-form__declaration p {
+    font-size: $font-size-base * .6 !important;
+    margin-bottom: 0 !important;
+  }
+  
 }

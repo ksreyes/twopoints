@@ -2,11 +2,11 @@
 title: ""
 ---
 
-<center>
+<div class="subpage-subscribe">
 
-<h1>Subscribe</h1>
+<h1 class="subpage-subscribe-header">Subscribe</h1>
 
-<p style="font-size: 16pt; margin: 0">You will receive an email whenever there is a new post.<br> Unsubscribe anytime.</p>
+<p class="subpage-text">You will receive an email whenever there is a new post. Unsubscribe anytime.</p>
 
 ```{=html}
 <!-- Begin Sendinblue Form -->
@@ -81,11 +81,6 @@ title: ""
     <div></div>
     <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
       <form id="sib-form" method="POST" action="https://8cb4bfca.sibforms.com/serve/MUIEAHPC2PzaPv0yFuZWRkkAQd1hqFgJ2Hu4WG-E8mbYEIjCP9dBSQWhJZBG4O5D-SeinmBexjMqM5kDnbU81eVrJrY9MZCCw2P_WHpTLcJ2AnfniJMdKmMVyoDYvyFlVjrIPli3hEJZT3gHHB6y-9Hw0e8844RkW7HfXRpgQFMXAOnYSEcWRHOW8-z2FBFWPBul1HMo36T8ishT" data-type="subscription">
-        <div style="padding: 8px 0;">
-          <div class="sib-form-block sib-image-form-block" style="text-align: center; margin-bottom: 1rem">
-            <img src="https://img.mailinblue.com/5709603/images/rnb/original/63f991ec427228728e128cf7.png" style="width: 255px;height: 300px;" alt="Plotting Cats" title="Plotting Cats" />
-          </div>
-        </div>
         <div style="padding: 8px 0;">
           <div class="sib-input sib-form-block">
             <div class="form__entry entry_block">
@@ -221,4 +216,4 @@ title: ""
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Sendinblue Form -->
 ```
-</center>
+</div>
