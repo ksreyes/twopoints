@@ -225,7 +225,7 @@ div.cell {
 }
 
 div.sourceCode {
-  margin-bottom: $paragraph-margin-bottom * .5;
+  margin: 0 0 $paragraph-margin-bottom * .5 0;
 }
 
 div.cell-output, div.cell-output-display {
@@ -497,11 +497,11 @@ a.icon-link:hover {
   }
 
   div.sourceCode {
-    margin: $paragraph-margin-bottom * .35 0;
+    margin: 0 0 $paragraph-margin-bottom * .35 0;
   }
 
   div.cell-output, div.cell-output-display {
-    font-size: $font-size-code-output * .7;
+    font-size: $font-size-code-output * .6;
     margin-top: 1.5rem * .7;
   }
 

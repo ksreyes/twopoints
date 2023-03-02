@@ -21,3 +21,5 @@ format:
   html:
     fig-width: 8
     fig-height: 6
+
+editor: source
