@@ -87,7 +87,7 @@ nobel %>%
     defaultColDef = colDef(
       align = "center",
       format = colFormat(digits = 0),
-      headerStyle = list(background = "#f7f7f8"),
+      headerStyle = list(fontFamily = "Karla", background = "#f7f7f8"),
       sortNALast = TRUE
     ),
     columns = list(category = colDef(align = "left")),
