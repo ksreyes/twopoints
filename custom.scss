@@ -122,8 +122,9 @@ li.nav-item > span.menu-text {
   line-height: 1.25;
   background-color: shift-color($color-blue, -90%);
   border-radius: .25rem;
-  margin: 0 2.25rem 1rem 0;
-  padding: .25rem 0;
+  width: 25%;
+  margin: auto;
+  padding: .3rem 0;
 }
 
 #quarto-content.page-layout-full #title-block-header {

@@ -27,6 +27,12 @@ source(here::here("R", "functions.R"))
 
 <p class="subpage-text">[Two Points Make a Line]{.subpage-inline} documents my journey in mastering this art. I take an interesting dataset and tell a story about it using charts. Along the way, I share my thoughts on what makes a chart work and what doesn't, the tools I use, and other tidbits. Enjoy!</p>
 
+<div>
+<a href="https://www.r-bloggers.com/" target="_blank">
+<div class="rblogger">Syndication on<br>R-Bloggers pending</div>
+</a>
+</div>
+
 <hr style="width:40%">
 
 <p class="subpage-note">This website was built in [Quarto](https://quarto.org/) using [R](https://www.r-project.org/) and published via [GitHub Pages](https://pages.github.com/). View the source code [here](https://github.com/ksreyes/twopoints). "The Plotting Cats" artwork that peppers the site is by [Issa Cruz](https://www.instagram.com/issadalawatatlo_/).</p>
