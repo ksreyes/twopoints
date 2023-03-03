@@ -15,7 +15,7 @@ website:
   navbar:
     logo: /images/logo-icon-invert.png
     left: 
-      - text: "Telling stories through visualized data by Kenneth S. Reyes"
+      - text: "Telling stories through visualized data — by Kenneth S. Reyes"
     right:
       - href: subscribe.qmd
         text: "Subscribe"
