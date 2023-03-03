@@ -219,6 +219,12 @@ blockquote.blockquote {
   margin: 0 0 1.75rem 0;
 }
 
+img.endmark {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-bottom: .25rem;
+}
+
 /* --- Code chunks ------------------------------------------- */
 
 div.cell {
@@ -490,6 +496,12 @@ a.icon-link:hover {
   #title-block-header.quarto-title-block.default .quarto-title-meta-contents {
     font-size: $font-size-post-date * .8;
   }
+  
+  img.endmark {
+  height: 1rem;
+  width: 1rem;
+  margin-bottom: .25rem;
+}
   
   /* --- Code chunks ------------------------------------------- */
 
