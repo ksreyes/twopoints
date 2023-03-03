@@ -1,0 +1,261 @@
+---
+title: "The demographics of Nobel laureates"
+subtitle: "I'm starting to think there might be privileges to being old, white, and male"
+date: 2023-03-03
+categories: [line, bar]
+image: thumbnail.png
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+options(knitr.kable.NA = "-")
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+In a [previous post](https://twopoints.blog/posts/2023-01-26-oscars/), we talked about the Oscars and whether prestige awards still matter. Let's turn now to what is perhaps the mother of all prestige awards --- the Nobel Prize. The legacy of Swedish industrialist Alfred Nobel, it honors outstanding achievement in the fields of chemistry, literature, medicine, peace, physics, and, since 1969, economics. Winners --- ahem, *laureates* --- receive unparalleled stature not just in their fields but in the public sphere (deservedly [or otherwise](https://en.wikipedia.org/wiki/Nobel_disease)).
+
+In its 120-year history, close to a thousand individuals (and some two dozen organizations) have been given a Nobel. What are they like? As an elite group, you can probably guess that they would tend towards oldness, whiteness, and maleness. But how old, how white, and how male? Fortunately, NobelPrize.org has an API for downloading data on all laureates, through which I was able to compile, for each laureate: the year and category they won in, their sex, their birth date, and their birth country (using modern borders). I won't be including organizations in my analysis.
+
+Let's take a look at the cleaned dataset using [`reactable`](https://glin.github.io/reactable/), a wonderful table-making package by Greg Lin that I sure wish I discovered earlier. Below is a sortable, searchable, paginated table of the complete dataset:
+
+```{r}
+#| code-fold: true
+#| column: page
+
+library(tidyverse)
+library(reactable)
+
+nobel <- here::here("datasets", "nobel.csv") %>% 
+  read_csv()
+
+nobel %>%
+  reactable(
+    defaultColDef = colDef(
+      align = "center",
+      headerStyle = list(fontFamily = "Karla", background = "#f7f7f8"),
+      sortNALast = TRUE
+    ),
+    columns = list(
+      year = colDef(minWidth = 75),
+      category = colDef(minWidth = 125, align = "left"),
+      type = colDef(minWidth = 125),
+      name = colDef(minWidth = 250, align = "left"),
+      birth = colDef(minWidth = 150),
+      age = colDef(minWidth = 75),
+      birth_country = colDef(minWidth = 175, align = "left"),
+      birth_continent = colDef(minWidth = 175, align = "left")
+    ),
+    minRows = 5,
+    searchable = TRUE,
+    bordered = TRUE,
+    highlight = TRUE,
+    theme = reactableTheme(
+      searchInputStyle = list(align = "left")
+    )
+  )
+```
+
+Of the three attributes, being old is probably the most innocent. A Nobel Prize after all generally honors a body of work, and so is received late in one's career. Below is a tabulation of laureate age ranges by prize category.
+
+```{r}
+#| code-fold: true
+
+nobel %>%
+  group_by(category) %>%
+  mutate(
+    coverage = paste0(min(year), "-", max(year)),
+    agemin = min(age, na.rm = TRUE),
+    agemax = max(age, na.rm = TRUE),
+    agemean = mean(age, na.rm = TRUE)
+  ) %>%
+  group_by(category, coverage, agemin, agemax, agemean) %>%
+  count() %>%
+  select(category, coverage, laureates = n, agemin, agemax, agemean) %>%
+  
+  # Construct reactable
+  reactable(
+    defaultColDef = colDef(
+      align = "center",
+      format = colFormat(digits = 0),
+      headerStyle = list(background = "#f7f7f8"),
+      sortNALast = TRUE
+    ),
+    columns = list(category = colDef(align = "left")),
+    bordered = TRUE,
+    highlight = TRUE
+  )
+```
+
+The youngest laureate was for Peace --- [Malala Yousafzai](https://www.nobelprize.org/prizes/peace/2014/yousafzai/biographical/) from Pakistan. Peace is unusual among the Nobel prizes: while it is also awarded for a body of work, it can get quite topical, awarding *very* recent achievements. Barack Obama was just eight months into his presidency when he was awarded for "extraordinary efforts to strengthen international diplomacy and cooperation between peoples". This willingness to jump the gun has led to some deeply awkward conferrals, most recently Ethiopian prime minister Abiy Ahmed, who [started a war against his own people](https://www.newyorker.com/magazine/2022/10/03/did-a-nobel-peace-laureate-stoke-a-civil-war) less than a year after bagging the prize.
+
+What might be more surprising in the table above is the youngest age among the Physics laureates. Someone under 40 winning a Nobel in the sciences fields (or even in Literature) is unheard of today, but it was more common during the heyday of theoretical physics in the early twentieth century, when discoveries in quantum mechanics were being made left and right.[^1] Indeed, the changing nature of scientific research can be seen in the chart below, which plots the average ages of laureates over time.
+
+[^1]: Key winners under 40 include Werner Heisenberg (31), Paul Dirac (31), Enrico Fermi (37), and Niels Bohr (37). This period in physics is covered in one of my favorite books, [*The Making of the Atomic Bomb*](https://www.goodreads.com/book/show/13159197-the-making-of-the-atomic-bomb) by Richard Rhodes.
+
+```{r}
+#| code-fold: true
+
+library(zoo)
+library(ggplot2)
+
+nobel %>%
+  group_by(category) %>%
+  mutate(agemean_ra = rollmean(age, k = 10, fill = NA, align = "right", na.rm = TRUE)) %>%
+  ungroup() %>%
+  
+  ggplot(aes(x = year, y = agemean_ra)) +
+  geom_line(linewidth = .8, color = "#b13d70") +
+  facet_wrap(~category, nrow = 2, scales = "fixed") +
+  labs(
+    title = "Some people wait a lifetime",
+    subtitle = "Laureates' average age by category, 10-year rolling",
+    caption = "Source: Nobel Foundation"
+  ) +
+  scale_x_continuous(limits = c(1910, 2022), breaks = c(1960, 2020)) +
+  scale_y_continuous(breaks = c(50, 70)) +
+  theme(
+    text = element_text(family = "karla"),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_text(size = 10),
+    panel.background = element_rect(fill = "gray97", color = NA),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(linewidth = .15, linetype = "dashed", color = "gray60"),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.title = element_text(size = 16, face = "bold", hjust = .5),
+    plot.subtitle = element_text(size = 14, hjust = .5, margin = margin(b = 12)),
+    plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 10)),
+    strip.background = element_rect(fill = "gray92", color = NA),
+    strip.text = element_text(size = 12, face = "bold", color = "gray40")
+  )
+```
+
+Laureates in the sciences fields have been getting older. According to a curator at the Nobel Museum, this is [partly a crowding effect](https://www.bbc.com/news/science-environment-37578899): whereas 1,000 physicists were competing for the prize 100 years ago, today there are a million. With the Nobel only awarding up to three for a given category each year, would-be laureates need to wait longer for their turn.
+
+It will likely get more crowded still. Achievements in science and literature are driven not just by personal genius but also by an enabling environment that nurtures that genius, itself a function of economic wealth. No wonder then that the richest countries --- the United States, Europe, and European offshoots (Australia, Canada, New Zealand) --- dominate the Nobel Prizes. This should change as developing countries catch up and begin investing more heavily in their scientists and artists.
+
+```{r}
+#| code-fold: true
+#| fig-height: 7
+
+nobel %>%
+  mutate(
+    group = case_when(
+      birth_continent == "Europe" ~ "Europe & offshoots",
+      birth_country == "USA" ~ "United States",
+      birth_continent == "North America" ~ "Americas",
+      birth_continent == "South America" ~ "Americas",
+      birth_country == "Canada" ~ "Europe & offshoots",
+      birth_country == "Australia" ~ "Europe & offshoots",
+      birth_country == "New Zealand" ~ "Europe & offshoots",
+      birth_country == "East Timor" ~ "Asia",
+      TRUE ~ birth_continent
+    ),
+    group = factor(
+      group, 
+      levels = c(
+        "United States",
+        "Europe & offshoots",
+        "Africa",
+        "Americas",
+        "Asia"
+      )),
+    decade = plyr::round_any(year, 10, floor)
+  ) %>% 
+  group_by(decade, category) %>%
+  count(group) %>%
+  ungroup() %>%
+  
+  ggplot(aes(x = decade, y = n, fill = group)) +
+  geom_bar(position = "fill", stat = "identity", color = NA) +
+  facet_wrap(~category, nrow = 2, scales = "fixed") +
+  labs(
+    title = "Western win",
+    subtitle = "Laureates' country of birth under contemporary borders, by decade",
+    caption = "Source: Nobel Foundation"
+  ) +
+  scale_x_continuous(breaks = c(1950, 2020)) +
+  scale_fill_manual(
+    name = "",
+    values = c("#4889ab", "#84b0c5", "#f697bb", "#c85b89", "#b13d70")
+  ) +
+  guides(fill = guide_legend(nrow = 2)) +
+  theme(
+    text = element_text(family = "karla"),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text.x = element_text(size = 10, hjust = .5),
+    axis.text.y = element_blank(),
+    legend.position = "bottom",
+    legend.text = element_text(size = 12, margin = margin(r = 10)),
+    panel.background = element_rect(fill = "gray97", color = NA),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, face = "bold", hjust = .5),
+    plot.subtitle = element_text(size = 14, hjust = .5, margin = margin(b = 12)),
+    plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 10)),
+    strip.background = element_rect(fill = "gray92", color = NA),
+    strip.text = element_text(size = 12, face = "bold", color = "gray40")
+  )
+```
+
+Likewise, the greater participation of women in STEM fields should hopefully go some ways in bridging the sex gap among laureates. My field of economics has a particularly atrocious record, with just two female laureates ([Elinor Ostrom](https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/) and [Esther Duflo](https://www.nobelprize.org/prizes/economic-sciences/2019/duflo/facts/)) in 54 years.[^2] Literature has made the most progress here, though women still only won one-third of the prizes since 2000.
+
+[^2]: A 2019 symposium by the American Economic Association on ["Women in Economics"](https://www.aeaweb.org/issues/538) has three interesting papers on the topic. But speaking to economics' legendary tone-deafness, it was followed by a symposium on ["The Problems of Men"](https://www.aeaweb.org/issues/547).
+
+```{r}
+#| code-fold: true
+
+nobel %>%
+  mutate(decade = plyr::round_any(year, 10, floor)) %>%
+  drop_na(sex) %>%
+  group_by(decade, category) %>%
+  count(sex) %>%
+  mutate(share = n / sum(n)) %>% 
+  ungroup() %>%
+  complete(decade, category, sex, fill = list(n = 0, share = 0)) %>% 
+  filter(sex == "female" & !(category == "Economics" & decade < 1960)) %>% 
+  
+  ggplot(aes(x = decade, y = share)) +
+  geom_step(direction = "mid", linewidth = 1, color = "#b13d70") +
+  facet_wrap(~category, nrow = 2, scales = "fixed") +
+  labs(
+    title = "The second sex",
+    subtitle = "Share of female laureates, by decade",
+    caption = "Source: Nobel Foundation"
+  ) +
+  scale_x_continuous(breaks = c(1950, 2020)) +
+  scale_y_continuous(limits = c(-.1, .8), breaks = c(0, .5), labels = scales::label_percent()) +
+  theme(
+    text = element_text(family = "karla"),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_text(size = 10),
+    legend.position = "bottom",
+    legend.text = element_text(size = 12, margin = margin(r = 10)),
+    panel.background = element_rect(fill = "gray97", color = NA),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(linewidth = .15, linetype = "dashed", color = "gray60"),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.title = element_text(size = 16, face = "bold", hjust = .5),
+    plot.subtitle = element_text(size = 14, hjust = .5, margin = margin(b = 12)),
+    plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 10)),
+    strip.background = element_rect(fill = "gray92", color = NA),
+    strip.text = element_text(size = 12, face = "bold", color = "gray40")
+  )
+```
+
+Beyond problems of representation in the arts and sciences, another major issue is the composition of the prize selection committees themselves. These comprise just a handful of elite Swedes and Norwegians, and though they ostensibly solicit nominations from thousands of outside experts and institutions, theirs is the final say, in deliberations that are kept secret for 50 years. And insularity may not even be their biggest problem: a sexual assault scandal in 2018 [hinted at moral bankruptcy](https://www.theguardian.com/news/2018/jul/17/the-ugly-scandal-that-cancelled-the-nobel-prize-in-literature) within the Swedish Academy, which decides the Literature Prize.
+
+No doubt the Nobel Prizes are held in high reverence around the world, but I suspect it has more to do with the distinction of the men and women who have received them in the past than the esteem held for the judgment of a few elite Scandinavians. As a hilarious corrective to Nobel worship, let's turn to Bob Dylan, winner of the 2016 Literature Prize, who [seenzoned](https://www.bbc.com/news/entertainment-arts-37740379) the Swedish Academy, [didn't bother](https://www.svenskaakademien.se/en/press/bob-dylan-has-decided-not-to-come-to-stockholm) to attend the ceremony, and [cribbed off SparkNotes](https://slate.com/culture/2017/06/did-bob-dylan-take-from-sparknotes-for-his-nobel-lecture.html) for his Nobel lecture. I know Dylan was a controversial choice, but look: anyone who [accepts a Nobel in a hoodie](https://www.nme.com/news/music/bob-dylan-wore-hoodie-accept-nobel-prize-2033165) deserves ten of them.
