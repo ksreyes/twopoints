@@ -24,7 +24,6 @@ icon_link <- function(icon = "far fa-star",
 }
 
 end_mark <- function() {
-  htmltools::span(
-    img(href = "/images/logo-icon.png"), 
-    class = "endmark")
+  return("![](/images/logo-icon.png){.endmark}")
+  #htmltools::img(href = "/images/logo-icon.png", class = "endmark")
 }

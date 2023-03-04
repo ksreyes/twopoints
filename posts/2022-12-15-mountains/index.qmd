@@ -24,7 +24,9 @@ font_add_google("Lora", "lora")
 
 I have lately been experimenting with `R`'s map-making capabilities, and as a project I wanted to try visualizing the great mountain ranges of Luzon. The Philippines has some remarkable mountain ranges, and hiking through them is a unique sort of pleasure that I only discovered recently.
 
-An obvious approach would be to make a relief map, with colors corresponding to elevation, but to make it more interesting I decided to create a more stylized ridgeline-style map. A ridge plot is... hard to describe. Look up the album cover of [Joy Division's *Unknown Pleasures*](https://en.wikipedia.org/wiki/Unknown_Pleasures) and you'll understand. I am indebted to dieghernan's [tutorial](https://dieghernan.github.io/202205_Unknown-pleasures-R/) on mapping with ridgelines.^[And let me just say that learning to make maps in `R` has been bewilderingly difficult. I have found [*Geocomputation with R*](https://geocompr.robinlovelace.net/) useful, but much of it remains mysterious to me.]
+An obvious approach would be to make a relief map, with colors corresponding to elevation, but to make it more interesting I decided to create a more stylized ridgeline-style map. A ridge plot is... hard to describe. Look up the album cover of [Joy Division's *Unknown Pleasures*](https://en.wikipedia.org/wiki/Unknown_Pleasures) and you'll understand. I am indebted to dieghernan's [tutorial](https://dieghernan.github.io/202205_Unknown-pleasures-R/) on mapping with ridgelines.[^1]
+
+[^1]: And let me just say that learning to make maps in `R` has been bewilderingly difficult. I have found [*Geocomputation with R*](https://geocompr.robinlovelace.net/) useful, but much of it remains mysterious to me.
 
 Let's start by loading up the basic packages.
 
@@ -87,7 +89,7 @@ dem <- get_elev_raster(luzon, z = 7, clip = "bbox", expand = NULL) %>%
 names(dem) <- "elev"
 ```
 
-The `rast()` function converts it into a `SpatRaster` object, which is native to the `terra` package. The `mask()` function removes all cells outside the `luzon` polygon. 
+The `rast()` function converts it into a `SpatRaster` object, which is native to the `terra` package. The `mask()` function removes all cells outside the `luzon` polygon.
 
 This raster actually provides more granularity than we want, so we aggregate the cells up to get a lower resolution. Then we convert it to a `data.frame` for plotting with `ggplot2`.
 
@@ -137,6 +139,7 @@ map <- ggplot() +
   )
 map
 ```
+
 You can see how vividly the ridgelines capture Luzon's mountains. It's practically 3D!
 
 I now want to add markers for some of the more famous hiking trails in Luzon. I can easily get their coordinates using Google Maps, but a complication to deal with is that the coordinate reference system (CRS) of Google Maps is different from the one I'm using here. I must therefore use `st_transform()` to reproject them first.
@@ -190,11 +193,11 @@ map +
   )
 ```
 
-My one hiking experience so far was at Nagpatong Rock, near Masungi. It was arduous and muddy and I slept for 12 hours afterwards. But for that brief moment at the peak, as I sipped cold coffee and braced myself against the wind, I looked out at the view and found it absolutely grand. 
+My one hiking experience so far was at Nagpatong Rock, near Masungi. It was arduous and muddy and I slept for 12 hours afterwards. But for that brief moment at the peak, as I sipped cold coffee and braced myself against the wind, I looked out at the view and found it absolutely grand.
 
 ```{r}
 #| echo: false
 knitr::include_graphics(here("images", "nagpatong.jpg"))
 ```
 
-Stay elevated!
+Stay elevated! `r end_mark()`
