@@ -26,8 +26,8 @@ $font-size-post-title:           2.5rem;
 $font-size-post-subtitle:        calc(1.25rem + .15vw);
 $font-size-post-date:            .9rem;
 
-$font-size-code:                 .9rem;
-$font-size-code-output:          .9rem;
+$font-size-code:                 .75rem;
+$font-size-code-output:          .75rem;
 
 $font-size-blockquote:           1rem;
 
@@ -228,7 +228,11 @@ img.endmark {
 /* --- Code chunks ------------------------------------------- */
 
 div.cell {
-  margin-bottom: $paragraph-margin-bottom;
+  margin-bottom: $paragraph-margin-bottom * .9;
+}
+
+div.cell + p {
+  margin-top: 0 !important;
 }
 
 div.sourceCode {
@@ -253,7 +257,7 @@ div.sourceCode > pre.sourceCode > code {
 }
 
 div.cell-output-display > p {
-  margin-bottom: $paragraph-margin-bottom * .5;
+  margin-bottom: $paragraph-margin-bottom * .4;
 }
 
 /* --- Highcharts ------------------------------------------- */
