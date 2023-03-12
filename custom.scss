@@ -228,7 +228,7 @@ img.endmark {
 /* --- Code chunks ------------------------------------------- */
 
 div.cell {
-  margin-bottom: $paragraph-margin-bottom * .9;
+  margin-bottom: $paragraph-margin-bottom * .8;
 }
 
 div.cell + p {
@@ -392,7 +392,8 @@ a.icon-link:hover {
   
   main.content p {
     font-size: $font-size-base * .7;
-    margin-bottom: $paragraph-margin-bottom * .7;
+    line-height: $line-height-base * .95;
+    margin-bottom: $paragraph-margin-bottom * .5;
   }
   
   #quarto-appendix.default {
@@ -493,7 +494,7 @@ a.icon-link:hover {
   }
 
   div.quarto-title-meta {
-    margin: 1em 0 1em 0;
+    margin: .7em 0 .7em 0;
     color: #adb5bd;
   }
 
@@ -501,16 +502,20 @@ a.icon-link:hover {
     font-size: $font-size-post-date * .8;
   }
   
+  .quarto-title .quarto-categories .quarto-category {
+    font-size: $font-size-post-date * .6;
+  }
+  
   img.endmark {
   height: 1rem;
   width: 1rem;
   margin-bottom: .25rem;
-}
+  }
   
   /* --- Code chunks ------------------------------------------- */
 
   div.cell {
-    margin-bottom: $paragraph-margin-bottom * .7;
+    margin-bottom: $paragraph-margin-bottom * .35;
   }
 
   div.sourceCode {
@@ -622,6 +627,15 @@ a.icon-link:hover {
   g.highcharts-axis, g.highcharts-axis-labels text {
     font-family: $font-family-headings !important;
     font-size: $font-size-base * .6 !important;
+  }
+  
+  div.observablehq span {
+    font-size: $font-size-base * .5 !important;
+  }
+  
+  div.observablehq svg {
+    --swatchWidth: 10px;
+    --swatchHeight: 10px
   }
   
 }
