@@ -260,6 +260,10 @@ div.cell-output-display > p {
   margin-bottom: $paragraph-margin-bottom * .4;
 }
 
+details {
+  margin-bottom: .5em;
+}
+
 /* --- Highcharts ------------------------------------------- */
 
 text.highcharts-title {
@@ -463,15 +467,21 @@ a.icon-link:hover {
     font-size: $font-size-listing-subtitle * .9;
   }
   
+  div.quarto-post .listing-categories .listing-category {
+    font-size: $font-size-post-date * .6;
+    padding: 1.5px 3.5px !important;
+    border-radius: 2px;
+  }
+  
+  div.quarto-post .listing-categories {
+    font-size: $font-size-post-date * .6;
+    padding: 5px 0 !important;
+  }
+  
   div.quarto-post .thumbnail a {
     border: solid 5px #e9ecef !important;
     border-radius: 0.25rem;
   }
-  
-  div.quarto-post .listing-categories {
-    padding: 5px 0 5px 0 !important;
-  }
-  
   
   div.quarto-post .metadata {
     font-size: $font-size-listing-date * .8;
@@ -486,7 +496,7 @@ a.icon-link:hover {
     font-weight: 700;
     line-height: $line-height-smaller * .7;
   }
-
+  
   #title-block-header p.subtitle.lead {
     font-size: $font-size-base;
     line-height: $line-height-smaller * .9;
@@ -494,16 +504,22 @@ a.icon-link:hover {
   }
 
   div.quarto-title-meta {
-    margin: .7em 0 .7em 0;
-    color: #adb5bd;
+    margin: 8px 0;
+  }
+  
+  div.quarto-title-meta p {
+    font-size: $font-size-post-date * .75;
+    color: #6c757d;
   }
 
   #title-block-header.quarto-title-block.default .quarto-title-meta-contents {
-    font-size: $font-size-post-date * .8;
   }
   
   .quarto-title .quarto-categories .quarto-category {
     font-size: $font-size-post-date * .6;
+    border: solid 1px $color-category-border;
+    border-radius: 2px;
+    padding: 1.5px 3.5px !important;
   }
   
   img.endmark {
@@ -528,7 +544,7 @@ a.icon-link:hover {
   }
 
   div.sourceCode > pre.sourceCode {
-    padding: 10px;
+    padding: 5px;
   }
 
   div.sourceCode > pre.sourceCode > code {
@@ -541,6 +557,10 @@ a.icon-link:hover {
   
   div.cell-output-display > p {
     margin-bottom: $paragraph-margin-bottom * .25;
+  }
+  
+  details {
+    margin-bottom: .5em;
   }
   
   /* --- Panel set ------------------------------------------- */
