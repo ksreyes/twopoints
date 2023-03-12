@@ -1,0 +1,461 @@
+---
+title: "Telling the future is hard"
+subtitle: "A forecasting tournament put the predictive powers of social scientists to the test. They, ah, didn't do so well."
+date: 2023-03-12
+categories: [interactive, strip, heat-map, line]
+image: thumbnail.png
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+options(knitr.kable.NA = "-")
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+Do you want to excel at telling the future? Nostradamus shows us one way: make your predictions as [vague and ambiguous](https://www.theguardian.com/books/2022/oct/10/why-nostradamus-predictions-are-still-winning-converts) as possible and you will always be "right". Try attaching [a 40% probability](https://www.wsj.com/articles/how-do-pundits-never-get-it-wrong-call-a-40-chance-1519662425) to all your calls: if you're wrong, hey, you never said it was a sure thing. Throw in some authoritative-sounding statements like "the next six months will be decisive", as Thomas Friedman said, repeatedly, [for two and a half years](https://en.wikipedia.org/wiki/Friedman_Unit), about the Iraq War. And whatever you do, never corner yourself with a weirdly specific, absurdly bold prediction like "the Internet's impact on the economy will be [no greater than the fax machine's](https://www.snopes.com/fact-check/paul-krugman-internets-effect-economy)". You will never live it down.
+
+Alternatively, you can take the hard way and actually become an expert in the field. Then you can use superior domain knowledge to make superior predictions. Or can you?
+
+The [Forecasting Collaborative](https://predictions.uwaterloo.ca/tournament) is a project spearheaded by Igor Grossmann and Amanda Rotella from the University of Waterloo. They invited almost 200 experts in the social sciences to forecast various measures of societal change in the United States over the course of 12 months --- things like political polarization, attitudes to racial minorities, and so on. Crucially, the time frame was from May 2020 to April 2021, a tumultuous period covering the first year of the pandemic, the George Floyd protests, a presidential election, and the January 6 riots.^[There was a second round that extended the forecasted period to October 2020, but I won't be covering that in this post.] To benchmark how the experts performed, forecasts were also obtained from 800 non-experts and naive approaches like historical averaging. If domain knowledge makes for superior forecasts, then experts should easily outperform. 
+
+Alas. Results published last month in [*Nature Human Behavior*](https://www.nature.com/articles/s41562-022-01517-1)^[Thank you to forecasting guru Basti Ibañez for first telling me about this paper.] found that experts' forecasts were generally no more accurate than non-experts and naive methods. Let's explore the data, made available by the researchers on [GitHub](https://github.com/grossmania/Forecasting-Tournament) and forked by me. 
+
+```{r}
+library(tidyverse)
+
+root <- "https://raw.github.com/ksreyes/Forecasting-Tournament/main"
+files <- c("dat_for_analyses.csv", "wave1.scores.csv", "historical_data.csv")
+
+dat_for_analyses <- file.path(root, files[1]) %>% 
+  read_csv()
+wave1_scores <- file.path(root, files[2]) %>% 
+  read_csv()
+historical_data <- file.path(root, files[3]) %>% 
+  read_csv()
+```
+
+The table below lists all the forecasting teams who participated, along with their discipline, how many members they had, and, if available, some demographic information. Now I love a good team name, and I will be remiss not to mention some favorites. There's a team of four called **The Forecasting Four** and a team of five called **5casters**. Kudos to **The Well-Adjusted R Squares** for being well-adjusted and to **ForeverJung90** for being forever Jung. It looks like **4 chimps with a dart** and **Abracadabra** named themselves after their methods. And to whoever registered himself as **Cynical Belief in the Inexorable Crush of the Wheel** --- I hope you made T-shirts.
+
+```{r}
+#| code-fold: true
+#| column: page
+
+library(reactable)
+
+teams <- dat_for_analyses %>% 
+  filter(isExpert == 1) %>% 
+  mutate(team_education_inv = 100 - team_education) %>% 
+  select(team_name, discipline, team_size.coded, team_Age, team_gender, team_education_inv, non_US) %>%
+  distinct() %>% 
+  arrange(team_name)
+
+teams %>%   
+  reactable(
+    defaultColDef = colDef(
+      align = "center",
+      headerStyle = list(fontFamily = "Karla", background = "#f7f7f8"),
+      sortNALast = TRUE,
+      format = colFormat(digits = 0)
+    ),
+    columns = list(
+      team_name = colDef(name = "Team name", minWidth = 250, align = "left"),
+      discipline = colDef(name = "Disicipline", minWidth = 200, align = "left"),
+      team_size.coded = colDef(name = "Members", minWidth = 110),
+      team_Age = colDef(name = "Average age", minWidth = 110),
+      team_gender = colDef(name = "Share not male", minWidth = 110),
+      team_education_inv = colDef(name = "Share with Ph.D", minWidth = 110),
+      non_US = colDef(name = "Share not US", minWidth = 110)
+    ),
+    minRows = 5,
+    searchable = TRUE,
+    bordered = TRUE,
+    highlight = TRUE,
+    theme = reactableTheme(
+      searchInputStyle = list(align = "left")
+    )
+  )
+```
+Let's visualize how these teams did in their forecasting. The preferred measure of the paper is mean absolute scaled error, or MASE, a metric that can be compared across different variables despite different scales. The higher the MASE, the worse the forecast. Let's first do some data wrangling on R.
+
+```{r}
+#| code-fold: true
+
+domains_key <- tibble(
+  domain = c(
+    "egend",
+    "igend",
+    "eafric",
+    "iafric",
+    "easian",
+    "iasian",
+    "ideoldem",
+    "ideolrep",
+    "polar",
+    "lifesat",
+    "posaffect",
+    "negaffect"
+  ),
+  domain_long = c(
+    "Explicit gender–career bias",
+    "Implicit gender–career bias",
+    "Explicit African American bias",
+    "Implicit African American bias",
+    "Explicit Asian American bias",
+    "Implicit Asian American bias",
+    "Ideologically lean Democrat",
+    "Ideologically lean Republican",
+    "Political polarization",
+    "Life satisfaction",
+    "Positive affect in social media",
+    "Negative affect in social media"
+  ),
+  order = as.integer(1:12)
+)
+
+sort <- tibble(
+  method = c(
+    "All experts", 
+    "Intuition/theory",
+    "Data-driven",
+    "Hybrid",
+    "Non-experts"),
+  order = 1:5
+)
+
+scores_all <- wave1_scores %>% 
+  left_join(
+    dat_for_analyses %>% 
+      select(!starts_with("Month.")), 
+    by = c("team_name", "Method.code", "domain", "MASE1_w1")
+  ) %>% 
+  left_join(domains_key, by = "domain") %>% 
+  mutate(method = case_when(
+    is.na(isExpert) ~ "Non-experts",
+    TRUE ~ str_to_sentence(Method.code)
+  )
+)
+
+scores <- scores_all %>% 
+  filter(isExpert == 1) %>% 
+  select(team_name, method, domain_long, MASE1_w1) %>% 
+  left_join(sort) %>% 
+  arrange(order)
+
+medians <- scores_all %>% 
+  group_by(domain_long, method) %>% 
+  summarize(MASE1_w1 = median(MASE1_w1)) %>% 
+  ungroup() %>% 
+  bind_rows(
+    scores %>% 
+      group_by(domain_long) %>% 
+      summarize(MASE1_w1 = median(MASE1_w1)) %>% 
+      ungroup() %>% 
+      mutate(method = "All experts")
+  ) %>% 
+  left_join(sort) %>% 
+  arrange(order)
+
+ojs_define(scores_ojs1 = scores)
+ojs_define(medians_ojs1 = medians)
+```
+
+The function `ojs_define()` ports our data over to Observable JS, through which we construct an interactive chart:
+
+```{ojs}
+//| code-fold: true
+
+import {addTooltips} from "@mkfreeman/plot-tooltip"
+
+scores_ojs = transpose(scores_ojs1)
+medians_ojs = transpose(medians_ojs1)
+
+domains = [
+  "Explicit gender–career bias", 
+  "Implicit gender–career bias", 
+  "Positive affect in social media", 
+  "Implicit Asian American bias", 
+  "Political polarization", 
+  "Explicit Asian American bias", 
+  "Ideologically lean Democrat", 
+  "Life satisfaction", 
+  "Negative affect in social media", 
+  "Explicit African American bias", 
+  "Implicit African American bias",
+  "Ideologically lean Republican"
+]
+
+viewof median_radio = Inputs.radio(
+  d3.group(medians_ojs, d => d.method), 
+  {key: "All experts", label: html`<b>Median</b>`}
+)
+viewof mase_range = Inputs.range(
+  [3, d3.extent(scores_ojs, d => d.MASE1_w1)], 
+  {step: .5, value: 25, label: html`<b>MASE max</b>`, format: x => x.toFixed(0)}
+)
+
+addTooltips(
+  Plot.plot({
+    marks: [
+      Plot.frame({fill: "#f7f7f7"}),
+      Plot.dot(
+        scores_ojs,
+        {
+          x: "MASE1_w1",
+          y: "domain_long",
+          title: "team_name",
+          r: 7,
+          fill: "method",
+          fillOpacity: 0.5
+        }),
+      Plot.dot(
+        median_radio, 
+        {
+          x: "MASE1_w1",
+          y: "domain_long",
+          r: 7,
+          stroke: "black",
+          strokeWidth: 2
+        })
+    ],
+    x: {
+      label: "Mean absolute scaled error",
+      labelAnchor: "center", 
+      tickSize: 0,
+      grid: false,
+      domain: [0, mase_range]
+    },
+    y: {
+      label: null,
+      tickSize: 0,
+      grid: true,
+      padding: 0,
+      domain: domains
+    },
+    color: { 
+      legend: true, 
+      domain: ["Intuition/theory", "Data-driven", "Hybrid"],
+      range: ["#B13D70", "#7fc6a4", "#4889ab"],
+      style: {fontFamily: "karla", fontSize: "14px"}
+    },
+    width: 800,
+    height: 450,
+    marginLeft: 205,
+    marginRight: 0,
+    marginBottom: 50,
+    insetTop: 20,
+    insetBottom: 20,
+    style: {fontFamily: "karla", fontSize: "14px", overflow: "visible"}
+  })
+)
+```
+
+It's clear that some variables were harder to forecast than others. The evolution of explicit gender-career bias (i.e. the explicit association of certain genders with certain careers) was forecasted with relatively small errors, whereas support for the Republican Party was forecasted with large errors (few anticipated it to shoot up [!]). Implicit bias against African-Americans stands out as being the one nearly all experts (and non-experts) got wrong: the measure, happily, fell down more than anyone anticipated.
+
+The median expert generally had a slight lead over the median non-expert, though not by much. The paper explores the underlying distributions and concludes that experts only had a statistically significant lead in forecasting life satisfaction, polarization, and explicit and implicit gender–career bias; in all other variables, they performed no better than non-experts.
+
+Among experts, it was found that those employing data-driven strategies (either with or without consideration of subject matter theories) performed the best. This reflects well on data scientists but poorly on domain experts. It essentially means that one can get good results by throwing any old variable into a forecasting model without necessarily thinking too hard about the social phenomena behind that variable.
+
+Which team, overall, performed the best? Let's visualize the rankings of teams across all 12 domains. To keep the chart manageable, let's only include teams who ranked in the top three of at least one domain. There were 24 such teams in total:
+
+```{r}
+#| code-fold: true
+#| fig-height: 9
+
+library(ggplot2)
+
+rank <- scores_all %>% 
+  filter(isExpert == 1) %>% 
+  group_by(team_name) %>% 
+  filter(any(Rank <= 3)) %>% 
+  ungroup() %>% 
+  select(team_name, order, domain_long, Rank) %>% 
+  group_by(team_name) %>% 
+  mutate(participated = n()) %>% 
+  ungroup() %>% 
+  arrange(participated) %>% 
+  mutate(
+    team_name = factor(team_name, levels = unique(team_name)),
+    domain_label = paste(order, domain_long) %>% 
+      factor(levels = paste(domains_key$order, domains_key$domain_long))
+  )
+
+rank %>% 
+  ggplot(aes(x = order, y = team_name, fill = Rank, alpha = domain_label)) +
+  geom_tile(color = "gray97", linewidth = 1) +
+  geom_text(aes(label = Rank), size = 11/.pt, color = "white") +
+  
+  scale_x_continuous(position = "top", breaks = 1:12, expand = c(0, 0)) +
+  scale_y_discrete(expand = c(0, 0)) +
+  scale_fill_gradientn(colors = c("#32C778", "gray90", "gray90", "#f697bb", "#B13D70")) +
+  scale_alpha_manual(values = rep(1, 12)) +
+  
+  labs(
+    title = "Augur games",
+    subtitle = "Team rankings in domains they participated in",
+    caption = "Note: Only teams that reached the top three in at least one domain are included\nSource: The Forecasting Collaborative",
+  ) +
+  
+  guides(
+    fill = "none", 
+    alpha = guide_legend(
+      title = "Domains",
+      title.position = "top",
+      keywidth = 0, 
+      keyheight = unit(.6, "cm"), 
+      nrow = 4, 
+      override.aes = list(fill = NA)
+    )) +
+  
+  theme(
+    text = element_text(family = "karla"),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text.x = element_text(size = 11, margin = margin(b = 5)),
+    axis.text.y = element_text(size = 11, margin = margin(r = 5)),
+    legend.key = element_blank(),
+    legend.text = element_text(size = 11),
+    legend.title = element_text(size = 11, face = "bold"),
+    legend.title.align = .03,
+    legend.position = "bottom",
+    legend.box.margin = margin(l = -120),
+    panel.background = element_rect(fill = "gray97", color = NA),
+    panel.grid = element_blank(),
+    plot.title.position = "plot", 
+    plot.title = element_text(size = 16, face = "bold", hjust = .5),
+    plot.subtitle = element_text(size = 14, hjust = .5, margin = margin(b = 12)),
+    plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 10)),
+    plot.caption.position = "plot"
+  )
+```
+ 
+In terms of first place finishes, **fearfulastra** takes the cake with three. However, they performed rather poorly in forecasting life satisfaction. **NotGreatWithNamesTeam** has the best track record, participating in two domains and getting a first and a second. But the most well-rounded would probably be **The Well-Adjusted R Squares**, who had four finishes in the top three and whose worst performance was just 16th place.
+
+Let's chart the forecasts of the best performing expert in each domain against how these variables actually evolved. As a benchmark, let's also chart the forecasts of the median non-expert.  
+
+```{r}
+#| code-fold: true
+
+actual <- historical_data %>% 
+  pivot_longer(cols = negaffect:polar,
+               names_to = "domain",
+               values_to = "value") %>% 
+  left_join(domains_key) %>% 
+  mutate(series = "Actual") %>% 
+  select(series, domain_long, month = Month, value)
+
+series <- scores_all %>% 
+  mutate(series = case_when(
+    isExpert == 1 ~ "Top expert",
+    is.na(isExpert) ~ "Median non-expert"
+  )) %>% 
+  pivot_longer(cols = starts_with("Month."),
+               names_to = "month",
+               names_prefix = "Month.",
+               values_to = "value") %>% 
+  mutate(month = as.numeric(month)) %>% 
+  group_by(series, domain_long, month) %>% 
+  filter(Rank == 1 | is.na(Rank)) %>% 
+  ungroup() %>% 
+  select(series, team_name, domain_long, month, value) %>% 
+  bind_rows(actual)
+
+ojs_define(series_ojs1 = series)
+```
+ 
+```{ojs}
+//| code-fold: true
+
+series_ojs = transpose(series_ojs1)
+
+viewof select = Inputs.select(
+  d3.group(series_ojs, d => d.domain_long), 
+  {label: html`<b>Domain</b>`}
+)
+viewof month_range = Inputs.range(
+  [d3.extent(series_ojs, d => d.month)[0], -3], 
+  {label: html`<b>Months prior</b>`, value: -24, step: 1}
+)
+domain_unit = (d3.max(select, d => d.value) - d3.min(select, d => d.value)) / 4
+
+addTooltips(
+  Plot.plot({
+    marks: [
+      Plot.frame({fill: "#f7f7f7"}),
+      Plot.lineY(
+        select.filter(d => d.month > month_range), 
+        {x: "month", y: "value", stroke: "series", strokeWidth: 2.5}
+      ),
+      Plot.dot(
+        select.filter(d => d.month > month_range), 
+        {x: "month", y: "value", title: "value", fill: "series", r: 5, stroke: "white"}
+      ),     
+      Plot.ruleX(
+        [0], 
+        {strokeOpacity: .9, strokeWidth: 1, strokeDasharray: "5,5"}
+      ),
+      Plot.text(
+        select.slice(0, 1), 
+        {
+          textAnchor: "start",
+          frameAnchor: "top-left",
+          text: d => d.domain_long, 
+          fontWeight: "bold",
+          fontSize: 15,
+          dx: 20,
+          dy: 18
+        }),
+      Plot.text(
+        select.slice(0, 1), 
+        {
+          text: d => `Top expert: ${d.team_name}`, 
+          textAnchor: "start",
+          frameAnchor: "top-left",
+          fontSize: 14,
+          dx: 20,
+          dy: 39
+        })
+    ],
+    x: {
+      label: "Month", 
+      labelAnchor: "center", 
+      tickSize: 0
+    },
+    y: {
+      label: null, 
+      ticks: 5,
+      tickSize: 0, 
+      domain: [d3.min(select, d => d.value) - domain_unit, d3.max(select, d => d.value) + domain_unit]
+    },
+    color: {
+      legend: true, 
+      range: ["#bcbcbc", "#B13D70", "#0C6291"],
+      style: {fontFamily: "karla", fontSize: "14px"}},
+    width: 800,
+    height: 400,
+    insetTop: 20,
+    insetBottom: 20,
+    insetRight: 20,
+    insetLeft: 20,
+    marginTop: 5,
+    marginBottom: 50,
+    marginLeft: 45,
+    marginRight: 0,
+    style: {fontFamily: "karla", fontSize: "14px"}
+  }),
+  {r: 7.5}
+)
+```
+
+It's interesting to see how many of these variables underwent a noticeable shift during the period under study. Negative social media affect --- estimated by analyzing tweets --- shot up as people stuck at home viciously argued about everything from masks to Black Lives Matter. The conversations around race following the murder of George Floyd translated to drops in the stereotyping of African-Americans and Asian-Americans (though it should be noted that these are based on [online surveys](https://implicit.harvard.edu/implicit/iatdetails.html) and may suffer heavily from selection bias). Forecasts from top-performing experts actually did pretty well; particularly impressive was **Erebuni**'s accurate forecast of Republican support, not least because all their members were non-Americans. 
+
+What to make of these results? Perhaps it's a little unfair to judge social scientists too harshly. It was a once-in-a-century pandemic, no one had any models for this. But at the same time, it is precisely during periods of great uncertainty when domain experts are needed the most. Don't tell me now that you were just a bunch of chimps with a dart! `r end_mark()`
