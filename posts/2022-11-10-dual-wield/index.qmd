@@ -32,13 +32,6 @@ here::here("images", "phgdp_q3.jpg") %>%
 ```
 
 :::{.column-margin}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 ```{r}
 #| echo: false
 knitr::include_graphics("https://media.tenor.com/kNwZslnPna8AAAAC/michael-scott-steve-carell.gif")
@@ -49,7 +42,7 @@ What's wrong with it?
 
 The first problem is that there isn't really a reason why it has to be a dual axis chart at all. The level of real GDP is not meaningful to most people and visualizing it doesn't provide much insight.
 
-The second problem is that it's sloppily made. In the legend, "Real GDP" (the bars) is on the left and "GDP growth" (the line) is on the right, so the natural inclination is to use the left axis for the bars and the right axis for the line. But woe to you if you do---the positions are reversed. This is because for "combo charts" in Excel (i.e. where you combine two chart types), bar layers always go first before lines, hence they are listed first in the legend.^[For some reason, Excel is *adamant* that you should never be able to change the order of chart layers, or the order of legend items.] But you can choose which axis the bar series is assigned to, so it should have been assigned to the left one.
+The second problem is that it's sloppily made. In the legend, "Real GDP" (the bars) is on the left and "GDP growth" (the line) is on the right, so the natural inclination is to use the left axis for the bars and the right axis for the line. But woe to you if you do --- the positions are reversed. This is because for "combo charts" in Excel (i.e. where you combine two chart types), bar layers always go first before lines, hence they are listed first in the legend.^[For some reason, Excel is *adamant* that you should never be able to change the order of chart layers, or the order of legend items.] But you can choose which axis the bar series is assigned to, so it should have been assigned to the left one.
 
 More importantly: the two axes clash. Look at 5.0 on the left axis. If you follow the grid line all the way to the right axis, you get... 4.something. You quickly realize that the grid lines really just mark the axis labels on the left, not the right. The right axis exists in its own parallel grid in the nether regions of the chart. That's confusing! This is again a trait of Excel. If you tick the check box that puts a series on the secondary axis, it automatically scales its axis independent of the primary axis. So you basically end up with two charts sharing the same x axis superimposed on top of each other.
 
@@ -108,4 +101,4 @@ There's still one last problem with this chart, which is that the right y axis r
 
 I personally don't have anything against dual axis charts, and I have used them a lot in my work. What I *am* against are sloppily made charts, and perhaps, by being inherently more complex, sloppiness in dual axis charts tends to be extra noticeable.
 
-One essential to keep in mind is that both y axes must coexist in the same Cartesian plane, meaning one is just a transformation of the other. In the chart I made, $y_{\text{right}} = ( y_{\text{left}} - 4 ) \times 5$. This is something you manually have to specify in `ggplot`, making it harder to make dual axis charts there. But that's by design. Excel makes it too easy, and so you get people hitting that secondary axis check box and calling it a day.
+One essential to keep in mind is that both y axes must coexist in the same Cartesian plane, meaning one is just a transformation of the other. In the chart I made, $y_{\text{right}} = ( y_{\text{left}} - 4 ) \times 5$. This is something you manually have to specify in `ggplot`, making it harder to make dual axis charts there. But that's by design. Excel makes it too easy, and so you get people hitting that secondary axis check box and calling it a day. `r end_mark()`

@@ -66,4 +66,4 @@ leaflet(options = leafletOptions(minZoom = 10, maxZoom = 15)) %>%
 
 Neat. I'll revisit this later on to see what else I can add.
 
-**Update 17 Nov 2022:** Transportation Undersecretary Cesar Chavez [has said](https://news.abs-cbn.com/business/11/17/22/metro-manila-subway-excavation-to-start-in-december) that "the actual excavation is on December 12". He added: "Actually, this is for real. The excavation is real." Well, there you have it. The excavation is "real".
+**Update 17 Nov 2022:** Transportation Undersecretary Cesar Chavez [has said](https://news.abs-cbn.com/business/11/17/22/metro-manila-subway-excavation-to-start-in-december) that "the actual excavation is on December 12". He added: "Actually, this is for real. The excavation is real." Well, there you have it. The excavation is "real". `r end_mark()`

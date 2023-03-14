@@ -245,16 +245,17 @@ addTooltips(
       legend: true, 
       domain: ["Intuition/theory", "Data-driven", "Hybrid"],
       range: ["#B13D70", "#7fc6a4", "#4889ab"],
-      style: {fontFamily: "karla", fontSize: "14px"}
+      //style: {fontFamily: "karla", fontSize: "14px"}
     },
     width: 800,
     height: 450,
-    marginLeft: 205,
+    marginLeft: 215,
     marginRight: 0,
     marginBottom: 50,
+    insetLeft: 5,
     insetTop: 20,
     insetBottom: 20,
-    style: {fontFamily: "karla", fontSize: "14px", overflow: "visible"}
+    //style: {fontFamily: "karla", fontSize: "14px", overflow: "visible"}
   })
 )
 ```
@@ -438,8 +439,8 @@ addTooltips(
     },
     color: {
       legend: true, 
-      range: ["#bcbcbc", "#B13D70", "#0C6291"],
-      style: {fontFamily: "karla", fontSize: "14px"}},
+      range: ["#bcbcbc", "#B13D70", "#0C6291"]
+    },
     width: 800,
     height: 450,
     insetTop: 20,
@@ -449,7 +450,6 @@ addTooltips(
     marginBottom: 50,
     marginLeft: 45,
     marginRight: 0,
-    style: {fontFamily: "karla", fontSize: "14px"}
   }),
   {r: 7.5}
 )

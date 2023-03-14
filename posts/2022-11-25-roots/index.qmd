@@ -26,7 +26,7 @@ font_add_google("Karla", "karla")
 
 One of the most interesting economics papers I've ever read is the 2013 survey by Enrico Spolaore and Romain Wacziarg (SW) titled ["How Deep Are the Roots of Economic Development?"](https://www.anderson.ucla.edu/faculty_pages/romain.wacziarg/downloads/2013_roots.pdf) There has long been an active, highly contentious discussion over why some countries today are rich while others are poor. As a citizen of a "poor" country, this was a big motivation for me to study economics.^[Ten years later and I still don't have clear answers.]
 
-The *proximate* causes are relatively uncontroversial---[Solow](http://piketty.pse.ens.fr/files/Solow1956.pdf) had it all laid out in 1956. Production turns inputs into output. More inputs mean more output. Some output are consumed, some are saved ("invested") and turned into capital, which are then used as inputs to produce more output. You can keep accumulating capital to grow your output, but over time, for a given state of technology, capital accumulation will hit diminishing returns. You will then need to move up the technological ladder to continue increasing output. Repeat until rich.
+The *proximate* causes are relatively uncontroversial --- [Solow](http://piketty.pse.ens.fr/files/Solow1956.pdf) had it all laid out in 1956. Production turns inputs into output. More inputs mean more output. Some output are consumed, some are saved ("invested") and turned into capital, which are then used as inputs to produce more output. You can keep accumulating capital to grow your output, but over time, for a given state of technology, capital accumulation will hit diminishing returns. You will then need to move up the technological ladder to continue increasing output. Repeat until rich.
 
 The Solow model is elegant, but it has the flavor of saying that a business is successful because it makes a lot of money. The deeper question is why some countries have managed to perform these pro-growth activities while others have not. Is it something in their culture? Maybe their geography? Maybe they had a Great Leader who put all the pieces in place?
 
@@ -103,7 +103,7 @@ What explains this intriguing correlation? SW divide proposed mechanisms into di
 
 Arguments for an indirect channel are, for me, more convincing. Geography influenced *x*, and *x* in turn influenced economic development. There may even be additional layers (*x* influenced *y*, *y* influenced *z*, etc.). A famous hypothesis comes from Jared Diamond's 1997 book *Guns, Germs, and Steel*, which argues that climate and the ecosystems it supported influenced the onset of agriculture and domestication in a society, what is known as the Neolithic Revolution. In turn, societies that transitioned earlier would have had a head start in technological progress and centralized governments. This explains why Europeans had the advantage of "guns, germs, and steel" as they were conquering the civilizations of New World America in the 16th century.
 
-To illustrate the Diamond hypothesis, the following plots population density in the year 1500 against the years since a country had undergone its Neolithic Revolution---population density being the best proxy available for relative economic development in a pre-industrial world. Again, a positive correlation is established.
+To illustrate the Diamond hypothesis, the following plots population density in the year 1500 against the years since a country had undergone its Neolithic Revolution --- population density being the best proxy available for relative economic development in a pre-industrial world. Again, a positive correlation is established.
 
 ```{r}
 #| code-fold: true
@@ -343,4 +343,4 @@ hchart(df1, "scatter",
 
 The correlations above provide pretty fascinating insights. But they are all flawed, of course. Countries are not random realizations of a well-defined stochastic process. Nor are they equal: when generalizing about long-run economic development, it's not clear that the experiences of a Singapore or a Cape Verde should hold equal weight to the experiences of an India or a China. Which are the exceptions and which are the rules? Do rules even exist?
 
-The field of empirical economic history has done much to extend, refine, and qualify the basic results shown here. Hopefully I'll write about them in future posts.
+The field of empirical economic history has done much to extend, refine, and qualify the basic results shown here. Hopefully I'll write about them in future posts. `r end_mark()`

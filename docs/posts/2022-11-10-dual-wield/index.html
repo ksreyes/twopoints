@@ -249,7 +249,6 @@ cookieconsent.run({
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><br> <br> <br> <br> <br> <br> <br></p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="https://media.tenor.com/kNwZslnPna8AAAAC/michael-scott-steve-carell.gif" class="img-fluid"></p>
@@ -257,7 +256,7 @@ cookieconsent.run({
 </div>
 </div></div><p>What’s wrong with it?</p>
 <p>The first problem is that there isn’t really a reason why it has to be a dual axis chart at all. The level of real GDP is not meaningful to most people and visualizing it doesn’t provide much insight.</p>
-<p>The second problem is that it’s sloppily made. In the legend, “Real GDP” (the bars) is on the left and “GDP growth” (the line) is on the right, so the natural inclination is to use the left axis for the bars and the right axis for the line. But woe to you if you do—the positions are reversed. This is because for “combo charts” in Excel (i.e.&nbsp;where you combine two chart types), bar layers always go first before lines, hence they are listed first in the legend.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> But you can choose which axis the bar series is assigned to, so it should have been assigned to the left one.</p>
+<p>The second problem is that it’s sloppily made. In the legend, “Real GDP” (the bars) is on the left and “GDP growth” (the line) is on the right, so the natural inclination is to use the left axis for the bars and the right axis for the line. But woe to you if you do — the positions are reversed. This is because for “combo charts” in Excel (i.e.&nbsp;where you combine two chart types), bar layers always go first before lines, hence they are listed first in the legend.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> But you can choose which axis the bar series is assigned to, so it should have been assigned to the left one.</p>
 <p>More importantly: the two axes clash. Look at 5.0 on the left axis. If you follow the grid line all the way to the right axis, you get… 4.something. You quickly realize that the grid lines really just mark the axis labels on the left, not the right. The right axis exists in its own parallel grid in the nether regions of the chart. That’s confusing! This is again a trait of Excel. If you tick the check box that puts a series on the secondary axis, it automatically scales its axis independent of the primary axis. So you basically end up with two charts sharing the same x axis superimposed on top of each other.</p>
 <p>Below is my own quick fix of the chart (data source <a href="https://psa.gov.ph/national-accounts/base-2018/data-series">here</a>).</p>
 <div class="cell">
@@ -313,7 +312,7 @@ cookieconsent.run({
 </div>
 <p>There’s still one last problem with this chart, which is that the right y axis really ought to cross the x axis at zero. Positive growth rates fundamentally differ from negative growth rates, but a quick glance at the chart gives the impression that Philippine growth just took a dip in 2020. But! If you cross the right y axis at zero, the left y axis will have to extend to the negative numbers. This would make no sense for GDP. So there’s the dilemma: one y axis ends up compromising the other. I don’t know if there’s a way to fix this.</p>
 <p>I personally don’t have anything against dual axis charts, and I have used them a lot in my work. What I <em>am</em> against are sloppily made charts, and perhaps, by being inherently more complex, sloppiness in dual axis charts tends to be extra noticeable.</p>
-<p>One essential to keep in mind is that both y axes must coexist in the same Cartesian plane, meaning one is just a transformation of the other. In the chart I made, <span class="math inline">\(y_{\text{right}} = ( y_{\text{left}} - 4 ) \times 5\)</span>. This is something you manually have to specify in <code>ggplot</code>, making it harder to make dual axis charts there. But that’s by design. Excel makes it too easy, and so you get people hitting that secondary axis check box and calling it a day.</p>
+<p>One essential to keep in mind is that both y axes must coexist in the same Cartesian plane, meaning one is just a transformation of the other. In the chart I made, <span class="math inline">\(y_{\text{right}} = ( y_{\text{left}} - 4 ) \times 5\)</span>. This is something you manually have to specify in <code>ggplot</code>, making it harder to make dual axis charts there. But that’s by design. Excel makes it too easy, and so you get people hitting that secondary axis check box and calling it a day. <img src="../../images/logo-icon.png" class="endmark img-fluid"></p>
 
 
 

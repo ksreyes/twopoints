@@ -88,7 +88,7 @@ ggplot(df, aes(x = year, y = NY.GDP.PCAP.KD, color = country)) +
   )
 ```
 
-Now this to me is pleasing to the eye. A document populated with charts like this---as opposed to charts like the first two above---would be much more motivating to read.
+Now this to me is pleasing to the eye. A document populated with charts like this --- as opposed to charts like the first two above --- would be much more motivating to read.
 
 Here's a second exercise. I think one useful way to categorize countries is according to whether they are big and rich, big and poor, small and rich, or small and poor. We can visualize this in a scatterplot with population on one axis and GDP per capita on the other. Let's load up the data and plot the scatter.
 
@@ -209,4 +209,4 @@ ggplot(df, aes(x = log10(pop), y = log2(gpc))) +
   )
 ```
 
-And here's the final chart!
+And here's the final chart! `r end_mark()`

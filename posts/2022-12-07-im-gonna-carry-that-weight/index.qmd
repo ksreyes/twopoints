@@ -23,7 +23,7 @@ font_add_google("Karla", "karla")
 
 The pandemic (and turning 30) made me really start paying more attention to my health, and one of my resolutions was to go to the gym more consistently. It's now been a little over a year. At the moment, my one-rep max for squats is about 1.5x my body weight, while for bench, it's about 1.15x. As a motivator, I thought I'd look for benchmarks to work towards this coming year.
 
-My basis will be [this Kaggle dataset](https://www.kaggle.com/datasets/open-powerlifting/powerlifting-database) that contains the lifting records of over 400,000 powerlifting competitors, as listed in OpenPowerlifting.org. I might be setting the bar(bell) a bit high for myself here since I am by no means a competitive powerlifter, but consider that most people who join powerlifting comps aren't particularly *good*. In fact, most of them lose! In the aggregate, the dataset will probably be a good sample of the population I'm looking to compare myself against---men who lift regularly. 
+My basis will be [this Kaggle dataset](https://www.kaggle.com/datasets/open-powerlifting/powerlifting-database) that contains the lifting records of over 400,000 powerlifting competitors, as listed in OpenPowerlifting.org. I might be setting the bar(bell) a bit high for myself here since I am by no means a competitive powerlifter, but consider that most people who join powerlifting comps aren't particularly *good*. In fact, most of them lose! In the aggregate, the dataset will probably be a good sample of the population I'm looking to compare myself against --- men who lift regularly. 
 
 Here are its columns:
 
@@ -241,4 +241,4 @@ plots <- plot_grid(p1, p2, p3,
 plot_grid(title, plots, ncol = 1, rel_heights = c(.2, 1))
 ```
 
-The histograms don't actually differ all that much. It's possible that the bodily disadvantages of age are offset by the skills advantages of more training and experience. Just look at Linh Vu!
+The histograms don't actually differ all that much. It's possible that the bodily disadvantages of age are offset by the skills advantages of more training and experience. Just look at Linh Vu! `r end_mark()`

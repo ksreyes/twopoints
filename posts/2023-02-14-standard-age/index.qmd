@@ -27,7 +27,7 @@ age_gaps <- here::here("datasets", "agegaps.csv") %>%
 
 A super spy races to stop terrorists from bombing a national landmark. A dour careerist falls in love with a reckless bohemian. A genius overcomes a disability to make revolutionary discoveries. A dorky scientist gains superpowers after a lab accident. When you picture these movie plots in your head, how old do you make the protagonist out to be?
 
-We all have a sense of what the age of a "standard" adult is---the age when someone is neither too young nor too old, neither juvenile nor decaying, neither coming nor going. The age that a generic protagonist ought to be for a generic popcorn flick.
+We all have a sense of what the age of a "standard" adult is --- the age when someone is neither too young nor too old, neither juvenile nor decaying, neither coming nor going. The age that a generic protagonist ought to be for a generic popcorn flick.
 
 What is this age? We can get an idea by looking at the actual ages of actors cast in mainstream movies. For this, I use the [Hollywood Age Gap](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-02-14/readme.md) dataset featured in this week's [TidyTuesday](https://github.com/rfordatascience/tidytuesday). We load it up as follows:
 
@@ -85,7 +85,7 @@ df %>%
   knitr::kable(align = "lcllcc")
 ```
 
-This gives 2,103 entries on 1,031 unique actors. Because this was originally a couples dataset, there is an even split between men and women. It's worth pointing out that the dataset seems to have been collected rather haphazardly. It's mostly American films, though there are occasional foreign inclusions like *Blue Is the Warmest Colour*. For some reason, only five films each are included for 2020, 2021, and 2022---this may have a bearing on the decade medians I compute below. Major films of the last three years like *Tenet*, *Spider-Man: No Way Home*, *Shang-Chi*, *F9*, and *The Batman* are inexplicably omitted.
+This gives 2,103 entries on 1,031 unique actors. Because this was originally a couples dataset, there is an even split between men and women. It's worth pointing out that the dataset seems to have been collected rather haphazardly. It's mostly American films, though there are occasional foreign inclusions like *Blue Is the Warmest Colour*. For some reason, only five films each are included for 2020, 2021, and 2022 --- this may have a bearing on the decade medians I compute below. Major films of the last three years like *Tenet*, *Spider-Man: No Way Home*, *Shang-Chi*, *F9*, and *The Batman* are inexplicably omitted.
 
 With those limitations in mind, let's see what the data say. Here is a histogram of actors' ages, grouped by sex:
 
@@ -196,7 +196,7 @@ df %>%
   )
 ```
 
-This idea of a standard age has some grounding in developmental psychology. Clare Mehta and her colleagues coined the term "established adulthood" to refer to our 30s and early 40s, a period in our lives that most look back on---or look forward to---as their golden years. She [writes](https://theconversation.com/at-what-age-are-people-usually-happiest-new-research-offers-surprising-clues-156906):
+This idea of a standard age has some grounding in developmental psychology. Clare Mehta and her colleagues coined the term "established adulthood" to refer to our 30s and early 40s, a period in our lives that most look back on --- or look forward to --- as their golden years. She [writes](https://theconversation.com/at-what-age-are-people-usually-happiest-new-research-offers-surprising-clues-156906):
 
 > People talked about being in the prime of their lives and feeling at their peak. After years of working to develop careers and relationships, people reported feeling as though they had finally arrived.
 

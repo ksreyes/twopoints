@@ -212,4 +212,4 @@ ggplot(df1, aes(x = group1, y = billions, fill = group2)) +
   )
 ```
 
-I think this exercise really brings out the "grid" nature of ``ggplot``. It may be painstaking but as long as you can place your rectangle or line or textbox in the x-y coordinate system, you can modify your chart in all sorts of fun ways.
+I think this exercise really brings out the "grid" nature of ``ggplot``. It may be painstaking but as long as you can place your rectangle or line or textbox in the x-y coordinate system, you can modify your chart in all sorts of fun ways. `r end_mark()`

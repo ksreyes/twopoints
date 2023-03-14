@@ -256,4 +256,4 @@ ggdraw(wf) +
   )
 ```
 
-This one surprised me. Odette's unending torment of Swann didn't strike me as particularly happy? I guess this demonstrates the limitations of literal-minded approaches to coding sentiments. If the work is heavy on irony, a word-based lexicon like AFINN wouldn't really be able to catch that.
+This one surprised me. Odette's unending torment of Swann didn't strike me as particularly happy? I guess this demonstrates the limitations of literal-minded approaches to coding sentiments. If the work is heavy on irony, a word-based lexicon like AFINN wouldn't really be able to catch that. `r end_mark()`

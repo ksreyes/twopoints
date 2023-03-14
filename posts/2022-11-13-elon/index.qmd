@@ -149,3 +149,5 @@ ggplot(df, aes(x = hour)) +
     panel.grid.minor.y = element_blank()
   )
 ```
+
+`r end_mark()`

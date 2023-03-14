@@ -80,7 +80,7 @@ ggplot(conflicts, aes(x = year, y = count, fill = type_of_conflict)) +
 
 The data is from the [UCDP/PRIO Armed Conflict Dataset](https://ucdp.uu.se/downloads/index.html). I'll go through how I constructed the above chart.
 
-First, some words about the dataset. Each observation is a conflict-year. A conflict is dated from its first battle-related death, but only active "episodes"---defined as 25 battle-related deaths---are recorded in the database. For example, the Basque conflict has the following entries:
+First, some words about the dataset. Each observation is a conflict-year. A conflict is dated from its first battle-related death, but only active "episodes" --- defined as 25 battle-related deaths --- are recorded in the database. For example, the Basque conflict has the following entries:
 
 ```{r}
 here::here("datasets", "ucdp-prio-acd-221.csv") %>%
@@ -106,7 +106,7 @@ df <- here::here("datasets", "ucdp-prio-acd-221.csv") %>%
 
 Then it's a simple matter of counting the active conflicts per year and constructing a bar chart. to illustrate the depressing fact that Christmas 2021 saw an all-time high in active conflicts worldwide.
 
-To end, here's the song that inspired this post. Have a bad Christmas season everybody.
+To end, here's the song that inspired this post. Have a bad Christmas season everybody. `r end_mark()`
 
 ::: container
 <iframe src="https://www.youtube.com/embed/Zr9EOFuuIk4" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>

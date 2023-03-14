@@ -83,7 +83,7 @@ popes %>%
   )
 ```
 
-Though Francis is an old pope, his tenure so far of 10 years is less remarkable. Almost a third of all popes lasted for 10 years or more. And getting another decade in will be tough for Francis as he entered the papacy late in life---76 years old. Of the popes with tenures of 20 years or more, most started before the age of 60, as the chart below shows.
+Though Francis is an old pope, his tenure so far of 10 years is less remarkable. Almost a third of all popes lasted for 10 years or more. And getting another decade in will be tough for Francis as he entered the papacy late in life --- 76 years old. Of the popes with tenures of 20 years or more, most started before the age of 60, as the chart below shows.
 
 ```{r}
 #| code-fold: true
