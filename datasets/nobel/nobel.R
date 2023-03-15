@@ -73,4 +73,4 @@ nobel <- nobel %>%
   ) %>%
   select(year, category, name, sex, birth, age, birth_country, birth_continent)
 
-write_csv(nobel, here("datasets", "nobel.csv"))
+write_csv(nobel, here::here("datasets", "nobel", "nobel.csv"))

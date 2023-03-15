@@ -35,7 +35,7 @@ Let's take a look at the cleaned dataset using [`reactable`](https://glin.github
 library(tidyverse)
 library(reactable)
 
-nobel <- here::here("datasets", "nobel.csv") %>% 
+nobel <- here::here("datasets", "nobel", "nobel.csv") %>% 
   read_csv()
 
 nobel %>%

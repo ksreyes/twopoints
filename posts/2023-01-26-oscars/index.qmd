@@ -23,7 +23,7 @@ font_add_google("Karla", "karla")
 
 With the release of this year's Academy Award nominations, [many](https://www.polygon.com/23569065/oscars-2023-avatar-top-gun-everything-everywhere-nominations) [have](https://deadline.com/2023/01/avatar-the-way-of-water-top-gun-maverick-best-picture-save-oscars-ratings-slump-1235238844/) [pointed](https://www.latimes.com/entertainment-arts/awards/story/2023-01-24/oscars-nominations-2023-best-picture-nomineees-box-office) out a surprising fact: several of the films gunning for Best Picture are actually hits! More than that, the highest-grossing movie of the year ([which is, somehow, *Avatar: The Way of Water*](https://twopoints.blog/posts/2022-12-21-avatar/)) and the second-highest grossing (*Top Gun: Maverick*) were both nominated.
 
-There have long been discussions over whether prestige awards like the Oscars still matter. It doesn't help that popular blockbusters tend not to get nominated---few people care that an indie film they didn't see won over other indie films they didn't see. The Academy of Motion Picture Arts and Sciences has made some efforts to stay relevant, such as expanding the field of Best Picture nominees from the traditional 5 to a maximum of 10 starting 2010. The idea is (and it sounds weird to say it) to be more *inclusive* of mainstream films.
+There have long been discussions over whether prestige awards like the Oscars still matter. It doesn't help that popular blockbusters tend not to get nominated --- few people care that an indie film they didn't see won over other indie films they didn't see. The Academy of Motion Picture Arts and Sciences has made some efforts to stay relevant, such as expanding the field of Best Picture nominees from the traditional 5 to a maximum of 10 starting 2010. The idea is (and it sounds weird to say it) to be more *inclusive* of mainstream films.
 
 It hasn't worked so well. I compiled global box office receipts on all Best Picture nominees from 2010 to 2023 and charted them below. Billion-dollar blockbusters are still seldom nominated. They also never win.
 
@@ -35,7 +35,7 @@ library(tidyverse)
 library(showtext)
 library(ggplot2)
 
-df <- here("datasets", "oscars.csv") %>% 
+df <- here("datasets", "oscars", "oscars.csv") %>% 
   read_csv()
 
 df %>%
@@ -197,7 +197,6 @@ hchart(df, "scatter",
     marker = FALSE, enableMouseTracking = FALSE
   ) %>%
   hc_legend(enabled = FALSE)
-  #hc_add_theme(theme)
 ```
 
 The closest the Academy, movie critics, and audiences got to unanimity was with the *Lord of the Rings* films. More often however, the camps were split. The Academy and professional critics closed ranks on 2016's Best Picture winner *Moonlight*; audiences were less impressed. On the flip side, both the Academy and moviegoers loved 2005's *Crash*, but publications [still](https://www.independent.co.uk/arts-entertainment/films/features/crash-15-anniversary-oscar-best-picture-worst-racism-cast-director-a9493141.html) [routinely](https://screenrant.com/oscars-shocking-moment-crash-brokeback-mountain/) [cite](https://grantland.com/features/mark-lisanti-live-blogs-crash/) its Best Picture win as an atrocity to cinema. Occasionally, critics and audiences side against the Academy: *Extremely Loud and Incredibly Close*'s nomination baffled them both.

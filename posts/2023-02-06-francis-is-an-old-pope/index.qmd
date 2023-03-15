@@ -35,7 +35,7 @@ Here's a look at a few entries in the dataset:
 library(tidyverse)
 library(knitr)
 
-popes <- here("datasets", "popes.csv") %>%
+popes <- here("datasets", "popes", "popes.csv") %>%
   read_csv()
 
 popes %>%
