@@ -10,10 +10,12 @@ image: thumbnail.png
 #| label: setup
 #| include: false
 
+library(renv)
 library(knitr)
 library(showtext)
 library(here)
 
+renv::use(lockfile = "renv.lock")
 showtext_auto()
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 options(knitr.kable.NA = "-")
