@@ -184,7 +184,7 @@ li.nav-item span.menu-text {                     /* Menu items */
   }
   
   .navbar-toggler:focus {
-    box-shadow: 0 0 0 .75rem;
+    box-shadow: 0 0 0 1px;
   }
   
   nav.navbar li.dropdown-header {                /* Subtitle */
@@ -532,6 +532,10 @@ div.cell-output pre {
 
 div.cell p, div.cell table {                     /* Space bet output & text */
   margin-bottom: .5rem;
+}
+
+div.cell-output pre {                       /* Code output */
+  font-size: $font-size-code;
 }
 
 div.cell-output-display table {                  /* Kable */
