@@ -5,7 +5,7 @@ project:
 website:
   title: "Two Points Make a Line"
   site-url: https://twopoints.blog
-  description: "A blog about visualizing data"
+  description: "Telling stories through visualized data — by Kenneth S. Reyes"
   favicon: /images/logo-icon.png
   repo-url: https://github.com/ksreyes/twopoints
   image: /images/logo-icon.png

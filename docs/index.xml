@@ -8,7 +8,7 @@
 <title>Two Points Make a Line</title>
 <link>https://twopoints.blog/index.html</link>
 <atom:link href="https://twopoints.blog/index.xml" rel="self" type="application/rss+xml"/>
-<description>A blog about visualizing data</description>
+<description>Telling stories through visualized data — by Kenneth S. Reyes</description>
 <image>
 <url>https://twopoints.blog/images/logo-icon.png</url>
 <title>Two Points Make a Line</title>
@@ -18,7 +18,7 @@
 <lastBuildDate>Tue, 21 Mar 2023 16:00:00 GMT</lastBuildDate>
 <item>
   <title>I just read 456 books*</title>
-  <link>https://twopoints.blog/posts/2023-03-19-literary-analysis/index.html</link>
+  <link>https://twopoints.blog/posts/2023-03-22-literary-analysis/index.html</link>
   <description><![CDATA[ 
 
 
@@ -937,9 +937,9 @@
   <category>network</category>
   <category>scatter</category>
   <category>interactive</category>
-  <guid>https://twopoints.blog/posts/2023-03-19-literary-analysis/index.html</guid>
+  <guid>https://twopoints.blog/posts/2023-03-22-literary-analysis/index.html</guid>
   <pubDate>Tue, 21 Mar 2023 16:00:00 GMT</pubDate>
-  <media:content url="https://twopoints.blog/posts/2023-03-19-literary-analysis/thumbnail.png" medium="image" type="image/png" height="88" width="144"/>
+  <media:content url="https://twopoints.blog/posts/2023-03-22-literary-analysis/thumbnail.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 <item>
   <title>Telling the future is hard</title>
