@@ -8,11 +8,6 @@
       }
     ]
   },
-  "Python": {
-    "Version": "3.11.2",
-    "Type": "virtualenv",
-    "Name": "./posts/2023-03-19-literary-analysis/literary"
-  },
   "Packages": {
     "BH": {
       "Package": "BH",
@@ -157,6 +152,17 @@
         "utils"
       ],
       "Hash": "1e035db628cefb315c571202d70202fe"
+    },
+    "RcppTOML": {
+      "Package": "RcppTOML",
+      "Version": "0.2.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp"
+      ],
+      "Hash": "c232938949fcd8126034419cc529333a"
     },
     "SnowballC": {
       "Package": "SnowballC",
@@ -2091,6 +2097,27 @@
         "withr"
       ],
       "Hash": "d66fe009d4c20b7ab1927eb405db9ee2"
+    },
+    "reticulate": {
+      "Package": "reticulate",
+      "Version": "1.28",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "Matrix",
+        "R",
+        "Rcpp",
+        "RcppTOML",
+        "graphics",
+        "here",
+        "jsonlite",
+        "methods",
+        "png",
+        "rappdirs",
+        "utils",
+        "withr"
+      ],
+      "Hash": "86c441bf33e1d608db773cb94b848458"
     },
     "rgbif": {
       "Package": "rgbif",
