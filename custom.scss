@@ -468,7 +468,7 @@ img.endmark {
 /*      CODE CELLS                                                            */
 /******************************************************************************/
 
-div.cell {
+div.cell, p + div.sourceCode {
   margin-bottom: $paragraph-margin-bottom;
 }
 
