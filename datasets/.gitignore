@@ -3,4 +3,8 @@
 !/oscars
 !/popes
 !/nobel
+!/literary/literary.py
+!/literary/library_stats.csv
+!/literary/library_network.json
+!/literary/requirements.txt
 !.gitignore
