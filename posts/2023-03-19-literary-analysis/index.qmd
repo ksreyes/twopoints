@@ -40,7 +40,7 @@ addTooltips(
       nodeStrokeOpacity: .7,
       linkStrokeWidth: l => Math.sqrt(l.value),
       nodeRadius: 6,
-      width: 800, height: 720,
+      width: 800, height: 750,
       colors: ["#B13D70", "#7fc6a4", "#4889ab", "#F7DD72"]
     }
   ),
@@ -509,7 +509,6 @@ This scatter is all well and good, but a funner, more interactive way to represe
 ```{python}
 #| code-fold: true
 #| code-summary: Constructing a network dataset
-#| eval: false
 
 pairs = list(set(itertools.combinations(library_stats.index.tolist(), 2)))
 pairs.sort()
@@ -518,7 +517,7 @@ values = max(distances) - distances
 
 links = pd.DataFrame(pairs, columns=['source', 'target'])
 links['value'] = values
-links = links[~(links['value'] < 8.5)]
+links = links[~(links['value'] < 9.1)]
 links['value'] = (links['value']-links['value'].min())*(5/(links['value'].max()-links['value'].min()))
 
 nodes = pd.DataFrame({

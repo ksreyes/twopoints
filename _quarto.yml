@@ -12,6 +12,7 @@ website:
   google-analytics: "G-EJMC44PZ56"
   cookie-consent: true
   search: true
+  open-graph: true
   navbar:
     logo: /images/logo-icon-invert.png
     left: 

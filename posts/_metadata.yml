@@ -22,4 +22,7 @@ format:
     fig-width: 8
     fig-height: 6
 
+website:
+  open-graph: true
+
 editor: source
