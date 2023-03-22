@@ -1,0 +1,839 @@
+---
+title: "I just read 456 books*"
+subtitle: "*Actually my computer did, but let's not split hairs. An exploration into NLP, dimensionality reduction, and reactive visualizations."
+date: 2023-03-22
+categories: [network, scatter, interactive]
+image: thumbnail.png
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(reticulate)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+
+reticulate::use_virtualenv(here("venv/literary"))
+```
+
+In a [previous post](https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/), we charted the emotional shape of three novels by assigning them sentiment scores through the [AFINN lexicon](https://search.r-project.org/CRAN/refmans/corpus/html/sentiment_afinn.html). But three is peanuts --- I'm bolder now, more *audacious*, and subsisting on three cups of coffee a day. In this post, I chew on as many classics from the 19th century as my laptop will let me. The result is this beautiful visualization mapping the textual similarities between literary works, powered by [D3's force layout simulator](https://www.d3indepth.com/force-layout/). Hover over a node to see the title and author, or click and drag to examine how each is connected to the rest.
+
+```{ojs}
+//| code-fold: true
+library_network = FileAttachment('../../datasets/literary/library_network.json').json({typed: true})
+
+addTooltips(
+  ForceGraph(
+    library_network, 
+    {
+      nodeId: d => d.id,
+      nodeGroup: d => d.nationality,
+      nodeTitle: d => `${d.title}\n${d.query} (${d.nationality})`,
+      nodeStrokeOpacity: .7,
+      linkStrokeWidth: l => Math.sqrt(l.value),
+      nodeRadius: 6,
+      width: 800, height: 720,
+      colors: ["#B13D70", "#7fc6a4", "#4889ab", "#F7DD72"]
+    }
+  ),
+  {r: 7, opacity: 1, "stroke-width": "2px", stroke: "black"}
+)
+```
+
+Let's see how we got here. To take advantage of certain packages, I'll be using Python instead of my usual R.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Packages"
+#| code-overflow: wrap
+
+# Standard packages
+import numpy as np
+import pandas as pd
+import itertools
+import sqlite3
+import re
+from scipy.spatial.distance import pdist
+import json
+
+# collections in Python >3.9 no longer has MutableSet module so we have to get it from collections.abc for the cache download to work
+import collections
+from collections.abc import MutableSet
+collections.MutableSet = collections.abc.MutableSet
+
+# Text analysis
+from gutenbergpy.gutenbergcache import GutenbergCache, GutenbergCacheSettings
+import gutenbergpy.textget
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from textblob import TextBlob
+import umap.umap_ as umap
+```
+
+```{python}
+#| include: false
+library_stats = pd.read_csv('../../datasets/literary/library_stats.csv')
+```
+
+As before, our data source is Project Gutenberg, accessed via the [`gutenbergpy`](https://github.com/raduangelescu/gutenbergpy) package. Downloading a work requires knowing its Gutenberg ID, which is tedious to look up if we want a ton of novels. Let's devise a process that automatically fetches IDs given an author prompt --- say, "Herman Melville". To be able to search through the Gutenberg database, we must first generate a local cache of its records by running `GutenbergCache.create()`. This only needs to be done once. Once set up, we can connect to it:
+
+```{python}
+connection = sqlite3.connect(GutenbergCacheSettings.CACHE_FILENAME)
+```
+
+Our SQL query will be of the following form:
+
+```sql
+SELECT DISTINCT books.gutenbergbookid, authors.name, titles.name, books.numdownloads
+FROM books, authors, book_authors, titles
+WHERE authors.id = book_authors.authorid
+  AND books.id = book_authors.bookid
+  AND books.id = titles.bookid
+  AND books.languageid = 1
+  AND books.typeid = -1
+  AND authors.name LIKE '%Herman%'
+  AND authors.name LIKE '%Melville%'
+ORDER BY books.numdownloads DESC 
+LIMIT 50
+```
+
+Gutenberg is not a very clean library; much detritus is uploaded alongside the novels we actually want. To help focus the search, we order the query results by number of downloads and take at most the top 50. This removes some nuisance hits but, as we will see, there is much further work to be done.
+
+Let's write a function that generates a SQL query given an author prompt:
+
+```{python}
+#| code-fold: true
+#| code-summary: "query_author()"
+
+def query_author(name):
+  inputs = name.split()
+  query = (
+    'SELECT DISTINCT books.gutenbergbookid, authors.name, titles.name, books.numdownloads '
+    'FROM books, authors, book_authors, titles '
+    'WHERE authors.id = book_authors.authorid ' 
+		  'AND books.id = book_authors.bookid '
+		  'AND books.id = titles.bookid '
+		  'AND books.languageid = 1 '
+		  'AND books.typeid = -1 '
+      'AND %s '
+    'ORDER BY books.numdownloads DESC '
+    'LIMIT 50'
+    % ' AND '.join(["authors.name LIKE ('%" + "%s" %n + "%')" for n in inputs])        
+  )
+  return query
+```
+
+Querying "Herman Melville" produces:
+
+```{python}
+results = pd.read_sql_query(query_author('Herman Melville'), connection)
+results.columns = ['gutid', 'author', 'title', 'downloads']
+print(results.head().to_markdown())
+```
+
+It is clear that duplicates are a problem. The multiple spellings of Melville's name aren't much of an issue since they map to the same Gutenberg IDs. We can easily remove these.
+
+```{python}
+duplicated_ids = results['gutid'].duplicated(keep='first')
+results = results.loc[~duplicated_ids].reset_index(drop=True)
+print(results.to_markdown())
+```
+
+More problematically, title variants of the same work ("Moby Dick; Or, The Whale" vs "Moby Dick; or, The Whale") map to *different* IDs. To handle these, we compute a measure for how similar two titles are based on how many case-insensitive, non-trivial words they share. Counting only non-trivial words means that the presence of "or the" in both "Moby Dick; Or, The Whale" and "Pierre; or The Ambiguities" should *not* count towards their similarity.
+
+The measure we use is [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity). Computing this pairwise for all titles produces a matrix, the upper triangular half of which we chop off since we want to prioritize removing duplicates with the lower number of downloads. Let's demonstrate with the "Herman Melville" query results:
+
+```{python}
+# Compute cosine similarity matrix
+results_vectorized = CountVectorizer(stop_words="english").fit_transform(list(results['title']))
+cosine_sim = cosine_similarity(results_vectorized)
+cosine_sim[np.triu_indices_from(cosine_sim)] = np.nan
+
+# Print
+np.set_printoptions(linewidth=np.inf)
+cosine_sim = np.round(cosine_sim, decimals=2)
+cosine_sim
+```
+We can use some threshold --- say, 0.5 --- to select the indices of potential duplicates and remove them. Note that this method isn't perfect: column 5 ("Typee: A Romance of the South Seas"), for instance, has similarity scores of 0.5 with both row 8 ("Typee") and row 12 ("Omoo: Adventures in the South Seas"). *Typee* and *Omoo* are two different novels that share similar subtitles, so unfortunately our approach inadvertently removes *Omoo*.
+
+Let's turn all this into a function and apply it to the "Herman Melville" results.
+
+```{python}
+#| code-fold: true
+#| code-summary: "remove_duplicates()"
+
+def remove_duplicates(df):
+
+  # Remove duplicates by Gutenberg book ID
+  duplicated_ids = df['gutid'].duplicated(keep='first')
+  df = df.loc[~duplicated_ids].reset_index(drop=True)
+
+  # Extract similar titles
+  vectorized = CountVectorizer(stop_words='english').fit_transform(list(df['title']))
+  cosine_sim = cosine_similarity(vectorized)
+  cosine_sim[np.triu_indices_from(cosine_sim)] = np.nan
+
+  indices = []
+  for i, row in enumerate(cosine_sim):
+    if any(not np.isnan(x) and x >= 0.5 for x in row):
+      indices.append(i)
+  
+  # But keep parts of a series
+  indices_keep = np.where(df['title'].str.contains(pat='Vol|vol|Part|part'))[0]
+  indices = [i for i in indices if i not in indices_keep]
+  
+  df = df.drop(indices).reset_index(drop=True)
+
+  return df
+```
+
+```{python}
+results_cleaned = remove_duplicates(results)
+print(results_cleaned.to_markdown())
+```
+
+The list of authors whose works we will analyze is given under the fold. I've selected those who were most representative of English, American, French, and Russian literature during the 19th century. This list, of course, is subjective. We will be using English translations of the non-English works. 
+
+```{python}
+#| code-fold: true
+#| code-summary: "Authors list"
+
+authors = {
+  'English': [
+    'Walter Scott',
+    'Jane Austen',
+    'Mary Shelley',
+    'William Thackeray',
+    'Charles Dickens',
+    'Charlotte Bronte',
+    'Emily Bronte',
+    'George Eliot',
+    'Anthony Trollope',
+    'Thomas Hardy'
+  ], 
+  'American': [
+    'Louisa May Alcott',
+    'Nathaniel Hawthorne',
+    'Herman Melville',
+    'Mark Twain',
+    'Henry James'
+  ], 
+  'French': [
+    'Stendhal',
+    'Alexander Dumas',
+    'Victor Hugo',
+    'Gustave Flaubert',
+    'Honore de Balzac',
+    'Emile Zola'
+  ], 
+  'Russian': [
+    'Nikolai Gogol',
+    'Ivan Turgenev',
+    'Fyodor Dostoevsky',
+    'Leo Tolstoy'
+  ]
+}
+```
+
+This loop assembles our library of IDs. 
+
+```{python}
+#| eval: false
+
+library = pd.DataFrame(columns=['gutid', 'author', 'title', 'downloads', 'nationality'])
+
+for nationality, names in authors.items():
+  for name in names:
+    results = pd.read_sql_query(query_author(name), connection)
+    results.columns = ['gutid', 'author', 'title', 'downloads']
+    results = remove_duplicates(results)
+    results['query'] = name
+    results['nationality'] = nationality
+    library = pd.concat([library, results], ignore_index=True)
+```
+
+Scanning the result, I see that there's a bunch more included that shouldn't have been. I just remove these manually under the fold.
+
+```{python}
+#| code-fold: true
+#| code-summary: "Further adjustments"
+#| eval: false
+
+exclude_authors = [
+  'Herr, Charlotte Bronte',
+  'Stark, James Henry', 
+  'Schmitz, James Henry', 
+  'Maine, Henry James Sumner, Sir'
+]
+
+exclude_titles = [
+  'Gutenberg', 
+  
+  # Poems
+  'Poems', 
+  'Ballads', 
+  'Lyrics', 
+  'Verses', 
+  'Marmion: A Tale Of Flodden Field',
+  'The Lady of the Lake',
+  'The Mahogany Tree',
+  'Richard Coeur de Lion and Blondel',
+  'The Loving Ballad of Lord Bateman',
+  
+  # Biographical
+  'Letters', 
+  'Speeches',
+  'literary and scientific men', 
+  'Biographical Notes', 
+  'My Memoirs', 
+  'The Memoirs of Victor Hugo', 
+  'An Autobiography of Anthony Trollope', 
+  'The trial of Emile Zola',
+  'The George Sand-Gustave Flaubert Letters', 
+  
+  # Duplicates
+  'Les Misérables, v. 1/5: Fantine', 
+  'The Grand Inquisitor', 
+  'Fathers and Children',
+  'The Charterhouse of Parma, Volume', 
+  'Madame Bovary: A Tale of Provincial Life',
+  'Home Life in Russia, Volumes 1 and 2'
+]
+
+library = library.loc[~library['author'].str.contains('|'.join(exclude_authors))].reset_index(drop=True)
+library = library.loc[~library['title'].str.contains('|'.join(exclude_titles))].reset_index(drop=True)
+```
+
+The resulting library contains 456 unique IDs of what *I hope* are mostly novels, short story collections, and works of creative non-fiction. I have tried to exclude all poetry, plays, and any remaining duplicates. 
+
+Armed with these IDs, we get the actual texts from Gutenberg and perform a little cleaning on them using the function `get_and_clean_text()`.
+
+```{python}
+#| code-fold: true
+#| code-summary: "get_and_clean_text()"
+#| eval: false
+
+def get_and_clean_text(id):
+  
+  # Get text
+  raw_text = gutenbergpy.textget.get_text_by_id(id)
+  text = gutenbergpy.textget.strip_headers(raw_text).decode()
+  
+  # Remove page-based line breaks and excessive paragraph breaks
+  text = re.sub('(?<=[^\n])\n{1}(?=[^\n])', ' ', text)
+  text = re.sub('[\n]{3,}', '\n\n', text)
+
+  # Go paragraph by paragraph
+  df = pd.DataFrame({'paragraph': text.split('\n\n')})
+  patterns = [
+    '^$',                   # Empty
+    '^[A-Z\s\W\d]+$',       # Contains only uppercase letters (likely a heading)
+    '^Chapter',             # Starts with "Chapter"
+    '^CHAPTER',             # Starts with "Chapter"
+    '^\s+Chapter',          # Starts with "Chapter"
+    '^[A-Za-z]+$',          # Contains just one word, no punctuation
+    'Gutenberg', 'Illustration', 'Online Distributed Proofreading Team', '.jpg'
+  ]
+  df = df.loc[~df['paragraph'].str.contains(pat='|'.join(patterns), regex=True)]
+  clean_text = '\n\n'.join(list(df['paragraph']))
+  
+  return clean_text
+```
+
+```{python}
+#| eval: false
+
+texts = []
+for row in range(len(library)):
+  text = get_and_clean_text(library['gutid'][row])
+  texts.append(text)
+
+library['text'] = texts
+
+connection.close()
+```
+
+Now we are ready to compute some metrics on our texts. It's easy enough to get word counts, which is useful for validating whether our library has excluded poems and plays. The [`textblob`](https://textblob.readthedocs.io/en/dev/index.html) package also has a sentiment analyzer that we can use; this ranges from -1 to 1. Another interesting metric to look at is the average word count per paragraph, which captures a bit of the author's style: short and punchy or long and meditative.
+
+```{python}
+#| eval: false
+
+library_stats = library[['nationality', 'query', 'title']].copy()
+
+# Word count, sentiment, and subjectivity
+library_stats['words'] = library['text'].apply(lambda n: len(n.split()))
+library_stats['sentiment'] = library['text'].apply(lambda n: TextBlob(n).polarity)
+
+# Average paragraph length
+def parlength(text):
+  df = pd.DataFrame({'paragraph': text.split('\n\n')})
+  df['words'] = df['paragraph'].apply(lambda n: len(re.split(r' |—', n)))
+  return df['words'].mean()
+library_stats['parlength'] = library['text'].apply(lambda n: parlength(n))
+```
+
+A more sophisticated metric is the extent to which works are textually akin to one another. We already did something similar to detect title duplicates in the Gutenberg database. However, amassing pairwise similarity scores across all our texts will result in far too much information to comprehend. What we will therefore do is apply a dimensionality reduction algorithm to simplify the large number of features into just two --- call them *x* and *y*. These are meaningless in themselves, but if plotted on a plane, they approximate the multidimensional structure of the dataset in 2D space. The particular algorithm we use is [UMAP](https://arxiv.org/abs/1802.03426).
+
+```{python}
+#| eval: false
+library_vec = CountVectorizer(min_df=5, stop_words='english').fit_transform(library['text'])
+embeddings = umap.UMAP(random_state=42).fit_transform(library_vec)
+library_stats["x"] = embeddings[:,0]
+library_stats["y"] = embeddings[:,1]
+```
+
+A technical aside: at this point, I save my results in a csv file and work off that from here on out. This ensures reproducibility should any changes occur in Project Gutenberg. 
+
+Now let's load up our dataset again, this time in OJS for our visualizations.
+
+```{ojs}
+library_stats = FileAttachment('../../datasets/literary/library_stats.csv').csv({typed: true})
+```
+
+The scatter below charts literary works on two axes: average paragraph length and sentiment. You can select a particular author from the dropdown box to highlight their works. Because latter-career Henry James forgot how to end paragraphs (and [sentences](https://jonreeve.com/2017/06/henry-james-sentence/)), I have had to add a slider for expanding the horizontal axis.
+
+```{ojs}
+//| code-fold: true
+//| code-summary: "OJS code"
+//| layout: "[[3,3], [1]]"
+
+viewof highlight_a = Inputs.select(
+  d3.group(library_stats, d => d.query), 
+  {label: html`<b>Highlight an author</b>`, key: "Herman Melville"}
+)
+
+viewof parlength_max = Inputs.range(
+  [100, 650], 
+  {label: html`<b>Paragraph length</b>`, value: 200, step: 1}
+)
+
+addTooltips(
+  Plot.plot({
+    marks: [
+      Plot.frame({fill: "#f7f7f7"}),
+      Plot.dot(
+        library_stats.filter(d => d.parlength < parlength_max), 
+        {
+          x: "parlength", y: "sentiment", 
+          r: 6, fill: "nationality", fillOpacity: 0.75, 
+          stroke: "white", strokeWidth: 1, strokeOpacity: .7,
+          title: (d) => `${d.title}\n${d.query} (${d.nationality})`
+        }),
+      Plot.dot(
+        highlight_a.filter(d => d.parlength < parlength_max), 
+        {
+          x: "parlength", y: "sentiment", 
+          r: 7, stroke: "black", strokeWidth: 3
+        })
+    ],
+    x: {
+      label: "Average paragraph wordcount",
+      labelAnchor: "center",
+      ticks: 5, tickSize: 0, grid: false,
+      domain: [d3.min(library_stats, d => d.parlength), parlength_max]
+    },
+    y: {
+      label: "Sentiment",
+      labelAnchor: "center",
+      ticks: 5, tickSize: 0, grid: false,
+      domain: d3.extent(library_stats, d => d.sentiment)
+    },
+    color: { 
+      legend: true, 
+      range: ["#B13D70", "#7fc6a4", "#4889ab", "#F7DD72"],
+    },
+    width: 800, height: 500,
+    marginTop: 15, marginBottom: 45, marginLeft: 65, 
+    insetTop: 20, insetRight: 20, insetBottom: 20, insetLeft: 20
+  }),
+  {r: 6, opacity: .8, "stroke-width": "3px", stroke: "black"}
+)
+```
+
+The shortest paragraphs are in the works of Alexandre Dumas, the 19th century's Tom Clancy. Most (>87%) of the works in the sample generally stick to paragraphs of 100 words or less. In terms of sentiment scores, I was amused to find that *Crime and Punishment* has a slightly more positive sentiment than *Wuthering Heights*. Go figure: one explores the utter depths of murderous, depraved, hopeless insanity; the other is *Crime and Punishment*.
+
+The next chart uses the results of the UMAP dimension-reduction algorithm. Again, the values themselves are arbitrary but the positioning of the nodes in 2D space hints at the semantic relationships across texts. There is an interesting cluster comprising *Count of Monte Cristo*, *Les Misérables*, *War and Peace*, and *Anna Karenina*. These are the blue and yellow dots to the left, somewhat isolated from the other French and Russian works in the sample. Either these books are quite English in content or the particular translations here leaned heavily on English semantics.
+
+```{ojs}
+//| code-fold: true
+//| code-summary: "OJS code"
+
+viewof highlight_b = Inputs.select(
+  d3.group(library_stats, d => d.query), 
+  {label: html`<b>Highlight an author</b>`, key: "Herman Melville"}
+)
+
+addTooltips(
+  Plot.plot({
+    marks: [
+      Plot.frame({fill: "#f7f7f7"}),
+      Plot.dot(
+        library_stats, 
+        {
+          x: "x", y: "y", 
+          r: 6, fill: "nationality", fillOpacity: 0.75, 
+          stroke: "white", strokeWidth: 1, strokeOpacity: .7,
+          title: (d) => `${d.title} \n ${d.query} (${d.nationality})`
+        }),
+      Plot.dot(
+        highlight_b, 
+        {
+          x: "x", y: "y", 
+          r: 7, stroke: "black", strokeWidth: 3
+        })
+    ],
+    x: {label: null, ticks: 0},
+    y: {label: null, ticks: 0},
+    color: { 
+      legend: true, 
+      range: ["#B13D70", "#7fc6a4", "#4889ab", "#F7DD72"],
+    },
+    width: 800, height: 500,
+    marginTop: 15, marginBottom: 0, marginLeft: 0, 
+    insetTop: 20, insetRight: 20, insetBottom: 20, insetLeft: 20
+  }),
+  {r: 6, opacity: .8, "stroke-width": "3px", stroke: "black"}
+)
+```
+
+This scatter is all well and good, but a funner, more interactive way to represent these relationships is through a force-directed network chart, as shown at the top of this blog post. Note that a network chart generator finds the best node positionings given the strength of their linkages. UMAP, meanwhile, *starts* by defining node positions. To extract a network chart from our UMAP values, we therefore have to reverse engineer the node linkages from the node positions. The way I have done this is by computing the Euclidean distance between nodes and setting the inverse of that as their linkage strength. I then fed this to D3's force-directed algorithm to produce the network chart above.
+
+```{python}
+#| code-fold: true
+#| code-summary: Constructing a network dataset
+#| eval: false
+
+pairs = list(set(itertools.combinations(library_stats.index.tolist(), 2)))
+pairs.sort()
+distances = pdist(library_stats[['x', 'y']].values)
+values = max(distances) - distances
+
+links = pd.DataFrame(pairs, columns=['source', 'target'])
+links['value'] = values
+links = links[~(links['value'] < 8.5)]
+links['value'] = (links['value']-links['value'].min())*(5/(links['value'].max()-links['value'].min()))
+
+nodes = pd.DataFrame({
+  'id': library_stats.index,
+  'title': library_stats['title'],
+  'query': library_stats['query'],
+  'nationality': library_stats['nationality']
+})
+
+# Convert dataframes to dictionaries, then to json
+nodes_dict = nodes.to_dict(orient='records')
+links_dict = links.to_dict(orient='records')
+network_dict = {'nodes': nodes_dict, 'links': links_dict}
+network = json.dumps(network_dict)
+```
+
+So we have analyzed 456 books. Can we go bolder still, more audacious still? The Gutenberg library is vast. Unfortunately, it's also a mess. There have been many attempts to tame it, including `gutenbergpy`, but I'm still finding that the efforts involved in data cleaning and data wrangling scale faster than the marginal value of expanding the dataset further. I'll have to wait for a better API. Until then, this has been your sign to get back to (or start!) the habit of reading. May I suggest *Moby-Dick*? `r end_mark()`
+
+<br>
+<hr>
+**Appendix: Observable JS functions**
+
+```{ojs}
+//| code-fold: true
+
+// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+
+addTooltips = (chart, styles) => {
+  const stroke_styles = { stroke: "blue", "stroke-width": 3 };
+  const fill_styles = { fill: "blue", opacity: 0.5 };
+
+  // Workaround if it's in a figure
+  const type = d3.select(chart).node().tagName;
+  let wrapper =
+    type === "FIGURE" ? d3.select(chart).select("svg") : d3.select(chart);
+
+  // Workaround if there's a legend....
+  const svgs = d3.select(chart).selectAll("svg");
+  if (svgs.size() > 1) wrapper = d3.select([...svgs].pop());
+  wrapper.style("overflow", "visible"); // to avoid clipping at the edges
+
+  // Set pointer events to visibleStroke if the fill is none (e.g., if its a line)
+  wrapper.selectAll("path").each(function (data, index, nodes) {
+    // For line charts, set the pointer events to be visible stroke
+    if (
+      d3.select(this).attr("fill") === null ||
+      d3.select(this).attr("fill") === "none"
+    ) {
+      d3.select(this).style("pointer-events", "visibleStroke");
+      if (styles === undefined) styles = stroke_styles;
+    }
+  });
+  
+  if (styles === undefined) styles = fill_styles;
+
+  const tip = wrapper
+    .selectAll(".hover")
+    .data([1])
+    .join("g")
+    .attr("class", "hover")
+    .style("pointer-events", "none")
+    .style("text-anchor", "middle");
+
+  // Add a unique id to the chart for styling
+  const id = id_generator();
+
+  // Add the event listeners
+  d3.select(chart).classed(id, true); // using a class selector so that it doesn't overwrite the ID
+  wrapper.selectAll("title").each(function () {
+    // Get the text out of the title, set it as an attribute on the parent, and remove it
+    const title = d3.select(this); // title element that we want to remove
+    const parent = d3.select(this.parentNode); // visual mark on the screen
+    const t = title.text();
+    if (t) {
+      parent.attr("__title", t).classed("has-title", true);
+      title.remove();
+    }
+    // Mouse events
+    parent
+      .on("pointerenter pointermove", function (event) {
+        const text = d3.select(this).attr("__title");
+        const pointer = d3.pointer(event, wrapper.node());
+        if (text) tip.call(hover, pointer, text.split("\n"));
+        else tip.selectAll("*").remove();
+
+        // Raise it
+        d3.select(this).raise();
+        // Keep within the parent horizontally
+        const tipSize = tip.node().getBBox();
+        if (pointer[0] + tipSize.x < 0)
+          tip.attr(
+            "transform",
+            `translate(${tipSize.width / 2}, ${pointer[1] + 7})`
+          );
+        else if (pointer[0] + tipSize.width / 2 > wrapper.attr("width"))
+          tip.attr(
+            "transform",
+            `translate(${wrapper.attr("width") - tipSize.width / 2}, ${
+              pointer[1] + 7
+            })`
+          );
+      })
+      .on("pointerout", function (event) {
+        tip.selectAll("*").remove();
+        // Lower it!
+        d3.select(this).lower();
+      });
+  });
+
+  // Remove the tip if you tap on the wrapper (for mobile)
+  wrapper.on("touchstart", () => tip.selectAll("*").remove());
+
+  // Define the styles
+  chart.appendChild(html`<style>
+  .${id} .has-title { cursor: pointer;  pointer-events: all; }
+  .${id} .has-title:hover { ${Object.entries(styles).map(([key, value]) => `${key}: ${value};`).join(" ")} }`);
+
+  return chart;
+}
+```
+
+```{ojs}
+//| code-fold: true
+
+// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+
+hover = (tip, pos, text) => {
+  const side_padding = 10;
+  const vertical_padding = 5;
+  const vertical_offset = 25;
+
+  // Empty it out
+  tip.selectAll("*").remove();
+
+  // Append the text
+  tip
+    .style("text-anchor", "middle")
+    .style("pointer-events", "none")
+    .attr("transform", `translate(${pos[0]}, ${pos[1] + 7})`)
+    .selectAll("text")
+    .data(text)
+    .join("text")
+    .style("dominant-baseline", "ideographic")
+    .text((d) => d)
+    .attr("y", (d, i) => (i - (text.length - 1)) * 15 - vertical_offset)
+    .style("font-weight", (d, i) => (i === 0 ? "bold" : "normal"));
+
+  const bbox = tip.node().getBBox();
+
+  // Add a rectangle (as background)
+  tip
+    .append("rect")
+    .attr("y", bbox.y - vertical_padding)
+    .attr("x", bbox.x - side_padding)
+    .attr("width", bbox.width + side_padding * 2)
+    .attr("height", bbox.height + vertical_padding * 2)
+    .style("fill", "white")
+    .style("stroke", "#d3d3d3")
+    .lower();
+}
+```
+
+```{ojs}
+//| code-fold: true
+
+// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+
+id_generator = () => {
+  var S4 = function () {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  };
+  return "a" + S4() + S4();
+}
+```
+
+```{ojs}
+//| code-fold: true
+
+// Copyright 2021 Observable, Inc.
+// Released under the ISC license.
+// https://observablehq.com/@d3/disjoint-force-directed-graph
+
+function ForceGraph({
+  nodes, // an iterable of node objects (typically [{id}, …])
+  links // an iterable of link objects (typically [{source, target}, …])
+}, {
+  nodeId = d => d.id, // given d in nodes, returns a unique identifier (string)
+  nodeGroup, // given d in nodes, returns an (ordinal) value for color
+  nodeGroups, // an array of ordinal values representing the node groups
+  nodeTitle, // given d in nodes, a title string
+  nodeFill = "currentColor", // node stroke fill (if not using a group color encoding)
+  nodeStroke = "#fff", // node stroke color
+  nodeStrokeWidth = 1.5, // node stroke width, in pixels
+  nodeStrokeOpacity = 1, // node stroke opacity
+  nodeRadius = 5, // node radius, in pixels
+  nodeStrength,
+  linkSource = ({source}) => source, // given d in links, returns a node identifier string
+  linkTarget = ({target}) => target, // given d in links, returns a node identifier string
+  linkStroke = "#999", // link stroke color
+  linkStrokeOpacity = 0.6, // link stroke opacity
+  linkStrokeWidth = 1.5, // given d in links, returns a stroke width in pixels
+  linkStrokeLinecap = "round", // link stroke linecap
+  linkStrength,
+  colors = d3.schemeTableau10, // an array of color strings, for the node groups
+  width = 640, // outer width, in pixels
+  height = 400, // outer height, in pixels
+  invalidation // when this promise resolves, stop the simulation
+} = {}) {
+  // Compute values.
+  const N = d3.map(nodes, nodeId).map(intern);
+  const LS = d3.map(links, linkSource).map(intern);
+  const LT = d3.map(links, linkTarget).map(intern);
+  if (nodeTitle === undefined) nodeTitle = (_, i) => N[i];
+  const T = nodeTitle == null ? null : d3.map(nodes, nodeTitle);
+  const G = nodeGroup == null ? null : d3.map(nodes, nodeGroup).map(intern);
+  const W = typeof linkStrokeWidth !== "function" ? null : d3.map(links, linkStrokeWidth);
+
+  // Replace the input nodes and links with mutable objects for the simulation.
+  nodes = d3.map(nodes, (_, i) => ({id: N[i]}));
+  links = d3.map(links, (_, i) => ({source: LS[i], target: LT[i]}));
+
+  // Compute default domains.
+  if (G && nodeGroups === undefined) nodeGroups = d3.sort(G);
+
+  // Construct the scales.
+  const color = nodeGroup == null ? null : d3.scaleOrdinal(nodeGroups, colors);
+
+  // Construct the forces.
+  const forceNode = d3.forceManyBody();
+  const forceLink = d3.forceLink(links).id(({index: i}) => N[i]);
+  if (nodeStrength !== undefined) forceNode.strength(nodeStrength);
+  if (linkStrength !== undefined) forceLink.strength(linkStrength);
+
+  const simulation = d3.forceSimulation(nodes)
+      .force("link", forceLink)
+      .force("charge", forceNode)
+      .force("x", d3.forceX())
+      .force("y", d3.forceY())
+      .on("tick", ticked)
+      .alphaDecay(0); // Added by me: keepp the chart in perpetual motion
+
+  const svg = d3.create("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", [-width / 2, -height / 2, width, height])
+      .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+  const link = svg.append("g")
+      .attr("stroke", linkStroke)
+      .attr("stroke-opacity", linkStrokeOpacity)
+      .attr("stroke-width", typeof linkStrokeWidth !== "function" ? linkStrokeWidth : null)
+      .attr("stroke-linecap", linkStrokeLinecap)
+    .selectAll("line")
+    .data(links)
+    .join("line");
+
+  if (W) link.attr("stroke-width", ({index: i}) => W[i]);
+
+  const node = svg.append("g")
+      .attr("fill", nodeFill)
+      .attr("stroke", nodeStroke)
+      .attr("stroke-opacity", nodeStrokeOpacity)
+      .attr("stroke-width", nodeStrokeWidth)
+    .selectAll("circle")
+    .data(nodes)
+    .join("circle")
+      .attr("r", nodeRadius)
+      .call(drag(simulation));
+
+  if (G) node.attr("fill", ({index: i}) => color(G[i]));
+  if (T) node.append("title").text(({index: i}) => T[i]);
+
+  // Handle invalidation.
+  if (invalidation != null) invalidation.then(() => simulation.stop());
+
+  function intern(value) {
+    return value !== null && typeof value === "object" ? value.valueOf() : value;
+  }
+
+  function ticked() {
+    link
+      .attr("x1", d => d.source.x)
+      .attr("y1", d => d.source.y)
+      .attr("x2", d => d.target.x)
+      .attr("y2", d => d.target.y);
+
+    node
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y);
+  }
+
+  function drag(simulation) {    
+    function dragstarted(event) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
+    }
+    
+    function dragged(event) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+    
+    function dragended(event) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+    
+    return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  }
+
+  return Object.assign(svg.node(), {scales: {color}});
+}
+```

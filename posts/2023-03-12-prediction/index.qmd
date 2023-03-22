@@ -18,7 +18,6 @@ library(here)
 renv::use(lockfile = "renv.lock")
 showtext_auto()
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
-options(knitr.kable.NA = "-")
 
 source(here("R", "functions.R"))
 font_add_google("Karla", "karla")
@@ -176,8 +175,6 @@ The function `ojs_define()` ports our data over to Observable JS, through which 
 ```{ojs}
 //| code-fold: true
 
-import {addTooltips} from "@mkfreeman/plot-tooltip"
-
 scores_ojs = transpose(scores_ojs1)
 medians_ojs = transpose(medians_ojs1)
 
@@ -212,52 +209,34 @@ addTooltips(
       Plot.dot(
         scores_ojs,
         {
-          x: "MASE1_w1",
-          y: "domain_long",
-          title: "team_name",
-          r: 7,
-          fill: "method",
-          fillOpacity: 0.5
+          x: "MASE1_w1", y: "domain_long", title: "team_name",
+          r: 7, fill: "method", fillOpacity: 0.5
         }),
       Plot.dot(
         median_radio, 
         {
-          x: "MASE1_w1",
-          y: "domain_long",
-          r: 7,
-          stroke: "black",
-          strokeWidth: 2
+          x: "MASE1_w1", y: "domain_long",
+          r: 7, stroke: "black", strokeWidth: 2
         })
     ],
     x: {
-      label: "Mean absolute scaled error",
-      labelAnchor: "center", 
-      tickSize: 0,
-      grid: false,
+      label: "Mean absolute scaled error", labelAnchor: "center", 
+      tickSize: 0, grid: false,
       domain: [0, mase_range]
     },
     y: {
       label: null,
-      tickSize: 0,
-      grid: true,
-      padding: 0,
+      tickSize: 0, grid: true, padding: 0,
       domain: domains
     },
     color: { 
       legend: true, 
       domain: ["Intuition/theory", "Data-driven", "Hybrid"],
       range: ["#B13D70", "#7fc6a4", "#4889ab"],
-      //style: {fontFamily: "karla", fontSize: "14px"}
     },
-    width: 800,
-    height: 450,
-    marginLeft: 215,
-    marginRight: 0,
-    marginBottom: 50,
-    insetLeft: 5,
-    insetTop: 20,
-    insetBottom: 20,
-    //style: {fontFamily: "karla", fontSize: "14px", overflow: "visible"}
+    width: 800, height: 450,
+    marginLeft: 215, marginRight: 0, marginBottom: 50,
+    insetLeft: 5, insetTop: 20, insetBottom: 20,
   })
 )
 ```
@@ -409,49 +388,34 @@ addTooltips(
       Plot.text(
         select.slice(0, 1), 
         {
-          textAnchor: "start",
-          frameAnchor: "top-left",
           text: d => d.domain_long, 
-          fontWeight: "bold",
-          fontSize: 15,
-          dx: 20,
-          dy: 18
+          textAnchor: "start", frameAnchor: "top-left",
+          fontWeight: "bold", fontSize: 15, dx: 20, dy: 18
         }),
       Plot.text(
         select.slice(0, 1), 
         {
           text: d => `Top expert: ${d.team_name}`, 
-          textAnchor: "start",
-          frameAnchor: "top-left",
-          fontSize: 14,
-          dx: 20,
-          dy: 39
+          textAnchor: "start", frameAnchor: "top-left",
+          fontSize: 14, dx: 20, dy: 39
         })
     ],
     x: {
-      label: "Month", 
-      labelAnchor: "center", 
+      label: "Month",  labelAnchor: "center", 
       tickSize: 0
     },
     y: {
       label: null, 
-      ticks: 5,
-      tickSize: 0, 
+      ticks: 5, tickSize: 0, 
       domain: [d3.min(select, d => d.value) - domain_unit, d3.max(select, d => d.value) + domain_unit]
     },
     color: {
       legend: true, 
       range: ["#bcbcbc", "#B13D70", "#0C6291"]
     },
-    width: 800,
-    height: 450,
-    insetTop: 20,
-    insetBottom: 20,
-    insetRight: 20,
-    insetLeft: 20,
-    marginBottom: 50,
-    marginLeft: 45,
-    marginRight: 0,
+    width: 800, height: 450,
+    insetTop: 20, insetBottom: 20, insetRight: 20, insetLeft: 20,
+    marginBottom: 50, marginLeft: 45, marginRight: 0
   }),
   {r: 7.5}
 )
@@ -460,3 +424,160 @@ addTooltips(
 It's interesting to see how many of these variables underwent a noticeable shift during the period under study. Negative social media affect --- estimated by analyzing tweets --- shot up as people stuck at home viciously argued about everything from masks to Black Lives Matter. The conversations around race following the murder of George Floyd translated to drops in the stereotyping of African-Americans and Asian-Americans (though it should be noted that these are based on [online surveys](https://implicit.harvard.edu/implicit/iatdetails.html) and may suffer heavily from selection bias). Forecasts from top-performing experts actually did pretty well; particularly impressive was **Erebuni**'s anticipation of the bump in Republican support. Incidentally, all their members were non-Americans. 
 
 What to make of these results? Perhaps it's a little unfair to judge social scientists too harshly. It was a once-in-a-century pandemic, no one had any models for this. But at the same time, isn't it precisely during periods of great uncertainty when guidance from domain experts is needed the most? Don't tell me now that you were just a bunch of chimps with a dart! `r end_mark()`
+
+<br>
+<hr>
+**Appendix: Observable JS functions**
+
+```{ojs}
+//| code-fold: true
+
+// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+
+addTooltips = (chart, styles) => {
+  const stroke_styles = { stroke: "blue", "stroke-width": 3 };
+  const fill_styles = { fill: "blue", opacity: 0.5 };
+
+  // Workaround if it's in a figure
+  const type = d3.select(chart).node().tagName;
+  let wrapper =
+    type === "FIGURE" ? d3.select(chart).select("svg") : d3.select(chart);
+
+  // Workaround if there's a legend....
+  const svgs = d3.select(chart).selectAll("svg");
+  if (svgs.size() > 1) wrapper = d3.select([...svgs].pop());
+  wrapper.style("overflow", "visible"); // to avoid clipping at the edges
+
+  // Set pointer events to visibleStroke if the fill is none (e.g., if its a line)
+  wrapper.selectAll("path").each(function (data, index, nodes) {
+    // For line charts, set the pointer events to be visible stroke
+    if (
+      d3.select(this).attr("fill") === null ||
+      d3.select(this).attr("fill") === "none"
+    ) {
+      d3.select(this).style("pointer-events", "visibleStroke");
+      if (styles === undefined) styles = stroke_styles;
+    }
+  });
+  
+  if (styles === undefined) styles = fill_styles;
+
+  const tip = wrapper
+    .selectAll(".hover")
+    .data([1])
+    .join("g")
+    .attr("class", "hover")
+    .style("pointer-events", "none")
+    .style("text-anchor", "middle");
+
+  // Add a unique id to the chart for styling
+  const id = id_generator();
+
+  // Add the event listeners
+  d3.select(chart).classed(id, true); // using a class selector so that it doesn't overwrite the ID
+  wrapper.selectAll("title").each(function () {
+    // Get the text out of the title, set it as an attribute on the parent, and remove it
+    const title = d3.select(this); // title element that we want to remove
+    const parent = d3.select(this.parentNode); // visual mark on the screen
+    const t = title.text();
+    if (t) {
+      parent.attr("__title", t).classed("has-title", true);
+      title.remove();
+    }
+    // Mouse events
+    parent
+      .on("pointerenter pointermove", function (event) {
+        const text = d3.select(this).attr("__title");
+        const pointer = d3.pointer(event, wrapper.node());
+        if (text) tip.call(hover, pointer, text.split("\n"));
+        else tip.selectAll("*").remove();
+
+        // Raise it
+        d3.select(this).raise();
+        // Keep within the parent horizontally
+        const tipSize = tip.node().getBBox();
+        if (pointer[0] + tipSize.x < 0)
+          tip.attr(
+            "transform",
+            `translate(${tipSize.width / 2}, ${pointer[1] + 7})`
+          );
+        else if (pointer[0] + tipSize.width / 2 > wrapper.attr("width"))
+          tip.attr(
+            "transform",
+            `translate(${wrapper.attr("width") - tipSize.width / 2}, ${
+              pointer[1] + 7
+            })`
+          );
+      })
+      .on("pointerout", function (event) {
+        tip.selectAll("*").remove();
+        // Lower it!
+        d3.select(this).lower();
+      });
+  });
+
+  // Remove the tip if you tap on the wrapper (for mobile)
+  wrapper.on("touchstart", () => tip.selectAll("*").remove());
+
+  // Define the styles
+  chart.appendChild(html`<style>
+  .${id} .has-title { cursor: pointer;  pointer-events: all; }
+  .${id} .has-title:hover { ${Object.entries(styles).map(([key, value]) => `${key}: ${value};`).join(" ")} }`);
+
+  return chart;
+}
+```
+
+```{ojs}
+//| code-fold: true
+
+// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+
+hover = (tip, pos, text) => {
+  const side_padding = 10;
+  const vertical_padding = 5;
+  const vertical_offset = 25;
+
+  // Empty it out
+  tip.selectAll("*").remove();
+
+  // Append the text
+  tip
+    .style("text-anchor", "middle")
+    .style("pointer-events", "none")
+    .attr("transform", `translate(${pos[0]}, ${pos[1] + 7})`)
+    .selectAll("text")
+    .data(text)
+    .join("text")
+    .style("dominant-baseline", "ideographic")
+    .text((d) => d)
+    .attr("y", (d, i) => (i - (text.length - 1)) * 15 - vertical_offset)
+    .style("font-weight", (d, i) => (i === 0 ? "bold" : "normal"));
+
+  const bbox = tip.node().getBBox();
+
+  // Add a rectangle (as background)
+  tip
+    .append("rect")
+    .attr("y", bbox.y - vertical_padding)
+    .attr("x", bbox.x - side_padding)
+    .attr("width", bbox.width + side_padding * 2)
+    .attr("height", bbox.height + vertical_padding * 2)
+    .style("fill", "white")
+    .style("stroke", "#d3d3d3")
+    .lower();
+}
+```
+
+```{ojs}
+//| code-fold: true
+
+// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+
+id_generator = () => {
+  var S4 = function () {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  };
+  return "a" + S4() + S4();
+}
+```
