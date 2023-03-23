@@ -1661,17 +1661,16 @@
     },
     "markdown": {
       "Package": "markdown",
-      "Version": "1.4",
+      "Version": "1.5",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "commonmark",
-        "mime",
         "utils",
         "xfun"
       ],
-      "Hash": "f99f5d2d7b2c2c031343bfa7b9f97980"
+      "Hash": "d209cfd1f4ff7260eae5a7f07da3aa4f"
     },
     "memoise": {
       "Package": "memoise",

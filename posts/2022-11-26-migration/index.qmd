@@ -3,7 +3,7 @@ title: "More on the great post-1500 migrations"
 subtitle: "Which countries have the most diverse ancestors? Which countries have the most descendants around the world today?"
 date: 2022-11-26
 categories: [map, bar, scatter, interactive]
-image: thumbnail.png
+image: thumbnail.gif
 ---
 
 ```{r}

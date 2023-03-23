@@ -3,7 +3,7 @@ title: "Will people care about this Oscars?"
 subtitle: "On the surprising popularity of the 2023 nominations for Best Picture"
 date: 2023-01-26
 categories: [bar, scatter, interactive]
-image: thumbnail.png
+image: thumbnail.gif
 ---
 
 ```{r}

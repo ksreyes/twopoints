@@ -3,7 +3,7 @@ title: "Mapping the Metro Manila subway"
 subtitle: "In a fit of wishful thinking, I use Leaflet to map the Metro Manila subway as if it existed"
 date: 2022-11-08
 categories: [map, interactive]
-image: thumbnail.jpg
+image: thumbnail.gif
 ---
 
 ```{r}

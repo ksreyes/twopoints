@@ -3,7 +3,7 @@ title: "The roots of economic development"
 subtitle: "Visualizing some key results in Spolaore and Wacziarg's 2013 survey"
 date: 2022-11-25
 categories: [scatter, map, interactive]
-image: thumbnail.jpg
+image: thumbnail.gif
 ---
 
 ```{r}

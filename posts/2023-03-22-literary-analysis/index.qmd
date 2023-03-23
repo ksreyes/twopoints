@@ -3,7 +3,7 @@ title: "I just read 456 books*"
 subtitle: "*Actually my computer did, but let's not split hairs. An exploration into NLP, dimensionality reduction, and reactive visualizations."
 date: 2023-03-22
 categories: [network, scatter, interactive]
-image: thumbnail.png
+image: thumbnail.gif
 ---
 
 ```{r}
@@ -402,7 +402,6 @@ The scatter below charts literary works on two axes: average paragraph length an
 
 ```{ojs}
 //| code-fold: true
-//| code-summary: "OJS code"
 //| layout: "[[3,3], [1]]"
 
 viewof highlight_a = Inputs.select(
@@ -695,6 +694,7 @@ id_generator = () => {
 
 ```{ojs}
 //| code-fold: true
+//| code-summary: 'ForceGraph()'
 
 // Copyright 2021 Observable, Inc.
 // Released under the ISC license.
