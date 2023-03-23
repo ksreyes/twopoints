@@ -126,6 +126,11 @@ div.navbar-brand-container {                     /* Space to left of logo */
   max-height: 35px;
 }
 
+.navbar-brand.navbar-brand-logo:hover {            
+  transform: scale(1.1, 1.1);
+  transition: transform .2s;
+}
+
 .navbar-brand {                                  /* Title spacing */
   padding: 0.2rem 0;
   margin: 0;
@@ -259,7 +264,8 @@ div.quarto-post .thumbnail a {                   /* Preview image */
 
 div.quarto-post .thumbnail a:hover {             /* Preview image hover */
   border: solid 8px shift-color($color-listing-thumbnail-border, -50%);
-  transition: border .2s;
+  transform: scale(1.05, 1.05);
+  transition: border .2s, transform .2s;
 }
 
 div.quarto-post .thumbnail img {
@@ -287,6 +293,10 @@ div.category:hover, div.category.active {
   transition: background-color .2s;
 }
 
+div.category:hover {
+  transform: scale(1.05, 1.05);
+  transition: transform .2s;
+}
 
 @media only screen and (max-width: 768px) {
   
