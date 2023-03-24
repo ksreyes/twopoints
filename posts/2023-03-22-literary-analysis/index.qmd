@@ -34,7 +34,6 @@ addTooltips(
   ForceGraph(
     library_network, 
     {
-      nodeId: d => d.id,
       nodeGroup: d => d.nationality,
       nodeTitle: d => `${d.title}\n${d.query} (${d.nationality})`,
       nodeStrokeOpacity: .7,
@@ -699,6 +698,7 @@ id_generator = () => {
 // Copyright 2021 Observable, Inc.
 // Released under the ISC license.
 // https://observablehq.com/@d3/disjoint-force-directed-graph
+// With edits by me
 
 function ForceGraph({
   nodes, // an iterable of node objects (typically [{id}, …])
@@ -757,7 +757,7 @@ function ForceGraph({
       .force("x", d3.forceX())
       .force("y", d3.forceY())
       .on("tick", ticked)
-      .alphaDecay(0); // Added by me: keepp the chart in perpetual motion
+      .alphaDecay(0);
 
   const svg = d3.create("svg")
       .attr("width", width)
