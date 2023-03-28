@@ -393,23 +393,6 @@ img.endmark {
   margin-bottom: .25rem;
 }
 
-/* --- YouTube embed -------------------------------------------------------- */
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-}
- 
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 @media only screen and (max-width: 768px) {
   
   #title-block-header {                          /* Space bet header & text */
@@ -474,6 +457,14 @@ img.endmark {
     border-bottom: 1.5px solid;
   }
 
+}
+
+/* --- Social media embeds -------------------------------------------------- */
+
+.instagram-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 /******************************************************************************/
@@ -546,7 +537,7 @@ div.cell p, div.cell table {                     /* Space bet output & text */
   margin-bottom: .5rem;
 }
 
-div.cell-output pre {                       /* Code output */
+div.cell-output pre {                            /* Code output */
   font-size: $font-size-code;
 }
 
@@ -558,18 +549,8 @@ div.cell div.reactable {                         /* Reactable */
   font-size: $font-size-cell-table;
 }
 
-div.cell-output-display div.observablehq {       /* OJS charts */
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-cell-ojs;
-  margin-top: 1rem;
-}
-
-div.observablehq span {
-  font-size: $font-size-cell-ojs;
-}
-
-div.observablehq g {
-  font-size: 14px;
+div.cell-output-display.quarto-layout-cell {
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -597,12 +578,48 @@ div.observablehq g {
   div.rt-th-inner, div.rt-td-inner, input.rt-search {
     padding: 4px 5px;
   }
+
+}
+
+/* --- OJS charts ----------------------------------------------------------- */
+
+div.cell-output-display div.observablehq {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-cell-ojs;
+  margin-top: 1rem;
+}
+
+h3.ojs-title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+div.observablehq span.ojs-subtitle {
+  font-size: 1rem;
+  margin: 0;
+}
+
+div.observablehq span {
+  font-size: $font-size-cell-ojs;
+}
+
+@media only screen and (max-width: 768px) {
   
-  div.observablehq, div.observablehq span {
+  h3.ojs-title {
+    font-size: .9rem;
+    margin: 0 0 5px 0;
+  }
+
+  div.observablehq span.ojs-subtitle {
+    font-size: .7rem !important;
+    line-height: 1;
+  }
+  
+  div.observablehq, div.observablehq span, div.observablehq text {
     font-size: $font-size-cell-ojs * .7 !important;
   }
   
-  div.cell-output-display div.observablehq {       /* OJS charts */
+  div.cell-output-display div.observablehq {
     margin-top: .5rem;
   }
   
@@ -813,4 +830,55 @@ a.icon-link {
 
 a.icon-link:hover {
   background-color: shift-color(#1046b1, -20%);
+  transform: scale(1.1, 1.1);
+  transition: transform .2s;
+}
+
+/******************************************************************************/
+/*      MISCELLANEOUS                                                         */
+/******************************************************************************/
+
+span.shaking-text {
+  display: inline-block;
+  padding: 0 .25em;
+  animation: shake .2s infinite;
+}
+
+.fade-text {
+  display: inline-block;
+  margin: 0 .25em;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(1.5px) }
+  50% { transform: translateX(-1.5px) }
+  75% { transform: translateX(1.5px) }
+  100% { transform: translateX(0) }
+}
+
+@keyframes change-opacity-1 {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes change-opacity-2 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes change-opacity-3 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
 }
