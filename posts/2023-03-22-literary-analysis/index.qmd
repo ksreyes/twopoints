@@ -24,7 +24,7 @@ font_add_google("Karla", "karla")
 reticulate::use_virtualenv(here("venv/literary"))
 ```
 
-In a [previous post](https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/), we charted the emotional shape of three novels by assigning them sentiment scores through the [AFINN lexicon](https://search.r-project.org/CRAN/refmans/corpus/html/sentiment_afinn.html). But three is peanuts --- I'm bolder now, more *audacious*, and subsisting on three cups of coffee a day. In this post, I chew on as many classics from the 19th century as my laptop will let me. The result is this beautiful visualization mapping the textual similarities between literary works, powered by [D3's force layout simulator](https://www.d3indepth.com/force-layout/). Hover over a node to see the title and author, or click and drag to examine how each is connected to the rest.
+In a [previous post](https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/), we charted the emotional shape of three novels by assigning them sentiment scores through the [AFINN lexicon](https://search.r-project.org/CRAN/refmans/corpus/html/sentiment_afinn.html). But three is peanuts --- I'm bolder now, more *audacious*, and subsisting on three cups of coffee a day. In this post, I chew on as many classics from the 19th century as my laptop will let me. The result is this beautiful visualization mapping the textual similarities between literary works, powered by [D3's force engine](https://github.com/d3/d3-force/tree/v3.0.0). Hover over a node to see the title and author, or click and drag to examine how each is connected to the rest.
 
 ```{ojs}
 //| code-fold: true

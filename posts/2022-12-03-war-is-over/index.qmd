@@ -108,8 +108,4 @@ Then it's a simple matter of counting the active conflicts per year and construc
 
 To end, here's the song that inspired this post. Have a bad Christmas season everybody. `r end_mark()`
 
-::: container
-<iframe src="https://www.youtube.com/embed/Zr9EOFuuIk4" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
-:::
+{{< youtube Zr9EOFuuIk4 >}}
