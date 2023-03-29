@@ -1,0 +1,191 @@
+city,points,group,share,points_ingroup
+Caloocan,312,1,1,312
+Caloocan,312,2,0,0
+Caloocan,312,3,0,0
+Caloocan,312,4,0,0
+Caloocan,312,5,0,0
+Las Piñas,189,1,1,189
+Las Piñas,189,2,0,0
+Las Piñas,189,3,0,0
+Las Piñas,189,4,0,0
+Las Piñas,189,5,0,0
+Makati,290,1,1,290
+Makati,290,2,0,0
+Makati,290,3,0,0
+Makati,290,4,0,0
+Makati,290,5,0,0
+Malabon,238,1,1,238
+Malabon,238,2,0,0
+Malabon,238,3,0,0
+Malabon,238,4,0,0
+Malabon,238,5,0,0
+Mandaluyong,385,1,1,385
+Mandaluyong,385,2,0,0
+Mandaluyong,385,3,0,0
+Mandaluyong,385,4,0,0
+Mandaluyong,385,5,0,0
+Manila,431,1,1,431
+Manila,431,2,0,0
+Manila,431,3,0,0
+Manila,431,4,0,0
+Manila,431,5,0,0
+Marikina,201,1,1,201
+Marikina,201,2,0,0
+Marikina,201,3,0,0
+Marikina,201,4,0,0
+Marikina,201,5,0,0
+Muntinlupa,137,1,1,137
+Muntinlupa,137,2,0,0
+Muntinlupa,137,3,0,0
+Muntinlupa,137,4,0,0
+Muntinlupa,137,5,0,0
+Navotas,215,1,1,215
+Navotas,215,2,0,0
+Navotas,215,3,0,0
+Navotas,215,4,0,0
+Navotas,215,5,0,0
+Parañaque,145,1,1,145
+Parañaque,145,2,0,0
+Parañaque,145,3,0,0
+Parañaque,145,4,0,0
+Parañaque,145,5,0,0
+Pasay,236,1,1,236
+Pasay,236,2,0,0
+Pasay,236,3,0,0
+Pasay,236,4,0,0
+Pasay,236,5,0,0
+Pasig,255,1,1,255
+Pasig,255,2,0,0
+Pasig,255,3,0,0
+Pasig,255,4,0,0
+Pasig,255,5,0,0
+Pateros,371,1,1,371
+Pateros,371,2,0,0
+Pateros,371,3,0,0
+Pateros,371,4,0,0
+Pateros,371,5,0,0
+Quezon City,179,1,1,179
+Quezon City,179,2,0,0
+Quezon City,179,3,0,0
+Quezon City,179,4,0,0
+Quezon City,179,5,0,0
+San Juan,215,1,1,215
+San Juan,215,2,0,0
+San Juan,215,3,0,0
+San Juan,215,4,0,0
+San Juan,215,5,0,0
+Taguig,165,1,1,165
+Taguig,165,2,0,0
+Taguig,165,3,0,0
+Taguig,165,4,0,0
+Taguig,165,5,0,0
+Valenzuela,152,1,1,152
+Valenzuela,152,2,0,0
+Valenzuela,152,3,0,0
+Valenzuela,152,4,0,0
+Valenzuela,152,5,0,0
+Metro Manila,216,1,1,216
+Metro Manila,216,2,0,0
+Metro Manila,216,3,0,0
+Metro Manila,216,4,0,0
+Metro Manila,216,5,0,0
+Beijing,13,1,1,13
+Beijing,13,2,0,0
+Beijing,13,3,0,0
+Beijing,13,4,0,0
+Beijing,13,5,0,0
+Berlin,41,1,0.944,39
+Berlin,41,2,0.031999999999999994,1
+Berlin,41,3,0.024,1
+Berlin,41,4,0,0
+Berlin,41,5,0,0
+Bogota,261,1,0.37099999,97
+Bogota,261,2,0.45599997,119
+Bogota,261,3,0.17299999,45
+Bogota,261,4,0,0
+Bogota,261,5,0,0
+Delhi,113,1,0.979,111
+Delhi,113,2,0.020999999999999998,2
+Delhi,113,3,0,0
+Delhi,113,4,0,0
+Delhi,113,5,0,0
+Dhaka,336,1,0.98,329
+Dhaka,336,2,0.02,7
+Dhaka,336,3,0,0
+Dhaka,336,4,0,0
+Dhaka,336,5,0,0
+Hong Kong,66,1,0,0
+Hong Kong,66,2,1,66
+Hong Kong,66,3,0,0
+Hong Kong,66,4,0,0
+Hong Kong,66,5,0,0
+Jakarta,159,1,0.98,156
+Jakarta,159,2,0.02,3
+Jakarta,159,3,0,0
+Jakarta,159,4,0,0
+Jakarta,159,5,0,0
+Johannesburg,34,1,0.7865,27
+Johannesburg,34,2,0.18,6
+Johannesburg,34,3,0.0335,1
+Johannesburg,34,4,0,0
+Johannesburg,34,5,0,0
+Lagos,140,1,0.885,124
+Lagos,140,2,0.11499999999999999,16
+Lagos,140,3,0,0
+Lagos,140,4,0,0
+Lagos,140,5,0,0
+London,56,1,0.941,53
+London,56,2,0.036,2
+London,56,3,0.018000000000000002,1
+London,56,4,0.005,0
+London,56,5,0,0
+Los Angeles,32,1,0.03241,1
+Los Angeles,32,2,0.7602000000000002,24
+Los Angeles,32,3,0.09712000000000001,3
+Los Angeles,32,4,0.06286000000000001,2
+Los Angeles,32,5,0.04744999999999999,2
+Mexico City,62,1,0.625,39
+Mexico City,62,2,0.30000001,19
+Mexico City,62,3,0.06699999,4
+Mexico City,62,4,0.008,0
+Mexico City,62,5,0,0
+Mumbai,207,1,0.979,203
+Mumbai,207,2,0.020999999999999998,4
+Mumbai,207,3,0,0
+Mumbai,207,4,0,0
+Mumbai,207,5,0,0
+New York,113,1,0.03241,4
+New York,113,2,0.7602000000000002,86
+New York,113,3,0.09712000000000001,11
+New York,113,4,0.06286000000000001,7
+New York,113,5,0.04744999999999999,5
+Paris,199,1,0.873,173
+Paris,199,2,0.061,12
+Paris,199,3,0.048,10
+Paris,199,4,0.018000000000000002,4
+Paris,199,5,0,0
+São Paulo,82,1,0.090768,7
+São Paulo,82,2,0.74429763,61
+São Paulo,82,3,0.15693439999999997,13
+São Paulo,82,4,0.008,1
+São Paulo,82,5,0,0
+Seoul,156,1,1,156
+Seoul,156,2,0,0
+Seoul,156,3,0,0
+Seoul,156,4,0,0
+Seoul,156,5,0,0
+Shanghai,42,1,1,42
+Shanghai,42,2,0,0
+Shanghai,42,3,0,0
+Shanghai,42,4,0,0
+Shanghai,42,5,0,0
+Singapore,77,1,0,0
+Singapore,77,2,0.995,77
+Singapore,77,3,0.005,0
+Singapore,77,4,0,0
+Singapore,77,5,0,0
+Tokyo,64,1,1,64
+Tokyo,64,2,0,0
+Tokyo,64,3,0,0
+Tokyo,64,4,0,0
+Tokyo,64,5,0,0

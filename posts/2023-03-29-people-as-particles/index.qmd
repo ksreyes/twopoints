@@ -156,10 +156,10 @@ The particles chart can be used in any number of applications, with three levers
 //| code-fold: true
 
 // Import data
-density = FileAttachment('../../datasets/density/density.csv').csv({ typed: true });
+density = FileAttachment('../../datasets/particles/density.csv').csv({ typed: true });
 densityManila = density.filter(d => d.country === "Philippines");
 densityOthers = density.filter(d => d.country !== "Philippines");
-groupAssign = FileAttachment('../../datasets/density/group_assign.csv').csv({ typed: true });
+groupAssign = FileAttachment('../../datasets/particles/group_assign.csv').csv({ typed: true });
 
 // Dependencies
 d3 = require('d3@7', 'd3-force-bounce', 'd3-force-surface', 'd3-force-limit');
