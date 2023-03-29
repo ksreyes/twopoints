@@ -467,6 +467,12 @@ img.endmark {
   margin-bottom: $paragraph-margin-bottom;
 }
 
+@media only screen and (max-width: 768px) {
+  .instagram-container {
+    margin-bottom: $paragraph-margin-bottom * .5;
+  }
+}
+
 /******************************************************************************/
 /*      CODE CELLS                                                            */
 /******************************************************************************/
@@ -846,7 +852,7 @@ span.shaking-text {
 
 .fade-text {
   display: inline-block;
-  margin: 0 .25em;
+  margin: 0 .2em;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }

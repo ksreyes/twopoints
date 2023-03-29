@@ -85,9 +85,15 @@ The particles chart can be used in any number of applications, with three levers
 //| code-fold: true
 
 {
+    
+    // Generate points
+    const widthFishbowl = width
+    const rFishbowl = widthFishbowl * .01
+    const vFishbowl = rFishbowl * .1
+    
     const dummynodes = Array.from(
-        { length: 200 }, (_, i) => ({
-            x: d3.randomUniform((width * .75 * .05), (width * .75 * .95))(),
+        { length: 300 }, (_, i) => ({
+            x: d3.randomUniform((widthFishbowl * .05), (widthFishbowl * .95))(),
             y: d3.randomUniform(height * .05, height * .95)(),
             r: d3.randomNormal(rMean, rSD)(),
             vx: d3.randomUniform(-1, 1)() * velocity,
@@ -95,10 +101,12 @@ The particles chart can be used in any number of applications, with three levers
             color: "#eeeeee"
         })
     );
+    
     dummynodes.push(
-        { x: width * .75 * .05, y: height * .95, r: 7, vx: 1, vy: -1, color: "#4889ab" },
-        { x: width * .75 * .95, y: height * .05, r: 7, vx: -1, vy: 1, color: "#C85B89" }
+        { x: widthFishbowl * .05, y: height * .95, r: rFishbowl, vx: vFishbowl, vy: -vFishbowl, color: "#4889ab" },
+        { x: widthFishbowl * .95, y: height * .05, r: rFishbowl, vx: -vFishbowl, vy: vFishbowl, color: "#C85B89" }
     );
+    
     const nodes = dummynodes.map(Object.create);
 
     // Panel
@@ -106,14 +114,14 @@ The particles chart can be used in any number of applications, with three levers
         .attr("style", "display: flex; justify-content: center");
 
     const svg = container.append("svg")
-        .attr("width", width * .75)
+        .attr("width", widthFishbowl)
         .attr("height", height)
-        .attr("viewBox", [0, 0, width * .75, height])
+        .attr("viewBox", [0, 0, widthFishbowl, height])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic");
 
     // Chart box
     svg.append("rect")
-        .attr("width", width * .75)
+        .attr("width", widthFishbowl)
         .attr("height", height)
         .attr("fill", "#f7f7f7");
 
@@ -131,11 +139,11 @@ The particles chart can be used in any number of applications, with three levers
         .force("bounce", d3.forceBounce()
             .radius(d => d.r + .5))
         .force("surface", d3.forceSurface()
-            .surfaces(bbox([[0, 0], [width * .75, height]]))
+            .surfaces(bbox([[0, 0], [widthFishbowl, height]]))
             .oneWay(true)
             .radius(d => d.r + 1))
         .force('limit', d3.forceLimit()
-            .x0(0).x1(width * .75).y0(0).y1(height))
+            .x0(0).x1(widthFishbowl).y0(0).y1(height))
         .alphaDecay(0)
         .velocityDecay(0)
         .on("tick", () => { node.attr("cx", d => d.x).attr("cy", d => d.y) });
