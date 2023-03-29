@@ -15,7 +15,561 @@
 <link>https://twopoints.blog/index.html</link>
 </image>
 <generator>quarto-1.2.475</generator>
-<lastBuildDate>Tue, 21 Mar 2023 16:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 28 Mar 2023 16:00:00 GMT</lastBuildDate>
+<item>
+  <title>People as particles</title>
+  <link>https://twopoints.blog/posts/2023-03-29-people-as-particles/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Manila is the densest city on Earth,<sup>1</sup> fitting 1.8 million people into a 43 square-kilometer crucible. The 16 other cities that constitute Metro Manila, the Philippine capital, are extraordinarily crowded as well, resulting in an overall density of 22,000/km². This is twice that of New York and almost three times that of Singapore. Dysfunctional urban planning has failed to cope. Suburbs-style neighborhoods and private golf courses <a href="https://twitter.com/pfkahanapINQ/status/1605847613089058816">sprawl incongruously</a> in city centers while open green spaces <a href="https://manilastandard.net/spotlight/ms-36th-anniversary-issue-towards-a-sustainable-future/314303715/claiming-back-the-city.html">remain limited</a>. The state of <a href="https://www.bbc.com/news/world-asia-49983397">transportation</a> <a href="https://newsinfo.inquirer.net/1698050/public-transportation-mobility-readiness-in-manila-among-worlds-worst">is</a> <a href="https://twitter.com/PhilippineStar/status/1577309804833693697/photo/1">dystopian</a>. A much needed <a href="https://twopoints.blog/posts/2022-11-08-metro-manila-subway/">subway</a> intended for partial operability <a href="https://newsinfo.inquirer.net/1488867/metro-manila-subways-partial-operability-targeted-in-1st-quarter-of-2022">in 2022</a> only started construction <a href="https://newsinfo.inquirer.net/1714541/metro-manila-subway-construction-begins">last January</a>.</p>
+<div class="instagram-container">
+<blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+<div style="padding:16px;">
+<a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+<div style=" display: flex; flex-direction: row; align-items: center;">
+<div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+
+</div>
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+
+</div>
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+
+</div>
+</div>
+</div>
+<div style="padding: 19% 0;">
+
+</div>
+<div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+<svg width="50px" height="50px" viewbox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xlink="https://www.w3.org/1999/xlink">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g>
+</svg>
+</div>
+<div style="padding-top: 8px;">
+<div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+View this post on Instagram
+</div>
+</div>
+<div style="padding: 12.5% 0;">
+
+</div>
+<div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+<div>
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+
+</div>
+<div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+
+</div>
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+
+</div>
+</div>
+<div style="margin-left: 8px;">
+<div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+
+</div>
+<div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+
+</div>
+</div>
+<div style="margin-left: auto;">
+<div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+
+</div>
+<div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+
+</div>
+<div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+
+</div>
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+
+</div>
+</div>
+</a>
+<p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+<a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Jilson Tiu (<span class="citation" data-cites="jilson.tiu">@jilson.tiu</span>)</a>
+</p>
+</div>
+</blockquote>
+</div>
+<script async="" src="//www.instagram.com/embed.js"></script>
+<p>Living in such a crowded place means shoving, squeezing, and cartwheeling your way through the chaos of gridlocked streets and packed trains, a daily collision of body against body that brings to mind Radiohead at their most anxious: “<a href="https://www.youtube.com/watch?v=hTzRliW3iFs">everyone is <em>so</em> <span class="shaking-text">near</span></a>”. It’s an experience that isn’t quite captured by the metric “22,000/km²”. I wanted to make this number more evocative through a visualization, but how? I’ve seen population density plotted on bar charts, on choropleth maps, even on a <a href="https://www.vox.com/2015/1/2/7480993/population-density-visualized">3D histogram</a>, but none of these, I feel, do justice to the absolute pressure cooker that is Manila.</p>
+<p>I decided to try something novel. I call it a particles chart, and it consists of a D3 force simulation of balls bouncing off each other in a box. It’s relatively simple to construct — I am indebted to <a href="https://github.com/vasturiano">Vasco Asturiano</a>’s modules in particular — yet it captures so effectively what “densest city on the planet” means. It means countless agitated bodies jockeying and jittering in a tight space, searching endlessly for room to breathe.<sup>2</sup></p>
+<div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="36" data-source-offset="-1" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 35;"><span id="cb1-36"><span class="fu" style="color: #4758AB;">html</span><span class="vs" style="color: #20794D;">`</span></span>
+<span id="cb1-37"><span class="vs" style="color: #20794D;">  &lt;div style="text-align:center"&gt;</span></span>
+<span id="cb1-38"><span class="vs" style="color: #20794D;">  &lt;h3 class="ojs-title"&gt;Fancy bumping into you&lt;/h3&gt;</span></span>
+<span id="cb1-39"><span class="vs" style="color: #20794D;">  &lt;span class="ojs-subtitle"&gt;Population density in Metro Manila and major global cities&lt;/span&gt;</span></span>
+<span id="cb1-40"><span class="vs" style="color: #20794D;">  &lt;/div&gt;</span></span>
+<span id="cb1-41"><span class="vs" style="color: #20794D;">`</span></span>
+<span id="cb1-42">viewof citySelectPH <span class="op" style="color: #5E5E5E;">=</span> Inputs<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">select</span>(</span>
+<span id="cb1-43">    d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">group</span>(densityManila<span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">city</span>)<span class="op" style="color: #5E5E5E;">,</span> {</span>
+<span id="cb1-44">        <span class="dt" style="color: #AD0000;">label</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"Pick a Metro Manila city..."</span><span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb1-45">        <span class="dt" style="color: #AD0000;">key</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"Manila"</span><span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb1-46">        <span class="dt" style="color: #AD0000;">description</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"Pick a Metro Manila city..."</span></span>
+<span id="cb1-47">    })</span>
+<span id="cb1-48"></span>
+<span id="cb1-49">viewof citySelect <span class="op" style="color: #5E5E5E;">=</span> Inputs<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">select</span>(</span>
+<span id="cb1-50">    d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">group</span>(densityOthers<span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">city</span>)<span class="op" style="color: #5E5E5E;">,</span> {</span>
+<span id="cb1-51">        <span class="dt" style="color: #AD0000;">label</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"...and compare with a global city"</span><span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb1-52">        <span class="dt" style="color: #AD0000;">key</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"New York"</span></span>
+<span id="cb1-53">    })</span>
+<span id="cb1-54"></span>
+<span id="cb1-55">{</span>
+<span id="cb1-56">    <span class="kw" style="color: #003B4F;">const</span> container <span class="op" style="color: #5E5E5E;">=</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">create</span>(<span class="st" style="color: #20794D;">"div"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-57"></span>
+<span id="cb1-58">    <span class="kw" style="color: #003B4F;">const</span> containerLegend <span class="op" style="color: #5E5E5E;">=</span> container<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"div"</span>)</span>
+<span id="cb1-59">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"style"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"display: flex; justify-content: center"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-60">    containerLegend<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">call</span>(legend)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-61">    </span>
+<span id="cb1-62">    <span class="kw" style="color: #003B4F;">const</span> containerChart <span class="op" style="color: #5E5E5E;">=</span> container<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"div"</span>)</span>
+<span id="cb1-63">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"style"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"display: flex; justify-content: space-between"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-64">    containerChart<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">call</span>(particles<span class="op" style="color: #5E5E5E;">,</span> citySelectPH<span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"10px"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-65">    containerChart<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">call</span>(particles<span class="op" style="color: #5E5E5E;">,</span> citySelect)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-66"></span>
+<span id="cb1-67">    <span class="cf" style="color: #003B4F;">return</span> container<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">node</span>()<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb1-68">}</span>
+<span id="cb1-69"><span class="fu" style="color: #4758AB;">html</span><span class="vs" style="color: #20794D;">`</span></span>
+<span id="cb1-70"><span class="vs" style="color: #20794D;">  &lt;div style="text-align:center"&gt;</span></span>
+<span id="cb1-71"><span class="vs" style="color: #20794D;">  &lt;span&gt;Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's &lt;a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank"&gt;World Migration Matrix&lt;/a&gt;.&lt;/span&gt;</span></span>
+<span id="cb1-72"><span class="vs" style="color: #20794D;">  &lt;/div&gt;</span></span>
+<span id="cb1-73"><span class="vs" style="color: #20794D;">`</span></span></code></pre></div>
+</details>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>I’ve set the balls to generate at various sizes, reflecting the fact that some people take up more space than others. Think private vehicles versus public transport, detached homes versus high-rise condominiums. The balls are also colored in proportion to ethnic makeup, as recorded in Putterman and Weil’s <a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000">World Migration Matrix</a>. I’ve written about this dataset <a href="https://twopoints.blog/posts/2022-11-25-roots/">here</a> and <a href="https://twopoints.blog/posts/2022-11-26-migration/">here</a>, but to recap, the matrix breaks down a country’s population according to where their ancestors were in the year 1500. Migrant ancestor balls are colored by originating continent, ordered from largest to smallest shares.</p>
+<p>To be clear, density is not inherently bad. In fact, density is indicative of a successful city since it means people <em>want</em> to move there. Density itself also confers benefits through <a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.12.2.139">agglomeration effects</a>: proximity among firms and laborers brings down production costs and increases knowledge spillovers. But these benefits surely fall short of potential in Metro Manila. How great can proximity advantages be if it takes two hours to get anywhere? If there were an optimal level of density for a given level of infrastructure quality, Manila has blown way past it.</p>
+<p>The particles chart can be used in any number of applications, with three levers (the number, colors, and sizes of the particles) available for mapping to variables. I’ll end this post with an additional example, this time tackling a different aspect of modern city living. It’s not a statistic, but a feeling. The kind that creeps up on you late at night under certain moods, when the veil lifts and you momentarily perceive the Camusian absurdity of all your life’s endeavors. A feeling best encapsulated, I think, by another <a href="https://www.youtube.com/watch?v=84Tq-eAJIk4">song lyric</a>:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" data-startfrom="85" data-source-offset="0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb2-85">{</span>
+<span id="cb2-86">    <span class="kw" style="color: #003B4F;">const</span> dummynodes <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">Array</span><span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">from</span>(</span>
+<span id="cb2-87">        { <span class="dt" style="color: #AD0000;">length</span><span class="op" style="color: #5E5E5E;">:</span> <span class="dv" style="color: #AD0000;">200</span> }<span class="op" style="color: #5E5E5E;">,</span> (_<span class="op" style="color: #5E5E5E;">,</span> i) <span class="kw" style="color: #003B4F;">=&gt;</span> ({</span>
+<span id="cb2-88">            <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>((width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="bn" style="color: #AD0000;">05</span>)<span class="op" style="color: #5E5E5E;">,</span> (width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">95</span>))()<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb2-89">            <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>(height <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="bn" style="color: #AD0000;">05</span><span class="op" style="color: #5E5E5E;">,</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">95</span>)()<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb2-90">            <span class="dt" style="color: #AD0000;">r</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomNormal</span>(rMean<span class="op" style="color: #5E5E5E;">,</span> rSD)()<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb2-91">            <span class="dt" style="color: #AD0000;">vx</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>(<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">1</span>)() <span class="op" style="color: #5E5E5E;">*</span> velocity<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb2-92">            <span class="dt" style="color: #AD0000;">vy</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>(<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">1</span>)() <span class="op" style="color: #5E5E5E;">*</span> velocity<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb2-93">            <span class="dt" style="color: #AD0000;">color</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"#eeeeee"</span></span>
+<span id="cb2-94">        })</span>
+<span id="cb2-95">    )<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-96">    dummynodes<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">push</span>(</span>
+<span id="cb2-97">        { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="bn" style="color: #AD0000;">05</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">95</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">r</span><span class="op" style="color: #5E5E5E;">:</span> <span class="dv" style="color: #AD0000;">7</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">vx</span><span class="op" style="color: #5E5E5E;">:</span> <span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">vy</span><span class="op" style="color: #5E5E5E;">:</span> <span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">color</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"#4889ab"</span> }<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb2-98">        { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">95</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="bn" style="color: #AD0000;">05</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">r</span><span class="op" style="color: #5E5E5E;">:</span> <span class="dv" style="color: #AD0000;">7</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">vx</span><span class="op" style="color: #5E5E5E;">:</span> <span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">vy</span><span class="op" style="color: #5E5E5E;">:</span> <span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">color</span><span class="op" style="color: #5E5E5E;">:</span> <span class="st" style="color: #20794D;">"#C85B89"</span> }</span>
+<span id="cb2-99">    )<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-100">    <span class="kw" style="color: #003B4F;">const</span> nodes <span class="op" style="color: #5E5E5E;">=</span> dummynodes<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">map</span>(<span class="bu" style="color: null;">Object</span><span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">create</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-101"></span>
+<span id="cb2-102">    <span class="co" style="color: #5E5E5E;">// Panel</span></span>
+<span id="cb2-103">    <span class="kw" style="color: #003B4F;">const</span> container <span class="op" style="color: #5E5E5E;">=</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">create</span>(<span class="st" style="color: #20794D;">"div"</span>)</span>
+<span id="cb2-104">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"style"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"display: flex; justify-content: center"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-105"></span>
+<span id="cb2-106">    <span class="kw" style="color: #003B4F;">const</span> svg <span class="op" style="color: #5E5E5E;">=</span> container<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"svg"</span>)</span>
+<span id="cb2-107">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"width"</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span>)</span>
+<span id="cb2-108">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"height"</span><span class="op" style="color: #5E5E5E;">,</span> height)</span>
+<span id="cb2-109">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"viewBox"</span><span class="op" style="color: #5E5E5E;">,</span> [<span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span><span class="op" style="color: #5E5E5E;">,</span> height])</span>
+<span id="cb2-110">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"style"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"max-width: 100%; height: auto; height: intrinsic"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-111"></span>
+<span id="cb2-112">    <span class="co" style="color: #5E5E5E;">// Chart box</span></span>
+<span id="cb2-113">    svg<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"rect"</span>)</span>
+<span id="cb2-114">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"width"</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span>)</span>
+<span id="cb2-115">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"height"</span><span class="op" style="color: #5E5E5E;">,</span> height)</span>
+<span id="cb2-116">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"fill"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#f7f7f7"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-117"></span>
+<span id="cb2-118">    <span class="kw" style="color: #003B4F;">const</span> node <span class="op" style="color: #5E5E5E;">=</span> svg<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"g"</span>)</span>
+<span id="cb2-119">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">selectAll</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb2-120">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">data</span>(nodes)</span>
+<span id="cb2-121">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">join</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb2-122">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cx"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">x</span>)</span>
+<span id="cb2-123">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cy"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">y</span>)</span>
+<span id="cb2-124">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"r"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">r</span>)</span>
+<span id="cb2-125">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"fill"</span><span class="op" style="color: #5E5E5E;">,</span> (d) <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">color</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-126">    </span>
+<span id="cb2-127">    <span class="co" style="color: #5E5E5E;">// Define forces</span></span>
+<span id="cb2-128">    <span class="kw" style="color: #003B4F;">const</span> simulation <span class="op" style="color: #5E5E5E;">=</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceSimulation</span>(nodes)</span>
+<span id="cb2-129">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">force</span>(<span class="st" style="color: #20794D;">"bounce"</span><span class="op" style="color: #5E5E5E;">,</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceBounce</span>()</span>
+<span id="cb2-130">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">radius</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">r</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">5</span>))</span>
+<span id="cb2-131">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">force</span>(<span class="st" style="color: #20794D;">"surface"</span><span class="op" style="color: #5E5E5E;">,</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceSurface</span>()</span>
+<span id="cb2-132">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">surfaces</span>(<span class="fu" style="color: #4758AB;">bbox</span>([[<span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">0</span>]<span class="op" style="color: #5E5E5E;">,</span> [width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span><span class="op" style="color: #5E5E5E;">,</span> height]]))</span>
+<span id="cb2-133">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">oneWay</span>(<span class="kw" style="color: #003B4F;">true</span>)</span>
+<span id="cb2-134">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">radius</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">r</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span>))</span>
+<span id="cb2-135">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">force</span>(<span class="st" style="color: #20794D;">'limit'</span><span class="op" style="color: #5E5E5E;">,</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceLimit</span>()</span>
+<span id="cb2-136">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">x0</span>(<span class="dv" style="color: #AD0000;">0</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">x1</span>(width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">y0</span>(<span class="dv" style="color: #AD0000;">0</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">y1</span>(height))</span>
+<span id="cb2-137">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">alphaDecay</span>(<span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb2-138">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">velocityDecay</span>(<span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb2-139">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">on</span>(<span class="st" style="color: #20794D;">"tick"</span><span class="op" style="color: #5E5E5E;">,</span> () <span class="kw" style="color: #003B4F;">=&gt;</span> { node<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cx"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">x</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cy"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">y</span>) })<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb2-140">    </span>
+<span id="cb2-141">    <span class="cf" style="color: #003B4F;">return</span> container<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">node</span>()</span>
+<span id="cb2-142">}</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p style="text-align:center">
+We’re just two lost souls swimming in a fish bowl<br><span class="fade-text" style="animation-name:change-opacity-1;">year</span> <span class="fade-text" style="animation-name:change-opacity-2;">after</span> <span class="fade-text" style="animation-name:change-opacity-3;">year</span>
+</p>
+<p style="text-align:center">
+<img src="https://twopoints.blog/images/logo-icon.png" class="endmark img-fluid">
+</p>
+<br>
+<hr>
+<p><strong>Appendix: D3 / Observable code</strong></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" data-startfrom="159" data-source-offset="-16" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 158;"><span id="cb3-159">density <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">FileAttachment</span>(<span class="st" style="color: #20794D;">'../../datasets/density/density.csv'</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">csv</span>({ <span class="dt" style="color: #AD0000;">typed</span><span class="op" style="color: #5E5E5E;">:</span> <span class="kw" style="color: #003B4F;">true</span> })<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-160">densityManila <span class="op" style="color: #5E5E5E;">=</span> density<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">filter</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">country</span> <span class="op" style="color: #5E5E5E;">===</span> <span class="st" style="color: #20794D;">"Philippines"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-161">densityOthers <span class="op" style="color: #5E5E5E;">=</span> density<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">filter</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">country</span> <span class="op" style="color: #5E5E5E;">!==</span> <span class="st" style="color: #20794D;">"Philippines"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-162">groupAssign <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">FileAttachment</span>(<span class="st" style="color: #20794D;">'../../datasets/density/group_assign.csv'</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">csv</span>({ <span class="dt" style="color: #AD0000;">typed</span><span class="op" style="color: #5E5E5E;">:</span> <span class="kw" style="color: #003B4F;">true</span> })<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-163"></span>
+<span id="cb3-164"><span class="co" style="color: #5E5E5E;">// Dependencies</span></span>
+<span id="cb3-165">d3 <span class="op" style="color: #5E5E5E;">=</span> <span class="pp" style="color: #AD0000;">require</span>(<span class="st" style="color: #20794D;">'d3@7'</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">'d3-force-bounce'</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">'d3-force-surface'</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">'d3-force-limit'</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-166"></span>
+<span id="cb3-167"><span class="co" style="color: #5E5E5E;">// Parameters</span></span>
+<span id="cb3-168">height <span class="op" style="color: #5E5E5E;">=</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span><span class="op" style="color: #5E5E5E;">;</span>                <span class="co" style="color: #5E5E5E;">// Height of particle chart</span></span>
+<span id="cb3-169">rMean <span class="op" style="color: #5E5E5E;">=</span> (width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span> <span class="op" style="color: #5E5E5E;">/</span> <span class="dv" style="color: #AD0000;">40</span>) <span class="op" style="color: #5E5E5E;">/</span> <span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">;</span>      <span class="co" style="color: #5E5E5E;">// Mean radius</span></span>
+<span id="cb3-170">rSD <span class="op" style="color: #5E5E5E;">=</span> rMean <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">75</span><span class="op" style="color: #5E5E5E;">;</span>                   <span class="co" style="color: #5E5E5E;">// SD radius</span></span>
+<span id="cb3-171">velocity <span class="op" style="color: #5E5E5E;">=</span> rMean <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">8</span><span class="op" style="color: #5E5E5E;">;</span>               <span class="co" style="color: #5E5E5E;">// Particle velocity</span></span>
+<span id="cb3-172">legendHeight <span class="op" style="color: #5E5E5E;">=</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="bn" style="color: #AD0000;">05</span><span class="op" style="color: #5E5E5E;">;</span>          <span class="co" style="color: #5E5E5E;">// Legend height</span></span>
+<span id="cb3-173">rLegend <span class="op" style="color: #5E5E5E;">=</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">5</span><span class="op" style="color: #5E5E5E;">;</span>                        <span class="co" style="color: #5E5E5E;">// Legend radius</span></span>
+<span id="cb3-174"></span>
+<span id="cb3-175">colors <span class="op" style="color: #5E5E5E;">=</span> [<span class="st" style="color: #20794D;">"#4889ab"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#7fc6a4"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#FCB13B"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#B13D70"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#f697bb"</span>]<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-176"></span>
+<span id="cb3-177">color <span class="op" style="color: #5E5E5E;">=</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">scaleOrdinal</span>()</span>
+<span id="cb3-178">    <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">domain</span>([<span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">3</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">4</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">5</span>])</span>
+<span id="cb3-179">    <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">range</span>(colors)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-180"></span>
+<span id="cb3-181">bbox <span class="op" style="color: #5E5E5E;">=</span> ([[x1<span class="op" style="color: #5E5E5E;">,</span> y1]<span class="op" style="color: #5E5E5E;">,</span> [x2<span class="op" style="color: #5E5E5E;">,</span> y2]]) <span class="kw" style="color: #003B4F;">=&gt;</span> [</span>
+<span id="cb3-182">    { <span class="dt" style="color: #AD0000;">from</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x1<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y1 }<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">to</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x1<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y2 } }<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-183">    { <span class="dt" style="color: #AD0000;">from</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x1<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y2 }<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">to</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x2<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y2 } }<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-184">    { <span class="dt" style="color: #AD0000;">from</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x2<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y2 }<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">to</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x2<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y1 } }<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-185">    { <span class="dt" style="color: #AD0000;">from</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x2<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y1 }<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">to</span><span class="op" style="color: #5E5E5E;">:</span> { <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> x1<span class="op" style="color: #5E5E5E;">,</span> <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> y1 } }</span>
+<span id="cb3-186">]<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-187"></span>
+<span id="cb3-188"><span class="co" style="color: #5E5E5E;">// Function to generate particles for a given city</span></span>
+<span id="cb3-189"></span>
+<span id="cb3-190"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">genpoints</span>(city) {</span>
+<span id="cb3-191"></span>
+<span id="cb3-192">    <span class="kw" style="color: #003B4F;">const</span> density <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">Math</span><span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">round</span>(city[<span class="dv" style="color: #AD0000;">0</span>]<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">density</span> <span class="op" style="color: #5E5E5E;">/</span> <span class="dv" style="color: #AD0000;">100</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-193">    </span>
+<span id="cb3-194">    <span class="kw" style="color: #003B4F;">const</span> groupAssignCity <span class="op" style="color: #5E5E5E;">=</span> groupAssign<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">filter</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">city</span> <span class="op" style="color: #5E5E5E;">===</span> city[<span class="dv" style="color: #AD0000;">0</span>]<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">city</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-195">    <span class="kw" style="color: #003B4F;">const</span> counts <span class="op" style="color: #5E5E5E;">=</span> groupAssignCity<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">map</span>(row <span class="kw" style="color: #003B4F;">=&gt;</span> row<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">points_ingroup</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-196">    <span class="kw" style="color: #003B4F;">const</span> groups <span class="op" style="color: #5E5E5E;">=</span> [<span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">3</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">4</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">5</span>]<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-197">    <span class="kw" style="color: #003B4F;">const</span> groupArray <span class="op" style="color: #5E5E5E;">=</span> counts<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">flatMap</span>((count<span class="op" style="color: #5E5E5E;">,</span> i) <span class="kw" style="color: #003B4F;">=&gt;</span></span>
+<span id="cb3-198">        <span class="bu" style="color: null;">Array</span><span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">from</span>({ <span class="dt" style="color: #AD0000;">length</span><span class="op" style="color: #5E5E5E;">:</span> count }<span class="op" style="color: #5E5E5E;">,</span> () <span class="kw" style="color: #003B4F;">=&gt;</span> groups[i])</span>
+<span id="cb3-199">    )<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-200">    </span>
+<span id="cb3-201">    <span class="kw" style="color: #003B4F;">const</span> points <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">Array</span><span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">from</span>(</span>
+<span id="cb3-202">        { <span class="dt" style="color: #AD0000;">length</span><span class="op" style="color: #5E5E5E;">:</span> density }<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-203">        (_<span class="op" style="color: #5E5E5E;">,</span> i) <span class="kw" style="color: #003B4F;">=&gt;</span> ({</span>
+<span id="cb3-204">            <span class="dt" style="color: #AD0000;">x</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>((width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">15</span>)<span class="op" style="color: #5E5E5E;">,</span> (width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">85</span>))()<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-205">            <span class="dt" style="color: #AD0000;">y</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>(height <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">15</span><span class="op" style="color: #5E5E5E;">,</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">85</span>)()<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-206">            <span class="dt" style="color: #AD0000;">r</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomNormal</span>(rMean<span class="op" style="color: #5E5E5E;">,</span> rSD)()<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-207">            <span class="dt" style="color: #AD0000;">vx</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>(<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">1</span>)() <span class="op" style="color: #5E5E5E;">*</span> velocity<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-208">            <span class="dt" style="color: #AD0000;">vy</span><span class="op" style="color: #5E5E5E;">:</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">randomUniform</span>(<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">1</span>)() <span class="op" style="color: #5E5E5E;">*</span> velocity<span class="op" style="color: #5E5E5E;">,</span></span>
+<span id="cb3-209">            <span class="dt" style="color: #AD0000;">group</span><span class="op" style="color: #5E5E5E;">:</span> groupArray[i]</span>
+<span id="cb3-210">        })</span>
+<span id="cb3-211">    )<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-212"></span>
+<span id="cb3-213">    <span class="cf" style="color: #003B4F;">return</span> points<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-214">}</span>
+<span id="cb3-215"></span>
+<span id="cb3-216"><span class="co" style="color: #5E5E5E;">// Function to generate particles chart</span></span>
+<span id="cb3-217"></span>
+<span id="cb3-218"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">particles</span>(selection<span class="op" style="color: #5E5E5E;">,</span> city<span class="op" style="color: #5E5E5E;">,</span> margin) {</span>
+<span id="cb3-219"></span>
+<span id="cb3-220">    <span class="co" style="color: #5E5E5E;">// Read data</span></span>
+<span id="cb3-221">    <span class="kw" style="color: #003B4F;">const</span> nodes <span class="op" style="color: #5E5E5E;">=</span> <span class="fu" style="color: #4758AB;">genpoints</span>(city)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">map</span>(<span class="bu" style="color: null;">Object</span><span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">create</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-222"></span>
+<span id="cb3-223">    <span class="co" style="color: #5E5E5E;">// Panel</span></span>
+<span id="cb3-224">    <span class="kw" style="color: #003B4F;">const</span> svg <span class="op" style="color: #5E5E5E;">=</span> selection<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"svg"</span>)</span>
+<span id="cb3-225">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"width"</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span>)</span>
+<span id="cb3-226">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"height"</span><span class="op" style="color: #5E5E5E;">,</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="fl" style="color: #AD0000;">1.1</span>)</span>
+<span id="cb3-227">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"viewBox"</span><span class="op" style="color: #5E5E5E;">,</span> [<span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span><span class="op" style="color: #5E5E5E;">,</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="fl" style="color: #AD0000;">1.1</span>])</span>
+<span id="cb3-228">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"style"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"max-width: 100%; height: auto; height: intrinsic"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-229"></span>
+<span id="cb3-230">    <span class="cf" style="color: #003B4F;">if</span> (margin <span class="op" style="color: #5E5E5E;">!==</span> <span class="kw" style="color: #003B4F;">undefined</span>) svg<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"style"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="vs" style="color: #20794D;">`margin-right: </span><span class="sc" style="color: #5E5E5E;">${</span>margin<span class="sc" style="color: #5E5E5E;">}</span><span class="vs" style="color: #20794D;">`</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-231"></span>
+<span id="cb3-232">    <span class="co" style="color: #5E5E5E;">// Chart box</span></span>
+<span id="cb3-233">    svg<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"rect"</span>)</span>
+<span id="cb3-234">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"width"</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span>)</span>
+<span id="cb3-235">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"height"</span><span class="op" style="color: #5E5E5E;">,</span> height)</span>
+<span id="cb3-236">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"fill"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#f7f7f7"</span>)</span>
+<span id="cb3-237">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"stroke"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#bcbcbc"</span>)</span>
+<span id="cb3-238">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"stroke-width"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">1</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-239"></span>
+<span id="cb3-240">    <span class="co" style="color: #5E5E5E;">// Bottom label</span></span>
+<span id="cb3-241">    <span class="kw" style="color: #003B4F;">const</span> densityStat <span class="op" style="color: #5E5E5E;">=</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">format</span>(<span class="st" style="color: #20794D;">",.2r"</span>)(city[<span class="dv" style="color: #AD0000;">0</span>]<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">density</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-242">    svg<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"text"</span>)</span>
+<span id="cb3-243">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"x"</span><span class="op" style="color: #5E5E5E;">,</span> width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span> <span class="op" style="color: #5E5E5E;">/</span> <span class="dv" style="color: #AD0000;">2</span>)</span>
+<span id="cb3-244">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"y"</span><span class="op" style="color: #5E5E5E;">,</span> height <span class="op" style="color: #5E5E5E;">*</span> <span class="fl" style="color: #AD0000;">1.075</span>)</span>
+<span id="cb3-245">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"text-anchor"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"middle"</span>)</span>
+<span id="cb3-246">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">text</span>(<span class="vs" style="color: #20794D;">`</span><span class="sc" style="color: #5E5E5E;">${</span>densityStat<span class="sc" style="color: #5E5E5E;">}</span><span class="vs" style="color: #20794D;"> people/km²`</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-247"></span>
+<span id="cb3-248">    <span class="co" style="color: #5E5E5E;">// Draw particles</span></span>
+<span id="cb3-249">    <span class="kw" style="color: #003B4F;">const</span> node <span class="op" style="color: #5E5E5E;">=</span> svg<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"g"</span>)</span>
+<span id="cb3-250">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">selectAll</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb3-251">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">data</span>(nodes)</span>
+<span id="cb3-252">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">join</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb3-253">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cx"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">x</span>)</span>
+<span id="cb3-254">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cy"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">y</span>)</span>
+<span id="cb3-255">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"r"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">r</span>)</span>
+<span id="cb3-256">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"fill"</span><span class="op" style="color: #5E5E5E;">,</span> (d) <span class="kw" style="color: #003B4F;">=&gt;</span> <span class="fu" style="color: #4758AB;">color</span>(d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">group</span>))<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-257">    </span>
+<span id="cb3-258">    <span class="co" style="color: #5E5E5E;">// Define forces</span></span>
+<span id="cb3-259">    <span class="kw" style="color: #003B4F;">const</span> simulation <span class="op" style="color: #5E5E5E;">=</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceSimulation</span>(nodes)</span>
+<span id="cb3-260">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">force</span>(<span class="st" style="color: #20794D;">"bounce"</span><span class="op" style="color: #5E5E5E;">,</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceBounce</span>()</span>
+<span id="cb3-261">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">radius</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">r</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">5</span>))</span>
+<span id="cb3-262">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">force</span>(<span class="st" style="color: #20794D;">"surface"</span><span class="op" style="color: #5E5E5E;">,</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceSurface</span>()</span>
+<span id="cb3-263">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">surfaces</span>(<span class="fu" style="color: #4758AB;">bbox</span>([[<span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">0</span>]<span class="op" style="color: #5E5E5E;">,</span> [width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span><span class="op" style="color: #5E5E5E;">,</span> height]]))</span>
+<span id="cb3-264">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">oneWay</span>(<span class="kw" style="color: #003B4F;">true</span>)</span>
+<span id="cb3-265">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">radius</span>(d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">r</span> <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span>))</span>
+<span id="cb3-266">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">force</span>(<span class="st" style="color: #20794D;">'limit'</span><span class="op" style="color: #5E5E5E;">,</span> d3<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">forceLimit</span>()</span>
+<span id="cb3-267">            <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">x0</span>(<span class="dv" style="color: #AD0000;">0</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">x1</span>(width <span class="op" style="color: #5E5E5E;">*</span> <span class="op" style="color: #5E5E5E;">.</span><span class="dv" style="color: #AD0000;">49</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">y0</span>(<span class="dv" style="color: #AD0000;">0</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">y1</span>(height))</span>
+<span id="cb3-268">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">alphaDecay</span>(<span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb3-269">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">velocityDecay</span>(<span class="dv" style="color: #AD0000;">0</span>)</span>
+<span id="cb3-270">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">on</span>(<span class="st" style="color: #20794D;">"tick"</span><span class="op" style="color: #5E5E5E;">,</span> () <span class="kw" style="color: #003B4F;">=&gt;</span> { node<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cx"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">x</span>)<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cy"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> d<span class="op" style="color: #5E5E5E;">.</span><span class="at" style="color: #657422;">y</span>) })<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-271">}</span>
+<span id="cb3-272"></span>
+<span id="cb3-273"><span class="co" style="color: #5E5E5E;">// Function to generate legend</span></span>
+<span id="cb3-274"></span>
+<span id="cb3-275"><span class="kw" style="color: #003B4F;">function</span> <span class="fu" style="color: #4758AB;">legend</span>(selection) {</span>
+<span id="cb3-276">  </span>
+<span id="cb3-277">    <span class="kw" style="color: #003B4F;">const</span> svgLeft <span class="op" style="color: #5E5E5E;">=</span> selection<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"svg"</span>)</span>
+<span id="cb3-278">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"width"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"11em"</span>)</span>
+<span id="cb3-279">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"height"</span><span class="op" style="color: #5E5E5E;">,</span> legendHeight)</span>
+<span id="cb3-280">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"viewBox"</span><span class="op" style="color: #5E5E5E;">,</span> [<span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"11em"</span><span class="op" style="color: #5E5E5E;">,</span> legendHeight])<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-281"></span>
+<span id="cb3-282">    svgLeft<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb3-283">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cx"</span><span class="op" style="color: #5E5E5E;">,</span> rLegend <span class="op" style="color: #5E5E5E;">+</span> <span class="st" style="color: #20794D;">"em"</span>)</span>
+<span id="cb3-284">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cy"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">".5em"</span>)</span>
+<span id="cb3-285">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"fill"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"#4889ab"</span>)</span>
+<span id="cb3-286">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"r"</span><span class="op" style="color: #5E5E5E;">,</span> rLegend <span class="op" style="color: #5E5E5E;">+</span> <span class="st" style="color: #20794D;">"em"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-287"></span>
+<span id="cb3-288">    svgLeft<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"text"</span>)</span>
+<span id="cb3-289">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"x"</span><span class="op" style="color: #5E5E5E;">,</span> (rLegend <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">3</span>) <span class="op" style="color: #5E5E5E;">+</span> <span class="st" style="color: #20794D;">"em"</span>)</span>
+<span id="cb3-290">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"y"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">".85em"</span>)</span>
+<span id="cb3-291">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"text-anchor"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"left"</span>)</span>
+<span id="cb3-292">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">text</span>(<span class="st" style="color: #20794D;">"Native ancestors"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-293"></span>
+<span id="cb3-294">    <span class="kw" style="color: #003B4F;">const</span> svgRight <span class="op" style="color: #5E5E5E;">=</span> selection<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"svg"</span>)</span>
+<span id="cb3-295">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"width"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"15em"</span>)</span>
+<span id="cb3-296">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"height"</span><span class="op" style="color: #5E5E5E;">,</span> legendHeight)</span>
+<span id="cb3-297">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"viewBox"</span><span class="op" style="color: #5E5E5E;">,</span> [<span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">0</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"15em"</span><span class="op" style="color: #5E5E5E;">,</span> legendHeight])<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-298">  </span>
+<span id="cb3-299">    svgRight<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">selectAll</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb3-300">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">data</span>([<span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">3</span><span class="op" style="color: #5E5E5E;">,</span> <span class="dv" style="color: #AD0000;">4</span>])</span>
+<span id="cb3-301">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">join</span>(<span class="st" style="color: #20794D;">"circle"</span>)</span>
+<span id="cb3-302">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cx"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> (rLegend <span class="op" style="color: #5E5E5E;">+</span> (d <span class="op" style="color: #5E5E5E;">-</span> <span class="dv" style="color: #AD0000;">1</span>) <span class="op" style="color: #5E5E5E;">*</span> rLegend <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">3</span>) <span class="op" style="color: #5E5E5E;">+</span> <span class="st" style="color: #20794D;">"em"</span>)</span>
+<span id="cb3-303">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"cy"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">".5em"</span>)</span>
+<span id="cb3-304">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"fill"</span><span class="op" style="color: #5E5E5E;">,</span> d <span class="kw" style="color: #003B4F;">=&gt;</span> <span class="fu" style="color: #4758AB;">color</span>(d <span class="op" style="color: #5E5E5E;">+</span> <span class="dv" style="color: #AD0000;">1</span>))</span>
+<span id="cb3-305">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"r"</span><span class="op" style="color: #5E5E5E;">,</span> rLegend <span class="op" style="color: #5E5E5E;">+</span> <span class="st" style="color: #20794D;">"em"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-306"></span>
+<span id="cb3-307">    svgRight<span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">append</span>(<span class="st" style="color: #20794D;">"text"</span>)</span>
+<span id="cb3-308">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"x"</span><span class="op" style="color: #5E5E5E;">,</span> (rLegend <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">3</span> <span class="op" style="color: #5E5E5E;">*</span> <span class="dv" style="color: #AD0000;">4</span>) <span class="op" style="color: #5E5E5E;">+</span> <span class="st" style="color: #20794D;">"em"</span>)</span>
+<span id="cb3-309">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"y"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">".85em"</span>)</span>
+<span id="cb3-310">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">attr</span>(<span class="st" style="color: #20794D;">"text-anchor"</span><span class="op" style="color: #5E5E5E;">,</span> <span class="st" style="color: #20794D;">"left"</span>)</span>
+<span id="cb3-311">        <span class="op" style="color: #5E5E5E;">.</span><span class="fu" style="color: #4758AB;">text</span>(<span class="st" style="color: #20794D;">"Migrant ancestors"</span>)<span class="op" style="color: #5E5E5E;">;</span></span>
+<span id="cb3-312">}</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-11" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-12" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-13" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-14" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-15" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-16" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-17" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Other sources may differ depending on how city boundaries are defined.↩︎</p></li>
+<li id="fn2"><p>City density data were taken from Wikipedia. Comparisons are only suggestive given idiosyncrasies in how administrative boundaries are defined. For example, Metro Manila is 624 km², comparable to Jakarta (664 km²) and New York (778 km²) but not so much to Paris (105 km²) and Beijing (16,411 km²).↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section></div> ]]></description>
+  <category>particles</category>
+  <category>interactive</category>
+  <guid>https://twopoints.blog/posts/2023-03-29-people-as-particles/index.html</guid>
+  <pubDate>Tue, 28 Mar 2023 16:00:00 GMT</pubDate>
+  <media:content url="https://twopoints.blog/posts/2023-03-29-people-as-particles/thumbnail.gif" medium="image" type="image/gif"/>
+</item>
 <item>
   <title>I just read 456 books*</title>
   <link>https://twopoints.blog/posts/2023-03-22-literary-analysis/index.html</link>
@@ -23,7 +577,7 @@
 
 
 
-<p>In a <a href="https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/">previous post</a>, we charted the emotional shape of three novels by assigning them sentiment scores through the <a href="https://search.r-project.org/CRAN/refmans/corpus/html/sentiment_afinn.html">AFINN lexicon</a>. But three is peanuts — I’m bolder now, more <em>audacious</em>, and subsisting on three cups of coffee a day. In this post, I chew on as many classics from the 19th century as my laptop will let me. The result is this beautiful visualization mapping the textual similarities between literary works, powered by <a href="https://www.d3indepth.com/force-layout/">D3’s force layout simulator</a>. Hover over a node to see the title and author, or click and drag to examine how each is connected to the rest.</p>
+<p>In a <a href="https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/">previous post</a>, we charted the emotional shape of three novels by assigning them sentiment scores through the <a href="https://search.r-project.org/CRAN/refmans/corpus/html/sentiment_afinn.html">AFINN lexicon</a>. But three is peanuts — I’m bolder now, more <em>audacious</em>, and subsisting on three cups of coffee a day. In this post, I chew on as many classics from the 19th century as my laptop will let me. The result is this beautiful visualization mapping the textual similarities between literary works, powered by <a href="https://github.com/d3/d3-force/tree/v3.0.0">D3’s force engine</a>. Hover over a node to see the title and author, or click and drag to examine how each is connected to the rest.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -4315,10 +4869,7 @@
 </div>
 <p>Then it’s a simple matter of counting the active conflicts per year and constructing a bar chart. to illustrate the depressing fact that Christmas 2021 saw an all-time high in active conflicts worldwide.</p>
 <p>To end, here’s the song that inspired this post. Have a bad Christmas season everybody. <img src="https://twopoints.blog/images/logo-icon.png" class="endmark img-fluid"></p>
-<div class="container">
-<iframe src="https://www.youtube.com/embed/Zr9EOFuuIk4" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</div>
+<p></p><div id="youtube-frame" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0;"><iframe width="100%" height="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Zr9EOFuuIk4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
 
 
 
@@ -5918,8 +6469,8 @@
 <span id="cb2-11">  <span class="fu" style="color: #4758AB;">addMarkers</span>(<span class="at" style="color: #657422;">lng=</span><span class="fl" style="color: #AD0000;">121.061238</span>, <span class="at" style="color: #657422;">lat=</span><span class="fl" style="color: #AD0000;">14.575162</span>, <span class="at" style="color: #657422;">label=</span><span class="st" style="color: #20794D;">"Shaw Station"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span></span>
 <span id="cb2-12">  <span class="fu" style="color: #4758AB;">addMarkers</span>(<span class="at" style="color: #657422;">lng=</span><span class="fl" style="color: #AD0000;">121.055859</span>, <span class="at" style="color: #657422;">lat=</span><span class="fl" style="color: #AD0000;">14.558327</span>, <span class="at" style="color: #657422;">label=</span><span class="st" style="color: #20794D;">"11th Avenue Station"</span>)</span></code></pre></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-184848940d950af4c278" style="width:100%;height:487px;"></div>
-<script type="application/json" data-for="htmlwidget-184848940d950af4c278">{"x":{"options":{"minZoom":10,"maxZoom":15,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[14.689541,121.02846,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quirino Highway Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.676936,121.032355,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Tandang Sora Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.65485,121.035685,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"North Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.644747,121.037591,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quezon Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.640692,121.051628,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"East Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.627151,121.065282,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Anonas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.61369,121.069868,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Camp Aguinaldo Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.588103,121.063565,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Ortigas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.575162,121.061238,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Shaw Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.558327,121.055859,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"11th Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[14.558327,14.689541],"lng":[121.02846,121.069868]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6820baea8b508702a357" style="width:100%;height:487px;"></div>
+<script type="application/json" data-for="htmlwidget-6820baea8b508702a357">{"x":{"options":{"minZoom":10,"maxZoom":15,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[14.689541,121.02846,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quirino Highway Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.676936,121.032355,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Tandang Sora Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.65485,121.035685,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"North Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.644747,121.037591,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quezon Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.640692,121.051628,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"East Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.627151,121.065282,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Anonas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.61369,121.069868,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Camp Aguinaldo Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.588103,121.063565,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Ortigas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.575162,121.061238,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Shaw Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.558327,121.055859,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"11th Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[14.558327,14.689541],"lng":[121.02846,121.069868]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>And here’s the map! It’s fine? It’s a little busy, so let’s change the map tile from the default OpenStreetMap to a nice minimalist one from <a href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html">this list</a>.</p>
@@ -5937,12 +6488,12 @@
 <span id="cb3-11">  <span class="fu" style="color: #4758AB;">addMarkers</span>(<span class="at" style="color: #657422;">lng=</span><span class="fl" style="color: #AD0000;">121.061238</span>, <span class="at" style="color: #657422;">lat=</span><span class="fl" style="color: #AD0000;">14.575162</span>, <span class="at" style="color: #657422;">label=</span><span class="st" style="color: #20794D;">"Shaw Station"</span>) <span class="sc" style="color: #5E5E5E;">%&gt;%</span></span>
 <span id="cb3-12">  <span class="fu" style="color: #4758AB;">addMarkers</span>(<span class="at" style="color: #657422;">lng=</span><span class="fl" style="color: #AD0000;">121.055859</span>, <span class="at" style="color: #657422;">lat=</span><span class="fl" style="color: #AD0000;">14.558327</span>, <span class="at" style="color: #657422;">label=</span><span class="st" style="color: #20794D;">"11th Avenue Station"</span>)</span></code></pre></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-06689dd4cdcebcce9a60" style="width:100%;height:487px;"></div>
-<script type="application/json" data-for="htmlwidget-06689dd4cdcebcce9a60">{"x":{"options":{"minZoom":10,"maxZoom":15,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Voyager",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[14.689541,121.02846,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quirino Highway Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.676936,121.032355,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Tandang Sora Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.65485,121.035685,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"North Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.644747,121.037591,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quezon Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.640692,121.051628,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"East Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.627151,121.065282,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Anonas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.61369,121.069868,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Camp Aguinaldo Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.588103,121.063565,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Ortigas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.575162,121.061238,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Shaw Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.558327,121.055859,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"11th Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[14.558327,14.689541],"lng":[121.02846,121.069868]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e1cc3fbbe35f7974f680" style="width:100%;height:487px;"></div>
+<script type="application/json" data-for="htmlwidget-e1cc3fbbe35f7974f680">{"x":{"options":{"minZoom":10,"maxZoom":15,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Voyager",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[14.689541,121.02846,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quirino Highway Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.676936,121.032355,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Tandang Sora Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.65485,121.035685,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"North Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.644747,121.037591,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quezon Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.640692,121.051628,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"East Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.627151,121.065282,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Anonas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.61369,121.069868,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Camp Aguinaldo Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.588103,121.063565,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Ortigas Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.575162,121.061238,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Shaw Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[14.558327,121.055859,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"11th Avenue Station",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[14.558327,14.689541],"lng":[121.02846,121.069868]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>Neat. I’ll revisit this later on to see what else I can add.</p>
-<p><strong>Update 17 Nov 2022:</strong> Transportation Undersecretary Cesar Chavez <a href="https://news.abs-cbn.com/business/11/17/22/metro-manila-subway-excavation-to-start-in-december">has said</a> that “the actual excavation is on December 12”. He added: “Actually, this is for real. The excavation is real.” Well, there you have it. The excavation is “real”. <img src="https://twopoints.blog/images/logo-icon.png" class="endmark img-fluid"></p>
+<p>Neat. I’ll revisit this later on to see what else I can add. <img src="https://twopoints.blog/images/logo-icon.png" class="endmark img-fluid"></p>
+<p><strong>Update 17 Nov 2022:</strong> Transportation Undersecretary Cesar Chavez <a href="https://news.abs-cbn.com/business/11/17/22/metro-manila-subway-excavation-to-start-in-december">has said</a> that “the actual excavation is on December 12”. He added: “Actually, this is for real. The excavation is real.” Well, there you have it. The excavation is “real”.</p>
 
 
 

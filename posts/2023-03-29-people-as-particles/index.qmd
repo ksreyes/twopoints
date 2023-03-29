@@ -1,0 +1,313 @@
+---
+title: "People as particles"
+subtitle: "Population density in cities, portrayed more vividly"
+date: 2023-03-29
+categories: [particles, interactive]
+image: thumbnail.gif
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+Manila is the densest city on Earth,^[Other sources may differ depending on how city boundaries are defined.] fitting 1.8 million people into a 43 square-kilometer crucible. The 16 other cities that constitute Metro Manila, the Philippine capital, are extraordinarily crowded as well, resulting in an overall density of 22,000/km². This is twice that of New York and almost three times that of Singapore. Dysfunctional urban planning has failed to cope. Suburbs-style neighborhoods and private golf courses [sprawl incongruously](https://twitter.com/pfkahanapINQ/status/1605847613089058816) in city centers while open green spaces [remain limited](https://manilastandard.net/spotlight/ms-36th-anniversary-issue-towards-a-sustainable-future/314303715/claiming-back-the-city.html). The state of [transportation](https://www.bbc.com/news/world-asia-49983397) [is](https://newsinfo.inquirer.net/1698050/public-transportation-mobility-readiness-in-manila-among-worlds-worst) [dystopian](https://twitter.com/PhilippineStar/status/1577309804833693697/photo/1). A much needed [subway](https://twopoints.blog/posts/2022-11-08-metro-manila-subway/) intended for partial operability [in 2022](https://newsinfo.inquirer.net/1488867/metro-manila-subways-partial-operability-targeted-in-1st-quarter-of-2022) only started construction [last January](https://newsinfo.inquirer.net/1714541/metro-manila-subway-construction-begins).
+
+<div class="instagram-container"> <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Jilson Tiu (@jilson.tiu)</a></p></div></blockquote></div> <script async src="//www.instagram.com/embed.js"></script>
+
+Living in such a crowded place means shoving, squeezing, and cartwheeling your way through the chaos of gridlocked streets and packed trains, a daily collision of body against body that brings to mind Radiohead at their most anxious: "[everyone is *so* <span class="shaking-text">near</span>](https://www.youtube.com/watch?v=hTzRliW3iFs)". It's an experience that isn't quite captured by the metric "22,000/km²". I wanted to make this number more evocative through a visualization, but how? I've seen population density plotted on bar charts, on choropleth maps, even on a [3D histogram](https://www.vox.com/2015/1/2/7480993/population-density-visualized), but none of these, I feel, do justice to the absolute pressure cooker that is Manila.
+
+I decided to try something novel. I call it a particles chart, and it consists of a D3 force simulation of balls bouncing off each other in a box. It's relatively simple to construct --- I am indebted to [Vasco Asturiano](https://github.com/vasturiano)'s modules in particular --- yet it captures so effectively what "densest city on the planet" means. It means countless agitated bodies jockeying and jittering in a tight space, searching endlessly for room to breathe.^[City density data were taken from Wikipedia. Comparisons are only suggestive given idiosyncrasies in how administrative boundaries are defined. For example, Metro Manila is 624 km², comparable to Jakarta (664 km²) and New York (778 km²) but not so much to Paris (105 km²) and Beijing (16,411 km²).]
+
+```{ojs}
+//| code-fold: true
+//| layout: "[[1],[1,1],[1],[1]]"
+
+html`
+  <div style="text-align:center">
+  <h3 class="ojs-title">Fancy bumping into you</h3>
+  <span class="ojs-subtitle">Population density in Metro Manila and major global cities</span>
+  </div>
+`
+
+viewof citySelectPH = Inputs.select(
+    d3.group(densityManila, d => d.city), {
+        label: "Pick a Metro Manila city...",
+        key: "Manila",
+        description: "Pick a Metro Manila city..."
+    })
+
+viewof citySelect = Inputs.select(
+    d3.group(densityOthers, d => d.city), {
+        label: "...and compare with a global city",
+        key: "New York"
+    })
+
+{
+    const container = d3.create("div");
+
+    const containerLegend = container.append("div")
+        .attr("style", "display: flex; justify-content: center");
+    containerLegend.call(legend);
+    
+    const containerChart = container.append("div")
+        .attr("style", "display: flex; justify-content: space-between");
+    containerChart.call(particles, citySelectPH, "10px");
+    containerChart.call(particles, citySelect);
+
+    return container.node();
+}
+
+html`
+  <div style="text-align:center">
+  <span>Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's <a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank">World Migration Matrix</a>.</span>
+  </div>
+`
+```
+
+I've set the balls to generate at various sizes, reflecting the fact that some people take up more space than others. Think private vehicles versus public transport, detached homes versus high-rise condominiums. The balls are also colored in proportion to ethnic makeup, as recorded in Putterman and Weil's [World Migration Matrix](https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000). I've written about this dataset [here](https://twopoints.blog/posts/2022-11-25-roots/) and [here](https://twopoints.blog/posts/2022-11-26-migration/), but to recap, the matrix breaks down a country's population according to where their ancestors were in the year 1500. Migrant ancestor balls are colored by originating continent, ordered from largest to smallest shares. 
+
+To be clear, density is not inherently bad. In fact, density is indicative of a successful city since it means people *want* to move there. Density itself also confers benefits through [agglomeration effects](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.12.2.139): proximity among firms and laborers brings down production costs and increases knowledge spillovers. But these benefits surely fall short of potential in Metro Manila. How great can proximity advantages be if it takes two hours to get anywhere? If there were an optimal level of density for a given level of infrastructure quality, Manila has blown way past it.
+
+The particles chart can be used in any number of applications, with three levers (the number, colors, and sizes of the particles) available for mapping to variables. I'll end this post with an additional example, this time tackling a different aspect of modern city living. It's not a statistic, but a feeling. The kind that creeps up on you late at night under certain moods, when the veil lifts and you momentarily perceive the Camusian absurdity of all your life's endeavors. A feeling best encapsulated, I think, by another [song lyric](https://www.youtube.com/watch?v=84Tq-eAJIk4):
+
+```{ojs}
+//| code-fold: true
+
+{
+    const dummynodes = Array.from(
+        { length: 200 }, (_, i) => ({
+            x: d3.randomUniform((width * .75 * .05), (width * .75 * .95))(),
+            y: d3.randomUniform(height * .05, height * .95)(),
+            r: d3.randomNormal(rMean, rSD)(),
+            vx: d3.randomUniform(-1, 1)() * velocity,
+            vy: d3.randomUniform(-1, 1)() * velocity,
+            color: "#eeeeee"
+        })
+    );
+    dummynodes.push(
+        { x: width * .75 * .05, y: height * .95, r: 7, vx: 1, vy: -1, color: "#4889ab" },
+        { x: width * .75 * .95, y: height * .05, r: 7, vx: -1, vy: 1, color: "#C85B89" }
+    );
+    const nodes = dummynodes.map(Object.create);
+
+    // Panel
+    const container = d3.create("div")
+        .attr("style", "display: flex; justify-content: center");
+
+    const svg = container.append("svg")
+        .attr("width", width * .75)
+        .attr("height", height)
+        .attr("viewBox", [0, 0, width * .75, height])
+        .attr("style", "max-width: 100%; height: auto; height: intrinsic");
+
+    // Chart box
+    svg.append("rect")
+        .attr("width", width * .75)
+        .attr("height", height)
+        .attr("fill", "#f7f7f7");
+
+    const node = svg.append("g")
+        .selectAll("circle")
+        .data(nodes)
+        .join("circle")
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        .attr("r", d => d.r)
+        .attr("fill", (d) => d.color);
+    
+    // Define forces
+    const simulation = d3.forceSimulation(nodes)
+        .force("bounce", d3.forceBounce()
+            .radius(d => d.r + .5))
+        .force("surface", d3.forceSurface()
+            .surfaces(bbox([[0, 0], [width * .75, height]]))
+            .oneWay(true)
+            .radius(d => d.r + 1))
+        .force('limit', d3.forceLimit()
+            .x0(0).x1(width * .75).y0(0).y1(height))
+        .alphaDecay(0)
+        .velocityDecay(0)
+        .on("tick", () => { node.attr("cx", d => d.x).attr("cy", d => d.y) });
+    
+    return container.node()
+}
+```
+
+<p style="text-align:center">We're just two lost souls swimming in a fish bowl<br><span class="fade-text" style="animation-name:change-opacity-1;">year</span> <span class="fade-text" style="animation-name:change-opacity-2;">after</span> <span class="fade-text" style="animation-name:change-opacity-3;">year</span></p>
+<p style="text-align:center">`r end_mark()`</p>
+
+<br>
+<hr>
+**Appendix: D3 / Observable code**
+
+
+```{ojs}
+//| code-fold: true
+
+// Import data
+density = FileAttachment('../../datasets/density/density.csv').csv({ typed: true });
+densityManila = density.filter(d => d.country === "Philippines");
+densityOthers = density.filter(d => d.country !== "Philippines");
+groupAssign = FileAttachment('../../datasets/density/group_assign.csv').csv({ typed: true });
+
+// Dependencies
+d3 = require('d3@7', 'd3-force-bounce', 'd3-force-surface', 'd3-force-limit');
+
+// Parameters
+height = width * .49;                // Height of particle chart
+rMean = (width * .49 / 40) / 2;      // Mean radius
+rSD = rMean * .75;                   // SD radius
+velocity = rMean * .8;               // Particle velocity
+legendHeight = width * .05;          // Legend height
+rLegend = .5;                        // Legend radius
+
+colors = ["#4889ab", "#7fc6a4", "#FCB13B", "#B13D70", "#f697bb"];
+
+color = d3.scaleOrdinal()
+    .domain([1, 2, 3, 4, 5])
+    .range(colors);
+
+bbox = ([[x1, y1], [x2, y2]]) => [
+    { from: { x: x1, y: y1 }, to: { x: x1, y: y2 } },
+    { from: { x: x1, y: y2 }, to: { x: x2, y: y2 } },
+    { from: { x: x2, y: y2 }, to: { x: x2, y: y1 } },
+    { from: { x: x2, y: y1 }, to: { x: x1, y: y1 } }
+];
+
+// Function to generate particles for a given city
+
+function genpoints(city) {
+
+    const density = Math.round(city[0].density / 100);
+    
+    const groupAssignCity = groupAssign.filter(d => d.city === city[0].city);
+    const counts = groupAssignCity.map(row => row.points_ingroup);
+    const groups = [1, 2, 3, 4, 5];
+    const groupArray = counts.flatMap((count, i) =>
+        Array.from({ length: count }, () => groups[i])
+    );
+    
+    const points = Array.from(
+        { length: density },
+        (_, i) => ({
+            x: d3.randomUniform((width * .49 * .15), (width * .49 * .85))(),
+            y: d3.randomUniform(height * .15, height * .85)(),
+            r: d3.randomNormal(rMean, rSD)(),
+            vx: d3.randomUniform(-1, 1)() * velocity,
+            vy: d3.randomUniform(-1, 1)() * velocity,
+            group: groupArray[i]
+        })
+    );
+
+    return points;
+}
+
+// Function to generate particles chart
+
+function particles(selection, city, margin) {
+
+    // Read data
+    const nodes = genpoints(city).map(Object.create);
+
+    // Panel
+    const svg = selection.append("svg")
+        .attr("width", width * .49)
+        .attr("height", height * 1.1)
+        .attr("viewBox", [0, 0, width * .49, height * 1.1])
+        .attr("style", "max-width: 100%; height: auto; height: intrinsic");
+
+    if (margin !== undefined) svg.attr("style", `margin-right: ${margin}`);
+
+    // Chart box
+    svg.append("rect")
+        .attr("width", width * .49)
+        .attr("height", height)
+        .attr("fill", "#f7f7f7")
+        .attr("stroke", "#bcbcbc")
+        .attr("stroke-width", 1);
+
+    // Bottom label
+    const densityStat = d3.format(",.2r")(city[0].density);
+    svg.append("text")
+        .attr("x", width * .49 / 2)
+        .attr("y", height * 1.075)
+        .attr("text-anchor", "middle")
+        .text(`${densityStat} people/km²`);
+
+    // Draw particles
+    const node = svg.append("g")
+        .selectAll("circle")
+        .data(nodes)
+        .join("circle")
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        .attr("r", d => d.r)
+        .attr("fill", (d) => color(d.group));
+    
+    // Define forces
+    const simulation = d3.forceSimulation(nodes)
+        .force("bounce", d3.forceBounce()
+            .radius(d => d.r + .5))
+        .force("surface", d3.forceSurface()
+            .surfaces(bbox([[0, 0], [width * .49, height]]))
+            .oneWay(true)
+            .radius(d => d.r + 1))
+        .force('limit', d3.forceLimit()
+            .x0(0).x1(width * .49).y0(0).y1(height))
+        .alphaDecay(0)
+        .velocityDecay(0)
+        .on("tick", () => { node.attr("cx", d => d.x).attr("cy", d => d.y) });
+}
+
+// Function to generate legend
+
+function legend(selection) {
+  
+    const svgLeft = selection.append("svg")
+        .attr("width", "11em")
+        .attr("height", legendHeight)
+        .attr("viewBox", [0, 0, "11em", legendHeight]);
+
+    svgLeft.append("circle")
+        .attr("cx", rLegend + "em")
+        .attr("cy", ".5em")
+        .attr("fill", "#4889ab")
+        .attr("r", rLegend + "em");
+
+    svgLeft.append("text")
+        .attr("x", (rLegend * 3) + "em")
+        .attr("y", ".85em")
+        .attr("text-anchor", "left")
+        .text("Native ancestors");
+
+    const svgRight = selection.append("svg")
+        .attr("width", "15em")
+        .attr("height", legendHeight)
+        .attr("viewBox", [0, 0, "15em", legendHeight]);
+  
+    svgRight.selectAll("circle")
+        .data([1, 2, 3, 4])
+        .join("circle")
+        .attr("cx", d => (rLegend + (d - 1) * rLegend * 3) + "em")
+        .attr("cy", ".5em")
+        .attr("fill", d => color(d + 1))
+        .attr("r", rLegend + "em");
+
+    svgRight.append("text")
+        .attr("x", (rLegend * 3 * 4) + "em")
+        .attr("y", ".85em")
+        .attr("text-anchor", "left")
+        .text("Migrant ancestors");
+}
+```

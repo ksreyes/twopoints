@@ -8,7 +8,6 @@ editor: source
 #| label: setup
 #| echo: false
 #| include: false
-
 library(here)
 source(here::here("R", "functions.R"))
 ```
