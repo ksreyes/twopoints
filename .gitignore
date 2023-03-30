@@ -5,7 +5,7 @@
 .DS_Store
 /.quarto/
 _freeze
-images
+/images/
 R/colors.R
 R/tokens.R
 venv
