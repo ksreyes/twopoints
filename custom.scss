@@ -481,6 +481,10 @@ div.cell, p + div.sourceCode {
   margin-bottom: $paragraph-margin-bottom;
 }
 
+div.quarto-appendix-contents div.cell {
+  margin-bottom: 0;
+}
+
 div.cell + p {                                   /* Par after code cell */
   margin-top: 0 !important;
 }
@@ -844,47 +848,3 @@ a.icon-link:hover {
 /*      MISCELLANEOUS                                                         */
 /******************************************************************************/
 
-span.shaking-text {
-  display: inline-block;
-  padding: 0 .2em;
-  animation: shake .2s infinite;
-}
-
-.fade-text {
-  display: inline-block;
-  margin: 0 .2em;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0) }
-  25% { transform: translateX(1.5px) }
-  50% { transform: translateX(-1.5px) }
-  75% { transform: translateX(1.5px) }
-  100% { transform: translateX(0) }
-}
-
-@keyframes change-opacity-1 {
-  0% { opacity: 0; }
-  25% { opacity: 1; }
-  50% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes change-opacity-2 {
-  0% { opacity: 0; }
-  25% { opacity: 0; }
-  50% { opacity: 1; }
-  75% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes change-opacity-3 {
-  0% { opacity: 0; }
-  25% { opacity: 0; }
-  50% { opacity: 0; }
-  75% { opacity: 1; }
-  100% { opacity: 0; }
-}

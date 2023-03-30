@@ -179,66 +179,79 @@ scores_ojs = transpose(scores_ojs1)
 medians_ojs = transpose(medians_ojs1)
 
 domains = [
-  "Explicit gender–career bias", 
-  "Implicit gender–career bias", 
-  "Positive affect in social media", 
-  "Implicit Asian American bias", 
-  "Political polarization", 
-  "Explicit Asian American bias", 
-  "Ideologically lean Democrat", 
-  "Life satisfaction", 
-  "Negative affect in social media", 
-  "Explicit African American bias", 
-  "Implicit African American bias",
-  "Ideologically lean Republican"
+    "Explicit gender–career bias", 
+    "Implicit gender–career bias", 
+    "Positive affect in social media", 
+    "Implicit Asian American bias", 
+    "Political polarization", 
+    "Explicit Asian American bias", 
+    "Ideologically lean Democrat", 
+    "Life satisfaction", 
+    "Negative affect in social media", 
+    "Explicit African American bias", 
+    "Implicit African American bias",
+    "Ideologically lean Republican"
 ]
 
 viewof median_radio = Inputs.radio(
-  d3.group(medians_ojs, d => d.method), 
-  {key: "All experts", label: html`<b>Median</b>`}
+    d3.group(medians_ojs, d => d.method), 
+    { key: "All experts", label: html`<b>Median</b>` }
 )
+
 viewof mase_range = Inputs.range(
-  [3, d3.extent(scores_ojs, d => d.MASE1_w1)], 
-  {step: .5, value: 25, label: html`<b>MASE max</b>`, format: x => x.toFixed(0)}
+    [3, d3.extent(scores_ojs, d => d.MASE1_w1)], 
+    { step: .5, value: 25, label: html`<b>MASE max</b>`, format: x => x.toFixed(0) }
 )
 
 addTooltips(
-  Plot.plot({
-    marks: [
-      Plot.frame({fill: "#f7f7f7"}),
-      Plot.dot(
-        scores_ojs,
-        {
-          x: "MASE1_w1", y: "domain_long", title: "team_name",
-          r: 7, fill: "method", fillOpacity: 0.5
-        }),
-      Plot.dot(
-        median_radio, 
-        {
-          x: "MASE1_w1", y: "domain_long",
-          r: 7, stroke: "black", strokeWidth: 2
-        })
-    ],
-    x: {
-      label: "Mean absolute scaled error", labelAnchor: "center", 
-      tickSize: 0, grid: false,
-      domain: [0, mase_range]
-    },
-    y: {
-      label: null,
-      tickSize: 0, grid: true, padding: 0,
-      domain: domains
-    },
-    color: { 
-      legend: true, 
-      domain: ["Intuition/theory", "Data-driven", "Hybrid"],
-      range: ["#B13D70", "#7fc6a4", "#4889ab"],
-    },
-    width: 800, height: 450,
-    marginLeft: 215, marginRight: 0, marginBottom: 50,
-    insetLeft: 5, insetTop: 20, insetBottom: 20,
-  })
-)
+    Plot.plot({
+        marks: [
+            Plot.frame({ fill: "#f7f7f7" }),
+            Plot.dot(scores_ojs, {
+                x: "MASE1_w1",
+                y: "domain_long",
+                title: "team_name",
+                r: 7,
+                fill: "method",
+                fillOpacity: 0.5,
+            }),
+            Plot.dot(median_radio, {
+                x: "MASE1_w1",
+                y: "domain_long",
+                r: 7,
+                stroke: "black",
+                strokeWidth: 2,
+            }),
+        ],
+        x: {
+            label: "Mean absolute scaled error",
+            labelAnchor: "center",
+            tickSize: 0,
+            grid: false,
+            domain: [0, mase_range],
+        },
+        y: {
+            label: null,
+            tickSize: 0,
+            grid: true,
+            padding: 0,
+            domain: domains,
+        },
+        color: {
+            legend: true,
+            domain: ["Intuition/theory", "Data-driven", "Hybrid"],
+            range: ["#B13D70", "#7fc6a4", "#4889ab"],
+        },
+        width: 800,
+        height: 450,
+        marginLeft: 215,
+        marginRight: 0,
+        marginBottom: 50,
+        insetLeft: 5,
+        insetTop: 20,
+        insetBottom: 20,
+    })
+);
 ```
 
 It's clear that some variables were harder to forecast than others. The evolution of explicit gender-career bias (i.e. the explicit association of certain genders with certain careers) was forecasted with relatively small errors, whereas support for the Republican Party was forecasted with large errors (few anticipated it to shoot up [!]). Implicit bias against African-Americans stands out as being the one nearly all experts (and non-experts) got wrong: the measure, happily, fell down more than anyone anticipated.
@@ -360,74 +373,96 @@ ojs_define(series_ojs1 = series)
 series_ojs = transpose(series_ojs1)
 
 viewof select = Inputs.select(
-  d3.group(series_ojs, d => d.domain_long), 
-  {label: html`<b>Domain</b>`}
+    d3.group(series_ojs, d => d.domain_long), 
+    { label: html`<b>Domain</b>` }
 )
+
 viewof month_range = Inputs.range(
-  [d3.extent(series_ojs, d => d.month)[0], -3], 
-  {label: html`<b>Months prior</b>`, value: -24, step: 1}
+    [d3.extent(series_ojs, d => d.month)[0], -3], 
+    { label: html`<b>Months prior</b>`, value: -24, step: 1 }
 )
+
 domain_unit = (d3.max(select, d => d.value) - d3.min(select, d => d.value)) / 4
 
 addTooltips(
-  Plot.plot({
-    marks: [
-      Plot.frame({fill: "#f7f7f7"}),
-      Plot.lineY(
-        select.filter(d => d.month > month_range), 
-        {x: "month", y: "value", stroke: "series", strokeWidth: 2.5}
-      ),
-      Plot.dot(
-        select.filter(d => d.month > month_range), 
-        {x: "month", y: "value", title: "value", fill: "series", r: 5, stroke: "white"}
-      ),     
-      Plot.ruleX(
-        [0], 
-        {strokeOpacity: .9, strokeWidth: 1, strokeDasharray: "5,5"}
-      ),
-      Plot.text(
-        select.slice(0, 1), 
-        {
-          text: d => d.domain_long, 
-          textAnchor: "start", frameAnchor: "top-left",
-          fontWeight: "bold", fontSize: 15, dx: 20, dy: 18
-        }),
-      Plot.text(
-        select.slice(0, 1), 
-        {
-          text: d => `Top expert: ${d.team_name}`, 
-          textAnchor: "start", frameAnchor: "top-left",
-          fontSize: 14, dx: 20, dy: 39
-        })
-    ],
-    x: {
-      label: "Month",  labelAnchor: "center", 
-      tickSize: 0
-    },
-    y: {
-      label: null, 
-      ticks: 5, tickSize: 0, 
-      domain: [d3.min(select, d => d.value) - domain_unit, d3.max(select, d => d.value) + domain_unit]
-    },
-    color: {
-      legend: true, 
-      range: ["#bcbcbc", "#B13D70", "#0C6291"]
-    },
-    width: 800, height: 450,
-    insetTop: 20, insetBottom: 20, insetRight: 20, insetLeft: 20,
-    marginBottom: 50, marginLeft: 45, marginRight: 0
-  }),
-  {r: 7.5}
-)
+    Plot.plot({
+        marks: [
+            Plot.frame({ fill: "#f7f7f7" }),
+            Plot.lineY(
+                select.filter((d) => d.month > month_range),
+                { x: "month", y: "value", stroke: "series", strokeWidth: 2.5 }
+            ),
+            Plot.dot(
+                select.filter((d) => d.month > month_range),
+                {
+                    x: "month",
+                    y: "value",
+                    title: "value",
+                    fill: "series",
+                    r: 5,
+                    stroke: "white",
+                }
+            ),
+            Plot.ruleX([0], {
+                strokeOpacity: 0.9,
+                strokeWidth: 1,
+                strokeDasharray: "5,5",
+            }),
+            Plot.text(select.slice(0, 1), {
+                text: (d) => d.domain_long,
+                textAnchor: "start",
+                frameAnchor: "top-left",
+                fontWeight: "bold",
+                fontSize: 15,
+                dx: 20,
+                dy: 18,
+            }),
+            Plot.text(select.slice(0, 1), {
+                text: (d) => `Top expert: ${d.team_name}`,
+                textAnchor: "start",
+                frameAnchor: "top-left",
+                fontSize: 14,
+                dx: 20,
+                dy: 39,
+            }),
+        ],
+        x: {
+            label: "Month",
+            labelAnchor: "center",
+            tickSize: 0,
+        },
+        y: {
+            label: null,
+            ticks: 5,
+            tickSize: 0,
+            domain: [
+                d3.min(select, (d) => d.value) - domain_unit,
+                d3.max(select, (d) => d.value) + domain_unit,
+            ],
+        },
+        color: {
+            legend: true,
+            range: ["#bcbcbc", "#B13D70", "#0C6291"],
+        },
+        width: 800,
+        height: 450,
+        insetTop: 20,
+        insetBottom: 20,
+        insetRight: 20,
+        insetLeft: 20,
+        marginBottom: 50,
+        marginLeft: 45,
+        marginRight: 0,
+    }),
+    { r: 7.5 }
+);
 ```
 
 It's interesting to see how many of these variables underwent a noticeable shift during the period under study. Negative social media affect --- estimated by analyzing tweets --- shot up as people stuck at home viciously argued about everything from masks to Black Lives Matter. The conversations around race following the murder of George Floyd translated to drops in the stereotyping of African-Americans and Asian-Americans (though it should be noted that these are based on [online surveys](https://implicit.harvard.edu/implicit/iatdetails.html) and may suffer heavily from selection bias). Forecasts from top-performing experts actually did pretty well; particularly impressive was **Erebuni**'s anticipation of the bump in Republican support. Incidentally, all their members were non-Americans. 
 
 What to make of these results? Perhaps it's a little unfair to judge social scientists too harshly. It was a once-in-a-century pandemic, no one had any models for this. But at the same time, isn't it precisely during periods of great uncertainty when guidance from domain experts is needed the most? Don't tell me now that you were just a bunch of chimps with a dart! `r end_mark()`
 
-<br>
-<hr>
-**Appendix: Observable JS functions**
+## Appendix: D3 / Observable code {.appendix}
 
 ```{ojs}
 //| code-fold: true
@@ -435,149 +470,135 @@ What to make of these results? Perhaps it's a little unfair to judge social scie
 // Source: https://observablehq.com/@mkfreeman/plot-tooltip
 
 addTooltips = (chart, styles) => {
-  const stroke_styles = { stroke: "blue", "stroke-width": 3 };
-  const fill_styles = { fill: "blue", opacity: 0.5 };
+    const stroke_styles = { stroke: "blue", "stroke-width": 3 };
+    const fill_styles = { fill: "blue", opacity: 0.5 };
 
-  // Workaround if it's in a figure
-  const type = d3.select(chart).node().tagName;
-  let wrapper =
-    type === "FIGURE" ? d3.select(chart).select("svg") : d3.select(chart);
+    // Workaround if it's in a figure
+    const type = d3.select(chart).node().tagName;
+    let wrapper =
+        type === "FIGURE" ? d3.select(chart).select("svg") : d3.select(chart);
 
-  // Workaround if there's a legend....
-  const svgs = d3.select(chart).selectAll("svg");
-  if (svgs.size() > 1) wrapper = d3.select([...svgs].pop());
-  wrapper.style("overflow", "visible"); // to avoid clipping at the edges
+    // Workaround if there's a legend....
+    const svgs = d3.select(chart).selectAll("svg");
+    if (svgs.size() > 1) wrapper = d3.select([...svgs].pop());
+    wrapper.style("overflow", "visible"); // to avoid clipping at the edges
 
-  // Set pointer events to visibleStroke if the fill is none (e.g., if its a line)
-  wrapper.selectAll("path").each(function (data, index, nodes) {
-    // For line charts, set the pointer events to be visible stroke
-    if (
-      d3.select(this).attr("fill") === null ||
-      d3.select(this).attr("fill") === "none"
-    ) {
-      d3.select(this).style("pointer-events", "visibleStroke");
-      if (styles === undefined) styles = stroke_styles;
-    }
-  });
-  
-  if (styles === undefined) styles = fill_styles;
+    // Set pointer events to visibleStroke if the fill is none (e.g., if its a line)
+    wrapper.selectAll("path").each(function (data, index, nodes) {
+        // For line charts, set the pointer events to be visible stroke
+        if (
+            d3.select(this).attr("fill") === null ||
+            d3.select(this).attr("fill") === "none"
+        ) {
+            d3.select(this).style("pointer-events", "visibleStroke");
+            if (styles === undefined) styles = stroke_styles;
+        }
+    });
 
-  const tip = wrapper
-    .selectAll(".hover")
-    .data([1])
-    .join("g")
-    .attr("class", "hover")
-    .style("pointer-events", "none")
-    .style("text-anchor", "middle");
+    if (styles === undefined) styles = fill_styles;
 
-  // Add a unique id to the chart for styling
-  const id = id_generator();
+    const tip = wrapper
+        .selectAll(".hover")
+        .data([1])
+        .join("g")
+        .attr("class", "hover")
+        .style("pointer-events", "none")
+        .style("text-anchor", "middle");
 
-  // Add the event listeners
-  d3.select(chart).classed(id, true); // using a class selector so that it doesn't overwrite the ID
-  wrapper.selectAll("title").each(function () {
-    // Get the text out of the title, set it as an attribute on the parent, and remove it
-    const title = d3.select(this); // title element that we want to remove
-    const parent = d3.select(this.parentNode); // visual mark on the screen
-    const t = title.text();
-    if (t) {
-      parent.attr("__title", t).classed("has-title", true);
-      title.remove();
-    }
-    // Mouse events
-    parent
-      .on("pointerenter pointermove", function (event) {
-        const text = d3.select(this).attr("__title");
-        const pointer = d3.pointer(event, wrapper.node());
-        if (text) tip.call(hover, pointer, text.split("\n"));
-        else tip.selectAll("*").remove();
+    // Add a unique id to the chart for styling
+    const id = id_generator();
 
-        // Raise it
-        d3.select(this).raise();
-        // Keep within the parent horizontally
-        const tipSize = tip.node().getBBox();
-        if (pointer[0] + tipSize.x < 0)
-          tip.attr(
-            "transform",
-            `translate(${tipSize.width / 2}, ${pointer[1] + 7})`
-          );
-        else if (pointer[0] + tipSize.width / 2 > wrapper.attr("width"))
-          tip.attr(
-            "transform",
-            `translate(${wrapper.attr("width") - tipSize.width / 2}, ${
-              pointer[1] + 7
-            })`
-          );
-      })
-      .on("pointerout", function (event) {
-        tip.selectAll("*").remove();
-        // Lower it!
-        d3.select(this).lower();
-      });
-  });
+    // Add the event listeners
+    d3.select(chart).classed(id, true); // using a class selector so that it doesn't overwrite the ID
+    wrapper.selectAll("title").each(function () {
+        // Get the text out of the title, set it as an attribute on the parent, and remove it
+        const title = d3.select(this); // title element that we want to remove
+        const parent = d3.select(this.parentNode); // visual mark on the screen
+        const t = title.text();
+        if (t) {
+            parent.attr("__title", t).classed("has-title", true);
+            title.remove();
+        }
+        // Mouse events
+        parent
+            .on("pointerenter pointermove", function (event) {
+                const text = d3.select(this).attr("__title");
+                const pointer = d3.pointer(event, wrapper.node());
+                if (text) tip.call(hover, pointer, text.split("\n"));
+                else tip.selectAll("*").remove();
 
-  // Remove the tip if you tap on the wrapper (for mobile)
-  wrapper.on("touchstart", () => tip.selectAll("*").remove());
+                // Raise it
+                d3.select(this).raise();
+                // Keep within the parent horizontally
+                const tipSize = tip.node().getBBox();
+                if (pointer[0] + tipSize.x < 0)
+                    tip.attr(
+                        "transform",
+                        `translate(${tipSize.width / 2}, ${pointer[1] + 7})`
+                    );
+                else if (pointer[0] + tipSize.width / 2 > wrapper.attr("width"))
+                    tip.attr(
+                        "transform",
+                        `translate(${
+                            wrapper.attr("width") - tipSize.width / 2
+                        }, ${pointer[1] + 7})`
+                    );
+            })
+            .on("pointerout", function (event) {
+                tip.selectAll("*").remove();
+                // Lower it!
+                d3.select(this).lower();
+            });
+    });
 
-  // Define the styles
-  chart.appendChild(html`<style>
-  .${id} .has-title { cursor: pointer;  pointer-events: all; }
-  .${id} .has-title:hover { ${Object.entries(styles).map(([key, value]) => `${key}: ${value};`).join(" ")} }`);
+    // Remove the tip if you tap on the wrapper (for mobile)
+    wrapper.on("touchstart", () => tip.selectAll("*").remove());
 
-  return chart;
-}
-```
+    // Define the styles
+    chart.appendChild(html`<style>
+    .${id} .has-title { cursor: pointer;  pointer-events: all; }
+    .${id} .has-title:hover { ${Object.entries(styles).map(([key, value]) => `${key}: ${value};`).join(" ")} }`);
 
-```{ojs}
-//| code-fold: true
-
-// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+    return chart;
+};
 
 hover = (tip, pos, text) => {
-  const side_padding = 10;
-  const vertical_padding = 5;
-  const vertical_offset = 25;
+    const side_padding = 10;
+    const vertical_padding = 5;
+    const vertical_offset = 25;
 
-  // Empty it out
-  tip.selectAll("*").remove();
+    // Empty it out
+    tip.selectAll("*").remove();
 
-  // Append the text
-  tip
-    .style("text-anchor", "middle")
-    .style("pointer-events", "none")
-    .attr("transform", `translate(${pos[0]}, ${pos[1] + 7})`)
-    .selectAll("text")
-    .data(text)
-    .join("text")
-    .style("dominant-baseline", "ideographic")
-    .text((d) => d)
-    .attr("y", (d, i) => (i - (text.length - 1)) * 15 - vertical_offset)
-    .style("font-weight", (d, i) => (i === 0 ? "bold" : "normal"));
+    // Append the text
+    tip.style("text-anchor", "middle")
+        .style("pointer-events", "none")
+        .attr("transform", `translate(${pos[0]}, ${pos[1] + 7})`)
+        .selectAll("text")
+        .data(text)
+        .join("text")
+        .style("dominant-baseline", "ideographic")
+        .text((d) => d)
+        .attr("y", (d, i) => (i - (text.length - 1)) * 15 - vertical_offset)
+        .style("font-weight", (d, i) => (i === 0 ? "bold" : "normal"));
 
-  const bbox = tip.node().getBBox();
+    const bbox = tip.node().getBBox();
 
-  // Add a rectangle (as background)
-  tip
-    .append("rect")
-    .attr("y", bbox.y - vertical_padding)
-    .attr("x", bbox.x - side_padding)
-    .attr("width", bbox.width + side_padding * 2)
-    .attr("height", bbox.height + vertical_padding * 2)
-    .style("fill", "white")
-    .style("stroke", "#d3d3d3")
-    .lower();
-}
-```
-
-```{ojs}
-//| code-fold: true
-
-// Source: https://observablehq.com/@mkfreeman/plot-tooltip
+    // Add a rectangle (as background)
+    tip.append("rect")
+        .attr("y", bbox.y - vertical_padding)
+        .attr("x", bbox.x - side_padding)
+        .attr("width", bbox.width + side_padding * 2)
+        .attr("height", bbox.height + vertical_padding * 2)
+        .style("fill", "white")
+        .style("stroke", "#d3d3d3")
+        .lower();
+};
 
 id_generator = () => {
-  var S4 = function () {
-    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-  };
-  return "a" + S4() + S4();
-}
+    var S4 = function () {
+        return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+    };
+    return "a" + S4() + S4();
+};
 ```

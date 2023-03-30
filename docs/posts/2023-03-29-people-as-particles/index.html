@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.294">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,9 +18,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,43 +48,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -150,6 +121,52 @@ cookieconsent.run({
 });
 </script> 
   
+<style>
+span.shaking-text {
+  display: inline-block;
+  padding: 0 .2em;
+  animation: shake .2s infinite;
+}
+
+.fade-text {
+  display: inline-block;
+  margin: 0 .1em;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(1.5px) }
+  50% { transform: translateX(-1.5px) }
+  75% { transform: translateX(1.5px) }
+  100% { transform: translateX(0) }
+}
+
+@keyframes change-opacity-1 {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 0; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes change-opacity-2 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes change-opacity-3 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+</style>
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
@@ -174,6 +191,7 @@ cookieconsent.run({
     <span class="navbar-title">Two Points Make a Line</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -184,25 +202,26 @@ cookieconsent.run({
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../subscribe.html">
+    <a class="nav-link" href="../../subscribe.html" rel="" target="">
  <span class="menu-text">Subscribe</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ksreyes/twopoints"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ksreyes/twopoints" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -244,130 +263,52 @@ cookieconsent.run({
 </header>
 
 <p>Manila is the densest city on Earth,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> fitting 1.8 million people into a 43 square-kilometer crucible. The 16 other cities that constitute Metro Manila, the Philippine capital, are extraordinarily crowded as well, resulting in an overall density of 22,000/km². This is twice that of New York and almost three times that of Singapore. Dysfunctional urban planning has failed to cope. Suburbs-style neighborhoods and private golf courses <a href="https://twitter.com/pfkahanapINQ/status/1605847613089058816">sprawl incongruously</a> in city centers while open green spaces <a href="https://manilastandard.net/spotlight/ms-36th-anniversary-issue-towards-a-sustainable-future/314303715/claiming-back-the-city.html">remain limited</a>. The state of <a href="https://www.bbc.com/news/world-asia-49983397">transportation</a> <a href="https://newsinfo.inquirer.net/1698050/public-transportation-mobility-readiness-in-manila-among-worlds-worst">is</a> <a href="https://twitter.com/PhilippineStar/status/1577309804833693697/photo/1">dystopian</a>. A much needed <a href="https://twopoints.blog/posts/2022-11-08-metro-manila-subway/">subway</a> intended for partial operability <a href="https://newsinfo.inquirer.net/1488867/metro-manila-subways-partial-operability-targeted-in-1st-quarter-of-2022">in 2022</a> only started construction <a href="https://newsinfo.inquirer.net/1714541/metro-manila-subway-construction-begins">last January</a>.</p>
-<div class="instagram-container">
-<blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-<div style="padding:16px;">
-<a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-<div style=" display: flex; flex-direction: row; align-items: center;">
-<div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
-
-</div>
-<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
-
-</div>
-<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
-
-</div>
-</div>
-</div>
-<div style="padding: 19% 0;">
-
-</div>
-<div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-<svg width="50px" height="50px" viewbox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xlink="https://www.w3.org/1999/xlink">
-<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g>
-</svg>
-</div>
-<div style="padding-top: 8px;">
-<div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
-View this post on Instagram
-</div>
-</div>
-<div style="padding: 12.5% 0;">
-
-</div>
-<div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
-<div>
-<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
-
-</div>
-<div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
-
-</div>
-<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
-
-</div>
-</div>
-<div style="margin-left: 8px;">
-<div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
-
-</div>
-<div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
-
-</div>
-</div>
-<div style="margin-left: auto;">
-<div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
-
-</div>
-<div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
-
-</div>
-<div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
-
-</div>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
-<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
-
-</div>
-<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
-
-</div>
-</div>
-</a>
-<p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
-<a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Jilson Tiu (<span class="citation" data-cites="jilson.tiu">@jilson.tiu</span>)</a>
-</p>
-</div>
-</blockquote>
-</div>
-<script async="" src="//www.instagram.com/embed.js"></script>
+<div class="instagram-container"> <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewbox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Jilson Tiu (@jilson.tiu)</a></p></div></blockquote></div> <script async="" src="//www.instagram.com/embed.js"></script>
 <p>Living in such a crowded place means shoving, squeezing, and cartwheeling your way through the chaos of gridlocked streets and packed trains, a daily collision of body against body that brings to mind Radiohead at their most anxious: “<a href="https://www.youtube.com/watch?v=hTzRliW3iFs">everyone is <em>so</em> <span class="shaking-text">near</span></a>”. It’s an experience that isn’t quite captured by the metric “22,000/km²”. I wanted to make this number more evocative through a visualization, but how? I’ve seen population density plotted on bar charts, on choropleth maps, even on a <a href="https://www.vox.com/2015/1/2/7480993/population-density-visualized">3D histogram</a>, but none of these, I feel, do justice to the absolute pressure cooker that is Manila.</p>
 <p>I decided to try something novel. I call it a particles chart, and it consists of a D3 force simulation of balls bouncing off each other in a box. It’s relatively simple to construct — I am indebted to <a href="https://github.com/vasturiano">Vasco Asturiano</a>’s modules in particular — yet it captures so effectively what “densest city on the planet” means. It means countless agitated bodies jockeying and jittering in a tight space, searching endlessly for room to breathe.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1" data-startfrom="36" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 35;"><span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="text-align:center"&gt;</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h3 class="ojs-title"&gt;Fancy bumping into you&lt;/h3&gt;</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span class="ojs-subtitle"&gt;Population density in Metro Manila and major global cities&lt;/span&gt;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>viewof citySelectPH <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">group</span>(densityManila<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">city</span>)<span class="op">,</span> {</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="dt">label</span><span class="op">:</span> <span class="st">"Pick a Metro Manila city..."</span><span class="op">,</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="dt">key</span><span class="op">:</span> <span class="st">"Manila"</span><span class="op">,</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="dt">description</span><span class="op">:</span> <span class="st">"Pick a Metro Manila city..."</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>viewof citySelect <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">group</span>(densityOthers<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">city</span>)<span class="op">,</span> {</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="dt">label</span><span class="op">:</span> <span class="st">"...and compare with a global city"</span><span class="op">,</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        <span class="dt">key</span><span class="op">:</span> <span class="st">"New York"</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> container <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)<span class="op">;</span></span>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="39" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="text-align:center"&gt;</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h3 class="ojs-title"&gt;Fancy bumping into you&lt;/h3&gt;</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span class="ojs-subtitle"&gt;Population density in Metro Manila and major global cities&lt;/span&gt;</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>viewof citySelectPH <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">group</span>(densityManila<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">city</span>)<span class="op">,</span> {</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="dt">label</span><span class="op">:</span> <span class="st">"Pick a Metro Manila city..."</span><span class="op">,</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="dt">key</span><span class="op">:</span> <span class="st">"Manila"</span><span class="op">,</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="dt">description</span><span class="op">:</span> <span class="st">"Pick a Metro Manila city..."</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>viewof citySelect <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">group</span>(densityOthers<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">city</span>)<span class="op">,</span> {</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        <span class="dt">label</span><span class="op">:</span> <span class="st">"...and compare with a global city"</span><span class="op">,</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        <span class="dt">key</span><span class="op">:</span> <span class="st">"New York"</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    })</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> containerLegend <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"display: flex; justify-content: center"</span>)<span class="op">;</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    containerLegend<span class="op">.</span><span class="fu">call</span>(legend)<span class="op">;</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> containerChart <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"display: flex; justify-content: space-between"</span>)<span class="op">;</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    containerChart<span class="op">.</span><span class="fu">call</span>(particles<span class="op">,</span> citySelectPH<span class="op">,</span> <span class="st">"10px"</span>)<span class="op">;</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    containerChart<span class="op">.</span><span class="fu">call</span>(particles<span class="op">,</span> citySelect)<span class="op">;</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="text-align:center"&gt;</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span&gt;Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's &lt;a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank"&gt;World Migration Matrix&lt;/a&gt;.&lt;/span&gt;</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> container <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)<span class="op">;</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> containerLegend <span class="op">=</span> container</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"display: flex; justify-content: center"</span>)<span class="op">;</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    containerLegend<span class="op">.</span><span class="fu">call</span>(legend)<span class="op">;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> containerChart <span class="op">=</span> container</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"display: flex; justify-content: space-between"</span>)<span class="op">;</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    containerChart<span class="op">.</span><span class="fu">call</span>(particles<span class="op">,</span> citySelectPH<span class="op">,</span> <span class="st">"10px"</span>)<span class="op">;</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    containerChart<span class="op">.</span><span class="fu">call</span>(particles<span class="op">,</span> citySelect)<span class="op">;</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div style="text-align:center"&gt;</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span&gt;Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's &lt;a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank"&gt;World Migration Matrix&lt;/a&gt;.&lt;/span&gt;</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -421,72 +362,72 @@ View this post on Instagram
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2" data-startfrom="85" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Generate points</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> widthFishbowl <span class="op">=</span> width</span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> rFishbowl <span class="op">=</span> widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="bn">01</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> vFishbowl <span class="op">=</span> rFishbowl <span class="op">*</span> <span class="op">.</span><span class="dv">1</span></span>
+<div class="sourceCode cell-code" id="cb2" data-startfrom="90" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 89;"><span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> dummynodes <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">length</span><span class="op">:</span> <span class="dv">300</span> }<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>            <span class="dt">x</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>((widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="bn">05</span>)<span class="op">,</span> (widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="dv">95</span>))()<span class="op">,</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>            <span class="dt">y</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(height <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">,</span> height <span class="op">*</span> <span class="op">.</span><span class="dv">95</span>)()<span class="op">,</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>            <span class="dt">r</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomNormal</span>(rMean<span class="op">,</span> rSD)()<span class="op">,</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vx</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vy</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>            <span class="dt">color</span><span class="op">:</span> <span class="st">"#eeeeee"</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>        })</span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>    dummynodes<span class="op">.</span><span class="fu">push</span>(</span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">x</span><span class="op">:</span> widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> height <span class="op">*</span> <span class="op">.</span><span class="dv">95</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> rFishbowl<span class="op">,</span> <span class="dt">vx</span><span class="op">:</span> vFishbowl<span class="op">,</span> <span class="dt">vy</span><span class="op">:</span> <span class="op">-</span>vFishbowl<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"#4889ab"</span> }<span class="op">,</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">x</span><span class="op">:</span> widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="dv">95</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> height <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> rFishbowl<span class="op">,</span> <span class="dt">vx</span><span class="op">:</span> <span class="op">-</span>vFishbowl<span class="op">,</span> <span class="dt">vy</span><span class="op">:</span> vFishbowl<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"#C85B89"</span> }</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Generate points</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> widthFishbowl <span class="op">=</span> width</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> rFishbowl <span class="op">=</span> widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="bn">01</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> vFishbowl <span class="op">=</span> rFishbowl <span class="op">*</span> <span class="op">.</span><span class="dv">1</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> dummynodes <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">length</span><span class="op">:</span> <span class="dv">300</span> }<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>            <span class="dt">x</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>((widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="bn">05</span>)<span class="op">,</span> (widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="dv">95</span>))()<span class="op">,</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>            <span class="dt">y</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(height <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">,</span> height <span class="op">*</span> <span class="op">.</span><span class="dv">95</span>)()<span class="op">,</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>            <span class="dt">r</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomNormal</span>(rMean<span class="op">,</span> rSD)()<span class="op">,</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vx</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vy</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>            <span class="dt">color</span><span class="op">:</span> <span class="st">"#eeeeee"</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>        })</span>
 <span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
 <span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> nodes <span class="op">=</span> dummynodes<span class="op">.</span><span class="fu">map</span>(<span class="bu">Object</span><span class="op">.</span><span class="at">create</span>)<span class="op">;</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Panel</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> container <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)</span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"display: flex; justify-content: center"</span>)<span class="op">;</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> widthFishbowl)</span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> widthFishbowl<span class="op">,</span> height])</span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"max-width: 100%; height: auto; height: intrinsic"</span>)<span class="op">;</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Chart box</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> widthFishbowl)</span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#f7f7f7"</span>)<span class="op">;</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> node <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">data</span>(nodes)</span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span>)</span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">color</span>)<span class="op">;</span></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Define forces</span></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> simulation <span class="op">=</span> d3<span class="op">.</span><span class="fu">forceSimulation</span>(nodes)</span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"bounce"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceBounce</span>()</span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="op">.</span><span class="dv">5</span>))</span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"surface"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceSurface</span>()</span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">surfaces</span>(<span class="fu">bbox</span>([[<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [widthFishbowl<span class="op">,</span> height]]))</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">oneWay</span>(<span class="kw">true</span>)</span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">'limit'</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceLimit</span>()</span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">x0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">x1</span>(widthFishbowl)<span class="op">.</span><span class="fu">y0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">y1</span>(height))</span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">alphaDecay</span>(<span class="dv">0</span>)</span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">velocityDecay</span>(<span class="dv">0</span>)</span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">on</span>(<span class="st">"tick"</span><span class="op">,</span> () <span class="kw">=&gt;</span> { node<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>) })<span class="op">;</span></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()</span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>    dummynodes<span class="op">.</span><span class="fu">push</span>(</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">x</span><span class="op">:</span> widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> height <span class="op">*</span> <span class="op">.</span><span class="dv">95</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> rFishbowl<span class="op">,</span> <span class="dt">vx</span><span class="op">:</span> vFishbowl<span class="op">,</span> <span class="dt">vy</span><span class="op">:</span> <span class="op">-</span>vFishbowl<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"#4889ab"</span> }<span class="op">,</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">x</span><span class="op">:</span> widthFishbowl <span class="op">*</span> <span class="op">.</span><span class="dv">95</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> height <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> rFishbowl<span class="op">,</span> <span class="dt">vx</span><span class="op">:</span> <span class="op">-</span>vFishbowl<span class="op">,</span> <span class="dt">vy</span><span class="op">:</span> vFishbowl<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"#C85B89"</span> }</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> nodes <span class="op">=</span> dummynodes<span class="op">.</span><span class="fu">map</span>(<span class="bu">Object</span><span class="op">.</span><span class="at">create</span>)<span class="op">;</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Panel</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> container <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"display: flex; justify-content: center"</span>)<span class="op">;</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> widthFishbowl)</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> widthFishbowl<span class="op">,</span> height])</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"max-width: 100%; height: auto; height: intrinsic"</span>)<span class="op">;</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Chart box</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> widthFishbowl)</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#f7f7f7"</span>)<span class="op">;</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> node <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">data</span>(nodes)</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span>)</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">color</span>)<span class="op">;</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Define forces</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> simulation <span class="op">=</span> d3<span class="op">.</span><span class="fu">forceSimulation</span>(nodes)</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"bounce"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceBounce</span>()</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="op">.</span><span class="dv">5</span>))</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"surface"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceSurface</span>()</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">surfaces</span>(<span class="fu">bbox</span>([[<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [widthFishbowl<span class="op">,</span> height]]))</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">oneWay</span>(<span class="kw">true</span>)</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">'limit'</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceLimit</span>()</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">x0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">x1</span>(widthFishbowl)<span class="op">.</span><span class="fu">y0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">y1</span>(height))</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">alphaDecay</span>(<span class="dv">0</span>)</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">velocityDecay</span>(<span class="dv">0</span>)</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">on</span>(<span class="st">"tick"</span><span class="op">,</span> () <span class="kw">=&gt;</span> { node<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>) })<span class="op">;</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
@@ -498,168 +439,170 @@ View this post on Instagram
 We’re just two lost souls swimming in a fish bowl<br><span class="fade-text" style="animation-name:change-opacity-1;">year</span> <span class="fade-text" style="animation-name:change-opacity-2;">after</span> <span class="fade-text" style="animation-name:change-opacity-3;">year</span>
 </p>
 <p style="text-align:center">
-<img src="../../images/logo-icon.png" class="endmark img-fluid">
+<img src="../../images/logo-icon.png" class="endmark quarto-discovered-preview-image img-fluid">
 </p>
-<br>
-<hr>
-<p><strong>Appendix: D3 / Observable code</strong></p>
+
+
+
+<div id="quarto-appendix" class="default"><section id="appendix-d3-observable-code" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Appendix: D3 / Observable code</h2><div class="quarto-appendix-contents">
+
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3" data-startfrom="167" data-source-offset="-16"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 166;"><span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>density <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'../../datasets/particles/density.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
-<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>densityManila <span class="op">=</span> density<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country</span> <span class="op">===</span> <span class="st">"Philippines"</span>)<span class="op">;</span></span>
-<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>densityOthers <span class="op">=</span> density<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country</span> <span class="op">!==</span> <span class="st">"Philippines"</span>)<span class="op">;</span></span>
-<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>groupAssign <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'../../datasets/particles/group_assign.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
+<div class="sourceCode cell-code" id="cb3" data-startfrom="170" data-source-offset="-17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 169;"><span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">'d3@7'</span><span class="op">,</span> <span class="st">'d3-force-bounce'</span><span class="op">,</span> <span class="st">'d3-force-surface'</span><span class="op">,</span> <span class="st">'d3-force-limit'</span>)<span class="op">;</span></span>
 <span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="co">// Dependencies</span></span>
-<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">'d3@7'</span><span class="op">,</span> <span class="st">'d3-force-bounce'</span><span class="op">,</span> <span class="st">'d3-force-surface'</span><span class="op">,</span> <span class="st">'d3-force-limit'</span>)<span class="op">;</span></span>
-<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="co">// Parameters</span></span>
-<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span><span class="op">;</span>                <span class="co">// Height of particle chart</span></span>
-<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>rMean <span class="op">=</span> (width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">/</span> <span class="dv">40</span>) <span class="op">/</span> <span class="dv">2</span><span class="op">;</span>      <span class="co">// Mean radius</span></span>
-<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a>rSD <span class="op">=</span> rMean <span class="op">*</span> <span class="op">.</span><span class="dv">75</span><span class="op">;</span>                   <span class="co">// SD radius</span></span>
-<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>velocity <span class="op">=</span> rMean <span class="op">*</span> <span class="op">.</span><span class="dv">8</span><span class="op">;</span>               <span class="co">// Particle velocity</span></span>
-<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>legendHeight <span class="op">=</span> width <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">;</span>          <span class="co">// Legend height</span></span>
-<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>rLegend <span class="op">=</span> <span class="op">.</span><span class="dv">5</span><span class="op">;</span>                        <span class="co">// Legend radius</span></span>
-<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"#4889ab"</span><span class="op">,</span> <span class="st">"#7fc6a4"</span><span class="op">,</span> <span class="st">"#FCB13B"</span><span class="op">,</span> <span class="st">"#B13D70"</span><span class="op">,</span> <span class="st">"#f697bb"</span>]<span class="op">;</span></span>
-<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleOrdinal</span>()</span>
-<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>])</span>
-<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>(colors)<span class="op">;</span></span>
-<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> ([[x1<span class="op">,</span> y1]<span class="op">,</span> [x2<span class="op">,</span> y2]]) <span class="kw">=&gt;</span> [</span>
-<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 } }<span class="op">,</span></span>
-<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 } }<span class="op">,</span></span>
-<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 } }<span class="op">,</span></span>
-<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 } }</span>
-<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
-<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a><span class="co">// Function to generate particles for a given city</span></span>
-<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">genpoints</span>(city) {</span>
-<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> density <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(city[<span class="dv">0</span>]<span class="op">.</span><span class="at">density</span> <span class="op">/</span> <span class="dv">100</span>)<span class="op">;</span></span>
-<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groupAssignCity <span class="op">=</span> groupAssign<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">city</span> <span class="op">===</span> city[<span class="dv">0</span>]<span class="op">.</span><span class="at">city</span>)<span class="op">;</span></span>
-<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> counts <span class="op">=</span> groupAssignCity<span class="op">.</span><span class="fu">map</span>(row <span class="kw">=&gt;</span> row<span class="op">.</span><span class="at">points_ingroup</span>)<span class="op">;</span></span>
-<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groups <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">;</span></span>
-<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groupArray <span class="op">=</span> counts<span class="op">.</span><span class="fu">flatMap</span>((count<span class="op">,</span> i) <span class="kw">=&gt;</span></span>
-<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a>        <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> count }<span class="op">,</span> () <span class="kw">=&gt;</span> groups[i])</span>
-<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
-<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> points <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(</span>
-<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">length</span><span class="op">:</span> density }<span class="op">,</span></span>
-<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a>        (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
-<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a>            <span class="dt">x</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>((width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">*</span> <span class="op">.</span><span class="dv">15</span>)<span class="op">,</span> (width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">*</span> <span class="op">.</span><span class="dv">85</span>))()<span class="op">,</span></span>
-<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a>            <span class="dt">y</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(height <span class="op">*</span> <span class="op">.</span><span class="dv">15</span><span class="op">,</span> height <span class="op">*</span> <span class="op">.</span><span class="dv">85</span>)()<span class="op">,</span></span>
-<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a>            <span class="dt">r</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomNormal</span>(rMean<span class="op">,</span> rSD)()<span class="op">,</span></span>
-<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vx</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
-<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vy</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
-<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>            <span class="dt">group</span><span class="op">:</span> groupArray[i]</span>
-<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a>        })</span>
-<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
-<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> points<span class="op">;</span></span>
-<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="co">// Import data</span></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>density <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'../../datasets/particles/density.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>densityManila <span class="op">=</span> density<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country</span> <span class="op">===</span> <span class="st">"Philippines"</span>)<span class="op">;</span></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>densityOthers <span class="op">=</span> density<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country</span> <span class="op">!==</span> <span class="st">"Philippines"</span>)<span class="op">;</span></span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>groupAssign <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">'../../datasets/particles/group_assign.csv'</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a><span class="co">// Parameters</span></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span><span class="op">;</span>                <span class="co">// Height of particle chart</span></span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>rMean <span class="op">=</span> (width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">/</span> <span class="dv">40</span>) <span class="op">/</span> <span class="dv">2</span><span class="op">;</span>      <span class="co">// Mean radius</span></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>rSD <span class="op">=</span> rMean <span class="op">*</span> <span class="op">.</span><span class="dv">75</span><span class="op">;</span>                   <span class="co">// SD radius</span></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>velocity <span class="op">=</span> rMean <span class="op">*</span> <span class="op">.</span><span class="dv">8</span><span class="op">;</span>               <span class="co">// Particle velocity</span></span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>legendHeight <span class="op">=</span> width <span class="op">*</span> <span class="op">.</span><span class="bn">05</span><span class="op">;</span>          <span class="co">// Legend height</span></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a>rLegend <span class="op">=</span> <span class="op">.</span><span class="dv">5</span><span class="op">;</span>                        <span class="co">// Legend radius</span></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"#4889ab"</span><span class="op">,</span> <span class="st">"#7fc6a4"</span><span class="op">,</span> <span class="st">"#FCB13B"</span><span class="op">,</span> <span class="st">"#B13D70"</span><span class="op">,</span> <span class="st">"#f697bb"</span>]<span class="op">;</span></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleOrdinal</span>()</span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>])</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">range</span>(colors)<span class="op">;</span></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> ([[x1<span class="op">,</span> y1]<span class="op">,</span> [x2<span class="op">,</span> y2]]) <span class="kw">=&gt;</span> [</span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 } }<span class="op">,</span></span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 } }<span class="op">,</span></span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y2 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 } }<span class="op">,</span></span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">from</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x2<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 }<span class="op">,</span> <span class="dt">to</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> x1<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y1 } }</span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a><span class="co">// Function to generate particles for a given city</span></span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">genpoints</span>(city) {</span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> density <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(city[<span class="dv">0</span>]<span class="op">.</span><span class="at">density</span> <span class="op">/</span> <span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groupAssignCity <span class="op">=</span> groupAssign<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">city</span> <span class="op">===</span> city[<span class="dv">0</span>]<span class="op">.</span><span class="at">city</span>)<span class="op">;</span></span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> counts <span class="op">=</span> groupAssignCity<span class="op">.</span><span class="fu">map</span>(row <span class="kw">=&gt;</span> row<span class="op">.</span><span class="at">points_ingroup</span>)<span class="op">;</span></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groups <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">;</span></span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> groupArray <span class="op">=</span> counts<span class="op">.</span><span class="fu">flatMap</span>((count<span class="op">,</span> i) <span class="kw">=&gt;</span></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>        <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> count }<span class="op">,</span> () <span class="kw">=&gt;</span> groups[i])</span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> points <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(</span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">length</span><span class="op">:</span> density }<span class="op">,</span></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a>        (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>            <span class="dt">x</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>((width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">*</span> <span class="op">.</span><span class="dv">15</span>)<span class="op">,</span> (width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">*</span> <span class="op">.</span><span class="dv">85</span>))()<span class="op">,</span></span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a>            <span class="dt">y</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(height <span class="op">*</span> <span class="op">.</span><span class="dv">15</span><span class="op">,</span> height <span class="op">*</span> <span class="op">.</span><span class="dv">85</span>)()<span class="op">,</span></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>            <span class="dt">r</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomNormal</span>(rMean<span class="op">,</span> rSD)()<span class="op">,</span></span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vx</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a>            <span class="dt">vy</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">randomUniform</span>(<span class="op">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span>)() <span class="op">*</span> velocity<span class="op">,</span></span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a>            <span class="dt">group</span><span class="op">:</span> groupArray[i]</span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>    )<span class="op">;</span></span>
 <span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a><span class="co">// Function to generate particles chart</span></span>
-<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">particles</span>(selection<span class="op">,</span> city<span class="op">,</span> margin) {</span>
-<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Read data</span></span>
-<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> nodes <span class="op">=</span> <span class="fu">genpoints</span>(city)<span class="op">.</span><span class="fu">map</span>(<span class="bu">Object</span><span class="op">.</span><span class="at">create</span>)<span class="op">;</span></span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> points<span class="op">;</span></span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="co">// Function to generate particles chart</span></span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">particles</span>(selection<span class="op">,</span> city<span class="op">,</span> margin) {</span>
 <span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Panel</span></span>
-<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> selection<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
-<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span>)</span>
-<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">*</span> <span class="fl">1.1</span>)</span>
-<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span><span class="op">,</span> height <span class="op">*</span> <span class="fl">1.1</span>])</span>
-<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"max-width: 100%; height: auto; height: intrinsic"</span>)<span class="op">;</span></span>
-<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (margin <span class="op">!==</span> <span class="kw">undefined</span>) svg<span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="vs">`margin-right: </span><span class="sc">${</span>margin<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Chart box</span></span>
-<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
-<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span>)</span>
-<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
-<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#f7f7f7"</span>)</span>
-<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#bcbcbc"</span>)</span>
-<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Bottom label</span></span>
-<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> densityStat <span class="op">=</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">",.2r"</span>)(city[<span class="dv">0</span>]<span class="op">.</span><span class="at">density</span>)<span class="op">;</span></span>
-<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
-<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">/</span> <span class="dv">2</span>)</span>
-<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> height <span class="op">*</span> <span class="fl">1.075</span>)</span>
-<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
-<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>densityStat<span class="sc">}</span><span class="vs"> people/km²`</span>)<span class="op">;</span></span>
-<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Draw particles</span></span>
-<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> node <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
-<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">data</span>(nodes)</span>
-<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
-<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
-<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span>)</span>
-<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> (d) <span class="kw">=&gt;</span> <span class="fu">color</span>(d<span class="op">.</span><span class="at">group</span>))<span class="op">;</span></span>
-<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Define forces</span></span>
-<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> simulation <span class="op">=</span> d3<span class="op">.</span><span class="fu">forceSimulation</span>(nodes)</span>
-<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"bounce"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceBounce</span>()</span>
-<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="op">.</span><span class="dv">5</span>))</span>
-<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"surface"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceSurface</span>()</span>
-<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">surfaces</span>(<span class="fu">bbox</span>([[<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span><span class="op">,</span> height]]))</span>
-<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">oneWay</span>(<span class="kw">true</span>)</span>
-<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">'limit'</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceLimit</span>()</span>
-<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">x0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">x1</span>(width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span>)<span class="op">.</span><span class="fu">y0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">y1</span>(height))</span>
-<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">alphaDecay</span>(<span class="dv">0</span>)</span>
-<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">velocityDecay</span>(<span class="dv">0</span>)</span>
-<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">on</span>(<span class="st">"tick"</span><span class="op">,</span> () <span class="kw">=&gt;</span> { node<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>) })<span class="op">;</span></span>
-<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="co">// Function to generate legend</span></span>
-<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">legend</span>(selection) {</span>
-<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svgLeft <span class="op">=</span> selection<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
-<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"11em"</span>)</span>
-<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> legendHeight)</span>
-<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">"11em"</span><span class="op">,</span> legendHeight])<span class="op">;</span></span>
-<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a>    svgLeft<span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
-<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> rLegend <span class="op">+</span> <span class="st">"em"</span>)</span>
-<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> <span class="st">".5em"</span>)</span>
-<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#4889ab"</span>)</span>
-<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> rLegend <span class="op">+</span> <span class="st">"em"</span>)<span class="op">;</span></span>
-<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a>    svgLeft<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
-<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> (rLegend <span class="op">*</span> <span class="dv">3</span>) <span class="op">+</span> <span class="st">"em"</span>)</span>
-<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="st">".85em"</span>)</span>
-<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"left"</span>)</span>
-<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Native ancestors"</span>)<span class="op">;</span></span>
-<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svgRight <span class="op">=</span> selection<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
-<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"15em"</span>)</span>
-<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> legendHeight)</span>
-<span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">"15em"</span><span class="op">,</span> legendHeight])<span class="op">;</span></span>
-<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a>    svgRight<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
-<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">data</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span>])</span>
-<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
-<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> (rLegend <span class="op">+</span> (d <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> rLegend <span class="op">*</span> <span class="dv">3</span>) <span class="op">+</span> <span class="st">"em"</span>)</span>
-<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> <span class="st">".5em"</span>)</span>
-<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> <span class="fu">color</span>(d <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> rLegend <span class="op">+</span> <span class="st">"em"</span>)<span class="op">;</span></span>
-<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a>    svgRight<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
-<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> (rLegend <span class="op">*</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">4</span>) <span class="op">+</span> <span class="st">"em"</span>)</span>
-<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="st">".85em"</span>)</span>
-<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"left"</span>)</span>
-<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Migrant ancestors"</span>)<span class="op">;</span></span>
-<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Read data</span></span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> nodes <span class="op">=</span> <span class="fu">genpoints</span>(city)<span class="op">.</span><span class="fu">map</span>(<span class="bu">Object</span><span class="op">.</span><span class="at">create</span>)<span class="op">;</span></span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Panel</span></span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svg <span class="op">=</span> selection<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span>)</span>
+<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height <span class="op">*</span> <span class="fl">1.1</span>)</span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span><span class="op">,</span> height <span class="op">*</span> <span class="fl">1.1</span>])</span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"max-width: 100%; height: auto; height: intrinsic"</span>)<span class="op">;</span></span>
+<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (margin <span class="op">!==</span> <span class="kw">undefined</span>) svg<span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="vs">`margin-right: </span><span class="sc">${</span>margin<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Chart box</span></span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"rect"</span>)</span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span>)</span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#f7f7f7"</span>)</span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#bcbcbc"</span>)</span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Bottom label</span></span>
+<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> densityStat <span class="op">=</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">",.2r"</span>)(city[<span class="dv">0</span>]<span class="op">.</span><span class="at">density</span>)<span class="op">;</span></span>
+<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span> <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> height <span class="op">*</span> <span class="fl">1.075</span>)</span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">text</span>(<span class="vs">`</span><span class="sc">${</span>densityStat<span class="sc">}</span><span class="vs"> people/km²`</span>)<span class="op">;</span></span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Draw particles</span></span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> node <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">data</span>(nodes)</span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)</span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span>)</span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> (d) <span class="kw">=&gt;</span> <span class="fu">color</span>(d<span class="op">.</span><span class="at">group</span>))<span class="op">;</span></span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Define forces</span></span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> simulation <span class="op">=</span> d3<span class="op">.</span><span class="fu">forceSimulation</span>(nodes)</span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"bounce"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceBounce</span>()</span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="op">.</span><span class="dv">5</span>))</span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">"surface"</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceSurface</span>()</span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">surfaces</span>(<span class="fu">bbox</span>([[<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> [width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span><span class="op">,</span> height]]))</span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">oneWay</span>(<span class="kw">true</span>)</span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">radius</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">r</span> <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">force</span>(<span class="st">'limit'</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">forceLimit</span>()</span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">x0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">x1</span>(width <span class="op">*</span> <span class="op">.</span><span class="dv">49</span>)<span class="op">.</span><span class="fu">y0</span>(<span class="dv">0</span>)<span class="op">.</span><span class="fu">y1</span>(height))</span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">alphaDecay</span>(<span class="dv">0</span>)</span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">velocityDecay</span>(<span class="dv">0</span>)</span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">on</span>(<span class="st">"tick"</span><span class="op">,</span> () <span class="kw">=&gt;</span> { node<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>) })<span class="op">;</span></span>
+<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a><span class="co">// Function to generate legend</span></span>
+<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">legend</span>(selection) {</span>
+<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svgLeft <span class="op">=</span> selection<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
+<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"11em"</span>)</span>
+<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> legendHeight)</span>
+<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">"11em"</span><span class="op">,</span> legendHeight])<span class="op">;</span></span>
+<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a>    svgLeft<span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> rLegend <span class="op">+</span> <span class="st">"em"</span>)</span>
+<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> <span class="st">".5em"</span>)</span>
+<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"#4889ab"</span>)</span>
+<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> rLegend <span class="op">+</span> <span class="st">"em"</span>)<span class="op">;</span></span>
+<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a>    svgLeft<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> (rLegend <span class="op">*</span> <span class="dv">3</span>) <span class="op">+</span> <span class="st">"em"</span>)</span>
+<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="st">".85em"</span>)</span>
+<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"left"</span>)</span>
+<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Native ancestors"</span>)<span class="op">;</span></span>
+<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> svgRight <span class="op">=</span> selection<span class="op">.</span><span class="fu">append</span>(<span class="st">"svg"</span>)</span>
+<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"15em"</span>)</span>
+<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> legendHeight)</span>
+<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">"15em"</span><span class="op">,</span> legendHeight])<span class="op">;</span></span>
+<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a>    svgRight<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">data</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span>])</span>
+<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">join</span>(<span class="st">"circle"</span>)</span>
+<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> (rLegend <span class="op">+</span> (d <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> rLegend <span class="op">*</span> <span class="dv">3</span>) <span class="op">+</span> <span class="st">"em"</span>)</span>
+<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> <span class="st">".5em"</span>)</span>
+<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> <span class="fu">color</span>(d <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> rLegend <span class="op">+</span> <span class="st">"em"</span>)<span class="op">;</span></span>
+<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a>    svgRight<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> (rLegend <span class="op">*</span> <span class="dv">3</span> <span class="op">*</span> <span class="dv">4</span>) <span class="op">+</span> <span class="st">"em"</span>)</span>
+<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="st">".85em"</span>)</span>
+<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"left"</span>)</span>
+<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Migrant ancestors"</span>)<span class="op">;</span></span>
+<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -783,19 +726,18 @@ We’re just two lost souls swimming in a fish bowl<br><span class="fade-text" s
 </div>
 
 
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Other sources may differ depending on how city boundaries are defined.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>City density data were taken from Wikipedia. Comparisons are only suggestive given idiosyncrasies in how administrative boundaries are defined. For example, Metro Manila is 624 km², comparable to Jakarta (664 km²) and New York (778 km²) but not so much to Paris (105 km²) and Beijing (16,411 km²).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section></div></main> <!-- /main -->
+</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nhtml`\n  <div style=\"text-align:center\">\n  <h3 class=\"ojs-title\">Fancy bumping into you</h3>\n  <span class=\"ojs-subtitle\">Population density in Metro Manila and major global cities</span>\n  </div>\n`\n\nviewof citySelectPH = Inputs.select(\n    d3.group(densityManila, d => d.city), {\n        label: \"Pick a Metro Manila city...\",\n        key: \"Manila\",\n        description: \"Pick a Metro Manila city...\"\n    })\n\nviewof citySelect = Inputs.select(\n    d3.group(densityOthers, d => d.city), {\n        label: \"...and compare with a global city\",\n        key: \"New York\"\n    })\n\n{\n    const container = d3.create(\"div\");\n\n    const containerLegend = container.append(\"div\")\n        .attr(\"style\", \"display: flex; justify-content: center\");\n    containerLegend.call(legend);\n    \n    const containerChart = container.append(\"div\")\n        .attr(\"style\", \"display: flex; justify-content: space-between\");\n    containerChart.call(particles, citySelectPH, \"10px\");\n    containerChart.call(particles, citySelect);\n\n    return container.node();\n}\n\nhtml`\n  <div style=\"text-align:center\">\n  <span>Each box is a square kilometer. Each dot is 100 people. \"Ancestors\" date from 1500 CE, as derived from Putterman and Weil's <a href=\"https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000\" target=\"_blank\">World Migration Matrix</a>.</span>\n  </div>\n`\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\n{\n    \n    // Generate points\n    const widthFishbowl = width\n    const rFishbowl = widthFishbowl * .01\n    const vFishbowl = rFishbowl * .1\n    \n    const dummynodes = Array.from(\n        { length: 300 }, (_, i) => ({\n            x: d3.randomUniform((widthFishbowl * .05), (widthFishbowl * .95))(),\n            y: d3.randomUniform(height * .05, height * .95)(),\n            r: d3.randomNormal(rMean, rSD)(),\n            vx: d3.randomUniform(-1, 1)() * velocity,\n            vy: d3.randomUniform(-1, 1)() * velocity,\n            color: \"#eeeeee\"\n        })\n    );\n    \n    dummynodes.push(\n        { x: widthFishbowl * .05, y: height * .95, r: rFishbowl, vx: vFishbowl, vy: -vFishbowl, color: \"#4889ab\" },\n        { x: widthFishbowl * .95, y: height * .05, r: rFishbowl, vx: -vFishbowl, vy: vFishbowl, color: \"#C85B89\" }\n    );\n    \n    const nodes = dummynodes.map(Object.create);\n\n    // Panel\n    const container = d3.create(\"div\")\n        .attr(\"style\", \"display: flex; justify-content: center\");\n\n    const svg = container.append(\"svg\")\n        .attr(\"width\", widthFishbowl)\n        .attr(\"height\", height)\n        .attr(\"viewBox\", [0, 0, widthFishbowl, height])\n        .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic\");\n\n    // Chart box\n    svg.append(\"rect\")\n        .attr(\"width\", widthFishbowl)\n        .attr(\"height\", height)\n        .attr(\"fill\", \"#f7f7f7\");\n\n    const node = svg.append(\"g\")\n        .selectAll(\"circle\")\n        .data(nodes)\n        .join(\"circle\")\n        .attr(\"cx\", d => d.x)\n        .attr(\"cy\", d => d.y)\n        .attr(\"r\", d => d.r)\n        .attr(\"fill\", (d) => d.color);\n    \n    // Define forces\n    const simulation = d3.forceSimulation(nodes)\n        .force(\"bounce\", d3.forceBounce()\n            .radius(d => d.r + .5))\n        .force(\"surface\", d3.forceSurface()\n            .surfaces(bbox([[0, 0], [widthFishbowl, height]]))\n            .oneWay(true)\n            .radius(d => d.r + 1))\n        .force('limit', d3.forceLimit()\n            .x0(0).x1(widthFishbowl).y0(0).y1(height))\n        .alphaDecay(0)\n        .velocityDecay(0)\n        .on(\"tick\", () => { node.attr(\"cx\", d => d.x).attr(\"cy\", d => d.y) });\n    \n    return container.node()\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\n// Import data\ndensity = FileAttachment('../../datasets/particles/density.csv').csv({ typed: true });\ndensityManila = density.filter(d => d.country === \"Philippines\");\ndensityOthers = density.filter(d => d.country !== \"Philippines\");\ngroupAssign = FileAttachment('../../datasets/particles/group_assign.csv').csv({ typed: true });\n\n// Dependencies\nd3 = require('d3@7', 'd3-force-bounce', 'd3-force-surface', 'd3-force-limit');\n\n// Parameters\nheight = width * .49;                // Height of particle chart\nrMean = (width * .49 / 40) / 2;      // Mean radius\nrSD = rMean * .75;                   // SD radius\nvelocity = rMean * .8;               // Particle velocity\nlegendHeight = width * .05;          // Legend height\nrLegend = .5;                        // Legend radius\n\ncolors = [\"#4889ab\", \"#7fc6a4\", \"#FCB13B\", \"#B13D70\", \"#f697bb\"];\n\ncolor = d3.scaleOrdinal()\n    .domain([1, 2, 3, 4, 5])\n    .range(colors);\n\nbbox = ([[x1, y1], [x2, y2]]) => [\n    { from: { x: x1, y: y1 }, to: { x: x1, y: y2 } },\n    { from: { x: x1, y: y2 }, to: { x: x2, y: y2 } },\n    { from: { x: x2, y: y2 }, to: { x: x2, y: y1 } },\n    { from: { x: x2, y: y1 }, to: { x: x1, y: y1 } }\n];\n\n// Function to generate particles for a given city\n\nfunction genpoints(city) {\n\n    const density = Math.round(city[0].density / 100);\n    \n    const groupAssignCity = groupAssign.filter(d => d.city === city[0].city);\n    const counts = groupAssignCity.map(row => row.points_ingroup);\n    const groups = [1, 2, 3, 4, 5];\n    const groupArray = counts.flatMap((count, i) =>\n        Array.from({ length: count }, () => groups[i])\n    );\n    \n    const points = Array.from(\n        { length: density },\n        (_, i) => ({\n            x: d3.randomUniform((width * .49 * .15), (width * .49 * .85))(),\n            y: d3.randomUniform(height * .15, height * .85)(),\n            r: d3.randomNormal(rMean, rSD)(),\n            vx: d3.randomUniform(-1, 1)() * velocity,\n            vy: d3.randomUniform(-1, 1)() * velocity,\n            group: groupArray[i]\n        })\n    );\n\n    return points;\n}\n\n// Function to generate particles chart\n\nfunction particles(selection, city, margin) {\n\n    // Read data\n    const nodes = genpoints(city).map(Object.create);\n\n    // Panel\n    const svg = selection.append(\"svg\")\n        .attr(\"width\", width * .49)\n        .attr(\"height\", height * 1.1)\n        .attr(\"viewBox\", [0, 0, width * .49, height * 1.1])\n        .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic\");\n\n    if (margin !== undefined) svg.attr(\"style\", `margin-right: ${margin}`);\n\n    // Chart box\n    svg.append(\"rect\")\n        .attr(\"width\", width * .49)\n        .attr(\"height\", height)\n        .attr(\"fill\", \"#f7f7f7\")\n        .attr(\"stroke\", \"#bcbcbc\")\n        .attr(\"stroke-width\", 1);\n\n    // Bottom label\n    const densityStat = d3.format(\",.2r\")(city[0].density);\n    svg.append(\"text\")\n        .attr(\"x\", width * .49 / 2)\n        .attr(\"y\", height * 1.075)\n        .attr(\"text-anchor\", \"middle\")\n        .text(`${densityStat} people/km²`);\n\n    // Draw particles\n    const node = svg.append(\"g\")\n        .selectAll(\"circle\")\n        .data(nodes)\n        .join(\"circle\")\n        .attr(\"cx\", d => d.x)\n        .attr(\"cy\", d => d.y)\n        .attr(\"r\", d => d.r)\n        .attr(\"fill\", (d) => color(d.group));\n    \n    // Define forces\n    const simulation = d3.forceSimulation(nodes)\n        .force(\"bounce\", d3.forceBounce()\n            .radius(d => d.r + .5))\n        .force(\"surface\", d3.forceSurface()\n            .surfaces(bbox([[0, 0], [width * .49, height]]))\n            .oneWay(true)\n            .radius(d => d.r + 1))\n        .force('limit', d3.forceLimit()\n            .x0(0).x1(width * .49).y0(0).y1(height))\n        .alphaDecay(0)\n        .velocityDecay(0)\n        .on(\"tick\", () => { node.attr(\"cx\", d => d.x).attr(\"cy\", d => d.y) });\n}\n\n// Function to generate legend\n\nfunction legend(selection) {\n  \n    const svgLeft = selection.append(\"svg\")\n        .attr(\"width\", \"11em\")\n        .attr(\"height\", legendHeight)\n        .attr(\"viewBox\", [0, 0, \"11em\", legendHeight]);\n\n    svgLeft.append(\"circle\")\n        .attr(\"cx\", rLegend + \"em\")\n        .attr(\"cy\", \".5em\")\n        .attr(\"fill\", \"#4889ab\")\n        .attr(\"r\", rLegend + \"em\");\n\n    svgLeft.append(\"text\")\n        .attr(\"x\", (rLegend * 3) + \"em\")\n        .attr(\"y\", \".85em\")\n        .attr(\"text-anchor\", \"left\")\n        .text(\"Native ancestors\");\n\n    const svgRight = selection.append(\"svg\")\n        .attr(\"width\", \"15em\")\n        .attr(\"height\", legendHeight)\n        .attr(\"viewBox\", [0, 0, \"15em\", legendHeight]);\n  \n    svgRight.selectAll(\"circle\")\n        .data([1, 2, 3, 4])\n        .join(\"circle\")\n        .attr(\"cx\", d => (rLegend + (d - 1) * rLegend * 3) + \"em\")\n        .attr(\"cy\", \".5em\")\n        .attr(\"fill\", d => color(d + 1))\n        .attr(\"r\", rLegend + \"em\");\n\n    svgRight.append(\"text\")\n        .attr(\"x\", (rLegend * 3 * 4) + \"em\")\n        .attr(\"y\", \".85em\")\n        .attr(\"text-anchor\", \"left\")\n        .text(\"Migrant ancestors\");\n}\n"},{"methodName":"interpretQuiet","source":"shinyInput('citySelectPH')"},{"methodName":"interpretQuiet","source":"shinyInput('citySelect')"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nhtml`\n  <div style=\"text-align:center\">\n  <h3 class=\"ojs-title\">Fancy bumping into you</h3>\n  <span class=\"ojs-subtitle\">Population density in Metro Manila and major global cities</span>\n  </div>\n`\n\nviewof citySelectPH = Inputs.select(\n    d3.group(densityManila, d => d.city), {\n        label: \"Pick a Metro Manila city...\",\n        key: \"Manila\",\n        description: \"Pick a Metro Manila city...\"\n    })\n\nviewof citySelect = Inputs.select(\n    d3.group(densityOthers, d => d.city), {\n        label: \"...and compare with a global city\",\n        key: \"New York\"\n    })\n\n{\n\tconst container = d3.create(\"div\");\n\n\tconst containerLegend = container\n\t\t.append(\"div\")\n\t\t.attr(\"style\", \"display: flex; justify-content: center\");\n\tcontainerLegend.call(legend);\n\n\tconst containerChart = container\n\t\t.append(\"div\")\n\t\t.attr(\"style\", \"display: flex; justify-content: space-between\");\n\tcontainerChart.call(particles, citySelectPH, \"10px\");\n\tcontainerChart.call(particles, citySelect);\n\n\treturn container.node();\n}\n\nhtml`\n  <div style=\"text-align:center\">\n  <span>Each box is a square kilometer. Each dot is 100 people. \"Ancestors\" date from 1500 CE, as derived from Putterman and Weil's <a href=\"https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000\" target=\"_blank\">World Migration Matrix</a>.</span>\n  </div>\n`\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\n{\n    \n    // Generate points\n    const widthFishbowl = width\n    const rFishbowl = widthFishbowl * .01\n    const vFishbowl = rFishbowl * .1\n    \n    const dummynodes = Array.from(\n        { length: 300 }, (_, i) => ({\n            x: d3.randomUniform((widthFishbowl * .05), (widthFishbowl * .95))(),\n            y: d3.randomUniform(height * .05, height * .95)(),\n            r: d3.randomNormal(rMean, rSD)(),\n            vx: d3.randomUniform(-1, 1)() * velocity,\n            vy: d3.randomUniform(-1, 1)() * velocity,\n            color: \"#eeeeee\"\n        })\n    );\n    \n    dummynodes.push(\n        { x: widthFishbowl * .05, y: height * .95, r: rFishbowl, vx: vFishbowl, vy: -vFishbowl, color: \"#4889ab\" },\n        { x: widthFishbowl * .95, y: height * .05, r: rFishbowl, vx: -vFishbowl, vy: vFishbowl, color: \"#C85B89\" }\n    );\n    \n    const nodes = dummynodes.map(Object.create);\n\n    // Panel\n    const container = d3.create(\"div\")\n        .attr(\"style\", \"display: flex; justify-content: center\");\n\n    const svg = container.append(\"svg\")\n        .attr(\"width\", widthFishbowl)\n        .attr(\"height\", height)\n        .attr(\"viewBox\", [0, 0, widthFishbowl, height])\n        .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic\");\n\n    // Chart box\n    svg.append(\"rect\")\n        .attr(\"width\", widthFishbowl)\n        .attr(\"height\", height)\n        .attr(\"fill\", \"#f7f7f7\");\n\n    const node = svg.append(\"g\")\n        .selectAll(\"circle\")\n        .data(nodes)\n        .join(\"circle\")\n        .attr(\"cx\", d => d.x)\n        .attr(\"cy\", d => d.y)\n        .attr(\"r\", d => d.r)\n        .attr(\"fill\", (d) => d.color);\n    \n    // Define forces\n    const simulation = d3.forceSimulation(nodes)\n        .force(\"bounce\", d3.forceBounce()\n            .radius(d => d.r + .5))\n        .force(\"surface\", d3.forceSurface()\n            .surfaces(bbox([[0, 0], [widthFishbowl, height]]))\n            .oneWay(true)\n            .radius(d => d.r + 1))\n        .force('limit', d3.forceLimit()\n            .x0(0).x1(widthFishbowl).y0(0).y1(height))\n        .alphaDecay(0)\n        .velocityDecay(0)\n        .on(\"tick\", () => { node.attr(\"cx\", d => d.x).attr(\"cy\", d => d.y) });\n    \n    return container.node()\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\n// Dependencies\nd3 = require('d3@7', 'd3-force-bounce', 'd3-force-surface', 'd3-force-limit');\n\n// Import data\ndensity = FileAttachment('../../datasets/particles/density.csv').csv({ typed: true });\ndensityManila = density.filter(d => d.country === \"Philippines\");\ndensityOthers = density.filter(d => d.country !== \"Philippines\");\ngroupAssign = FileAttachment('../../datasets/particles/group_assign.csv').csv({ typed: true });\n\n// Parameters\nheight = width * .49;                // Height of particle chart\nrMean = (width * .49 / 40) / 2;      // Mean radius\nrSD = rMean * .75;                   // SD radius\nvelocity = rMean * .8;               // Particle velocity\nlegendHeight = width * .05;          // Legend height\nrLegend = .5;                        // Legend radius\n\ncolors = [\"#4889ab\", \"#7fc6a4\", \"#FCB13B\", \"#B13D70\", \"#f697bb\"];\n\ncolor = d3.scaleOrdinal()\n    .domain([1, 2, 3, 4, 5])\n    .range(colors);\n\nbbox = ([[x1, y1], [x2, y2]]) => [\n    { from: { x: x1, y: y1 }, to: { x: x1, y: y2 } },\n    { from: { x: x1, y: y2 }, to: { x: x2, y: y2 } },\n    { from: { x: x2, y: y2 }, to: { x: x2, y: y1 } },\n    { from: { x: x2, y: y1 }, to: { x: x1, y: y1 } }\n];\n\n// Function to generate particles for a given city\n\nfunction genpoints(city) {\n\n    const density = Math.round(city[0].density / 100);\n    \n    const groupAssignCity = groupAssign.filter(d => d.city === city[0].city);\n    const counts = groupAssignCity.map(row => row.points_ingroup);\n    const groups = [1, 2, 3, 4, 5];\n    const groupArray = counts.flatMap((count, i) =>\n        Array.from({ length: count }, () => groups[i])\n    );\n    \n    const points = Array.from(\n        { length: density },\n        (_, i) => ({\n            x: d3.randomUniform((width * .49 * .15), (width * .49 * .85))(),\n            y: d3.randomUniform(height * .15, height * .85)(),\n            r: d3.randomNormal(rMean, rSD)(),\n            vx: d3.randomUniform(-1, 1)() * velocity,\n            vy: d3.randomUniform(-1, 1)() * velocity,\n            group: groupArray[i]\n        })\n    );\n\n    return points;\n}\n\n// Function to generate particles chart\n\nfunction particles(selection, city, margin) {\n\n    // Read data\n    const nodes = genpoints(city).map(Object.create);\n\n    // Panel\n    const svg = selection.append(\"svg\")\n        .attr(\"width\", width * .49)\n        .attr(\"height\", height * 1.1)\n        .attr(\"viewBox\", [0, 0, width * .49, height * 1.1])\n        .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic\");\n\n    if (margin !== undefined) svg.attr(\"style\", `margin-right: ${margin}`);\n\n    // Chart box\n    svg.append(\"rect\")\n        .attr(\"width\", width * .49)\n        .attr(\"height\", height)\n        .attr(\"fill\", \"#f7f7f7\")\n        .attr(\"stroke\", \"#bcbcbc\")\n        .attr(\"stroke-width\", 1);\n\n    // Bottom label\n    const densityStat = d3.format(\",.2r\")(city[0].density);\n    svg.append(\"text\")\n        .attr(\"x\", width * .49 / 2)\n        .attr(\"y\", height * 1.075)\n        .attr(\"text-anchor\", \"middle\")\n        .text(`${densityStat} people/km²`);\n\n    // Draw particles\n    const node = svg.append(\"g\")\n        .selectAll(\"circle\")\n        .data(nodes)\n        .join(\"circle\")\n        .attr(\"cx\", d => d.x)\n        .attr(\"cy\", d => d.y)\n        .attr(\"r\", d => d.r)\n        .attr(\"fill\", (d) => color(d.group));\n    \n    // Define forces\n    const simulation = d3.forceSimulation(nodes)\n        .force(\"bounce\", d3.forceBounce()\n            .radius(d => d.r + .5))\n        .force(\"surface\", d3.forceSurface()\n            .surfaces(bbox([[0, 0], [width * .49, height]]))\n            .oneWay(true)\n            .radius(d => d.r + 1))\n        .force('limit', d3.forceLimit()\n            .x0(0).x1(width * .49).y0(0).y1(height))\n        .alphaDecay(0)\n        .velocityDecay(0)\n        .on(\"tick\", () => { node.attr(\"cx\", d => d.x).attr(\"cy\", d => d.y) });\n}\n\n// Function to generate legend\n\nfunction legend(selection) {\n  \n    const svgLeft = selection.append(\"svg\")\n        .attr(\"width\", \"11em\")\n        .attr(\"height\", legendHeight)\n        .attr(\"viewBox\", [0, 0, \"11em\", legendHeight]);\n\n    svgLeft.append(\"circle\")\n        .attr(\"cx\", rLegend + \"em\")\n        .attr(\"cy\", \".5em\")\n        .attr(\"fill\", \"#4889ab\")\n        .attr(\"r\", rLegend + \"em\");\n\n    svgLeft.append(\"text\")\n        .attr(\"x\", (rLegend * 3) + \"em\")\n        .attr(\"y\", \".85em\")\n        .attr(\"text-anchor\", \"left\")\n        .text(\"Native ancestors\");\n\n    const svgRight = selection.append(\"svg\")\n        .attr(\"width\", \"15em\")\n        .attr(\"height\", legendHeight)\n        .attr(\"viewBox\", [0, 0, \"15em\", legendHeight]);\n  \n    svgRight.selectAll(\"circle\")\n        .data([1, 2, 3, 4])\n        .join(\"circle\")\n        .attr(\"cx\", d => (rLegend + (d - 1) * rLegend * 3) + \"em\")\n        .attr(\"cy\", \".5em\")\n        .attr(\"fill\", d => color(d + 1))\n        .attr(\"r\", rLegend + \"em\");\n\n    svgRight.append(\"text\")\n        .attr(\"x\", (rLegend * 3 * 4) + \"em\")\n        .attr(\"y\", \".85em\")\n        .attr(\"text-anchor\", \"left\")\n        .text(\"Migrant ancestors\");\n}\n"},{"methodName":"interpretQuiet","source":"shinyInput('citySelectPH')"},{"methodName":"interpretQuiet","source":"shinyInput('citySelect')"}]}
 </script>
 <script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
 window._ojs.paths.runtimeToDoc = "../../posts/2023-03-29-people-as-particles";
 window._ojs.paths.runtimeToRoot = "../..";
 window._ojs.paths.docToRoot = "../..";
@@ -829,9 +771,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -896,6 +852,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -938,7 +980,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

@@ -1,7 +1,7 @@
 ---
 title: "Two Points Make a Line"
 description: "Telling stories through visualized data — by Kenneth S. Reyes"
-image: /images/preview.png
+image: images/preview.png
 open-graph:
   title: "Two Points Make a Line"
   description: "Telling stories through visualized data — by Kenneth S. Reyes"
@@ -16,4 +16,6 @@ listing:
   fields: [date, title, subtitle, categories, image]
 page-layout: full
 title-block-banner: false
+resources: 
+ - images/preview.png
 ---
