@@ -2,7 +2,7 @@
 title: "I just read 456 books*"
 subtitle: "*Actually my computer did, but let's not split hairs. An exploration into NLP, dimensionality reduction, and reactive visualizations."
 date: 2023-03-22
-categories: [network, scatter, interactive]
+categories: [python, D3/OJS]
 image: thumbnail.gif
 ---
 
@@ -565,6 +565,10 @@ network = json.dumps(network_dict)
 ```
 
 So we have analyzed 456 books. Can we go bolder still, more audacious still? The Gutenberg library is vast. Unfortunately, it's also a mess. There have been many attempts to tame it, including `gutenbergpy`, but I'm still finding that the efforts involved in data cleaning and data wrangling scale faster than the marginal value of expanding the dataset further. I'll have to wait for a better API. Until then, this has been your sign to get back to (or start!) the habit of reading. May I suggest *Moby-Dick*? `r end_mark()`
+
+## Data {.appendix}
+
+- [literary.py](../../datasets/literary/literary.py) / [library_stats.csv](../../datasets/literary/library_stats.csv) / [library_network.json](../../datasets/literary/library_network.json)
 
 ## Appendix: D3 / Observable code {.appendix}
 

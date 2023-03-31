@@ -2,7 +2,7 @@
 title: "Francis is an old pope"
 subtitle: "At 86, the current supreme pontiff is making his mark as one of history's oldest. How long can he go on?"
 date: 2023-2-6
-categories: [histogram, lollipop, survival]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
@@ -17,7 +17,6 @@ library(here)
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
 ```
 
@@ -206,3 +205,7 @@ survfit2(with(popes1, Surv(tenure)) ~ old, data = popes1) %>%
 Based on these estimates, the young group has a 33.1% probability of reaching their 10th year while the old group has only a 23.9% probability. On the other hand, the young group has a 6.3% probability of reaching their 20th year while the old group has a 2.3% chance. It should be noted though that the estimates for the old group have a high amount of uncertainty, mainly because few old popes make it to their 20th year.
 
 If Francis completes his second decade as pope, he would be 96. The odds are against him, but it wouldn't be unheard of. Pope Agatho, elected pope in 678 AD at the age of 100, reigned until his death at age 103. `r end_mark()`
+
+## Data {.appendix}
+
+- [popes.R](../../datasets/popes/popes.R) / [popes.csv](../../datasets/popes/popes.csv)

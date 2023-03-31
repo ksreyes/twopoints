@@ -2,7 +2,7 @@
 title: "Somehow, Avatar has returned"
 subtitle: "The highest grossing movie of all time got to the top gradually rather than all at once"
 date: 2022-12-21
-categories: [line]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
@@ -13,12 +13,23 @@ image: thumbnail.png
 library(knitr)
 library(showtext)
 library(here)
+library(tidyverse)
 
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
+
+df <- here("datasets", "avatar", "avatar.csv") %>% 
+  read_csv() %>% 
+  mutate(title = factor(title, levels = c(
+    "Star Wars: The Force Awakens",
+    "Avengers: Endgame",
+    "Spider-Man: No Way Home",
+    "Batman v Superman",
+    "Avatar",
+    "Avatar: The Way of Water"
+  )))
 ```
 
 In 2009, I watched James Cameron's *Avatar* and thought, wait a minute, this is just *Atlantis: The Lost Empire* but with blue people. Then I didn't think about *Avatar* again for the next 13 years.
@@ -32,6 +43,8 @@ In this post, I visualize the box office trajectories of *Avatar*, *Endgame*, an
 The data was scraped from BoxOfficeMojo.com using the `rvest` package. There was unfortunately no daily data for worldwide box office receipts so I confined myself to daily U.S. receipts.
 
 ```{r}
+#| eval: false
+
 library(tidyverse)
 library(rvest)
 library(magrittr)
@@ -79,6 +92,7 @@ The following shows cumulative receipts for the first 90 days of each film's ori
 
 ```{r}
 #| code-fold: true
+library(ggplot2)
 
 ggplot(
   df %>% filter(day < 91),
@@ -90,7 +104,7 @@ ggplot(
   labs(
     title = "The way of Avatar I",
     subtitle = "Cumulative U.S. box office receipts",
-    caption = "Note: Chart updated 26 Feb 2023\nSource: boxofficemojo.com"
+    caption = "Note: Chart updated 30 Jan 2023\nSource: boxofficemojo.com"
   ) +
   scale_x_continuous(
     name = "Days since release",
@@ -202,8 +216,8 @@ ggplot(
     legend.position = c(.84, .24),
     legend.title = element_text(size = 12, face = "bold"),
     legend.text = element_text(size = 10),
-    strip.background = element_rect(fill = "gray80", color = NA),
-    strip.text = element_text(size = 10, face = "bold", color = "black"),
+    strip.background = element_rect(fill = "#1046b1", color = NA),
+    strip.text = element_text(size = 10, face = "bold", color = "white"),
     panel.background = element_rect(fill = "gray97", color = NA),
     panel.grid.major.x = element_blank(),
     panel.grid.major.y = element_line(linewidth = .5, color = "white"),
@@ -220,6 +234,10 @@ The stakes are... hilariously high? From [*Variety*](https://variety.com/2022/fi
 
 > Cameron apparently told Disney and 20th Century Studios executives that his sequel budget was so high it represented "the worst business case in movie history." According to the director's estimates, "you have to be the third or fourth highest-grossing film in history. That's your threshold. That's your break even."
 
-I am no business genius, but if you need your enterprise to be the third or fourth most successful in history *just to avoid financial ruin* then maybe rethink your strategy. Maybe hedge a little!
+I am no business genius, but if you need your enterprise to be the third or fourth most successful in history *just to avoid financial ruin* then maybe rethink your strategy. Maybe hedge a little! `r end_mark()`
 
-**Update 30 Jan 2022:** Well, he did it. As of my checking this morning, *Avatar: The Way of Water* has surpassed *The Force Awakens* to become the [fourth highest-grossing film in history](https://www.boxofficemojo.com/chart/ww_top_lifetime_gross/?area=XWW). It also [bagged a Best Picture nomination](https://twopoints.blog/posts/2023-01-26-oscars/) while it was at it. `r end_mark()`
+**Update 30 Jan 2022:** Well, he did it. As of my checking this morning, *Avatar: The Way of Water* has surpassed *The Force Awakens* to become the [fourth highest-grossing film in history](https://www.boxofficemojo.com/chart/ww_top_lifetime_gross/?area=XWW). It also [bagged a Best Picture nomination](https://twopoints.blog/posts/2023-01-26-oscars/) while it was at it.
+
+## Data {.appendix}
+
+- [avatar.csv](../../datasets/avatar/avatar.csv)

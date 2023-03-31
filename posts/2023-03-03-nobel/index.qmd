@@ -2,7 +2,7 @@
 title: "The demographics of Nobel laureates"
 subtitle: "I'm starting to think there might be privileges to being old, white, and male"
 date: 2023-03-03
-categories: [line, bar]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
@@ -259,3 +259,7 @@ nobel %>%
 Beyond problems of representation in the arts and sciences, another major issue is the composition of the prize selection committees themselves. These comprise just a handful of elite Swedes and Norwegians, and though they ostensibly solicit nominations from thousands of outside experts and institutions, theirs is the final say, in deliberations that are kept secret for 50 years. And insularity may not even be their biggest problem: a sexual assault scandal in 2017 [hinted at moral bankruptcy](https://www.theguardian.com/news/2018/jul/17/the-ugly-scandal-that-cancelled-the-nobel-prize-in-literature) within the Swedish Academy, which decides the Literature Prize.
 
 No doubt the Nobel Prizes are held in high reverence around the world, but I suspect it has more to do with the distinction of the men and women who have received them in the past than the esteem held for the judgment of a few elite Scandinavians. As a hilarious corrective to Nobel worship, let's turn to Bob Dylan, winner of the 2016 Literature Prize, who [seenzoned](https://www.bbc.com/news/entertainment-arts-37740379) the Swedish Academy, [didn't bother](https://www.svenskaakademien.se/en/press/bob-dylan-has-decided-not-to-come-to-stockholm) to attend the ceremony, and [cribbed off SparkNotes](https://slate.com/culture/2017/06/did-bob-dylan-take-from-sparknotes-for-his-nobel-lecture.html) for his Nobel lecture. I know Dylan was a controversial choice, but look: anyone who [accepts a Nobel in a hoodie](https://www.nme.com/news/music/bob-dylan-wore-hoodie-accept-nobel-prize-2033165) deserves ten of them. `r end_mark()`
+
+## Data {.appendix}
+
+- [nobel.R](../../datasets/nobel/nobel.R) / [nobel.csv](../../datasets/nobel/nobel.csv)

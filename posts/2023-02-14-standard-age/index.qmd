@@ -2,7 +2,7 @@
 title: "The standard age"
 subtitle: "At what age are we our \"standard\" selves, when we are neither too young nor too old?"
 date: 2023-2-14
-categories: [histogram, line]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
@@ -18,10 +18,8 @@ library(tidyverse)
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
-
-age_gaps <- here::here("datasets", "agegaps.csv") %>%
+age_gaps <- here::here("datasets", "agegaps", "agegaps.csv") %>%
   read_csv()
 ```
 
@@ -201,3 +199,7 @@ This idea of a standard age has some grounding in developmental psychology. Clar
 > People talked about being in the prime of their lives and feeling at their peak. After years of working to develop careers and relationships, people reported feeling as though they had finally arrived.
 
 If you who are reading this are an established adult, or even better, are close to the Hollywood standard age, then feel free to defeat some terrorists, fall in love with a bohemian, or gain some superpowers. This time in your life calls for it. `r end_mark()`
+
+## Data {.appendix}
+
+- [agegaps.csv](../../datasets/agegaps/agegaps.csv)

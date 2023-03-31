@@ -160,6 +160,11 @@ The particles chart can be used in any number of applications, with three levers
 <p style="text-align:center">We're just two lost souls swimming in a fish bowl<br>[year]{.fade-text style="animation-name:change-opacity-1;"} [after]{.fade-text style="animation-name:change-opacity-2;"} [year]{.fade-text style="animation-name:change-opacity-3;"}</p>
 <p style="text-align:center">`r end_mark()`</p>
 
+## Data {.appendix}
+
+- [density.csv](../../datasets/particles/density.csv)
+- [particles.R](../../datasets/particles/particles.R) / [group_assign.csv](../../datasets/particles/group_assign.csv)
+
 ## Appendix: D3 / Observable code {.appendix}
 
 ```{ojs}

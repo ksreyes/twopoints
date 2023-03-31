@@ -2,7 +2,7 @@
 title: "Putin's leverage, Putin's folly"
 subtitle: "A newly released dataset lets us visualize the patterns of global trade on the eve of Russia's invasion of Ukraine"
 date: 2023-02-22
-categories: [bar, network]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
@@ -17,7 +17,6 @@ library(here)
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
 ```
 

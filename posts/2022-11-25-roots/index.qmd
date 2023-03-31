@@ -18,9 +18,7 @@ library(here)
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 xaringanExtra::use_panelset()
-
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
 ```
 
@@ -36,7 +34,7 @@ This has been the research agenda of a number of empirical economic historians. 
 library(tidyverse)
 library(foreign)
 
-df <- here::here("datasets", "2013_longterm.dta") %>%
+df <- here::here("datasets", "roots", "2013_longterm.dta") %>%
   read.dta() %>%
   as_tibble()
 ```
@@ -344,3 +342,7 @@ hchart(df1, "scatter",
 The correlations above provide pretty fascinating insights. But they are all flawed, of course. Countries are not random realizations of a well-defined stochastic process. Nor are they equal: when generalizing about long-run economic development, it's not clear that the experiences of a Singapore or a Cape Verde should hold equal weight to the experiences of an India or a China. Which are the exceptions and which are the rules? Do rules even exist?
 
 The field of empirical economic history has done much to extend, refine, and qualify the basic results shown here. Hopefully I'll write about them in future posts. `r end_mark()`
+
+## Data {.appendix}
+
+- [2013_longterm.dta](../../datasets/roots/2013_longterm.dta)

@@ -2,7 +2,7 @@
 title: "Telling the future is hard"
 subtitle: "A forecasting tournament put the predictive powers of social scientists to the test. They, ah, didn't do so well."
 date: 2023-03-12
-categories: [interactive, strip, heat-map, line]
+categories: [R, ggplot, D3/OJS]
 image: thumbnail.gif
 ---
 
