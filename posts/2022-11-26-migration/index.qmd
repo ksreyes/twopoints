@@ -2,7 +2,7 @@
 title: "More on the great post-1500 migrations"
 subtitle: "Which countries have the most diverse ancestors? Which countries have the most descendants around the world today?"
 date: 2022-11-26
-categories: [map, bar, scatter, interactive]
+categories: [R, highcharts]
 image: thumbnail.gif
 ---
 
@@ -18,9 +18,7 @@ library(here)
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 xaringanExtra::use_panelset()
-
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
 ```
 
@@ -482,5 +480,4 @@ hcmap(
 :::
 :::
 
-
-`r end_mark()`
+`r end_mark(center = TRUE)`

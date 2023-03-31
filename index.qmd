@@ -12,7 +12,9 @@ listing:
   categories: true
   sort-ui: false
   filter-ui: false
-  feed: true
+  feed: 
+    categories:
+      - R
   fields: [date, title, subtitle, categories, image]
 page-layout: full
 title-block-banner: false

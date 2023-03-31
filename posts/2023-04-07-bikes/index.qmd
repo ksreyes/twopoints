@@ -1,0 +1,34 @@
+---
+title: "Bike lanes"
+subtitle: "Bike lanes"
+date: 2023-04-07
+categories: [particles, interactive]
+image: thumbnail.gif
+include-in-header: animation.html
+draft: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+::: {#bikes}
+<i id="bike-1" class="bi bi-bicycle"></i>
+<i id="bike-2" class="bi bi-bicycle"></i>
+<i id="bike-3" class="bi bi-bicycle"></i>
+<i id="bike-4" class="bi bi-bicycle"></i>
+<i id="bike-5" class="bi bi-bicycle"></i>
+:::
+
+Manila is the densest city on Earth,^[Other sources may differ depending on how city boundaries are defined.] fitting 1.8 million people into a 43 square-kilometer crucible. The 16 other cities that constitute Metro Manila, the Philippine capital, are extraordinarily crowded as well, resulting in an overall density of 22,000/km². This is twice that of New York and almost three times that of Singapore. Dysfunctional urban planning has failed to cope. Suburbs-style neighborhoods and private golf courses [sprawl incongruously](https://twitter.com/pfkahanapINQ/status/1605847613089058816) in city centers while open green spaces [remain limited](https://manilastandard.net/spotlight/ms-36th-anniversary-issue-towards-a-sustainable-future/314303715/claiming-back-the-city.html). The state of [transportation](https://www.bbc.com/news/world-asia-49983397) [is](https://newsinfo.inquirer.net/1698050/public-transportation-mobility-readiness-in-manila-among-worlds-worst) [dystopian](https://twitter.com/PhilippineStar/status/1577309804833693697/photo/1). A much needed [subway](https://twopoints.blog/posts/2022-11-08-metro-manila-subway/) intended for partial operability [in 2022](https://newsinfo.inquirer.net/1488867/metro-manila-subways-partial-operability-targeted-in-1st-quarter-of-2022) only started construction [last January](https://newsinfo.inquirer.net/1714541/metro-manila-subway-construction-begins).

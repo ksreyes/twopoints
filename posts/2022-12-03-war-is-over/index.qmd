@@ -2,7 +2,7 @@
 title: "War is over (if you want it?)"
 subtitle: "A tally of active armed conflicts as of Christmas Day, since 1946"
 date: 2022-12-03
-categories: [bar]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
@@ -17,7 +17,6 @@ library(here)
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 source(here("R", "functions.R"))
-
 font_add_google("Karla", "karla")
 ```
 
@@ -27,6 +26,7 @@ People's feelings about the Christmas season span a wide range, from very positi
 #| code-fold: true
 
 library(tidyverse)
+library(ggplot2)
 library(lubridate)
 
 df <- here::here("datasets", "ucdp-prio-acd-221.csv") %>%

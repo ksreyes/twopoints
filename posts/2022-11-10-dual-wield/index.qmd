@@ -2,7 +2,7 @@
 title: "Should you dual wield y axes?"
 subtitle: "Points to keep in mind when resorting to a secondary axis"
 date: 2022-11-10
-categories: [bar, line]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 

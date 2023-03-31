@@ -2,7 +2,7 @@
 title: "Visualizing Elon Musk's Twitter addiction"
 subtitle: "The world's busiest billionaire finds the time to tweet at all hours of the day"
 date: 2022-11-13
-categories: [bar, histogram]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 

@@ -23,7 +23,10 @@ icon_link <- function(icon = "far fa-star",
   }
 }
 
-end_mark <- function() {
-  return("![](/images/logo-icon.png){.endmark}")
-  #htmltools::img(href = "/images/logo-icon.png", class = "endmark")
+end_mark <- function(center = FALSE) {
+  if (center == TRUE) {
+    return("<p style='text-align:center'>![](/images/logo-icon.png){.endmark}</p>")
+  } else {
+    return("![](/images/logo-icon.png){.endmark}")
+  }
 }

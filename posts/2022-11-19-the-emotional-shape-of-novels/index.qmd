@@ -2,7 +2,7 @@
 title: "The emotional shape of novels"
 subtitle: "Using sentiment analysis, I chart the emotional highs and lows of three classic novels"
 date: 2022-11-19
-categories: [waterfall]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 

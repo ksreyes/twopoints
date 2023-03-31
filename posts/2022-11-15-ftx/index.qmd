@@ -2,7 +2,7 @@
 title: "That FTX balance sheet"
 subtitle: "SBF shops around for investors with a balance sheet that is emphatically not GAAP"
 date: 2022-11-15
-categories: [bar]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 

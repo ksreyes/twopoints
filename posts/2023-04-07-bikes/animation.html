@@ -1,0 +1,61 @@
+<style>
+
+#bikes {
+  position: relative;
+  width: 100%;
+  height: 5em;
+  overflow: hidden;
+}
+
+.bi-bicycle {
+  position: absolute;
+  font-size: 3rem;
+}
+
+#bike-1 {
+  color: #4889ab;
+  left: -10%;
+  animation: left-right 4s linear infinite;
+}
+
+#bike-2 {
+  color: #B13D70;
+  left: -10%;
+  opacity: .75;
+  animation: left-right 3.7s linear 1s infinite;
+}
+
+#bike-3 {
+  color: #7fc6a4;
+  left: -10%;
+  opacity: .5;
+  animation: left-right 3s linear .5s infinite;
+}
+
+#bike-4 {
+  color: #0C6291;
+  right: -10%;
+  transform: scaleX(-1);
+  opacity: .25;
+  animation: right-left 2.8s linear 1.5s infinite;
+}
+
+#bike-5 {
+  color: #f697bb;
+  right: -10%;
+  transform: scaleX(-1);
+  opacity: 1;
+  animation: right-left 3.5s linear .2s infinite;
+}
+
+@keyframes left-right {
+  0% { left: -10%; }
+  100% { left: 100%; }
+}
+
+@keyframes right-left {
+  0% { right: -10%; }
+  100% { right: 100%; }
+}
+
+</style>

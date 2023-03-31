@@ -2,7 +2,7 @@
 title: "People as particles"
 subtitle: "Population density in cities, portrayed more vividly"
 date: 2023-03-29
-categories: [particles, interactive]
+categories: [D3/OJS]
 image: thumbnail.gif
 include-in-header: animation.html
 ---
