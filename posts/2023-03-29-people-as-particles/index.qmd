@@ -66,8 +66,8 @@ viewof citySelect = Inputs.select(
 
 	const containerChart = container
 		.append("div")
-		.attr("style", "display: flex; justify-content: space-between");
-	containerChart.call(particles, citySelectPH, "10px");
+		.attr("style", "display: flex; gap: 1em; justify-content: space-between");
+	containerChart.call(particles, citySelectPH);
 	containerChart.call(particles, citySelect);
 
 	return container.node();
@@ -226,7 +226,7 @@ function genpoints(city) {
 
 // Function to generate particles chart
 
-function particles(selection, city, margin) {
+function particles(selection, city) {
 
     // Read data
     const nodes = genpoints(city).map(Object.create);
@@ -237,8 +237,6 @@ function particles(selection, city, margin) {
         .attr("height", height * 1.1)
         .attr("viewBox", [0, 0, width * .49, height * 1.1])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic");
-
-    if (margin !== undefined) svg.attr("style", `margin-right: ${margin}`);
 
     // Chart box
     svg.append("rect")

@@ -2,7 +2,7 @@
 title: "Exercises in plotting WDI data"
 subtitle: "Pull the data with R instead of downloading spreadsheet after spreadsheet"
 date: 2022-11-05
-categories: [line, scatter]
+categories: [R, ggplot]
 image: thumbnail.png
 ---
 
