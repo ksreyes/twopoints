@@ -22,7 +22,7 @@ $font-size-listing-title:        1.5rem;
 $font-size-listing-subtitle:     .95rem;
 $font-size-listing-date:         .88rem;
 $font-size-categories:           .65rem;
-$font-size-rbloggers:            .8rem;
+$font-size-rbloggers:            .9rem;
 
 $font-size-post-title:           2.5rem;
 $font-size-post-subtitle:        calc(1.25rem + .15vw);
@@ -757,9 +757,14 @@ p.subpage-note {
   line-height: 1.25;
   background-color: shift-color($color-blue, -90%);
   border-radius: .25rem;
-  width: 25%;
+  width: 22%;
   margin: auto;
   padding: .3rem 0;
+}
+
+.rblogger:hover {            
+  transform: scale(1.05, 1.05);
+  transition: transform .2s;
 }
 
 @media only screen and (max-width: 768px) {
@@ -801,8 +806,8 @@ p.subpage-note {
   }
   
   .rblogger {
-    font-size: .6rem;
-    width: 35%;
+    font-size: .7rem;
+    width: 30%;
   }
 
 }
