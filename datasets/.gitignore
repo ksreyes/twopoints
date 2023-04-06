@@ -6,5 +6,7 @@
 !/literary/literary.py
 !/literary/library_stats.csv
 !/literary/library_network.json
+!/bikelanes
+!/philippines-json-maps
 !/literary/requirements.txt
 !.gitignore
