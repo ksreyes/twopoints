@@ -387,6 +387,10 @@ blockquote.blockquote {
   margin: 0 0 1.75rem 0;
 }
 
+.quarto-figure {
+  margin-bottom: $paragraph-margin-bottom;
+}
+
 img.endmark {
   height: 1.25rem;
   width: 1.25rem;
@@ -433,6 +437,19 @@ img.endmark {
     font-size: .6rem;
     line-height: 1.1;
     margin: 0 0 .875rem 0;
+  }
+  
+  .quarto-figure {
+    margin-bottom: $paragraph-margin-bottom * .5;
+  }
+  
+  img.figure-img {
+    margin-bottom: 0;
+  }
+  
+  .panel-caption, .caption, .figure-caption {
+    font-size: .67rem;
+    margin-top: 0;
   }
   
   img.endmark {
@@ -599,35 +616,42 @@ div.cell-output-display div.observablehq {
   margin-top: 1rem;
 }
 
-h3.ojs-title {
+.ojs-title {
   font-size: 1.2rem;
+  font-family: $font-family-headings;
+  font-weight: 700;
+  text-align: center;
   margin: 0;
 }
 
-div.observablehq span.ojs-subtitle {
-  font-size: 1rem;
+.ojs-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
   margin: 0;
 }
 
-div.observablehq span {
+.ojs-caption {
   font-size: $font-size-cell-ojs;
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
   
-  h3.ojs-title {
+  .ojs-title {
     font-size: .9rem;
-    margin: 0 0 5px 0;
+    margin: 0 0 .15rem 0;
   }
 
-  div.observablehq span.ojs-subtitle {
-    font-size: .7rem !important;
-    line-height: 1;
+  .ojs-subtitle {
+    font-size: .7rem;
+    line-height: 1.5;
   }
   
-  div.observablehq, div.observablehq span, div.observablehq text {
-    font-size: $font-size-cell-ojs * .7 !important;
+  .ojs-caption {
+    font-size: $font-size-cell-ojs * .7;
+    line-height: 1.5;
   }
+  
   
   div.cell-output-display div.observablehq {
     margin-top: .5rem;
@@ -831,6 +855,10 @@ div.sib-form .entry__field {
 
 }
 
+/******************************************************************************/
+/*      MISCELLANEOUS                                                         */
+/******************************************************************************/
+
 /* --- Icon link ------------------------------------------------------------ */
 
 a.icon-link {
@@ -848,8 +876,3 @@ a.icon-link:hover {
   transform: scale(1.1, 1.1);
   transition: transform .2s;
 }
-
-/******************************************************************************/
-/*      MISCELLANEOUS                                                         */
-/******************************************************************************/
-

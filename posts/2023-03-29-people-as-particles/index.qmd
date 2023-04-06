@@ -4,7 +4,9 @@ subtitle: "Population density in cities, portrayed more vividly"
 date: 2023-03-29
 categories: [D3/OJS]
 image: thumbnail.gif
-include-in-header: animation.html
+include-in-header: 
+ - animation.html
+ - style.html
 ---
 
 ```{r}
@@ -37,10 +39,8 @@ I decided to try something novel. I call it a particles chart, and it consists o
 //| layout: "[[1],[1,1],[1],[1]]"
 
 html`
-  <div style="text-align:center">
-  <h3 class="ojs-title">Fancy bumping into you</h3>
-  <span class="ojs-subtitle">Population density in Metro Manila and major global cities</span>
-  </div>
+  <div class="ojs-title">Fancy bumping into you</div>
+  <div class="ojs-subtitle">Population density in Metro Manila and major global cities</div>
 `
 
 viewof citySelectPH = Inputs.select(
@@ -73,11 +73,7 @@ viewof citySelect = Inputs.select(
 	return container.node();
 }
 
-html`
-  <div style="text-align:center">
-  <span>Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's <a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank">World Migration Matrix</a>.</span>
-  </div>
-`
+html`<div class="ojs-caption">Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's <a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank">World Migration Matrix</a>.</div>`
 ```
 
 I've set the balls to generate at various sizes, reflecting the fact that some people take up more space than others. Think private vehicles versus public transport, detached homes versus high-rise condominiums. The balls are also colored in proportion to ethnic makeup, as recorded in Putterman and Weil's [World Migration Matrix](https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000). I've written about this dataset [here](https://twopoints.blog/posts/2022-11-25-roots/) and [here](https://twopoints.blog/posts/2022-11-26-migration/), but to recap, the matrix breaks down a country's population according to where their ancestors were in the year 1500. Migrant ancestor balls are colored by originating continent, ordered from largest to smallest shares. 
@@ -90,7 +86,6 @@ The particles chart can be used in any number of applications, with three levers
 //| code-fold: true
 
 {
-    
     // Generate points
     const widthFishbowl = width
     const rFishbowl = widthFishbowl * .01
@@ -185,8 +180,6 @@ height = width * .49;                // Height of particle chart
 rMean = (width * .49 / 40) / 2;      // Mean radius
 rSD = rMean * .75;                   // SD radius
 velocity = rMean * .8;               // Particle velocity
-legendHeight = width * .05;          // Legend height
-rLegend = .5;                        // Legend radius
 
 colors = ["#4889ab", "#7fc6a4", "#FCB13B", "#B13D70", "#f697bb"];
 
@@ -254,6 +247,7 @@ function particles(selection, city) {
     // Bottom label
     const densityStat = d3.format(",.2r")(city[0].density);
     svg.append("text")
+        .attr("id", "chart-text")
         .attr("x", width * .49 / 2)
         .attr("y", height * 1.075)
         .attr("text-anchor", "middle")
@@ -287,40 +281,41 @@ function particles(selection, city) {
 // Function to generate legend
 
 function legend(selection) {
-  
-    const svgLeft = selection.append("svg")
-        .attr("width", "11em")
+    
+    const legendWidth = 390;
+    const legendHeight = 34;
+    const rLegend = .5;
+    
+    const legendBox = selection.append("svg")
+        .attr("width", legendWidth)
         .attr("height", legendHeight)
-        .attr("viewBox", [0, 0, "11em", legendHeight]);
-
-    svgLeft.append("circle")
-        .attr("cx", rLegend + "em")
-        .attr("cy", ".5em")
+        .attr("viewBox", [0, 0, legendWidth, legendHeight])
+        .attr("style", "max-width: 90%; height: auto; height: intrinsic;");
+    
+    legendBox.append("circle")
+        .attr("cx", rLegend + "rem")
+        .attr("cy", ".5rem")
         .attr("fill", "#4889ab")
-        .attr("r", rLegend + "em");
+        .attr("r", rLegend + "rem");
 
-    svgLeft.append("text")
-        .attr("x", (rLegend * 3) + "em")
-        .attr("y", ".85em")
+    legendBox.append("text")
+        .attr("x", (rLegend * 3) + "rem")
+        .attr("y", ".85rem")
         .attr("text-anchor", "left")
         .text("Native ancestors");
 
-    const svgRight = selection.append("svg")
-        .attr("width", "15em")
-        .attr("height", legendHeight)
-        .attr("viewBox", [0, 0, "15em", legendHeight]);
-  
-    svgRight.selectAll("circle")
+    legendBox.append("g")
+        .selectAll("circle")
         .data([1, 2, 3, 4])
         .join("circle")
-        .attr("cx", d => (rLegend + (d - 1) * rLegend * 3) + "em")
-        .attr("cy", ".5em")
+        .attr("cx", d => (9 + rLegend + (d - 1) * rLegend * 3) + "rem")
+        .attr("cy", ".5rem")
         .attr("fill", d => color(d + 1))
-        .attr("r", rLegend + "em");
+        .attr("r", rLegend + "rem");
 
-    svgRight.append("text")
-        .attr("x", (rLegend * 3 * 4) + "em")
-        .attr("y", ".85em")
+    legendBox.append("text")
+        .attr("x", (9 + rLegend * 3 * 4) + "rem")
+        .attr("y", ".85rem")
         .attr("text-anchor", "left")
         .text("Migrant ancestors");
 }

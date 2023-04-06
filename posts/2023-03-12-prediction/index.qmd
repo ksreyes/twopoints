@@ -4,6 +4,7 @@ subtitle: "A forecasting tournament put the predictive powers of social scientis
 date: 2023-03-12
 categories: [R, ggplot, D3/OJS]
 image: thumbnail.gif
+include-in-header: style.html
 ---
 
 ```{r}
@@ -245,7 +246,7 @@ addTooltips(
         width: 800,
         height: 450,
         marginLeft: 215,
-        marginRight: 0,
+        marginRight: 10,
         marginBottom: 50,
         insetLeft: 5,
         insetTop: 20,

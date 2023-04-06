@@ -4,6 +4,7 @@ subtitle: "*Actually my computer did, but let's not split hairs. An exploration 
 date: 2023-03-22
 categories: [python, D3/OJS]
 image: thumbnail.gif
+include-in-header: style.html
 ---
 
 ```{r}
