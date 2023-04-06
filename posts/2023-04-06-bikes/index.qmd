@@ -1,7 +1,7 @@
 ---
 title: "That'll be ₱1 billion please"
 subtitle: "A bike lane building blitz from the pandemic era offers a glimpse into the Philippine government's procurement process"
-date: 2023-04-07
+date: 2023-04-06
 categories: [R, D3/OJS]
 image: thumbnail.gif
 include-in-header: animation.html
