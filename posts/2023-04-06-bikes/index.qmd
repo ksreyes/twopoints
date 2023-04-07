@@ -341,7 +341,7 @@ html`
     .force("charge", d3.forceManyBody().strength(-200))
     .force("x", d3.forceX())
     .force("y", d3.forceY())
-    .force("limit", d3.forceLimit().x0(-width / 2).x1(width / 2).y0(-height / 2).y1(height / 2))
+    .force("limit", d3.forceLimit().x0(-width / 2).x1(width / 2).y0(-height / 2 + 20).y1(height / 2 - 20).radius(10))
     .on("tick", () => {
       link
         .attr("x1", d => d.source.x)
@@ -565,10 +565,22 @@ html`
       .style("display", "block")
       .html(`${itemName}<br>₱${itemValue} (${itemShare})`);
     
-    d3.select(this)
-      .attr("opacity", 1)
-      .attr("stroke", "#2B303A")
-      .attr("stroke-width", 3);
+    panel.append("rect")
+      .attr("id", "highlight-rect")
+      .attr("x", d3.select(this).attr("x"))
+      .attr("y", d3.select(this).attr("y"))
+      .attr("width", d3.select(this).attr("width"))
+      .attr("height",d3.select(this).attr("height"))
+      .style("opacity", 1)
+      .style("stroke", "#2B303A")
+      .style("stroke-width", 3)
+      .style("fill", "none");
+    
+    //d3.select(this)
+    //  .attr("opacity", 1)
+    //  .attr("stroke", "#2B303A")
+    //  .attr("stroke-width", 3)
+    //  .raise();
       
     d3.select(event.target).style("cursor", "pointer");
     
@@ -576,9 +588,7 @@ html`
   
   const hideTooltip = function(event) {
     tooltip.style("display", "none");
-    d3.select(this)
-      .attr("opacity", .8)
-      .attr("stroke", "none");
+    d3.selectAll("#highlight-rect").remove();
     d3.select(event.target).style("cursor", "default");
   }
   
