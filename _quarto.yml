@@ -13,6 +13,7 @@ website:
   search: true
   image: /images/preview.png
   open-graph: true
+  twitter-card: true
   navbar:
     logo: /images/logo-icon-invert.png
     left: 
@@ -26,7 +27,7 @@ website:
         href: https://github.com/ksreyes/twopoints
       - icon: rss
         href: index.xml
-        
+
 format:
   html:
     theme: 

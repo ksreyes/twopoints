@@ -512,12 +512,12 @@ html`
     .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
   
   const panel = svg.append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
   
   // X axis
   const x = d3.scaleLinear()
     .domain([0, 1])
-    .range([ 0, width ]);
+    .range([0, width]);
   panel.append("g")
     .attr("transform", `translate(0, ${height})`)
     .call(d3.axisBottom(x).ticks(4, "%").tickPadding([8]))
@@ -576,12 +576,6 @@ html`
       .style("stroke-width", 3)
       .style("fill", "none");
     
-    //d3.select(this)
-    //  .attr("opacity", 1)
-    //  .attr("stroke", "#2B303A")
-    //  .attr("stroke-width", 3)
-    //  .raise();
-      
     d3.select(event.target).style("cursor", "pointer");
     
   }
