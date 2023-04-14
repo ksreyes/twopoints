@@ -20,7 +20,7 @@ showtext_auto()
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
 source(here("R", "functions.R"))
-#font_add_google("Karla", "karla")
+font_add_google("Karla", "karla")
 ```
 
 Economics is a strange field, a social science with pretensions of a natural science that manages to annoy both. I have been its student and its teacher and I can tell you that it's weird inside and out. Many a night have I spent working through the mathematics of a world where people are immortal and shops sell 0.000001 of anything. Yet for all its peculiarities, I do think everyone can profit from a little economic knowledge. Economics, to me, is about clarifying trade-offs given a set of goals and rules over how the world works. Notice that this definition doesn't actually include *the* economy (over which economics courses dwell astonishingly little!) but focuses rather on an economic *way* of thinking. Econ 101 may not teach you much about stocks, taxes, or running a business, but it does train you to tackle problems methodically, systematically.
@@ -83,7 +83,7 @@ viewof fc0 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panel.append("g")
     .call(clipWide, id)
-    .call(addCurve, cost, params, yScaler)
+    .call(addCurve, id, cost, params, yScaler)
     .call(yGuide, cost, params, yScaler);
   
   panel.append("g")
@@ -165,7 +165,7 @@ viewof fc1 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, cost, params, yScalerTop)
+    .call(addCurve, id, cost, params, yScalerTop)
     .call(yGuide, cost, params, yScalerTop);
   
   panelTop.append("g")
@@ -184,7 +184,7 @@ viewof fc1 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurve, ac, params, yScalerBottom)
+    .call(addCurve, id, ac, params, yScalerBottom)
     
   panelBottom.append("g")
     .call(clipWide, id)
@@ -249,7 +249,7 @@ viewof fc1 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, cost, params, yScalerTop)
+    .call(addCurve, id, cost, params, yScalerTop)
     .call(yGuide, cost, params, yScalerTop);
   
   panelTop.append("g")
@@ -268,8 +268,8 @@ viewof fc1 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, ac, params, yScalerBottom, gray)
-    .call(addCurve, avc, params, yScalerBottom)
+    .call(addCurveFull, id, ac, params, yScalerBottom, gray)
+    .call(addCurve, id, avc, params, yScalerBottom)
   
   panelBottom.append("g")
     .call(clipWide, id)
@@ -334,7 +334,7 @@ viewof fc1 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, cost, params, yScalerTop)
+    .call(addCurve, id, cost, params, yScalerTop)
     .call(yGuide, cost, params, yScalerTop);
   
   panelTop.append("g")
@@ -353,9 +353,9 @@ viewof fc1 = Inputs.range([0, fcMax], { label: "Fixed cost", step: 1, value: 250
   
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, ac, params, yScalerBottom, gray)
-    .call(addCurveFull, avc, params, yScalerBottom, gray)
-    .call(addCurve, mc, params, yScalerBottom)
+    .call(addCurveFull, id, ac, params, yScalerBottom, gray)
+    .call(addCurveFull, id, avc, params, yScalerBottom, gray)
+    .call(addCurve, id, mc, params, yScalerBottom)
   
   panelBottom.append("g")
     .call(clipWide, id)
@@ -442,7 +442,7 @@ viewof p2 = Inputs.range([0, pMax], {label: "Price", step: .1, value: 17, disabl
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profit, params, yScalerTop)
+    .call(addCurve, id, profit, params, yScalerTop)
     .call(yGuide, profit, params, yScalerTop);
   
   panelTop.append("g")
@@ -461,20 +461,20 @@ viewof p2 = Inputs.range([0, pMax], {label: "Price", step: .1, value: 17, disabl
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profit, corners)
+    .call(addArea, id, profit, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurve, avc, params, yScalerBottom)
-    .call(addCurve, mc, params, yScalerBottom)
-    .call(addCurve, ac, params, yScalerBottom)
+    .call(addCurve, id, avc, params, yScalerBottom)
+    .call(addCurve, id, mc, params, yScalerBottom)
+    .call(addCurve, id, ac, params, yScalerBottom)
   
   panelBottom.append("g")
     .call(clipWide, id)
     .call(yGuide, price, params, yScalerBottom)
-    .call(addCurveFull, price, params, yScalerBottom)
+    .call(addCurveFull, id, price, params, yScalerBottom)
     .call(yGuide, ac, params, yScalerBottom);
     
   panelBottom.append("g")
@@ -551,7 +551,7 @@ viewof p3 = Inputs.range([0, pMax], {label: "Price", step: .1, value: 10, disabl
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profit, params, yScalerTop)
+    .call(addCurve, id, profit, params, yScalerTop)
     .call(yGuide, profit, params, yScalerTop);
   
   panelTop.append("g")
@@ -570,20 +570,20 @@ viewof p3 = Inputs.range([0, pMax], {label: "Price", step: .1, value: 10, disabl
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profit, corners)
+    .call(addArea, id, profit, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, avc, params, yScalerBottom, gray)
-    .call(addCurveFull, ac, params, yScalerBottom, gray)
-    .call(addCurve, mc, params, yScalerBottom)
+    .call(addCurveFull, id, avc, params, yScalerBottom, gray)
+    .call(addCurveFull, id, ac, params, yScalerBottom, gray)
+    .call(addCurve, id, mc, params, yScalerBottom)
   
   panelBottom.append("g")
     .call(clipWide, id)
     .call(yGuide, mr, params, yScalerBottom)
-    .call(addCurveFull, mr, params, yScalerBottom)
+    .call(addCurveFull, id, mr, params, yScalerBottom)
     .call(yGuide, ac, params, yScalerBottom);
     
   panelBottom.append("g")
@@ -658,7 +658,7 @@ viewof p4 = Inputs.range([0, pMax], {label: "Price", step: .1, value: 15 })
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profit, params, yScalerTop)
+    .call(addCurve, id, profit, params, yScalerTop)
     .call(yGuide, profit, params, yScalerTop);
   
   panelTop.append("g")
@@ -677,20 +677,20 @@ viewof p4 = Inputs.range([0, pMax], {label: "Price", step: .1, value: 15 })
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profit, corners)
+    .call(addArea, id, profit, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, avc, params, yScalerBottom, gray)
-    .call(addCurveFull, ac, params, yScalerBottom, gray)
-    .call(addCurve, mc, params, yScalerBottom)
+    .call(addCurveFull, id, avc, params, yScalerBottom, gray)
+    .call(addCurveFull, id, ac, params, yScalerBottom, gray)
+    .call(addCurve, id, mc, params, yScalerBottom)
     
   panelBottom.append("g")
     .call(clipWide, id)
     .call(yGuide, mr, params, yScalerBottom)
-    .call(addCurveFull, mr, params, yScalerBottom)
+    .call(addCurveFull, id, mr, params, yScalerBottom)
     .call(yGuide, ac, params, yScalerBottom);
     
   panelBottom.append("g")
@@ -783,7 +783,7 @@ viewof fc5 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 250 
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profit, params, yScalerTop)
+    .call(addCurve, id, profit, params, yScalerTop)
     .call(yGuide, profit, params, yScalerTop);
   
   panelTop.append("g")
@@ -802,41 +802,58 @@ viewof fc5 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 250 
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profit, corners)
+    .call(addArea, id, profit, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, avc, params, yScalerBottom, gray)
-    .call(addCurveFull, ac, params, yScalerBottom, gray)
-    .call(addCurveFull, mc, params, yScalerBottom, gray)
+    .call(addCurveFull, id, avc, params, yScalerBottom, gray)
+    .call(addCurveFull, id, ac, params, yScalerBottom, gray)
+    .call(addCurveFull, id, mc, params, yScalerBottom, gray)
   
    panelBottom.append("g")
     .call(clipWide, id)
     .call(yGuide, mr, params, yScalerBottom)
-    .call(addCurveFull, mr, params, yScalerBottom)
-    .call(addCurve, supply, params, yScalerBottom)
+    .call(addCurveFull, id, mr, params, yScalerBottom)
+    .call(addCurve, id, supply, params, yScalerBottom)
     .call(yGuide, ac, params, yScalerBottom)
     
   panelBottom.append("g")
     .call(panelAxes, axisTitlesBottom)
   
   // Vertical portion of supply curve
+  
   panelBottom.append("g")
     .attr("id", supply.id)
     .attr("pointer-events", "visibleStroke")
     .call(clipWide, id)
     .append("path")
     .attr("class", "curve colored")
-    .attr("d", line([
-      [0, panelHeight], 
-      [0, yScalerBottom(avcFxn({ q: qShutDown }))],
-      [1, yScalerBottom(avcFxn({ q: qShutDown }))]
-    ]))
+    .attr("d", line([[0, panelHeight], [0, yScalerBottom(avcFxn({ q: qShutDown }))], [1, yScalerBottom(avcFxn({ q: qShutDown }))]]))
     .attr("fill", "none")
     .attr("stroke", blue.base)
     .attr("stroke-width", strokeWidth)
+    .on("mousemove", (event) => {
+      d3.selectAll("#" + supply.id + " " + ".curve")
+        .transition().duration(50)
+        .style("stroke-width", strokeWidth + 2)
+        .style("stroke", supply.scheme.baseSelect);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(supply.label);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", (event) => {
+      d3.selectAll("#" + supply.id + " " + ".curve")
+        .transition().duration(100)
+        .style("stroke-width", strokeWidth)
+        .style("stroke", supply.scheme.base);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
 
   panelBottom.append("g")
     .attr("id", `labels-${id}`)
@@ -844,12 +861,6 @@ viewof fc5 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 250 
     .call(addLabel, "AC", xScaler(95) - 10, yScalerBottom(acFxn({ q: 95, fc: params.fc })) - 10, "end")
     .call(addLabel, "AVC", xScaler(95) + 10, yScalerBottom(avcFxn({ q: 95 })) + 10)
     .call(addLabel, "Supply", xScaler(69) + 5, yScalerBottom(mcFxn({ q: 69 })) - 25, "middle");
-  
-  // Shutdown point
-  panelBottom.append("g")
-    .append("circle")
-    .attr("cx", xScaler(36))
-    .attr("cy", yScalerBottom(mcFxn({ q: 36 })))
   
   // Toggle event listener ////////////////////////////////////////////////////////////////////////
   
@@ -910,7 +921,7 @@ This prediction stems from the assumption that without the hindrance of fixed co
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profit, params, yScalerTop)
+    .call(addCurve, id, profit, params, yScalerTop)
 
   panelTop.append("g")
     .call(panelAxesT, axisTitlesTop, yScalerTop)
@@ -939,20 +950,20 @@ This prediction stems from the assumption that without the hindrance of fixed co
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profit, corners)
+    .call(addArea, id, profit, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, ac, params, yScalerBottom, gray)
-    .call(addCurveFull, mc, params, yScalerBottom, gray)
+    .call(addCurveFull, id, ac, params, yScalerBottom, gray)
+    .call(addCurveFull, id, mc, params, yScalerBottom, gray)
   
   panelBottom.append("g")
     .call(clipWide, id)
     .call(yGuide, mr, params, yScalerBottom)
-    .call(addCurveFull, mr, params, yScalerBottom)
-    .call(addCurve, supply, params, yScalerBottom)
+    .call(addCurveFull, id, mr, params, yScalerBottom)
+    .call(addCurve, id, supply, params, yScalerBottom)
 
   panelBottom.append("g")
     .call(panelAxes, axisTitlesBottom)
@@ -1037,13 +1048,13 @@ viewof q6 = Inputs.range([0, qMax], {label: "Output", step: 1, value: 50 });
     .call(labelsToggle, id);
   
   const panel = svg.append("g")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
   
   panel.append("g")
-    .call(addCurve, mr, params, yScaler)
     .call(panelAxes, axisTitles)
     .call(yGuide, mr, params, yScaler)
-    .call(xGuides, mr, params, yScaler, 1);
+    .call(xGuides, mr, params, yScaler, 1)
+    .call(addCurve, id, mr, params, yScaler);
   
   panel.append("g")
     .attr("id", `labels-${id}`)
@@ -1051,7 +1062,7 @@ viewof q6 = Inputs.range([0, qMax], {label: "Output", step: 1, value: 50 });
    
   // Toggle event listener ////////////////////////////////////////////////////////////////////////
   
-  const cb = svg.select("foreignObject").select(`input#checkbox-${id}`)
+  const cb = svg.select("foreignObject").select(`input#checkbox-${id}`);
   
   cb.on("click", () => {
     const isChecked = cb.property("checked");
@@ -1092,17 +1103,17 @@ viewof q6 = Inputs.range([0, qMax], {label: "Output", step: 1, value: 50 });
   
   const panel = svg.append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
-  
-  panel.append("g")
-    .call(clip, id)
-    .call(addCurveFull, mr, params, yScaler, gray)
-    .call(addCurve, mrMono, params, yScaler)
-    .call(addCurve, demandMono, params, yScaler)
     
   panel.append("g")
     .call(clipWide, id)
     .call(yGuide, mrMono, params, yScaler)
     .call(yGuide, demandMono, params, yScaler);
+  
+  panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, mr, params, yScaler, gray)
+    .call(addCurve, id, mrMono, params, yScaler)
+    .call(addCurve, id, demandMono, params, yScaler)
   
   panel.append("g")
     .call(panelAxes, axisTitles)
@@ -1180,7 +1191,7 @@ viewof fc7 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 180 
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profitMono, params, yScalerTop)
+    .call(addCurve, id, profitMono, params, yScalerTop)
     .call(yGuide, profitMono, params, yScalerTop);
   
   panelTop.append("g")
@@ -1199,17 +1210,17 @@ viewof fc7 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 180 
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profitMono, corners)
+    .call(addArea, id, profitMono, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, mr, params, yScalerBottom, gray)
-    .call(addCurve, ac, params, yScalerBottom)
-    .call(addCurve, mc, params, yScalerBottom)
-    .call(addCurve, demandMono, params, yScalerBottom)
-    .call(addCurve, mrMono, params, yScalerBottom)
+    .call(addCurveFull, id, mr, params, yScalerBottom, gray)
+    .call(addCurve, id, ac, params, yScalerBottom)
+    .call(addCurve, id, mc, params, yScalerBottom)
+    .call(addCurve, id, demandMono, params, yScalerBottom)
+    .call(addCurve, id, mrMono, params, yScalerBottom)
   
   panelBottom.append("g")
     .call(clipWide, id)
@@ -1287,7 +1298,7 @@ What's wrong with all this? It's beyond the scope of this humble blog post, but 
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurveFull, profitMono, params, yScalerTop);
+    .call(addCurveFull, id, profitMono, params, yScalerTop);
   
   panelTop.append("g")
     .call(panelAxesT, axisTitlesTop, yScalerTop)
@@ -1314,9 +1325,9 @@ What's wrong with all this? It's beyond the scope of this humble blog post, but 
   
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, mc, params, yScalerBottom)
-    .call(addCurveFull, demandMono, params, yScalerBottom)
-    .call(addCurveFull, mrMono, params, yScalerBottom);
+    .call(addCurveFull, id, mc, params, yScalerBottom)
+    .call(addCurveFull, id, demandMono, params, yScalerBottom)
+    .call(addCurveFull, id, mrMono, params, yScalerBottom);
     
   panelBottom.append("g")
     .call(panelAxes, axisTitlesBottom);
@@ -1369,7 +1380,7 @@ What's wrong with all this? It's beyond the scope of this humble blog post, but 
     
   const checkboxCompetitive = svg.append("foreignObject")
     .attr("x", 400)
-    .attr("y",  475 + 20)
+    .attr("y",  475 + 25)
     .attr("width", 13)
     .attr("height", 20);
   
@@ -1382,7 +1393,7 @@ What's wrong with all this? It's beyond the scope of this humble blog post, but 
     .append("text")
     .text("Social optimum")
     .attr("x", 400 + 20)
-    .attr("y", 475 + 25)
+    .attr("y", 475 + 5 + 25)
     .attr("text-anchor", "start")
     .attr("alignment-baseline", "hanging")
     .style("fill", "black");
@@ -1474,7 +1485,7 @@ viewof fc8 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 0, d
   
   panelTop.append("g")
     .call(clipWide, id)
-    .call(addCurve, profitMonoComp, params, yScalerTop)
+    .call(addCurve, id, profitMonoComp, params, yScalerTop)
     .call(yGuide, profitMonoComp, params, yScalerTop);
   
   panelTop.append("g")
@@ -1493,17 +1504,17 @@ viewof fc8 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 0, d
   
   panelBottom.append("g")
     .call(clipWide, id)
-    .call(addArea, profitMono, corners)
+    .call(addArea, id, profitMono, corners)
     .select("path")
     .style("fill", corners.y1 < corners.y2 ? "#7fc6a4" : "#f697bb");
     
   panelBottom.append("g")
     .call(clip, id)
-    .call(addCurveFull, mr, params, yScalerBottom, gray)
-    .call(addCurve, ac, params, yScalerBottom)
-    .call(addCurve, mc, params, yScalerBottom)
-    .call(addCurve, demandMonoComp, params, yScalerBottom)
-    .call(addCurve, mrMonoComp, params, yScalerBottom)
+    .call(addCurveFull, id, price, params, yScalerBottom, gray)
+    .call(addCurve, id, ac, params, yScalerBottom)
+    .call(addCurve, id, mc, params, yScalerBottom)
+    .call(addCurve, id, demandMonoComp, params, yScalerBottom)
+    .call(addCurve, id, mrMonoComp, params, yScalerBottom)
   
   panelBottom.append("g")
     .call(clipWide, id)
@@ -1656,12 +1667,12 @@ background = selection => {
 ```{ojs}
 //| code-fold: true
 
-addCurve = (selection, fxnInfo, params, yScaler) => {
+addCurve = (selection, id, fxnInfo, params, yScaler) => {
 
   const point = data(fxnInfo.fxn, params, yScaler)[params.q]
 
   const curves = selection.append("g")
-    .attr("id", fxnInfo.id)
+    .attr("id", `${fxnInfo.id}-${id}`)
     .attr("pointer-events", "visibleStroke")
   
   // Non-highlighted portion
@@ -1683,11 +1694,11 @@ addCurve = (selection, fxnInfo, params, yScaler) => {
   // Add hover effects
   curves
     .on("mousemove", (event) => {
-      d3.selectAll("#" + fxnInfo.id + " " + ".curve.colored")
+      d3.selectAll(`#${fxnInfo.id}-${id} .curve.colored`)
         .transition().duration(50)
         .style("stroke-width", strokeWidth + 2)
         .style("stroke", fxnInfo.scheme.baseSelect);
-      d3.selectAll("#" + fxnInfo.id + " " + ".curve.dulled")
+      d3.selectAll(`#${fxnInfo.id}-${id} .curve.dulled`)
         .transition().duration(50)
         .style("stroke-width", strokeWidth + 2)
         .style("stroke", fxnInfo.scheme.dullSelect);
@@ -1699,11 +1710,11 @@ addCurve = (selection, fxnInfo, params, yScaler) => {
       d3.select(event.target).style("cursor", "pointer");
     })
     .on("mouseleave", (event) => {
-      d3.selectAll("#" + fxnInfo.id + " " + ".curve.colored")
+      d3.selectAll(`#${fxnInfo.id}-${id} .curve.colored`)
         .transition().duration(100)
         .style("stroke-width", strokeWidth)
         .style("stroke", fxnInfo.scheme.base);
-      d3.selectAll("#" + fxnInfo.id + " " + ".curve.dulled")
+      d3.selectAll(`#${fxnInfo.id}-${id} .curve.dulled`)
         .transition().duration(100)
         .style("stroke-width", strokeWidth)
         .style("stroke", fxnInfo.scheme.dull);
@@ -1714,10 +1725,10 @@ addCurve = (selection, fxnInfo, params, yScaler) => {
   return selection.node()
 }
 
-addCurveFull = (selection, fxnInfo, params, yScaler, scheme = fxnInfo.scheme) => {
+addCurveFull = (selection, id, fxnInfo, params, yScaler, scheme = fxnInfo.scheme) => {
   
   const curves = selection.append("g")
-    .attr("id", fxnInfo.id)
+    .attr("id", `${fxnInfo.id}-${id}`)
     .attr("pointer-events", "visibleStroke");
   
   curves.append("path")
@@ -1730,7 +1741,7 @@ addCurveFull = (selection, fxnInfo, params, yScaler, scheme = fxnInfo.scheme) =>
   // Add hover effects
   curves
     .on("mousemove", (event) => {
-      d3.selectAll("#" + fxnInfo.id + " " + ".curve")
+      d3.selectAll(`#${fxnInfo.id}-${id} .curve`)
         .transition().duration(50)
         .style("stroke-width", strokeWidth + 2)
         .style("stroke", scheme.baseSelect);
@@ -1742,7 +1753,7 @@ addCurveFull = (selection, fxnInfo, params, yScaler, scheme = fxnInfo.scheme) =>
       d3.select(event.target).style("cursor", "pointer");
     })
     .on("mouseleave", (event) => {
-      d3.selectAll("#" + fxnInfo.id + " " + ".curve")
+      d3.selectAll(`#${fxnInfo.id}-${id} .curve`)
         .transition().duration(100)
         .style("stroke-width", strokeWidth)
         .style("stroke", scheme.base);
@@ -1753,10 +1764,10 @@ addCurveFull = (selection, fxnInfo, params, yScaler, scheme = fxnInfo.scheme) =>
   return selection.node()
 }
 
-addArea = (selection, info, corners) => {
+addArea = (selection, id, info, corners) => {
   
   const area = selection.append("path")
-    .attr("id", "area-" + info.id)
+    .attr("id", `area-${info.id}-${id}`)
     .attr("d", d3.line()([ 
       [corners.x1, corners.y1], 
       [corners.x2, corners.y1],
@@ -1769,7 +1780,7 @@ addArea = (selection, info, corners) => {
   // Add hover effects
   area
     .on("mousemove", (event) => {
-      d3.selectAll("#area-" + info.id)
+      d3.selectAll(`#area-${info.id}-${id}`)
         .transition().duration(50)
         .style("opacity", .5);
       tooltip
@@ -1780,7 +1791,7 @@ addArea = (selection, info, corners) => {
       d3.select(event.target).style("cursor", "pointer");
     })
     .on("mouseleave", (event) => {
-      d3.selectAll("#area-" + info.id)
+      d3.selectAll(`#area-${info.id}-${id}`)
         .transition().duration(50)
         .style("opacity", .25);
       tooltip.style("display", "none");
