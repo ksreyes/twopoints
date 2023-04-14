@@ -825,17 +825,17 @@ viewof fc5 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 250 
   // Vertical portion of supply curve
   
   panelBottom.append("g")
-    .attr("id", supply.id)
+    .attr("id", `${supply.id}-${id}`)
     .attr("pointer-events", "visibleStroke")
     .call(clipWide, id)
     .append("path")
     .attr("class", "curve colored")
     .attr("d", line([[0, panelHeight], [0, yScalerBottom(avcFxn({ q: qShutDown }))], [1, yScalerBottom(avcFxn({ q: qShutDown }))]]))
-    .attr("fill", "none")
-    .attr("stroke", blue.base)
-    .attr("stroke-width", strokeWidth)
+    .style("fill", "none")
+    .style("stroke", blue.base)
+    .style("stroke-width", strokeWidth)
     .on("mousemove", (event) => {
-      d3.selectAll("#" + supply.id + " " + ".curve")
+      d3.selectAll(`#${supply.id}-${id} .curve`)
         .transition().duration(50)
         .style("stroke-width", strokeWidth + 2)
         .style("stroke", supply.scheme.baseSelect);
@@ -847,7 +847,7 @@ viewof fc5 = Inputs.range([0, fcMax], {label: "Fixed cost", step: 1, value: 250 
       d3.select(event.target).style("cursor", "pointer");
     })
     .on("mouseleave", (event) => {
-      d3.selectAll("#" + supply.id + " " + ".curve")
+      d3.selectAll(`#${supply.id}-${id} .curve`)
         .transition().duration(100)
         .style("stroke-width", strokeWidth)
         .style("stroke", supply.scheme.base);
@@ -969,20 +969,37 @@ This prediction stems from the assumption that without the hindrance of fixed co
     .call(panelAxes, axisTitlesBottom)
   
   // Vertical portion of supply curve
+  
   panelBottom.append("g")
-    .attr("id", supply.id)
+    .attr("id", `${supply.id}-${id}`)
     .attr("pointer-events", "visibleStroke")
     .call(clipWide, id)
     .append("path")
     .attr("class", "curve colored")
-    .attr("d", line([
-      [0, panelHeight], 
-      [0, yScalerBottom(avcFxn({ q: qShutDown }))],
-      [1, yScalerBottom(avcFxn({ q: qShutDown }))]
-    ]))
-    .attr("fill", "none")
-    .attr("stroke", blue.base)
-    .attr("stroke-width", strokeWidth)
+    .attr("d", line([[0, panelHeight], [0, yScalerBottom(avcFxn({ q: qShutDown }))], [1, yScalerBottom(avcFxn({ q: qShutDown }))]]))
+    .style("fill", "none")
+    .style("stroke", blue.base)
+    .style("stroke-width", strokeWidth)
+    .on("mousemove", (event) => {
+      d3.selectAll(`#${supply.id}-${id} .curve`)
+        .transition().duration(50)
+        .style("stroke-width", strokeWidth + 2)
+        .style("stroke", supply.scheme.baseSelect);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(supply.label);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", (event) => {
+      d3.selectAll(`#${supply.id}-${id} .curve`)
+        .transition().duration(100)
+        .style("stroke-width", strokeWidth)
+        .style("stroke", supply.scheme.base);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
 
   panelBottom.append("g")
     .attr("id", `labels-${id}`)
