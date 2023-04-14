@@ -1,7 +1,7 @@
 ---
 title: "Learning curves"
 subtitle: "Charts have been aiding --- and confusing --- students of economics for generations. Give them a fresh twist by adding interactivity."
-date: 2023-04-13
+date: 2023-04-14
 categories: [D3/OJS]
 image: thumbnail.gif
 include-in-header: animation.html
