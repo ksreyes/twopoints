@@ -5,7 +5,7 @@ date: 2023-04-13
 categories: [D3/OJS]
 image: thumbnail.gif
 include-in-header: animation.html
-draft: true
+draft: false
 ---
 
 ```{r}

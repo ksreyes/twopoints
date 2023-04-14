@@ -1,43 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://twopoints.blog/posts/2022-11-08-metro-manila-subway/index.html</loc>
-    <lastmod>2023-04-10T08:21:06.533Z</lastmod>
+    <loc>https://twopoints.blog/posts/2023-03-12-prediction/index.html</loc>
+    <lastmod>2023-04-14T05:18:47.811Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/posts/2022-12-03-war-is-over/index.html</loc>
-    <lastmod>2023-04-10T08:21:07.210Z</lastmod>
+    <loc>https://twopoints.blog/posts/2023-01-26-oscars/index.html</loc>
+    <lastmod>2023-04-14T05:18:48.497Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/posts/2022-12-15-mountains/index.html</loc>
-    <lastmod>2023-04-10T08:21:07.850Z</lastmod>
+    <loc>https://twopoints.blog/posts/2023-02-06-francis-is-an-old-pope/index.html</loc>
+    <lastmod>2023-04-14T05:18:49.242Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/posts/2023-03-29-people-as-particles/index.html</loc>
-    <lastmod>2023-04-10T08:21:08.805Z</lastmod>
+    <loc>https://twopoints.blog/posts/2022-12-07-im-gonna-carry-that-weight/index.html</loc>
+    <lastmod>2023-04-14T05:18:50.149Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/posts/2022-11-25-roots/index.html</loc>
-    <lastmod>2023-04-10T08:21:09.777Z</lastmod>
+    <loc>https://twopoints.blog/posts/2023-03-22-literary-analysis/index.html</loc>
+    <lastmod>2023-04-14T05:18:51.538Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/subscribe.html</loc>
-    <lastmod>2023-04-10T08:21:10.061Z</lastmod>
+    <loc>https://twopoints.blog/posts/2022-11-26-migration/index.html</loc>
+    <lastmod>2023-04-14T05:18:52.552Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/about.html</loc>
-    <lastmod>2023-04-10T08:21:10.383Z</lastmod>
+    <loc>https://twopoints.blog/posts/2022-12-21-avatar/index.html</loc>
+    <lastmod>2023-04-14T05:18:53.162Z</lastmod>
   </url>
   <url>
-    <loc>https://twopoints.blog/subscribed.html</loc>
-    <lastmod>2023-04-10T08:21:10.647Z</lastmod>
+    <loc>https://twopoints.blog/posts/2022-11-13-elon/index.html</loc>
+    <lastmod>2023-04-14T05:18:53.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2023-02-22-putins-leverage-putins-folly/index.html</loc>
+    <lastmod>2023-04-14T05:18:54.896Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-11-15-ftx/index.html</loc>
+    <lastmod>2023-04-14T05:18:55.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-11-05-wdi/index.html</loc>
+    <lastmod>2023-04-14T05:18:56.254Z</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/posts/2023-04-06-bikes/index.html</loc>
-    <lastmod>2023-04-10T08:21:55.911Z</lastmod>
+    <lastmod>2023-04-14T05:18:57.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-11-19-the-emotional-shape-of-novels/index.html</loc>
+    <lastmod>2023-04-14T05:18:58.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2023-03-03-nobel/index.html</loc>
+    <lastmod>2023-04-14T05:18:58.680Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-11-10-dual-wield/index.html</loc>
+    <lastmod>2023-04-14T05:18:59.273Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2023-02-14-standard-age/index.html</loc>
+    <lastmod>2023-04-14T05:19:00.012Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2023-04-13-curves/index.html</loc>
+    <lastmod>2023-04-14T05:19:02.739Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-11-08-metro-manila-subway/index.html</loc>
+    <lastmod>2023-04-14T05:19:03.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-12-03-war-is-over/index.html</loc>
+    <lastmod>2023-04-14T05:19:03.834Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-12-15-mountains/index.html</loc>
+    <lastmod>2023-04-14T05:19:04.394Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2023-03-29-people-as-particles/index.html</loc>
+    <lastmod>2023-04-14T05:19:05.221Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/posts/2022-11-25-roots/index.html</loc>
+    <lastmod>2023-04-14T05:19:05.959Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/subscribe.html</loc>
+    <lastmod>2023-04-14T05:19:06.242Z</lastmod>
   </url>
   <url>
     <loc>https://twopoints.blog/index.html</loc>
-    <lastmod>2023-04-14T05:11:35.248Z</lastmod>
+    <lastmod>2023-04-14T05:19:07.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/about.html</loc>
+    <lastmod>2023-04-14T05:19:09.503Z</lastmod>
+  </url>
+  <url>
+    <loc>https://twopoints.blog/subscribed.html</loc>
+    <lastmod>2023-04-14T05:19:09.765Z</lastmod>
   </url>
 </urlset>
