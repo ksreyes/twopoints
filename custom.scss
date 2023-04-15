@@ -892,7 +892,7 @@ div.sib-form .entry__field {
 
 /* --- Icon link ------------------------------------------------------------ */
 
-a.icon-link {
+p a.icon-link {
   background-color: #1046b1;
   border: none;
   font-size: $font-size-base;
@@ -902,7 +902,7 @@ a.icon-link {
   border-radius: 3px;
 }
 
-a.icon-link:hover {
+p a.icon-link:hover {
   background-color: shift-color(#1046b1, -20%);
   transform: scale(1.1, 1.1);
   transition: transform .2s;
