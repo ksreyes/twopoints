@@ -478,8 +478,12 @@ img.endmark {
   
    /* --- Panel set --------------------------------------------------------- */
   
-  .panelset, .panel-tabset {
-    font-size: .7rem !important;
+  .panelset, .panel-tabset ul {
+    font-size: .7rem;
+  }
+  
+  .panel-tabset a.nav-link {
+    padding: 8.5px 12px;
   }
   
   .panelset .panel-tabs .panel-tab {
