@@ -1378,7 +1378,7 @@ What's wrong with all this? It's beyond the scope of this humble blog post, but 
   const checkboxMonopoly = svg.append("foreignObject")
     .attr("x", 400)
     .attr("y",  475)
-    .attr("width", 13)
+    .attr("width", 15)
     .attr("height", 20);
   
   checkboxMonopoly.append("xhtml:input")
@@ -1398,7 +1398,7 @@ What's wrong with all this? It's beyond the scope of this humble blog post, but 
   const checkboxCompetitive = svg.append("foreignObject")
     .attr("x", 400)
     .attr("y",  475 + 25)
-    .attr("width", 13)
+    .attr("width", 15)
     .attr("height", 20);
   
   checkboxCompetitive.append("xhtml:input")
@@ -2005,7 +2005,7 @@ labelsToggle = (selection, id) => {
   const checkbox = selection.append("foreignObject")
     .attr("x", width + margin.left + 10)
     .attr("y",  15)
-    .attr("width", 13)
+    .attr("width", 15)
     .attr("height", 20);
   
   checkbox.append("xhtml:input")
