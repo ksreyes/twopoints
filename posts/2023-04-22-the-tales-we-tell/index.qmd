@@ -504,7 +504,7 @@ Stories are entertainment --- bits of made-up nonsense we pass around to pass th
 - [coords.json](https://github.com/macleginn/mythology-queries/blob/master/data/coords.json) (Dmitry Nikolayev)
 - [match_names_to_coords.csv](../../datasets/folklore/match_names_to_coords.csv) / [match_names_to_mx.csv](../../datasets/folklore/match_names_to_mx.csv) / [coords_clean.json](../../datasets/folklore/coords_clean.json) / [motifs.csv](../../datasets/folklore/motifs.csv) / [groups_motifs.csv](../../datasets/folklore/groups_motifs.csv) / [groups_concepts.csv](../../datasets/folklore/groups_concepts.csv) / [regressions.csv](../../datasets/folklore/regressions.csv)  
   cleaning scripts: [clean.ipynb](../../datasets/folklore/clean.ipynb)
-- [countries-110m.json](https://github.com/topojson/world-atlas)
+- [countries-110m.json](../../datasets/folklore/countries-110m.json)
 
 ## Appendix: D3 / Observable {.appendix}
 

@@ -6,7 +6,6 @@
 /.quarto/
 _freeze
 /images/
-datasets/
 R/colors.R
 R/tokens.R
 venv
