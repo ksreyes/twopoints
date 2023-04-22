@@ -753,8 +753,8 @@ motifSelectDesc = (selection, motif) => {
 
 addButton = (selection) => {
   
-  const pos = ({ x: 30, y: 512 });
-  const dim = ({ width: 150, height: 20 });
+  const pos = ({ x: 30, y: 507 });
+  const dim = ({ width: 160, height: 25 });
   const color = ({ base: "#B13D70", hover: "#C85B89", click: "#991E56" });
   
   selection.append("rect")
