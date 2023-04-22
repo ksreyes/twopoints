@@ -1,0 +1,960 @@
+year,category,name,sex,birth,age,birth_country,birth_continent
+1901,Chemistry,Jacobus H. van 't Hoff,male,1852-08-30,49,the Netherlands,Europe
+1901,Literature,Sully Prudhomme,male,1839-03-16,62,France,Europe
+1901,Peace,Henry Dunant,male,1828-05-08,73,Switzerland,Europe
+1901,Peace,Frédéric Passy,male,1822-05-20,79,France,Europe
+1901,Physics,Wilhelm Conrad Röntgen,male,1845-03-27,56,Germany,Europe
+1901,Medicine,Emil von Behring,male,1854-03-15,47,Poland,Europe
+1902,Chemistry,Emil Fischer,male,1852-10-09,50,Germany,Europe
+1902,Literature,Theodor Mommsen,male,1817-11-30,85,Germany,Europe
+1902,Peace,Élie Ducommun,male,1833-02-19,69,Switzerland,Europe
+1902,Peace,Albert Gobat,male,1843-05-21,59,Switzerland,Europe
+1902,Physics,Hendrik A. Lorentz,male,1853-07-18,49,the Netherlands,Europe
+1902,Physics,Pieter Zeeman,male,1865-05-25,37,the Netherlands,Europe
+1902,Medicine,Ronald Ross,male,1857-05-13,45,India,Asia
+1903,Chemistry,Svante Arrhenius,male,1859-02-19,44,Sweden,Europe
+1903,Literature,Bjørnstjerne Bjørnson,male,1832-12-08,71,Norway,Europe
+1903,Peace,Randal Cremer,male,1828-03-18,75,United Kingdom,Europe
+1903,Physics,Henri Becquerel,male,1852-12-15,50,France,Europe
+1903,Physics,Pierre Curie,male,1859-05-15,44,France,Europe
+1903,Physics,Marie Curie,female,1867-11-07,36,Poland,Europe
+1903,Medicine,Niels Ryberg Finsen,male,1860-12-15,42,Faroe Islands (Denmark),Europe
+1904,Chemistry,Sir William Ramsay,male,1852-10-02,52,Scotland,Europe
+1904,Literature,Frédéric Mistral,male,1830-09-08,74,France,Europe
+1904,Literature,José Echegaray,male,1832-04-19,72,Spain,Europe
+1904,Physics,Lord Rayleigh,male,1842-11-12,62,United Kingdom,Europe
+1904,Medicine,Ivan Pavlov,male,1849-09-14,55,Russia,Europe
+1905,Chemistry,Adolf von Baeyer,male,1835-10-31,70,Germany,Europe
+1905,Literature,Henryk Sienkiewicz,male,1846-05-05,59,Poland,Europe
+1905,Peace,Bertha von Suttner,female,1843-06-09,62,Czech Republic,Europe
+1905,Physics,Philipp Lenard,male,1862-06-07,43,Slovakia,Europe
+1905,Medicine,Robert Koch,male,1843-12-11,61,Germany,Europe
+1906,Chemistry,Henri Moissan,male,1852-09-28,54,France,Europe
+1906,Literature,Giosuè Carducci,male,1835-07-27,71,Italy,Europe
+1906,Peace,Theodore Roosevelt,male,1858-10-27,48,USA,North America
+1906,Physics,J.J. Thomson,male,1856-12-18,49,United Kingdom,Europe
+1906,Medicine,Camillo Golgi,male,1843-07-07,63,Italy,Europe
+1906,Medicine,Santiago Ramón y Cajal,male,1852-05-01,54,Spain,Europe
+1907,Chemistry,Eduard Buchner,male,1860-05-20,47,Germany,Europe
+1907,Literature,Rudyard Kipling,male,1865-12-30,41,India,Asia
+1907,Peace,Ernesto Teodoro Moneta,male,1833-09-20,74,Italy,Europe
+1907,Peace,Louis Renault,male,1843-05-21,64,France,Europe
+1907,Physics,Albert A. Michelson,male,1852-12-19,54,Poland,Europe
+1907,Medicine,Alphonse Laveran,male,1845-06-18,62,France,Europe
+1908,Chemistry,Ernest Rutherford,male,1871-08-30,37,New Zealand,Oceania
+1908,Literature,Rudolf Eucken,male,1846-01-05,62,Germany,Europe
+1908,Peace,Klas Pontus Arnoldson,male,1844-10-27,64,Sweden,Europe
+1908,Peace,Fredrik Bajer,male,1837-04-21,71,Denmark,Europe
+1908,Physics,Gabriel Lippmann,male,1845-08-16,63,Luxembourg,Europe
+1908,Medicine,Ilya Mechnikov,male,1845-05-15,63,Ukraine,Europe
+1908,Medicine,Paul Ehrlich,male,1854-03-14,54,Poland,Europe
+1909,Chemistry,Wilhelm Ostwald,male,1853-09-02,56,Latvia,Europe
+1909,Literature,Selma Lagerlöf,female,1858-11-20,51,Sweden,Europe
+1909,Peace,Auguste Beernaert,male,1829-07-26,80,Belgium,Europe
+1909,Peace,Paul Henri d'Estournelles de Constant,male,1852-11-22,57,France,Europe
+1909,Physics,Guglielmo Marconi,male,1874-04-25,35,Italy,Europe
+1909,Physics,Ferdinand Braun,male,1850-06-06,59,Germany,Europe
+1909,Medicine,Theodor Kocher,male,1841-08-25,68,Switzerland,Europe
+1910,Chemistry,Otto Wallach,male,1847-03-27,63,Russia,Europe
+1910,Literature,Paul Heyse,male,1830-03-15,80,Germany,Europe
+1910,Physics,Johannes Diderik van der Waals,male,1837-11-23,73,the Netherlands,Europe
+1910,Medicine,Albrecht Kossel,male,1853-09-16,57,Germany,Europe
+1911,Chemistry,Marie Curie,female,1867-11-07,44,Poland,Europe
+1911,Literature,Maurice Maeterlinck,male,1862-08-29,49,Belgium,Europe
+1911,Peace,Tobias Asser,male,1838-04-28,73,the Netherlands,Europe
+1911,Peace,Alfred Fried,male,1864-11-11,47,Austria,Europe
+1911,Physics,Wilhelm Wien,male,1864-01-13,47,Russia,Europe
+1911,Medicine,Allvar Gullstrand,male,1862-06-05,49,Sweden,Europe
+1912,Chemistry,Victor Grignard,male,1871-05-06,41,France,Europe
+1912,Chemistry,Paul Sabatier,male,1854-11-05,58,France,Europe
+1912,Literature,Gerhart Hauptmann,male,1862-11-15,50,Poland,Europe
+1912,Peace,Elihu Root,male,1845-02-15,67,USA,North America
+1912,Physics,Gustaf Dalén,male,1869-11-30,43,Sweden,Europe
+1912,Medicine,Alexis Carrel,male,1873-06-28,39,France,Europe
+1913,Chemistry,Alfred Werner,male,1866-12-12,46,France,Europe
+1913,Literature,Rabindranath Tagore,male,1861-05-07,52,India,Asia
+1913,Peace,Henri La Fontaine,male,1854-04-22,59,Belgium,Europe
+1913,Physics,Heike Kamerlingh Onnes,male,1853-09-21,60,the Netherlands,Europe
+1913,Medicine,Charles Richet,male,1850-08-26,63,France,Europe
+1914,Chemistry,Theodore W. Richards,male,1868-01-31,46,USA,North America
+1914,Physics,Max von Laue,male,1879-10-09,35,Germany,Europe
+1914,Medicine,Robert Bárány,male,1876-04-22,38,Austria,Europe
+1915,Chemistry,Richard Willstätter,male,1872-08-13,43,Germany,Europe
+1915,Literature,Romain Rolland,male,1866-01-29,49,France,Europe
+1915,Physics,William Bragg,male,1862-07-02,53,United Kingdom,Europe
+1915,Physics,Lawrence Bragg,male,1890-03-31,25,Australia,Oceania
+1916,Literature,Verner von Heidenstam,male,1859-07-06,57,Sweden,Europe
+1917,Literature,Karl Gjellerup,male,1857-06-02,60,Denmark,Europe
+1917,Literature,Henrik Pontoppidan,male,1857-07-24,60,Denmark,Europe
+1917,Physics,Charles Glover Barkla,male,1877-06-07,40,United Kingdom,Europe
+1918,Chemistry,Fritz Haber,male,1868-12-09,49,Poland,Europe
+1918,Physics,Max Planck,male,1858-04-23,60,Germany,Europe
+1919,Literature,Carl Spitteler,male,1845-04-24,74,Switzerland,Europe
+1919,Peace,Woodrow Wilson,male,1856-12-28,62,USA,North America
+1919,Physics,Johannes Stark,male,1874-04-15,45,Germany,Europe
+1919,Medicine,Jules Bordet,male,1870-06-13,49,Belgium,Europe
+1920,Chemistry,Walther Nernst,male,1864-06-25,56,Poland,Europe
+1920,Literature,Knut Hamsun,male,1859-08-04,61,Norway,Europe
+1920,Peace,Léon Bourgeois,male,1851-05-21,69,France,Europe
+1920,Physics,Charles Edouard Guillaume,male,1861-02-15,59,Switzerland,Europe
+1920,Medicine,August Krogh,male,1874-11-15,46,Denmark,Europe
+1921,Chemistry,Frederick Soddy,male,1877-09-02,44,United Kingdom,Europe
+1921,Literature,Anatole France,male,1844-04-16,77,France,Europe
+1921,Peace,Hjalmar Branting,male,1860-11-23,61,Sweden,Europe
+1921,Peace,Christian Lange,male,1869-09-17,52,Norway,Europe
+1921,Physics,Albert Einstein,male,1879-03-14,42,Germany,Europe
+1922,Chemistry,Francis W. Aston,male,1877-09-01,45,United Kingdom,Europe
+1922,Literature,Jacinto Benavente,male,1866-08-12,56,Spain,Europe
+1922,Peace,Fridtjof Nansen,male,1861-10-10,61,Norway,Europe
+1922,Physics,Niels Bohr,male,1885-10-07,37,Denmark,Europe
+1922,Medicine,Archibald V. Hill,male,1886-09-26,36,United Kingdom,Europe
+1922,Medicine,Otto Meyerhof,male,1884-04-12,38,Germany,Europe
+1923,Chemistry,Fritz Pregl,male,1869-09-03,54,Slovenia,Europe
+1923,Literature,William Butler Yeats,male,1865-06-13,58,Ireland,Europe
+1923,Physics,Robert A. Millikan,male,1868-03-22,55,USA,North America
+1923,Medicine,Frederick G. Banting,male,1891-11-14,32,Canada,North America
+1923,Medicine,John Macleod,male,1876-09-06,47,Scotland,Europe
+1924,Literature,Wladyslaw Reymont,male,1867-05-07,57,Poland,Europe
+1924,Physics,Manne Siegbahn,male,1886-12-03,38,Sweden,Europe
+1924,Medicine,Willem Einthoven,male,1860-05-21,64,Indonesia,Asia
+1925,Chemistry,Richard Zsigmondy,male,1865-04-01,60,Austria,Europe
+1925,Literature,George Bernard Shaw,male,1856-07-26,69,Ireland,Europe
+1925,Peace,Sir Austen Chamberlain,male,1863-10-16,62,United Kingdom,Europe
+1925,Peace,Charles G. Dawes,male,1865-08-27,60,USA,North America
+1925,Physics,James Franck,male,1882-08-26,43,Germany,Europe
+1925,Physics,Gustav Hertz,male,1887-07-22,38,Germany,Europe
+1926,Chemistry,The Svedberg,male,1884-08-30,42,Sweden,Europe
+1926,Literature,Grazia Deledda,female,1871-09-27,55,Italy,Europe
+1926,Peace,Aristide Briand,male,1862-03-28,64,France,Europe
+1926,Peace,Gustav Stresemann,male,1878-05-10,48,Germany,Europe
+1926,Physics,Jean Baptiste Perrin,male,1870-09-30,56,France,Europe
+1926,Medicine,Johannes Fibiger,male,1867-04-23,59,Denmark,Europe
+1927,Chemistry,Heinrich Wieland,male,1877-06-04,50,Germany,Europe
+1927,Literature,Henri Bergson,male,1859-10-18,68,France,Europe
+1927,Peace,Ferdinand Buisson,male,1841-12-20,85,France,Europe
+1927,Peace,Ludwig Quidde,male,1858-03-23,69,Germany,Europe
+1927,Physics,Arthur H. Compton,male,1892-09-10,35,USA,North America
+1927,Physics,C.T.R. Wilson,male,1869-02-14,58,Scotland,Europe
+1927,Medicine,Julius Wagner-Jauregg,male,1857-03-07,70,Austria,Europe
+1928,Chemistry,Adolf Windaus,male,1876-12-25,51,Germany,Europe
+1928,Literature,Sigrid Undset,female,1882-05-20,46,Denmark,Europe
+1928,Physics,Owen Willans Richardson,male,1879-04-26,49,United Kingdom,Europe
+1928,Medicine,Charles Nicolle,male,1866-09-21,62,France,Europe
+1929,Chemistry,Arthur Harden,male,1865-10-12,64,United Kingdom,Europe
+1929,Chemistry,Hans von Euler-Chelpin,male,1873-02-15,56,Germany,Europe
+1929,Literature,Thomas Mann,male,1875-06-06,54,Germany,Europe
+1929,Peace,Frank B. Kellogg,male,1856-12-22,72,USA,North America
+1929,Physics,Louis de Broglie,male,1892-08-15,37,France,Europe
+1929,Medicine,Christiaan Eijkman,male,1858-08-11,71,the Netherlands,Europe
+1929,Medicine,Sir Frederick Hopkins,male,1861-06-20,68,United Kingdom,Europe
+1930,Chemistry,Hans Fischer,male,1881-07-27,49,Germany,Europe
+1930,Literature,Sinclair Lewis,male,1885-02-07,45,USA,North America
+1930,Peace,Nathan Söderblom,male,1866-01-15,64,Sweden,Europe
+1930,Physics,Sir Chandrasekhara Venkata Raman,male,1888-11-07,42,India,Asia
+1930,Medicine,Karl Landsteiner,male,1868-06-14,62,Austria,Europe
+1931,Chemistry,Carl Bosch,male,1874-08-27,57,Germany,Europe
+1931,Chemistry,Friedrich Bergius,male,1884-10-11,47,Poland,Europe
+1931,Literature,Erik Axel Karlfeldt,male,1864-07-20,67,Sweden,Europe
+1931,Peace,Jane Addams,female,1860-09-06,71,USA,North America
+1931,Peace,Nicholas Murray Butler,male,1862-04-02,69,USA,North America
+1931,Medicine,Otto Warburg,male,1883-10-08,48,Germany,Europe
+1932,Chemistry,Irving Langmuir,male,1881-01-31,51,USA,North America
+1932,Literature,John Galsworthy,male,1867-08-14,65,United Kingdom,Europe
+1932,Physics,Werner Heisenberg,male,1901-12-05,31,Germany,Europe
+1932,Medicine,Sir Charles Sherrington,male,1857-11-27,75,United Kingdom,Europe
+1932,Medicine,Edgar Adrian,male,1889-11-30,43,United Kingdom,Europe
+1933,Literature,Ivan Bunin,male,1870-10-22,63,Russia,Europe
+1933,Peace,Sir Norman Angell,male,1872-12-26,60,United Kingdom,Europe
+1933,Physics,Erwin Schrödinger,male,1887-08-12,46,Austria,Europe
+1933,Physics,Paul A.M. Dirac,male,1902-08-08,31,United Kingdom,Europe
+1933,Medicine,Thomas H. Morgan,male,1866-09-25,67,USA,North America
+1934,Chemistry,Harold C. Urey,male,1893-04-29,41,USA,North America
+1934,Literature,Luigi Pirandello,male,1867-06-28,67,Italy,Europe
+1934,Peace,Arthur Henderson,male,1863-09-13,71,Scotland,Europe
+1934,Medicine,George H. Whipple,male,1878-08-28,56,USA,North America
+1934,Medicine,George R. Minot,male,1885-12-02,49,USA,North America
+1934,Medicine,William P. Murphy,male,1892-02-06,42,USA,North America
+1935,Chemistry,Frédéric Joliot,male,1900-03-19,35,France,Europe
+1935,Chemistry,Irène Joliot-Curie,female,1897-09-12,38,France,Europe
+1935,Peace,Carl von Ossietzky,male,1889-10-03,46,Germany,Europe
+1935,Physics,James Chadwick,male,1891-10-20,44,United Kingdom,Europe
+1935,Medicine,Hans Spemann,male,1869-06-27,66,Germany,Europe
+1936,Chemistry,Peter Debye,male,1884-03-24,52,the Netherlands,Europe
+1936,Literature,Eugene O'Neill,male,1888-10-16,48,USA,North America
+1936,Peace,Carlos Saavedra Lamas,male,1878-11-01,58,Argentina,South America
+1936,Physics,Victor F. Hess,male,1883-06-24,53,Austria,Europe
+1936,Physics,Carl D. Anderson,male,1905-09-03,31,USA,North America
+1936,Medicine,Sir Henry Dale,male,1875-06-09,61,United Kingdom,Europe
+1936,Medicine,Otto Loewi,male,1873-06-03,63,Germany,Europe
+1937,Chemistry,Norman Haworth,male,1883-03-19,54,United Kingdom,Europe
+1937,Chemistry,Paul Karrer,male,1889-04-21,48,Russia,Europe
+1937,Literature,Roger Martin du Gard,male,1881-03-23,56,France,Europe
+1937,Peace,"Robert Cecil, Viscount Cecil of Chelwood",male,1864-09-14,73,United Kingdom,Europe
+1937,Physics,Clinton Davisson,male,1881-10-22,56,USA,North America
+1937,Physics,George Paget Thomson,male,1892-05-03,45,United Kingdom,Europe
+1937,Medicine,Albert Szent-Györgyi,male,1893-09-16,44,Hungary,Europe
+1938,Chemistry,Richard Kuhn,male,1900-12-03,38,Austria,Europe
+1938,Literature,Pearl Buck,female,1892-06-26,46,USA,North America
+1938,Physics,Enrico Fermi,male,1901-09-29,37,Italy,Europe
+1938,Medicine,Corneille Heymans,male,1892-03-28,46,Belgium,Europe
+1939,Chemistry,Adolf Butenandt,male,1903-03-24,36,Germany,Europe
+1939,Chemistry,Leopold Ruzicka,male,1887-09-13,52,Croatia,Europe
+1939,Literature,Frans Eemil Sillanpää,male,1888-09-16,51,Finland,Europe
+1939,Physics,Ernest Lawrence,male,1901-08-08,38,USA,North America
+1939,Medicine,Gerhard Domagk,male,1895-10-30,44,Poland,Europe
+1943,Chemistry,George de Hevesy,male,1885-08-01,58,Hungary,Europe
+1943,Physics,Otto Stern,male,1888-02-17,55,Poland,Europe
+1943,Medicine,Henrik Dam,male,1895-02-21,48,Denmark,Europe
+1943,Medicine,Edward A. Doisy,male,1893-11-13,50,USA,North America
+1944,Chemistry,Otto Hahn,male,1879-03-08,65,Germany,Europe
+1944,Literature,Johannes V. Jensen,male,1873-01-20,71,Denmark,Europe
+1944,Physics,Isidor Isaac Rabi,male,1898-07-29,46,Poland,Europe
+1944,Medicine,Joseph Erlanger,male,1874-01-05,70,USA,North America
+1944,Medicine,Herbert S. Gasser,male,1888-07-05,56,USA,North America
+1945,Chemistry,Artturi Virtanen,male,1895-01-15,50,Finland,Europe
+1945,Literature,Gabriela Mistral,female,1889-04-07,56,Chile,South America
+1945,Peace,Cordell Hull,male,1871-10-02,74,USA,North America
+1945,Physics,Wolfgang Pauli,male,1900-04-25,45,Austria,Europe
+1945,Medicine,Sir Alexander Fleming,male,1881-08-06,64,Scotland,Europe
+1945,Medicine,Ernst B. Chain,male,1906-06-19,39,Germany,Europe
+1945,Medicine,Sir Howard Florey,male,1898-09-24,47,Australia,Oceania
+1946,Chemistry,James B. Sumner,male,1887-11-19,59,USA,North America
+1946,Chemistry,John H. Northrop,male,1891-07-05,55,USA,North America
+1946,Chemistry,Wendell M. Stanley,male,1904-08-16,42,USA,North America
+1946,Literature,Hermann Hesse,male,1877-07-02,69,Germany,Europe
+1946,Peace,Emily Greene Balch,female,1867-01-08,79,USA,North America
+1946,Peace,John R. Mott,male,1865-05-25,81,USA,North America
+1946,Physics,Percy W. Bridgman,male,1882-04-21,64,USA,North America
+1946,Medicine,Hermann J. Muller,male,1890-12-21,55,USA,North America
+1947,Chemistry,Sir Robert Robinson,male,1886-09-13,61,United Kingdom,Europe
+1947,Literature,André Gide,male,1869-11-22,78,France,Europe
+1947,Physics,Edward V. Appleton,male,1892-09-06,55,United Kingdom,Europe
+1947,Medicine,Carl Cori,male,1896-12-05,51,Czech Republic,Europe
+1947,Medicine,Gerty Cori,female,1896-08-15,51,Czech Republic,Europe
+1947,Medicine,Bernardo Houssay,male,1887-04-10,60,Argentina,South America
+1948,Chemistry,Arne Tiselius,male,1902-08-10,46,Sweden,Europe
+1948,Literature,T.S. Eliot,male,1888-09-26,60,USA,North America
+1948,Physics,Patrick M.S. Blackett,male,1897-11-18,51,United Kingdom,Europe
+1948,Medicine,Paul Müller,male,1899-01-12,49,Switzerland,Europe
+1949,Chemistry,William F. Giauque,male,1895-05-12,54,Canada,North America
+1949,Literature,William Faulkner,male,1897-09-25,52,USA,North America
+1949,Peace,Lord Boyd Orr,male,1880-09-23,69,Scotland,Europe
+1949,Physics,Hideki Yukawa,male,1907-01-23,42,Japan,Asia
+1949,Medicine,Walter Hess,male,1881-03-17,68,Switzerland,Europe
+1949,Medicine,Egas Moniz,male,1874-11-29,75,Portugal,Europe
+1950,Chemistry,Otto Diels,male,1876-01-23,74,Germany,Europe
+1950,Chemistry,Kurt Alder,male,1902-07-10,48,Poland,Europe
+1950,Literature,Bertrand Russell,male,1872-05-18,78,United Kingdom,Europe
+1950,Peace,Ralph Bunche,male,1904-08-07,46,USA,North America
+1950,Physics,Cecil Powell,male,1903-12-05,47,United Kingdom,Europe
+1950,Medicine,Edward C. Kendall,male,1886-03-08,64,USA,North America
+1950,Medicine,Tadeus Reichstein,male,1897-07-20,53,Poland,Europe
+1950,Medicine,Philip S. Hench,male,1896-02-28,54,USA,North America
+1951,Chemistry,Edwin M. McMillan,male,1907-09-18,44,USA,North America
+1951,Chemistry,Glenn T. Seaborg,male,1912-04-19,39,USA,North America
+1951,Literature,Pär Lagerkvist,male,1891-05-23,60,Sweden,Europe
+1951,Peace,Léon Jouhaux,male,1879-07-01,72,France,Europe
+1951,Physics,John Cockcroft,male,1897-05-27,54,United Kingdom,Europe
+1951,Physics,Ernest T.S. Walton,male,1903-10-06,48,Ireland,Europe
+1951,Medicine,Max Theiler,male,1899-01-30,52,South Africa,Africa
+1952,Chemistry,Archer J.P. Martin,male,1910-03-01,42,United Kingdom,Europe
+1952,Chemistry,Richard L.M. Synge,male,1914-10-28,38,United Kingdom,Europe
+1952,Literature,François Mauriac,male,1885-10-11,67,France,Europe
+1952,Peace,Albert Schweitzer,male,1875-01-14,77,France,Europe
+1952,Physics,Felix Bloch,male,1905-10-23,47,Switzerland,Europe
+1952,Physics,E. M. Purcell,male,1912-08-30,40,USA,North America
+1952,Medicine,Selman A. Waksman,male,1888-07-22,64,Ukraine,Europe
+1953,Chemistry,Hermann Staudinger,male,1881-03-23,72,Germany,Europe
+1953,Literature,Winston Churchill,male,1874-11-30,79,United Kingdom,Europe
+1953,Peace,George C. Marshall,male,1880-12-31,72,USA,North America
+1953,Physics,Frits Zernike,male,1888-07-16,65,the Netherlands,Europe
+1953,Medicine,Hans Krebs,male,1900-08-25,53,Germany,Europe
+1953,Medicine,Fritz Lipmann,male,1899-06-12,54,Russia,Europe
+1954,Chemistry,Linus Pauling,male,1901-02-28,53,USA,North America
+1954,Literature,Ernest Hemingway,male,1899-07-21,55,USA,North America
+1954,Physics,Max Born,male,1882-12-11,71,Poland,Europe
+1954,Physics,Walther Bothe,male,1891-01-08,63,Germany,Europe
+1954,Medicine,John F. Enders,male,1897-02-10,57,USA,North America
+1954,Medicine,Thomas H. Weller,male,1915-06-15,39,USA,North America
+1954,Medicine,Frederick C. Robbins,male,1916-08-25,38,USA,North America
+1955,Chemistry,Vincent du Vigneaud,male,1901-05-18,54,USA,North America
+1955,Literature,Halldór Laxness,male,1902-04-23,53,Iceland,Europe
+1955,Physics,Willis E. Lamb,male,1913-07-12,42,USA,North America
+1955,Physics,Polykarp Kusch,male,1911-01-26,44,Germany,Europe
+1955,Medicine,Hugo Theorell,male,1903-07-06,52,Sweden,Europe
+1956,Chemistry,Sir Cyril Hinshelwood,male,1897-05-19,59,United Kingdom,Europe
+1956,Chemistry,Nikolay Semenov,male,1896-04-03,60,Russia,Europe
+1956,Literature,Juan Ramón Jiménez,male,1881-12-24,74,Spain,Europe
+1956,Physics,William B. Shockley,male,1910-02-13,46,United Kingdom,Europe
+1956,Physics,John Bardeen,male,1908-05-23,48,USA,North America
+1956,Physics,Walter H. Brattain,male,1902-02-10,54,China,Asia
+1956,Medicine,André F. Cournand,male,1895-09-24,61,France,Europe
+1956,Medicine,Werner Forssmann,male,1904-08-29,52,Germany,Europe
+1956,Medicine,Dickinson W. Richards,male,1895-10-30,61,USA,North America
+1957,Chemistry,Lord Todd,male,1907-10-02,50,Scotland,Europe
+1957,Literature,Albert Camus,male,1913-11-07,44,Algeria,Africa
+1957,Peace,Lester Bowles Pearson,male,1897-04-23,60,Canada,North America
+1957,Physics,Chen Ning Yang,male,1922-09-22,35,China,Asia
+1957,Physics,Tsung-Dao Lee,male,1926-11-24,31,China,Asia
+1957,Medicine,Daniel Bovet,male,1907-03-23,50,Switzerland,Europe
+1958,Chemistry,Frederick Sanger,male,1918-08-13,40,United Kingdom,Europe
+1958,Literature,Boris Pasternak,male,1890-02-10,68,Russia,Europe
+1958,Peace,Georges Pire,male,1910-02-10,48,Belgium,Europe
+1958,Physics,Pavel A. Cherenkov,male,1904-07-28,54,Russia,Europe
+1958,Physics,Il´ja M. Frank,male,1908-10-23,50,Russia,Europe
+1958,Physics,Igor Y. Tamm,male,1895-07-08,63,Russia,Europe
+1958,Medicine,George Beadle,male,1903-10-22,55,USA,North America
+1958,Medicine,Edward Tatum,male,1909-12-14,48,USA,North America
+1958,Medicine,Joshua Lederberg,male,1925-05-23,33,USA,North America
+1959,Chemistry,Jaroslav Heyrovsky,male,1890-12-20,68,Czech Republic,Europe
+1959,Literature,Salvatore Quasimodo,male,1901-08-20,58,Italy,Europe
+1959,Peace,Philip Noel-Baker,male,1889-11-01,70,United Kingdom,Europe
+1959,Physics,Emilio Segrè,male,1905-02-01,54,Italy,Europe
+1959,Physics,Owen Chamberlain,male,1920-07-10,39,USA,North America
+1959,Medicine,Severo Ochoa,male,1905-09-24,54,Spain,Europe
+1959,Medicine,Arthur Kornberg,male,1918-03-03,41,USA,North America
+1960,Chemistry,Willard F. Libby,male,1908-12-17,51,USA,North America
+1960,Literature,Saint-John Perse,male,1887-05-31,73,Guadeloupe Island,North America
+1960,Peace,Albert Lutuli,male,1898-06-30,62,Zimbabwe,Africa
+1960,Physics,Donald A. Glaser,male,1926-09-21,34,USA,North America
+1960,Medicine,Sir Frank Macfarlane Burnet,male,1899-09-03,61,Australia,Oceania
+1960,Medicine,Peter Medawar,male,1915-02-28,45,Brazil,South America
+1961,Chemistry,Melvin Calvin,male,1911-04-08,50,USA,North America
+1961,Literature,Ivo Andric,male,1892-10-10,69,Bosnia and Herzegovina,Europe
+1961,Peace,Dag Hammarskjöld,male,1905-07-29,56,Sweden,Europe
+1961,Physics,Robert Hofstadter,male,1915-02-05,46,USA,North America
+1961,Physics,Rudolf Mössbauer,male,1929-01-31,32,Germany,Europe
+1961,Medicine,Georg von Békésy,male,1899-06-03,62,Hungary,Europe
+1962,Chemistry,Max F. Perutz,male,1914-05-19,48,Austria,Europe
+1962,Chemistry,John C. Kendrew,male,1917-03-24,45,United Kingdom,Europe
+1962,Literature,John Steinbeck,male,1902-02-27,60,USA,North America
+1962,Peace,Linus Pauling,male,1901-02-28,61,USA,North America
+1962,Physics,Lev Landau,male,1908-01-22,54,Azerbaijan,Asia
+1962,Medicine,Francis Crick,male,1916-06-08,46,United Kingdom,Europe
+1962,Medicine,James Watson,male,1928-04-06,34,USA,North America
+1962,Medicine,Maurice Wilkins,male,1916-12-15,45,New Zealand,Oceania
+1963,Chemistry,Karl Ziegler,male,1898-11-26,65,Germany,Europe
+1963,Chemistry,Giulio Natta,male,1903-02-26,60,Italy,Europe
+1963,Literature,Giorgos Seferis,male,1900-03-13,63,Turkey,Asia
+1963,Physics,Eugene Wigner,male,1902-11-17,61,Hungary,Europe
+1963,Physics,Maria Goeppert Mayer,female,1906-06-28,57,Poland,Europe
+1963,Physics,J. Hans D. Jensen,male,1907-06-25,56,Germany,Europe
+1963,Medicine,Sir John Eccles,male,1903-01-27,60,Australia,Oceania
+1963,Medicine,Alan Hodgkin,male,1914-02-05,49,United Kingdom,Europe
+1963,Medicine,Andrew Huxley,male,1917-11-22,46,United Kingdom,Europe
+1964,Chemistry,Dorothy Crowfoot Hodgkin,female,1910-05-12,54,Egypt,Africa
+1964,Literature,Jean-Paul Sartre,male,1905-06-21,59,France,Europe
+1964,Peace,Martin Luther King Jr.,male,1929-01-15,35,USA,North America
+1964,Physics,Charles H. Townes,male,1915-07-28,49,USA,North America
+1964,Physics,Nicolay G. Basov,male,1922-12-14,41,Russia,Europe
+1964,Physics,Aleksandr M. Prokhorov,male,1916-07-11,48,Australia,Oceania
+1964,Medicine,Konrad Bloch,male,1912-01-21,52,Poland,Europe
+1964,Medicine,Feodor Lynen,male,1911-04-06,53,Germany,Europe
+1965,Chemistry,Robert B. Woodward,male,1917-04-10,48,USA,North America
+1965,Literature,Mikhail Sholokhov,male,1905-05-24,60,Russia,Europe
+1965,Physics,Sin-Itiro Tomonaga,male,1906-03-31,59,Japan,Asia
+1965,Physics,Julian Schwinger,male,1918-02-12,47,USA,North America
+1965,Physics,Richard P. Feynman,male,1918-05-11,47,USA,North America
+1965,Medicine,François Jacob,male,1920-06-17,45,France,Europe
+1965,Medicine,André Lwoff,male,1902-05-08,63,France,Europe
+1965,Medicine,Jacques Monod,male,1910-02-09,55,France,Europe
+1966,Chemistry,Robert S. Mulliken,male,1896-06-07,70,USA,North America
+1966,Literature,Shmuel Agnon,male,1888-07-17,78,Ukraine,Europe
+1966,Literature,Nelly Sachs,female,1891-12-10,74,Germany,Europe
+1966,Physics,Alfred Kastler,male,1902-05-03,64,France,Europe
+1966,Medicine,Peyton Rous,male,1879-10-05,87,USA,North America
+1966,Medicine,Charles B. Huggins,male,1901-09-22,65,Canada,North America
+1967,Chemistry,Manfred Eigen,male,1927-05-09,40,Germany,Europe
+1967,Chemistry,Ronald G.W. Norrish,male,1897-11-09,70,United Kingdom,Europe
+1967,Chemistry,George Porter,male,1920-12-06,47,United Kingdom,Europe
+1967,Literature,Miguel Angel Asturias,male,1899-10-19,68,Guatemala,North America
+1967,Physics,Hans Bethe,male,1906-07-02,61,France,Europe
+1967,Medicine,Ragnar Granit,male,1900-10-30,67,Finland,Europe
+1967,Medicine,Keffer Hartline,male,1903-12-22,63,USA,North America
+1967,Medicine,George Wald,male,1906-11-18,61,USA,North America
+1968,Chemistry,Lars Onsager,male,1903-11-27,65,Norway,Europe
+1968,Literature,Yasunari Kawabata,male,1899-06-11,69,Japan,Asia
+1968,Peace,René Cassin,male,1887-10-05,81,France,Europe
+1968,Physics,Luis Alvarez,male,1911-06-13,57,USA,North America
+1968,Medicine,Robert W. Holley,male,1922-01-28,46,USA,North America
+1968,Medicine,H. Gobind Khorana,male,1922-01-09,46,India,Asia
+1968,Medicine,Marshall W. Nirenberg,male,1927-04-10,41,USA,North America
+1969,Chemistry,Derek Barton,male,1918-09-08,51,United Kingdom,Europe
+1969,Chemistry,Odd Hassel,male,1897-05-17,72,Norway,Europe
+1969,Economics,Ragnar Frisch,male,1895-03-03,74,Norway,Europe
+1969,Economics,Jan Tinbergen,male,1903-04-12,66,the Netherlands,Europe
+1969,Literature,Samuel Beckett,male,1906-04-13,63,Ireland,Europe
+1969,Physics,Murray Gell-Mann,male,1929-09-15,40,USA,North America
+1969,Medicine,Max Delbrück,male,1906-09-04,63,Germany,Europe
+1969,Medicine,Alfred D. Hershey,male,1908-12-04,61,USA,North America
+1969,Medicine,Salvador E. Luria,male,1912-08-13,57,Italy,Europe
+1970,Chemistry,Luis Leloir,male,1906-09-06,64,France,Europe
+1970,Economics,Paul A. Samuelson,male,1915-05-15,55,USA,North America
+1970,Literature,Alexandr Solzhenitsyn,male,1918-12-11,51,Russia,Europe
+1970,Peace,Norman Borlaug,male,1914-03-25,56,USA,North America
+1970,Physics,Hannes Alfvén,male,1908-05-30,62,Sweden,Europe
+1970,Physics,Louis Néel,male,1904-11-22,66,France,Europe
+1970,Medicine,Sir Bernard Katz,male,1911-03-26,59,Germany,Europe
+1970,Medicine,Ulf von Euler,male,1905-02-07,65,Sweden,Europe
+1970,Medicine,Julius Axelrod,male,1912-05-30,58,USA,North America
+1971,Chemistry,Gerhard Herzberg,male,1904-12-25,66,Germany,Europe
+1971,Economics,Simon Kuznets,male,1901-04-30,70,Belarus,Europe
+1971,Literature,Pablo Neruda,male,1904-07-12,67,Chile,South America
+1971,Peace,Willy Brandt,male,1913-12-18,57,Germany,Europe
+1971,Physics,Dennis Gabor,male,1900-06-05,71,Hungary,Europe
+1971,Medicine,"Earl W. Sutherland, Jr.",male,1915-11-19,56,USA,North America
+1972,Chemistry,Christian Anfinsen,male,1916-03-26,56,USA,North America
+1972,Chemistry,Stanford Moore,male,1913-09-04,59,USA,North America
+1972,Chemistry,William H. Stein,male,1911-06-25,61,USA,North America
+1972,Economics,John R. Hicks,male,1904-04-08,68,United Kingdom,Europe
+1972,Economics,Kenneth J. Arrow,male,1921-08-23,51,USA,North America
+1972,Literature,Heinrich Böll,male,1917-12-21,54,Germany,Europe
+1972,Physics,John Bardeen,male,1908-05-23,64,USA,North America
+1972,Physics,Leon N. Cooper,male,1930-02-28,42,USA,North America
+1972,Physics,Robert Schrieffer,male,1931-05-31,41,USA,North America
+1972,Medicine,Gerald M. Edelman,male,1929-07-01,43,USA,North America
+1972,Medicine,Rodney R. Porter,male,1917-10-08,55,United Kingdom,Europe
+1973,Chemistry,Ernst Otto Fischer,male,1918-11-10,55,Germany,Europe
+1973,Chemistry,Geoffrey Wilkinson,male,1921-07-14,52,United Kingdom,Europe
+1973,Economics,Wassily Leontief,male,1906-08-05,67,Russia,Europe
+1973,Literature,Patrick White,male,1912-05-28,61,United Kingdom,Europe
+1973,Peace,Henry Kissinger,male,1923-05-27,50,Germany,Europe
+1973,Peace,Le Duc Tho ,male,1911-10-14,62,Vietnam,Asia
+1973,Physics,Leo Esaki,male,1925-03-12,48,Japan,Asia
+1973,Physics,Ivar Giaever,male,1929-04-05,44,Norway,Europe
+1973,Physics,Brian D. Josephson,male,1940-01-04,33,United Kingdom,Europe
+1973,Medicine,Karl von Frisch,male,1886-11-20,87,Austria,Europe
+1973,Medicine,Konrad Lorenz,male,1903-11-07,70,Austria,Europe
+1973,Medicine,Nikolaas Tinbergen,male,1907-04-15,66,the Netherlands,Europe
+1974,Chemistry,Paul J. Flory,male,1910-06-19,64,USA,North America
+1974,Economics,Gunnar Myrdal,male,1898-12-06,76,Sweden,Europe
+1974,Economics,Friedrich von Hayek,male,1899-05-08,75,Austria,Europe
+1974,Literature,Eyvind Johnson,male,1900-07-29,74,Sweden,Europe
+1974,Literature,Harry Martinson,male,1904-05-06,70,Sweden,Europe
+1974,Peace,Seán MacBride,male,1904-01-26,70,France,Europe
+1974,Peace,Eisaku Sato,male,1901-03-27,73,Japan,Asia
+1974,Physics,Martin Ryle,male,1918-09-27,56,United Kingdom,Europe
+1974,Physics,Antony Hewish,male,1924-05-11,50,United Kingdom,Europe
+1974,Medicine,Albert Claude,male,1898-08-24,76,Belgium,Europe
+1974,Medicine,Christian de Duve,male,1917-10-02,57,United Kingdom,Europe
+1974,Medicine,George E. Palade,male,1912-11-19,62,Romania,Europe
+1975,Chemistry,John Cornforth,male,1917-09-07,58,Australia,Oceania
+1975,Chemistry,Vladimir Prelog,male,1906-07-23,69,Bosnia and Herzegovina,Europe
+1975,Economics,Leonid Vitaliyevich Kantorovich,male,1912-01-19,63,Russia,Europe
+1975,Economics,Tjalling C. Koopmans,male,1910-08-28,65,the Netherlands,Europe
+1975,Literature,Eugenio Montale,male,1896-10-12,79,Italy,Europe
+1975,Peace,Andrei Sakharov,male,1921-05-21,54,Russia,Europe
+1975,Physics,Aage N. Bohr,male,1922-06-19,53,Denmark,Europe
+1975,Physics,Ben R. Mottelson,male,1926-07-09,49,USA,North America
+1975,Physics,James Rainwater,male,1917-12-09,58,USA,North America
+1975,Medicine,David Baltimore,male,1938-03-07,37,USA,North America
+1975,Medicine,Renato Dulbecco,male,1914-02-22,61,Italy,Europe
+1975,Medicine,Howard M. Temin,male,1934-12-10,40,USA,North America
+1976,Chemistry,William Lipscomb,male,1919-12-09,57,USA,North America
+1976,Economics,Milton Friedman,male,1912-07-31,64,USA,North America
+1976,Literature,Saul Bellow,male,1915-06-10,61,Canada,North America
+1976,Peace,Betty Williams,female,1943-05-22,33,Northern Ireland,Europe
+1976,Peace,Mairead Corrigan,female,1944-01-27,32,Northern Ireland,Europe
+1976,Physics,Burton Richter,male,1931-03-22,45,USA,North America
+1976,Physics,Samuel C.C. Ting,male,1936-01-27,40,USA,North America
+1976,Medicine,Baruch S. Blumberg,male,1925-07-28,51,USA,North America
+1976,Medicine,D. Carleton Gajdusek,male,1923-09-09,53,USA,North America
+1977,Chemistry,Ilya Prigogine,male,1917-01-25,60,Russia,Europe
+1977,Economics,Bertil Ohlin,male,1899-04-23,78,Sweden,Europe
+1977,Economics,James E. Meade,male,1907-06-23,70,United Kingdom,Europe
+1977,Literature,Vicente Aleixandre,male,1898-04-26,79,Spain,Europe
+1977,Physics,Philip W. Anderson,male,1923-12-13,53,USA,North America
+1977,Physics,Sir Nevill F. Mott,male,1905-09-30,72,United Kingdom,Europe
+1977,Physics,John H. Van Vleck,male,1899-03-13,78,USA,North America
+1977,Medicine,Roger Guillemin,male,1924-01-11,53,France,Europe
+1977,Medicine,Andrew V. Schally,male,1926-11-30,51,Lithuania,Europe
+1977,Medicine,Rosalyn Yalow,female,1921-07-19,56,USA,North America
+1978,Chemistry,Peter Mitchell,male,1920-09-29,58,United Kingdom,Europe
+1978,Economics,Herbert Simon,male,1916-06-15,62,USA,North America
+1978,Literature,Isaac Bashevis Singer,male,1904-07-14,74,Poland,Europe
+1978,Peace,Anwar al-Sadat,male,1918-12-25,59,Egypt,Africa
+1978,Peace,Menachem Begin,male,1913-08-16,65,Belarus,Europe
+1978,Physics,Pyotr Kapitsa,male,1894-07-09,84,Russia,Europe
+1978,Physics,Arno Penzias,male,1933-04-26,45,Germany,Europe
+1978,Physics,Robert Woodrow Wilson,male,1936-01-10,42,USA,North America
+1978,Medicine,Werner Arber,male,1929-06-03,49,Switzerland,Europe
+1978,Medicine,Daniel Nathans,male,1928-10-30,50,USA,North America
+1978,Medicine,Hamilton O. Smith,male,1931-08-23,47,USA,North America
+1979,Chemistry,Herbert C. Brown,male,1912-05-22,67,United Kingdom,Europe
+1979,Chemistry,Georg Wittig,male,1897-06-16,82,Germany,Europe
+1979,Economics,Theodore W. Schultz,male,1902-04-30,77,USA,North America
+1979,Economics,Sir Arthur Lewis,male,1915-01-23,64,Saint Lucia,North America
+1979,Literature,Odysseus Elytis,male,1911-11-02,68,Greece,Europe
+1979,Peace,Mother Teresa,female,1910-08-26,69,North Macedonia,Europe
+1979,Physics,Sheldon Glashow,male,1932-12-05,47,USA,North America
+1979,Physics,Abdus Salam,male,1926-01-29,53,Pakistan,Asia
+1979,Physics,Steven Weinberg,male,1933-05-03,46,USA,North America
+1979,Medicine,Allan M. Cormack,male,1924-02-23,55,South Africa,Africa
+1979,Medicine,Godfrey N. Hounsfield,male,1919-08-28,60,United Kingdom,Europe
+1980,Chemistry,Paul Berg,male,1926-06-30,54,USA,North America
+1980,Chemistry,Walter Gilbert,male,1932-03-21,48,USA,North America
+1980,Chemistry,Frederick Sanger,male,1918-08-13,62,United Kingdom,Europe
+1980,Economics,Lawrence R. Klein,male,1920-09-14,60,USA,North America
+1980,Literature,Czeslaw Milosz,male,1911-06-30,69,Lithuania,Europe
+1980,Peace,Adolfo Pérez Esquivel,male,1931-11-26,49,Argentina,South America
+1980,Physics,James Cronin,male,1931-09-29,49,USA,North America
+1980,Physics,Val Fitch,male,1923-03-10,57,USA,North America
+1980,Medicine,Baruj Benacerraf,male,1920-10-29,60,Venezuela,South America
+1980,Medicine,Jean Dausset,male,1916-10-19,64,France,Europe
+1980,Medicine,George D. Snell,male,1903-12-19,76,USA,North America
+1981,Chemistry,Kenichi Fukui,male,1918-10-04,63,Japan,Asia
+1981,Chemistry,Roald Hoffmann,male,1937-07-18,44,Ukraine,Europe
+1981,Economics,James Tobin,male,1918-03-05,63,USA,North America
+1981,Literature,Elias Canetti,male,1905-07-25,76,Bulgaria,Europe
+1981,Physics,Nicolaas Bloembergen,male,1920-03-11,61,the Netherlands,Europe
+1981,Physics,Arthur L. Schawlow,male,1921-05-05,60,USA,North America
+1981,Physics,Kai M. Siegbahn,male,1918-04-20,63,Sweden,Europe
+1981,Medicine,Roger W. Sperry,male,1913-08-20,68,USA,North America
+1981,Medicine,David H. Hubel,male,1926-02-27,55,Canada,North America
+1981,Medicine,Torsten N. Wiesel,male,1924-06-03,57,Sweden,Europe
+1982,Chemistry,Aaron Klug,male,1926-08-11,56,Lithuania,Europe
+1982,Economics,George J. Stigler,male,1911-01-17,71,USA,North America
+1982,Literature,Gabriel García Márquez,male,1927-03-06,55,Colombia,South America
+1982,Peace,Alva Myrdal,female,1902-01-31,80,Sweden,Europe
+1982,Peace,Alfonso García Robles,male,1911-03-20,71,Mexico,North America
+1982,Physics,Kenneth G. Wilson,male,1936-06-08,46,USA,North America
+1982,Medicine,Sune K. Bergström,male,1916-01-10,66,Sweden,Europe
+1982,Medicine,Bengt I. Samuelsson,male,1934-05-21,48,Sweden,Europe
+1982,Medicine,John R. Vane,male,1927-03-29,55,United Kingdom,Europe
+1983,Chemistry,Henry Taube,male,1915-11-30,68,Canada,North America
+1983,Economics,Gerard Debreu,male,1921-07-04,62,France,Europe
+1983,Literature,William Golding,male,1911-09-19,72,United Kingdom,Europe
+1983,Peace,Lech Walesa,male,1943-09-29,40,Poland,Europe
+1983,Physics,Subramanyan Chandrasekhar,male,1910-10-19,73,Pakistan,Asia
+1983,Physics,William A. Fowler,male,1911-08-09,72,USA,North America
+1983,Medicine,Barbara McClintock,female,1902-06-16,81,USA,North America
+1984,Chemistry,Bruce Merrifield,male,1921-07-15,63,USA,North America
+1984,Economics,Richard Stone,male,1913-08-30,71,United Kingdom,Europe
+1984,Literature,Jaroslav Seifert,male,1901-09-23,83,Czech Republic,Europe
+1984,Peace,Desmond Tutu,male,1931-10-07,53,South Africa,Africa
+1984,Physics,Carlo Rubbia,male,1934-03-31,50,Italy,Europe
+1984,Physics,Simon van der Meer,male,1925-11-24,59,the Netherlands,Europe
+1984,Medicine,Niels K. Jerne,male,1911-12-23,72,United Kingdom,Europe
+1984,Medicine,Georges J.F. Köhler,male,1946-04-17,38,Germany,Europe
+1984,Medicine,César Milstein,male,1927-10-08,57,Argentina,South America
+1985,Chemistry,Herbert A. Hauptman,male,1917-02-14,68,USA,North America
+1985,Chemistry,Jerome Karle,male,1918-06-18,67,USA,North America
+1985,Economics,Franco Modigliani,male,1918-06-18,67,Italy,Europe
+1985,Literature,Claude Simon,male,1913-10-10,72,Madagascar,Africa
+1985,Physics,Klaus von Klitzing,male,1943-06-28,42,Poland,Europe
+1985,Medicine,Michael S. Brown,male,1941-04-13,44,USA,North America
+1985,Medicine,Joseph L. Goldstein,male,1940-04-18,45,USA,North America
+1986,Chemistry,Dudley R. Herschbach,male,1932-06-18,54,USA,North America
+1986,Chemistry,Yuan T. Lee,male,1936-11-19,50,Taiwan,Asia
+1986,Chemistry,John C. Polanyi,male,1929-01-23,57,Germany,Europe
+1986,Economics,James M. Buchanan Jr.,male,1919-10-03,67,USA,North America
+1986,Literature,Wole Soyinka,male,1934-07-13,52,Nigeria,Africa
+1986,Peace,Elie Wiesel,male,1928-09-30,58,Romania,Europe
+1986,Physics,Ernst Ruska,male,1906-12-25,79,Germany,Europe
+1986,Physics,Gerd Binnig,male,1947-07-20,39,Germany,Europe
+1986,Physics,Heinrich Rohrer,male,1933-06-06,53,Switzerland,Europe
+1986,Medicine,Stanley Cohen,male,1922-11-17,64,USA,North America
+1986,Medicine,Rita Levi-Montalcini,female,1909-04-22,77,Italy,Europe
+1987,Chemistry,Donald J. Cram,male,1919-04-22,68,USA,North America
+1987,Chemistry,Jean-Marie Lehn,male,1939-09-30,48,France,Europe
+1987,Chemistry,Charles J. Pedersen,male,1904-10-03,83,South Korea,Asia
+1987,Economics,Robert M. Solow,male,1924-08-23,63,USA,North America
+1987,Literature,Joseph Brodsky,male,1940-05-24,47,Russia,Europe
+1987,Peace,Oscar Arias Sánchez,male,1940-09-13,47,Costa Rica,North America
+1987,Physics,J. Georg Bednorz,male,1950-05-16,37,Germany,Europe
+1987,Physics,K. Alex Müller,male,1927-04-20,60,Switzerland,Europe
+1987,Medicine,Susumu Tonegawa,male,1939-09-05,48,Japan,Asia
+1988,Chemistry,Johann Deisenhofer,male,1943-09-30,45,Germany,Europe
+1988,Chemistry,Robert Huber,male,1937-02-20,51,Germany,Europe
+1988,Chemistry,Hartmut Michel,male,1948-07-18,40,Germany,Europe
+1988,Economics,Maurice Allais,male,1911-05-31,77,France,Europe
+1988,Literature,Naguib Mahfouz,male,1911-12-11,76,Egypt,Africa
+1988,Physics,Leon M. Lederman,male,1922-07-15,66,USA,North America
+1988,Physics,Melvin Schwartz,male,1932-11-02,56,USA,North America
+1988,Physics,Jack Steinberger,male,1921-05-25,67,Germany,Europe
+1988,Medicine,Sir James W. Black,male,1924-06-14,64,Scotland,Europe
+1988,Medicine,Gertrude B. Elion,female,1918-01-23,70,USA,North America
+1988,Medicine,George H. Hitchings,male,1905-04-18,83,USA,North America
+1989,Chemistry,Sidney Altman,male,1939-05-07,50,Canada,North America
+1989,Chemistry,Thomas R. Cech,male,1947-12-08,42,USA,North America
+1989,Economics,Trygve Haavelmo,male,1911-12-13,77,Norway,Europe
+1989,Literature,Camilo José Cela,male,1916-05-11,73,Spain,Europe
+1989,Peace,The 14th Dalai Lama,male,1935-07-06,54,China,Asia
+1989,Physics,Norman F. Ramsey,male,1915-08-27,74,USA,North America
+1989,Physics,Hans G. Dehmelt,male,1922-09-09,67,Germany,Europe
+1989,Physics,Wolfgang Paul,male,1913-08-10,76,Germany,Europe
+1989,Medicine,J. Michael Bishop,male,1936-02-22,53,USA,North America
+1989,Medicine,Harold E. Varmus,male,1939-12-18,49,USA,North America
+1990,Chemistry,Elias James Corey,male,1928-07-12,62,USA,North America
+1990,Economics,Harry M. Markowitz,male,1927-08-24,63,USA,North America
+1990,Economics,Merton H. Miller,male,1923-05-16,67,USA,North America
+1990,Economics,William F. Sharpe,male,1934-06-16,56,USA,North America
+1990,Literature,Octavio Paz,male,1914-03-31,76,Mexico,North America
+1990,Peace,Mikhail Gorbachev,male,1931-03-02,59,Russia,Europe
+1990,Physics,Jerome I. Friedman,male,1930-03-28,60,USA,North America
+1990,Physics,Henry W. Kendall,male,1926-12-09,64,USA,North America
+1990,Physics,Richard E. Taylor,male,1929-11-02,61,Canada,North America
+1990,Medicine,Joseph E. Murray,male,1919-04-01,71,USA,North America
+1990,Medicine,E. Donnall Thomas,male,1920-03-15,70,USA,North America
+1991,Chemistry,Richard R. Ernst,male,1933-08-14,58,Switzerland,Europe
+1991,Economics,Ronald H. Coase,male,1910-12-29,80,United Kingdom,Europe
+1991,Literature,Nadine Gordimer,female,1923-11-20,68,South Africa,Africa
+1991,Peace,Aung San Suu Kyi,female,1945-06-19,46,Myanmar,Asia
+1991,Physics,Pierre-Gilles de Gennes,male,1932-10-24,59,France,Europe
+1991,Medicine,Erwin Neher,male,1944-03-20,47,Germany,Europe
+1991,Medicine,Bert Sakmann,male,1942-06-12,49,Germany,Europe
+1992,Chemistry,Rudolph A. Marcus,male,1923-07-21,69,Canada,North America
+1992,Economics,Gary Becker,male,1930-12-02,62,USA,North America
+1992,Literature,Derek Walcott,male,1930-01-23,62,Saint Lucia,North America
+1992,Peace,Rigoberta Menchú Tum,female,1959-01-09,33,Guatemala,North America
+1992,Physics,Georges Charpak,male,1924-08-01,68,Poland,Europe
+1992,Medicine,Edmond H. Fischer,male,1920-04-06,72,China,Asia
+1992,Medicine,Edwin G. Krebs,male,1918-06-06,74,USA,North America
+1993,Chemistry,Kary B. Mullis,male,1944-12-28,48,USA,North America
+1993,Chemistry,Michael Smith,male,1932-04-26,61,United Kingdom,Europe
+1993,Economics,Robert W. Fogel,male,1927-07-01,66,USA,North America
+1993,Economics,Douglass C. North,male,1920-11-05,73,USA,North America
+1993,Literature,Toni Morrison,female,1931-02-18,62,USA,North America
+1993,Peace,Nelson Mandela,male,1918-07-18,75,South Africa,Africa
+1993,Peace,F.W. de Klerk,male,1936-03-18,57,South Africa,Africa
+1993,Physics,Russell A. Hulse,male,1950-11-28,43,USA,North America
+1993,Physics,Joseph H. Taylor Jr.,male,1941-03-29,52,USA,North America
+1993,Medicine,Richard J. Roberts,male,1943-09-06,50,United Kingdom,Europe
+1993,Medicine,Phillip A. Sharp,male,1944-06-06,49,USA,North America
+1994,Chemistry,George A. Olah,male,1927-05-22,67,Hungary,Europe
+1994,Economics,John C. Harsanyi,male,1920-05-29,74,Hungary,Europe
+1994,Economics,John F. Nash Jr.,male,1928-06-13,66,USA,North America
+1994,Economics,Reinhard Selten,male,1930-10-05,64,Poland,Europe
+1994,Literature,Kenzaburo Oe,male,1935-01-31,59,Japan,Asia
+1994,Peace,Yasser Arafat,male,1929-08-24,65,Egypt,Africa
+1994,Peace,Shimon Peres,male,1923-08-16,71,Belarus,Europe
+1994,Peace,Yitzhak Rabin,male,1922-03-01,72,Israel,Asia
+1994,Physics,Bertram N. Brockhouse,male,1918-07-15,76,Canada,North America
+1994,Physics,Clifford G. Shull,male,1915-09-23,79,USA,North America
+1994,Medicine,Alfred G. Gilman,male,1941-07-01,53,USA,North America
+1994,Medicine,Martin Rodbell,male,1925-12-01,69,USA,North America
+1995,Chemistry,Paul J. Crutzen,male,1933-12-03,62,the Netherlands,Europe
+1995,Chemistry,Mario J. Molina,male,1943-03-19,52,Mexico,North America
+1995,Chemistry,F. Sherwood Rowland,male,1927-06-28,68,USA,North America
+1995,Economics,Robert E. Lucas Jr.,male,1937-09-15,58,USA,North America
+1995,Literature,Seamus Heaney,male,1939-04-13,56,Northern Ireland,Europe
+1995,Peace,Joseph Rotblat,male,1908-11-04,87,Poland,Europe
+1995,Physics,Martin L. Perl,male,1927-06-24,68,USA,North America
+1995,Physics,Frederick Reines,male,1918-03-16,77,USA,North America
+1995,Medicine,Edward B. Lewis,male,1918-05-20,77,USA,North America
+1995,Medicine,Christiane Nüsslein-Volhard,female,1942-10-20,53,Germany,Europe
+1995,Medicine,Eric F. Wieschaus,male,1947-06-08,48,USA,North America
+1996,Chemistry,Robert F. Curl Jr.,male,1933-08-23,63,USA,North America
+1996,Chemistry,Sir Harold Kroto,male,1939-10-07,57,United Kingdom,Europe
+1996,Chemistry,Richard E. Smalley,male,1943-06-06,53,USA,North America
+1996,Economics,James A. Mirrlees,male,1936-07-05,60,Scotland,Europe
+1996,Economics,William Vickrey,male,1914-06-21,82,Canada,North America
+1996,Literature,Wislawa Szymborska,female,1923-07-02,73,Poland,Europe
+1996,Peace,Carlos Filipe Ximenes Belo,male,1948-02-03,48,East Timor,Oceania
+1996,Peace,José Ramos-Horta,male,1949-12-26,46,East Timor,Oceania
+1996,Physics,David M. Lee,male,1931-01-20,65,USA,North America
+1996,Physics,Douglas D. Osheroff,male,1945-08-01,51,USA,North America
+1996,Physics,Robert C. Richardson,male,1937-06-26,59,USA,North America
+1996,Medicine,Peter C. Doherty,male,1940-10-15,56,Australia,Oceania
+1996,Medicine,Rolf M. Zinkernagel,male,1944-01-06,52,Switzerland,Europe
+1997,Chemistry,Paul D. Boyer,male,1918-07-31,79,USA,North America
+1997,Chemistry,John E. Walker,male,1941-01-07,56,United Kingdom,Europe
+1997,Chemistry,Jens C. Skou,male,1918-10-08,79,Denmark,Europe
+1997,Economics,Robert C. Merton,male,1944-07-31,53,USA,North America
+1997,Economics,Myron Scholes,male,1941-07-01,56,Canada,North America
+1997,Literature,Dario Fo,male,1926-03-24,71,Italy,Europe
+1997,Peace,Jody Williams,female,1950-10-09,47,USA,North America
+1997,Physics,Steven Chu,male,1948-02-28,49,USA,North America
+1997,Physics,Claude Cohen-Tannoudji,male,1933-04-01,64,Algeria,Africa
+1997,Physics,William D. Phillips,male,1948-11-05,49,USA,North America
+1997,Medicine,Stanley B. Prusiner,male,1942-05-28,55,USA,North America
+1998,Chemistry,Walter Kohn,male,1923-03-09,75,Austria,Europe
+1998,Chemistry,John Pople,male,1925-10-31,73,United Kingdom,Europe
+1998,Economics,Amartya Sen,male,1933-11-03,65,India,Asia
+1998,Literature,José Saramago,male,1922-11-16,76,Portugal,Europe
+1998,Peace,John Hume,male,1937-01-18,61,Northern Ireland,Europe
+1998,Peace,David Trimble,male,1944-10-15,54,Northern Ireland,Europe
+1998,Physics,Robert B. Laughlin,male,1950-11-01,48,USA,North America
+1998,Physics,Horst L. Störmer,male,1949-04-06,49,Germany,Europe
+1998,Physics,Daniel C. Tsui,male,1939-02-28,59,China,Asia
+1998,Medicine,Robert F. Furchgott,male,1916-06-04,82,USA,North America
+1998,Medicine,Louis J. Ignarro,male,1941-05-31,57,USA,North America
+1998,Medicine,Ferid Murad,male,1936-09-14,62,USA,North America
+1999,Chemistry,Ahmed Zewail,male,1946-02-26,53,Egypt,Africa
+1999,Economics,Robert Mundell,male,1932-10-24,67,Canada,North America
+1999,Literature,Günter Grass,male,1927-10-16,72,Poland,Europe
+1999,Physics,Gerardus 't Hooft,male,1946-07-05,53,the Netherlands,Europe
+1999,Physics,Martinus J.G. Veltman,male,1931-06-27,68,the Netherlands,Europe
+1999,Medicine,Günter Blobel,male,1936-05-21,63,Poland,Europe
+2000,Chemistry,Alan Heeger,male,1936-01-22,64,USA,North America
+2000,Chemistry,Alan MacDiarmid,male,1927-04-14,73,New Zealand,Oceania
+2000,Chemistry,Hideki Shirakawa,male,1936-08-20,64,Japan,Asia
+2000,Economics,James J. Heckman,male,1944-04-19,56,USA,North America
+2000,Economics,Daniel L. McFadden,male,1937-07-29,63,USA,North America
+2000,Literature,Gao Xingjian,male,1940-01-04,60,China,Asia
+2000,Peace,Kim Dae-jung,male,1925-12-03,75,South Korea,Asia
+2000,Physics,Zhores Alferov,male,1930-03-15,70,Belarus,Europe
+2000,Physics,Herbert Kroemer,male,1928-08-25,72,Germany,Europe
+2000,Physics,Jack Kilby,male,1923-11-08,77,USA,North America
+2000,Medicine,Arvid Carlsson,male,1923-01-25,77,Sweden,Europe
+2000,Medicine,Paul Greengard,male,1925-12-11,74,USA,North America
+2000,Medicine,Eric Kandel,male,1929-11-07,71,Austria,Europe
+2001,Chemistry,William Knowles,male,1917-06-01,84,USA,North America
+2001,Chemistry,Ryoji Noyori,male,1938-09-03,63,Japan,Asia
+2001,Chemistry,K. Barry Sharpless,male,1941-04-28,60,USA,North America
+2001,Economics,George A. Akerlof,male,1940-06-17,61,USA,North America
+2001,Economics,A. Michael Spence,male,1943-11-07,58,USA,North America
+2001,Economics,Joseph E. Stiglitz,male,1943-02-09,58,USA,North America
+2001,Literature,V. S. Naipaul,male,1932-08-17,69,Trinidad and Tobago,North America
+2001,Peace,Kofi Annan,male,1938-04-08,63,Ghana,Africa
+2001,Physics,Eric Cornell,male,1961-12-19,39,USA,North America
+2001,Physics,Wolfgang Ketterle,male,1957-10-21,44,Germany,Europe
+2001,Physics,Carl Wieman,male,1951-03-26,50,USA,North America
+2001,Medicine,Leland Hartwell,male,1939-10-30,62,USA,North America
+2001,Medicine,Tim Hunt,male,1943-02-19,58,United Kingdom,Europe
+2001,Medicine,Sir Paul Nurse,male,1949-01-25,52,United Kingdom,Europe
+2002,Chemistry,John B. Fenn,male,1917-06-15,85,USA,North America
+2002,Chemistry,Koichi Tanaka,male,1959-08-03,43,Japan,Asia
+2002,Chemistry,Kurt Wüthrich,male,1938-10-04,64,Switzerland,Europe
+2002,Economics,Daniel Kahneman,male,1934-03-05,68,Israel,Asia
+2002,Economics,Vernon L. Smith,male,1927-01-01,75,USA,North America
+2002,Literature,Imre Kertész,male,1929-11-09,73,Hungary,Europe
+2002,Peace,Jimmy Carter,male,1924-10-01,78,USA,North America
+2002,Physics,Raymond Davis Jr.,male,1914-10-14,88,USA,North America
+2002,Physics,Masatoshi Koshiba,male,1926-09-19,76,Japan,Asia
+2002,Physics,Riccardo Giacconi,male,1931-10-06,71,Italy,Europe
+2002,Medicine,Sydney Brenner,male,1927-01-13,75,South Africa,Africa
+2002,Medicine,H. Robert Horvitz,male,1947-05-08,55,USA,North America
+2002,Medicine,John E. Sulston,male,1942-03-27,60,United Kingdom,Europe
+2003,Chemistry,Peter Agre,male,1949-01-30,54,USA,North America
+2003,Chemistry,Roderick MacKinnon,male,1956-02-19,47,USA,North America
+2003,Economics,Robert F. Engle III,male,1942-11-10,61,USA,North America
+2003,Economics,Clive W.J. Granger,male,1934-09-04,69,United Kingdom,Europe
+2003,Literature,J. M. Coetzee,male,1940-02-09,63,South Africa,Africa
+2003,Peace,Shirin Ebadi,female,1947-06-21,56,Iran,Asia
+2003,Physics,Alexei Abrikosov,male,1928-06-25,75,Russia,Europe
+2003,Physics,Vitaly L. Ginzburg,male,1916-10-04,87,Russia,Europe
+2003,Physics,Anthony J. Leggett,male,1938-03-26,65,United Kingdom,Europe
+2003,Medicine,Paul C. Lauterbur,male,1929-05-06,74,USA,North America
+2003,Medicine,Sir Peter Mansfield,male,1933-10-09,70,United Kingdom,Europe
+2004,Chemistry,Aaron Ciechanover,male,1947-10-01,57,Israel,Asia
+2004,Chemistry,Avram Hershko,male,1937-12-31,66,Hungary,Europe
+2004,Chemistry,Irwin Rose,male,1926-07-16,78,USA,North America
+2004,Economics,Finn E. Kydland,male,1943-12-01,61,Norway,Europe
+2004,Economics,Edward C. Prescott,male,1940-12-26,63,USA,North America
+2004,Literature,Elfriede Jelinek,female,1946-10-20,58,Austria,Europe
+2004,Peace,Wangari Maathai,female,1940-04-01,64,Kenya,Africa
+2004,Physics,David J. Gross,male,1941-02-19,63,USA,North America
+2004,Physics,H. David Politzer,male,1949-08-31,55,USA,North America
+2004,Physics,Frank Wilczek,male,1951-05-15,53,USA,North America
+2004,Medicine,Richard Axel,male,1946-07-02,58,USA,North America
+2004,Medicine,Linda B. Buck,female,1947-01-29,57,USA,North America
+2005,Chemistry,Yves Chauvin,male,1930-10-10,75,Belgium,Europe
+2005,Chemistry,Robert H. Grubbs,male,1942-02-27,63,USA,North America
+2005,Chemistry,Richard R. Schrock,male,1945-01-04,60,USA,North America
+2005,Economics,Robert J. Aumann,male,1930-06-08,75,Germany,Europe
+2005,Economics,Thomas C. Schelling,male,1921-04-14,84,USA,North America
+2005,Literature,Harold Pinter,male,1930-10-10,75,United Kingdom,Europe
+2005,Peace,Mohamed ElBaradei,male,1942-06-17,63,Egypt,Africa
+2005,Physics,Roy J. Glauber,male,1925-09-01,80,USA,North America
+2005,Physics,John L. Hall,male,1934-08-21,71,USA,North America
+2005,Physics,Theodor W. Hänsch,male,1941-10-30,64,Germany,Europe
+2005,Medicine,Barry J. Marshall,male,1951-09-30,54,Australia,Oceania
+2005,Medicine,J. Robin Warren,male,1937-06-11,68,Australia,Oceania
+2006,Chemistry,Roger D. Kornberg,male,1947-04-24,59,USA,North America
+2006,Economics,Edmund S. Phelps,male,1933-07-26,73,USA,North America
+2006,Literature,Orhan Pamuk,male,1952-06-07,54,Turkey,Asia
+2006,Peace,Muhammad Yunus,male,1940-06-28,66,Bangladesh,Asia
+2006,Physics,John C. Mather,male,1946-08-07,60,USA,North America
+2006,Physics,George F. Smoot,male,1945-02-20,61,USA,North America
+2006,Medicine,Andrew Z. Fire,male,1959-04-27,47,USA,North America
+2006,Medicine,Craig C. Mello,male,1960-10-18,46,USA,North America
+2007,Chemistry,Gerhard Ertl,male,1936-10-10,71,Germany,Europe
+2007,Economics,Leonid Hurwicz,male,1917-08-21,90,Russia,Europe
+2007,Economics,Eric S. Maskin,male,1950-12-12,56,USA,North America
+2007,Economics,Roger B. Myerson,male,1951-03-29,56,USA,North America
+2007,Literature,Doris Lessing,female,1919-10-22,88,Iran,Asia
+2007,Peace,Al Gore,male,1948-03-31,59,USA,North America
+2007,Physics,Albert Fert,male,1938-03-07,69,France,Europe
+2007,Physics,Peter Grünberg,male,1939-05-18,68,Czech Republic,Europe
+2007,Medicine,Mario R. Capecchi,male,1937-10-06,70,Italy,Europe
+2007,Medicine,Sir Martin J. Evans,male,1941-01-01,66,United Kingdom,Europe
+2007,Medicine,Oliver Smithies,male,1925-06-23,82,United Kingdom,Europe
+2008,Chemistry,Osamu Shimomura,male,1928-08-27,80,Japan,Asia
+2008,Chemistry,Martin Chalfie,male,1947-01-15,61,USA,North America
+2008,Chemistry,Roger Y. Tsien,male,1952-02-01,56,USA,North America
+2008,Economics,Paul Krugman,male,1953-02-28,55,USA,North America
+2008,Literature,Jean-Marie Gustave Le Clézio,male,1940-04-13,68,France,Europe
+2008,Peace,Martti Ahtisaari,male,1937-06-23,71,Finland,Europe
+2008,Physics,Yoichiro Nambu,male,1921-01-18,87,Japan,Asia
+2008,Physics,Makoto Kobayashi,male,1944-04-07,64,Japan,Asia
+2008,Physics,Toshihide Maskawa,male,1940-02-07,68,Japan,Asia
+2008,Medicine,Harald zur Hausen,male,1936-03-11,72,Germany,Europe
+2008,Medicine,Françoise Barré-Sinoussi,female,1947-07-30,61,France,Europe
+2008,Medicine,Luc Montagnier,male,1932-08-18,76,France,Europe
+2009,Chemistry,Venkatraman Ramakrishnan,male,1952-04-01,57,India,Asia
+2009,Chemistry,Thomas A. Steitz,male,1940-08-23,69,USA,North America
+2009,Chemistry,Ada E. Yonath,female,1939-06-22,70,Israel,Asia
+2009,Economics,Elinor Ostrom,female,1933-08-07,76,USA,North America
+2009,Economics,Oliver E. Williamson,male,1932-09-27,77,USA,North America
+2009,Literature,Herta Müller,female,1953-08-17,56,Romania,Europe
+2009,Peace,Barack H. Obama,male,1961-08-04,48,USA,North America
+2009,Physics,Charles K. Kao,male,1933-11-04,76,China,Asia
+2009,Physics,Willard S. Boyle,male,1924-08-19,85,Canada,North America
+2009,Physics,George E. Smith,male,1930-05-10,79,USA,North America
+2009,Medicine,Elizabeth H. Blackburn,female,1948-11-26,61,Australia,Oceania
+2009,Medicine,Carol W. Greider,female,1961-04-15,48,USA,North America
+2009,Medicine,Jack W. Szostak,male,1952-11-09,57,United Kingdom,Europe
+2010,Chemistry,Richard F. Heck,male,1931-08-15,79,USA,North America
+2010,Chemistry,Ei-ichi Negishi,male,1935-07-14,75,China,Asia
+2010,Chemistry,Akira Suzuki,male,1930-09-12,80,Japan,Asia
+2010,Economics,Peter A. Diamond,male,1940-04-29,70,USA,North America
+2010,Economics,Dale T. Mortensen,male,1939-02-02,71,USA,North America
+2010,Economics,Christopher A. Pissarides,male,1948-02-20,62,Cyprus,Europe
+2010,Literature,Mario Vargas Llosa,male,1936-03-28,74,Peru,South America
+2010,Peace,Liu Xiaobo,male,1955-12-28,54,China,Asia
+2010,Physics,Andre Geim,male,1958-10-21,52,Russia,Europe
+2010,Physics,Konstantin Novoselov,male,1974-08-23,36,Russia,Europe
+2010,Medicine,Robert G. Edwards,male,1925-09-27,85,United Kingdom,Europe
+2011,Chemistry,Dan Shechtman,male,1941-01-24,70,Israel,Asia
+2011,Economics,Thomas J. Sargent,male,1943-07-19,68,USA,North America
+2011,Economics,Christopher A. Sims,male,1942-10-21,69,USA,North America
+2011,Literature,Tomas Tranströmer,male,1931-04-15,80,Sweden,Europe
+2011,Peace,Ellen Johnson Sirleaf,female,1938-10-29,73,Liberia,Africa
+2011,Peace,Leymah Gbowee,female,1972-02-01,39,Liberia,Africa
+2011,Peace,Tawakkol Karman,female,1979-02-07,32,Yemen,Asia
+2011,Physics,Saul Perlmutter,male,1959-09-22,52,USA,North America
+2011,Physics,Brian P. Schmidt,male,1967-02-24,44,USA,North America
+2011,Physics,Adam G. Riess,male,1969-12-16,41,USA,North America
+2011,Medicine,Bruce A. Beutler,male,1957-12-29,53,USA,North America
+2011,Medicine,Jules A. Hoffmann,male,1941-08-02,70,Luxembourg,Europe
+2011,Medicine,Ralph M. Steinman,male,1943-01-14,68,Canada,North America
+2012,Chemistry,Robert J. Lefkowitz,male,1943-04-15,69,USA,North America
+2012,Chemistry,Brian Kobilka,male,1955-05-30,57,USA,North America
+2012,Economics,Alvin E. Roth,male,1951-12-18,60,USA,North America
+2012,Economics,Lloyd S. Shapley,male,1923-06-02,89,USA,North America
+2012,Literature,Mo Yan,male,1955-02-02,57,China,Asia
+2012,Physics,Serge Haroche,male,1944-09-11,68,Morocco,Africa
+2012,Physics,David J. Wineland,male,1944-02-24,68,USA,North America
+2012,Medicine,Sir John B. Gurdon,male,1933-10-02,79,United Kingdom,Europe
+2012,Medicine,Shinya Yamanaka,male,1962-09-04,50,Japan,Asia
+2013,Chemistry,Martin Karplus,male,1930-03-15,83,Austria,Europe
+2013,Chemistry,Michael Levitt,male,1947-05-09,66,South Africa,Africa
+2013,Chemistry,Arieh Warshel,male,1940-11-20,73,Israel,Asia
+2013,Economics,Eugene F. Fama,male,1939-02-14,74,USA,North America
+2013,Economics,Lars Peter Hansen,male,1952-10-26,61,USA,North America
+2013,Economics,Robert J. Shiller,male,1946-03-29,67,USA,North America
+2013,Literature,Alice Munro,female,1931-07-10,82,Canada,North America
+2013,Physics,François Englert,male,1932-11-06,81,Belgium,Europe
+2013,Physics,Peter Higgs,male,1929-05-29,84,United Kingdom,Europe
+2013,Medicine,James E. Rothman,male,1950-11-03,63,USA,North America
+2013,Medicine,Randy W. Schekman,male,1948-12-30,64,USA,North America
+2013,Medicine,Thomas C. Südhof,male,1955-12-22,57,Germany,Europe
+2014,Chemistry,Eric Betzig,male,1960-01-13,54,USA,North America
+2014,Chemistry,Stefan W. Hell,male,1962-12-23,51,Romania,Europe
+2014,Chemistry,William E. Moerner,male,1953-06-24,61,USA,North America
+2014,Economics,Jean Tirole,male,1953-08-09,61,France,Europe
+2014,Literature,Patrick Modiano,male,1945-07-30,69,France,Europe
+2014,Peace,Kailash Satyarthi,male,1954-01-11,60,India,Asia
+2014,Peace,Malala Yousafzai,female,1997-07-12,17,Pakistan,Asia
+2014,Physics,Isamu Akasaki,male,1929-01-30,85,Japan,Asia
+2014,Physics,Hiroshi Amano,male,1960-09-11,54,Japan,Asia
+2014,Physics,Shuji Nakamura,male,1954-05-22,60,Japan,Asia
+2014,Medicine,John O'Keefe,male,1939-11-18,75,USA,North America
+2014,Medicine,May-Britt Moser,female,1963-01-04,51,Norway,Europe
+2014,Medicine,Edvard I. Moser,male,1962-04-27,52,Norway,Europe
+2015,Chemistry,Tomas Lindahl,male,1938-01-28,77,Sweden,Europe
+2015,Chemistry,Paul Modrich,male,1946-06-13,69,USA,North America
+2015,Chemistry,Aziz Sancar,male,1946-09-08,69,Turkey,Asia
+2015,Economics,Angus Deaton,male,1945-10-19,70,Scotland,Europe
+2015,Literature,Svetlana Alexievich,female,1948-05-31,67,Ukraine,Europe
+2015,Physics,Takaaki Kajita,male,1959-03-09,56,Japan,Asia
+2015,Physics,Arthur B. McDonald,male,1943-08-29,72,Canada,North America
+2015,Medicine,William C. Campbell,male,1930-06-28,85,Ireland,Europe
+2015,Medicine,Satoshi Ōmura,male,1935-07-12,80,Japan,Asia
+2015,Medicine,Tu Youyou,female,1930-12-30,84,China,Asia
+2016,Chemistry,Jean-Pierre Sauvage,male,1944-10-21,72,France,Europe
+2016,Chemistry,Sir J. Fraser Stoddart,male,1942-05-24,74,United Kingdom,Europe
+2016,Chemistry,Bernard L. Feringa,male,1951-05-18,65,the Netherlands,Europe
+2016,Economics,Oliver Hart,male,1948-10-09,68,United Kingdom,Europe
+2016,Economics,Bengt Holmström,male,1949-04-18,67,Finland,Europe
+2016,Literature,Bob Dylan,male,1941-05-24,75,USA,North America
+2016,Peace,Juan Manuel Santos,male,1951-08-10,65,Colombia,South America
+2016,Physics,David J. Thouless,male,1934-09-21,82,United Kingdom,Europe
+2016,Physics,F. Duncan M. Haldane,male,1951-09-14,65,United Kingdom,Europe
+2016,Physics,J. Michael Kosterlitz,male,1943-06-22,73,United Kingdom,Europe
+2016,Medicine,Yoshinori Ohsumi,male,1945-02-09,71,Japan,Asia
+2017,Chemistry,Jacques Dubochet,male,1942-06-08,75,Switzerland,Europe
+2017,Chemistry,Joachim Frank,male,1940-09-12,77,Germany,Europe
+2017,Chemistry,Richard Henderson,male,1945-07-19,72,Scotland,Europe
+2017,Economics,Richard H. Thaler,male,1945-09-12,72,USA,North America
+2017,Literature,Kazuo Ishiguro,male,1954-11-08,63,Japan,Asia
+2017,Physics,Rainer Weiss,male,1932-09-29,85,Germany,Europe
+2017,Physics,Barry C. Barish,male,1936-01-27,81,USA,North America
+2017,Physics,Kip S. Thorne,male,1940-06-01,77,USA,North America
+2017,Medicine,Jeffrey C. Hall,male,1945-05-03,72,USA,North America
+2017,Medicine,Michael Rosbash,male,1944-03-07,73,USA,North America
+2017,Medicine,Michael W. Young,male,1949-03-28,68,USA,North America
+2018,Chemistry,Frances H. Arnold,female,1956-07-25,62,USA,North America
+2018,Chemistry,George P. Smith,male,1941-03-10,77,USA,North America
+2018,Chemistry,Sir Gregory P. Winter,male,1951-04-14,67,United Kingdom,Europe
+2018,Economics,William D. Nordhaus,male,1941-05-31,77,USA,North America
+2018,Economics,Paul M. Romer,male,1955-11-06,63,USA,North America
+2018,Literature,Olga Tokarczuk,female,1962-01-29,56,Poland,Europe
+2018,Peace,Denis Mukwege,male,1955-03-01,63,Democratic Republic of the Congo,Africa
+2018,Peace,Nadia Murad,female,1993-03-10,25,Iraq,Asia
+2018,Physics,Arthur Ashkin,male,1922-09-02,96,USA,North America
+2018,Physics,Gérard Mourou,male,1944-06-22,74,France,Europe
+2018,Physics,Donna Strickland,female,1959-05-27,59,Canada,North America
+2018,Medicine,James P. Allison,male,1948-08-07,70,USA,North America
+2018,Medicine,Tasuku Honjo,male,1942-01-27,76,Japan,Asia
+2019,Chemistry,John B. Goodenough,male,1922-07-25,97,Germany,Europe
+2019,Chemistry,M. Stanley Whittingham,male,1941-12-22,77,United Kingdom,Europe
+2019,Chemistry,Akira Yoshino,male,1948-01-30,71,Japan,Asia
+2019,Economics,Abhijit Banerjee,male,1961-02-21,58,India,Asia
+2019,Economics,Esther Duflo,female,1972-10-25,47,France,Europe
+2019,Economics,Michael Kremer,male,1964-11-12,55,USA,North America
+2019,Literature,Peter Handke,male,1942-12-06,77,Austria,Europe
+2019,Peace,Abiy Ahmed Ali,male,1976-08-15,43,Ethiopia,Africa
+2019,Physics,James Peebles,male,1935-04-25,84,Canada,North America
+2019,Physics,Michel Mayor,male,1942-01-12,77,Switzerland,Europe
+2019,Physics,Didier Queloz,male,1966-02-23,53,Switzerland,Europe
+2019,Medicine,William G. Kaelin Jr,male,1957-11-23,62,USA,North America
+2019,Medicine,Sir Peter J. Ratcliffe,male,1954-05-14,65,United Kingdom,Europe
+2019,Medicine,Gregg L. Semenza,male,1956-07-12,63,USA,North America
+2020,Chemistry,Emmanuelle Charpentier,female,1968-12-11,51,France,Europe
+2020,Chemistry,Jennifer A. Doudna,female,1964-02-19,56,USA,North America
+2020,Economics,Paul R. Milgrom,male,1948-04-20,72,USA,North America
+2020,Economics,Robert B. Wilson,male,1937-05-16,83,USA,North America
+2020,Literature,Louise Glück,female,1943-04-22,77,USA,North America
+2020,Physics,Roger Penrose,male,1931-08-08,89,United Kingdom,Europe
+2020,Physics,Reinhard Genzel,male,1952-03-24,68,Germany,Europe
+2020,Physics,Andrea Ghez,female,1965-06-16,55,USA,North America
+2020,Medicine,Harvey J. Alter,male,1935-09-12,85,USA,North America
+2020,Medicine,Michael Houghton,male,1949-06-30,71,United Kingdom,Europe
+2020,Medicine,Charles M. Rice,male,1952-08-25,68,USA,North America
+2021,Chemistry,Benjamin List,male,1968-01-11,53,Germany,Europe
+2021,Chemistry,David W.C. MacMillan,male,1968-03-16,53,United Kingdom,Europe
+2021,Economics,David Card,male,1956-06-30,65,Canada,North America
+2021,Economics,Joshua D. Angrist,male,1960-09-18,61,USA,North America
+2021,Economics,Guido W. Imbens,male,1963-09-03,58,the Netherlands,Europe
+2021,Literature,Abdulrazak Gurnah,male,1948-12-20,72,Tanzania,Africa
+2021,Peace,Maria Ressa,female,1963-10-02,58,Philippines,Asia
+2021,Peace,Dmitry Muratov,male,1961-10-29,60,Russia,Europe
+2021,Physics,Syukuro Manabe,male,1931-09-21,90,Japan,Asia
+2021,Physics,Klaus Hasselmann,male,1931-10-25,90,Germany,Europe
+2021,Physics,Giorgio Parisi,male,1948-08-04,73,Italy,Europe
+2021,Medicine,David Julius,male,1955-11-04,66,USA,North America
+2021,Medicine,Ardem Patapoutian,male,1967-10-02,54,Lebanon,Asia
+2022,Chemistry,Carolyn Bertozzi,female,1966-10-10,56,USA,North America
+2022,Chemistry,Morten Meldal,male,1954-01-16,68,Denmark,Europe
+2022,Chemistry,K. Barry Sharpless,male,1941-04-28,81,USA,North America
+2022,Economics,Ben Bernanke,male,1953-12-13,68,USA,North America
+2022,Economics,Douglas Diamond,male,1953-10-25,69,USA,North America
+2022,Economics,Philip Dybvig,male,1955-05-22,67,USA,North America
+2022,Literature,Annie Ernaux,female,1940-09-01,82,France,Europe
+2022,Peace,Ales Bialiatski,male,1962-09-25,60,Russia,Europe
+2022,Physics,Alain Aspect,male,1947-06-15,75,France,Europe
+2022,Physics,John Clauser,male,1942-12-01,80,USA,North America
+2022,Physics,Anton Zeilinger,male,1945-05-20,77,Austria,Europe
+2022,Medicine,Svante Pääbo,male,1955-04-20,67,Sweden,Europe
