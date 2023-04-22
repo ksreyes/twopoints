@@ -498,15 +498,14 @@ These findings are interesting not just in themselves but also from the standpoi
 
 Stories are entertainment --- bits of made-up nonsense we pass around to pass the time. But they also have a furtive sort of power, planting ideas that harden into truths. They are all the more perilous from being inconspicuous, as water is to fish. So when the time comes to pass them down to our children as our parents passed them down to us, let us beware. Children will listen. `r end_mark()`
 
-## Data {.appendix}
+## Data and cleaning scripts {.appendix}
 
 - [Michalopoulos and Xue (2021) replication files](https://doi.org/10.7910/DVN/IXOHKB)
-- [coords.json](https://github.com/macleginn/mythology-queries/blob/master/data/coords.json) (Dmitry Nikolayev)
-- [match_names_to_coords.csv](../../datasets/folklore/match_names_to_coords.csv) / [match_names_to_mx.csv](../../datasets/folklore/match_names_to_mx.csv) / [coords_clean.json](../../datasets/folklore/coords_clean.json) / [motifs.csv](../../datasets/folklore/motifs.csv) / [groups_motifs.csv](../../datasets/folklore/groups_motifs.csv) / [groups_concepts.csv](../../datasets/folklore/groups_concepts.csv) / [regressions.csv](../../datasets/folklore/regressions.csv)  
-  cleaning scripts: [clean.ipynb](../../datasets/folklore/clean.ipynb)
-- [countries-110m.json](../../datasets/folklore/countries-110m.json)
+- [countries-110m.json](../../datasets/folklore/countries-110m.json) (source: [topojson/world-atlas](https://github.com/topojson/world-atlas))
+- [coords.json](../../datasets/folklore/coords.json) (source: [macleginn/mythology-queries](https://github.com/macleginn/mythology-queries/blob/master/data/coords.json))
+- [clean.ipynb](../../datasets/folklore/clean.ipynb) / [match_names_to_coords.csv](../../datasets/folklore/match_names_to_coords.csv), [match_names_to_mx.csv](../../datasets/folklore/match_names_to_mx.csv), [coords_clean.json](../../datasets/folklore/coords_clean.json), [motifs.csv](../../datasets/folklore/motifs.csv), [groups_motifs.csv](../../datasets/folklore/groups_motifs.csv), [groups_concepts.csv](../../datasets/folklore/groups_concepts.csv), [regressions.csv](../../datasets/folklore/regressions.csv)  
 
-## Appendix: D3 / Observable {.appendix}
+## D3 / Observable code {.appendix}
 
 ```{ojs}
 //| code-fold: true

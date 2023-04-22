@@ -86,7 +86,7 @@ library_stats = pd.read_csv('../../datasets/literary/library_stats.csv')
 As before, our data source is Project Gutenberg, accessed via the [`gutenbergpy`](https://github.com/raduangelescu/gutenbergpy) package. Downloading a work requires knowing its Gutenberg ID, which is tedious to look up if we want a ton of novels. Let's devise a process that automatically fetches IDs given an author prompt --- say, "Herman Melville". To be able to search through the Gutenberg database, we must first generate a local cache of its records by running `GutenbergCache.create()`. This only needs to be done once. Once set up, we can connect to it:
 
 ```{python}
-connection = sqlite3.connect(GutenbergCacheSettings.CACHE_FILENAME)
+connection = sqlite3.connect('../../datasets/literary/' + GutenbergCacheSettings.CACHE_FILENAME)
 ```
 
 Our SQL query will be of the following form:
@@ -567,11 +567,11 @@ network = json.dumps(network_dict)
 
 So we have analyzed 456 books. Can we go bolder still, more audacious still? The Gutenberg library is vast. Unfortunately, it's also a mess. There have been many attempts to tame it, including `gutenbergpy`, but I'm still finding that the efforts involved in data cleaning and data wrangling scale faster than the marginal value of expanding the dataset further. I'll have to wait for a better API. Until then, this has been your sign to get back to (or start!) the habit of reading. May I suggest *Moby-Dick*? `r end_mark()`
 
-## Data {.appendix}
+## Data and cleaning script {.appendix}
 
-- [literary.py](../../datasets/literary/literary.py) / [library_stats.csv](../../datasets/literary/library_stats.csv) / [library_network.json](../../datasets/literary/library_network.json)
+- [literary.py](../../datasets/literary/literary.py) / [library_stats.csv](../../datasets/literary/library_stats.csv), [library_network.json](../../datasets/literary/library_network.json)
 
-## Appendix: D3 / Observable code {.appendix}
+## D3 / Observable code {.appendix}
 
 ```{ojs}
 //| code-fold: true

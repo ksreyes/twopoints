@@ -1571,7 +1571,7 @@ This blog post demonstrates how interactive charts can be used to enrich the tea
 
 Economists are always referring to "toy models" of the economy. It's time we get to play with them. `r end_mark()`
 
-## Appendix: D3 / Observable {.appendix}
+## D3 / Observable code {.appendix}
 
 ```{ojs}
 //| code-fold: true

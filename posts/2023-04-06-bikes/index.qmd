@@ -616,12 +616,10 @@ With this bike lane building program, the government has seemingly spent ₱1 bi
 ## Data {.appendix}
 
 - [Empowering Citizens to Build Better Bike Lanes through Open Contracting.xlsx](https://docs.google.com/spreadsheets/d/1eZLfoH0eA0xMU79GVp_8zM_uEcENMKhV52nWqLwH-Ao/edit#gid=794528651)
-- [contracts.csv](../../datasets/bikelanes/contracts.csv) / [contractsMap.json](../../datasets/bikelanes/contractsMap.json)
-- [philippine-json-maps](https://github.com/faeldon/philippines-json-maps)
-- [biddersNodes.csv](../../datasets/bikelanes/biddersNodes.csv) / [biddersLinks.csv](../../datasets/bikelanes/biddersLinks.csv)
-- [itemsWide.csv](../../datasets/bikelanes/itemsWide.csv) / [itemsDesc.csv](../../datasets/bikelanes/itemsDesc.csv)
+- [philippine-json-maps](../../datasets/philippines-json-maps) (source: [faeldon/philippines-json-maps](https://github.com/faeldon/philippines-json-maps))
+- [contracts.csv](../../datasets/bikelanes/contracts.csv), [contractsMap.json](../../datasets/bikelanes/contractsMap.json), [biddersNodes.csv](../../datasets/bikelanes/biddersNodes.csv), [biddersLinks.csv](../../datasets/bikelanes/biddersLinks.csv), [itemsWide.csv](../../datasets/bikelanes/itemsWide.csv), [itemsDesc.csv](../../datasets/bikelanes/itemsDesc.csv)
 
-## Appendix: D3 / Observable {.appendix}
+## D3 / Observable code {.appendix}
 
 ```{ojs}
 //| code-fold: true

@@ -16,7 +16,6 @@ library(knitr)
 library(showtext)
 library(here)
 
-renv::use(lockfile = "renv.lock")
 showtext_auto()
 opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
 
@@ -463,7 +462,7 @@ It's interesting to see how many of these variables underwent a noticeable shift
 
 What to make of these results? Perhaps it's a little unfair to judge social scientists too harshly. It was a once-in-a-century pandemic, no one had any models for this. But at the same time, isn't it precisely during periods of great uncertainty when guidance from domain experts is needed the most? Don't tell me now that you were just a bunch of chimps with a dart! `r end_mark()`
 
-## Appendix: D3 / Observable code {.appendix}
+## D3 / Observable code {.appendix}
 
 ```{ojs}
 //| code-fold: true
