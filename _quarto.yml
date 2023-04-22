@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!*.ipynb"
 
 website:
   title: "Two Points Make a Line"

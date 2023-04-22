@@ -89,6 +89,10 @@ ol, ul {
   margin-bottom: 1.5rem;
 }
 
+div.quarto-appendix-contents ul {
+  margin: 0;
+}
+
 p > a:not(.footnote-ref) {
   background-color: #f5f5f5;
 }
@@ -520,6 +524,11 @@ div.cell, p + div.sourceCode {
   margin-bottom: $paragraph-margin-bottom;
 }
 
+/* Cell bottom margin if a dummy code cell for column-page layouts  */
+div.cell.dummy {
+  margin-bottom: .35rem;
+}
+
 div.quarto-appendix-contents div.cell {
   margin-bottom: 0;
 }
@@ -578,6 +587,10 @@ div.cell-output-display {                        /* Space bet code & output */
   margin: 1rem 0 0 0;
 }
 
+div.sourceCode.hidden +                          /* Space bet code & output */
+div.cell-output-display {                        /* if code chunk is hidden */
+  margin: 0;
+}
 
 div.cell-output pre {
   margin: 1rem 0 .5rem 0;
@@ -650,8 +663,14 @@ div.cell-output-display div.observablehq {
   margin-top: 1rem;
 }
 
+div.sourceCode.hidden +                          /* Space bet code & output */
+div.cell-output-display                          /* if code chunk is hidden */
+div.observablehq {
+  margin: 0;
+}
+
 .ojs-title {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-family: $font-family-headings;
   font-weight: 700;
   text-align: center;
@@ -669,10 +688,14 @@ div.cell-output-display div.observablehq {
   text-align: center;
 }
 
+.ojs-source {
+  font-size: $font-size-cell-ojs * .8;
+}
+
 @media only screen and (max-width: 768px) {
   
   .ojs-title {
-    font-size: .9rem;
+    font-size: 1rem;
     margin: 0 0 .15rem 0;
   }
 
@@ -686,6 +709,9 @@ div.cell-output-display div.observablehq {
     line-height: 1.5;
   }
   
+  .ojs-source {
+    font-size: $font-size-cell-ojs * .7 * .8;
+  }
   
   div.cell-output-display div.observablehq {
     font-size: $font-size-cell-ojs * .9;

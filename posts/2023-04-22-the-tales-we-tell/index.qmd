@@ -1,0 +1,1080 @@
+---
+title: "The tales we tell"
+subtitle: "Our body of folklore can say a lot about our modern-day attitudes and beliefs --- for better or worse"
+date: 2023-04-22
+categories: [python, D3/OJS]
+image: thumbnail.gif
+draft: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+In the bittersweet finale of Stephen Sondheim's *Into the Woods*, as the Baker quiets his child with yet another story, the Witch steps forward to deliver the musical's central thesis:
+
+> Careful the tale you tell  
+> That is the spell  
+> Children will listen
+
+For those who aren't familiar, *Into the Woods* is a retelling of Grimm fairy tales --- Cinderella, Little Red Riding Hood, and the like.^[Skip the misguided Disney version --- the 1989 taping with the original Broadway cast is available [on YouTube](https://www.youtube.com/watch?v=kqCsQCsinK4).] Each character starts with a wish that, through cunning, daring, and a fair bit of magic, they attain, whereupon they join hands in triumph to sing "happily ever after". But that is a feint, for only first act is done. In the unhinged second act, the characters find themselves fleeing from the consequences of their wishes, culminating in their murder of the very Narrator who has been telling their story. It demonstrates metaphorically and literally how stories, once told, can take a life of their own. And thus: careful the tale you tell.
+
+![*Into the Woods* deconstructs and disembowels the idea of a fairy tale (image from playbill.com)](https://assets.playbill.com/editorial/_articleLeadImage/12bf5706e0684ef7eb28c884da664d6a-sondheimbday-itw-hr.jpg)
+
+It has long been known that narratives shape social and political outcomes, but measuring this quantitatively can be tricky. In this post, I'll cover a [paper](https://academic.oup.com/qje/article/136/4/1993/6124640) by Stelios Michalopoulos and Melanie Meng Xue that does just this. Their primary dataset is Yuri Berezkin's [*Folklore and Mythology Catalog*](http://www.mythologydatabase.com/bd/), an ambitious project that attempts to document the motifs found in folklore around the world. A motif is some distinctive episode, idea, or image; folklore is the body of traditional stories passed orally among an ethnolinguistic group. The version of the *Catalog* I'll be working with logs 2,564 motifs for about 900 groups.^[The replication files of Michalopoulos and Xue (MX) don't contain location information for the linguistic groups, so I dug around and found it in a [repo](https://github.com/macleginn/mythology-queries) from one Dmitry Nikolayev. Nikolayev appears to have worked on an older version of the Berezkin catalog, so his list does not exactly match MX's list. I've harmonized them as best as I could; see my cleaning script for details.] 
+
+In the interactive map below, you can pull up a random motif and see which oral traditions have it. You'll find that some motifs are universal, others are very niche. The ones in between are the most intruiging: the chart initializes on a motif about hidden identities (f64a), found in North America and Southeast Asia but hardly anywhere else.
+
+```{ojs}
+//| eval: false
+//| code-fold: true
+//| classes: dummy
+
+{
+  const dim = ({ width: 990, height: 660 });
+  const motif = "f64a";
+  
+  const container = d3.create("div");
+  
+  // Chart title //////////////////////////////////////////////////////////////
+  
+  container.append("div")
+    .attr("class", "ojs-title")
+    .html(`Plot points`);
+    
+  container.append("div")
+    .attr("class", "ojs-subtitle")
+    .style("margin-bottom", "1rem")
+    .html(`Presence of a motif in the folklore of linguistic groups`);
+  
+  // Chart proper /////////////////////////////////////////////////////////////
+  
+  const svg = container.append("svg")
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .attr("viewBox", [0, 0, dim.width, dim.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+  svg.call(addMap);
+  
+  svg.append("g")
+    .selectAll("dotsLatent")
+    .data(coords)
+    .join("circle")
+    .attr("cx", d => d.coordinates[0])
+    .attr("cy", d => d.coordinates[1])
+    .attr("r", 2)
+    .style("fill", colorDotsLatent);
+    
+  svg.append("g").attr("id", "dots-highlighted").call(dotsSelect, motif);
+  
+  // Motif randomizer
+  svg.append("g").attr("id", "motif-id").call(motifSelectId, motif);
+  svg.append("g").attr("id", "motif-title").call(motifSelectTitle, motif);
+  svg.append("g").attr("id", "motif-description").call(motifSelectDesc, motif);
+  svg.append("g").attr("id", "button").call(addButton);
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Source: Y. Berezkin, <i>Folklore and Mythology Catalog</i> (2019).`);
+    
+  return container.node();
+}
+```
+
+::: {.column-page}
+
+```{ojs}
+//| echo: false
+
+{
+  const dim = ({ width: 990, height: 660 });
+  const motif = "f64a";
+  
+  const container = d3.create("div");
+  
+  // Chart title //////////////////////////////////////////////////////////////
+  
+  container.append("div")
+    .attr("class", "ojs-title")
+    .html(`Plot points`);
+    
+  container.append("div")
+    .attr("class", "ojs-subtitle")
+    .style("margin-bottom", "1rem")
+    .html(`Presence of a motif in the folklore of linguistic groups`);
+  
+  // Chart proper /////////////////////////////////////////////////////////////
+  
+  const svg = container.append("svg")
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .attr("viewBox", [0, 0, dim.width, dim.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+
+  svg.call(addMap);
+  
+  svg.append("g")
+    .selectAll("dotsLatent")
+    .data(coords)
+    .join("circle")
+    .attr("cx", d => d.coordinates[0])
+    .attr("cy", d => d.coordinates[1])
+    .attr("r", 2)
+    .style("fill", colorDotsLatent);
+    
+  svg.append("g").attr("id", "dots-highlighted").call(dotsSelect, motif);
+  
+  // Motif randomizer
+  svg.append("g").attr("id", "motif-id").call(motifSelectId, motif);
+  svg.append("g").attr("id", "motif-title").call(motifSelectTitle, motif);
+  svg.append("g").attr("id", "motif-description").call(motifSelectDesc, motif);
+  svg.append("g").attr("id", "button").call(addButton);
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Source: Y. Berezkin, <i>Folklore and Mythology Catalog</i> (2019).`);
+    
+  return container.node();
+}
+```
+
+:::
+
+There are obviously a lot of caveats here. The same motif may not necessarily mean the same thing across different cultures. Presence or absence does not capture how central a motif is in a group's folklore. Groups whose oral traditions have been studied more would tend to have greater representation. And on top of everything, the texts in the *Catalog* were originally in Russian; here I am using the English translations provided by Berezkin himself. What you're reading above, then, is often a translation of a translation.^[There are also some typos and grammatically errors. I have left these as they are.]
+
+Yet despite all that, Berezkin's *Catalog* remains an enlightening resource for uncovering patterns in the world's body of folklore. Mapping the presence of a motif can mean mapping ancient trade and migration routes long forgotten by history. Or where no such routes existed, it suggests the stirring notion that humans, though leagues and cultures apart, can look at the same world and arrive at the same ideas, or imagine the same fictions.
+
+But folklore across cultures do also differ, often tremendously. This may arise from random chance, or perhaps to something more fundamental, like the physical environment. To investigate this, Michalopoulos and Xue use [ConceptNet](https://conceptnet.io/) to attach concepts to motifs. ConceptNet is a semantic network that, among other things, provides a list of related words from a seed word. This is useful when gathering all motifs related to the concept of, say, fire, since simply taking motifs with the word "fire" may cause you to miss those with the words "burn", "smoke", "flame", and so on. ConceptNet offers a systematic way to assemble the words that form the contours of a concept. They can then be used to shortlist motifs exhibiting that concept.
+
+With this concept-tagging approach, Michalopoulos and Xue can test whether features of a linguistic group's physical environment and mode of subsistence correlate with the motifs in their folklore. For instance, do groups near earthquake-prone regions tend to have more earthquake-related motifs? It turns out, yes. Toggle the concepts in the map below to see where that concept most saturates the oral tradition.
+
+```{ojs}
+//| eval: false
+//| code-fold: true
+
+{
+  const dim = ({ width: 990, height: 580 });
+  
+  const container = d3.create("div");
+  
+  // Chart title //////////////////////////////////////////////////////////////
+  
+  container.append("div")
+    .attr("class", "ojs-title")
+    .html(`Planted ideas`);
+    
+  container.append("div")
+    .attr("class", "ojs-subtitle")
+    .style("margin-bottom", "1rem")
+    .html(`Share of motifs related to various concepts in the folklore of linguistic groups`);
+  
+  // Map base layer ///////////////////////////////////////////////////////////
+  
+  const svg = container.append("svg")
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .attr("viewBox", [0, 0, dim.width, dim.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.call(addMap);
+  
+  // Radio buttons ////////////////////////////////////////////////////////////
+   
+  const radio = svg.append("g")
+    .attr("id", "radio")
+    .attr("transform", "translate(30,410)");
+  
+  const radioButtons = radio.append("foreignObject")
+    .attr("x", 0)
+    .attr("y",  0)
+    .attr("width", 250)
+    .attr("height", 500);
+  
+  const radioTitle = radioButtons.append("xhtml:div")
+    .append("text")
+    .text("Share of motifs related to")
+    .style("font-weight", "bold")
+    .style("font-size", ".9rem");
+  
+  radioButtons
+    .call(addRadio, "farming", true)
+    .call(addRadio, "pastoral")
+    .call(addRadio, "fishing")
+    .call(addRadio, "coldness")
+    .call(addRadio, "earthquakes");
+    
+  radioButtons.on("click", () => {
+    const selectedNew = d3.select('input[name="concepts"]:checked').node().value;
+    svg.select("#bubbles").call(addBubbles, selectedNew);
+  });
+  
+  // Points ///////////////////////////////////////////////////////////////////
+  
+  const selectInit = "farming"
+  svg.append("g")
+    .attr("id", "bubbles")
+    .call(addBubbles, selectInit);
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Sources: Y. Berezkin, <i>Folklore and Mythology Catalog</i> (2019); S. Michalopoulos and M. Xue, "Folklore", <i>Quarterly Journal of Economics</i>, vol. 136, no. 4 (2021).`);
+    
+  return container.node();
+}
+```
+
+::: {.column-page}
+
+```{ojs}
+//| echo: false
+
+{
+  const dim = ({ width: 990, height: 580 });
+  
+  const container = d3.create("div");
+  
+  // Chart title //////////////////////////////////////////////////////////////
+  
+  container.append("div")
+    .attr("class", "ojs-title")
+    .html(`Planted ideas`);
+    
+  container.append("div")
+    .attr("class", "ojs-subtitle")
+    .style("margin-bottom", "1rem")
+    .html(`Share of motifs related to various concepts in the folklore of linguistic groups`);
+  
+  // Map base layer ///////////////////////////////////////////////////////////
+  
+  const svg = container.append("svg")
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .attr("viewBox", [0, 0, dim.width, dim.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.call(addMap);
+  
+  // Radio buttons ////////////////////////////////////////////////////////////
+   
+  const radio = svg.append("g")
+    .attr("id", "radio")
+    .attr("transform", "translate(30,410)");
+  
+  const radioButtons = radio.append("foreignObject")
+    .attr("x", 0)
+    .attr("y",  0)
+    .attr("width", 250)
+    .attr("height", 500);
+  
+  const radioTitle = radioButtons.append("xhtml:div")
+    .append("text")
+    .text("Share of motifs related to")
+    .style("font-weight", "bold")
+    .style("font-size", ".9rem");
+  
+  radioButtons
+    .call(addRadio, "farming", true)
+    .call(addRadio, "pastoral")
+    .call(addRadio, "fishing")
+    .call(addRadio, "coldness")
+    .call(addRadio, "earthquakes");
+    
+  radioButtons.on("click", () => {
+    const selectedNew = d3.select('input[name="concepts"]:checked').node().value;
+    svg.select("#bubbles").call(addBubbles, selectedNew);
+  });
+  
+  // Points ///////////////////////////////////////////////////////////////////
+  
+  const selectInit = "farming"
+  svg.append("g")
+    .attr("id", "bubbles")
+    .call(addBubbles, selectInit);
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Sources: Y. Berezkin, <i>Folklore and Mythology Catalog</i> (2019); S. Michalopoulos and M. Xue, "Folklore", <i>Quarterly Journal of Economics</i>, vol. 136, no. 4 (2021).`);
+    
+  return container.node();
+}
+```
+
+:::
+
+This sheds light on how folklore was formed. Folklore, in turn, can influence the constellation of attitudes, beliefs, norms, and prejudices that prevail in modern-day society. Michalopoulos and Xue look at three areas in particular: trust, risk appetite, and gender equality. They seek to establish whether folklore that emphasizes these traits are more likely to be found in societies that exhibit these traits. To do this, they employ human readers to manually categorize the content of motifs. They also aggregate the linguistic groups up to the country level following modern borders. Where significant migration has taken place, they adjust populations using Putterman and Weil's [World Migration Matrix](https://twopoints.blog/posts/2022-11-26-migration/). 
+
+The estimated relationships --- all with slopes that are statistically significant --- are plotted below.
+
+```{ojs}
+//| echo: false
+
+html`
+  <div class="ojs-title" style="margin-top:1rem;">A nightmare on the brains of the living</div>
+  <div class="ojs-subtitle">Relationship between folklore content and present-day attitudes and beliefs</div>
+`
+```
+
+::: {.panel-tabset}
+
+## Trust
+
+```{ojs}
+//| code-fold: true
+
+{
+  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });
+  const width = 790 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+  const padding = 40;
+  
+  const data = regressions
+    .filter(d => d.lntrust_wvsavg !== null & d.tricksters_punish !== null)
+    .map(d => ({...d, x: d.tricksters_punish, y: d.lntrust_wvsavg }));
+  
+  const lm = ({ 
+    intercept: 24.496714 - 3.2042735 * 7.540038 - 0.02046409 * 3.397068,
+    slope: 1.856006,
+    n: 104, r2: 0.205
+  });
+  
+  const titles = ({
+    xAxis: "Relative punishment of antisocial behavior in folklore",
+    yAxis: "Trust (WVS)"
+  });
+  const position = ({ x: 150, y: 10 }); 
+  const positionStats = ({ x: 600, y: height - 40 }); 
+  
+  const container = d3.create("div");
+  
+  const svg = container.append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .call(addScatter, data, lm, titles)
+    .call(addStats, lm, positionStats);
+  
+  svg.append("g").call(addLegend, position);
+  
+  return container.node();
+}
+```
+
+## Risk
+
+```{ojs}
+//| code-fold: true
+
+{
+  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });
+  const width = 790 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+  const padding = 40;
+  
+  const data = regressions
+    .filter(d => d.risktaking !== null & d.challenge_competition !== null)
+    .map(d => ({...d, x: d.challenge_competition, y: d.risktaking }));
+  
+  const lm = ({ 
+    intercept: 17.6914 - 2.2783062 * 7.540360 - 0.23996948 * 3.384763,
+    slope: 5.438077,
+    n: 76, r2: "0.130"
+  });
+  
+  const titles = ({
+    xAxis: "Share of motifs with challenges and competitions",
+    yAxis: "Risk-taking (GPS)"
+  });
+  const position = ({ x: 150, y: 10 }); 
+  const positionStats = ({ x: 600, y: height - 40 }); 
+  
+  const container = d3.create("div");
+  
+  const svg = container.append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .call(addScatter, data, lm, titles)
+    .call(addStats, lm, positionStats);
+  
+  svg.append("g").call(addLegend, position);
+  
+  return container.node();
+}
+```
+
+## Gender
+
+```{ojs}
+//| code-fold: true
+
+{
+  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });
+  const width = 790 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+  const padding = 40;
+  
+  const data = regressions
+    .filter(d => d.fem19 !== null & d.malebias !== null)
+    .map(d => ({...d, x: d.malebias, y: d.fem19 }));
+  
+  const lm = ({ 
+    intercept: 162.92767 - 12.22385 * 7.543276 + 0.28624266 * 3.181844,
+    slope: 5.438077,
+    n: 174, r2: 0.136
+  });
+  
+  const titles = ({
+    xAxis: "Gender stereotyping in folklore",
+    yAxis: "Female labor force participation, 2019"
+  });
+  const position = ({ x: 150, y: 10 }); 
+  const positionStats = ({ x: 40, y: height - 40 }); 
+  
+  const container = d3.create("div");
+  
+  const svg = container.append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("viewBox", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .call(addScatter, data, lm, titles)
+    .call(addStats, lm, positionStats);
+  
+  svg.append("g").call(addLegend, position);
+  
+  return container.node();
+}
+```
+
+:::
+
+```{ojs}
+//| echo: false
+
+html`
+  <div class="ojs-caption" style="margin-bottom: 1rem;">Trendlines are from multivariate cross-country regressions with two other control variables: the log number of publications Berezkin consulted for a group and the log year of the earliest publication cited for a group.</div>
+  <div class="ojs-source" style="margin-bottom: 1rem;">GPS = Global Preference Survey, WVS = World Value Surveys<br>Source: S. Michalopoulos and M. Xue, "Folklore", <i>Quarterly Journal of Economics</i>, vol. 136, no. 4 (2021).</div>
+`
+```
+
+For the trust variable, the authors look at motifs that involve a trickster or deceiver, and whether they are punished for their mischief. They find that countries with folklore that punishes its tricksters have people today who are more trusting, as measured in surveys. For risk appetite meanwhile, Michalopoulos and Xue look at motifs that involve challenges or competitions, regardless of whether the characters succeed or not. Countries with such folklore are found to have people who are more risk tolerant, again as measured in surveys. Finally, the extent to which a country's folklore stereotypes men as violent/strong/dominant and women as emotional/beautiful/submissive correlates negatively with its female labor force participation rate.
+
+These findings are interesting not just in themselves but also from the standpoint of economic development. Trust facilitates cooperation among disparate groups. Risk-taking is essential for entrepreneurship. And of course, shutting out women from the workforce means cutting your labor pool in half. That folklore appears to have influenced these outcomes adds to our understanding for how deep historical forces shaped the comparative wealth of nations, something we have [talked about before](https://twopoints.blog/posts/2022-11-25-roots/).
+
+Stories are entertainment --- bits of made-up nonsense we pass around to pass the time. But they also have a furtive sort of power, planting ideas that harden into truths. They are all the more perilous from being inconspicuous, as water is to fish. So when the time comes to pass them down to our children as our parents passed them down to us, let us beware. Children will listen. `r end_mark()`
+
+## Data {.appendix}
+
+- [Michalopoulos and Xue (2021) replication files](https://doi.org/10.7910/DVN/IXOHKB)
+- [coords.json](https://github.com/macleginn/mythology-queries/blob/master/data/coords.json) (Dmitry Nikolayev)
+- [match_names_to_coords.csv](../../datasets/folklore/match_names_to_coords.csv) / [match_names_to_mx.csv](../../datasets/folklore/match_names_to_mx.csv) / [coords_clean.json](../../datasets/folklore/coords_clean.json) / [motifs.csv](../../datasets/folklore/motifs.csv) / [groups_motifs.csv](../../datasets/folklore/groups_motifs.csv) / [groups_concepts.csv](../../datasets/folklore/groups_concepts.csv) / [regressions.csv](../../datasets/folklore/regressions.csv)  
+  cleaning scripts: [clean.ipynb](../../datasets/folklore/clean.ipynb)
+- [countries-110m.json](https://github.com/topojson/world-atlas)
+
+## Appendix: D3 / Observable {.appendix}
+
+```{ojs}
+//| code-fold: true
+
+// Data
+
+countries110m = FileAttachment("../../datasets/folklore/countries-110m.json").json();
+worldAll = topojson.feature(countries110m, countries110m.objects.countries).features;
+world = worldAll.filter(d => d.properties.name !== "Antarctica");
+
+coordsRaw = FileAttachment("../../datasets/folklore/coords_clean.json").json();
+coords = coordsRaw.map(d => ({ group: d.group, coordinates: projection([d.longitude, d.latitude]) }));
+motifs = FileAttachment("../../datasets/folklore/motifs.csv").csv({ typed: true });
+groupsMotifs = FileAttachment("../../datasets/folklore/groups_motifs.csv").csv({ typed: true });
+
+groupsConceptsRaw = FileAttachment("../../datasets/folklore/groups_concepts.csv").csv({ typed: true });
+groupsConcepts = groupsConceptsRaw.map(d => ({ 
+  group: d.group, 
+  coordinates: projection([d.longitude, d.latitude]),
+  concept: d.concept,
+  share: d.share
+}));
+
+regressions = FileAttachment("../../datasets/folklore/regressions.csv").csv({ typed: true });
+
+// Parameters
+
+colorDotsLatent = "#84b0c5";
+colorDotsSelect = "#B13D70";
+colorLand = "#eeeeee";
+colorBorders = "#c0d7df";
+colorBG = "#c0d7df";
+
+tooltip = d3.select("body")
+  .append("div")
+  .attr("class", "toolTip")
+  .style("display", "none")
+  .style("position", "absolute")
+  .style("z-index", 999)
+  .style("width", 100)
+  .style("height", 20)
+  .style("background", "#f7f7f7")
+  .style("border", "1px solid #cecece")
+  .style("opacity", .9)
+  .style("padding", ".2em .45em")
+  .style("font-size", ".85rem");
+
+// Helper functions
+
+projection = d3.geoMercator().scale([155]).center([-5, 40]);
+randMotif = () => motifs[d3.randomInt(0, motifs.length-1)()].motif_id;
+motifSelect = (motif) => motifs.filter(d => d.motif_id === motif);
+
+coordsSelect = (motif) => {
+  const groups = groupsMotifs.filter(d => d.motif_id === motif);
+  const coordsSelect = coords.filter(d => groups.map(obj => obj.group).includes(d.group));
+  return coordsSelect;
+};
+```
+
+```{ojs}
+//| code-fold: true
+
+addMap = (selection) => {
+
+  selection.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", selection.attr("width"))
+    .attr("height", selection.attr("height"))
+    .style("fill", colorBG);
+    
+  const pathGenerator = d3.geoPath(projection);
+  const map = selection.append("g");
+  
+  map.selectAll("bg")
+    .data(world)
+    .join("path")
+    .attr("d", pathGenerator)
+    .attr("fill", colorLand);
+
+  map.selectAll("borders")
+    .data(world)
+    .join("path")
+    .attr("d", pathGenerator)
+    .style("fill", "none")
+    .style("stroke", colorBorders)
+    .style("stroke-width", 1);
+    
+    return selection.node()
+}
+
+dotsSelect = (selection, motif) => {
+
+  const dots = selection.selectAll("circle")
+    .data(coordsSelect(motif), d => d.group)
+    .join(
+      enter => enter
+        .append("circle")
+          .attr("cx", d => d.coordinates[0])
+          .attr("cy", d => d.coordinates[1])
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr("r", 5)
+          .style("stroke", "white")
+          .style("fill", colorDotsSelect)
+          .style("opacity", 1)
+        .selection(),
+      update => update,
+      exit => exit
+        .transition().duration(300)
+          .style("opacity", 0)
+          .remove()
+    );
+    
+  dots
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .attr("r", 6)
+        .style("fill", "#f697bb");
+      tooltip
+        .style("display", "inline")
+        .style("left", event.pageX + 15 + "px")
+        .style("top", event.pageY + 15 + "px")
+        .text(d.group);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event) {
+      d3.select("#dots-highlighted")
+        .selectAll("circle")
+        .transition().duration(100)
+        .attr("r", 5)
+        .style("fill", colorDotsSelect);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+    
+  return selection.node()
+};
+
+motifSelectId = (selection, motif) => {
+    
+  selection.selectAll("text")
+    .data(motifSelect(motif), d => d.motif_id)
+    .join(
+      enter => enter
+        .append("text")
+          .text(d => d.motif_id)
+          .attr("x", -500)
+          .attr("y", 553)
+          .style("fill", "black")
+          .style("font-size", ".7rem")
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr("x", 30)
+          .style("opacity", 1)
+        .selection(),
+      update => update
+          .attr("x", -500)
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr("x", 30)
+          .style("opacity", 1)
+        .selection(),
+      exit => exit
+        .transition().duration(500)
+          .attr("x", 1500)
+          .remove()
+    );
+    
+  return selection.node();
+};
+
+motifSelectTitle = (selection, motif) => {
+    
+  selection.selectAll("text")
+    .data(motifSelect(motif), d => d.title)
+    .join(
+      enter => enter
+        .append("text")
+          .text(d => d.title)
+          .attr("x", -500)
+          .attr("y", 580)
+          .style("fill", "black")
+          .style("font-size", "1.5rem")
+          .style("font-family", "Karla, Helvetica, Arial, sans-serif")
+          .style("font-weight", "bold")
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr("x", 30)
+          .style("opacity", 1)
+        .selection(),
+       update => update
+          .attr("x", -500)
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr("x", 30)
+          .style("opacity", 1)
+        .selection(),
+      exit => exit
+        .transition().duration(500)
+          .attr("x", 1500)
+          .remove()
+    );
+    
+  return selection.node();
+};
+
+motifSelectDesc = (selection, motif) => {
+  
+  selection.selectAll("text")
+    .data(motifSelect(motif), d => d.description)
+    .join(
+      enter => enter
+        .append("text")
+          .attr('transform', "translate(-500,605)")
+          .attr("x", 0)
+          .attr("y", 0)
+          .text(d => d.description)
+          .call(wrapText)
+          .style("fill", "#2A769E")
+          .style("font-size", ".8rem")
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr('transform', "translate(30,605)")
+          .style("opacity", 1)
+        .selection(),
+       update => update
+          .attr('transform', "translate(-500,605)")
+          .style("opacity", 0)
+        .transition().duration(500)
+          .attr("x", 30)
+          .attr('transform', "translate(30,605)")
+          .style("opacity", 1)
+        .selection(),
+      exit => exit
+        .transition().duration(500)
+          .attr('transform', "translate(1500,605)")
+          .remove()
+    );
+    
+  return selection.node();
+};
+
+addButton = (selection) => {
+  
+  const pos = ({ x: 30, y: 512 });
+  const dim = ({ width: 150, height: 20 });
+  const color = ({ base: "#B13D70", hover: "#C85B89", click: "#991E56" });
+  
+  selection.append("rect")
+    .attr("x", pos.x)
+    .attr("y", pos.y)
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .style("rx", 3)
+    .style("fill", color.base);
+
+  selection.append("text")
+    .text("GET A RANDOM MOTIF")
+    .attr("x", pos.x + dim.width/2)
+    .attr("y", pos.y + dim.height/2 + 1)
+    .attr("text-anchor", "middle")
+    .attr("alignment-baseline", "middle")
+    .style("fill", "white")
+    .style("font-size", ".8rem")
+    .style("font-weight", "bold")
+    .style("font-family", "Karla, Arial, Helvetica, sans-serif");
+
+  selection.on("mouseenter", function(event) {
+    d3.select(event.target).style("cursor", "pointer");
+    d3.select(this).selectAll("rect")
+      .transition().duration(200)
+      .style("fill", color.hover);
+  });
+
+  selection.on("mouseleave", (event) => {
+    d3.select("#button")
+      .selectAll("rect")
+      .transition().duration(100)
+      .style("fill", color.base);
+  });
+
+  selection.on("click", () => {
+    const newMotif = randMotif();
+    d3.select("#dots-highlighted").call(dotsSelect, newMotif);
+    d3.selectAll("#motif-id").call(motifSelectId, newMotif);
+    d3.selectAll("#motif-title").call(motifSelectTitle, newMotif);
+    d3.select("#motif-description").call(motifSelectDesc, newMotif);
+    d3.select("#button")
+      .selectAll("rect").style("fill", color.click)
+      .transition().style("fill", color.hover);
+  });
+  
+  return selection.node();
+};
+
+
+addBubbles = (selection, selected) => {
+   
+  const shareMax = Math.max(...Object.values(groupsConcepts).map(item => item.share));
+  const dataSelect = groupsConcepts.filter(d => d.concept === `${selected}`);
+  const rScaler = d3.scaleLinear()
+    .domain([0, shareMax])
+    .range([0, 20]);
+  
+  const bubbles = selection.selectAll("circle")
+    .data(dataSelect)
+    .join("circle")
+      .attr("cx", d => d.coordinates[0])
+      .attr("cy", d => d.coordinates[1])
+    .transition().duration(500)
+      .attr("r", d => rScaler(d.share))
+      .style("fill", colorDotsSelect)
+      .style("fill-opacity", .2)
+      .style("stroke", colorDotsSelect)
+    .selection();
+  
+  bubbles
+    .on("mousemove", function(event, d) {
+      console.log("Hey!")
+      d3.select(this)
+        .transition().duration(50)
+        .attr("r", d => rScaler(d.share) + 1)
+        .style("fill-opacity", .4);
+      tooltip
+        .style("display", "inline")
+        .style("left", event.pageX + 15 + "px")
+        .style("top", event.pageY + 15 + "px")
+        .text(d.group);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event) {
+      d3.select("#bubbles")
+        .selectAll("circle")
+        .transition().duration(100)
+        .attr("r", d => rScaler(d.share))
+        .style("fill-opacity", .2)
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+    
+  return selection.node();
+}
+
+addRadio = (selection, concept, checked = false) => {
+  
+  const conceptTitle = concept.charAt(0).toUpperCase() + concept.slice(1)
+  
+  const radio = selection.append("xhtml:div")
+  radio.append("xhtml:input")
+    .attr("type", "radio")
+    .attr("name", "concepts")
+    .attr("value", concept)
+    .property("checked", checked)
+    .style("margin-right", ".5rem")
+  radio.append("xhtml:label")
+    .text(conceptTitle)
+  
+  return selection.node()
+}
+```
+
+```{ojs}
+//| code-fold: true
+
+addScatter = (selection, data, lm, titles) => {
+  
+  const id = d3.randomInt(100000, 1000000)();
+  
+  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });
+  const width = 790 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
+  const padding = 40;
+  
+  const xMin = Math.min(...data.map(d => d.x));
+  const xMax = Math.max(...data.map(d => d.x));
+  const yMin = Math.min(...data.map(d => d.y));
+  const yMax = Math.max(...data.map(d => d.y));
+  
+  const xScaler = d3.scaleLinear()
+    .domain([xMin, xMax])
+    .range([padding, width - padding]);
+    
+  const yScaler = d3.scaleLinear()
+    .domain([yMin, yMax])
+    .range([height - padding, padding]);
+    
+  selection.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", height)
+    .style("fill", "#f7f7f7");
+    
+  const dots = selection.append("g")
+    .attr("id", `scatter-${id}`)
+    .selectAll("circle")
+    .data(data)
+    .join("circle")
+    .attr("cx", d => xScaler(d.x))
+    .attr("cy", d => yScaler(d.y))
+    .attr("r", 7)
+    .style("opacity", .5)
+    .style("fill", "#0C6291");
+  
+  dots
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .attr("r", 8)
+        .style("opacity", .7)
+      tooltip
+        .style("display", "inline")
+        .style("left", event.pageX + 15 + "px")
+        .style("top", event.pageY + 15 + "px")
+        .text(d.cntry);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event) {
+      d3.select(`#scatter-${id}`)
+        .selectAll("circle")
+        .transition().duration(100)
+        .attr("r", 7)
+        .style("opacity", .5)
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+  
+  selection.append("g")
+    .append("path")
+    .attr("d", d3.line()([
+      [padding, yScaler(lm.intercept)], 
+      [width - padding, yScaler(lm.intercept) + width * yScaler(lm.slope) / xScaler(1)]
+    ]))
+    .style("fill", "none")
+    .style("stroke", "#B13D70")
+    .style("stroke-width", 2);
+  
+  selection.append("g")
+    .append("path")
+    .attr("d", d3.line()([[width, height], [0, height], [0, 0]]))
+    .style("fill", "none")
+    .style("stroke", "black");
+  
+  selection.append("g")
+    .append("text")
+    .attr("x", width / 2)
+    .attr("y", height + 20)
+    .attr("text-anchor", "middle")
+    .attr("alignment-baseline", "hanging")
+    .text(titles.xAxis)
+    .style("fill", "black")
+    .style("font-size", "1rem")
+    
+  selection.append("g")
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height / 2)
+    .attr("y", -20)
+    .attr("text-anchor", "middle")
+    .attr("alignment-baseline", "baseline")
+    .text(titles.yAxis)
+    .style("fill", "black")
+    .style("font-size", "1rem")
+  
+  return selection.node()
+}
+
+addLegend = (selection, position) => {
+  
+  selection.append("path")
+    .attr("d", d3.line()([[position.x, position.y], [position.x + 30, position.y]]))
+    .style("fill", "none")
+    .style("stroke", "#B13D70")
+    .style("stroke-width", 2);
+  
+  selection.append("text")
+    .attr("x", position.x + 40)
+    .attr("y", position.y)
+    .attr("text-anchor", "start")
+    .attr("alignment-baseline", "middle")
+    .text("Estimated relationship from a multivariate linear model")
+    .style("font-size", "1rem")
+    .style("fill", "black")
+  
+  return selection.node()
+}
+
+addStats = (selection, lm, positionStats) => {
+  
+  const stats = selection.append("g")
+    .attr("transform", `translate(${positionStats.x},${positionStats.y})`)
+    .attr("x", 0)
+    .attr("y", 0)
+    .style("font-size", ".8rem")
+    .style("fill", "black")
+    .style("fill-opacity", .5);
+  
+  stats.append("text")
+    .text(`n = ${lm.n}`)
+  
+  stats.append("text")
+    .attr("dy", 18)
+    .text(`R² = ${lm.r2}`)
+  
+  return selection.node()
+}
+
+```
+
+```{ojs}
+//| code-fold: true
+
+// Taken with modifications from https://observablehq.com/@ben-tanen/svg-text-and-tspan-word-wrapping
+
+wrapText = (textElement) => {
+  
+  // Word parameters
+  let words = textElement.text().split(" ").reverse(),
+      word,
+      line = [],
+      lineNumber = 0;
+  
+  // Styling parameters
+  const lineHeight = 1.2;
+  const maxWidth = 650;
+  const x = textElement.attr("x"),
+        y = textElement.attr("y");
+  
+  // Clear textElement text
+  textElement.text(null);
+  
+  // Append first tspan element (to fill as we build the lines)
+  let tspan = textElement.append("tspan")
+    .attr("x", x)
+    .attr("y", y)
+    .attr("dy", 0);
+  
+  // Loop through all words and make new lines when we exceed our maxWidth
+  while (word = words.pop()) {
+    
+    line.push(word);
+    tspan.text(line.join(" "));
+    
+    if (measureWidth(tspan.text()) > maxWidth && lineNumber < 2) {
+      line.pop();
+      tspan.text(line.join(" "));
+      line = [word];
+      tspan = textElement.append("tspan")
+        .attr("x", x)
+        .attr("y", y)
+        .attr("dy", `${++lineNumber * lineHeight}em`)
+        .text(word);
+    }
+    
+    if (measureWidth(tspan.text()) > maxWidth - 10 && lineNumber === 2) {
+      line.pop();
+      line.push("[...]");
+      tspan.text(line.join(" "));
+      break;
+    }
+  }
+};
+
+measureWidth = {
+  const context = document.createElement("canvas").getContext("2d");
+  return text => context.measureText(text).width;
+};
+```
