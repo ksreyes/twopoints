@@ -1,0 +1,9 @@
+rename-layers "main"
+rename-fields contract=name
+filter-fields contract
+
+dissolve contract name="GOH0009"
+dissolve contract name="O00099"
+dissolve contract name="O00102"
+
+merge-layers target=a,b force name="contracts"
