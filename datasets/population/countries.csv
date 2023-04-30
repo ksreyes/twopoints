@@ -1,0 +1,238 @@
+LocID,ParentID,Location
+900,0,World
+108,910,Burundi
+174,910,Comoros
+262,910,Djibouti
+232,910,Eritrea
+231,910,Ethiopia
+404,910,Kenya
+450,910,Madagascar
+454,910,Malawi
+480,910,Mauritius
+175,910,Mayotte
+508,910,Mozambique
+638,910,Réunion
+646,910,Rwanda
+690,910,Seychelles
+706,910,Somalia
+728,910,South Sudan
+800,910,Uganda
+834,910,United Republic of Tanzania
+894,910,Zambia
+716,910,Zimbabwe
+24,911,Angola
+120,911,Cameroon
+140,911,Central African Republic
+148,911,Chad
+178,911,Congo
+180,911,Democratic Republic of the Congo
+226,911,Equatorial Guinea
+266,911,Gabon
+678,911,Sao Tome and Principe
+12,912,Algeria
+818,912,Egypt
+434,912,Libya
+504,912,Morocco
+729,912,Sudan
+788,912,Tunisia
+732,912,Western Sahara
+72,913,Botswana
+748,913,Eswatini
+426,913,Lesotho
+516,913,Namibia
+710,913,South Africa
+204,914,Benin
+854,914,Burkina Faso
+132,914,Cabo Verde
+384,914,Côte d'Ivoire
+270,914,Gambia
+288,914,Ghana
+324,914,Guinea
+624,914,Guinea-Bissau
+430,914,Liberia
+466,914,Mali
+478,914,Mauritania
+562,914,Niger
+566,914,Nigeria
+654,914,Saint Helena
+686,914,Senegal
+694,914,Sierra Leone
+768,914,Togo
+398,5500,Kazakhstan
+417,5500,Kyrgyzstan
+762,5500,Tajikistan
+795,5500,Turkmenistan
+860,5500,Uzbekistan
+156,906,China
+344,906,"China, Hong Kong SAR"
+446,906,"China, Macao SAR"
+158,906,"China, Taiwan Province of China"
+408,906,Dem. People's Republic of Korea
+392,906,Japan
+496,906,Mongolia
+410,906,Republic of Korea
+4,5501,Afghanistan
+50,5501,Bangladesh
+64,5501,Bhutan
+356,5501,India
+364,5501,Iran (Islamic Republic of)
+462,5501,Maldives
+524,5501,Nepal
+586,5501,Pakistan
+144,5501,Sri Lanka
+96,920,Brunei Darussalam
+116,920,Cambodia
+360,920,Indonesia
+418,920,Lao People's Democratic Republic
+458,920,Malaysia
+104,920,Myanmar
+608,920,Philippines
+702,920,Singapore
+764,920,Thailand
+626,920,Timor-Leste
+704,920,Viet Nam
+51,922,Armenia
+31,922,Azerbaijan
+48,922,Bahrain
+196,922,Cyprus
+268,922,Georgia
+368,922,Iraq
+376,922,Israel
+400,922,Jordan
+414,922,Kuwait
+422,922,Lebanon
+512,922,Oman
+634,922,Qatar
+682,922,Saudi Arabia
+275,922,State of Palestine
+760,922,Syrian Arab Republic
+792,922,Türkiye
+784,922,United Arab Emirates
+887,922,Yemen
+112,923,Belarus
+100,923,Bulgaria
+203,923,Czechia
+348,923,Hungary
+616,923,Poland
+498,923,Republic of Moldova
+642,923,Romania
+643,923,Russian Federation
+703,923,Slovakia
+804,923,Ukraine
+208,924,Denmark
+233,924,Estonia
+234,924,Faroe Islands
+246,924,Finland
+831,924,Guernsey
+352,924,Iceland
+372,924,Ireland
+833,924,Isle of Man
+832,924,Jersey
+428,924,Latvia
+440,924,Lithuania
+578,924,Norway
+752,924,Sweden
+826,924,United Kingdom
+8,925,Albania
+20,925,Andorra
+70,925,Bosnia and Herzegovina
+191,925,Croatia
+292,925,Gibraltar
+300,925,Greece
+380,925,Italy
+412,925,Kosovo (under UNSC res. 1244)
+470,925,Malta
+499,925,Montenegro
+807,925,North Macedonia
+620,925,Portugal
+674,925,San Marino
+688,925,Serbia
+705,925,Slovenia
+724,925,Spain
+40,926,Austria
+56,926,Belgium
+250,926,France
+276,926,Germany
+438,926,Liechtenstein
+442,926,Luxembourg
+492,926,Monaco
+528,926,Netherlands
+756,926,Switzerland
+660,915,Anguilla
+28,915,Antigua and Barbuda
+533,915,Aruba
+44,915,Bahamas
+52,915,Barbados
+535,915,"Bonaire, Sint Eustatius and Saba"
+92,915,British Virgin Islands
+136,915,Cayman Islands
+192,915,Cuba
+531,915,Curaçao
+212,915,Dominica
+214,915,Dominican Republic
+308,915,Grenada
+312,915,Guadeloupe
+332,915,Haiti
+388,915,Jamaica
+474,915,Martinique
+500,915,Montserrat
+630,915,Puerto Rico
+652,915,Saint Barthélemy
+659,915,Saint Kitts and Nevis
+662,915,Saint Lucia
+663,915,Saint Martin (French part)
+670,915,Saint Vincent and the Grenadines
+534,915,Sint Maarten (Dutch part)
+780,915,Trinidad and Tobago
+796,915,Turks and Caicos Islands
+850,915,United States Virgin Islands
+84,916,Belize
+188,916,Costa Rica
+222,916,El Salvador
+320,916,Guatemala
+340,916,Honduras
+484,916,Mexico
+558,916,Nicaragua
+591,916,Panama
+32,931,Argentina
+68,931,Bolivia (Plurinational State of)
+76,931,Brazil
+152,931,Chile
+170,931,Colombia
+218,931,Ecuador
+238,931,Falkland Islands (Malvinas)
+254,931,French Guiana
+328,931,Guyana
+600,931,Paraguay
+604,931,Peru
+740,931,Suriname
+858,931,Uruguay
+862,931,Venezuela (Bolivarian Republic of)
+60,918,Bermuda
+124,918,Canada
+304,918,Greenland
+666,918,Saint Pierre and Miquelon
+840,918,United States of America
+36,927,Australia
+554,927,New Zealand
+242,928,Fiji
+540,928,New Caledonia
+598,928,Papua New Guinea
+90,928,Solomon Islands
+548,928,Vanuatu
+316,954,Guam
+296,954,Kiribati
+584,954,Marshall Islands
+583,954,Micronesia (Fed. States of)
+520,954,Nauru
+580,954,Northern Mariana Islands
+585,954,Palau
+16,957,American Samoa
+184,957,Cook Islands
+258,957,French Polynesia
+570,957,Niue
+882,957,Samoa
+772,957,Tokelau
+776,957,Tonga
+798,957,Tuvalu
+876,957,Wallis and Futuna Islands
