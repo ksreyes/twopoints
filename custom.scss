@@ -551,6 +551,10 @@ details {                                        /* Code fold */
     font-size: $font-size-base * .7;
   }
   
+  div.quarto-figure-space {
+    display: none;
+  }
+  
 }
 
 /* ------ Source code ------------------------------------------------------- */
