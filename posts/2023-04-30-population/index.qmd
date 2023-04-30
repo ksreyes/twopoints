@@ -1,0 +1,883 @@
+---
+title: "Babies and boomers"
+subtitle: "Humanity is rapidly aging everywhere except Africa"
+date: 2023-04-30
+categories: [python, D3/OJS]
+image: thumbnail.gif
+draft: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+In a Manila hospital in 1991, I was born to a world of 5.4 billion people. Thirty-one years later, in another Manila hospital down the road from mine, the symbolic [8 billionth baby](https://www.theguardian.com/lifeandstyle/2023/feb/24/experience-i-gave-birth-to-the-worlds-8-billionth-baby) was born, a girl named Vinice. When hospital staff brought the family cake to mark the occasion, her father, sleep-deprived, thought they were being sold an 8-billion-peso cake.
+
+The United Nations expects the world to welcome its 9 billionth baby in 2037 and its 10 billionth in 2058. But it is not expected to welcome an 11 billionth. According to the UN's [latest baseline projections](https://population.un.org/wpp/Download/Standard/CSV/), world population will peak at 10.43 billion in 2085. This will be the high watermark of humanity on planet Earth. Henceforth, fertility rates are expected to drop to such an extent that births will roughly equal deaths, keeping overall population steady. The era of explosive human multiplication --- ordered by God in Genesis but only picked up steam in the Industrial Revolution --- will come to an end.
+
+This demographic transition carries huge implications for the makeup of Earth's citizens. As people live longer and have fewer babies, the world will become a lot grayer. See it for yourself by scrolling forward and backward in time in the population pyramid below. Tellingly, the chart in the decades ahead will look less like a pyramid and more like an urn. 
+
+```{ojs}
+//| code-fold: true
+//| layout: "[[1], [1, 1], [1]]"
+
+html`
+  <div class="ojs-title">Boomer boom</div>
+  <div class="ojs-subtitle" style="margin-bottom: 1rem;">Population pyramid, ${country}, ${year1}</div>
+`
+
+viewof country = Inputs.select(countries.map(d => d.Location).sort(), {value: "World", label: "Country"})
+viewof year1 = Inputs.range([1950, 2100], {value: 2020, step: 5, label: "Year"})
+
+{
+  const data = pyramid.filter(d => d.Location === country && d.Time === year1)
+  
+  const maleMax = Math.max(...Object.values(data).map(d => d.PopShareMale));
+  const femaleMax = Math.max(...Object.values(data).map(d => d.PopShareFemale));
+  const shareMax = Math.max(...[maleMax, femaleMax]);
+  
+  const xScaler = d3.scaleLinear()
+    .domain([0, shareMax])
+    .range([0, dim.width / 2 - padding.inner])
+  
+  const container = d3.create("div")
+    .style("margin-top", "1rem");
+  
+  // Chart proper /////////////////////////////////////////////////////////////
+
+  const svg = container.append("svg")
+    .attr("width", dim.width + margin.between)
+    .attr("height", dim.height + margin.top + margin.bottom)
+    .attr("viewBox", [0, 0, dim.width + margin.between, dim.height + margin.top + margin.bottom])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.call(addDependents);
+  svg.call(addAgeGroups);
+  
+  // Right panel
+  svg.append("g")
+    .attr("transform", `translate(${ dim.width / 2 + margin.between }, ${ margin.top })`)
+    .call(addBarsShareFemale, data, xScaler)
+    .call(addBarsSurplusFemale, data, xScaler)
+    .call(addLabelsFemale, data, xScaler);
+  
+  // Left panel
+  svg.append("g")
+    .attr("transform", `translate(0, ${margin.top})`)
+    .call(addBarsShareMale, data, xScaler)
+    .call(addBarsSurplusMale, data, xScaler)
+    .call(addLabelsMale, data, xScaler);
+  
+  container.call(addLegendPyramid);
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Source: United Nations World Population Prospects 2022.`);
+    
+  return container.node();
+}
+```
+
+This aging is already occurring in many places in the rich world; see in particular Japan, South Korea, Germany, and Italy. It is also occurring in the not-so-rich world, most notably China, whose billion-strong population [shrank last year](https://www.economist.com/china/2023/01/17/for-the-first-time-since-the-1960s-chinas-population-is-shrinking) for the first time since the Mao-induced famines of the 1960s. This is the result of what might possibly be the most far-reaching, most consequential policy misadventure of our time: the one-child policy. Imposed needlessly and kept for far too long, it amplified the rising costs of child-rearing to engineer a [spectacular collapse](https://www.theguardian.com/world/2022/nov/15/millions-of-missing-women-china-grapples-with-legacy-of-one-child-policy-as-population-ages) in fertility rates. The economic repercussions of a shrinking workforce having to support a growing pool of retirees will be dire. Selecting China above and fast-forwarding a few decades reveals a chart that is neither a pyramid nor an urn, but a mushroom.
+
+To add salt to the wound, it was reported last week that geopolitical rival India has [surpassed](https://www.theguardian.com/world/2023/apr/24/india-overtakes-china-to-become-worlds-most-populous-country) it to become the world's largest, a distinction China had held ever since the UN began keeping records in 1950. Comparing the population pyramids of the two makes it clear that the gap is only set to widen further: the median Indian is 10 years younger than the median Chinese. 
+
+```{ojs}
+//| code-fold: true
+//| layout: "[[1], [2, -1, 3, -1, 2], [1]]"
+
+html`
+  <div class="ojs-title">Aging, fast and slow</div>
+  <div class="ojs-subtitle" style="margin-bottom: 1rem;">Population pyramid, ${countryLeft} vs ${countryRight}, ${year2}</div>
+`
+
+viewof countryLeft = Inputs.select(countries.map(d => d.Location).sort(), {value: "China"})
+viewof year2 = Inputs.range([1950, 2100], {value: 2020, step: 5})
+viewof countryRight = Inputs.select(countries.map(d => d.Location).sort(), {value: "India"})
+
+{
+  const medianAgeLeft = medianAge.filter(d => d.Location === countryLeft && d.Time === year2);
+  const medianAgeRight = medianAge.filter(d => d.Location === countryRight && d.Time === year2);
+  const dataLeft = pyramid.filter(d => d.Location === countryLeft && d.Time === year2);
+  const dataRight = pyramid.filter(d => d.Location === countryRight && d.Time === year2);
+  
+  const shareMaxLeft = Math.max(...Object.values(dataLeft).map(d => d.PopShareMale + d.PopShareFemale));
+  const shareMaxRight = Math.max(...Object.values(dataRight).map(d => d.PopShareMale + d.PopShareFemale));
+  const shareMax = Math.max(...[shareMaxLeft, shareMaxRight]);
+
+  const xScaler = d3.scaleLinear()
+    .domain([0, shareMax])
+    .range([0, dim.width / 2 - padding.inner]);
+  
+  const container = d3.create("div")
+    .style("margin-top", "1rem");
+  
+  // Chart proper /////////////////////////////////////////////////////////////
+
+  const svg = container.append("svg")
+    .attr("width", dim.width + margin.between)
+    .attr("height", dim.height + margin.top + margin.bottom)
+    .attr("viewBox", [0, 0, dim.width + margin.between, dim.height + margin.top + margin.bottom])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  svg.call(addDependents);
+  svg.call(addAgeGroups);
+  
+  // Left panel
+  svg.append("g")
+    .attr("transform", `translate(0, ${ margin.top })`)
+    .call(addBarsShareLeft, dataLeft, xScaler)
+    .call(addMedianLineLeft, medianAgeLeft, dataLeft, xScaler);
+
+  // Right panel
+  svg.append("g")
+    .attr("transform", `translate(${ dim.width / 2 + margin.between }, ${ margin.top })`)
+    .call(addBarsShareRight, dataRight, xScaler)
+    .call(addMedianLineRight, medianAgeRight, dataRight, xScaler);
+  
+  container.call(addLegendMedian)
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Source: United Nations World Population Prospects 2022.`);
+    
+  return container.node();
+}
+```
+
+To be clear, China's economy remains far larger, its citizens far richer. Still, this eclipsing by a fellow titan throws a seed of doubt in the narrative of a relentless and unparalleled rise. The Chinese Communist Party is sensitive, as it is wont to be. ["India won’t overtake China in economy even if it becomes world’s most populous nation"](https://www.globaltimes.cn/page/202304/1289499.shtml) is the testy headline from state tabloid *Global Times*.
+
+Nevertheless, both India and China may ultimately end up as side-plots to the foremost demographic story of the coming decades, which is Africa. While Asia stands as the largest continent, its fertility rates have dropped tremendously and its people are aging rapidly. In 2022, there were 1.9 live births for every woman in Asia, well below the 2.1 needed to keep population stable. In Africa meanwhile, the number is 4.2. Nigeria, the largest country in Africa, is even more fertile at 5.1 births per woman. These trends may result in a [doubling of Africa's population](https://www.economist.com/special-report/2020/03/26/africas-population-will-double-by-2050) to 400 million by 2050. In fact, of the 2.4 billion people the planet will add from now until world population peaks in the 2080s, a good 91% will be contributed by Africa.
+
+```{ojs}
+//| code-fold: true
+//| layout: "[[1], [1, -1, 4, -1, 4, -1], [1]]"
+
+html`
+  <div class="ojs-title">Continental shifts</div>
+  <div class="ojs-subtitle" style="margin-bottom: 1rem;">Total fertility rate, 1950-2022</div>
+`
+
+html`Select:`
+viewof focus1 = Inputs.select(countries.map(d => d.Location).sort(), { value: "India" })
+viewof focus2 = Inputs.select(countries.map(d => d.Location).sort(), { value: "Nigeria" })
+
+{
+  const focus = [focus1, focus2];
+  const dataFocus = fertilityCountries.filter(d => focus.includes(d.Location));
+  
+  // Compute values
+  const X = d3.map(fertilityRegions, d => d.Time);
+  const Y = d3.map(fertilityRegions, d => d.TFR);
+  const Z = d3.map(fertilityRegions, d => d.Location);
+  const I = d3.range(X.length);
+  
+  // Compute default domains, and unique the z-domain
+  const xDomain = d3.extent(X);
+  const yDomain = [0, d3.max(fertilityCountries.map(d => d.TFR))];
+  const zDomain = new d3.InternSet(Z);
+  
+  // Construct scales and axes
+  const xScale = d3.scaleLinear(xDomain, [marginLine.left + marginLine.inner, dimLine.width - marginLine.right]);
+  const yScale = d3.scaleLinear(yDomain, [dimLine.height - marginLine.bottom, marginLine.top]);
+  const xAxis = d3.axisBottom(xScale).ticks(dimLine.width / 80, ".0f").tickSizeOuter(0).tickPadding([5]);
+  const yAxis = d3.axisLeft(yScale).ticks(dimLine.height / 60).tickPadding([5]);
+  
+  // Construct a line generator
+  const line = d3.line()
+    .curve(d3.curveLinear)
+    .x(i => xScale(X[i]))
+    .y(i => yScale(Y[i]));
+  
+  // Chart proper /////////////////////////////////////////////////////////////
+  
+  const container = d3.create("div")
+    .style("margin-top", "1rem");
+  
+  const svg = container.append("svg")
+    .attr("width", dimLine.width)
+    .attr("height", dimLine.height)
+    .attr("viewBox", [0, 0, dimLine.width, dimLine.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+  
+  svg.append("g")
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", dimLine.width)
+    .attr("height", dimLine.height)
+    .style("fill", "#DCE7EB")
+    .style("opacity", .6);
+  
+  svg.append("g")
+    .attr("transform", `translate(0,${ dimLine.height - marginLine.bottom })`)
+    .style("font-size", ".8rem")
+    .call(xAxis)
+    .call(g => g.select(".domain").remove())
+    .append("path")
+    .attr("d", d3.line()([[marginLine.left, 0], [dimLine.width - marginLine.right, 0]]))
+    .style("fill", "none")
+    .style("stroke", "black");
+  
+  svg.append("g")
+    .attr("transform", `translate(${ marginLine.left },0)`)
+    .style("font-size", ".8rem")
+    .call(yAxis)
+    .call(g => g.select(".domain").remove())
+    .call(g => g.append("text")
+      .attr("x", -marginLine.left)
+      .attr("y", 25)
+      .attr("dx", 10)
+      .attr("fill", "black")
+      .attr("text-anchor", "start")
+      .style("font-size", ".9rem")
+      .text("Live births per woman"));
+  
+  svg.append("g")
+    .call(addLines, fertilityRegions, "#e8e8e8", xScale, yScale)
+    .call(addLines, dataFocus, "#4889ab", xScale, yScale);
+  
+  const rr = svg.append("g")
+    .append("path")
+    .attr("d", d3.line()([
+      [marginLine.left + marginLine.inner, yScale(2.1)], 
+      [dimLine.width - marginLine.right, yScale(2.1)]
+    ]))
+    .style("fill", "none")
+    .style("stroke", "#B13D70")
+    .style("stroke-dasharray", "8 5")
+    .style("stroke-width", 2);
+  
+  svg.append("g")
+    .append("text")
+    .attr("x", marginLine.left + marginLine.inner)
+    .attr("y", yScale(2.1))
+    .attr("dx", 20)
+    .attr("dy", 5)
+    .attr("fill", "#B13D70")
+    .attr("text-anchor", "start")
+    .attr("alignment-baseline", "hanging")
+    .style("font-size", ".8rem")
+    .text("Replacement rate");
+  
+  // Chart captions ///////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-caption")
+    .style("margin", ".5rem 0")
+    .html(`Hover to view labels.`);
+    
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .html(`Source: United Nations World Population Prospects 2022.`);
+    
+  return container.node();
+}
+```
+
+Yet high as they are, Africa's fertility rates are falling too, possibly even at a [faster pace](https://www.economist.com/middle-east-and-africa/2023/04/05/the-worlds-peak-population-may-be-smaller-than-expected) than current projections indicate. The causes are complex, but a role is no doubt played by widening opportunities for women in school and in the workforce. This lends hope for the economic development of the world's poorest continent. The median African is just under 19 years old, meaning the vast majority of Africa's population will be in the most productive years of their lives for decades to come.
+
+By the year 2100, Earth's population would have undergone its 15th year of negative annual growth. The median Earthling will be 42 years old, compared with 30 today. China will have a mere 760 million people, half that of India's 1.5 billion. More than one-third of all people will be African; just 5% will be European. In hospitals across Manila, babies will be born to a world that we can scarcely imagine --- a world that is getting smaller. `r end_mark()`
+
+## Data and cleaning scripts {.appendix}
+
+- [UN World Population Prospects 2022 csv files](https://population.un.org/wpp/Download/Standard/CSV/)
+- [clean.ipynb](../../datasets/population/clean.ipynb) / [pyramid.csv](../../datasets/population/pyramid.csv), [median_age.csv](../../datasets/population/median_age.csv), [fertility_regions.csv](../../datasets/population/fertility_regions.csv), [fertility_countries.csv](../../datasets/population/fertility_countries.csv), [countries.csv](../../datasets/population/countries.csv), [age_groups.csv](../../datasets/population/age_groups.csv)
+
+## D3 / Observable code {.appendix}
+
+```{ojs}
+//| code-fold: true
+
+// Data
+
+pyramid = FileAttachment("../../datasets/population/pyramid.csv").csv({ typed: true });
+medianAge = FileAttachment("../../datasets/population/median_age.csv").csv({ typed: true });
+fertilityRegions = FileAttachment("../../datasets/population/fertility_regions.csv").csv({ typed: true });
+fertilityCountries = FileAttachment("../../datasets/population/fertility_countries.csv").csv({ typed: true });
+countries = FileAttachment("../../datasets/population/countries.csv").csv({ typed: true });
+ageGroups = FileAttachment("../../datasets/population/age_groups.csv").csv({ typed: true });
+
+// Parameters
+
+rectHeight = 20;
+margin = ({ top: 10, bottom: 10, between: 80 });
+padding = ({ top: 10, bottom: 10, between: 5, inner: 40 });
+dim = ({ 
+  width: 790 - margin.between, 
+  height: padding.top + 21 * (rectHeight + padding.between)  - padding.between + padding.bottom });
+
+dimLine = ({ width: 790, height: 550 });
+marginLine = ({ top: 10, right: 20, bottom: 35, left: 35, inner: 20 });
+
+colors = ({ 
+  men: "#84b0c5", menSurplus: "#2A769E", 
+  women: "#DF79A2", womenSurplus: "#991E56",
+  totalLeft: "#4889ab", totalRight: "#C85B89",
+  medianLine: "black", dependents: "#F6F0EC"
+})  
+
+tooltip = d3.select("body")
+  .append("div")
+  .attr("class", "toolTip")
+  .style("display", "none")
+  .style("position", "absolute")
+  .style("z-index", 999)
+  .style("width", 100)
+  .style("height", "auto")
+  .style("background", "#f7f7f7")
+  .style("border", "1px solid #cecece")
+  .style("opacity", .9)
+  .style("padding", ".2em .45em")
+  .style("font-size", ".85rem");
+
+// Helper functions
+
+round5 = n => Math.floor(n / 5) * 5;
+```
+
+```{ojs}
+//| code-fold: true
+
+addBarsShareLeft = (selection, data, scaler) => {
+  
+  selection.append("g")
+    .selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("x", d => (dim.width / 2) - scaler(d.PopShareMale + d.PopShareFemale))
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight + i * (rectHeight + padding.between)))
+    .attr("width", d => scaler(d.PopShareMale + d.PopShareFemale))
+    .attr("height", rectHeight)
+    .style("fill", colors.totalLeft)
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .style("opacity", .7);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .html(`${ d3.format(",.0f")(1000 * (d.PopMale + d.PopFemale)) } people<br>${ d3.format(",.1f")(d.PopShareMale + d.PopShareFemale) }%`);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event, d) {
+      d3.select(this)
+        .transition().duration(100)
+        .style("opacity", 1);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+  
+  return selection.node();
+};
+
+addBarsShareRight = (selection, data, scaler) => {
+
+  selection.append("g")
+    .selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("x", 0)
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight + i * (rectHeight + padding.between)))
+    .attr("width", d => scaler(d.PopShareMale + d.PopShareFemale))
+    .attr("height", rectHeight)
+    .style("fill", colors.totalRight)
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .style("opacity", .7);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .html(`${ d3.format(",.0f")(1000 * (d.PopMale + d.PopFemale)) } people<br>${ d3.format(",.1f")(d.PopShareMale + d.PopShareFemale) }%`);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event, d) {
+      d3.select(this)
+        .transition().duration(100)
+        .style("opacity", 1);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+  
+  return selection.node();
+};
+
+addMedianLineLeft = (selection, dataMedian, dataPop, scaler) => {
+  
+  const paddingInner = padding.inner - 10;
+  const i = round5(dataMedian[0].MedianAgePop) / 5;
+  const y = dim.height - (padding.bottom + rectHeight/2 + i * (rectHeight + padding.between));
+  const stop = (dim.width / 2) - scaler(dataPop[i].PopShareMale + dataPop[i].PopShareFemale) - 5;
+  
+  const line = selection.append("g");
+  
+  line.append("path")
+    .attr("d", d3.line()([[paddingInner, y], [stop, y]]))
+    .style("fill", "none")
+    .style("stroke", colors.medianLine)
+    .style("stroke-dasharray", "4 4")
+    .style("stroke-width", 2);
+  
+  line.append("text")
+    .attr("x", paddingInner)
+    .attr("y", y)
+    .attr("dx", "-.4rem")
+    .attr("text-anchor", "end")
+    .attr("alignment-baseline", "middle")
+    .style("font-size", ".9rem")
+    .style("font-weight", "bold")
+    .style("fill", colors.medianLine)
+    .text(d3.format(".0f")(dataMedian[0].MedianAgePop));
+  
+  return selection.node();
+};
+
+addMedianLineRight = (selection, dataMedian, dataPop, scaler) => {
+  
+  const paddingInner = padding.inner - 10;
+  const i = round5(dataMedian[0].MedianAgePop) / 5;
+  const y = dim.height - (padding.bottom + rectHeight/2 + i * (rectHeight + padding.between));
+  const start = scaler(dataPop[i].PopShareMale + dataPop[i].PopShareFemale) + 5;
+  
+  const line = selection.append("g");
+  
+  line.append("path")
+    .attr("d", d3.line()([[start, y], [dim.width / 2 - paddingInner, y]]))
+    .style("fill", "none")
+    .style("stroke", colors.medianLine)
+    .style("stroke-dasharray", "4 4")
+    .style("stroke-width", 2);
+  
+  line.append("text")
+    .attr("x", dim.width / 2 - paddingInner)
+    .attr("y", y)
+    .attr("dx", ".4rem")
+    .attr("text-anchor", "start")
+    .attr("alignment-baseline", "middle")
+    .style("font-size", ".9rem")
+    .style("font-weight", "bold")
+    .style("fill", colors.medianLine)
+    .text(d3.format(".0f")(dataMedian[0].MedianAgePop));
+  
+  return selection.node();
+};
+```
+
+```{ojs}
+//| code-fold: true
+
+addBarsShareMale = (selection, data, scaler) => {
+
+  selection.append("g")
+    .selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("x", d => (dim.width / 2) - scaler(d.PopShareMale))
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight + i * (rectHeight + padding.between)))
+    .attr("width", d => scaler(d.PopShareMale))
+    .attr("height", rectHeight)
+    .style("fill", colors.men)
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .style("opacity", .7);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(`${d3.format(",.0f")(1000 * d.PopMale)} men`);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event, d) {
+      d3.select(this)
+        .transition().duration(100)
+        .style("opacity", 1);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    })
+  
+  return selection.node();
+};
+
+addBarsSurplusMale = (selection, data, scaler) => {
+
+  selection.append("g")
+    .selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("x", d => (dim.width / 2) - scaler(d.PopShareMale))
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight + i * (rectHeight + padding.between)))
+    .attr("width", d => scaler(d.SurplusShareMale))
+    .attr("height", rectHeight)
+    .style("fill", colors.menSurplus)
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .style("opacity", .7);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(`${d3.format(",.0f")(1000 * d.SurplusMale)} surplus men`);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event, d) {
+      d3.select(this)
+        .transition().duration(100)
+        .style("opacity", 1);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    })
+  
+  return selection.node();
+};
+
+addLabelsMale = (selection, data, scaler) => {
+
+  selection.append("g")
+    .selectAll("text")
+    .data(data)
+    .join("text")
+    .attr("x", d => (dim.width / 2) - scaler(d.PopShareMale))
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight/2 + i * (rectHeight + padding.between)))
+    .attr("dx", "-.25rem")
+    .attr("text-anchor", "end")
+    .attr("alignment-baseline", "middle")
+    .style("font-size", ".7rem")
+    .style("fill", "black")
+    .text(d => d3.format(".1f")(d.PopShareMale))
+
+  return selection.node();
+};
+
+addBarsShareFemale = (selection, data, scaler) => {
+
+  selection.append("g")
+    .selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("x", 0)
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight + i * (rectHeight + padding.between)))
+    .attr("width", d => scaler(d.PopShareFemale))
+    .attr("height", rectHeight)
+    .style("fill", colors.women)
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .style("opacity", .7);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(`${d3.format(",.0f")(1000 * d.PopFemale)} women`);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event, d) {
+      d3.select(this)
+        .transition().duration(100)
+        .style("opacity", 1);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+  
+  return selection.node();
+};
+
+addBarsSurplusFemale = (selection, data, scaler) => {
+  
+  selection.append("g")
+    .selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("x", d => scaler(d.PopShareFemale - d.SurplusShareFemale))
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight + i * (rectHeight + padding.between)))
+    .attr("width", d => scaler(d.SurplusShareFemale))
+    .attr("height", rectHeight)
+    .style("fill", colors.womenSurplus)
+    .on("mousemove", function(event, d) {
+      d3.select(this)
+        .transition().duration(50)
+        .style("opacity", .7);
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(`${d3.format(",.0f")(1000 * d.SurplusFemale)} surplus women`);
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", function(event, d) {
+      d3.select(this)
+        .transition().duration(100)
+        .style("opacity", 1);
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+  
+  return selection.node();
+};
+
+addLabelsFemale = (selection, data, scaler) => {
+
+  selection.append("g")
+    .selectAll("text")
+    .data(data)
+    .join("text")
+    .attr("x", d => scaler(d.PopShareFemale))
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight/2 + i * (rectHeight + padding.between)))
+    .attr("dx", ".25rem")
+    .attr("text-anchor", "start")
+    .attr("alignment-baseline", "middle")
+    .style("font-size", ".7rem")
+    .style("fill", "black")
+    .text(d => d3.format(".1f")(d.PopShareFemale));
+  
+  return selection.node();
+};
+```
+
+```{ojs}
+//| code-fold: true
+
+addDependents = (selection) => {
+  
+  const area = selection.append("g")
+    .attr("transform", `translate(0, ${ margin.top })`)
+  
+  area.append("rect")
+    .attr("x", 0)
+    .attr("y", dim.height - (padding.bottom - padding.between/2) - 3 * (rectHeight + padding.between))
+    .attr("width", dim.width + margin.between)
+    .attr("height", 3 * (rectHeight + padding.between) + padding.between/2)
+    .style("fill", colors.dependents);
+    
+  area.append("rect")
+    .attr("x", 0)
+    .attr("y", padding.top - padding.between)
+    .attr("width", dim.width + margin.between)
+    .attr("height", 8 * (rectHeight + padding.between) + padding.between/2)
+    .style("fill", colors.dependents);
+  
+  area.append("text")
+    .attr("x", 0)
+    .attr("y", padding.top - padding.between)
+    .attr("dx", 10)
+    .attr("dy", 10)
+    .attr("text-anchor", "start")
+    .attr("alignment-baseline", "hanging")
+    .style("font-size", ".8rem")
+    .style("fill", "#CB946B")
+    .text("Economic dependents");
+    
+  return selection.node()
+};
+
+addAgeGroups = (selection) => {
+  
+  selection.append("g")
+    .attr("transform", `translate(${ (dim.width + margin.between) / 2 }, ${ margin.top })`)
+    .selectAll("text")
+    .data(ageGroups)
+    .join("text")
+    .text(d => d.AgeGrp)
+    .attr("x", 0)
+    .attr("y", (d, i) => dim.height - (padding.bottom + rectHeight/2 + i * (rectHeight + padding.between)))
+    .attr("text-anchor", "middle")
+    .attr("alignment-baseline", "middle")
+    .style("font-size", ".8rem")
+    .style("opacity", .35)
+    .style("fill", "black");
+    
+  return selection.node();
+};
+
+measureWidth = {
+  const context = document.createElement("canvas").getContext("2d");
+  return text => context.measureText(text).width;
+};
+
+addLegendPyramid = (selection) => {
+  
+  const addItem = (selection, color, label) => {
+    
+    const dim = ({ width: 40 + 1.5 * measureWidth(label), height: 15 });
+    
+    const containerItem = selection.append("div")
+      .append("svg")
+      .attr("width", `${dim.width}`)
+      .attr("height", `${dim.height}`)
+      .attr("viewBox", [0, 0, `${dim.width}`, `${dim.height}`])
+      .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+    containerItem.append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("width", `${dim.height}`)
+      .attr("height", `${dim.height}`)
+      .style("fill", color);
+
+    containerItem.append("text")
+      .attr("x", `${ dim.height + 5 }`)
+      .attr("y", 0)
+      .attr("dy", 1)
+      .attr("text-anchor", "start")
+      .attr("alignment-baseline", "hanging")
+      .style("fill", "black")
+      .style("font-size", `${dim.height}`)
+      .text(label);
+  
+    return selection.node();
+  }
+  
+  const container = selection.append("div")
+    .attr("style", "margin-bottom: 1rem; display: flex; justify-content: center");
+  
+  container
+    .call(addItem, colors.men, "Men")
+    .call(addItem, colors.menSurplus, "Surplus men")
+    .call(addItem, colors.women, "Women")
+    .call(addItem, colors.womenSurplus, "Surplus women");
+  
+  return selection.node();
+};
+
+addLegendMedian = (selection) => {
+  
+  const label = "Median age";
+  const dim = ({ width: 40 + 1.5 * measureWidth(label), height: 15 });
+  
+  const container = selection.append("div")
+    .attr("style", "margin-bottom: 1rem; display: flex; justify-content: center");
+  
+  const containerItem = container.append("div")
+    .append("svg")
+    .attr("width", `${dim.width}`)
+    .attr("height", `${dim.height}`)
+    .attr("viewBox", [0, 0, `${dim.width}`, `${dim.height}`])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+  
+  containerItem.append("path")
+    .attr("d", d3.line()([[0, dim.height / 2], [dim.height * 2, dim.height / 2]]))
+    .style("fill", "none")
+    .style("stroke", colors.medianLine)
+    .style("stroke-dasharray", "4 4")
+    .style("stroke-width", 2);
+    
+  containerItem.append("text")
+    .attr("x", `${ dim.height * 2 + 5 }`)
+    .attr("y", 0)
+    .attr("dy", 1)
+    .attr("text-anchor", "start")
+    .attr("alignment-baseline", "hanging")
+    .style("fill", "black")
+    .style("font-size", `${dim.height}`)
+    .text(label);
+  
+  return selection.node();
+};
+```
+
+```{ojs}
+//| code-fold: true
+
+addLines = (selection, data, color, xScale, yScale) => {
+  
+  const id = d3.randomInt(100000, 1000000)();
+  
+  // Compute values
+  const ind = d3.map(data, d => d.LocID);
+  const X = d3.map(data, d => d.Time);
+  const Y = d3.map(data, d => d.TFR);
+  const Z = d3.map(data, d => d.Location);
+  const I = d3.range(X.length);
+  
+  // Construct a line generator
+  const line = d3.line()
+    .curve(d3.curveBasis)
+    .x(i => xScale(X[i]))
+    .y(i => yScale(Y[i]));
+  
+  const mapData = d3.group(I, i => ind[i]);
+    
+  const path = selection.append("g")
+    .selectAll("path")
+    .data(mapData)
+    .join("path")
+      .style("fill", "none")
+      .style("stroke", color)
+      .style("stroke-width", 3)
+      .style("mix-blend-mode", "multiply")
+      .attr("d", ([, I]) => line(I))
+      .attr("id", (d, i) => `path-${ [...mapData.keys()][i] }`)
+      .attr("class", `paths-${id}`);
+    
+  const pathGhost = selection.append("g")
+    .selectAll("path")
+    .data(mapData)
+    .join("path")
+      .style("fill", "none")
+      .style("stroke", color)
+      .style("stroke-width", 15)
+      .style("opacity", 0)
+      .attr("d", ([, I]) => line(I));
+  
+  pathGhost
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave);
+  
+  function mousemove(event) {
+    
+    const [xm, ym] = d3.pointer(event);
+    const i = d3.least(I, i => Math.hypot(xScale(X[i]) - xm, yScale(Y[i]) - ym)); // closest point
+    
+    d3.selectAll(`.paths-${id}`)
+      .transition().duration(100)
+      .style("stroke", color)
+      .style("stroke-width", 3);
+      
+    d3.select(`#path-${ ind[i] }`)
+      .transition().duration(50)
+      .style("stroke", "#307351")
+      .style("stroke-width", 5);
+      
+    tooltip
+      .style("left", event.pageX + 18 + "px")
+      .style("top", event.pageY + 18 + "px")
+      .style("display", "block")
+      .html(`<b>${ Z[i] }</b><br>${ X[i] }: ${ d3.format(".2f")(Y[i]) }`);
+    
+    d3.select(event.target).style("cursor", "pointer");
+  };
+
+  function mouseleave(event) {
+    d3.selectAll(`.paths-${id}`)
+      .transition().duration(100)
+      .style("stroke", color)
+      .style("stroke-width", 3);
+    tooltip.style("display", "none");
+    d3.select(event.target).style("cursor", "default");
+  };
+  
+  return selection.node();
+}
+```
