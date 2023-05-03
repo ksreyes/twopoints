@@ -20,7 +20,7 @@ source(here::here("R", "functions.R"))
 
 <p class="subpage-header-2">Hello! My name is Ken.</p>
 
-<p class="subpage-text" style="margin: 0 0 3rem 0">`r icon_link(icon = "far fa-envelope", title = "Email", url = "mailto:kenneth.rejes@gmail.com")` `r icon_link(icon = "fas fa-user-tie", title = "CV", url = "files/kenneth-reyes-cv.pdf")` `r icon_link(icon = "fab fa-linkedin-in", title = "LinkedIn", url = "https://www.linkedin.com/in/ksreyes")` `r icon_link(icon = "fab fa-github", title = "GitHub", url = "https://github.com/ksreyes")` `r icon_link(icon = "fab fa-goodreads", title = "Goodreads", url = "https://www.goodreads.com/krejes")`</p>
+<p class="subpage-text" style="margin: 0 0 3rem 0">`r icon_link(icon = "far fa-envelope", title = "Email", url = "mailto:kenneth.rejes@gmail.com")` `r icon_link(icon = "fab fa-linkedin-in", title = "LinkedIn", url = "https://www.linkedin.com/in/ksreyes")` `r icon_link(icon = "fab fa-github", title = "GitHub", url = "https://github.com/ksreyes")` `r icon_link(icon = "fab fa-goodreads", title = "Goodreads", url = "https://www.goodreads.com/krejes")`</p>
 
 <p class="subpage-text">I work a lot with data, which means I often engage in the fun, frustrating, highly consequential---yet frequently dismissed!---art of data visualization.</p>
 
