@@ -472,6 +472,7 @@ img.endmark {
   .panel-caption, .caption, .figure-caption {
     font-size: .67rem;
     margin-top: 0;
+    line-height: 1.4;
   }
   
   img.endmark {
@@ -699,7 +700,7 @@ div.observablehq {
 @media only screen and (max-width: 768px) {
   
   .ojs-title {
-    font-size: 1rem;
+    font-size: .9rem;
     margin: 0 0 .15rem 0;
   }
 

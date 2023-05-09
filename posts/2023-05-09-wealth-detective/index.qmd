@@ -83,9 +83,9 @@ The fruits of their work as applied to the United States has painted a stark pic
     .attr("height", dim.height)
     .attr("viewBox", [0, 0, dim.width, dim.height])
     .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-    .on("pointerenter", pointerentered)
-    .on("pointermove", pointermoved)
-    .on("pointerleave", pointerleft);
+    .on("mouseenter", mouseentered)
+    .on("mousemove", mousemoved)
+    .on("mouseleave", mouseleft);
   
   svg.append("g")
     .append("rect")
@@ -174,12 +174,12 @@ The fruits of their work as applied to the United States has painted a stark pic
     .style("stroke", "black")
     .style("stroke-width", 1)
   
-  function pointerentered() {
+  function mouseentered() {
     marker.attr("display", null);
     tooltip.style("display", "block");
   }
     
-  function pointermoved(event) {
+  function mousemoved(event) {
     const [xm, ym] = d3.pointer(event);
     const x = d3.least(xValues, x => Math.abs(xScaler(x) - xm));
     const i = X.map((d, i) => d === x ? i : "").filter(String);
@@ -190,7 +190,7 @@ The fruits of their work as applied to the United States has painted a stark pic
       .html(`<b>${x}</b><br>Bottom 90%: ${ d3.format(",.1%")(Y[i[0]]) }<br>Top 0.1%: ${ d3.format(",.1%")(Y[i[1]]) }`);
   }
   
-  function pointerleft() {
+  function mouseleft() {
     marker.attr("display", "none");
     tooltip.style("display", "none");
   }
@@ -361,10 +361,10 @@ A weakness in this approach is its reliance on income data, which are typically 
     .attr("width", d => xScaler(d.evasion))
     .attr("height", yScaler.bandwidth())
     .style("fill", colors.blue)
-    .on("pointermove", pointermoved)
-    .on("pointerleave", pointerleft);
+    .on("mousemove", mousemoved)
+    .on("mouseleave", mouseleft);
   
-  function pointermoved(event, d) {
+  function mousemoved(event, d) {
     d3.select(this)
       .transition().duration(50)
       .style("fill", colors.red);
@@ -376,7 +376,7 @@ A weakness in this approach is its reliance on income data, which are typically 
     d3.select(event.target).style("cursor", "pointer");
   }
   
-  function pointerleft(event) {
+  function mouseleft(event) {
     d3.selectAll("rect.evasion-bars")
       .transition().duration(200)
       .style("fill", colors.blue)
@@ -504,9 +504,9 @@ In late 2019, he and Saez engaged in a publicity campaign for their book, *The T
     .attr("height", dim.height)
     .attr("viewBox", [0, 0, dim.width, dim.height])
     .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
-    .on("pointerenter", pointerentered)
-    .on("pointermove", pointermoved)
-    .on("pointerleave", pointerleft);
+    .on("mouseenter", mouseentered)
+    .on("mousemove", mousemoved)
+    .on("mouseleave", mouseleft);
   
   svg.append("g")
     .append("rect")
@@ -604,12 +604,12 @@ In late 2019, he and Saez engaged in a publicity campaign for their book, *The T
     .style("stroke", "black")
     .style("stroke-width", 1);
   
-  function pointerentered() {
+  function mouseentered() {
     marker.attr("display", null);
     tooltip.style("display", "block");
   };
     
-  function pointermoved(event) {
+  function mousemoved(event) {
     const [xm, ym] = d3.pointer(event);
     const x = d3.least(xValues, x => Math.abs(xScaler(x) - xm));
     const i = X.map((d, i) => d === x ? i : "").filter(String);
@@ -625,7 +625,7 @@ In late 2019, he and Saez engaged in a publicity campaign for their book, *The T
       `);
   };
   
-  function pointerleft() {
+  function mouseleft() {
     marker.attr("display", "none");
     tooltip.style("display", "none");
   };
