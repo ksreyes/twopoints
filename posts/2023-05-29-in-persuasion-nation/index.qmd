@@ -1,0 +1,531 @@
+---
+title: "In persuasion nation"
+subtitle: "Seventy years of surveys tell us that two weeks before an election, about 20% of votes are still up for grabs"
+date: 2023-05-29
+categories: [python, D3/OJS]
+image: thumbnail.png
+draft: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+We are somehow already six months into the abnormally long U.S. presidential election cycle, with Donald Trump having [kicked things off](https://www.foxnews.com/politics/donald-trump-announces-2024-re-election-run-president) back in November. Last week, his [most credible rival](https://projects.fivethirtyeight.com/polls/president-primary-r/2024/national), Ron DeSantis, launched his own campaign via a [troubled Twitter Spaces broadcast](https://www.youtube.com/watch?v=V8sPPrWGs1w) with Elon Musk. The 80-year-old incumbent Joe Biden has also officially [joined the race](https://www.bbc.com/news/world-us-canada-65381883). As the country braces for yet another hyperpartisan election, one wonders whether all this is even necessary. What voter, at this point, is still undecided? 
+
+A [paper](https://academic.oup.com/qje/article/138/2/703/7050900) in this month's issue of the *Quarterly Journal of Economics* sheds some light. Authors Caroline Le Pennec and Vincent Pons analyze the behavior of 200,000 voters as glimpsed from a large collection of two-round election surveys, covering 62 elections in 10 Western countries^[The United States, Canada, the United Kingdom, New Zealand, the Netherlands, Germany, Switzerland, Italy, Austria, and Sweden.] from 1952 to 2017. Each one interviews a voter twice: once before an election, to ask who they intend to vote for, then again after the election, to ask who they actually voted for. Giving the same answer in both rounds is what Le Pennec and Pons call *vote choice consistency*, where the voter may be said to have already made their minds up by the date of the first interview. 
+
+The power in these surveys is that the first interview date varies. This allows the authors to estimate how vote choice consistency changes as election day draws nearer. They find that two months before the election, 71% of voters have landed on the candidate that they will actually stick with. This rises to about 75% one month before the election, to 80% two weeks before the election, and finally to 88% on the eve of the election. The full range of estimates is visualized in the chart below.
+
+```{ojs}
+//| code-fold: true
+
+{
+  const dim = ({ width: 790, height: 550 });
+  const margin = ({ top: 20, bottom: 50, right: 0, left: 50 });
+  
+  const data = consistency;
+  const X = d3.map(data, d => d.dist_pre);
+  const Y = d3.map(data, d => d.est);
+  const Y0 = d3.map(data, d => d.conf_int_high);
+  const Y1 = d3.map(data, d => d.conf_int_low);
+  const I = d3.range(X.length);
+  const xValues = [...new Set(X)];
+
+  const xScaler = d3.scaleLinear()
+    .domain([-63, 1])
+    .range([margin.left, dim.width - margin.right]);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([.6, .9])
+    .range([dim.height - margin.bottom, margin.top]);
+  
+  const line = d3.line()
+    .curve(d3.curveBasis)
+    .x(i => xScaler(X[i]))
+    .y(i => yScaler(Y[i]));
+    
+  const area = d3.area()
+    .curve(d3.curveBasis)
+    .x(i => xScaler(X[i]))
+    .y0(i => yScaler(Y0[i]))
+    .y1(i => yScaler(Y1[i]));
+  
+  const container = d3.create("div");
+  
+  // Chart title //////////////////////////////////////////////////////////////
+  
+  container.append("div")
+    .attr("class", "ojs-title")
+    .html(`Change my mind`);
+    
+  container.append("div")
+    .attr("class", "ojs-subtitle")
+    .style("margin-bottom", "1rem")
+    .html(`Estimated share of voters with consistent vote choices by days before election`);
+  
+  // Chart canvas /////////////////////////////////////////////////////////////
+
+  const svg = container.append("svg")
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .attr("viewBox", [0, 0, dim.width, dim.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+    .on("mouseenter", mouseentered)
+    .on("mousemove", mousemoved)
+    .on("mouseleave", mouseleft);
+  
+  // Axes /////////////////////////////////////////////////////////////////////
+  
+  const xAxis = svg.append("g")
+    .attr("transform", `translate(0,${ dim.height - margin.bottom })`)
+    .call(g => g.append("path")
+      .attr("d", d3.line()([[margin.left, 0], [dim.width - margin.right, 0]]))
+      .style("fill", "none")
+      .style("stroke", "black"))
+    .call(g => g.selectAll("text")
+      .data([60, 40, 20, 0])
+      .join("text")
+      .attr("x", (d, i) => xScaler(-d))
+      .attr("dy", 20)
+      .text(d => d)
+      .attr("text-anchor", "middle")
+      .style("font-size", ".8rem")
+      .style("fill", "black"))
+    .call(g => g.append("text")
+      .attr("x", (margin.left + dim.width - margin.right) / 2)
+      .attr("y", 40)
+      .attr("fill", "black")
+      .attr("text-anchor", "middle")
+      .style("font-size", ".9rem")
+      .text("Days before election"));
+    
+  const yAxis = d3.axisLeft(yScaler)
+    .ticks(5, ".0%")
+    .tickSize(0)
+    .tickPadding([15]);
+    
+  svg.append("g")
+    .attr("transform", `translate(${ margin.left },0)`)
+    .style("font-size", ".8rem")
+    .call(yAxis)
+    .call(g => g.select(".domain").remove());
+  
+  // Lines and labels /////////////////////////////////////////////////////////
+  
+  const panel = svg.append("g")
+
+  panel.append("g")
+    .selectAll("path")
+    .data(d3.group(I))
+    .join("path")
+      .attr("d", area(I))
+      .style("fill", "#f1f1f1")
+      
+  panel.append("g")
+    .selectAll("path")
+    .data(d3.group(I))
+    .join("path")
+      .attr("d", line(I))
+      .style("fill", "none")
+      .style("stroke", colors.blue)
+      .style("stroke-width", 3)
+  
+  // Hover labels /////////////////////////////////////////////////////////////
+  
+  const marker = svg.append("g")
+    .attr("display", "none")
+  
+  marker.append("path")
+    .attr("d", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]))
+    .style("stroke", "black")
+    .style("stroke-width", 1)
+  
+  function mouseentered() {
+    marker.attr("display", null);
+    tooltip.style("display", "block");
+  }
+    
+  function mousemoved(event) {
+    const [xm, ym] = d3.pointer(event);
+    const x = d3.least(xValues, x => Math.abs(xScaler(x) - xm));
+    const i = X.map((d, i) => d === x ? i : "").filter(String);
+    marker.attr("transform", `translate(${ xScaler(x) }, 0)`);
+    tooltip
+      .style("left", event.pageX + 18 + "px")
+      .style("top", event.pageY + 18 + "px")
+      .html(`<b>${-x} ${x === -1 ? "day" : "days"} before election</b>: ${ d3.format(",.1%")(Y[i]) }`);
+  }
+  
+  function mouseleft() {
+    marker.attr("display", "none");
+    tooltip.style("display", "none");
+  }
+  
+  // Annotation ///////////////////////////////////////////////////////////////
+
+  svg.append("g")
+    .attr("transform", "translate(280, 380)")
+    .append("text")
+      .attr("text-anchor", "middle")
+      .style("font-size", ".9rem")
+      .style("fill", "black")
+      .attr("x", 0).attr("y", 0)
+    .append("tspan")
+      .text("On average, ")
+      .attr("x", 0).attr("y", 0)
+    .append("tspan")
+      .text("71%")
+      .style("font-weight", "bold")
+      .style("fill", colors.red)
+    .append("tspan")
+      .text(" of voters")
+      .style("font-weight", "normal")
+      .style("fill", "black")
+    .append("tspan")
+      .text("have made up their minds")
+      .attr("x", 0).attr("y", 0).attr("dy", 20)
+    .append("tspan")
+      .text("2 months before an election")
+      .attr("x", 0).attr("y", 0).attr("dy", 40)
+  
+  svg.append("defs")
+    .append("marker")
+      .attr("id", "arrow-1")
+      .attr("viewBox", "0 0 10 10")
+      .attr("refX", 8).attr("refY", 5)
+      .attr("markerWidth", 10)
+      .attr("markerHeight", 10)
+      .attr("orient", "auto")
+    .append("path")
+      .attr("d", "M0,1 L9,5 L0,9")
+      .style("stroke-linejoin", "round")
+      .style("stroke", "black")
+      .style("stroke-width", 1)
+      .style("fill", "none");
+    
+  svg.append("g")
+    .style("stroke", "black")
+    .style("stroke-width", 1)
+    .style("fill", "none")
+    .attr("marker-end", "url(#arrow-1)")
+    .call(g => g.append("path")
+      .attr("d", () => {
+        const path = d3.path();
+        path.moveTo(220, 440);
+        path.quadraticCurveTo(130, 510, 88, 350);
+        return path;
+      }))
+    .call(g => g.append("path")
+      .attr("d", () => {
+        const path = d3.path();
+        path.moveTo(490, 120);
+        path.quadraticCurveTo(440, 130, 433, 220);
+        return path;
+      }))
+    .call(g => g.append("path")
+      .attr("d", () => {
+        const path = d3.path();
+        path.moveTo(640, 70);
+        path.quadraticCurveTo(690, 10, 753, 45);
+        return path;
+      }))
+  
+  svg.append("g")
+    .attr("transform", "translate(570, 80)")
+    .append("text")
+      .attr("text-anchor", "middle")
+      .style("font-size", ".9rem")
+      .style("fill", "black")
+      .attr("x", 0).attr("y", 0)
+    .append("tspan")
+      .text("This rises from ")
+      .attr("x", 0).attr("y", 0)
+    .append("tspan")
+      .text("75%")
+      .attr("x", 0).attr("y", 0).attr("dy", 20)
+      .style("font-weight", "bold")
+      .style("fill", colors.red)
+    .append("tspan")
+      .text(" to ")
+      .style("font-weight", "normal")
+      .style("fill", "black")
+    .append("tspan")
+      .text("88%")
+      .style("font-weight", "bold")
+      .style("fill", colors.red)
+    .append("tspan")
+      .text(" in")
+      .style("font-weight", "normal")
+      .style("fill", "black")
+    .append("tspan")
+      .text("the last 30 days")
+      .attr("x", 0).attr("y", 0).attr("dy", 40)
+  
+  svg.append("g")
+    .attr("transform", "translate(623, 300)")
+    .append("text")
+      .attr("text-anchor", "middle")
+      .style("font-size", ".8rem")
+      .style("fill", "#777777")
+      .attr("x", 0).attr("y", 0)
+      .text("95% confidence interval")
+    
+  svg.append("g")
+    .style("stroke", "#777777")
+    .style("stroke-width", 1)
+    .style("fill", "none")
+    .call(g => g.append("path")
+      .attr("d", () => {
+        const path = d3.path();
+        path.moveTo(540, 297);
+        path.quadraticCurveTo(510, 297, 500, 272);
+        return path;
+      }))
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .style("line-height", 1.25)
+    .html(`Source: C. Le Pennec and V. Pons, "How Do Campaigns Shape Vote Choice? Multicountry Evidence from 62 Elections and 56 TV Debates", <i>Quarterly Journal of Economics</i>, vol. 138, no. 2 (2023).`);
+    
+  return container.node();
+}
+```
+
+Vote choice consistency appears to accelerate at around the 20-day mark, climbing about half a percentage point daily up to election day. Campaigning matters right to the very end. Interestingly, this trend remains true regardless of what time period you look at. Le Pennec and Pons estimate the daily increase in vote choice consistency per election and examine the trend of these estimates over time. They conclude:
+
+> Overall, the propensity to form one’s vote choice [during the last two months before the election] has been relatively stable for the past 70 years, suggesting that campaigns continue to matter as much as before. This constancy is all the more striking as campaign methods have undergone major changes in this period..., new types of media have emerged, and ideological polarization has risen in many countries.
+
+Looking at things on a country level, the United States does appear to be unusual in the sense that the daily rise in vote choice consistency is significantly smaller than in other countries. The authors theorize that this may stem from the U.S. two-party system, which places a wider ideological gulf between candidates than in a multiparty system. Still, even for the U.S., the trend over time remains flat, suggesting that vote changing in the last two months of an election still happens at the same rate despite the documented [rise in polarization](https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/). 
+
+What is happening in the last two months that are causing voters to make up their minds? One possibility is the information gleaned from televised debates. These are high-profile events with wide reach that allow voters to hear directly from candidates in a spontaneous, combative setting. In the popular imagination, it was Kennedy's charismatic performance in his [TV debate with Nixon](https://www.independent.co.uk/news/world/americas/us-election/nixon-kennedy-debate-1960-election-trump-biden-b600180.html) that clinched him the presidency in 1960.
+
+To test this, Le Pennec and Pons employ an event study approach using 56 TV debates across 31 elections in seven countries. Astonishingly, they could find no discernible impact.
+
+```{ojs}
+//| code-fold: true
+
+{
+  const dim = ({ width: 790, height: 550 });
+  const margin = ({ top: 20, bottom: 55, right: 0, left: 57 });
+  
+  const data = debates;
+  const X = d3.map(data, d => d.days);
+  const Y = d3.map(data, d => d.est);
+  const Y0 = d3.map(data, d => d.conf_int_high);
+  const Y1 = d3.map(data, d => d.conf_int_low);
+  const I = d3.range(X.length);
+  const xValues = [...new Set(X)];
+
+  const xScaler = d3.scaleLinear()
+    .domain([-3.2, 3.2])
+    .range([margin.left, dim.width - margin.right]);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([-.1, .1])
+    .range([dim.height - margin.bottom, margin.top]);
+    
+  const area = d3.area()
+    .curve(d3.curveBumpX)
+    .x(i => xScaler(X[i]))
+    .y0(i => yScaler(Y0[i]))
+    .y1(i => yScaler(Y1[i]));
+  
+  const container = d3.create("div");
+  
+  // Chart title //////////////////////////////////////////////////////////////
+  
+  container.append("div")
+    .attr("class", "ojs-title")
+    .html(`Noise cancellation`);
+    
+  container.append("div")
+    .attr("class", "ojs-subtitle")
+    .style("margin-bottom", "1rem")
+    .html(`Estimated change in vote choice consistency before and after televised debate`);
+  
+  // Chart canvas /////////////////////////////////////////////////////////////
+
+  const svg = container.append("svg")
+    .attr("width", dim.width)
+    .attr("height", dim.height)
+    .attr("viewBox", [0, 0, dim.width, dim.height])
+    .attr("style", "max-width: 100%; height: auto; height: intrinsic;")
+    .on("mouseenter", mouseentered)
+    .on("mousemove", mousemoved)
+    .on("mouseleave", mouseleft);
+  
+  // Axes /////////////////////////////////////////////////////////////////////
+  
+  const xAxis = svg.append("g")
+    .attr("transform", `translate(0,${ dim.height - margin.bottom })`)
+    .call(g => g.selectAll("text")
+      .data([-3, -2, -1, 0, 1, 2, 3])
+      .join("text")
+      .attr("x", (d, i) => xScaler(d))
+      .attr("dy", 20)
+      .text(d => d)
+      .attr("text-anchor", "middle")
+      .style("font-size", ".8rem")
+      .style("fill", "black"))
+    .call(g => g.append("text")
+      .attr("x", (margin.left + dim.width - margin.right) / 2)
+      .attr("y", 45)
+      .attr("fill", "black")
+      .attr("text-anchor", "middle")
+      .style("font-size", ".9rem")
+      .text("Days before and after TV debate"));
+    
+  const yAxis = d3.axisLeft(yScaler)
+    .ticks(5, ".3f")
+    .tickSize(0)
+    .tickPadding([15]);
+    
+  svg.append("g")
+    .attr("transform", `translate(${ margin.left },0)`)
+    .style("font-size", ".8rem")
+    .call(yAxis)
+    .call(g => g.select(".domain").remove());
+  
+  // Dots and labels /////////////////////////////////////////////////////////
+  
+  const panel = svg.append("g")
+
+  panel.append("g")
+    .selectAll("path")
+    .data(d3.group(I))
+    .join("path")
+      .attr("d", area(I))
+      .style("fill", "#f1f1f1")
+  
+  panel.append("g")
+    .append("path")
+    .attr("d", d3.line()([[margin.left, yScaler(0)], [dim.width - margin.right, yScaler(0)]]))
+      .style("fill", "none")
+      .style("stroke", "#777777")
+      
+  panel.append("g")
+    .selectAll("circle")
+    .data(data)
+    .join("circle")
+      .attr("cx", d => xScaler(d.days))
+      .attr("cy", d => yScaler(d.est))
+      .attr("r", 7)
+      .style("fill", colors.blue)
+      .style("stroke", "none")
+  
+  // Hover labels /////////////////////////////////////////////////////////////
+  
+  const marker = svg.append("g")
+    .attr("display", "none")
+  
+  marker.append("path")
+    .attr("d", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]))
+    .style("stroke", "black")
+    .style("stroke-width", 1)
+  
+  function mouseentered() {
+    marker.attr("display", null);
+    tooltip.style("display", "block");
+  }
+    
+  function mousemoved(event) {
+    const [xm, ym] = d3.pointer(event);
+    const x = d3.least(xValues, x => Math.abs(xScaler(x) - xm));
+    const i = X.map((d, i) => d === x ? i : "").filter(String);
+    marker.attr("transform", `translate(${ xScaler(x) }, 0)`);
+    tooltip
+      .style("left", event.pageX + 18 + "px")
+      .style("top", event.pageY + 18 + "px")
+      .html(`<b>${-x} ${x === -1 ? "day" : "days"} before TV debate</b>: ${ d3.format(",.3f")(Y[i]) }`);
+  }
+  
+  function mouseleft() {
+    marker.attr("display", "none");
+    tooltip.style("display", "none");
+  }
+  
+  // Annotation ///////////////////////////////////////////////////////////////
+
+  svg.append("g")
+    .attr("transform", "translate(300, 199)")
+    .append("text")
+      .attr("text-anchor", "middle")
+      .style("font-size", ".8rem")
+      .style("fill", "#777777")
+      .attr("x", 0).attr("y", 0)
+      .text("95% confidence interval")
+    
+  svg.append("g")
+    .style("stroke", "#777777")
+    .style("stroke-width", 1)
+    .style("fill", "none")
+    .call(g => g.append("path")
+      .attr("d", () => {
+        const path = d3.path();
+        path.moveTo(215, 194);
+        path.quadraticCurveTo(185, 194, 180, 225);
+        return path;
+      }))
+  
+  // Chart sources ////////////////////////////////////////////////////////////
+
+  container.append("div")
+    .attr("class", "ojs-source")
+    .style("margin", ".5rem 0")
+    .style("line-height", 1.25)
+    .html(`Source: C. Le Pennec and V. Pons, "How Do Campaigns Shape Vote Choice? Multicountry Evidence from 62 Elections and 56 TV Debates", <i>Quarterly Journal of Economics</i>, vol. 138, no. 2 (2023).`);
+    
+  return container.node();
+}
+```
+
+The authors try several other specifications but all result in the same null finding. Committed democrats might find this depressing. In the Philippines, Ferdinand Marcos, Jr. drew ire from [the thinking class](https://politics.com.ph/2022/03/13/marcos-jr-to-be-haunted-by-coward-tag-even-if-he-wins-polls-leachon/) by [skipping all debates](https://www.pna.gov.ph/articles/1177656) in last year's presidential campaigns, essential saying they were a waste of time. Le Pennec and Pons' findings suggest that he was right! And indeed, he won by a landslide anyway. 
+
+On the other hand, anyone who's actually watched a televised debate knows that they do tend to be pointless pageantry, more theater than Socratic dialogue. In this light, the null effects shouldn't really be surprising. Le Pennec and Pons' interpretation is that the steady rise in vote choice consistency over the last two months before an election stems not from distinct events like TV debates but from the cumulative impact of campaigns as a whole. The art of persuasion is a long, slow slog, but that it is happening at all is surprising --- and encouraging. `r end_mark()`
+
+## Data and cleaning scripts {.appendix}
+
+- [Le Pennec & Pons (2023) replication package](https://doi.org/10.7910/DVN/XMDFQO)
+- [clean.ipynb](../../datasets/voters/clean.ipynb) / [consistency.csv](../../datasets/voters/consistency.csv), [debates.csv](../../datasets/voters/debates.csv)
+
+## D3 / Observable code {.appendix}
+
+```{ojs}
+//| code-fold: true
+
+consistency = FileAttachment("../../datasets/voters/consistency.csv").csv({ typed: true });
+decades = FileAttachment("../../datasets/voters/decades.csv").csv({ typed: true });
+decades_counts = FileAttachment("../../datasets/voters/decades_counts.csv").csv({ typed: true });
+debates = FileAttachment("../../datasets/voters/debates.csv").csv({ typed: true });
+
+colors = ({ blue: "#4889ab", blueLight: "#c0d7df", red: "#C85B89" })
+
+tooltip = d3.select("body")
+  .append("div")
+  .attr("class", "toolTip")
+  .style("display", "none")
+  .style("position", "absolute")
+  .style("z-index", 999)
+  .style("width", 100)
+  .style("height", "auto")
+  .style("background", "#f7f7f7")
+  .style("border", "1px solid #cecece")
+  .style("opacity", .9)
+  .style("padding", ".2em .45em")
+  .style("font-size", ".85rem");
+```
