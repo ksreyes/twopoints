@@ -509,11 +509,9 @@ On the other hand, anyone who's actually watched a televised debate knows that t
 //| code-fold: true
 
 consistency = FileAttachment("../../datasets/voters/consistency.csv").csv({ typed: true });
-decades = FileAttachment("../../datasets/voters/decades.csv").csv({ typed: true });
-decades_counts = FileAttachment("../../datasets/voters/decades_counts.csv").csv({ typed: true });
 debates = FileAttachment("../../datasets/voters/debates.csv").csv({ typed: true });
 
-colors = ({ blue: "#4889ab", blueLight: "#c0d7df", red: "#C85B89" })
+colors = ({ blue: "#4889ab", red: "#C85B89" })
 
 tooltip = d3.select("body")
   .append("div")
