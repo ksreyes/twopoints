@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.294">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2023-05-09">
 
-<title>Two Points Make a Line - The wealth detective</title>
+<title>The wealth detective – Two Points Make a Line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -73,17 +73,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1935dcbd43814f6b9d0e02a660e21e63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,8 +98,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
@@ -117,6 +125,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -125,11 +135,11 @@ cookieconsent.run({
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<meta property="og:title" content="Two Points Make a Line - The wealth detective">
+<meta property="og:title" content="The wealth detective – Two Points Make a Line">
 <meta property="og:description" content="This year’s John Bates Clark Medal has been awarded to Gabriel Zucman, maestro of tax data and scourge of the ultra wealthy. Here is a visual retrospective of his work.">
 <meta property="og:image" content="https://twopoints.blog/posts/2023-05-09-wealth-detective/thumbnail.gif">
-<meta property="og:site-name" content="Two Points Make a Line">
-<meta name="twitter:title" content="Two Points Make a Line - The wealth detective">
+<meta property="og:site_name" content="Two Points Make a Line">
+<meta name="twitter:title" content="The wealth detective – Two Points Make a Line">
 <meta name="twitter:description" content="This year’s John Bates Clark Medal has been awarded to Gabriel Zucman, maestro of tax data and scourge of the ultra wealthy. Here is a visual retrospective of his work.">
 <meta name="twitter:image" content="https://twopoints.blog/posts/2023-05-09-wealth-detective/thumbnail.gif">
 <meta name="twitter:card" content="summary_large_image">
@@ -139,9 +149,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo-icon-invert.png" alt="" class="navbar-logo">
     </a>
@@ -150,37 +160,36 @@ cookieconsent.run({
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="dropdown-header">
- <span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span></li>
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span>
+    </span>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../subscribe.html" rel="" target="">
- <span class="menu-text">Subscribe</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ksreyes/twopoints" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ksreyes/twopoints"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -218,14 +227,16 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <p>The French economist <a href="https://gabriel-zucman.eu/">Gabriel Zucman</a> has spent the last ten years calling out the shenanigans of the immensely rich. Profiled by <em>Bloomberg</em> as the <a href="https://www.bloomberg.com/news/features/2019-05-23/the-wealth-detective-who-finds-the-hidden-money-of-the-super-rich">“wealth detective”</a>, he and frequent collaborators Thomas Piketty and Emmanuel Saez have wielded microdata and spreadsheets to bring economic inequality to the forefront of popular discourse, especially in America. Zucman is no ivory-tower academic: he is an <a href="https://www.washingtonpost.com/outlook/wealth-taxes-often-failed-in-europe-they-wouldnt-here/2019/10/25/23a59cb0-f4ff-11e9-829d-87b12c2f85dd_story.html">unabashed activist</a> and a ferocious tweeter (though his tweets have recently been <a href="https://twitter.com/gabriel_zucman">purged</a>). His style has rubbed many the wrong way, not least the Harvard Kennedy School, whose president and provost <a href="https://www.nytimes.com/2020/02/21/us/politics/the-liberal-economists-behind-the-wealth-tax-debate.html">vetoed</a> his candidacy for tenure “partly over fears that Mr.&nbsp;Zucman’s research could not support the arguments he was making in the political arena.”</p>
 <p>No wonder then that <a href="https://www.aeaweb.org/about-aea/honors-awards/bates-clark/gabriel-zucman">his receipt</a> of the 2023 John Bates Clark Medal — the second-most prestigious honor in economics after the <a href="https://twopoints.blog/posts/2023-03-03-nobel">Nobel</a> — was met with some grumbling. Coverage from <em>The Economist</em> focused as much on <a href="https://www.economist.com/finance-and-economics/2023/05/04/gabriel-zucman-a-controversial-john-bates-clark-medallist">his detractors</a> as on his body of work. “American Economics Association Reaches a New Low” <a href="https://www.econlib.org/american-economics-association-reaches-a-new-low/">wrote</a> David Henderson. And Tyler Cowen, a man who comments on everything, thought it <a href="https://marginalrevolution.com/marginalrevolution/2023/05/gabriel-zucman-wins-the-john-bates-clark-medal.html">not worthwhile</a> to comment on Zucman’s win.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://gabriel-zucman.eu/files/photos/PhotoGZ8.jpg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Gabriel Zucman, winner of the 2023 John Bates Clark Medal (image from gabriel-zucman.eu)</figcaption><p></p>
+<p><img src="https://gabriel-zucman.eu/files/photos/PhotoGZ8.jpg" class="img-fluid figure-img"></p>
+<figcaption>Gabriel Zucman, winner of the 2023 John Bates Clark Medal (image from gabriel-zucman.eu)</figcaption>
 </figure>
 </div>
 <p>Yet for all the conservative ire he draws, Zucman merely follows the tradition of economist-crusaders like Milton Friedman. <a href="https://econjwatch.org/File+download/643/HendersonMay2013.pdf?mimetype=pdf">Lionized</a> by Henderson as “brilliant” and “first-rate”, Friedman did not shy away from using his academic stature to forward <a href="https://www.youtube.com/watch?v=Rls8H6MktrA">deeply</a> <a href="https://www.nytimes.com/1970/09/13/archives/a-friedman-doctrine-the-social-responsibility-of-business-is-to.html">opinionated</a> <a href="https://www.youtube.com/watch?v=QlY61ROMcoA">takes</a> on the economy, couched in language that would probably be too strong for your typical <a href="https://quoteinvestigator.com/2019/04/10/one-handed/">two-handed economist</a>. So too does Zucman, with the crucial addition of data. Heaps and heaps of it, in fact. While critics may quibble with his methods, his data ensures that debates can revolve around common ground.</p>
@@ -235,7 +246,7 @@ cookieconsent.run({
 </blockquote>
 <p>The fruits of their work as applied to the United States has painted a stark picture of inequality in recent decades. The chart below plots the share of wealth controlled by the bottom 90% against the share controlled by the top 0.1% (about <a href="https://gabriel-zucman.eu/files/SaezZucman2016QJE.pdf">160,000 taxpayers</a> in 2012). From 8.3% in 1980, the top 0.1% now hold about 20% of all wealth in the U.S.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" data-startfrom="40" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dim <span class="op">=</span> ({ <span class="dt">width</span><span class="op">:</span> <span class="dv">790</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">550</span> })<span class="op">;</span></span>
@@ -457,7 +468,7 @@ cookieconsent.run({
 <p>Since data on wealth ownership is not directly collected in America, the statistics above hinge on using income data — more widely available due to surveys and tax filings — to infer asset ownership. The technique, called income capitalization, uses reported interest and dividend income to guess at holdings of bonds and equities. This indirect approach is rough and requires plenty of further adjustments. Nevertheless, by showing how their results are consistent with other data sources<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, Zucman and company make a compelling case for their methodology.</p>
 <p>A weakness in this approach is its reliance on income data, which are typically self-reported. These may not be accurate, especially for the rich, who, for the purposes of avoiding taxes, have the incentive, opportunity, and capability to severely under-report their income. Zucman himself has investigated this for the case of Denmark, Norway, and Sweden. In a creative use of information windfalls, he and his collaborators matched administrative records with documented cases of hidden wealth <a href="https://gabriel-zucman.eu/files/AJZ2019.pdf">as leaked in the Panama Papers</a>, among other sources. They were then able to estimate what share of their tax liabilities Scandinavians were evading, disaggregated by wealth percentile. The chart below confirms the received wisdom that it is the rich — the ultra rich, to be exact — who are the most notorious tax evaders.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" data-startfrom="259" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 258;"><span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dim <span class="op">=</span> ({ <span class="dt">width</span><span class="op">:</span> <span class="dv">790</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">550</span> })<span class="op">;</span></span>
@@ -661,7 +672,7 @@ cookieconsent.run({
 <p>But nevermind evasion: do existing tax rates even subject the rich to their fair share of taxes? Let us return to the United States and consider what has so far been Zucman’s most controversial finding during the most contentious period of his career.</p>
 <p>In late 2019, he and Saez engaged in a publicity campaign for their book, <em>The Triumph of Injustice: How the Rich Dodge Taxes and How to Make Them Pay</em>. You can tell from the title alone that this is a political manifesto as much as a summary of their academic work. Pieces in <a href="https://www.nytimes.com/interactive/2019/10/06/opinion/income-tax-rate-wealthy.html"><em>The New York Times</em></a> and <a href="https://www.washingtonpost.com/business/2019/10/08/first-time-history-us-billionaires-paid-lower-tax-rate-than-working-class-last-year/"><em>The Washington Post</em></a> touted one of the book’s blockbuster claims, which is that the the very wealthiest of Americans — the top 0.00025% — today pay a lower share of their income in taxes than all other income groups. This came at the height of the Democratic primaries, where candidates like Bernie Sanders and Elizabeth Warren were competing for leadership of their party’s progressive wing. The Saez–Zucman claim naturally became a talking point.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" data-startfrom="460" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 459;"><span id="cb3-460"><a href="#cb3-460" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb3-461"><a href="#cb3-461" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dim <span class="op">=</span> ({ <span class="dt">width</span><span class="op">:</span> <span class="dv">790</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">550</span> })<span class="op">;</span></span>
@@ -937,7 +948,7 @@ cookieconsent.run({
 </div></section><section id="d3-observable-code" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">D3 / Observable code</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" data-startfrom="731" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 730;"><span id="cb4-731"><a href="#cb4-731" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../../datasets/zucman/inequality.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
 <span id="cb4-732"><a href="#cb4-732" aria-hidden="true" tabindex="-1"></a>evasion <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../../datasets/zucman/evasion.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span>
@@ -1002,9 +1013,9 @@ cookieconsent.run({
 <ol>
 <li id="fn1"><p>One of these is the Fed’s own <a href="https://www.federalreserve.gov/releases/z1/dataviz/dfa/index.html">Distributional Financial Accounts statistics</a>, published beginning 2019. Trends here have so far been consistent with those of Zucman et al.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\n{\n  const dim = ({ width: 790, height: 550 });\n  const margin = ({ top: 60, bottom: 40, right: 50, left: 50 });\n  \n  const data = inequality;\n  const X = d3.map(data, d => d.year);\n  const Y = d3.map(data, d => d.share);\n  const Z = d3.map(data, d => d.group);\n  const I = d3.range(X.length);\n  const xValues = [...new Set(X)];\n\n  const xScaler = d3.scaleLinear()\n    .domain([1912, 2030])\n    .range([margin.left, dim.width - margin.right]);\n  \n  const yScaler = d3.scaleLinear()\n    .domain([0, .35])\n    .range([dim.height - margin.bottom, margin.top]);\n  \n  const line = d3.line()\n    .curve(d3.curveBasis)\n    .x(i => xScaler(X[i]))\n    .y(i => yScaler(Y[i]));\n  \n  const container = d3.create(\"div\");\n  \n  // Chart title //////////////////////////////////////////////////////////////\n  \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-title\")\n    .html(`To those who have, more shall be given`);\n    \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-subtitle\")\n    .style(\"margin-bottom\", \"1rem\")\n    .html(`Distribution of wealth by percentile, United States, 1917–2019`);\n  \n  // Chart canvas /////////////////////////////////////////////////////////////\n\n  const svg = container.append(\"svg\")\n    .attr(\"width\", dim.width)\n    .attr(\"height\", dim.height)\n    .attr(\"viewBox\", [0, 0, dim.width, dim.height])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\")\n    .on(\"mouseenter\", mouseentered)\n    .on(\"mousemove\", mousemoved)\n    .on(\"mouseleave\", mouseleft);\n  \n  svg.append(\"g\")\n    .append(\"rect\")\n    .attr(\"x\", 0).attr(\"y\", 0)\n    .attr(\"width\", dim.width).attr(\"height\", dim.height)\n    .style(\"fill\", \"#DCE7EB\")\n    .style(\"opacity\", .6);\n  \n  // Axes /////////////////////////////////////////////////////////////////////\n  \n  const xAxis = d3.axisBottom(xScaler)\n    .tickValues(Array.from({length: 11}, (_, i) => 1920 + i*10))\n    .tickFormat(d3.format(\".0f\"))\n    .tickSize(0)\n    .tickPadding([10]);\n    \n  const yAxis = d3.axisLeft(yScaler)\n    .ticks(5, \".0%\")\n    .tickSize(0)\n    .tickPadding([10]);;\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(0,${ dim.height - margin.bottom })`)\n    .style(\"font-size\", \".8rem\")\n    .call(xAxis)\n    .call(g => g.select(\".domain\").remove())\n    .append(\"path\")\n    .attr(\"d\", d3.line()([[margin.left, 0], [dim.width - margin.right, 0]]))\n    .style(\"fill\", \"none\")\n    .style(\"stroke\", \"black\");\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${ margin.left },0)`)\n    .style(\"font-size\", \".8rem\")\n    .call(yAxis)\n    .call(g => g.select(\".domain\").remove())\n    .call(g => g.append(\"text\")\n      .attr(\"x\", -margin.left)\n      .attr(\"y\", 25)\n      .attr(\"dx\", 10)\n      .attr(\"fill\", \"black\")\n      .attr(\"text-anchor\", \"start\")\n      .style(\"font-size\", \".9rem\")\n      .text(\"Share in total wealth\"));\n  \n  // Lines and labels /////////////////////////////////////////////////////////\n  \n  const panel = svg.append(\"g\")\n\n  panel.append(\"g\")\n    .selectAll(\"path\")\n    .data(d3.group(I, i => Z[i]))\n    .join(\"path\")\n      .style(\"fill\", \"none\")\n      .style(\"stroke\", (d, i) => i === 0 ? colors.blue : colors.red)\n      .style(\"stroke-width\", 3)\n      .attr(\"d\", ([, I]) => line(I));\n  \n  panel.append(\"g\")\n    .append(\"text\")\n    .attr(\"x\", xScaler(2020))\n    .attr(\"y\", yScaler(.227))\n    .attr(\"text-anchor\", \"start\")\n    .attr(\"alignment-baseline\", \"middle\")\n    .style(\"font-size\", \".9rem\")\n    .style(\"fill\", colors.blue)\n    .text(\"Bottom 90%\")\n    \n  panel.append(\"g\")\n    .append(\"text\")\n    .attr(\"x\", xScaler(2020))\n    .attr(\"y\", yScaler(.192))\n    .attr(\"text-anchor\", \"start\")\n    .attr(\"alignment-baseline\", \"middle\")\n    .style(\"font-size\", \".9rem\")\n    .style(\"fill\", colors.red)\n    .text(\"Top 0.1%\")\n  \n  // Hover labels /////////////////////////////////////////////////////////////\n  \n  const marker = svg.append(\"g\")\n    .attr(\"display\", \"none\")\n  \n  marker.append(\"path\")\n    .attr(\"d\", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]))\n    .style(\"stroke\", \"black\")\n    .style(\"stroke-width\", 1)\n  \n  function mouseentered() {\n    marker.attr(\"display\", null);\n    tooltip.style(\"display\", \"block\");\n  }\n    \n  function mousemoved(event) {\n    const [xm, ym] = d3.pointer(event);\n    const x = d3.least(xValues, x => Math.abs(xScaler(x) - xm));\n    const i = X.map((d, i) => d === x ? i : \"\").filter(String);\n    marker.attr(\"transform\", `translate(${ xScaler(x) }, 0)`);\n    tooltip\n      .style(\"left\", event.pageX + 18 + \"px\")\n      .style(\"top\", event.pageY + 18 + \"px\")\n      .html(`<b>${x}</b><br>Bottom 90%: ${ d3.format(\",.1%\")(Y[i[0]]) }<br>Top 0.1%: ${ d3.format(\",.1%\")(Y[i[1]]) }`);\n  }\n  \n  function mouseleft() {\n    marker.attr(\"display\", \"none\");\n    tooltip.style(\"display\", \"none\");\n  }\n  \n  // Annotation ///////////////////////////////////////////////////////////////\n\n  svg.append(\"g\")\n    .attr(\"transform\", \"translate(640, 360)\")\n    .append(\"text\")\n      .attr(\"text-anchor\", \"middle\")\n      .style(\"font-size\", \".9rem\")\n      .style(\"fill\", \"black\")\n      .attr(\"x\", 0).attr(\"y\", 0)\n    .append(\"tspan\")\n      .text(\"Wealth began to\")\n      .attr(\"x\", 0).attr(\"y\", 0)\n    .append(\"tspan\")\n      .text(\"concentrate in the 1980s\")\n      .attr(\"x\", 0).attr(\"y\", 0).attr(\"dy\", 20)\n  \n  svg.append(\"defs\")\n    .append(\"marker\")\n      .attr(\"id\", \"arrow-1\")\n      .attr(\"viewBox\", \"0 0 10 10\")\n      .attr(\"refX\", 8).attr(\"refY\", 5)\n      .attr(\"markerWidth\", 10)\n      .attr(\"markerHeight\", 10)\n      .attr(\"orient\", \"auto\")\n    .append(\"path\")\n      .attr(\"d\", \"M0,1 L9,5 L0,9\")\n      .style(\"stroke-linejoin\", \"round\")\n      .style(\"stroke\", \"black\")\n      .style(\"stroke-width\", 1)\n      .style(\"fill\", \"none\");\n    \n  svg.append(\"g\")\n    .append(\"path\")\n    .attr(\"d\", () => {\n      const path = d3.path();\n      path.moveTo(620, 400);\n      path.quadraticCurveTo(550, 500, 480, 410);\n      return path;\n    })\n    .style(\"stroke\", \"black\")\n    .style(\"stroke-width\", 1)\n    .style(\"fill\", \"none\")\n    .attr(\"marker-end\", \"url(#arrow-1)\");\n  \n  // Chart sources ////////////////////////////////////////////////////////////\n\n  container.append(\"div\")\n    .attr(\"class\", \"ojs-source\")\n    .style(\"margin\", \".5rem 0\")\n    .style(\"line-height\", 1.25)\n    .html(`Source: E. Saez and G. Zucman, \"The Rise of Income and Wealth Inequality in America: Evidence from Distributional Macroeconomic Accounts\", <i>Journal of Economic Perspectives</i>, vol. 34, no. 4 (2020).`);\n    \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\n{\n  const dim = ({ width: 790, height: 550 });\n  const margin = ({ top: 40, bottom: 60, right: 50, left: 105 });\n  \n  const data = evasion;\n  const X = d3.map(data, d => d.evasion);\n  const Y = d3.map(data, d => d.percentile);\n  \n  const xScaler = d3.scaleLinear()\n    .domain([0, .30])\n    .range([0, dim.width - margin.left - margin.right])\n    \n  const yScaler = d3.scaleBand()\n    .domain(Y)\n    .range([dim.height - margin.bottom, margin.top])\n    .padding(.25);\n\n  const container = d3.create(\"div\");\n  \n  // Chart title //////////////////////////////////////////////////////////////\n  \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-title\")\n    .html(`Render unto Ceaser...`);\n    \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-subtitle\")\n    .style(\"margin-bottom\", \"1rem\")\n    .html(`Taxes evaded as a share of taxes owed by wealth percentile, Denmark, Norway, and Sweden`);\n  \n  // Chart canvas /////////////////////////////////////////////////////////////\n\n  const svg = container.append(\"svg\")\n    .attr(\"width\", dim.width)\n    .attr(\"height\", dim.height)\n    .attr(\"viewBox\", [0, 0, dim.width, dim.height])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\")\n  \n  svg.append(\"g\")\n    .append(\"rect\")\n    .attr(\"x\", 0).attr(\"y\", 0)\n    .attr(\"width\", dim.width).attr(\"height\", dim.height)\n    .style(\"fill\", \"#DCE7EB\")\n    .style(\"opacity\", .6);\n  \n  // Axes /////////////////////////////////////////////////////////////////////\n  \n  const xAxis = d3.axisBottom(xScaler)\n    .ticks(5, \".0%\")\n    .tickSize(0)\n    .tickPadding([10]);\n    \n  const yAxis = d3.axisLeft(yScaler)\n    .tickSize(0)\n    .tickPadding([10]);\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${ margin.left },${ dim.height - margin.bottom })`)\n    .style(\"font-size\", \".8rem\")\n    .call(xAxis)\n    .call(g => g.select(\".domain\").remove())\n    .call(g => g.append(\"text\")\n      .attr(\"x\", dim.width - margin.left)\n      .attr(\"y\", 0)\n      .attr(\"dx\", -20)\n      .attr(\"dy\", 30)\n      .attr(\"fill\", \"black\")\n      .attr(\"text-anchor\", \"end\")\n      .attr(\"alignment-baseline\", \"hanging\")\n      .style(\"font-size\", \".9rem\")\n      .text(\"Taxes evaded as a share of taxes owed\"))\n    .append(\"path\")\n      .attr(\"d\", d3.line()([[0, 0], [dim.width - margin.left - margin.right, 0]]))\n      .style(\"fill\", \"none\")\n      .style(\"stroke\", \"black\");\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${ margin.left },0)`)\n    .style(\"font-size\", \".7rem\")\n    .call(yAxis)\n    .call(g => g.select(\".domain\").remove())\n    .call(g => g.append(\"text\")\n      .attr(\"x\", -margin.left)\n      .attr(\"y\", 30)\n      .attr(\"dx\", 15)\n      .attr(\"fill\", \"black\")\n      .attr(\"text-anchor\", \"start\")\n      .style(\"font-size\", \".9rem\")\n      .text(\"Wealth pecentile\"));\n  \n  // Bars /////////////////////////////////////////////////////////////////////\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${ margin.left },0)`)\n    .selectAll(\"rect\")\n    .data(data)\n    .join(\"rect\")\n    .attr(\"class\", \"evasion-bars\")\n    .attr(\"x\", xScaler(0))\n    .attr(\"y\", (d, i) => yScaler(Y[i]))\n    .attr(\"width\", d => xScaler(d.evasion))\n    .attr(\"height\", yScaler.bandwidth())\n    .style(\"fill\", colors.blue)\n    .on(\"mousemove\", mousemoved)\n    .on(\"mouseleave\", mouseleft);\n  \n  function mousemoved(event, d) {\n    d3.select(this)\n      .transition().duration(50)\n      .style(\"fill\", colors.red);\n    tooltip\n      .style(\"display\", \"block\")\n      .style(\"left\", event.pageX + 18 + \"px\")\n      .style(\"top\", event.pageY + 18 + \"px\")\n      .text(d3.format(\".1%\")(d.evasion));\n    d3.select(event.target).style(\"cursor\", \"pointer\");\n  }\n  \n  function mouseleft(event) {\n    d3.selectAll(\"rect.evasion-bars\")\n      .transition().duration(200)\n      .style(\"fill\", colors.blue)\n    tooltip.style(\"display\", \"none\");\n    d3.select(event.target).style(\"cursor\", \"default\");\n  }\n  \n  // Annotation ///////////////////////////////////////////////////////////////\n\n  svg.append(\"g\")\n    .attr(\"transform\", \"translate(500, 200)\")\n    .append(\"text\")\n      .attr(\"text-anchor\", \"middle\")\n      .style(\"font-size\", \".9rem\")\n      .style(\"fill\", \"black\")\n      .attr(\"x\", 0).attr(\"y\", 0)\n    .append(\"tspan\")\n      .text(\"The top \")\n      .attr(\"x\", 0).attr(\"y\", 0)\n    .append(\"tspan\")\n      .text(\"0.01%\")\n      .style(\"font-weight\", \"bold\")\n    .append(\"tspan\")\n      .text(\" evade \")\n      .style(\"font-weight\", \"normal\")\n    .append(\"tspan\")\n      .text(\"26%\")\n      .style(\"font-weight\", \"bold\")\n      .style(\"fill\", colors.red)\n    .append(\"tspan\")\n      .text(\"of their tax obligations\")\n      .attr(\"x\", 0).attr(\"y\", 0).attr(\"dy\", 20)\n      .style(\"font-weight\", \"normal\")\n      .style(\"fill\", \"black\")\n  \n  svg.append(\"defs\")\n    .append(\"marker\")\n      .attr(\"id\", \"arrow-2\")\n      .attr(\"viewBox\", \"0 0 10 10\")\n      .attr(\"refX\", 8).attr(\"refY\", 5)\n      .attr(\"markerWidth\", 10)\n      .attr(\"markerHeight\", 10)\n      .attr(\"orient\", \"auto\")\n    .append(\"path\")\n      .attr(\"d\", \"M0,1 L9,5 L0,9\")\n      .style(\"stroke-linejoin\", \"round\")\n      .style(\"stroke\", \"black\")\n      .style(\"stroke-width\", 1)\n      .style(\"fill\", \"none\");\n    \n  svg.append(\"g\")\n    .append(\"path\")\n    .attr(\"d\", () => {\n      const path = d3.path();\n      path.moveTo(610, 200);\n      path.quadraticCurveTo(700, 170, 650, 90);\n      return path;\n    })\n    .style(\"stroke\", \"black\")\n    .style(\"stroke-width\", 1)\n    .style(\"fill\", \"none\")\n    .attr(\"marker-end\", \"url(#arrow-2)\");\n\n  // Chart sources ////////////////////////////////////////////////////////////\n\n  container.append(\"div\")\n    .attr(\"class\", \"ojs-source\")\n    .style(\"margin\", \".5rem 0\")\n    .style(\"line-height\", 1.25)\n    .html(`Source: A. Alstadsaeter, N. Johannesen, and G. Zucman, \"Tax Evasion and Inequality\", <i>American Economic Review</i>, vol. 109, no. 6 (2019).`);\n    \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\n{\n  const dim = ({ width: 790, height: 550 });\n  const margin = ({ top: 40, bottom: 60, right: 65, left: 65 });\n  \n  const data = taxrate;\n  const X = d3.map(data, d => d.group);\n  const Y = d3.map(data, d => d.rate);\n  const Z = d3.map(data, d => d.year);\n  const I = d3.range(X.length);\n  const xValues = [...new Set(X)];\n  const n = [...new Set(Z)].length - 1;\n\n  const xScaler = d3.scalePoint()\n    .domain(xValues)\n    .range([margin.left, dim.width - margin.right]);\n  \n  const yScaler = d3.scaleLinear()\n    .domain([0, .72])\n    .range([dim.height - margin.bottom, margin.top]);\n  \n  const line = d3.line()\n    .curve(d3.curveBasis)\n    .x(i => xScaler(X[i]))\n    .y(i => yScaler(Y[i]));\n\n  const container = d3.create(\"div\");\n  \n  // Chart title //////////////////////////////////////////////////////////////\n  \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-title\")\n    .html(`My yoke is easy, my burden is light`);\n    \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-subtitle\")\n    .style(\"margin-bottom\", \"1rem\")\n    .html(`Average tax rate by income group, United States, 1950–2018`);\n  \n  // Chart canvas /////////////////////////////////////////////////////////////\n\n  const svg = container.append(\"svg\")\n    .attr(\"width\", dim.width)\n    .attr(\"height\", dim.height)\n    .attr(\"viewBox\", [0, 0, dim.width, dim.height])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\")\n    .on(\"mouseenter\", mouseentered)\n    .on(\"mousemove\", mousemoved)\n    .on(\"mouseleave\", mouseleft);\n  \n  svg.append(\"g\")\n    .append(\"rect\")\n    .attr(\"x\", 0).attr(\"y\", 0)\n    .attr(\"width\", dim.width).attr(\"height\", dim.height)\n    .style(\"fill\", \"#DCE7EB\")\n    .style(\"opacity\", .6);\n  \n  // Axes /////////////////////////////////////////////////////////////////////\n  \n  const xAxis = svg.append(\"g\")\n    .attr(\"transform\", `translate(0,${ dim.height - margin.bottom })`)\n    .attr(\"text-anchor\", \"middle\")\n    .style(\"font-size\", \".8rem\")\n    .call(g => g.append(\"text\")\n      .text(\"10th\")\n      .attr(\"x\", xScaler(\"P10-20\"))\n      .attr(\"y\", 0).attr(\"dy\", 20))\n    .call(g => g.append(\"text\")\n      .text(\"50th\")\n      .attr(\"x\", xScaler(\"P50-60\"))\n      .attr(\"y\", 0).attr(\"dy\", 20))\n    .call(g => g.append(\"text\")\n      .text(\"90th\")\n      .attr(\"x\", xScaler(\"P90-95\"))\n      .attr(\"y\", 0).attr(\"dy\", 20))\n    .call(g => g.append(\"text\")\n      .text(\"99.99+\")\n      .attr(\"x\", xScaler(\"P99.99-top 400\"))\n      .attr(\"y\", 0).attr(\"dy\", 20))\n    .call(g => g.append(\"path\")\n      .attr(\"d\", d3.line()([[margin.left, 0], [dim.width - margin.right, 0]]))\n      .style(\"fill\", \"none\")\n      .style(\"stroke\", \"black\"))\n    .call(g => g.append(\"text\")\n      .attr(\"x\", margin.left + (dim.width - margin.left - margin.right) / 2)\n      .attr(\"y\", 0)\n      .attr(\"dy\", 30)\n      .attr(\"alignment-baseline\", \"hanging\")\n      .style(\"font-size\", \".9rem\")\n      .text(\"Income percentile\"));\n  \n  const yAxis = d3.axisLeft(yScaler)\n    .ticks(5, \".0%\")\n    .tickSize(0)\n    .tickPadding([20]);\n    \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${ margin.left },0)`)\n    .style(\"font-size\", \".8rem\")\n    .call(yAxis)\n    .call(g => g.select(\".domain\").remove())\n    .call(g => g.append(\"text\")\n      .attr(\"x\", -margin.left)\n      .attr(\"y\", 25)\n      .attr(\"dx\", 15)\n      .attr(\"fill\", \"black\")\n      .attr(\"text-anchor\", \"start\")\n      .style(\"font-size\", \".9rem\")\n      .text(\"Share of pre-tax income\"));\n      \n  // Lines and labels /////////////////////////////////////////////////////////\n  \n  const panel = svg.append(\"g\")\n\n  panel.append(\"g\")\n    .selectAll(\"path\")\n    .data(d3.group(I, i => Z[i]))\n    .join(\"path\")\n      .style(\"fill\", \"none\")\n      .style(\"stroke\", (d, i) => i === n ? colors.red : colors.blueLight)\n      .style(\"stroke-width\", 3)\n      .attr(\"d\", ([, I]) => line(I));\n    \n  panel.append(\"g\")\n    .selectAll(\"text\")\n    .data(data.filter(d => d.group === \"Top 400\"))\n    .join(\"text\")\n    .text(d => d.year)\n    .attr(\"x\", d => xScaler(d.group))\n    .attr(\"y\", d => yScaler(d.rate))\n    .attr(\"dx\", 10)\n    .attr(\"alignment-baseline\", \"middle\")\n    .style(\"fill\", d => d.year === 2018 ? colors.red : colors.blue)\n    .style(\"font-size\", d => d.year === 2018 ? \".8rem\" : \".7rem\")\n    .style(\"font-weight\", d => d.year === 2018 ? \"bold\" : \"normal\")\n  \n  // Hover labels /////////////////////////////////////////////////////////////\n  \n  const marker = svg.append(\"g\")\n    .attr(\"display\", \"none\");\n  \n  marker.append(\"path\")\n    .attr(\"d\", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]))\n    .style(\"stroke\", \"black\")\n    .style(\"stroke-width\", 1);\n  \n  function mouseentered() {\n    marker.attr(\"display\", null);\n    tooltip.style(\"display\", \"block\");\n  };\n    \n  function mousemoved(event) {\n    const [xm, ym] = d3.pointer(event);\n    const x = d3.least(xValues, x => Math.abs(xScaler(x) - xm));\n    const i = X.map((d, i) => d === x ? i : \"\").filter(String);\n    marker.attr(\"transform\", `translate(${ xScaler(x) }, 0)`);\n    tooltip\n      .style(\"left\", event.pageX + 18 + \"px\")\n      .style(\"top\", event.pageY + 18 + \"px\")\n      .html(`\n        <b>${x} tax rate</b><br>\n        1950: ${ d3.format(\",.1%\")(Y[i[0]]) }<br>\n        1980: ${ d3.format(\",.1%\")(Y[i[3]]) }<br>\n        2018: ${ d3.format(\",.1%\")(Y[i[n]]) }\n      `);\n  };\n  \n  function mouseleft() {\n    marker.attr(\"display\", \"none\");\n    tooltip.style(\"display\", \"none\");\n  };\n  \n  // Annotation ///////////////////////////////////////////////////////////////\n\n  svg.append(\"g\")\n    .attr(\"transform\", \"translate(410, 200)\")\n    .append(\"text\")\n      .attr(\"text-anchor\", \"middle\")\n      .style(\"font-size\", \".9rem\")\n      .style(\"fill\", \"black\")\n      .attr(\"x\", 0).attr(\"y\", 0)\n    .append(\"tspan\")\n      .text(\"The ultra wealthy have seen an\")\n      .attr(\"x\", 0).attr(\"y\", 0)\n    .append(\"tspan\")\n      .text(\"apparent fall in their tax burden\")\n      .attr(\"x\", 0).attr(\"y\", 0).attr(\"dy\", 20)\n    .append(\"tspan\")\n      .text(\"from \")\n      .attr(\"x\", 0).attr(\"y\", 0).attr(\"dy\", 40)\n    .append(\"tspan\")\n      .text(\"70%\")\n      .style(\"font-weight\", \"bold\")\n    .append(\"tspan\")\n      .text(\" in 1950 to \")\n      .style(\"font-weight\", \"normal\")\n      .style(\"fill\", \"black\")\n    .append(\"tspan\")\n      .text(\"23%\")\n      .style(\"font-weight\", \"bold\")\n      .style(\"fill\", colors.red)\n    .append(\"tspan\")\n      .text(\" in 2018\")\n      .style(\"font-weight\", \"normal\")\n      .style(\"fill\", \"black\")\n  \n  svg.append(\"defs\")\n    .append(\"marker\")\n      .attr(\"id\", \"arrow-3\")\n      .attr(\"viewBox\", \"0 0 10 10\")\n      .attr(\"refX\", 8).attr(\"refY\", 5)\n      .attr(\"markerWidth\", 10)\n      .attr(\"markerHeight\", 10)\n      .attr(\"orient\", \"auto\")\n    .append(\"path\")\n      .attr(\"d\", \"M0,1 L9,5 L0,9\")\n      .style(\"stroke-linejoin\", \"round\")\n      .style(\"stroke\", \"black\")\n      .style(\"stroke-width\", 1)\n      .style(\"fill\", \"none\");\n  \n  svg.append(\"g\")\n    .call(g => g.append(\"path\")\n      .attr(\"d\", () => {\n        const path = d3.path();\n        path.moveTo(460, 263);\n        path.quadraticCurveTo(500, 450, 700, 360);\n        return path;\n    }))\n    .call(g => g.append(\"path\")\n      .attr(\"d\", () => {\n        const path = d3.path();\n        path.moveTo(470, 172);\n        path.quadraticCurveTo(550, 0, 685, 40);\n        return path;\n    }))\n    .style(\"stroke\", \"black\")\n    .style(\"stroke-width\", 1)\n    .style(\"fill\", \"none\")\n    .attr(\"marker-end\", \"url(#arrow-3)\");\n    \n  // Chart sources ////////////////////////////////////////////////////////////\n\n  container.append(\"div\")\n    .attr(\"class\", \"ojs-source\")\n    .style(\"margin\", \".5rem 0\")\n    .style(\"line-height\", 1.25)\n    .html(`Source: E. Saez and G. Zucman, <i>The Triumph of Injustice</i>, 2019.`);\n    \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"\ninequality = FileAttachment(\"../../datasets/zucman/inequality.csv\").csv({ typed: true });\nevasion = FileAttachment(\"../../datasets/zucman/evasion.csv\").csv({ typed: true });\ntaxrate = FileAttachment(\"../../datasets/zucman/taxrate.csv\").csv({ typed: true });\n\ncolors = ({ blue: \"#4889ab\", blueLight: \"#c0d7df\", red: \"#C85B89\" })\n\ntooltip = d3.select(\"body\")\n  .append(\"div\")\n  .attr(\"class\", \"toolTip\")\n  .style(\"display\", \"none\")\n  .style(\"position\", \"absolute\")\n  .style(\"z-index\", 999)\n  .style(\"width\", 100)\n  .style(\"height\", \"auto\")\n  .style(\"background\", \"#f7f7f7\")\n  .style(\"border\", \"1px solid #cecece\")\n  .style(\"opacity\", .9)\n  .style(\"padding\", \".2em .45em\")\n  .style(\"font-size\", \".85rem\");\n"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxue1xuICBjb25zdCBkaW0gPSAoeyB3aWR0aDogNzkwLCBoZWlnaHQ6IDU1MCB9KTtcbiAgY29uc3QgbWFyZ2luID0gKHsgdG9wOiA2MCwgYm90dG9tOiA0MCwgcmlnaHQ6IDUwLCBsZWZ0OiA1MCB9KTtcbiAgXG4gIGNvbnN0IGRhdGEgPSBpbmVxdWFsaXR5O1xuICBjb25zdCBYID0gZDMubWFwKGRhdGEsIGQgPT4gZC55ZWFyKTtcbiAgY29uc3QgWSA9IGQzLm1hcChkYXRhLCBkID0+IGQuc2hhcmUpO1xuICBjb25zdCBaID0gZDMubWFwKGRhdGEsIGQgPT4gZC5ncm91cCk7XG4gIGNvbnN0IEkgPSBkMy5yYW5nZShYLmxlbmd0aCk7XG4gIGNvbnN0IHhWYWx1ZXMgPSBbLi4ubmV3IFNldChYKV07XG5cbiAgY29uc3QgeFNjYWxlciA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFsxOTEyLCAyMDMwXSlcbiAgICAucmFuZ2UoW21hcmdpbi5sZWZ0LCBkaW0ud2lkdGggLSBtYXJnaW4ucmlnaHRdKTtcbiAgXG4gIGNvbnN0IHlTY2FsZXIgPSBkMy5zY2FsZUxpbmVhcigpXG4gICAgLmRvbWFpbihbMCwgLjM1XSlcbiAgICAucmFuZ2UoW2RpbS5oZWlnaHQgLSBtYXJnaW4uYm90dG9tLCBtYXJnaW4udG9wXSk7XG4gIFxuICBjb25zdCBsaW5lID0gZDMubGluZSgpXG4gICAgLmN1cnZlKGQzLmN1cnZlQmFzaXMpXG4gICAgLngoaSA9PiB4U2NhbGVyKFhbaV0pKVxuICAgIC55KGkgPT4geVNjYWxlcihZW2ldKSk7XG4gIFxuICBjb25zdCBjb250YWluZXIgPSBkMy5jcmVhdGUoXCJkaXZcIik7XG4gIFxuICAvLyBDaGFydCB0aXRsZSAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICBcbiAgY29udGFpbmVyLmFwcGVuZChcImRpdlwiKVxuICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJvanMtdGl0bGVcIilcbiAgICAuaHRtbChgVG8gdGhvc2Ugd2hvIGhhdmUsIG1vcmUgc2hhbGwgYmUgZ2l2ZW5gKTtcbiAgICBcbiAgY29udGFpbmVyLmFwcGVuZChcImRpdlwiKVxuICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJvanMtc3VidGl0bGVcIilcbiAgICAuc3R5bGUoXCJtYXJnaW4tYm90dG9tXCIsIFwiMXJlbVwiKVxuICAgIC5odG1sKGBEaXN0cmlidXRpb24gb2Ygd2VhbHRoIGJ5IHBlcmNlbnRpbGUsIFVuaXRlZCBTdGF0ZXMsIDE5MTfigJMyMDE5YCk7XG4gIFxuICAvLyBDaGFydCBjYW52YXMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIGNvbnN0IHN2ZyA9IGNvbnRhaW5lci5hcHBlbmQoXCJzdmdcIilcbiAgICAuYXR0cihcIndpZHRoXCIsIGRpbS53aWR0aClcbiAgICAuYXR0cihcImhlaWdodFwiLCBkaW0uaGVpZ2h0KVxuICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgZGltLndpZHRoLCBkaW0uaGVpZ2h0XSlcbiAgICAuYXR0cihcInN0eWxlXCIsIFwibWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGhlaWdodDogaW50cmluc2ljO1wiKVxuICAgIC5vbihcIm1vdXNlZW50ZXJcIiwgbW91c2VlbnRlcmVkKVxuICAgIC5vbihcIm1vdXNlbW92ZVwiLCBtb3VzZW1vdmVkKVxuICAgIC5vbihcIm1vdXNlbGVhdmVcIiwgbW91c2VsZWZ0KTtcbiAgXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmFwcGVuZChcInJlY3RcIilcbiAgICAuYXR0cihcInhcIiwgMCkuYXR0cihcInlcIiwgMClcbiAgICAuYXR0cihcIndpZHRoXCIsIGRpbS53aWR0aCkuYXR0cihcImhlaWdodFwiLCBkaW0uaGVpZ2h0KVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCIjRENFN0VCXCIpXG4gICAgLnN0eWxlKFwib3BhY2l0eVwiLCAuNik7XG4gIFxuICAvLyBBeGVzIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICBcbiAgY29uc3QgeEF4aXMgPSBkMy5heGlzQm90dG9tKHhTY2FsZXIpXG4gICAgLnRpY2tWYWx1ZXMoQXJyYXkuZnJvbSh7bGVuZ3RoOiAxMX0sIChfLCBpKSA9PiAxOTIwICsgaSoxMCkpXG4gICAgLnRpY2tGb3JtYXQoZDMuZm9ybWF0KFwiLjBmXCIpKVxuICAgIC50aWNrU2l6ZSgwKVxuICAgIC50aWNrUGFkZGluZyhbMTBdKTtcbiAgICBcbiAgY29uc3QgeUF4aXMgPSBkMy5heGlzTGVmdCh5U2NhbGVyKVxuICAgIC50aWNrcyg1LCBcIi4wJVwiKVxuICAgIC50aWNrU2l6ZSgwKVxuICAgIC50aWNrUGFkZGluZyhbMTBdKTs7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwkeyBkaW0uaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSB9KWApXG4gICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjhyZW1cIilcbiAgICAuY2FsbCh4QXhpcylcbiAgICAuY2FsbChnID0+IGcuc2VsZWN0KFwiLmRvbWFpblwiKS5yZW1vdmUoKSlcbiAgICAuYXBwZW5kKFwicGF0aFwiKVxuICAgIC5hdHRyKFwiZFwiLCBkMy5saW5lKCkoW1ttYXJnaW4ubGVmdCwgMF0sIFtkaW0ud2lkdGggLSBtYXJnaW4ucmlnaHQsIDBdXSkpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAuc3R5bGUoXCJzdHJva2VcIiwgXCJibGFja1wiKTtcbiAgXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgkeyBtYXJnaW4ubGVmdCB9LDApYClcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuOHJlbVwiKVxuICAgIC5jYWxsKHlBeGlzKVxuICAgIC5jYWxsKGcgPT4gZy5zZWxlY3QoXCIuZG9tYWluXCIpLnJlbW92ZSgpKVxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAuYXR0cihcInhcIiwgLW1hcmdpbi5sZWZ0KVxuICAgICAgLmF0dHIoXCJ5XCIsIDI1KVxuICAgICAgLmF0dHIoXCJkeFwiLCAxMClcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcImJsYWNrXCIpXG4gICAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwic3RhcnRcIilcbiAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi45cmVtXCIpXG4gICAgICAudGV4dChcIlNoYXJlIGluIHRvdGFsIHdlYWx0aFwiKSk7XG4gIFxuICAvLyBMaW5lcyBhbmQgbGFiZWxzIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICBcbiAgY29uc3QgcGFuZWwgPSBzdmcuYXBwZW5kKFwiZ1wiKVxuXG4gIHBhbmVsLmFwcGVuZChcImdcIilcbiAgICAuc2VsZWN0QWxsKFwicGF0aFwiKVxuICAgIC5kYXRhKGQzLmdyb3VwKEksIGkgPT4gWltpXSkpXG4gICAgLmpvaW4oXCJwYXRoXCIpXG4gICAgICAuc3R5bGUoXCJmaWxsXCIsIFwibm9uZVwiKVxuICAgICAgLnN0eWxlKFwic3Ryb2tlXCIsIChkLCBpKSA9PiBpID09PSAwID8gY29sb3JzLmJsdWUgOiBjb2xvcnMucmVkKVxuICAgICAgLnN0eWxlKFwic3Ryb2tlLXdpZHRoXCIsIDMpXG4gICAgICAuYXR0cihcImRcIiwgKFssIEldKSA9PiBsaW5lKEkpKTtcbiAgXG4gIHBhbmVsLmFwcGVuZChcImdcIilcbiAgICAuYXBwZW5kKFwidGV4dFwiKVxuICAgIC5hdHRyKFwieFwiLCB4U2NhbGVyKDIwMjApKVxuICAgIC5hdHRyKFwieVwiLCB5U2NhbGVyKC4yMjcpKVxuICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJzdGFydFwiKVxuICAgIC5hdHRyKFwiYWxpZ25tZW50LWJhc2VsaW5lXCIsIFwibWlkZGxlXCIpXG4gICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjlyZW1cIilcbiAgICAuc3R5bGUoXCJmaWxsXCIsIGNvbG9ycy5ibHVlKVxuICAgIC50ZXh0KFwiQm90dG9tIDkwJVwiKVxuICAgIFxuICBwYW5lbC5hcHBlbmQoXCJnXCIpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInhcIiwgeFNjYWxlcigyMDIwKSlcbiAgICAuYXR0cihcInlcIiwgeVNjYWxlciguMTkyKSlcbiAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwic3RhcnRcIilcbiAgICAuYXR0cihcImFsaWdubWVudC1iYXNlbGluZVwiLCBcIm1pZGRsZVwiKVxuICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi45cmVtXCIpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvcnMucmVkKVxuICAgIC50ZXh0KFwiVG9wIDAuMSVcIilcbiAgXG4gIC8vIEhvdmVyIGxhYmVscyAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG4gIFxuICBjb25zdCBtYXJrZXIgPSBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwiZGlzcGxheVwiLCBcIm5vbmVcIilcbiAgXG4gIG1hcmtlci5hcHBlbmQoXCJwYXRoXCIpXG4gICAgLmF0dHIoXCJkXCIsIGQzLmxpbmUoKShbWzAsIG1hcmdpbi50b3BdLCBbMCwgZGltLmhlaWdodCAtIG1hcmdpbi5ib3R0b21dXSkpXG4gICAgLnN0eWxlKFwic3Ryb2tlXCIsIFwiYmxhY2tcIilcbiAgICAuc3R5bGUoXCJzdHJva2Utd2lkdGhcIiwgMSlcbiAgXG4gIGZ1bmN0aW9uIG1vdXNlZW50ZXJlZCgpIHtcbiAgICBtYXJrZXIuYXR0cihcImRpc3BsYXlcIiwgbnVsbCk7XG4gICAgdG9vbHRpcC5zdHlsZShcImRpc3BsYXlcIiwgXCJibG9ja1wiKTtcbiAgfVxuICAgIFxuICBmdW5jdGlvbiBtb3VzZW1vdmVkKGV2ZW50KSB7XG4gICAgY29uc3QgW3htLCB5bV0gPSBkMy5wb2ludGVyKGV2ZW50KTtcbiAgICBjb25zdCB4ID0gZDMubGVhc3QoeFZhbHVlcywgeCA9PiBNYXRoLmFicyh4U2NhbGVyKHgpIC0geG0pKTtcbiAgICBjb25zdCBpID0gWC5tYXAoKGQsIGkpID0+IGQgPT09IHggPyBpIDogXCJcIikuZmlsdGVyKFN0cmluZyk7XG4gICAgbWFya2VyLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgkeyB4U2NhbGVyKHgpIH0sIDApYCk7XG4gICAgdG9vbHRpcFxuICAgICAgLnN0eWxlKFwibGVmdFwiLCBldmVudC5wYWdlWCArIDE4ICsgXCJweFwiKVxuICAgICAgLnN0eWxlKFwidG9wXCIsIGV2ZW50LnBhZ2VZICsgMTggKyBcInB4XCIpXG4gICAgICAuaHRtbChgPGI+JHt4fTwvYj48YnI+Qm90dG9tIDkwJTogJHsgZDMuZm9ybWF0KFwiLC4xJVwiKShZW2lbMF1dKSB9PGJyPlRvcCAwLjElOiAkeyBkMy5mb3JtYXQoXCIsLjElXCIpKFlbaVsxXV0pIH1gKTtcbiAgfVxuICBcbiAgZnVuY3Rpb24gbW91c2VsZWZ0KCkge1xuICAgIG1hcmtlci5hdHRyKFwiZGlzcGxheVwiLCBcIm5vbmVcIik7XG4gICAgdG9vbHRpcC5zdHlsZShcImRpc3BsYXlcIiwgXCJub25lXCIpO1xuICB9XG4gIFxuICAvLyBBbm5vdGF0aW9uIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgXCJ0cmFuc2xhdGUoNjQwLCAzNjApXCIpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIilcbiAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi45cmVtXCIpXG4gICAgICAuc3R5bGUoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAgIC5hdHRyKFwieFwiLCAwKS5hdHRyKFwieVwiLCAwKVxuICAgIC5hcHBlbmQoXCJ0c3BhblwiKVxuICAgICAgLnRleHQoXCJXZWFsdGggYmVnYW4gdG9cIilcbiAgICAgIC5hdHRyKFwieFwiLCAwKS5hdHRyKFwieVwiLCAwKVxuICAgIC5hcHBlbmQoXCJ0c3BhblwiKVxuICAgICAgLnRleHQoXCJjb25jZW50cmF0ZSBpbiB0aGUgMTk4MHNcIilcbiAgICAgIC5hdHRyKFwieFwiLCAwKS5hdHRyKFwieVwiLCAwKS5hdHRyKFwiZHlcIiwgMjApXG4gIFxuICBzdmcuYXBwZW5kKFwiZGVmc1wiKVxuICAgIC5hcHBlbmQoXCJtYXJrZXJcIilcbiAgICAgIC5hdHRyKFwiaWRcIiwgXCJhcnJvdy0xXCIpXG4gICAgICAuYXR0cihcInZpZXdCb3hcIiwgXCIwIDAgMTAgMTBcIilcbiAgICAgIC5hdHRyKFwicmVmWFwiLCA4KS5hdHRyKFwicmVmWVwiLCA1KVxuICAgICAgLmF0dHIoXCJtYXJrZXJXaWR0aFwiLCAxMClcbiAgICAgIC5hdHRyKFwibWFya2VySGVpZ2h0XCIsIDEwKVxuICAgICAgLmF0dHIoXCJvcmllbnRcIiwgXCJhdXRvXCIpXG4gICAgLmFwcGVuZChcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiZFwiLCBcIk0wLDEgTDksNSBMMCw5XCIpXG4gICAgICAuc3R5bGUoXCJzdHJva2UtbGluZWpvaW5cIiwgXCJyb3VuZFwiKVxuICAgICAgLnN0eWxlKFwic3Ryb2tlXCIsIFwiYmxhY2tcIilcbiAgICAgIC5zdHlsZShcInN0cm9rZS13aWR0aFwiLCAxKVxuICAgICAgLnN0eWxlKFwiZmlsbFwiLCBcIm5vbmVcIik7XG4gICAgXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmFwcGVuZChcInBhdGhcIilcbiAgICAuYXR0cihcImRcIiwgKCkgPT4ge1xuICAgICAgY29uc3QgcGF0aCA9IGQzLnBhdGgoKTtcbiAgICAgIHBhdGgubW92ZVRvKDYyMCwgNDAwKTtcbiAgICAgIHBhdGgucXVhZHJhdGljQ3VydmVUbyg1NTAsIDUwMCwgNDgwLCA0MTApO1xuICAgICAgcmV0dXJuIHBhdGg7XG4gICAgfSlcbiAgICAuc3R5bGUoXCJzdHJva2VcIiwgXCJibGFja1wiKVxuICAgIC5zdHlsZShcInN0cm9rZS13aWR0aFwiLCAxKVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpXG4gICAgLmF0dHIoXCJtYXJrZXItZW5kXCIsIFwidXJsKCNhcnJvdy0xKVwiKTtcbiAgXG4gIC8vIENoYXJ0IHNvdXJjZXMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG5cbiAgY29udGFpbmVyLmFwcGVuZChcImRpdlwiKVxuICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJvanMtc291cmNlXCIpXG4gICAgLnN0eWxlKFwibWFyZ2luXCIsIFwiLjVyZW0gMFwiKVxuICAgIC5zdHlsZShcImxpbmUtaGVpZ2h0XCIsIDEuMjUpXG4gICAgLmh0bWwoYFNvdXJjZTogRS4gU2FleiBhbmQgRy4gWnVjbWFuLCBcIlRoZSBSaXNlIG9mIEluY29tZSBhbmQgV2VhbHRoIEluZXF1YWxpdHkgaW4gQW1lcmljYTogRXZpZGVuY2UgZnJvbSBEaXN0cmlidXRpb25hbCBNYWNyb2Vjb25vbWljIEFjY291bnRzXCIsIDxpPkpvdXJuYWwgb2YgRWNvbm9taWMgUGVyc3BlY3RpdmVzPC9pPiwgdm9sLiAzNCwgbm8uIDQgKDIwMjApLmApO1xuICAgIFxuICByZXR1cm4gY29udGFpbmVyLm5vZGUoKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxue1xuICBjb25zdCBkaW0gPSAoeyB3aWR0aDogNzkwLCBoZWlnaHQ6IDU1MCB9KTtcbiAgY29uc3QgbWFyZ2luID0gKHsgdG9wOiA0MCwgYm90dG9tOiA2MCwgcmlnaHQ6IDUwLCBsZWZ0OiAxMDUgfSk7XG4gIFxuICBjb25zdCBkYXRhID0gZXZhc2lvbjtcbiAgY29uc3QgWCA9IGQzLm1hcChkYXRhLCBkID0+IGQuZXZhc2lvbik7XG4gIGNvbnN0IFkgPSBkMy5tYXAoZGF0YSwgZCA9PiBkLnBlcmNlbnRpbGUpO1xuICBcbiAgY29uc3QgeFNjYWxlciA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFswLCAuMzBdKVxuICAgIC5yYW5nZShbMCwgZGltLndpZHRoIC0gbWFyZ2luLmxlZnQgLSBtYXJnaW4ucmlnaHRdKVxuICAgIFxuICBjb25zdCB5U2NhbGVyID0gZDMuc2NhbGVCYW5kKClcbiAgICAuZG9tYWluKFkpXG4gICAgLnJhbmdlKFtkaW0uaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSwgbWFyZ2luLnRvcF0pXG4gICAgLnBhZGRpbmcoLjI1KTtcblxuICBjb25zdCBjb250YWluZXIgPSBkMy5jcmVhdGUoXCJkaXZcIik7XG4gIFxuICAvLyBDaGFydCB0aXRsZSAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICBcbiAgY29udGFpbmVyLmFwcGVuZChcImRpdlwiKVxuICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJvanMtdGl0bGVcIilcbiAgICAuaHRtbChgUmVuZGVyIHVudG8gQ2Vhc2VyLi4uYCk7XG4gICAgXG4gIGNvbnRhaW5lci5hcHBlbmQoXCJkaXZcIilcbiAgICAuYXR0cihcImNsYXNzXCIsIFwib2pzLXN1YnRpdGxlXCIpXG4gICAgLnN0eWxlKFwibWFyZ2luLWJvdHRvbVwiLCBcIjFyZW1cIilcbiAgICAuaHRtbChgVGF4ZXMgZXZhZGVkIGFzIGEgc2hhcmUgb2YgdGF4ZXMgb3dlZCBieSB3ZWFsdGggcGVyY2VudGlsZSwgRGVubWFyaywgTm9yd2F5LCBhbmQgU3dlZGVuYCk7XG4gIFxuICAvLyBDaGFydCBjYW52YXMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIGNvbnN0IHN2ZyA9IGNvbnRhaW5lci5hcHBlbmQoXCJzdmdcIilcbiAgICAuYXR0cihcIndpZHRoXCIsIGRpbS53aWR0aClcbiAgICAuYXR0cihcImhlaWdodFwiLCBkaW0uaGVpZ2h0KVxuICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgZGltLndpZHRoLCBkaW0uaGVpZ2h0XSlcbiAgICAuYXR0cihcInN0eWxlXCIsIFwibWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGhlaWdodDogaW50cmluc2ljO1wiKVxuICBcbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAuYXBwZW5kKFwicmVjdFwiKVxuICAgIC5hdHRyKFwieFwiLCAwKS5hdHRyKFwieVwiLCAwKVxuICAgIC5hdHRyKFwid2lkdGhcIiwgZGltLndpZHRoKS5hdHRyKFwiaGVpZ2h0XCIsIGRpbS5oZWlnaHQpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBcIiNEQ0U3RUJcIilcbiAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIC42KTtcbiAgXG4gIC8vIEF4ZXMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG4gIFxuICBjb25zdCB4QXhpcyA9IGQzLmF4aXNCb3R0b20oeFNjYWxlcilcbiAgICAudGlja3MoNSwgXCIuMCVcIilcbiAgICAudGlja1NpemUoMClcbiAgICAudGlja1BhZGRpbmcoWzEwXSk7XG4gICAgXG4gIGNvbnN0IHlBeGlzID0gZDMuYXhpc0xlZnQoeVNjYWxlcilcbiAgICAudGlja1NpemUoMClcbiAgICAudGlja1BhZGRpbmcoWzEwXSk7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHsgbWFyZ2luLmxlZnQgfSwkeyBkaW0uaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSB9KWApXG4gICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjhyZW1cIilcbiAgICAuY2FsbCh4QXhpcylcbiAgICAuY2FsbChnID0+IGcuc2VsZWN0KFwiLmRvbWFpblwiKS5yZW1vdmUoKSlcbiAgICAuY2FsbChnID0+IGcuYXBwZW5kKFwidGV4dFwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIGRpbS53aWR0aCAtIG1hcmdpbi5sZWZ0KVxuICAgICAgLmF0dHIoXCJ5XCIsIDApXG4gICAgICAuYXR0cihcImR4XCIsIC0yMClcbiAgICAgIC5hdHRyKFwiZHlcIiwgMzApXG4gICAgICAuYXR0cihcImZpbGxcIiwgXCJibGFja1wiKVxuICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcImVuZFwiKVxuICAgICAgLmF0dHIoXCJhbGlnbm1lbnQtYmFzZWxpbmVcIiwgXCJoYW5naW5nXCIpXG4gICAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuOXJlbVwiKVxuICAgICAgLnRleHQoXCJUYXhlcyBldmFkZWQgYXMgYSBzaGFyZSBvZiB0YXhlcyBvd2VkXCIpKVxuICAgIC5hcHBlbmQoXCJwYXRoXCIpXG4gICAgICAuYXR0cihcImRcIiwgZDMubGluZSgpKFtbMCwgMF0sIFtkaW0ud2lkdGggLSBtYXJnaW4ubGVmdCAtIG1hcmdpbi5yaWdodCwgMF1dKSlcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpXG4gICAgICAuc3R5bGUoXCJzdHJva2VcIiwgXCJibGFja1wiKTtcbiAgXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgkeyBtYXJnaW4ubGVmdCB9LDApYClcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuN3JlbVwiKVxuICAgIC5jYWxsKHlBeGlzKVxuICAgIC5jYWxsKGcgPT4gZy5zZWxlY3QoXCIuZG9tYWluXCIpLnJlbW92ZSgpKVxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAuYXR0cihcInhcIiwgLW1hcmdpbi5sZWZ0KVxuICAgICAgLmF0dHIoXCJ5XCIsIDMwKVxuICAgICAgLmF0dHIoXCJkeFwiLCAxNSlcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcImJsYWNrXCIpXG4gICAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwic3RhcnRcIilcbiAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi45cmVtXCIpXG4gICAgICAudGV4dChcIldlYWx0aCBwZWNlbnRpbGVcIikpO1xuICBcbiAgLy8gQmFycyAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cbiAgXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgkeyBtYXJnaW4ubGVmdCB9LDApYClcbiAgICAuc2VsZWN0QWxsKFwicmVjdFwiKVxuICAgIC5kYXRhKGRhdGEpXG4gICAgLmpvaW4oXCJyZWN0XCIpXG4gICAgLmF0dHIoXCJjbGFzc1wiLCBcImV2YXNpb24tYmFyc1wiKVxuICAgIC5hdHRyKFwieFwiLCB4U2NhbGVyKDApKVxuICAgIC5hdHRyKFwieVwiLCAoZCwgaSkgPT4geVNjYWxlcihZW2ldKSlcbiAgICAuYXR0cihcIndpZHRoXCIsIGQgPT4geFNjYWxlcihkLmV2YXNpb24pKVxuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIHlTY2FsZXIuYmFuZHdpZHRoKCkpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvcnMuYmx1ZSlcbiAgICAub24oXCJtb3VzZW1vdmVcIiwgbW91c2Vtb3ZlZClcbiAgICAub24oXCJtb3VzZWxlYXZlXCIsIG1vdXNlbGVmdCk7XG4gIFxuICBmdW5jdGlvbiBtb3VzZW1vdmVkKGV2ZW50LCBkKSB7XG4gICAgZDMuc2VsZWN0KHRoaXMpXG4gICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDUwKVxuICAgICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvcnMucmVkKTtcbiAgICB0b29sdGlwXG4gICAgICAuc3R5bGUoXCJkaXNwbGF5XCIsIFwiYmxvY2tcIilcbiAgICAgIC5zdHlsZShcImxlZnRcIiwgZXZlbnQucGFnZVggKyAxOCArIFwicHhcIilcbiAgICAgIC5zdHlsZShcInRvcFwiLCBldmVudC5wYWdlWSArIDE4ICsgXCJweFwiKVxuICAgICAgLnRleHQoZDMuZm9ybWF0KFwiLjElXCIpKGQuZXZhc2lvbikpO1xuICAgIGQzLnNlbGVjdChldmVudC50YXJnZXQpLnN0eWxlKFwiY3Vyc29yXCIsIFwicG9pbnRlclwiKTtcbiAgfVxuICBcbiAgZnVuY3Rpb24gbW91c2VsZWZ0KGV2ZW50KSB7XG4gICAgZDMuc2VsZWN0QWxsKFwicmVjdC5ldmFzaW9uLWJhcnNcIilcbiAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oMjAwKVxuICAgICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvcnMuYmx1ZSlcbiAgICB0b29sdGlwLnN0eWxlKFwiZGlzcGxheVwiLCBcIm5vbmVcIik7XG4gICAgZDMuc2VsZWN0KGV2ZW50LnRhcmdldCkuc3R5bGUoXCJjdXJzb3JcIiwgXCJkZWZhdWx0XCIpO1xuICB9XG4gIFxuICAvLyBBbm5vdGF0aW9uIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgXCJ0cmFuc2xhdGUoNTAwLCAyMDApXCIpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIilcbiAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi45cmVtXCIpXG4gICAgICAuc3R5bGUoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAgIC5hdHRyKFwieFwiLCAwKS5hdHRyKFwieVwiLCAwKVxuICAgIC5hcHBlbmQoXCJ0c3BhblwiKVxuICAgICAgLnRleHQoXCJUaGUgdG9wIFwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIDApLmF0dHIoXCJ5XCIsIDApXG4gICAgLmFwcGVuZChcInRzcGFuXCIpXG4gICAgICAudGV4dChcIjAuMDElXCIpXG4gICAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcImJvbGRcIilcbiAgICAuYXBwZW5kKFwidHNwYW5cIilcbiAgICAgIC50ZXh0KFwiIGV2YWRlIFwiKVxuICAgICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJub3JtYWxcIilcbiAgICAuYXBwZW5kKFwidHNwYW5cIilcbiAgICAgIC50ZXh0KFwiMjYlXCIpXG4gICAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcImJvbGRcIilcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgY29sb3JzLnJlZClcbiAgICAuYXBwZW5kKFwidHNwYW5cIilcbiAgICAgIC50ZXh0KFwib2YgdGhlaXIgdGF4IG9ibGlnYXRpb25zXCIpXG4gICAgICAuYXR0cihcInhcIiwgMCkuYXR0cihcInlcIiwgMCkuYXR0cihcImR5XCIsIDIwKVxuICAgICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJub3JtYWxcIilcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJibGFja1wiKVxuICBcbiAgc3ZnLmFwcGVuZChcImRlZnNcIilcbiAgICAuYXBwZW5kKFwibWFya2VyXCIpXG4gICAgICAuYXR0cihcImlkXCIsIFwiYXJyb3ctMlwiKVxuICAgICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFwiMCAwIDEwIDEwXCIpXG4gICAgICAuYXR0cihcInJlZlhcIiwgOCkuYXR0cihcInJlZllcIiwgNSlcbiAgICAgIC5hdHRyKFwibWFya2VyV2lkdGhcIiwgMTApXG4gICAgICAuYXR0cihcIm1hcmtlckhlaWdodFwiLCAxMClcbiAgICAgIC5hdHRyKFwib3JpZW50XCIsIFwiYXV0b1wiKVxuICAgIC5hcHBlbmQoXCJwYXRoXCIpXG4gICAgICAuYXR0cihcImRcIiwgXCJNMCwxIEw5LDUgTDAsOVwiKVxuICAgICAgLnN0eWxlKFwic3Ryb2tlLWxpbmVqb2luXCIsIFwicm91bmRcIilcbiAgICAgIC5zdHlsZShcInN0cm9rZVwiLCBcImJsYWNrXCIpXG4gICAgICAuc3R5bGUoXCJzdHJva2Utd2lkdGhcIiwgMSlcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpO1xuICAgIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hcHBlbmQoXCJwYXRoXCIpXG4gICAgLmF0dHIoXCJkXCIsICgpID0+IHtcbiAgICAgIGNvbnN0IHBhdGggPSBkMy5wYXRoKCk7XG4gICAgICBwYXRoLm1vdmVUbyg2MTAsIDIwMCk7XG4gICAgICBwYXRoLnF1YWRyYXRpY0N1cnZlVG8oNzAwLCAxNzAsIDY1MCwgOTApO1xuICAgICAgcmV0dXJuIHBhdGg7XG4gICAgfSlcbiAgICAuc3R5bGUoXCJzdHJva2VcIiwgXCJibGFja1wiKVxuICAgIC5zdHlsZShcInN0cm9rZS13aWR0aFwiLCAxKVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpXG4gICAgLmF0dHIoXCJtYXJrZXItZW5kXCIsIFwidXJsKCNhcnJvdy0yKVwiKTtcblxuICAvLyBDaGFydCBzb3VyY2VzIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIGNvbnRhaW5lci5hcHBlbmQoXCJkaXZcIilcbiAgICAuYXR0cihcImNsYXNzXCIsIFwib2pzLXNvdXJjZVwiKVxuICAgIC5zdHlsZShcIm1hcmdpblwiLCBcIi41cmVtIDBcIilcbiAgICAuc3R5bGUoXCJsaW5lLWhlaWdodFwiLCAxLjI1KVxuICAgIC5odG1sKGBTb3VyY2U6IEEuIEFsc3RhZHNhZXRlciwgTi4gSm9oYW5uZXNlbiwgYW5kIEcuIFp1Y21hbiwgXCJUYXggRXZhc2lvbiBhbmQgSW5lcXVhbGl0eVwiLCA8aT5BbWVyaWNhbiBFY29ub21pYyBSZXZpZXc8L2k+LCB2b2wuIDEwOSwgbm8uIDYgKDIwMTkpLmApO1xuICAgIFxuICByZXR1cm4gY29udGFpbmVyLm5vZGUoKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxue1xuICBjb25zdCBkaW0gPSAoeyB3aWR0aDogNzkwLCBoZWlnaHQ6IDU1MCB9KTtcbiAgY29uc3QgbWFyZ2luID0gKHsgdG9wOiA0MCwgYm90dG9tOiA2MCwgcmlnaHQ6IDY1LCBsZWZ0OiA2NSB9KTtcbiAgXG4gIGNvbnN0IGRhdGEgPSB0YXhyYXRlO1xuICBjb25zdCBYID0gZDMubWFwKGRhdGEsIGQgPT4gZC5ncm91cCk7XG4gIGNvbnN0IFkgPSBkMy5tYXAoZGF0YSwgZCA9PiBkLnJhdGUpO1xuICBjb25zdCBaID0gZDMubWFwKGRhdGEsIGQgPT4gZC55ZWFyKTtcbiAgY29uc3QgSSA9IGQzLnJhbmdlKFgubGVuZ3RoKTtcbiAgY29uc3QgeFZhbHVlcyA9IFsuLi5uZXcgU2V0KFgpXTtcbiAgY29uc3QgbiA9IFsuLi5uZXcgU2V0KFopXS5sZW5ndGggLSAxO1xuXG4gIGNvbnN0IHhTY2FsZXIgPSBkMy5zY2FsZVBvaW50KClcbiAgICAuZG9tYWluKHhWYWx1ZXMpXG4gICAgLnJhbmdlKFttYXJnaW4ubGVmdCwgZGltLndpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XG4gIFxuICBjb25zdCB5U2NhbGVyID0gZDMuc2NhbGVMaW5lYXIoKVxuICAgIC5kb21haW4oWzAsIC43Ml0pXG4gICAgLnJhbmdlKFtkaW0uaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSwgbWFyZ2luLnRvcF0pO1xuICBcbiAgY29uc3QgbGluZSA9IGQzLmxpbmUoKVxuICAgIC5jdXJ2ZShkMy5jdXJ2ZUJhc2lzKVxuICAgIC54KGkgPT4geFNjYWxlcihYW2ldKSlcbiAgICAueShpID0+IHlTY2FsZXIoWVtpXSkpO1xuXG4gIGNvbnN0IGNvbnRhaW5lciA9IGQzLmNyZWF0ZShcImRpdlwiKTtcbiAgXG4gIC8vIENoYXJ0IHRpdGxlIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG4gIFxuICBjb250YWluZXIuYXBwZW5kKFwiZGl2XCIpXG4gICAgLmF0dHIoXCJjbGFzc1wiLCBcIm9qcy10aXRsZVwiKVxuICAgIC5odG1sKGBNeSB5b2tlIGlzIGVhc3ksIG15IGJ1cmRlbiBpcyBsaWdodGApO1xuICAgIFxuICBjb250YWluZXIuYXBwZW5kKFwiZGl2XCIpXG4gICAgLmF0dHIoXCJjbGFzc1wiLCBcIm9qcy1zdWJ0aXRsZVwiKVxuICAgIC5zdHlsZShcIm1hcmdpbi1ib3R0b21cIiwgXCIxcmVtXCIpXG4gICAgLmh0bWwoYEF2ZXJhZ2UgdGF4IHJhdGUgYnkgaW5jb21lIGdyb3VwLCBVbml0ZWQgU3RhdGVzLCAxOTUw4oCTMjAxOGApO1xuICBcbiAgLy8gQ2hhcnQgY2FudmFzIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cblxuICBjb25zdCBzdmcgPSBjb250YWluZXIuYXBwZW5kKFwic3ZnXCIpXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCBkaW0ud2lkdGgpXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgZGltLmhlaWdodClcbiAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIGRpbS53aWR0aCwgZGltLmhlaWdodF0pXG4gICAgLmF0dHIoXCJzdHlsZVwiLCBcIm1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBoZWlnaHQ6IGludHJpbnNpYztcIilcbiAgICAub24oXCJtb3VzZWVudGVyXCIsIG1vdXNlZW50ZXJlZClcbiAgICAub24oXCJtb3VzZW1vdmVcIiwgbW91c2Vtb3ZlZClcbiAgICAub24oXCJtb3VzZWxlYXZlXCIsIG1vdXNlbGVmdCk7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hcHBlbmQoXCJyZWN0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIDApLmF0dHIoXCJ5XCIsIDApXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCBkaW0ud2lkdGgpLmF0dHIoXCJoZWlnaHRcIiwgZGltLmhlaWdodClcbiAgICAuc3R5bGUoXCJmaWxsXCIsIFwiI0RDRTdFQlwiKVxuICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgLjYpO1xuICBcbiAgLy8gQXhlcyAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cbiAgXG4gIGNvbnN0IHhBeGlzID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHsgZGltLmhlaWdodCAtIG1hcmdpbi5ib3R0b20gfSlgKVxuICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIilcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuOHJlbVwiKVxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAudGV4dChcIjEwdGhcIilcbiAgICAgIC5hdHRyKFwieFwiLCB4U2NhbGVyKFwiUDEwLTIwXCIpKVxuICAgICAgLmF0dHIoXCJ5XCIsIDApLmF0dHIoXCJkeVwiLCAyMCkpXG4gICAgLmNhbGwoZyA9PiBnLmFwcGVuZChcInRleHRcIilcbiAgICAgIC50ZXh0KFwiNTB0aFwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIHhTY2FsZXIoXCJQNTAtNjBcIikpXG4gICAgICAuYXR0cihcInlcIiwgMCkuYXR0cihcImR5XCIsIDIwKSlcbiAgICAuY2FsbChnID0+IGcuYXBwZW5kKFwidGV4dFwiKVxuICAgICAgLnRleHQoXCI5MHRoXCIpXG4gICAgICAuYXR0cihcInhcIiwgeFNjYWxlcihcIlA5MC05NVwiKSlcbiAgICAgIC5hdHRyKFwieVwiLCAwKS5hdHRyKFwiZHlcIiwgMjApKVxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAudGV4dChcIjk5Ljk5K1wiKVxuICAgICAgLmF0dHIoXCJ4XCIsIHhTY2FsZXIoXCJQOTkuOTktdG9wIDQwMFwiKSlcbiAgICAgIC5hdHRyKFwieVwiLCAwKS5hdHRyKFwiZHlcIiwgMjApKVxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJwYXRoXCIpXG4gICAgICAuYXR0cihcImRcIiwgZDMubGluZSgpKFtbbWFyZ2luLmxlZnQsIDBdLCBbZGltLndpZHRoIC0gbWFyZ2luLnJpZ2h0LCAwXV0pKVxuICAgICAgLnN0eWxlKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAgIC5zdHlsZShcInN0cm9rZVwiLCBcImJsYWNrXCIpKVxuICAgIC5jYWxsKGcgPT4gZy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAuYXR0cihcInhcIiwgbWFyZ2luLmxlZnQgKyAoZGltLndpZHRoIC0gbWFyZ2luLmxlZnQgLSBtYXJnaW4ucmlnaHQpIC8gMilcbiAgICAgIC5hdHRyKFwieVwiLCAwKVxuICAgICAgLmF0dHIoXCJkeVwiLCAzMClcbiAgICAgIC5hdHRyKFwiYWxpZ25tZW50LWJhc2VsaW5lXCIsIFwiaGFuZ2luZ1wiKVxuICAgICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjlyZW1cIilcbiAgICAgIC50ZXh0KFwiSW5jb21lIHBlcmNlbnRpbGVcIikpO1xuICBcbiAgY29uc3QgeUF4aXMgPSBkMy5heGlzTGVmdCh5U2NhbGVyKVxuICAgIC50aWNrcyg1LCBcIi4wJVwiKVxuICAgIC50aWNrU2l6ZSgwKVxuICAgIC50aWNrUGFkZGluZyhbMjBdKTtcbiAgICBcbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7IG1hcmdpbi5sZWZ0IH0sMClgKVxuICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi44cmVtXCIpXG4gICAgLmNhbGwoeUF4aXMpXG4gICAgLmNhbGwoZyA9PiBnLnNlbGVjdChcIi5kb21haW5cIikucmVtb3ZlKCkpXG4gICAgLmNhbGwoZyA9PiBnLmFwcGVuZChcInRleHRcIilcbiAgICAgIC5hdHRyKFwieFwiLCAtbWFyZ2luLmxlZnQpXG4gICAgICAuYXR0cihcInlcIiwgMjUpXG4gICAgICAuYXR0cihcImR4XCIsIDE1KVxuICAgICAgLmF0dHIoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJzdGFydFwiKVxuICAgICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjlyZW1cIilcbiAgICAgIC50ZXh0KFwiU2hhcmUgb2YgcHJlLXRheCBpbmNvbWVcIikpO1xuICAgICAgXG4gIC8vIExpbmVzIGFuZCBsYWJlbHMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG4gIFxuICBjb25zdCBwYW5lbCA9IHN2Zy5hcHBlbmQoXCJnXCIpXG5cbiAgcGFuZWwuYXBwZW5kKFwiZ1wiKVxuICAgIC5zZWxlY3RBbGwoXCJwYXRoXCIpXG4gICAgLmRhdGEoZDMuZ3JvdXAoSSwgaSA9PiBaW2ldKSlcbiAgICAuam9pbihcInBhdGhcIilcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpXG4gICAgICAuc3R5bGUoXCJzdHJva2VcIiwgKGQsIGkpID0+IGkgPT09IG4gPyBjb2xvcnMucmVkIDogY29sb3JzLmJsdWVMaWdodClcbiAgICAgIC5zdHlsZShcInN0cm9rZS13aWR0aFwiLCAzKVxuICAgICAgLmF0dHIoXCJkXCIsIChbLCBJXSkgPT4gbGluZShJKSk7XG4gICAgXG4gIHBhbmVsLmFwcGVuZChcImdcIilcbiAgICAuc2VsZWN0QWxsKFwidGV4dFwiKVxuICAgIC5kYXRhKGRhdGEuZmlsdGVyKGQgPT4gZC5ncm91cCA9PT0gXCJUb3AgNDAwXCIpKVxuICAgIC5qb2luKFwidGV4dFwiKVxuICAgIC50ZXh0KGQgPT4gZC55ZWFyKVxuICAgIC5hdHRyKFwieFwiLCBkID0+IHhTY2FsZXIoZC5ncm91cCkpXG4gICAgLmF0dHIoXCJ5XCIsIGQgPT4geVNjYWxlcihkLnJhdGUpKVxuICAgIC5hdHRyKFwiZHhcIiwgMTApXG4gICAgLmF0dHIoXCJhbGlnbm1lbnQtYmFzZWxpbmVcIiwgXCJtaWRkbGVcIilcbiAgICAuc3R5bGUoXCJmaWxsXCIsIGQgPT4gZC55ZWFyID09PSAyMDE4ID8gY29sb3JzLnJlZCA6IGNvbG9ycy5ibHVlKVxuICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBkID0+IGQueWVhciA9PT0gMjAxOCA/IFwiLjhyZW1cIiA6IFwiLjdyZW1cIilcbiAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBkID0+IGQueWVhciA9PT0gMjAxOCA/IFwiYm9sZFwiIDogXCJub3JtYWxcIilcbiAgXG4gIC8vIEhvdmVyIGxhYmVscyAvLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG4gIFxuICBjb25zdCBtYXJrZXIgPSBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwiZGlzcGxheVwiLCBcIm5vbmVcIik7XG4gIFxuICBtYXJrZXIuYXBwZW5kKFwicGF0aFwiKVxuICAgIC5hdHRyKFwiZFwiLCBkMy5saW5lKCkoW1swLCBtYXJnaW4udG9wXSwgWzAsIGRpbS5oZWlnaHQgLSBtYXJnaW4uYm90dG9tXV0pKVxuICAgIC5zdHlsZShcInN0cm9rZVwiLCBcImJsYWNrXCIpXG4gICAgLnN0eWxlKFwic3Ryb2tlLXdpZHRoXCIsIDEpO1xuICBcbiAgZnVuY3Rpb24gbW91c2VlbnRlcmVkKCkge1xuICAgIG1hcmtlci5hdHRyKFwiZGlzcGxheVwiLCBudWxsKTtcbiAgICB0b29sdGlwLnN0eWxlKFwiZGlzcGxheVwiLCBcImJsb2NrXCIpO1xuICB9O1xuICAgIFxuICBmdW5jdGlvbiBtb3VzZW1vdmVkKGV2ZW50KSB7XG4gICAgY29uc3QgW3htLCB5bV0gPSBkMy5wb2ludGVyKGV2ZW50KTtcbiAgICBjb25zdCB4ID0gZDMubGVhc3QoeFZhbHVlcywgeCA9PiBNYXRoLmFicyh4U2NhbGVyKHgpIC0geG0pKTtcbiAgICBjb25zdCBpID0gWC5tYXAoKGQsIGkpID0+IGQgPT09IHggPyBpIDogXCJcIikuZmlsdGVyKFN0cmluZyk7XG4gICAgbWFya2VyLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgkeyB4U2NhbGVyKHgpIH0sIDApYCk7XG4gICAgdG9vbHRpcFxuICAgICAgLnN0eWxlKFwibGVmdFwiLCBldmVudC5wYWdlWCArIDE4ICsgXCJweFwiKVxuICAgICAgLnN0eWxlKFwidG9wXCIsIGV2ZW50LnBhZ2VZICsgMTggKyBcInB4XCIpXG4gICAgICAuaHRtbChgXG4gICAgICAgIDxiPiR7eH0gdGF4IHJhdGU8L2I+PGJyPlxuICAgICAgICAxOTUwOiAkeyBkMy5mb3JtYXQoXCIsLjElXCIpKFlbaVswXV0pIH08YnI+XG4gICAgICAgIDE5ODA6ICR7IGQzLmZvcm1hdChcIiwuMSVcIikoWVtpWzNdXSkgfTxicj5cbiAgICAgICAgMjAxODogJHsgZDMuZm9ybWF0KFwiLC4xJVwiKShZW2lbbl1dKSB9XG4gICAgICBgKTtcbiAgfTtcbiAgXG4gIGZ1bmN0aW9uIG1vdXNlbGVmdCgpIHtcbiAgICBtYXJrZXIuYXR0cihcImRpc3BsYXlcIiwgXCJub25lXCIpO1xuICAgIHRvb2x0aXAuc3R5bGUoXCJkaXNwbGF5XCIsIFwibm9uZVwiKTtcbiAgfTtcbiAgXG4gIC8vIEFubm90YXRpb24gLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG5cbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInRyYW5zbGF0ZSg0MTAsIDIwMClcIilcbiAgICAuYXBwZW5kKFwidGV4dFwiKVxuICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcIm1pZGRsZVwiKVxuICAgICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjlyZW1cIilcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJibGFja1wiKVxuICAgICAgLmF0dHIoXCJ4XCIsIDApLmF0dHIoXCJ5XCIsIDApXG4gICAgLmFwcGVuZChcInRzcGFuXCIpXG4gICAgICAudGV4dChcIlRoZSB1bHRyYSB3ZWFsdGh5IGhhdmUgc2VlbiBhblwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIDApLmF0dHIoXCJ5XCIsIDApXG4gICAgLmFwcGVuZChcInRzcGFuXCIpXG4gICAgICAudGV4dChcImFwcGFyZW50IGZhbGwgaW4gdGhlaXIgdGF4IGJ1cmRlblwiKVxuICAgICAgLmF0dHIoXCJ4XCIsIDApLmF0dHIoXCJ5XCIsIDApLmF0dHIoXCJkeVwiLCAyMClcbiAgICAuYXBwZW5kKFwidHNwYW5cIilcbiAgICAgIC50ZXh0KFwiZnJvbSBcIilcbiAgICAgIC5hdHRyKFwieFwiLCAwKS5hdHRyKFwieVwiLCAwKS5hdHRyKFwiZHlcIiwgNDApXG4gICAgLmFwcGVuZChcInRzcGFuXCIpXG4gICAgICAudGV4dChcIjcwJVwiKVxuICAgICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpXG4gICAgLmFwcGVuZChcInRzcGFuXCIpXG4gICAgICAudGV4dChcIiBpbiAxOTUwIHRvIFwiKVxuICAgICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJub3JtYWxcIilcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJibGFja1wiKVxuICAgIC5hcHBlbmQoXCJ0c3BhblwiKVxuICAgICAgLnRleHQoXCIyMyVcIilcbiAgICAgIC5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiYm9sZFwiKVxuICAgICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvcnMucmVkKVxuICAgIC5hcHBlbmQoXCJ0c3BhblwiKVxuICAgICAgLnRleHQoXCIgaW4gMjAxOFwiKVxuICAgICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJub3JtYWxcIilcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJibGFja1wiKVxuICBcbiAgc3ZnLmFwcGVuZChcImRlZnNcIilcbiAgICAuYXBwZW5kKFwibWFya2VyXCIpXG4gICAgICAuYXR0cihcImlkXCIsIFwiYXJyb3ctM1wiKVxuICAgICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFwiMCAwIDEwIDEwXCIpXG4gICAgICAuYXR0cihcInJlZlhcIiwgOCkuYXR0cihcInJlZllcIiwgNSlcbiAgICAgIC5hdHRyKFwibWFya2VyV2lkdGhcIiwgMTApXG4gICAgICAuYXR0cihcIm1hcmtlckhlaWdodFwiLCAxMClcbiAgICAgIC5hdHRyKFwib3JpZW50XCIsIFwiYXV0b1wiKVxuICAgIC5hcHBlbmQoXCJwYXRoXCIpXG4gICAgICAuYXR0cihcImRcIiwgXCJNMCwxIEw5LDUgTDAsOVwiKVxuICAgICAgLnN0eWxlKFwic3Ryb2tlLWxpbmVqb2luXCIsIFwicm91bmRcIilcbiAgICAgIC5zdHlsZShcInN0cm9rZVwiLCBcImJsYWNrXCIpXG4gICAgICAuc3R5bGUoXCJzdHJva2Utd2lkdGhcIiwgMSlcbiAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpO1xuICBcbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAuY2FsbChnID0+IGcuYXBwZW5kKFwicGF0aFwiKVxuICAgICAgLmF0dHIoXCJkXCIsICgpID0+IHtcbiAgICAgICAgY29uc3QgcGF0aCA9IGQzLnBhdGgoKTtcbiAgICAgICAgcGF0aC5tb3ZlVG8oNDYwLCAyNjMpO1xuICAgICAgICBwYXRoLnF1YWRyYXRpY0N1cnZlVG8oNTAwLCA0NTAsIDcwMCwgMzYwKTtcbiAgICAgICAgcmV0dXJuIHBhdGg7XG4gICAgfSkpXG4gICAgLmNhbGwoZyA9PiBnLmFwcGVuZChcInBhdGhcIilcbiAgICAgIC5hdHRyKFwiZFwiLCAoKSA9PiB7XG4gICAgICAgIGNvbnN0IHBhdGggPSBkMy5wYXRoKCk7XG4gICAgICAgIHBhdGgubW92ZVRvKDQ3MCwgMTcyKTtcbiAgICAgICAgcGF0aC5xdWFkcmF0aWNDdXJ2ZVRvKDU1MCwgMCwgNjg1LCA0MCk7XG4gICAgICAgIHJldHVybiBwYXRoO1xuICAgIH0pKVxuICAgIC5zdHlsZShcInN0cm9rZVwiLCBcImJsYWNrXCIpXG4gICAgLnN0eWxlKFwic3Ryb2tlLXdpZHRoXCIsIDEpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAuYXR0cihcIm1hcmtlci1lbmRcIiwgXCJ1cmwoI2Fycm93LTMpXCIpO1xuICAgIFxuICAvLyBDaGFydCBzb3VyY2VzIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIGNvbnRhaW5lci5hcHBlbmQoXCJkaXZcIilcbiAgICAuYXR0cihcImNsYXNzXCIsIFwib2pzLXNvdXJjZVwiKVxuICAgIC5zdHlsZShcIm1hcmdpblwiLCBcIi41cmVtIDBcIilcbiAgICAuc3R5bGUoXCJsaW5lLWhlaWdodFwiLCAxLjI1KVxuICAgIC5odG1sKGBTb3VyY2U6IEUuIFNhZXogYW5kIEcuIFp1Y21hbiwgPGk+VGhlIFRyaXVtcGggb2YgSW5qdXN0aWNlPC9pPiwgMjAxOS5gKTtcbiAgICBcbiAgcmV0dXJuIGNvbnRhaW5lci5ub2RlKCk7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbmluZXF1YWxpdHkgPSBGaWxlQXR0YWNobWVudChcIi4uLy4uL2RhdGFzZXRzL3p1Y21hbi9pbmVxdWFsaXR5LmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KTtcbmV2YXNpb24gPSBGaWxlQXR0YWNobWVudChcIi4uLy4uL2RhdGFzZXRzL3p1Y21hbi9ldmFzaW9uLmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KTtcbnRheHJhdGUgPSBGaWxlQXR0YWNobWVudChcIi4uLy4uL2RhdGFzZXRzL3p1Y21hbi90YXhyYXRlLmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KTtcblxuY29sb3JzID0gKHsgYmx1ZTogXCIjNDg4OWFiXCIsIGJsdWVMaWdodDogXCIjYzBkN2RmXCIsIHJlZDogXCIjQzg1Qjg5XCIgfSlcblxudG9vbHRpcCA9IGQzLnNlbGVjdChcImJvZHlcIilcbiAgLmFwcGVuZChcImRpdlwiKVxuICAuYXR0cihcImNsYXNzXCIsIFwidG9vbFRpcFwiKVxuICAuc3R5bGUoXCJkaXNwbGF5XCIsIFwibm9uZVwiKVxuICAuc3R5bGUoXCJwb3NpdGlvblwiLCBcImFic29sdXRlXCIpXG4gIC5zdHlsZShcInotaW5kZXhcIiwgOTk5KVxuICAuc3R5bGUoXCJ3aWR0aFwiLCAxMDApXG4gIC5zdHlsZShcImhlaWdodFwiLCBcImF1dG9cIilcbiAgLnN0eWxlKFwiYmFja2dyb3VuZFwiLCBcIiNmN2Y3ZjdcIilcbiAgLnN0eWxlKFwiYm9yZGVyXCIsIFwiMXB4IHNvbGlkICNjZWNlY2VcIilcbiAgLnN0eWxlKFwib3BhY2l0eVwiLCAuOSlcbiAgLnN0eWxlKFwicGFkZGluZ1wiLCBcIi4yZW0gLjQ1ZW1cIilcbiAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjg1cmVtXCIpO1xuIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1049,18 +1060,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1092,11 +1092,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/twopoints\.blog");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1106,8 +1143,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1119,7 +1165,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1163,6 +1331,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1188,6 +1357,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1253,12 +1448,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

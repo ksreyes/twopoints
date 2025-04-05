@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.294">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2023-03-12">
 
-<title>Two Points Make a Line - Telling the future is hard</title>
+<title>Telling the future is hard – Two Points Make a Line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -73,17 +73,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1935dcbd43814f6b9d0e02a660e21e63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,8 +98,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
@@ -117,6 +125,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -150,7 +160,6 @@ g.tick, g.tick + text {
 </style>
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-
 <script src="../../site_libs/core-js-2.5.3/shim.min.js"></script>
 <script src="../../site_libs/react-17.0.0/react.min.js"></script>
 <script src="../../site_libs/react-17.0.0/react-dom.min.js"></script>
@@ -169,11 +178,11 @@ g.tick, g.tick + text {
 </script>
 
 
-<meta property="og:title" content="Two Points Make a Line - Telling the future is hard">
+<meta property="og:title" content="Telling the future is hard – Two Points Make a Line">
 <meta property="og:description" content="A forecasting tournament put the predictive powers of social scientists to the test. They, ah, didn’t do so well.">
 <meta property="og:image" content="https://twopoints.blog/posts/2023-03-12-prediction/thumbnail.gif">
-<meta property="og:site-name" content="Two Points Make a Line">
-<meta name="twitter:title" content="Two Points Make a Line - Telling the future is hard">
+<meta property="og:site_name" content="Two Points Make a Line">
+<meta name="twitter:title" content="Telling the future is hard – Two Points Make a Line">
 <meta name="twitter:description" content="A forecasting tournament put the predictive powers of social scientists to the test. They, ah, didn’t do so well.">
 <meta name="twitter:image" content="https://twopoints.blog/posts/2023-03-12-prediction/thumbnail.gif">
 <meta name="twitter:card" content="summary_large_image">
@@ -183,9 +192,9 @@ g.tick, g.tick + text {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo-icon-invert.png" alt="" class="navbar-logo">
     </a>
@@ -194,37 +203,36 @@ g.tick, g.tick + text {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="dropdown-header">
- <span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span></li>
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span>
+    </span>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../subscribe.html" rel="" target="">
- <span class="menu-text">Subscribe</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ksreyes/twopoints" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ksreyes/twopoints"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -263,7 +271,9 @@ g.tick, g.tick + text {
   </div>
   
 
+
 </header>
+
 
 <p>Do you want to excel at telling the future? Nostradamus shows us one way: make your predictions as <a href="https://www.theguardian.com/books/2022/oct/10/why-nostradamus-predictions-are-still-winning-converts">vague and ambiguous</a> as possible and you will always be “right”. Try attaching <a href="https://www.wsj.com/articles/how-do-pundits-never-get-it-wrong-call-a-40-chance-1519662425">a 40% probability</a> to all your calls: if you’re wrong, hey, you never said it was a sure thing. Throw in some authoritative-sounding statements like “the next six months will be decisive”, as Thomas Friedman said, repeatedly, <a href="https://en.wikipedia.org/wiki/Friedman_Unit">for two and a half years</a>, about the Iraq War. And whatever you do, never corner yourself with a weirdly specific, absurdly bold prediction like “the Internet’s impact on the economy will be <a href="https://www.snopes.com/fact-check/paul-krugman-internets-effect-economy">no greater than the fax machine’s</a>”. You will never live it down.</p>
 <p>Alternatively, you can take the hard way and actually become an expert in the field. Then you can use superior domain knowledge to make superior predictions. Or can you?</p>
@@ -284,7 +294,7 @@ g.tick, g.tick + text {
 </div>
 <p>The table below lists all the forecasting teams who participated, along with their discipline, how many members they had, and, if available, some demographic information. Now I love a good team name, and I will be remiss not to mention some standouts. There’s a team of four called <strong>The Forecasting Four</strong> and a team of five called <strong>5casters</strong>. Kudos to <strong>The Well-Adjusted R Squares</strong> for being well-adjusted and to <strong>ForeverJung90</strong> for being forever Jung. It looks like <strong>4 chimps with a dart</strong> and <strong>Abracadabra</strong> named themselves after their methods. And to whoever registered himself as <strong>Cynical Belief in the Inexorable Crush of the Wheel</strong> — I hope you made T-shirts.</p>
 <div class="cell page-columns page-full">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -322,14 +332,13 @@ g.tick, g.tick + text {
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display column-page">
-
 <div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bafda8cbf1945d2a2c2e" style="width:auto;height:auto;"></div>
 <script type="application/json" data-for="htmlwidget-bafda8cbf1945d2a2c2e">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"team_name":["1859","4 chimps with a dart","5casters","A Woman Scientist","ab","AbCdEfG","Abracadabra","adamman","AhamBrahamasmi","Average Joes","BlackSwan","blue duiker","Bluebirds","Bordeaux","Broken Mirror Neurons","BRTWN","C-Team","CantabRoyal","CarrNCUSA","Cascade Institute","CheeseCake","Comet","Compassionate Values","CoronaSky","CPMY","Cynical Belief in the Inexorable Crush of the Wheel","datamodelers","Dog's Sense","Dragon","DrT","Duckling Power","Dutch East India Company","Erebuni","fearfulastra","FMTeam","Forecasting Team 1","ForecastSnorecast","ForeverJung90","Foxtrot","FrostNova","Goldensaber","Haifa_Team","Haku","Heather Shimmer","Heisenburg","HHH","Hi5","HSCNAC","Imielin","IPZ_predi","Junesix","King Octopus","Korrigan","Lady in Black","Little Bear","LoneGradStudent","LongerSquigglyLines","Lotus","md2000","Me Myself and I","meebe","MLTS","MORDEAUX Team","Motivation & Emotion","Mr Muddle","ms607","Nigel Mantou Lou","Northstar","Not a fortune teller","NotGreatWithNamesTeam","Nurni Flowenol","NYHC","Old Chickens","Otto","Patricia Arriaga","Platypus","Polarization Disciples","polarization-2020CO","Pythia","R4VST9","Renegade","RTTMT","savvy time traveler","scaled-humanity","SCREEN Team","Seaside","Skuld Forecasting Systems","Sociology","Spartacus","Star Trek","StatFore","TAPE-Measurement","Team Apple","Team Blue Skies","Team CCS","Team Funemployed","Team IPA","Team Social Psychological Skill","Team Supreme Ignorance","Team29","Team42","teamGreenLake","TeamKL","That Well-being Researcher","The Bingo Jingoists","The Causal Lab","The Forecasting Four","The Frugal Few","The Nowcast","The Oracles of Delphi","The Star","The Well-Adjusted R Squares","TheMets","Tosbik","Turing Tesla Solutions","UhZettHa","Waterloo Purple Jackets","WeGen","Woodstock","WQXZ"],"discipline":["Social Sciences","Multi-disciplinary","Multi-disciplinary","Behavioral Sciences","Social Sciences","Social Sciences","Multi-disciplinary","Social Sciences","Behavioral Sciences","Behavioral Sciences","Social Sciences","Social Sciences","Multi-disciplinary","Data/Computer Science","Multi-disciplinary","Multi-disciplinary","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Data/Computer Science","Behavioral Sciences","Social Sciences","Behavioral Sciences","Social Sciences","Behavioral Sciences","Data/Computer Science","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Multi-disciplinary","Data/Computer Science","Multi-disciplinary","Social Sciences","Social Sciences","Social Sciences","Behavioral Sciences","Behavioral Sciences","Social Sciences","Behavioral Sciences","Social Sciences","Multi-disciplinary","Data/Computer Science","Data/Computer Science","Behavioral Sciences","Social Sciences","Behavioral Sciences","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Behavioral Sciences","Social Sciences","Data/Computer Science","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Data/Computer Science","Multi-disciplinary","Multi-disciplinary","Behavioral Sciences","Behavioral Sciences","Social Sciences","Social Sciences","Behavioral Sciences","Data/Computer Science","Social Sciences","Social Sciences","Social Sciences","Social Sciences","Behavioral Sciences","Behavioral Sciences","Social Sciences","Behavioral Sciences","Social Sciences","Behavioral Sciences","Behavioral Sciences","Multi-disciplinary","Social Sciences","Data/Computer Science","Behavioral Sciences","Social Sciences","Multi-disciplinary","Social Sciences",null,"Behavioral Sciences","Data/Computer Science","Social Sciences","Behavioral Sciences","Multi-disciplinary","Multi-disciplinary","Multi-disciplinary","Social Sciences","Social Sciences","Data/Computer Science","Data/Computer Science","Multi-disciplinary","Multi-disciplinary","Social Sciences","Behavioral Sciences","Data/Computer Science","Behavioral Sciences","Behavioral Sciences","Multi-disciplinary","Social Sciences","Multi-disciplinary","Behavioral Sciences","Social Sciences","Behavioral Sciences","Social Sciences","Multi-disciplinary","Behavioral Sciences","Multi-disciplinary","Behavioral Sciences","Behavioral Sciences","Data/Computer Science"],"team_size.coded":[1,4,5,1,1,1,3,1,1,3,1,1,2,1,2,5,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,2,2,1,2,1,1,7,1,1,1,1,1,4,1,1,1,1,1,2,1,1,1,1,1,1,2,1,1,1,1,2,3,3,1,1,1,1,1,1,1,1,1,1,1,1,2,1,2,2,1,1,1,1,4,1,1,1,1,1,1,1,1,4,3,4,1,2,1,1,1,3,1,1,1,1,4,3,2,3,1,3,1,1,2,1,4,1,1,2],"team_Age":[29,30.5,24,25,"NA",36,34.5,39,"NA",39,45,41,47.5,37,28.5,43.5,41.5,"NA",28,"NA",52,47,41,34,24,37,44.5,"NA",41,50,36,52,25.5,32,22.5,34,38,30.1428571428571,42,33,48,34,63,41,26,"NA",36,44,34,33.5,35,38,43,39,47,39,31,35,52,"NA",45,33,31.3333333333333,28,37,41,30,40,47,"NA",42,"NA",43,35,49,40,27.5,34,23,37.5,32,34,27,35,34.6666666666667,"NA",23,32,"NA",41,51,36.5,"NA",27.25,27,24.5,36,28,39,45,31,32,45,25,"NA",36,39.5,26.3333333333333,36,37,37,42.3333333333333,32,29,35,34,28.75,"NA",59,59],"team_gender":[0,0,80,100,0,0,0,0,0,0,0,100,0,0,50,20,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,50,0,0,0,0,71.4285714285714,0,0,0,0,0,25,0,0,0,0,100,0,100,0,100,0,0,100,0,0,0,0,100,0,33.3333333333333,33.3333333333333,0,0,0,0,100,0,0,100,0,0,0,0,0,100,0,50,0,0,0,0,75,0,0,0,0,100,0,50,100,50,33.3333333333333,50,0,0,0,0,0,0,100,100,0,0,50,66.6666666666667,0,0,0,0,0,0,100,100,25,0,100,0],"team_education_inv":[100,25,20,0,100,100,100,100,0,100,100,0,100,100,0,100,100,100,0,100,100,0,100,100,0,100,50,100,100,100,100,100,0,0,0,100,100,42.8571428571429,100,100,100,100,100,100,0,100,100,100,100,50,100,100,100,100,100,0,100,100,100,100,100,100,33.3333333333333,33.3333333333333,100,100,100,100,100,0,100,100,100,100,0,100,0,100,0,100,100,100,0,100,100,100,0,100,100,100,100,0,100,0,0,0,100,100,100,100,100,100,100,0,100,100,50,0,100,100,100,100,100,0,100,100,25,100,100,100],"non_US":[100,100,100,100,100,100,100,100,100,100,100,0,100,100,0,80,50,0,0,100,0,100,0,0,100,100,0,0,100,100,0,0,100,0,100,0,0,28.5714285714286,0,100,0,100,100,75,100,100,0,0,100,100,100,100,0,100,100,0,0,100,0,0,100,100,100,100,100,100,100,100,0,100,0,0,100,100,100,0,0,0,100,0,0,100,0,0,100,100,100,0,0,100,100,0,0,0,100,25,0,0,100,100,100,100,100,0,100,0,25,100,0,33.3333333333333,0,100,100,100,100,100,100,100,100,50]},"columns":[{"id":"team_name","name":"Team name","type":"character","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"left","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":250},{"id":"discipline","name":"Disicipline","type":"character","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"left","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":200},{"id":"team_size.coded","name":"Members","type":"numeric","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"center","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":110},{"id":"team_Age","name":"Average age","type":"numeric","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"center","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":110},{"id":"team_gender","name":"Share not male","type":"numeric","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"center","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":110},{"id":"team_education_inv","name":"Share with Ph.D","type":"numeric","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"center","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":110},{"id":"non_US","name":"Share not US","type":"numeric","sortNALast":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"align":"center","headerStyle":{"fontFamily":"Karla","background":"#f7f7f8"},"minWidth":110}],"searchable":true,"minRows":5,"highlight":true,"bordered":true,"theme":{"searchInputStyle":{"align":"left"}},"dataKey":"2fc36e420d13dca3e8c0a19807d631aa"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Let’s visualize how these teams did in their forecasting. The preferred measure of the paper is mean absolute scaled error, or MASE, a metric that can be compared across different variables despite different scales. The higher the MASE, the worse the forecast. Let’s first do some data wrangling on R.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>domains_key <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">domain =</span> <span class="fu">c</span>(</span>
@@ -412,7 +421,7 @@ g.tick, g.tick + text {
 </div>
 <p>The function <code>ojs_define()</code> ports our data over to Observable JS, through which we construct an interactive chart:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" data-startfrom="178" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 177;"><span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>scores_ojs <span class="op">=</span> <span class="fu">transpose</span>(scores_ojs1)</span>
 <span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>medians_ojs <span class="op">=</span> <span class="fu">transpose</span>(medians_ojs1)</span>
@@ -540,7 +549,7 @@ g.tick, g.tick + text {
 <p>Among experts, it was found that those employing data-driven strategies (either with or without consideration of subject matter theories) performed the best. This reflects well on data scientists but poorly on domain experts. It essentially means that one can get good results by throwing any old variable into a forecasting model without necessarily thinking too hard about the social phenomena behind that variable.</p>
 <p>Which team, overall, performed the best? Let’s visualize the rankings of teams across all 12 domains. To keep the chart manageable, let’s only include teams who ranked in the top three of at least one domain. There were 24 such teams in total:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -609,13 +618,17 @@ g.tick, g.tick + text {
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="quarto-discovered-preview-image img-fluid" width="768"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>In terms of first place finishes, <strong>fearfulastra</strong> takes the cake with three. However, they performed rather poorly in forecasting life satisfaction. <strong>NotGreatWithNamesTeam</strong> has the best track record, participating in two domains and getting a first and a second. But the most well-rounded would probably be <strong>The Well-Adjusted R Squares</strong>, who had four finishes in the top three and whose worst performance was just 16th place.</p>
 <p>Let’s chart the forecasts of the best performing expert in each domain against how these variables actually evolved. As a benchmark, let’s also chart the forecasts of the median non-expert.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>actual <span class="ot">&lt;-</span> historical_data <span class="sc">%&gt;%</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> negaffect<span class="sc">:</span>polar,</span>
@@ -645,7 +658,7 @@ g.tick, g.tick + text {
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" data-startfrom="373" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 372;"><span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a>series_ojs <span class="op">=</span> <span class="fu">transpose</span>(series_ojs1)</span>
 <span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a></span>
@@ -778,7 +791,7 @@ g.tick, g.tick + text {
 <div id="quarto-appendix" class="default"><section id="d3-observable-code" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">D3 / Observable code</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" data-startfrom="472" data-source-offset="-62"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 471;"><span id="cb8-472"><a href="#cb8-472" aria-hidden="true" tabindex="-1"></a>addTooltips <span class="op">=</span> (chart<span class="op">,</span> styles) <span class="kw">=&gt;</span> {</span>
 <span id="cb8-473"><a href="#cb8-473" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> stroke_styles <span class="op">=</span> { <span class="dt">stroke</span><span class="op">:</span> <span class="st">"blue"</span><span class="op">,</span> <span class="st">"stroke-width"</span><span class="op">:</span> <span class="dv">3</span> }<span class="op">;</span></span>
@@ -943,9 +956,9 @@ g.tick, g.tick + text {
 <li id="fn1"><p>There was a second round that extended the forecasted period to October 2020, but I won’t be covering that in this post.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Thank you to forecasting guru Basti Ibañez for first telling me about this paper.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nscores_ojs = transpose(scores_ojs1)\nmedians_ojs = transpose(medians_ojs1)\n\ndomains = [\n    \"Explicit gender–career bias\", \n    \"Implicit gender–career bias\", \n    \"Positive affect in social media\", \n    \"Implicit Asian American bias\", \n    \"Political polarization\", \n    \"Explicit Asian American bias\", \n    \"Ideologically lean Democrat\", \n    \"Life satisfaction\", \n    \"Negative affect in social media\", \n    \"Explicit African American bias\", \n    \"Implicit African American bias\",\n    \"Ideologically lean Republican\"\n]\n\nviewof median_radio = Inputs.radio(\n    d3.group(medians_ojs, d => d.method), \n    { key: \"All experts\", label: html`<b>Median</b>` }\n)\n\nviewof mase_range = Inputs.range(\n    [3, d3.extent(scores_ojs, d => d.MASE1_w1)], \n    { step: .5, value: 25, label: html`<b>MASE max</b>`, format: x => x.toFixed(0) }\n)\n\naddTooltips(\n    Plot.plot({\n        marks: [\n            Plot.frame({ fill: \"#f7f7f7\" }),\n            Plot.dot(scores_ojs, {\n                x: \"MASE1_w1\",\n                y: \"domain_long\",\n                title: \"team_name\",\n                r: 7,\n                fill: \"method\",\n                fillOpacity: 0.5,\n            }),\n            Plot.dot(median_radio, {\n                x: \"MASE1_w1\",\n                y: \"domain_long\",\n                r: 7,\n                stroke: \"black\",\n                strokeWidth: 2,\n            }),\n        ],\n        x: {\n            label: \"Mean absolute scaled error\",\n            labelAnchor: \"center\",\n            tickSize: 0,\n            grid: false,\n            domain: [0, mase_range],\n        },\n        y: {\n            label: null,\n            tickSize: 0,\n            grid: true,\n            padding: 0,\n            domain: domains,\n        },\n        color: {\n            legend: true,\n            domain: [\"Intuition/theory\", \"Data-driven\", \"Hybrid\"],\n            range: [\"#B13D70\", \"#7fc6a4\", \"#4889ab\"],\n        },\n        width: 800,\n        height: 450,\n        marginLeft: 215,\n        marginRight: 10,\n        marginBottom: 50,\n        insetLeft: 5,\n        insetTop: 20,\n        insetBottom: 20,\n    })\n);\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\nseries_ojs = transpose(series_ojs1)\n\nviewof select = Inputs.select(\n    d3.group(series_ojs, d => d.domain_long), \n    { label: html`<b>Domain</b>` }\n)\n\nviewof month_range = Inputs.range(\n    [d3.extent(series_ojs, d => d.month)[0], -3], \n    { label: html`<b>Months prior</b>`, value: -24, step: 1 }\n)\n\ndomain_unit = (d3.max(select, d => d.value) - d3.min(select, d => d.value)) / 4\n\naddTooltips(\n    Plot.plot({\n        marks: [\n            Plot.frame({ fill: \"#f7f7f7\" }),\n            Plot.lineY(\n                select.filter((d) => d.month > month_range),\n                { x: \"month\", y: \"value\", stroke: \"series\", strokeWidth: 2.5 }\n            ),\n            Plot.dot(\n                select.filter((d) => d.month > month_range),\n                {\n                    x: \"month\",\n                    y: \"value\",\n                    title: \"value\",\n                    fill: \"series\",\n                    r: 5,\n                    stroke: \"white\",\n                }\n            ),\n            Plot.ruleX([0], {\n                strokeOpacity: 0.9,\n                strokeWidth: 1,\n                strokeDasharray: \"5,5\",\n            }),\n            Plot.text(select.slice(0, 1), {\n                text: (d) => d.domain_long,\n                textAnchor: \"start\",\n                frameAnchor: \"top-left\",\n                fontWeight: \"bold\",\n                fontSize: 15,\n                dx: 20,\n                dy: 18,\n            }),\n            Plot.text(select.slice(0, 1), {\n                text: (d) => `Top expert: ${d.team_name}`,\n                textAnchor: \"start\",\n                frameAnchor: \"top-left\",\n                fontSize: 14,\n                dx: 20,\n                dy: 39,\n            }),\n        ],\n        x: {\n            label: \"Month\",\n            labelAnchor: \"center\",\n            tickSize: 0,\n        },\n        y: {\n            label: null,\n            ticks: 5,\n            tickSize: 0,\n            domain: [\n                d3.min(select, (d) => d.value) - domain_unit,\n                d3.max(select, (d) => d.value) + domain_unit,\n            ],\n        },\n        color: {\n            legend: true,\n            range: [\"#bcbcbc\", \"#B13D70\", \"#0C6291\"],\n        },\n        width: 800,\n        height: 450,\n        insetTop: 20,\n        insetBottom: 20,\n        insetRight: 20,\n        insetLeft: 20,\n        marginBottom: 50,\n        marginLeft: 45,\n        marginRight: 0,\n    }),\n    { r: 7.5 }\n);\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\n// Source: https://observablehq.com/@mkfreeman/plot-tooltip\n\naddTooltips = (chart, styles) => {\n    const stroke_styles = { stroke: \"blue\", \"stroke-width\": 3 };\n    const fill_styles = { fill: \"blue\", opacity: 0.5 };\n\n    // Workaround if it's in a figure\n    const type = d3.select(chart).node().tagName;\n    let wrapper =\n        type === \"FIGURE\" ? d3.select(chart).select(\"svg\") : d3.select(chart);\n\n    // Workaround if there's a legend....\n    const svgs = d3.select(chart).selectAll(\"svg\");\n    if (svgs.size() > 1) wrapper = d3.select([...svgs].pop());\n    wrapper.style(\"overflow\", \"visible\"); // to avoid clipping at the edges\n\n    // Set pointer events to visibleStroke if the fill is none (e.g., if its a line)\n    wrapper.selectAll(\"path\").each(function (data, index, nodes) {\n        // For line charts, set the pointer events to be visible stroke\n        if (\n            d3.select(this).attr(\"fill\") === null ||\n            d3.select(this).attr(\"fill\") === \"none\"\n        ) {\n            d3.select(this).style(\"pointer-events\", \"visibleStroke\");\n            if (styles === undefined) styles = stroke_styles;\n        }\n    });\n\n    if (styles === undefined) styles = fill_styles;\n\n    const tip = wrapper\n        .selectAll(\".hover\")\n        .data([1])\n        .join(\"g\")\n        .attr(\"class\", \"hover\")\n        .style(\"pointer-events\", \"none\")\n        .style(\"text-anchor\", \"middle\");\n\n    // Add a unique id to the chart for styling\n    const id = id_generator();\n\n    // Add the event listeners\n    d3.select(chart).classed(id, true); // using a class selector so that it doesn't overwrite the ID\n    wrapper.selectAll(\"title\").each(function () {\n        // Get the text out of the title, set it as an attribute on the parent, and remove it\n        const title = d3.select(this); // title element that we want to remove\n        const parent = d3.select(this.parentNode); // visual mark on the screen\n        const t = title.text();\n        if (t) {\n            parent.attr(\"__title\", t).classed(\"has-title\", true);\n            title.remove();\n        }\n        // Mouse events\n        parent\n            .on(\"pointerenter pointermove\", function (event) {\n                const text = d3.select(this).attr(\"__title\");\n                const pointer = d3.pointer(event, wrapper.node());\n                if (text) tip.call(hover, pointer, text.split(\"\\n\"));\n                else tip.selectAll(\"*\").remove();\n\n                // Raise it\n                d3.select(this).raise();\n                // Keep within the parent horizontally\n                const tipSize = tip.node().getBBox();\n                if (pointer[0] + tipSize.x < 0)\n                    tip.attr(\n                        \"transform\",\n                        `translate(${tipSize.width / 2}, ${pointer[1] + 7})`\n                    );\n                else if (pointer[0] + tipSize.width / 2 > wrapper.attr(\"width\"))\n                    tip.attr(\n                        \"transform\",\n                        `translate(${\n                            wrapper.attr(\"width\") - tipSize.width / 2\n                        }, ${pointer[1] + 7})`\n                    );\n            })\n            .on(\"pointerout\", function (event) {\n                tip.selectAll(\"*\").remove();\n                // Lower it!\n                d3.select(this).lower();\n            });\n    });\n\n    // Remove the tip if you tap on the wrapper (for mobile)\n    wrapper.on(\"touchstart\", () => tip.selectAll(\"*\").remove());\n\n    // Define the styles\n    chart.appendChild(html`<style>\n    .${id} .has-title { cursor: pointer;  pointer-events: all; }\n    .${id} .has-title:hover { ${Object.entries(styles).map(([key, value]) => `${key}: ${value};`).join(\" \")} }`);\n\n    return chart;\n};\n\nhover = (tip, pos, text) => {\n    const side_padding = 10;\n    const vertical_padding = 5;\n    const vertical_offset = 25;\n\n    // Empty it out\n    tip.selectAll(\"*\").remove();\n\n    // Append the text\n    tip.style(\"text-anchor\", \"middle\")\n        .style(\"pointer-events\", \"none\")\n        .attr(\"transform\", `translate(${pos[0]}, ${pos[1] + 7})`)\n        .selectAll(\"text\")\n        .data(text)\n        .join(\"text\")\n        .style(\"dominant-baseline\", \"ideographic\")\n        .text((d) => d)\n        .attr(\"y\", (d, i) => (i - (text.length - 1)) * 15 - vertical_offset)\n        .style(\"font-weight\", (d, i) => (i === 0 ? \"bold\" : \"normal\"));\n\n    const bbox = tip.node().getBBox();\n\n    // Add a rectangle (as background)\n    tip.append(\"rect\")\n        .attr(\"y\", bbox.y - vertical_padding)\n        .attr(\"x\", bbox.x - side_padding)\n        .attr(\"width\", bbox.width + side_padding * 2)\n        .attr(\"height\", bbox.height + vertical_padding * 2)\n        .style(\"fill\", \"white\")\n        .style(\"stroke\", \"#d3d3d3\")\n        .lower();\n};\n\nid_generator = () => {\n    var S4 = function () {\n        return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);\n    };\n    return \"a\" + S4() + S4();\n};\n"},{"methodName":"interpretQuiet","source":"shinyInput('median_radio')"},{"methodName":"interpretQuiet","source":"shinyInput('mase_range')"},{"methodName":"interpretQuiet","source":"shinyInput('select')"},{"methodName":"interpretQuiet","source":"shinyInput('month_range')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxuc2NvcmVzX29qcyA9IHRyYW5zcG9zZShzY29yZXNfb2pzMSlcbm1lZGlhbnNfb2pzID0gdHJhbnNwb3NlKG1lZGlhbnNfb2pzMSlcblxuZG9tYWlucyA9IFtcbiAgICBcIkV4cGxpY2l0IGdlbmRlcuKAk2NhcmVlciBiaWFzXCIsIFxuICAgIFwiSW1wbGljaXQgZ2VuZGVy4oCTY2FyZWVyIGJpYXNcIiwgXG4gICAgXCJQb3NpdGl2ZSBhZmZlY3QgaW4gc29jaWFsIG1lZGlhXCIsIFxuICAgIFwiSW1wbGljaXQgQXNpYW4gQW1lcmljYW4gYmlhc1wiLCBcbiAgICBcIlBvbGl0aWNhbCBwb2xhcml6YXRpb25cIiwgXG4gICAgXCJFeHBsaWNpdCBBc2lhbiBBbWVyaWNhbiBiaWFzXCIsIFxuICAgIFwiSWRlb2xvZ2ljYWxseSBsZWFuIERlbW9jcmF0XCIsIFxuICAgIFwiTGlmZSBzYXRpc2ZhY3Rpb25cIiwgXG4gICAgXCJOZWdhdGl2ZSBhZmZlY3QgaW4gc29jaWFsIG1lZGlhXCIsIFxuICAgIFwiRXhwbGljaXQgQWZyaWNhbiBBbWVyaWNhbiBiaWFzXCIsIFxuICAgIFwiSW1wbGljaXQgQWZyaWNhbiBBbWVyaWNhbiBiaWFzXCIsXG4gICAgXCJJZGVvbG9naWNhbGx5IGxlYW4gUmVwdWJsaWNhblwiXG5dXG5cbnZpZXdvZiBtZWRpYW5fcmFkaW8gPSBJbnB1dHMucmFkaW8oXG4gICAgZDMuZ3JvdXAobWVkaWFuc19vanMsIGQgPT4gZC5tZXRob2QpLCBcbiAgICB7IGtleTogXCJBbGwgZXhwZXJ0c1wiLCBsYWJlbDogaHRtbGA8Yj5NZWRpYW48L2I+YCB9XG4pXG5cbnZpZXdvZiBtYXNlX3JhbmdlID0gSW5wdXRzLnJhbmdlKFxuICAgIFszLCBkMy5leHRlbnQoc2NvcmVzX29qcywgZCA9PiBkLk1BU0UxX3cxKV0sIFxuICAgIHsgc3RlcDogLjUsIHZhbHVlOiAyNSwgbGFiZWw6IGh0bWxgPGI+TUFTRSBtYXg8L2I+YCwgZm9ybWF0OiB4ID0+IHgudG9GaXhlZCgwKSB9XG4pXG5cbmFkZFRvb2x0aXBzKFxuICAgIFBsb3QucGxvdCh7XG4gICAgICAgIG1hcmtzOiBbXG4gICAgICAgICAgICBQbG90LmZyYW1lKHsgZmlsbDogXCIjZjdmN2Y3XCIgfSksXG4gICAgICAgICAgICBQbG90LmRvdChzY29yZXNfb2pzLCB7XG4gICAgICAgICAgICAgICAgeDogXCJNQVNFMV93MVwiLFxuICAgICAgICAgICAgICAgIHk6IFwiZG9tYWluX2xvbmdcIixcbiAgICAgICAgICAgICAgICB0aXRsZTogXCJ0ZWFtX25hbWVcIixcbiAgICAgICAgICAgICAgICByOiA3LFxuICAgICAgICAgICAgICAgIGZpbGw6IFwibWV0aG9kXCIsXG4gICAgICAgICAgICAgICAgZmlsbE9wYWNpdHk6IDAuNSxcbiAgICAgICAgICAgIH0pLFxuICAgICAgICAgICAgUGxvdC5kb3QobWVkaWFuX3JhZGlvLCB7XG4gICAgICAgICAgICAgICAgeDogXCJNQVNFMV93MVwiLFxuICAgICAgICAgICAgICAgIHk6IFwiZG9tYWluX2xvbmdcIixcbiAgICAgICAgICAgICAgICByOiA3LFxuICAgICAgICAgICAgICAgIHN0cm9rZTogXCJibGFja1wiLFxuICAgICAgICAgICAgICAgIHN0cm9rZVdpZHRoOiAyLFxuICAgICAgICAgICAgfSksXG4gICAgICAgIF0sXG4gICAgICAgIHg6IHtcbiAgICAgICAgICAgIGxhYmVsOiBcIk1lYW4gYWJzb2x1dGUgc2NhbGVkIGVycm9yXCIsXG4gICAgICAgICAgICBsYWJlbEFuY2hvcjogXCJjZW50ZXJcIixcbiAgICAgICAgICAgIHRpY2tTaXplOiAwLFxuICAgICAgICAgICAgZ3JpZDogZmFsc2UsXG4gICAgICAgICAgICBkb21haW46IFswLCBtYXNlX3JhbmdlXSxcbiAgICAgICAgfSxcbiAgICAgICAgeToge1xuICAgICAgICAgICAgbGFiZWw6IG51bGwsXG4gICAgICAgICAgICB0aWNrU2l6ZTogMCxcbiAgICAgICAgICAgIGdyaWQ6IHRydWUsXG4gICAgICAgICAgICBwYWRkaW5nOiAwLFxuICAgICAgICAgICAgZG9tYWluOiBkb21haW5zLFxuICAgICAgICB9LFxuICAgICAgICBjb2xvcjoge1xuICAgICAgICAgICAgbGVnZW5kOiB0cnVlLFxuICAgICAgICAgICAgZG9tYWluOiBbXCJJbnR1aXRpb24vdGhlb3J5XCIsIFwiRGF0YS1kcml2ZW5cIiwgXCJIeWJyaWRcIl0sXG4gICAgICAgICAgICByYW5nZTogW1wiI0IxM0Q3MFwiLCBcIiM3ZmM2YTRcIiwgXCIjNDg4OWFiXCJdLFxuICAgICAgICB9LFxuICAgICAgICB3aWR0aDogODAwLFxuICAgICAgICBoZWlnaHQ6IDQ1MCxcbiAgICAgICAgbWFyZ2luTGVmdDogMjE1LFxuICAgICAgICBtYXJnaW5SaWdodDogMTAsXG4gICAgICAgIG1hcmdpbkJvdHRvbTogNTAsXG4gICAgICAgIGluc2V0TGVmdDogNSxcbiAgICAgICAgaW5zZXRUb3A6IDIwLFxuICAgICAgICBpbnNldEJvdHRvbTogMjAsXG4gICAgfSlcbik7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbnNlcmllc19vanMgPSB0cmFuc3Bvc2Uoc2VyaWVzX29qczEpXG5cbnZpZXdvZiBzZWxlY3QgPSBJbnB1dHMuc2VsZWN0KFxuICAgIGQzLmdyb3VwKHNlcmllc19vanMsIGQgPT4gZC5kb21haW5fbG9uZyksIFxuICAgIHsgbGFiZWw6IGh0bWxgPGI+RG9tYWluPC9iPmAgfVxuKVxuXG52aWV3b2YgbW9udGhfcmFuZ2UgPSBJbnB1dHMucmFuZ2UoXG4gICAgW2QzLmV4dGVudChzZXJpZXNfb2pzLCBkID0+IGQubW9udGgpWzBdLCAtM10sIFxuICAgIHsgbGFiZWw6IGh0bWxgPGI+TW9udGhzIHByaW9yPC9iPmAsIHZhbHVlOiAtMjQsIHN0ZXA6IDEgfVxuKVxuXG5kb21haW5fdW5pdCA9IChkMy5tYXgoc2VsZWN0LCBkID0+IGQudmFsdWUpIC0gZDMubWluKHNlbGVjdCwgZCA9PiBkLnZhbHVlKSkgLyA0XG5cbmFkZFRvb2x0aXBzKFxuICAgIFBsb3QucGxvdCh7XG4gICAgICAgIG1hcmtzOiBbXG4gICAgICAgICAgICBQbG90LmZyYW1lKHsgZmlsbDogXCIjZjdmN2Y3XCIgfSksXG4gICAgICAgICAgICBQbG90LmxpbmVZKFxuICAgICAgICAgICAgICAgIHNlbGVjdC5maWx0ZXIoKGQpID0+IGQubW9udGggPiBtb250aF9yYW5nZSksXG4gICAgICAgICAgICAgICAgeyB4OiBcIm1vbnRoXCIsIHk6IFwidmFsdWVcIiwgc3Ryb2tlOiBcInNlcmllc1wiLCBzdHJva2VXaWR0aDogMi41IH1cbiAgICAgICAgICAgICksXG4gICAgICAgICAgICBQbG90LmRvdChcbiAgICAgICAgICAgICAgICBzZWxlY3QuZmlsdGVyKChkKSA9PiBkLm1vbnRoID4gbW9udGhfcmFuZ2UpLFxuICAgICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICAgICAgeDogXCJtb250aFwiLFxuICAgICAgICAgICAgICAgICAgICB5OiBcInZhbHVlXCIsXG4gICAgICAgICAgICAgICAgICAgIHRpdGxlOiBcInZhbHVlXCIsXG4gICAgICAgICAgICAgICAgICAgIGZpbGw6IFwic2VyaWVzXCIsXG4gICAgICAgICAgICAgICAgICAgIHI6IDUsXG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZTogXCJ3aGl0ZVwiLFxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICksXG4gICAgICAgICAgICBQbG90LnJ1bGVYKFswXSwge1xuICAgICAgICAgICAgICAgIHN0cm9rZU9wYWNpdHk6IDAuOSxcbiAgICAgICAgICAgICAgICBzdHJva2VXaWR0aDogMSxcbiAgICAgICAgICAgICAgICBzdHJva2VEYXNoYXJyYXk6IFwiNSw1XCIsXG4gICAgICAgICAgICB9KSxcbiAgICAgICAgICAgIFBsb3QudGV4dChzZWxlY3Quc2xpY2UoMCwgMSksIHtcbiAgICAgICAgICAgICAgICB0ZXh0OiAoZCkgPT4gZC5kb21haW5fbG9uZyxcbiAgICAgICAgICAgICAgICB0ZXh0QW5jaG9yOiBcInN0YXJ0XCIsXG4gICAgICAgICAgICAgICAgZnJhbWVBbmNob3I6IFwidG9wLWxlZnRcIixcbiAgICAgICAgICAgICAgICBmb250V2VpZ2h0OiBcImJvbGRcIixcbiAgICAgICAgICAgICAgICBmb250U2l6ZTogMTUsXG4gICAgICAgICAgICAgICAgZHg6IDIwLFxuICAgICAgICAgICAgICAgIGR5OiAxOCxcbiAgICAgICAgICAgIH0pLFxuICAgICAgICAgICAgUGxvdC50ZXh0KHNlbGVjdC5zbGljZSgwLCAxKSwge1xuICAgICAgICAgICAgICAgIHRleHQ6IChkKSA9PiBgVG9wIGV4cGVydDogJHtkLnRlYW1fbmFtZX1gLFxuICAgICAgICAgICAgICAgIHRleHRBbmNob3I6IFwic3RhcnRcIixcbiAgICAgICAgICAgICAgICBmcmFtZUFuY2hvcjogXCJ0b3AtbGVmdFwiLFxuICAgICAgICAgICAgICAgIGZvbnRTaXplOiAxNCxcbiAgICAgICAgICAgICAgICBkeDogMjAsXG4gICAgICAgICAgICAgICAgZHk6IDM5LFxuICAgICAgICAgICAgfSksXG4gICAgICAgIF0sXG4gICAgICAgIHg6IHtcbiAgICAgICAgICAgIGxhYmVsOiBcIk1vbnRoXCIsXG4gICAgICAgICAgICBsYWJlbEFuY2hvcjogXCJjZW50ZXJcIixcbiAgICAgICAgICAgIHRpY2tTaXplOiAwLFxuICAgICAgICB9LFxuICAgICAgICB5OiB7XG4gICAgICAgICAgICBsYWJlbDogbnVsbCxcbiAgICAgICAgICAgIHRpY2tzOiA1LFxuICAgICAgICAgICAgdGlja1NpemU6IDAsXG4gICAgICAgICAgICBkb21haW46IFtcbiAgICAgICAgICAgICAgICBkMy5taW4oc2VsZWN0LCAoZCkgPT4gZC52YWx1ZSkgLSBkb21haW5fdW5pdCxcbiAgICAgICAgICAgICAgICBkMy5tYXgoc2VsZWN0LCAoZCkgPT4gZC52YWx1ZSkgKyBkb21haW5fdW5pdCxcbiAgICAgICAgICAgIF0sXG4gICAgICAgIH0sXG4gICAgICAgIGNvbG9yOiB7XG4gICAgICAgICAgICBsZWdlbmQ6IHRydWUsXG4gICAgICAgICAgICByYW5nZTogW1wiI2JjYmNiY1wiLCBcIiNCMTNENzBcIiwgXCIjMEM2MjkxXCJdLFxuICAgICAgICB9LFxuICAgICAgICB3aWR0aDogODAwLFxuICAgICAgICBoZWlnaHQ6IDQ1MCxcbiAgICAgICAgaW5zZXRUb3A6IDIwLFxuICAgICAgICBpbnNldEJvdHRvbTogMjAsXG4gICAgICAgIGluc2V0UmlnaHQ6IDIwLFxuICAgICAgICBpbnNldExlZnQ6IDIwLFxuICAgICAgICBtYXJnaW5Cb3R0b206IDUwLFxuICAgICAgICBtYXJnaW5MZWZ0OiA0NSxcbiAgICAgICAgbWFyZ2luUmlnaHQ6IDAsXG4gICAgfSksXG4gICAgeyByOiA3LjUgfVxuKTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gU291cmNlOiBodHRwczovL29ic2VydmFibGVocS5jb20vQG1rZnJlZW1hbi9wbG90LXRvb2x0aXBcblxuYWRkVG9vbHRpcHMgPSAoY2hhcnQsIHN0eWxlcykgPT4ge1xuICAgIGNvbnN0IHN0cm9rZV9zdHlsZXMgPSB7IHN0cm9rZTogXCJibHVlXCIsIFwic3Ryb2tlLXdpZHRoXCI6IDMgfTtcbiAgICBjb25zdCBmaWxsX3N0eWxlcyA9IHsgZmlsbDogXCJibHVlXCIsIG9wYWNpdHk6IDAuNSB9O1xuXG4gICAgLy8gV29ya2Fyb3VuZCBpZiBpdCdzIGluIGEgZmlndXJlXG4gICAgY29uc3QgdHlwZSA9IGQzLnNlbGVjdChjaGFydCkubm9kZSgpLnRhZ05hbWU7XG4gICAgbGV0IHdyYXBwZXIgPVxuICAgICAgICB0eXBlID09PSBcIkZJR1VSRVwiID8gZDMuc2VsZWN0KGNoYXJ0KS5zZWxlY3QoXCJzdmdcIikgOiBkMy5zZWxlY3QoY2hhcnQpO1xuXG4gICAgLy8gV29ya2Fyb3VuZCBpZiB0aGVyZSdzIGEgbGVnZW5kLi4uLlxuICAgIGNvbnN0IHN2Z3MgPSBkMy5zZWxlY3QoY2hhcnQpLnNlbGVjdEFsbChcInN2Z1wiKTtcbiAgICBpZiAoc3Zncy5zaXplKCkgPiAxKSB3cmFwcGVyID0gZDMuc2VsZWN0KFsuLi5zdmdzXS5wb3AoKSk7XG4gICAgd3JhcHBlci5zdHlsZShcIm92ZXJmbG93XCIsIFwidmlzaWJsZVwiKTsgLy8gdG8gYXZvaWQgY2xpcHBpbmcgYXQgdGhlIGVkZ2VzXG5cbiAgICAvLyBTZXQgcG9pbnRlciBldmVudHMgdG8gdmlzaWJsZVN0cm9rZSBpZiB0aGUgZmlsbCBpcyBub25lIChlLmcuLCBpZiBpdHMgYSBsaW5lKVxuICAgIHdyYXBwZXIuc2VsZWN0QWxsKFwicGF0aFwiKS5lYWNoKGZ1bmN0aW9uIChkYXRhLCBpbmRleCwgbm9kZXMpIHtcbiAgICAgICAgLy8gRm9yIGxpbmUgY2hhcnRzLCBzZXQgdGhlIHBvaW50ZXIgZXZlbnRzIHRvIGJlIHZpc2libGUgc3Ryb2tlXG4gICAgICAgIGlmIChcbiAgICAgICAgICAgIGQzLnNlbGVjdCh0aGlzKS5hdHRyKFwiZmlsbFwiKSA9PT0gbnVsbCB8fFxuICAgICAgICAgICAgZDMuc2VsZWN0KHRoaXMpLmF0dHIoXCJmaWxsXCIpID09PSBcIm5vbmVcIlxuICAgICAgICApIHtcbiAgICAgICAgICAgIGQzLnNlbGVjdCh0aGlzKS5zdHlsZShcInBvaW50ZXItZXZlbnRzXCIsIFwidmlzaWJsZVN0cm9rZVwiKTtcbiAgICAgICAgICAgIGlmIChzdHlsZXMgPT09IHVuZGVmaW5lZCkgc3R5bGVzID0gc3Ryb2tlX3N0eWxlcztcbiAgICAgICAgfVxuICAgIH0pO1xuXG4gICAgaWYgKHN0eWxlcyA9PT0gdW5kZWZpbmVkKSBzdHlsZXMgPSBmaWxsX3N0eWxlcztcblxuICAgIGNvbnN0IHRpcCA9IHdyYXBwZXJcbiAgICAgICAgLnNlbGVjdEFsbChcIi5ob3ZlclwiKVxuICAgICAgICAuZGF0YShbMV0pXG4gICAgICAgIC5qb2luKFwiZ1wiKVxuICAgICAgICAuYXR0cihcImNsYXNzXCIsIFwiaG92ZXJcIilcbiAgICAgICAgLnN0eWxlKFwicG9pbnRlci1ldmVudHNcIiwgXCJub25lXCIpXG4gICAgICAgIC5zdHlsZShcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpO1xuXG4gICAgLy8gQWRkIGEgdW5pcXVlIGlkIHRvIHRoZSBjaGFydCBmb3Igc3R5bGluZ1xuICAgIGNvbnN0IGlkID0gaWRfZ2VuZXJhdG9yKCk7XG5cbiAgICAvLyBBZGQgdGhlIGV2ZW50IGxpc3RlbmVyc1xuICAgIGQzLnNlbGVjdChjaGFydCkuY2xhc3NlZChpZCwgdHJ1ZSk7IC8vIHVzaW5nIGEgY2xhc3Mgc2VsZWN0b3Igc28gdGhhdCBpdCBkb2Vzbid0IG92ZXJ3cml0ZSB0aGUgSURcbiAgICB3cmFwcGVyLnNlbGVjdEFsbChcInRpdGxlXCIpLmVhY2goZnVuY3Rpb24gKCkge1xuICAgICAgICAvLyBHZXQgdGhlIHRleHQgb3V0IG9mIHRoZSB0aXRsZSwgc2V0IGl0IGFzIGFuIGF0dHJpYnV0ZSBvbiB0aGUgcGFyZW50LCBhbmQgcmVtb3ZlIGl0XG4gICAgICAgIGNvbnN0IHRpdGxlID0gZDMuc2VsZWN0KHRoaXMpOyAvLyB0aXRsZSBlbGVtZW50IHRoYXQgd2Ugd2FudCB0byByZW1vdmVcbiAgICAgICAgY29uc3QgcGFyZW50ID0gZDMuc2VsZWN0KHRoaXMucGFyZW50Tm9kZSk7IC8vIHZpc3VhbCBtYXJrIG9uIHRoZSBzY3JlZW5cbiAgICAgICAgY29uc3QgdCA9IHRpdGxlLnRleHQoKTtcbiAgICAgICAgaWYgKHQpIHtcbiAgICAgICAgICAgIHBhcmVudC5hdHRyKFwiX190aXRsZVwiLCB0KS5jbGFzc2VkKFwiaGFzLXRpdGxlXCIsIHRydWUpO1xuICAgICAgICAgICAgdGl0bGUucmVtb3ZlKCk7XG4gICAgICAgIH1cbiAgICAgICAgLy8gTW91c2UgZXZlbnRzXG4gICAgICAgIHBhcmVudFxuICAgICAgICAgICAgLm9uKFwicG9pbnRlcmVudGVyIHBvaW50ZXJtb3ZlXCIsIGZ1bmN0aW9uIChldmVudCkge1xuICAgICAgICAgICAgICAgIGNvbnN0IHRleHQgPSBkMy5zZWxlY3QodGhpcykuYXR0cihcIl9fdGl0bGVcIik7XG4gICAgICAgICAgICAgICAgY29uc3QgcG9pbnRlciA9IGQzLnBvaW50ZXIoZXZlbnQsIHdyYXBwZXIubm9kZSgpKTtcbiAgICAgICAgICAgICAgICBpZiAodGV4dCkgdGlwLmNhbGwoaG92ZXIsIHBvaW50ZXIsIHRleHQuc3BsaXQoXCJcXG5cIikpO1xuICAgICAgICAgICAgICAgIGVsc2UgdGlwLnNlbGVjdEFsbChcIipcIikucmVtb3ZlKCk7XG5cbiAgICAgICAgICAgICAgICAvLyBSYWlzZSBpdFxuICAgICAgICAgICAgICAgIGQzLnNlbGVjdCh0aGlzKS5yYWlzZSgpO1xuICAgICAgICAgICAgICAgIC8vIEtlZXAgd2l0aGluIHRoZSBwYXJlbnQgaG9yaXpvbnRhbGx5XG4gICAgICAgICAgICAgICAgY29uc3QgdGlwU2l6ZSA9IHRpcC5ub2RlKCkuZ2V0QkJveCgpO1xuICAgICAgICAgICAgICAgIGlmIChwb2ludGVyWzBdICsgdGlwU2l6ZS54IDwgMClcbiAgICAgICAgICAgICAgICAgICAgdGlwLmF0dHIoXG4gICAgICAgICAgICAgICAgICAgICAgICBcInRyYW5zZm9ybVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgYHRyYW5zbGF0ZSgke3RpcFNpemUud2lkdGggLyAyfSwgJHtwb2ludGVyWzFdICsgN30pYFxuICAgICAgICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgICAgIGVsc2UgaWYgKHBvaW50ZXJbMF0gKyB0aXBTaXplLndpZHRoIC8gMiA+IHdyYXBwZXIuYXR0cihcIndpZHRoXCIpKVxuICAgICAgICAgICAgICAgICAgICB0aXAuYXR0cihcbiAgICAgICAgICAgICAgICAgICAgICAgIFwidHJhbnNmb3JtXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICBgdHJhbnNsYXRlKCR7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgd3JhcHBlci5hdHRyKFwid2lkdGhcIikgLSB0aXBTaXplLndpZHRoIC8gMlxuICAgICAgICAgICAgICAgICAgICAgICAgfSwgJHtwb2ludGVyWzFdICsgN30pYFxuICAgICAgICAgICAgICAgICAgICApO1xuICAgICAgICAgICAgfSlcbiAgICAgICAgICAgIC5vbihcInBvaW50ZXJvdXRcIiwgZnVuY3Rpb24gKGV2ZW50KSB7XG4gICAgICAgICAgICAgICAgdGlwLnNlbGVjdEFsbChcIipcIikucmVtb3ZlKCk7XG4gICAgICAgICAgICAgICAgLy8gTG93ZXIgaXQhXG4gICAgICAgICAgICAgICAgZDMuc2VsZWN0KHRoaXMpLmxvd2VyKCk7XG4gICAgICAgICAgICB9KTtcbiAgICB9KTtcblxuICAgIC8vIFJlbW92ZSB0aGUgdGlwIGlmIHlvdSB0YXAgb24gdGhlIHdyYXBwZXIgKGZvciBtb2JpbGUpXG4gICAgd3JhcHBlci5vbihcInRvdWNoc3RhcnRcIiwgKCkgPT4gdGlwLnNlbGVjdEFsbChcIipcIikucmVtb3ZlKCkpO1xuXG4gICAgLy8gRGVmaW5lIHRoZSBzdHlsZXNcbiAgICBjaGFydC5hcHBlbmRDaGlsZChodG1sYDxzdHlsZT5cbiAgICAuJHtpZH0gLmhhcy10aXRsZSB7IGN1cnNvcjogcG9pbnRlcjsgIHBvaW50ZXItZXZlbnRzOiBhbGw7IH1cbiAgICAuJHtpZH0gLmhhcy10aXRsZTpob3ZlciB7ICR7T2JqZWN0LmVudHJpZXMoc3R5bGVzKS5tYXAoKFtrZXksIHZhbHVlXSkgPT4gYCR7a2V5fTogJHt2YWx1ZX07YCkuam9pbihcIiBcIil9IH1gKTtcblxuICAgIHJldHVybiBjaGFydDtcbn07XG5cbmhvdmVyID0gKHRpcCwgcG9zLCB0ZXh0KSA9PiB7XG4gICAgY29uc3Qgc2lkZV9wYWRkaW5nID0gMTA7XG4gICAgY29uc3QgdmVydGljYWxfcGFkZGluZyA9IDU7XG4gICAgY29uc3QgdmVydGljYWxfb2Zmc2V0ID0gMjU7XG5cbiAgICAvLyBFbXB0eSBpdCBvdXRcbiAgICB0aXAuc2VsZWN0QWxsKFwiKlwiKS5yZW1vdmUoKTtcblxuICAgIC8vIEFwcGVuZCB0aGUgdGV4dFxuICAgIHRpcC5zdHlsZShcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpXG4gICAgICAgIC5zdHlsZShcInBvaW50ZXItZXZlbnRzXCIsIFwibm9uZVwiKVxuICAgICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7cG9zWzBdfSwgJHtwb3NbMV0gKyA3fSlgKVxuICAgICAgICAuc2VsZWN0QWxsKFwidGV4dFwiKVxuICAgICAgICAuZGF0YSh0ZXh0KVxuICAgICAgICAuam9pbihcInRleHRcIilcbiAgICAgICAgLnN0eWxlKFwiZG9taW5hbnQtYmFzZWxpbmVcIiwgXCJpZGVvZ3JhcGhpY1wiKVxuICAgICAgICAudGV4dCgoZCkgPT4gZClcbiAgICAgICAgLmF0dHIoXCJ5XCIsIChkLCBpKSA9PiAoaSAtICh0ZXh0Lmxlbmd0aCAtIDEpKSAqIDE1IC0gdmVydGljYWxfb2Zmc2V0KVxuICAgICAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCAoZCwgaSkgPT4gKGkgPT09IDAgPyBcImJvbGRcIiA6IFwibm9ybWFsXCIpKTtcblxuICAgIGNvbnN0IGJib3ggPSB0aXAubm9kZSgpLmdldEJCb3goKTtcblxuICAgIC8vIEFkZCBhIHJlY3RhbmdsZSAoYXMgYmFja2dyb3VuZClcbiAgICB0aXAuYXBwZW5kKFwicmVjdFwiKVxuICAgICAgICAuYXR0cihcInlcIiwgYmJveC55IC0gdmVydGljYWxfcGFkZGluZylcbiAgICAgICAgLmF0dHIoXCJ4XCIsIGJib3gueCAtIHNpZGVfcGFkZGluZylcbiAgICAgICAgLmF0dHIoXCJ3aWR0aFwiLCBiYm94LndpZHRoICsgc2lkZV9wYWRkaW5nICogMilcbiAgICAgICAgLmF0dHIoXCJoZWlnaHRcIiwgYmJveC5oZWlnaHQgKyB2ZXJ0aWNhbF9wYWRkaW5nICogMilcbiAgICAgICAgLnN0eWxlKFwiZmlsbFwiLCBcIndoaXRlXCIpXG4gICAgICAgIC5zdHlsZShcInN0cm9rZVwiLCBcIiNkM2QzZDNcIilcbiAgICAgICAgLmxvd2VyKCk7XG59O1xuXG5pZF9nZW5lcmF0b3IgPSAoKSA9PiB7XG4gICAgdmFyIFM0ID0gZnVuY3Rpb24gKCkge1xuICAgICAgICByZXR1cm4gKCgoMSArIE1hdGgucmFuZG9tKCkpICogMHgxMDAwMCkgfCAwKS50b1N0cmluZygxNikuc3Vic3RyaW5nKDEpO1xuICAgIH07XG4gICAgcmV0dXJuIFwiYVwiICsgUzQoKSArIFM0KCk7XG59O1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtZWRpYW5fcmFkaW8nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbWFzZV9yYW5nZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3QnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbW9udGhfcmFuZ2UnKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -990,18 +1003,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1033,11 +1035,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/twopoints\.blog");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1047,8 +1086,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1060,7 +1108,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1104,6 +1274,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1129,6 +1300,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1194,12 +1391,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

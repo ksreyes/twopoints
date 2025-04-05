@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.294">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2023-03-29">
 
-<title>Two Points Make a Line - People as particles</title>
+<title>People as particles – Two Points Make a Line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -73,17 +73,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1935dcbd43814f6b9d0e02a660e21e63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,8 +98,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
@@ -117,6 +125,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -202,11 +212,11 @@ g.tick, g.tick + text {
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<meta property="og:title" content="Two Points Make a Line - People as particles">
+<meta property="og:title" content="People as particles – Two Points Make a Line">
 <meta property="og:description" content="Population density in cities, portrayed more vividly">
 <meta property="og:image" content="https://twopoints.blog/posts/2023-03-29-people-as-particles/thumbnail.gif">
-<meta property="og:site-name" content="Two Points Make a Line">
-<meta name="twitter:title" content="Two Points Make a Line - People as particles">
+<meta property="og:site_name" content="Two Points Make a Line">
+<meta name="twitter:title" content="People as particles – Two Points Make a Line">
 <meta name="twitter:description" content="Population density in cities, portrayed more vividly">
 <meta name="twitter:image" content="https://twopoints.blog/posts/2023-03-29-people-as-particles/thumbnail.gif">
 <meta name="twitter:card" content="summary_large_image">
@@ -216,9 +226,9 @@ g.tick, g.tick + text {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo-icon-invert.png" alt="" class="navbar-logo">
     </a>
@@ -227,37 +237,36 @@ g.tick, g.tick + text {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="dropdown-header">
- <span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span></li>
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span>
+    </span>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../subscribe.html" rel="" target="">
- <span class="menu-text">Subscribe</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ksreyes/twopoints" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ksreyes/twopoints"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -294,14 +303,15 @@ g.tick, g.tick + text {
   </div>
   
 
+
 </header>
+
 
 <p>Manila is the densest city on Earth,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> fitting 1.8 million people into a 43 square-kilometer crucible. The 16 other cities that constitute Metro Manila, the Philippine capital, are extraordinarily crowded as well, resulting in an overall density of 22,000/km². This is twice that of New York and almost three times that of Singapore. Dysfunctional urban planning has failed to cope. Suburbs-style neighborhoods and private golf courses <a href="https://twitter.com/pfkahanapINQ/status/1605847613089058816">sprawl incongruously</a> in city centers while open green spaces <a href="https://manilastandard.net/spotlight/ms-36th-anniversary-issue-towards-a-sustainable-future/314303715/claiming-back-the-city.html">remain limited</a>. The state of <a href="https://www.bbc.com/news/world-asia-49983397">transportation</a> <a href="https://newsinfo.inquirer.net/1698050/public-transportation-mobility-readiness-in-manila-among-worlds-worst">is</a> <a href="https://twitter.com/PhilippineStar/status/1577309804833693697/photo/1">dystopian</a>. A much needed <a href="https://twopoints.blog/posts/2022-11-08-metro-manila-subway/">subway</a> intended for partial operability <a href="https://newsinfo.inquirer.net/1488867/metro-manila-subways-partial-operability-targeted-in-1st-quarter-of-2022">in 2022</a> only started construction <a href="https://newsinfo.inquirer.net/1714541/metro-manila-subway-construction-begins">last January</a>.</p>
 <div class="instagram-container"> <blockquote class="instagram-media blockquote" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewbox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Cj-JFz6Lshy/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Jilson Tiu (@jilson.tiu)</a></p></div></blockquote></div> <script async="" src="//www.instagram.com/embed.js"></script>
 <p>Living in such a crowded place means shoving, squeezing, and cartwheeling your way through the chaos of gridlocked streets and packed trains, a daily collision of body against body that brings to mind Radiohead at their most anxious: “<a href="https://www.youtube.com/watch?v=hTzRliW3iFs">everyone is <em>so</em> <span class="shaking-text">near</span></a>”. It’s an experience that isn’t quite captured by the metric “22,000/km²”. I wanted to make this number more evocative through a visualization, but how? I’ve seen population density plotted on bar charts, on choropleth maps, even on a <a href="https://www.vox.com/2015/1/2/7480993/population-density-visualized">3D histogram</a>, but none of these, I feel, do justice to the absolute pressure cooker that is Manila.</p>
 <p>I decided to try something novel. I call it a particles chart, and it consists of a D3 force simulation of balls bouncing off each other in a box. It’s relatively simple to construct — I am indebted to <a href="https://github.com/vasturiano">Vasco Asturiano</a>’s modules in particular — yet it captures so effectively what “densest city on the planet” means. It means countless agitated bodies jockeying and jittering in a tight space, searching endlessly for room to breathe.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div>
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" data-startfrom="41" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 40;"><span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="ojs-title"&gt;Fancy bumping into you&lt;/div&gt;</span></span>
@@ -338,48 +348,37 @@ g.tick, g.tick + text {
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="ojs-caption"&gt;Each box is a square kilometer. Each dot is 100 people. "Ancestors" date from 1500 CE, as derived from Putterman and Weil's &lt;a href="https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000" target="_blank"&gt;World Migration Matrix&lt;/a&gt;.&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div>
+<div class="cell quarto-layout-panel" data-layout="[[1],[1,1],[1],[1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="ojs-cell-1-1" data-nodetype="expression">
 
 </div>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="ojs-cell-1-2" data-nodetype="declaration">
 
 </div>
 </div>
-</div>
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="ojs-cell-1-3" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="ojs-cell-1-4" data-nodetype="expression">
 
 </div>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="ojs-cell-1-5" data-nodetype="expression">
 
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -388,7 +387,7 @@ g.tick, g.tick + text {
 <p>To be clear, density is not inherently bad. In fact, density is indicative of a successful city since it means people <em>want</em> to move there. Density itself also confers benefits through <a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.12.2.139">agglomeration effects</a>: proximity among firms and laborers brings down production costs and increases knowledge spillovers. But these benefits surely fall short of potential in Metro Manila. How great can proximity advantages be if it takes two hours to get anywhere? If there were an optimal level of density for a given level of infrastructure quality, Manila has blown way past it.</p>
 <p>The particles chart can be used in any number of applications, with three levers (the number, colors, and sizes of the particles) available for mapping to variables. I’ll end this post with an additional example, this time tackling a different aspect of modern city living. It’s not a statistic, but a feeling. The kind that creeps up on you late at night under certain moods, when the veil lifts and you momentarily perceive the Camusian absurdity of all your life’s endeavors. A feeling best encapsulated, I think, by another <a href="https://www.youtube.com/watch?v=84Tq-eAJIk4">song lyric</a>:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" data-startfrom="86" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 85;"><span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Generate points</span></span>
@@ -466,7 +465,7 @@ g.tick, g.tick + text {
 We’re just two lost souls swimming in a fish bowl<br><span class="fade-text" style="animation-name:change-opacity-1;">year</span> <span class="fade-text" style="animation-name:change-opacity-2;">after</span> <span class="fade-text" style="animation-name:change-opacity-3;">year</span>
 </p>
 <p style="text-align:center">
-<img src="../../images/logo-icon.png" class="endmark quarto-discovered-preview-image img-fluid">
+<img src="../../images/logo-icon.png" class="endmark img-fluid">
 </p>
 
 
@@ -481,8 +480,8 @@ We’re just two lost souls swimming in a fish bowl<br><span class="fade-text" s
 </div></section><section id="d3-observable-code" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">D3 / Observable code</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>D3 / Observable</summary>
 <div class="sourceCode cell-code" id="cb3" data-startfrom="170" data-source-offset="-17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 169;"><span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">'d3@7'</span><span class="op">,</span> <span class="st">'d3-force-bounce'</span><span class="op">,</span> <span class="st">'d3-force-surface'</span><span class="op">,</span> <span class="st">'d3-force-limit'</span>)<span class="op">;</span></span>
 <span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="co">// Import data</span></span>
@@ -750,9 +749,9 @@ We’re just two lost souls swimming in a fish bowl<br><span class="fade-text" s
 <li id="fn1"><p>Other sources may differ depending on how city boundaries are defined.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>City density data were taken from Wikipedia. Comparisons are only suggestive given idiosyncrasies in how administrative boundaries are defined. For example, Metro Manila is 624 km², comparable to Jakarta (664 km²) and New York (778 km²) but not so much to Paris (105 km²) and Beijing (16,411 km²).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nhtml`\n  <div class=\"ojs-title\">Fancy bumping into you</div>\n  <div class=\"ojs-subtitle\">Population density in Metro Manila and major global cities</div>\n`\n\nviewof citySelectPH = Inputs.select(\n    d3.group(densityManila, d => d.city), {\n        label: \"Pick a Metro Manila city...\",\n        key: \"Manila\",\n        description: \"Pick a Metro Manila city...\"\n    })\n\nviewof citySelect = Inputs.select(\n    d3.group(densityOthers, d => d.city), {\n        label: \"...and compare with a global city\",\n        key: \"New York\"\n    })\n\n{\n\tconst container = d3.create(\"div\");\n\n\tconst containerLegend = container\n\t\t.append(\"div\")\n\t\t.attr(\"style\", \"display: flex; justify-content: center\");\n\tcontainerLegend.call(legend);\n\n\tconst containerChart = container\n\t\t.append(\"div\")\n\t\t.attr(\"style\", \"display: flex; gap: 1em; justify-content: space-between\");\n\tcontainerChart.call(particles, citySelectPH);\n\tcontainerChart.call(particles, citySelect);\n\n\treturn container.node();\n}\n\nhtml`<div class=\"ojs-caption\">Each box is a square kilometer. Each dot is 100 people. \"Ancestors\" date from 1500 CE, as derived from Putterman and Weil's <a href=\"https://sites.google.com/brown.edu/louis-putterman/world-migration-matrix-1500-2000\" target=\"_blank\">World Migration Matrix</a>.</div>`\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\n{\n    // Generate points\n    const widthFishbowl = width\n    const rFishbowl = widthFishbowl * .01\n    const vFishbowl = rFishbowl * .1\n    \n    const dummynodes = Array.from(\n        { length: 300 }, (_, i) => ({\n            x: d3.randomUniform((widthFishbowl * .05), (widthFishbowl * .95))(),\n            y: d3.randomUniform(height * .05, height * .95)(),\n            r: d3.randomNormal(rMean, rSD)(),\n            vx: d3.randomUniform(-1, 1)() * velocity,\n            vy: d3.randomUniform(-1, 1)() * velocity,\n            color: \"#eeeeee\"\n        })\n    );\n    \n    dummynodes.push(\n        { x: widthFishbowl * .05, y: height * .95, r: rFishbowl, vx: vFishbowl, vy: -vFishbowl, color: \"#4889ab\" },\n        { x: widthFishbowl * .95, y: height * .05, r: rFishbowl, vx: -vFishbowl, vy: vFishbowl, color: \"#C85B89\" }\n    );\n    \n    const nodes = dummynodes.map(Object.create);\n\n    // Panel\n    const container = d3.create(\"div\")\n        .attr(\"style\", \"display: flex; justify-content: center\");\n\n    const svg = container.append(\"svg\")\n        .attr(\"width\", widthFishbowl)\n        .attr(\"height\", height)\n        .attr(\"viewBox\", [0, 0, widthFishbowl, height])\n        .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic\");\n\n    // Chart box\n    svg.append(\"rect\")\n        .attr(\"width\", widthFishbowl)\n        .attr(\"height\", height)\n        .attr(\"fill\", \"#f7f7f7\");\n\n    const node = svg.append(\"g\")\n        .selectAll(\"circle\")\n        .data(nodes)\n        .join(\"circle\")\n        .attr(\"cx\", d => d.x)\n        .attr(\"cy\", d => d.y)\n        .attr(\"r\", d => d.r)\n        .attr(\"fill\", (d) => d.color);\n    \n    // Define forces\n    const simulation = d3.forceSimulation(nodes)\n        .force(\"bounce\", d3.forceBounce()\n            .radius(d => d.r + .5))\n        .force(\"surface\", d3.forceSurface()\n            .surfaces(bbox([[0, 0], [widthFishbowl, height]]))\n            .oneWay(true)\n            .radius(d => d.r + 1))\n        .force('limit', d3.forceLimit()\n            .x0(0).x1(widthFishbowl).y0(0).y1(height))\n        .alphaDecay(0)\n        .velocityDecay(0)\n        .on(\"tick\", () => { node.attr(\"cx\", d => d.x).attr(\"cy\", d => d.y) });\n    \n    return container.node()\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\n// Dependencies\nd3 = require('d3@7', 'd3-force-bounce', 'd3-force-surface', 'd3-force-limit');\n\n// Import data\ndensity = FileAttachment('../../datasets/particles/density.csv').csv({ typed: true });\ndensityManila = density.filter(d => d.country === \"Philippines\");\ndensityOthers = density.filter(d => d.country !== \"Philippines\");\ngroupAssign = FileAttachment('../../datasets/particles/group_assign.csv').csv({ typed: true });\n\n// Parameters\nheight = width * .49;                // Height of particle chart\nrMean = (width * .49 / 40) / 2;      // Mean radius\nrSD = rMean * .75;                   // SD radius\nvelocity = rMean * .8;               // Particle velocity\n\ncolors = [\"#4889ab\", \"#7fc6a4\", \"#FCB13B\", \"#B13D70\", \"#f697bb\"];\n\ncolor = d3.scaleOrdinal()\n    .domain([1, 2, 3, 4, 5])\n    .range(colors);\n\nbbox = ([[x1, y1], [x2, y2]]) => [\n    { from: { x: x1, y: y1 }, to: { x: x1, y: y2 } },\n    { from: { x: x1, y: y2 }, to: { x: x2, y: y2 } },\n    { from: { x: x2, y: y2 }, to: { x: x2, y: y1 } },\n    { from: { x: x2, y: y1 }, to: { x: x1, y: y1 } }\n];\n\n// Function to generate particles for a given city\n\nfunction genpoints(city) {\n\n    const density = Math.round(city[0].density / 100);\n    \n    const groupAssignCity = groupAssign.filter(d => d.city === city[0].city);\n    const counts = groupAssignCity.map(row => row.points_ingroup);\n    const groups = [1, 2, 3, 4, 5];\n    const groupArray = counts.flatMap((count, i) =>\n        Array.from({ length: count }, () => groups[i])\n    );\n    \n    const points = Array.from(\n        { length: density },\n        (_, i) => ({\n            x: d3.randomUniform((width * .49 * .15), (width * .49 * .85))(),\n            y: d3.randomUniform(height * .15, height * .85)(),\n            r: d3.randomNormal(rMean, rSD)(),\n            vx: d3.randomUniform(-1, 1)() * velocity,\n            vy: d3.randomUniform(-1, 1)() * velocity,\n            group: groupArray[i]\n        })\n    );\n\n    return points;\n}\n\n// Function to generate particles chart\n\nfunction particles(selection, city) {\n\n    // Read data\n    const nodes = genpoints(city).map(Object.create);\n\n    // Panel\n    const svg = selection.append(\"svg\")\n        .attr(\"width\", width * .49)\n        .attr(\"height\", height * 1.1)\n        .attr(\"viewBox\", [0, 0, width * .49, height * 1.1])\n        .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic\");\n\n    // Chart box\n    svg.append(\"rect\")\n        .attr(\"width\", width * .49)\n        .attr(\"height\", height)\n        .attr(\"fill\", \"#f7f7f7\")\n        .attr(\"stroke\", \"#bcbcbc\")\n        .attr(\"stroke-width\", 1);\n\n    // Bottom label\n    const densityStat = d3.format(\",.2r\")(city[0].density);\n    svg.append(\"text\")\n        .attr(\"id\", \"chart-text\")\n        .attr(\"x\", width * .49 / 2)\n        .attr(\"y\", height * 1.075)\n        .attr(\"text-anchor\", \"middle\")\n        .text(`${densityStat} people/km²`);\n\n    // Draw particles\n    const node = svg.append(\"g\")\n        .selectAll(\"circle\")\n        .data(nodes)\n        .join(\"circle\")\n        .attr(\"cx\", d => d.x)\n        .attr(\"cy\", d => d.y)\n        .attr(\"r\", d => d.r)\n        .attr(\"fill\", (d) => color(d.group));\n    \n    // Define forces\n    const simulation = d3.forceSimulation(nodes)\n        .force(\"bounce\", d3.forceBounce()\n            .radius(d => d.r + .5))\n        .force(\"surface\", d3.forceSurface()\n            .surfaces(bbox([[0, 0], [width * .49, height]]))\n            .oneWay(true)\n            .radius(d => d.r + 1))\n        .force('limit', d3.forceLimit()\n            .x0(0).x1(width * .49).y0(0).y1(height))\n        .alphaDecay(0)\n        .velocityDecay(0)\n        .on(\"tick\", () => { node.attr(\"cx\", d => d.x).attr(\"cy\", d => d.y) });\n}\n\n// Function to generate legend\n\nfunction legend(selection) {\n    \n    const legendWidth = 390;\n    const legendHeight = 34;\n    const rLegend = .5;\n    \n    const legendBox = selection.append(\"svg\")\n        .attr(\"width\", legendWidth)\n        .attr(\"height\", legendHeight)\n        .attr(\"viewBox\", [0, 0, legendWidth, legendHeight])\n        .attr(\"style\", \"max-width: 90%; height: auto; height: intrinsic;\");\n    \n    legendBox.append(\"circle\")\n        .attr(\"cx\", rLegend + \"rem\")\n        .attr(\"cy\", \".5rem\")\n        .attr(\"fill\", \"#4889ab\")\n        .attr(\"r\", rLegend + \"rem\");\n\n    legendBox.append(\"text\")\n        .attr(\"x\", (rLegend * 3) + \"rem\")\n        .attr(\"y\", \".85rem\")\n        .attr(\"text-anchor\", \"left\")\n        .text(\"Native ancestors\");\n\n    legendBox.append(\"g\")\n        .selectAll(\"circle\")\n        .data([1, 2, 3, 4])\n        .join(\"circle\")\n        .attr(\"cx\", d => (9 + rLegend + (d - 1) * rLegend * 3) + \"rem\")\n        .attr(\"cy\", \".5rem\")\n        .attr(\"fill\", d => color(d + 1))\n        .attr(\"r\", rLegend + \"rem\");\n\n    legendBox.append(\"text\")\n        .attr(\"x\", (9 + rLegend * 3 * 4) + \"rem\")\n        .attr(\"y\", \".85rem\")\n        .attr(\"text-anchor\", \"left\")\n        .text(\"Migrant ancestors\");\n}\n"},{"methodName":"interpretQuiet","source":"shinyInput('citySelectPH')"},{"methodName":"interpretQuiet","source":"shinyInput('citySelect')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuaHRtbGBcbiAgPGRpdiBjbGFzcz1cIm9qcy10aXRsZVwiPkZhbmN5IGJ1bXBpbmcgaW50byB5b3U8L2Rpdj5cbiAgPGRpdiBjbGFzcz1cIm9qcy1zdWJ0aXRsZVwiPlBvcHVsYXRpb24gZGVuc2l0eSBpbiBNZXRybyBNYW5pbGEgYW5kIG1ham9yIGdsb2JhbCBjaXRpZXM8L2Rpdj5cbmBcblxudmlld29mIGNpdHlTZWxlY3RQSCA9IElucHV0cy5zZWxlY3QoXG4gICAgZDMuZ3JvdXAoZGVuc2l0eU1hbmlsYSwgZCA9PiBkLmNpdHkpLCB7XG4gICAgICAgIGxhYmVsOiBcIlBpY2sgYSBNZXRybyBNYW5pbGEgY2l0eS4uLlwiLFxuICAgICAgICBrZXk6IFwiTWFuaWxhXCIsXG4gICAgICAgIGRlc2NyaXB0aW9uOiBcIlBpY2sgYSBNZXRybyBNYW5pbGEgY2l0eS4uLlwiXG4gICAgfSlcblxudmlld29mIGNpdHlTZWxlY3QgPSBJbnB1dHMuc2VsZWN0KFxuICAgIGQzLmdyb3VwKGRlbnNpdHlPdGhlcnMsIGQgPT4gZC5jaXR5KSwge1xuICAgICAgICBsYWJlbDogXCIuLi5hbmQgY29tcGFyZSB3aXRoIGEgZ2xvYmFsIGNpdHlcIixcbiAgICAgICAga2V5OiBcIk5ldyBZb3JrXCJcbiAgICB9KVxuXG57XG5cdGNvbnN0IGNvbnRhaW5lciA9IGQzLmNyZWF0ZShcImRpdlwiKTtcblxuXHRjb25zdCBjb250YWluZXJMZWdlbmQgPSBjb250YWluZXJcblx0XHQuYXBwZW5kKFwiZGl2XCIpXG5cdFx0LmF0dHIoXCJzdHlsZVwiLCBcImRpc3BsYXk6IGZsZXg7IGp1c3RpZnktY29udGVudDogY2VudGVyXCIpO1xuXHRjb250YWluZXJMZWdlbmQuY2FsbChsZWdlbmQpO1xuXG5cdGNvbnN0IGNvbnRhaW5lckNoYXJ0ID0gY29udGFpbmVyXG5cdFx0LmFwcGVuZChcImRpdlwiKVxuXHRcdC5hdHRyKFwic3R5bGVcIiwgXCJkaXNwbGF5OiBmbGV4OyBnYXA6IDFlbTsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuXCIpO1xuXHRjb250YWluZXJDaGFydC5jYWxsKHBhcnRpY2xlcywgY2l0eVNlbGVjdFBIKTtcblx0Y29udGFpbmVyQ2hhcnQuY2FsbChwYXJ0aWNsZXMsIGNpdHlTZWxlY3QpO1xuXG5cdHJldHVybiBjb250YWluZXIubm9kZSgpO1xufVxuXG5odG1sYDxkaXYgY2xhc3M9XCJvanMtY2FwdGlvblwiPkVhY2ggYm94IGlzIGEgc3F1YXJlIGtpbG9tZXRlci4gRWFjaCBkb3QgaXMgMTAwIHBlb3BsZS4gXCJBbmNlc3RvcnNcIiBkYXRlIGZyb20gMTUwMCBDRSwgYXMgZGVyaXZlZCBmcm9tIFB1dHRlcm1hbiBhbmQgV2VpbCdzIDxhIGhyZWY9XCJodHRwczovL3NpdGVzLmdvb2dsZS5jb20vYnJvd24uZWR1L2xvdWlzLXB1dHRlcm1hbi93b3JsZC1taWdyYXRpb24tbWF0cml4LTE1MDAtMjAwMFwiIHRhcmdldD1cIl9ibGFua1wiPldvcmxkIE1pZ3JhdGlvbiBNYXRyaXg8L2E+LjwvZGl2PmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxue1xuICAgIC8vIEdlbmVyYXRlIHBvaW50c1xuICAgIGNvbnN0IHdpZHRoRmlzaGJvd2wgPSB3aWR0aFxuICAgIGNvbnN0IHJGaXNoYm93bCA9IHdpZHRoRmlzaGJvd2wgKiAuMDFcbiAgICBjb25zdCB2RmlzaGJvd2wgPSByRmlzaGJvd2wgKiAuMVxuICAgIFxuICAgIGNvbnN0IGR1bW15bm9kZXMgPSBBcnJheS5mcm9tKFxuICAgICAgICB7IGxlbmd0aDogMzAwIH0sIChfLCBpKSA9PiAoe1xuICAgICAgICAgICAgeDogZDMucmFuZG9tVW5pZm9ybSgod2lkdGhGaXNoYm93bCAqIC4wNSksICh3aWR0aEZpc2hib3dsICogLjk1KSkoKSxcbiAgICAgICAgICAgIHk6IGQzLnJhbmRvbVVuaWZvcm0oaGVpZ2h0ICogLjA1LCBoZWlnaHQgKiAuOTUpKCksXG4gICAgICAgICAgICByOiBkMy5yYW5kb21Ob3JtYWwock1lYW4sIHJTRCkoKSxcbiAgICAgICAgICAgIHZ4OiBkMy5yYW5kb21Vbmlmb3JtKC0xLCAxKSgpICogdmVsb2NpdHksXG4gICAgICAgICAgICB2eTogZDMucmFuZG9tVW5pZm9ybSgtMSwgMSkoKSAqIHZlbG9jaXR5LFxuICAgICAgICAgICAgY29sb3I6IFwiI2VlZWVlZVwiXG4gICAgICAgIH0pXG4gICAgKTtcbiAgICBcbiAgICBkdW1teW5vZGVzLnB1c2goXG4gICAgICAgIHsgeDogd2lkdGhGaXNoYm93bCAqIC4wNSwgeTogaGVpZ2h0ICogLjk1LCByOiByRmlzaGJvd2wsIHZ4OiB2RmlzaGJvd2wsIHZ5OiAtdkZpc2hib3dsLCBjb2xvcjogXCIjNDg4OWFiXCIgfSxcbiAgICAgICAgeyB4OiB3aWR0aEZpc2hib3dsICogLjk1LCB5OiBoZWlnaHQgKiAuMDUsIHI6IHJGaXNoYm93bCwgdng6IC12RmlzaGJvd2wsIHZ5OiB2RmlzaGJvd2wsIGNvbG9yOiBcIiNDODVCODlcIiB9XG4gICAgKTtcbiAgICBcbiAgICBjb25zdCBub2RlcyA9IGR1bW15bm9kZXMubWFwKE9iamVjdC5jcmVhdGUpO1xuXG4gICAgLy8gUGFuZWxcbiAgICBjb25zdCBjb250YWluZXIgPSBkMy5jcmVhdGUoXCJkaXZcIilcbiAgICAgICAgLmF0dHIoXCJzdHlsZVwiLCBcImRpc3BsYXk6IGZsZXg7IGp1c3RpZnktY29udGVudDogY2VudGVyXCIpO1xuXG4gICAgY29uc3Qgc3ZnID0gY29udGFpbmVyLmFwcGVuZChcInN2Z1wiKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoRmlzaGJvd2wpXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcbiAgICAgICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFswLCAwLCB3aWR0aEZpc2hib3dsLCBoZWlnaHRdKVxuICAgICAgICAuYXR0cihcInN0eWxlXCIsIFwibWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGhlaWdodDogaW50cmluc2ljXCIpO1xuXG4gICAgLy8gQ2hhcnQgYm94XG4gICAgc3ZnLmFwcGVuZChcInJlY3RcIilcbiAgICAgICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aEZpc2hib3dsKVxuICAgICAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQpXG4gICAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIiNmN2Y3ZjdcIik7XG5cbiAgICBjb25zdCBub2RlID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAgICAgLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgICAgICAuZGF0YShub2RlcylcbiAgICAgICAgLmpvaW4oXCJjaXJjbGVcIilcbiAgICAgICAgLmF0dHIoXCJjeFwiLCBkID0+IGQueClcbiAgICAgICAgLmF0dHIoXCJjeVwiLCBkID0+IGQueSlcbiAgICAgICAgLmF0dHIoXCJyXCIsIGQgPT4gZC5yKVxuICAgICAgICAuYXR0cihcImZpbGxcIiwgKGQpID0+IGQuY29sb3IpO1xuICAgIFxuICAgIC8vIERlZmluZSBmb3JjZXNcbiAgICBjb25zdCBzaW11bGF0aW9uID0gZDMuZm9yY2VTaW11bGF0aW9uKG5vZGVzKVxuICAgICAgICAuZm9yY2UoXCJib3VuY2VcIiwgZDMuZm9yY2VCb3VuY2UoKVxuICAgICAgICAgICAgLnJhZGl1cyhkID0+IGQuciArIC41KSlcbiAgICAgICAgLmZvcmNlKFwic3VyZmFjZVwiLCBkMy5mb3JjZVN1cmZhY2UoKVxuICAgICAgICAgICAgLnN1cmZhY2VzKGJib3goW1swLCAwXSwgW3dpZHRoRmlzaGJvd2wsIGhlaWdodF1dKSlcbiAgICAgICAgICAgIC5vbmVXYXkodHJ1ZSlcbiAgICAgICAgICAgIC5yYWRpdXMoZCA9PiBkLnIgKyAxKSlcbiAgICAgICAgLmZvcmNlKCdsaW1pdCcsIGQzLmZvcmNlTGltaXQoKVxuICAgICAgICAgICAgLngwKDApLngxKHdpZHRoRmlzaGJvd2wpLnkwKDApLnkxKGhlaWdodCkpXG4gICAgICAgIC5hbHBoYURlY2F5KDApXG4gICAgICAgIC52ZWxvY2l0eURlY2F5KDApXG4gICAgICAgIC5vbihcInRpY2tcIiwgKCkgPT4geyBub2RlLmF0dHIoXCJjeFwiLCBkID0+IGQueCkuYXR0cihcImN5XCIsIGQgPT4gZC55KSB9KTtcbiAgICBcbiAgICByZXR1cm4gY29udGFpbmVyLm5vZGUoKVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG4vLyBEZXBlbmRlbmNpZXNcbmQzID0gcmVxdWlyZSgnZDNANycsICdkMy1mb3JjZS1ib3VuY2UnLCAnZDMtZm9yY2Utc3VyZmFjZScsICdkMy1mb3JjZS1saW1pdCcpO1xuXG4vLyBJbXBvcnQgZGF0YVxuZGVuc2l0eSA9IEZpbGVBdHRhY2htZW50KCcuLi8uLi9kYXRhc2V0cy9wYXJ0aWNsZXMvZGVuc2l0eS5jc3YnKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KTtcbmRlbnNpdHlNYW5pbGEgPSBkZW5zaXR5LmZpbHRlcihkID0+IGQuY291bnRyeSA9PT0gXCJQaGlsaXBwaW5lc1wiKTtcbmRlbnNpdHlPdGhlcnMgPSBkZW5zaXR5LmZpbHRlcihkID0+IGQuY291bnRyeSAhPT0gXCJQaGlsaXBwaW5lc1wiKTtcbmdyb3VwQXNzaWduID0gRmlsZUF0dGFjaG1lbnQoJy4uLy4uL2RhdGFzZXRzL3BhcnRpY2xlcy9ncm91cF9hc3NpZ24uY3N2JykuY3N2KHsgdHlwZWQ6IHRydWUgfSk7XG5cbi8vIFBhcmFtZXRlcnNcbmhlaWdodCA9IHdpZHRoICogLjQ5OyAgICAgICAgICAgICAgICAvLyBIZWlnaHQgb2YgcGFydGljbGUgY2hhcnRcbnJNZWFuID0gKHdpZHRoICogLjQ5IC8gNDApIC8gMjsgICAgICAvLyBNZWFuIHJhZGl1c1xuclNEID0gck1lYW4gKiAuNzU7ICAgICAgICAgICAgICAgICAgIC8vIFNEIHJhZGl1c1xudmVsb2NpdHkgPSByTWVhbiAqIC44OyAgICAgICAgICAgICAgIC8vIFBhcnRpY2xlIHZlbG9jaXR5XG5cbmNvbG9ycyA9IFtcIiM0ODg5YWJcIiwgXCIjN2ZjNmE0XCIsIFwiI0ZDQjEzQlwiLCBcIiNCMTNENzBcIiwgXCIjZjY5N2JiXCJdO1xuXG5jb2xvciA9IGQzLnNjYWxlT3JkaW5hbCgpXG4gICAgLmRvbWFpbihbMSwgMiwgMywgNCwgNV0pXG4gICAgLnJhbmdlKGNvbG9ycyk7XG5cbmJib3ggPSAoW1t4MSwgeTFdLCBbeDIsIHkyXV0pID0+IFtcbiAgICB7IGZyb206IHsgeDogeDEsIHk6IHkxIH0sIHRvOiB7IHg6IHgxLCB5OiB5MiB9IH0sXG4gICAgeyBmcm9tOiB7IHg6IHgxLCB5OiB5MiB9LCB0bzogeyB4OiB4MiwgeTogeTIgfSB9LFxuICAgIHsgZnJvbTogeyB4OiB4MiwgeTogeTIgfSwgdG86IHsgeDogeDIsIHk6IHkxIH0gfSxcbiAgICB7IGZyb206IHsgeDogeDIsIHk6IHkxIH0sIHRvOiB7IHg6IHgxLCB5OiB5MSB9IH1cbl07XG5cbi8vIEZ1bmN0aW9uIHRvIGdlbmVyYXRlIHBhcnRpY2xlcyBmb3IgYSBnaXZlbiBjaXR5XG5cbmZ1bmN0aW9uIGdlbnBvaW50cyhjaXR5KSB7XG5cbiAgICBjb25zdCBkZW5zaXR5ID0gTWF0aC5yb3VuZChjaXR5WzBdLmRlbnNpdHkgLyAxMDApO1xuICAgIFxuICAgIGNvbnN0IGdyb3VwQXNzaWduQ2l0eSA9IGdyb3VwQXNzaWduLmZpbHRlcihkID0+IGQuY2l0eSA9PT0gY2l0eVswXS5jaXR5KTtcbiAgICBjb25zdCBjb3VudHMgPSBncm91cEFzc2lnbkNpdHkubWFwKHJvdyA9PiByb3cucG9pbnRzX2luZ3JvdXApO1xuICAgIGNvbnN0IGdyb3VwcyA9IFsxLCAyLCAzLCA0LCA1XTtcbiAgICBjb25zdCBncm91cEFycmF5ID0gY291bnRzLmZsYXRNYXAoKGNvdW50LCBpKSA9PlxuICAgICAgICBBcnJheS5mcm9tKHsgbGVuZ3RoOiBjb3VudCB9LCAoKSA9PiBncm91cHNbaV0pXG4gICAgKTtcbiAgICBcbiAgICBjb25zdCBwb2ludHMgPSBBcnJheS5mcm9tKFxuICAgICAgICB7IGxlbmd0aDogZGVuc2l0eSB9LFxuICAgICAgICAoXywgaSkgPT4gKHtcbiAgICAgICAgICAgIHg6IGQzLnJhbmRvbVVuaWZvcm0oKHdpZHRoICogLjQ5ICogLjE1KSwgKHdpZHRoICogLjQ5ICogLjg1KSkoKSxcbiAgICAgICAgICAgIHk6IGQzLnJhbmRvbVVuaWZvcm0oaGVpZ2h0ICogLjE1LCBoZWlnaHQgKiAuODUpKCksXG4gICAgICAgICAgICByOiBkMy5yYW5kb21Ob3JtYWwock1lYW4sIHJTRCkoKSxcbiAgICAgICAgICAgIHZ4OiBkMy5yYW5kb21Vbmlmb3JtKC0xLCAxKSgpICogdmVsb2NpdHksXG4gICAgICAgICAgICB2eTogZDMucmFuZG9tVW5pZm9ybSgtMSwgMSkoKSAqIHZlbG9jaXR5LFxuICAgICAgICAgICAgZ3JvdXA6IGdyb3VwQXJyYXlbaV1cbiAgICAgICAgfSlcbiAgICApO1xuXG4gICAgcmV0dXJuIHBvaW50cztcbn1cblxuLy8gRnVuY3Rpb24gdG8gZ2VuZXJhdGUgcGFydGljbGVzIGNoYXJ0XG5cbmZ1bmN0aW9uIHBhcnRpY2xlcyhzZWxlY3Rpb24sIGNpdHkpIHtcblxuICAgIC8vIFJlYWQgZGF0YVxuICAgIGNvbnN0IG5vZGVzID0gZ2VucG9pbnRzKGNpdHkpLm1hcChPYmplY3QuY3JlYXRlKTtcblxuICAgIC8vIFBhbmVsXG4gICAgY29uc3Qgc3ZnID0gc2VsZWN0aW9uLmFwcGVuZChcInN2Z1wiKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoICogLjQ5KVxuICAgICAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQgKiAxLjEpXG4gICAgICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgd2lkdGggKiAuNDksIGhlaWdodCAqIDEuMV0pXG4gICAgICAgIC5hdHRyKFwic3R5bGVcIiwgXCJtYXgtd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgaGVpZ2h0OiBpbnRyaW5zaWNcIik7XG5cbiAgICAvLyBDaGFydCBib3hcbiAgICBzdmcuYXBwZW5kKFwicmVjdFwiKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoICogLjQ5KVxuICAgICAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQpXG4gICAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIiNmN2Y3ZjdcIilcbiAgICAgICAgLmF0dHIoXCJzdHJva2VcIiwgXCIjYmNiY2JjXCIpXG4gICAgICAgIC5hdHRyKFwic3Ryb2tlLXdpZHRoXCIsIDEpO1xuXG4gICAgLy8gQm90dG9tIGxhYmVsXG4gICAgY29uc3QgZGVuc2l0eVN0YXQgPSBkMy5mb3JtYXQoXCIsLjJyXCIpKGNpdHlbMF0uZGVuc2l0eSk7XG4gICAgc3ZnLmFwcGVuZChcInRleHRcIilcbiAgICAgICAgLmF0dHIoXCJpZFwiLCBcImNoYXJ0LXRleHRcIilcbiAgICAgICAgLmF0dHIoXCJ4XCIsIHdpZHRoICogLjQ5IC8gMilcbiAgICAgICAgLmF0dHIoXCJ5XCIsIGhlaWdodCAqIDEuMDc1KVxuICAgICAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpXG4gICAgICAgIC50ZXh0KGAke2RlbnNpdHlTdGF0fSBwZW9wbGUva23CsmApO1xuXG4gICAgLy8gRHJhdyBwYXJ0aWNsZXNcbiAgICBjb25zdCBub2RlID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAgICAgLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgICAgICAuZGF0YShub2RlcylcbiAgICAgICAgLmpvaW4oXCJjaXJjbGVcIilcbiAgICAgICAgLmF0dHIoXCJjeFwiLCBkID0+IGQueClcbiAgICAgICAgLmF0dHIoXCJjeVwiLCBkID0+IGQueSlcbiAgICAgICAgLmF0dHIoXCJyXCIsIGQgPT4gZC5yKVxuICAgICAgICAuYXR0cihcImZpbGxcIiwgKGQpID0+IGNvbG9yKGQuZ3JvdXApKTtcbiAgICBcbiAgICAvLyBEZWZpbmUgZm9yY2VzXG4gICAgY29uc3Qgc2ltdWxhdGlvbiA9IGQzLmZvcmNlU2ltdWxhdGlvbihub2RlcylcbiAgICAgICAgLmZvcmNlKFwiYm91bmNlXCIsIGQzLmZvcmNlQm91bmNlKClcbiAgICAgICAgICAgIC5yYWRpdXMoZCA9PiBkLnIgKyAuNSkpXG4gICAgICAgIC5mb3JjZShcInN1cmZhY2VcIiwgZDMuZm9yY2VTdXJmYWNlKClcbiAgICAgICAgICAgIC5zdXJmYWNlcyhiYm94KFtbMCwgMF0sIFt3aWR0aCAqIC40OSwgaGVpZ2h0XV0pKVxuICAgICAgICAgICAgLm9uZVdheSh0cnVlKVxuICAgICAgICAgICAgLnJhZGl1cyhkID0+IGQuciArIDEpKVxuICAgICAgICAuZm9yY2UoJ2xpbWl0JywgZDMuZm9yY2VMaW1pdCgpXG4gICAgICAgICAgICAueDAoMCkueDEod2lkdGggKiAuNDkpLnkwKDApLnkxKGhlaWdodCkpXG4gICAgICAgIC5hbHBoYURlY2F5KDApXG4gICAgICAgIC52ZWxvY2l0eURlY2F5KDApXG4gICAgICAgIC5vbihcInRpY2tcIiwgKCkgPT4geyBub2RlLmF0dHIoXCJjeFwiLCBkID0+IGQueCkuYXR0cihcImN5XCIsIGQgPT4gZC55KSB9KTtcbn1cblxuLy8gRnVuY3Rpb24gdG8gZ2VuZXJhdGUgbGVnZW5kXG5cbmZ1bmN0aW9uIGxlZ2VuZChzZWxlY3Rpb24pIHtcbiAgICBcbiAgICBjb25zdCBsZWdlbmRXaWR0aCA9IDM5MDtcbiAgICBjb25zdCBsZWdlbmRIZWlnaHQgPSAzNDtcbiAgICBjb25zdCByTGVnZW5kID0gLjU7XG4gICAgXG4gICAgY29uc3QgbGVnZW5kQm94ID0gc2VsZWN0aW9uLmFwcGVuZChcInN2Z1wiKVxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIGxlZ2VuZFdpZHRoKVxuICAgICAgICAuYXR0cihcImhlaWdodFwiLCBsZWdlbmRIZWlnaHQpXG4gICAgICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgbGVnZW5kV2lkdGgsIGxlZ2VuZEhlaWdodF0pXG4gICAgICAgIC5hdHRyKFwic3R5bGVcIiwgXCJtYXgtd2lkdGg6IDkwJTsgaGVpZ2h0OiBhdXRvOyBoZWlnaHQ6IGludHJpbnNpYztcIik7XG4gICAgXG4gICAgbGVnZW5kQm94LmFwcGVuZChcImNpcmNsZVwiKVxuICAgICAgICAuYXR0cihcImN4XCIsIHJMZWdlbmQgKyBcInJlbVwiKVxuICAgICAgICAuYXR0cihcImN5XCIsIFwiLjVyZW1cIilcbiAgICAgICAgLmF0dHIoXCJmaWxsXCIsIFwiIzQ4ODlhYlwiKVxuICAgICAgICAuYXR0cihcInJcIiwgckxlZ2VuZCArIFwicmVtXCIpO1xuXG4gICAgbGVnZW5kQm94LmFwcGVuZChcInRleHRcIilcbiAgICAgICAgLmF0dHIoXCJ4XCIsIChyTGVnZW5kICogMykgKyBcInJlbVwiKVxuICAgICAgICAuYXR0cihcInlcIiwgXCIuODVyZW1cIilcbiAgICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcImxlZnRcIilcbiAgICAgICAgLnRleHQoXCJOYXRpdmUgYW5jZXN0b3JzXCIpO1xuXG4gICAgbGVnZW5kQm94LmFwcGVuZChcImdcIilcbiAgICAgICAgLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgICAgICAuZGF0YShbMSwgMiwgMywgNF0pXG4gICAgICAgIC5qb2luKFwiY2lyY2xlXCIpXG4gICAgICAgIC5hdHRyKFwiY3hcIiwgZCA9PiAoOSArIHJMZWdlbmQgKyAoZCAtIDEpICogckxlZ2VuZCAqIDMpICsgXCJyZW1cIilcbiAgICAgICAgLmF0dHIoXCJjeVwiLCBcIi41cmVtXCIpXG4gICAgICAgIC5hdHRyKFwiZmlsbFwiLCBkID0+IGNvbG9yKGQgKyAxKSlcbiAgICAgICAgLmF0dHIoXCJyXCIsIHJMZWdlbmQgKyBcInJlbVwiKTtcblxuICAgIGxlZ2VuZEJveC5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAgIC5hdHRyKFwieFwiLCAoOSArIHJMZWdlbmQgKiAzICogNCkgKyBcInJlbVwiKVxuICAgICAgICAuYXR0cihcInlcIiwgXCIuODVyZW1cIilcbiAgICAgICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcImxlZnRcIilcbiAgICAgICAgLnRleHQoXCJNaWdyYW50IGFuY2VzdG9yc1wiKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnY2l0eVNlbGVjdFBIJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2NpdHlTZWxlY3QnKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -797,18 +796,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -840,11 +828,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/twopoints\.blog");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -854,8 +879,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -867,7 +901,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -911,6 +1067,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -936,6 +1093,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1001,12 +1184,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

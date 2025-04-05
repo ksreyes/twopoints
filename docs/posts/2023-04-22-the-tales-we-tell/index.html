@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.294">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2023-04-22">
 
-<title>Two Points Make a Line - The tales we tell</title>
+<title>The tales we tell – Two Points Make a Line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -73,17 +73,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1935dcbd43814f6b9d0e02a660e21e63.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,8 +98,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJMC44PZ56"></script>
@@ -117,6 +125,8 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
@@ -125,11 +135,11 @@ cookieconsent.run({
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<meta property="og:title" content="Two Points Make a Line - The tales we tell">
+<meta property="og:title" content="The tales we tell – Two Points Make a Line">
 <meta property="og:description" content="Our body of folklore can say a lot about our modern-day attitudes and beliefs — for better or worse">
 <meta property="og:image" content="https://twopoints.blog/posts/2023-04-22-the-tales-we-tell/thumbnail.gif">
-<meta property="og:site-name" content="Two Points Make a Line">
-<meta name="twitter:title" content="Two Points Make a Line - The tales we tell">
+<meta property="og:site_name" content="Two Points Make a Line">
+<meta name="twitter:title" content="The tales we tell – Two Points Make a Line">
 <meta name="twitter:description" content="Our body of folklore can say a lot about our modern-day attitudes and beliefs — for better or worse">
 <meta name="twitter:image" content="https://twopoints.blog/posts/2023-04-22-the-tales-we-tell/thumbnail.gif">
 <meta name="twitter:card" content="summary_large_image">
@@ -139,9 +149,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo-icon-invert.png" alt="" class="navbar-logo">
     </a>
@@ -150,37 +160,36 @@ cookieconsent.run({
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="dropdown-header">
- <span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span></li>
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Telling stories through visualized data — by Kenneth S. Reyes</span>
+    </span>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../subscribe.html" rel="" target="">
- <span class="menu-text">Subscribe</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ksreyes/twopoints" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ksreyes/twopoints"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -218,7 +227,9 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <p>In the bittersweet finale of Stephen Sondheim’s <em>Into the Woods</em>, as the Baker quiets his child with yet another story, the Witch steps forward to deliver the musical’s central thesis:</p>
 <blockquote class="blockquote">
@@ -229,14 +240,14 @@ Children will listen</p>
 <p>For those who aren’t familiar, <em>Into the Woods</em> is a retelling of Grimm fairy tales — Cinderella, Little Red Riding Hood, and the like.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Each character starts with a wish that, through cunning, daring, and a fair bit of magic, they attain, whereupon they join hands in triumph to sing “happily ever after”. But that is a feint, for only first act is done. In the unhinged second act, the characters find themselves fleeing from the consequences of their wishes, culminating in their murder of the very Narrator who has been telling their story. It demonstrates metaphorically and literally how stories, once told, can take a life of their own. And thus: careful the tale you tell.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://assets.playbill.com/editorial/_articleLeadImage/12bf5706e0684ef7eb28c884da664d6a-sondheimbday-itw-hr.jpg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption"><em>Into the Woods</em> deconstructs and disembowels the idea of a fairy tale (image from playbill.com)</figcaption><p></p>
+<p><img src="https://assets.playbill.com/editorial/_articleLeadImage/12bf5706e0684ef7eb28c884da664d6a-sondheimbday-itw-hr.jpg" class="img-fluid figure-img"></p>
+<figcaption><em>Into the Woods</em> deconstructs and disembowels the idea of a fairy tale (image from playbill.com)</figcaption>
 </figure>
 </div>
 <p>It has long been known that narratives shape social and political outcomes, but measuring this quantitatively can be tricky. In this post, I’ll cover a <a href="https://academic.oup.com/qje/article/136/4/1993/6124640">paper</a> by Stelios Michalopoulos and Melanie Meng Xue that does just this. Their primary dataset is Yuri Berezkin’s <a href="http://www.mythologydatabase.com/bd/"><em>Folklore and Mythology Catalog</em></a>, an ambitious project that attempts to document the motifs found in folklore around the world. A motif is some distinctive episode, idea, or image; folklore is the body of traditional stories passed orally among an ethnolinguistic group. The version of the <em>Catalog</em> I’ll be working with logs 2,564 motifs for about 900 groups.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>In the interactive map below, you can pull up a random motif and see which oral traditions have it. You’ll find that some motifs are universal, others are very niche. The ones in between are the most intruiging: the chart initializes on a motif about hidden identities (f64a), found in North America and Southeast Asia but hardly anywhere else.</p>
 <div class="cell dummy" data-eval="false">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" data-startfrom="42" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dim <span class="op">=</span> ({ <span class="dt">width</span><span class="op">:</span> <span class="dv">990</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">660</span> })<span class="op">;</span></span>
@@ -365,7 +376,7 @@ Children will listen</p>
 <p>But folklore across cultures do also differ, often tremendously. This may arise from random chance, or perhaps to something more fundamental, like the physical environment. To investigate this, Michalopoulos and Xue use <a href="https://conceptnet.io/">ConceptNet</a> to attach concepts to motifs. ConceptNet is a semantic network that, among other things, provides a list of related words from a seed word. This is useful when gathering all motifs related to the concept of, say, fire, since simply taking motifs with the word “fire” may cause you to miss those with the words “burn”, “smoke”, “flame”, and so on. ConceptNet offers a systematic way to assemble the words that form the contours of a concept. They can then be used to shortlist motifs exhibiting that concept.</p>
 <p>With this concept-tagging approach, Michalopoulos and Xue can test whether features of a linguistic group’s physical environment and mode of subsistence correlate with the motifs in their folklore. For instance, do groups near earthquake-prone regions tend to have more earthquake-related motifs? It turns out, yes. Toggle the concepts in the map below to see where that concept most saturates the oral tradition.</p>
 <div class="cell" data-eval="false">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" data-startfrom="171" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 170;"><span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> dim <span class="op">=</span> ({ <span class="dt">width</span><span class="op">:</span> <span class="dv">990</span><span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">580</span> })<span class="op">;</span></span>
@@ -545,7 +556,7 @@ Children will listen</p>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6" data-startfrom="346" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 345;"><span id="cb6-346"><a href="#cb6-346" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb6-347"><a href="#cb6-347" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> ({ <span class="dt">top</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span> })<span class="op">;</span></span>
@@ -597,7 +608,7 @@ Children will listen</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" data-startfrom="393" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 392;"><span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> ({ <span class="dt">top</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span> })<span class="op">;</span></span>
@@ -649,7 +660,7 @@ Children will listen</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8" data-startfrom="440" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 439;"><span id="cb8-440"><a href="#cb8-440" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb8-441"><a href="#cb8-441" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> margin <span class="op">=</span> ({ <span class="dt">top</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span> })<span class="op">;</span></span>
@@ -730,7 +741,7 @@ Children will listen</p>
 </div></section><section id="d3-observable-code" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">D3 / Observable code</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" data-startfrom="515" data-source-offset="-10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 514;"><span id="cb10-515"><a href="#cb10-515" aria-hidden="true" tabindex="-1"></a>countries110m <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../../datasets/folklore/countries-110m.json"</span>)<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
 <span id="cb10-516"><a href="#cb10-516" aria-hidden="true" tabindex="-1"></a>worldAll <span class="op">=</span> topojson<span class="op">.</span><span class="fu">feature</span>(countries110m<span class="op">,</span> countries110m<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="at">countries</span>)<span class="op">.</span><span class="at">features</span><span class="op">;</span></span>
@@ -927,7 +938,7 @@ Children will listen</p>
 </div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" data-startfrom="572" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 571;"><span id="cb11-572"><a href="#cb11-572" aria-hidden="true" tabindex="-1"></a>addMap <span class="op">=</span> (selection) <span class="kw">=&gt;</span> {</span>
 <span id="cb11-573"><a href="#cb11-573" aria-hidden="true" tabindex="-1"></a></span>
@@ -1287,7 +1298,7 @@ Children will listen</p>
 </div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12" data-startfrom="876" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 875;"><span id="cb12-876"><a href="#cb12-876" aria-hidden="true" tabindex="-1"></a>addScatter <span class="op">=</span> (selection<span class="op">,</span> data<span class="op">,</span> lm<span class="op">,</span> titles) <span class="kw">=&gt;</span> {</span>
 <span id="cb12-877"><a href="#cb12-877" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -1455,7 +1466,7 @@ Children will listen</p>
 </div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" data-startfrom="1026" data-source-offset="-104"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1025;"><span id="cb13-1026"><a href="#cb13-1026" aria-hidden="true" tabindex="-1"></a>wrapText <span class="op">=</span> (textElement) <span class="kw">=&gt;</span> {</span>
 <span id="cb13-1027"><a href="#cb13-1027" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -1535,9 +1546,9 @@ Children will listen</p>
 <li id="fn2"><p>The replication files of Michalopoulos and Xue (MX) don’t contain location information for the linguistic groups, so I dug around and found it in a <a href="https://github.com/macleginn/mythology-queries">repo</a> from one Dmitry Nikolayev. Nikolayev appears to have worked on an older version of the Berezkin catalog, so his list does not exactly match MX’s list. I’ve harmonized them as best as I could; see my cleaning script for details.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>There are also some typos and grammatically errors. I have left these as they are.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div></main> <!-- /main -->
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\n{\n  const dim = ({ width: 990, height: 660 });\n  const motif = \"f64a\";\n  \n  const container = d3.create(\"div\");\n  \n  // Chart title //////////////////////////////////////////////////////////////\n  \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-title\")\n    .html(`Plot points`);\n    \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-subtitle\")\n    .style(\"margin-bottom\", \"1rem\")\n    .html(`Presence of a motif in the folklore of linguistic groups`);\n  \n  // Chart proper /////////////////////////////////////////////////////////////\n  \n  const svg = container.append(\"svg\")\n    .attr(\"width\", dim.width)\n    .attr(\"height\", dim.height)\n    .attr(\"viewBox\", [0, 0, dim.width, dim.height])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\");\n\n  svg.call(addMap);\n  \n  svg.append(\"g\")\n    .selectAll(\"dotsLatent\")\n    .data(coords)\n    .join(\"circle\")\n    .attr(\"cx\", d => d.coordinates[0])\n    .attr(\"cy\", d => d.coordinates[1])\n    .attr(\"r\", 2)\n    .style(\"fill\", colorDotsLatent);\n    \n  svg.append(\"g\").attr(\"id\", \"dots-highlighted\").call(dotsSelect, motif);\n  \n  // Motif randomizer\n  svg.append(\"g\").attr(\"id\", \"motif-id\").call(motifSelectId, motif);\n  svg.append(\"g\").attr(\"id\", \"motif-title\").call(motifSelectTitle, motif);\n  svg.append(\"g\").attr(\"id\", \"motif-description\").call(motifSelectDesc, motif);\n  svg.append(\"g\").attr(\"id\", \"button\").call(addButton);\n  \n  // Chart sources ////////////////////////////////////////////////////////////\n\n  container.append(\"div\")\n    .attr(\"class\", \"ojs-source\")\n    .style(\"margin\", \".5rem 0\")\n    .html(`Source: Y. Berezkin, <i>Folklore and Mythology Catalog</i> (2019).`);\n    \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"\n{\n  const dim = ({ width: 990, height: 580 });\n  \n  const container = d3.create(\"div\");\n  \n  // Chart title //////////////////////////////////////////////////////////////\n  \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-title\")\n    .html(`Planted ideas`);\n    \n  container.append(\"div\")\n    .attr(\"class\", \"ojs-subtitle\")\n    .style(\"margin-bottom\", \"1rem\")\n    .html(`Share of motifs related to various concepts in the folklore of linguistic groups`);\n  \n  // Map base layer ///////////////////////////////////////////////////////////\n  \n  const svg = container.append(\"svg\")\n    .attr(\"width\", dim.width)\n    .attr(\"height\", dim.height)\n    .attr(\"viewBox\", [0, 0, dim.width, dim.height])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\");\n  \n  svg.call(addMap);\n  \n  // Radio buttons ////////////////////////////////////////////////////////////\n   \n  const radio = svg.append(\"g\")\n    .attr(\"id\", \"radio\")\n    .attr(\"transform\", \"translate(30,410)\");\n  \n  const radioButtons = radio.append(\"foreignObject\")\n    .attr(\"x\", 0)\n    .attr(\"y\",  0)\n    .attr(\"width\", 250)\n    .attr(\"height\", 500);\n  \n  const radioTitle = radioButtons.append(\"xhtml:div\")\n    .append(\"text\")\n    .text(\"Share of motifs related to\")\n    .style(\"font-weight\", \"bold\")\n    .style(\"font-size\", \".9rem\");\n  \n  radioButtons\n    .call(addRadio, \"farming\", true)\n    .call(addRadio, \"pastoral\")\n    .call(addRadio, \"fishing\")\n    .call(addRadio, \"coldness\")\n    .call(addRadio, \"earthquakes\");\n    \n  radioButtons.on(\"click\", () => {\n    const selectedNew = d3.select('input[name=\"concepts\"]:checked').node().value;\n    svg.select(\"#bubbles\").call(addBubbles, selectedNew);\n  });\n  \n  // Points ///////////////////////////////////////////////////////////////////\n  \n  const selectInit = \"farming\"\n  svg.append(\"g\")\n    .attr(\"id\", \"bubbles\")\n    .call(addBubbles, selectInit);\n  \n  // Chart sources ////////////////////////////////////////////////////////////\n\n  container.append(\"div\")\n    .attr(\"class\", \"ojs-source\")\n    .style(\"margin\", \".5rem 0\")\n    .html(`Sources: Y. Berezkin, <i>Folklore and Mythology Catalog</i> (2019); S. Michalopoulos and M. Xue, \"Folklore\", <i>Quarterly Journal of Economics</i>, vol. 136, no. 4 (2021).`);\n    \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"\nhtml`\n  <div class=\"ojs-title\" style=\"margin-top:1rem;\">A nightmare on the brains of the living</div>\n  <div class=\"ojs-subtitle\">Relationship between folklore content and present-day attitudes and beliefs</div>\n`\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"\n{\n  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });\n  const width = 790 - margin.left - margin.right;\n  const height = 500 - margin.top - margin.bottom;\n  const padding = 40;\n  \n  const data = regressions\n    .filter(d => d.lntrust_wvsavg !== null & d.tricksters_punish !== null)\n    .map(d => ({...d, x: d.tricksters_punish, y: d.lntrust_wvsavg }));\n  \n  const lm = ({ \n    intercept: 24.496714 - 3.2042735 * 7.540038 - 0.02046409 * 3.397068,\n    slope: 1.856006,\n    n: 104, r2: 0.205\n  });\n  \n  const titles = ({\n    xAxis: \"Relative punishment of antisocial behavior in folklore\",\n    yAxis: \"Trust (WVS)\"\n  });\n  const position = ({ x: 150, y: 10 }); \n  const positionStats = ({ x: 600, y: height - 40 }); \n  \n  const container = d3.create(\"div\");\n  \n  const svg = container.append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n    .attr(\"viewBox\", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\");\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${margin.left}, ${margin.top})`)\n    .call(addScatter, data, lm, titles)\n    .call(addStats, lm, positionStats);\n  \n  svg.append(\"g\").call(addLegend, position);\n  \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"\n{\n  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });\n  const width = 790 - margin.left - margin.right;\n  const height = 500 - margin.top - margin.bottom;\n  const padding = 40;\n  \n  const data = regressions\n    .filter(d => d.risktaking !== null & d.challenge_competition !== null)\n    .map(d => ({...d, x: d.challenge_competition, y: d.risktaking }));\n  \n  const lm = ({ \n    intercept: 17.6914 - 2.2783062 * 7.540360 - 0.23996948 * 3.384763,\n    slope: 5.438077,\n    n: 76, r2: \"0.130\"\n  });\n  \n  const titles = ({\n    xAxis: \"Share of motifs with challenges and competitions\",\n    yAxis: \"Risk-taking (GPS)\"\n  });\n  const position = ({ x: 150, y: 10 }); \n  const positionStats = ({ x: 600, y: height - 40 }); \n  \n  const container = d3.create(\"div\");\n  \n  const svg = container.append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n    .attr(\"viewBox\", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\");\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${margin.left}, ${margin.top})`)\n    .call(addScatter, data, lm, titles)\n    .call(addStats, lm, positionStats);\n  \n  svg.append(\"g\").call(addLegend, position);\n  \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"\n{\n  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });\n  const width = 790 - margin.left - margin.right;\n  const height = 500 - margin.top - margin.bottom;\n  const padding = 40;\n  \n  const data = regressions\n    .filter(d => d.fem19 !== null & d.malebias !== null)\n    .map(d => ({...d, x: d.malebias, y: d.fem19 }));\n  \n  const lm = ({ \n    intercept: 162.92767 - 12.22385 * 7.543276 + 0.28624266 * 3.181844,\n    slope: 5.438077,\n    n: 174, r2: 0.136\n  });\n  \n  const titles = ({\n    xAxis: \"Gender stereotyping in folklore\",\n    yAxis: \"Female labor force participation, 2019\"\n  });\n  const position = ({ x: 150, y: 10 }); \n  const positionStats = ({ x: 40, y: height - 40 }); \n  \n  const container = d3.create(\"div\");\n  \n  const svg = container.append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n    .attr(\"viewBox\", [0, 0, width + margin.left + margin.right, height + margin.top + margin.bottom])\n    .attr(\"style\", \"max-width: 100%; height: auto; height: intrinsic;\");\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${margin.left}, ${margin.top})`)\n    .call(addScatter, data, lm, titles)\n    .call(addStats, lm, positionStats);\n  \n  svg.append(\"g\").call(addLegend, position);\n  \n  return container.node();\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"\nhtml`\n  <div class=\"ojs-caption\" style=\"margin-bottom: 1rem;\">Trendlines are from multivariate cross-country regressions with two other control variables: the log number of publications Berezkin consulted for a group and the log year of the earliest publication cited for a group.</div>\n  <div class=\"ojs-source\" style=\"margin-bottom: 1rem;\">GPS = Global Preference Survey, WVS = World Value Surveys<br>Source: S. Michalopoulos and M. Xue, \"Folklore\", <i>Quarterly Journal of Economics</i>, vol. 136, no. 4 (2021).</div>\n`\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"\n// Data\n\ncountries110m = FileAttachment(\"../../datasets/folklore/countries-110m.json\").json();\nworldAll = topojson.feature(countries110m, countries110m.objects.countries).features;\nworld = worldAll.filter(d => d.properties.name !== \"Antarctica\");\n\ncoordsRaw = FileAttachment(\"../../datasets/folklore/coords_clean.json\").json();\ncoords = coordsRaw.map(d => ({ group: d.group, coordinates: projection([d.longitude, d.latitude]) }));\nmotifs = FileAttachment(\"../../datasets/folklore/motifs.csv\").csv({ typed: true });\ngroupsMotifs = FileAttachment(\"../../datasets/folklore/groups_motifs.csv\").csv({ typed: true });\n\ngroupsConceptsRaw = FileAttachment(\"../../datasets/folklore/groups_concepts.csv\").csv({ typed: true });\ngroupsConcepts = groupsConceptsRaw.map(d => ({ \n  group: d.group, \n  coordinates: projection([d.longitude, d.latitude]),\n  concept: d.concept,\n  share: d.share\n}));\n\nregressions = FileAttachment(\"../../datasets/folklore/regressions.csv\").csv({ typed: true });\n\n// Parameters\n\ncolorDotsLatent = \"#84b0c5\";\ncolorDotsSelect = \"#B13D70\";\ncolorLand = \"#eeeeee\";\ncolorBorders = \"#c0d7df\";\ncolorBG = \"#c0d7df\";\n\ntooltip = d3.select(\"body\")\n  .append(\"div\")\n  .attr(\"class\", \"toolTip\")\n  .style(\"display\", \"none\")\n  .style(\"position\", \"absolute\")\n  .style(\"z-index\", 999)\n  .style(\"width\", 100)\n  .style(\"height\", 20)\n  .style(\"background\", \"#f7f7f7\")\n  .style(\"border\", \"1px solid #cecece\")\n  .style(\"opacity\", .9)\n  .style(\"padding\", \".2em .45em\")\n  .style(\"font-size\", \".85rem\");\n\n// Helper functions\n\nprojection = d3.geoMercator().scale([155]).center([-5, 40]);\nrandMotif = () => motifs[d3.randomInt(0, motifs.length-1)()].motif_id;\nmotifSelect = (motif) => motifs.filter(d => d.motif_id === motif);\n\ncoordsSelect = (motif) => {\n  const groups = groupsMotifs.filter(d => d.motif_id === motif);\n  const coordsSelect = coords.filter(d => groups.map(obj => obj.group).includes(d.group));\n  return coordsSelect;\n};\n"},{"methodName":"interpret","cellName":"ojs-cell-11","inline":false,"source":"\naddMap = (selection) => {\n\n  selection.append(\"rect\")\n    .attr(\"x\", 0)\n    .attr(\"y\", 0)\n    .attr(\"width\", selection.attr(\"width\"))\n    .attr(\"height\", selection.attr(\"height\"))\n    .style(\"fill\", colorBG);\n    \n  const pathGenerator = d3.geoPath(projection);\n  const map = selection.append(\"g\");\n  \n  map.selectAll(\"bg\")\n    .data(world)\n    .join(\"path\")\n    .attr(\"d\", pathGenerator)\n    .attr(\"fill\", colorLand);\n\n  map.selectAll(\"borders\")\n    .data(world)\n    .join(\"path\")\n    .attr(\"d\", pathGenerator)\n    .style(\"fill\", \"none\")\n    .style(\"stroke\", colorBorders)\n    .style(\"stroke-width\", 1);\n    \n    return selection.node()\n}\n\ndotsSelect = (selection, motif) => {\n\n  const dots = selection.selectAll(\"circle\")\n    .data(coordsSelect(motif), d => d.group)\n    .join(\n      enter => enter\n        .append(\"circle\")\n          .attr(\"cx\", d => d.coordinates[0])\n          .attr(\"cy\", d => d.coordinates[1])\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr(\"r\", 5)\n          .style(\"stroke\", \"white\")\n          .style(\"fill\", colorDotsSelect)\n          .style(\"opacity\", 1)\n        .selection(),\n      update => update,\n      exit => exit\n        .transition().duration(300)\n          .style(\"opacity\", 0)\n          .remove()\n    );\n    \n  dots\n    .on(\"mousemove\", function(event, d) {\n      d3.select(this)\n        .transition().duration(50)\n        .attr(\"r\", 6)\n        .style(\"fill\", \"#f697bb\");\n      tooltip\n        .style(\"display\", \"inline\")\n        .style(\"left\", event.pageX + 15 + \"px\")\n        .style(\"top\", event.pageY + 15 + \"px\")\n        .text(d.group);\n      d3.select(event.target).style(\"cursor\", \"pointer\");\n    })\n    .on(\"mouseleave\", function(event) {\n      d3.select(\"#dots-highlighted\")\n        .selectAll(\"circle\")\n        .transition().duration(100)\n        .attr(\"r\", 5)\n        .style(\"fill\", colorDotsSelect);\n      tooltip.style(\"display\", \"none\");\n      d3.select(event.target).style(\"cursor\", \"default\");\n    });\n    \n  return selection.node()\n};\n\nmotifSelectId = (selection, motif) => {\n    \n  selection.selectAll(\"text\")\n    .data(motifSelect(motif), d => d.motif_id)\n    .join(\n      enter => enter\n        .append(\"text\")\n          .text(d => d.motif_id)\n          .attr(\"x\", -500)\n          .attr(\"y\", 553)\n          .style(\"fill\", \"black\")\n          .style(\"font-size\", \".7rem\")\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr(\"x\", 30)\n          .style(\"opacity\", 1)\n        .selection(),\n      update => update\n          .attr(\"x\", -500)\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr(\"x\", 30)\n          .style(\"opacity\", 1)\n        .selection(),\n      exit => exit\n        .transition().duration(500)\n          .attr(\"x\", 1500)\n          .remove()\n    );\n    \n  return selection.node();\n};\n\nmotifSelectTitle = (selection, motif) => {\n    \n  selection.selectAll(\"text\")\n    .data(motifSelect(motif), d => d.title)\n    .join(\n      enter => enter\n        .append(\"text\")\n          .text(d => d.title)\n          .attr(\"x\", -500)\n          .attr(\"y\", 580)\n          .style(\"fill\", \"black\")\n          .style(\"font-size\", \"1.5rem\")\n          .style(\"font-family\", \"Karla, Helvetica, Arial, sans-serif\")\n          .style(\"font-weight\", \"bold\")\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr(\"x\", 30)\n          .style(\"opacity\", 1)\n        .selection(),\n       update => update\n          .attr(\"x\", -500)\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr(\"x\", 30)\n          .style(\"opacity\", 1)\n        .selection(),\n      exit => exit\n        .transition().duration(500)\n          .attr(\"x\", 1500)\n          .remove()\n    );\n    \n  return selection.node();\n};\n\nmotifSelectDesc = (selection, motif) => {\n  \n  selection.selectAll(\"text\")\n    .data(motifSelect(motif), d => d.description)\n    .join(\n      enter => enter\n        .append(\"text\")\n          .attr('transform', \"translate(-500,605)\")\n          .attr(\"x\", 0)\n          .attr(\"y\", 0)\n          .text(d => d.description)\n          .call(wrapText)\n          .style(\"fill\", \"#2A769E\")\n          .style(\"font-size\", \".8rem\")\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr('transform', \"translate(30,605)\")\n          .style(\"opacity\", 1)\n        .selection(),\n       update => update\n          .attr('transform', \"translate(-500,605)\")\n          .style(\"opacity\", 0)\n        .transition().duration(500)\n          .attr(\"x\", 30)\n          .attr('transform', \"translate(30,605)\")\n          .style(\"opacity\", 1)\n        .selection(),\n      exit => exit\n        .transition().duration(500)\n          .attr('transform', \"translate(1500,605)\")\n          .remove()\n    );\n    \n  return selection.node();\n};\n\naddButton = (selection) => {\n  \n  const pos = ({ x: 30, y: 507 });\n  const dim = ({ width: 160, height: 25 });\n  const color = ({ base: \"#B13D70\", hover: \"#C85B89\", click: \"#991E56\" });\n  \n  selection.append(\"rect\")\n    .attr(\"x\", pos.x)\n    .attr(\"y\", pos.y)\n    .attr(\"width\", dim.width)\n    .attr(\"height\", dim.height)\n    .style(\"rx\", 3)\n    .style(\"fill\", color.base);\n\n  selection.append(\"text\")\n    .text(\"GET A RANDOM MOTIF\")\n    .attr(\"x\", pos.x + dim.width/2)\n    .attr(\"y\", pos.y + dim.height/2 + 1)\n    .attr(\"text-anchor\", \"middle\")\n    .attr(\"alignment-baseline\", \"middle\")\n    .style(\"fill\", \"white\")\n    .style(\"font-size\", \".8rem\")\n    .style(\"font-weight\", \"bold\")\n    .style(\"font-family\", \"Karla, Arial, Helvetica, sans-serif\");\n\n  selection.on(\"mouseenter\", function(event) {\n    d3.select(event.target).style(\"cursor\", \"pointer\");\n    d3.select(this).selectAll(\"rect\")\n      .transition().duration(200)\n      .style(\"fill\", color.hover);\n  });\n\n  selection.on(\"mouseleave\", (event) => {\n    d3.select(\"#button\")\n      .selectAll(\"rect\")\n      .transition().duration(100)\n      .style(\"fill\", color.base);\n  });\n\n  selection.on(\"click\", () => {\n    const newMotif = randMotif();\n    d3.select(\"#dots-highlighted\").call(dotsSelect, newMotif);\n    d3.selectAll(\"#motif-id\").call(motifSelectId, newMotif);\n    d3.selectAll(\"#motif-title\").call(motifSelectTitle, newMotif);\n    d3.select(\"#motif-description\").call(motifSelectDesc, newMotif);\n    d3.select(\"#button\")\n      .selectAll(\"rect\").style(\"fill\", color.click)\n      .transition().style(\"fill\", color.hover);\n  });\n  \n  return selection.node();\n};\n\n\naddBubbles = (selection, selected) => {\n   \n  const shareMax = Math.max(...Object.values(groupsConcepts).map(item => item.share));\n  const dataSelect = groupsConcepts.filter(d => d.concept === `${selected}`);\n  const rScaler = d3.scaleLinear()\n    .domain([0, shareMax])\n    .range([0, 20]);\n  \n  const bubbles = selection.selectAll(\"circle\")\n    .data(dataSelect)\n    .join(\"circle\")\n      .attr(\"cx\", d => d.coordinates[0])\n      .attr(\"cy\", d => d.coordinates[1])\n    .transition().duration(500)\n      .attr(\"r\", d => rScaler(d.share))\n      .style(\"fill\", colorDotsSelect)\n      .style(\"fill-opacity\", .2)\n      .style(\"stroke\", colorDotsSelect)\n    .selection();\n  \n  bubbles\n    .on(\"mousemove\", function(event, d) {\n      console.log(\"Hey!\")\n      d3.select(this)\n        .transition().duration(50)\n        .attr(\"r\", d => rScaler(d.share) + 1)\n        .style(\"fill-opacity\", .4);\n      tooltip\n        .style(\"display\", \"inline\")\n        .style(\"left\", event.pageX + 15 + \"px\")\n        .style(\"top\", event.pageY + 15 + \"px\")\n        .text(d.group);\n      d3.select(event.target).style(\"cursor\", \"pointer\");\n    })\n    .on(\"mouseleave\", function(event) {\n      d3.select(\"#bubbles\")\n        .selectAll(\"circle\")\n        .transition().duration(100)\n        .attr(\"r\", d => rScaler(d.share))\n        .style(\"fill-opacity\", .2)\n      tooltip.style(\"display\", \"none\");\n      d3.select(event.target).style(\"cursor\", \"default\");\n    });\n    \n  return selection.node();\n}\n\naddRadio = (selection, concept, checked = false) => {\n  \n  const conceptTitle = concept.charAt(0).toUpperCase() + concept.slice(1)\n  \n  const radio = selection.append(\"xhtml:div\")\n  radio.append(\"xhtml:input\")\n    .attr(\"type\", \"radio\")\n    .attr(\"name\", \"concepts\")\n    .attr(\"value\", concept)\n    .property(\"checked\", checked)\n    .style(\"margin-right\", \".5rem\")\n  radio.append(\"xhtml:label\")\n    .text(conceptTitle)\n  \n  return selection.node()\n}\n"},{"methodName":"interpret","cellName":"ojs-cell-12","inline":false,"source":"\naddScatter = (selection, data, lm, titles) => {\n  \n  const id = d3.randomInt(100000, 1000000)();\n  \n  const margin = ({ top: 50, right: 40, bottom: 45, left: 50 });\n  const width = 790 - margin.left - margin.right;\n  const height = 500 - margin.top - margin.bottom;\n  const padding = 40;\n  \n  const xMin = Math.min(...data.map(d => d.x));\n  const xMax = Math.max(...data.map(d => d.x));\n  const yMin = Math.min(...data.map(d => d.y));\n  const yMax = Math.max(...data.map(d => d.y));\n  \n  const xScaler = d3.scaleLinear()\n    .domain([xMin, xMax])\n    .range([padding, width - padding]);\n    \n  const yScaler = d3.scaleLinear()\n    .domain([yMin, yMax])\n    .range([height - padding, padding]);\n    \n  selection.append(\"rect\")\n    .attr(\"x\", 0)\n    .attr(\"y\", 0)\n    .attr(\"width\", width)\n    .attr(\"height\", height)\n    .style(\"fill\", \"#f7f7f7\");\n    \n  const dots = selection.append(\"g\")\n    .attr(\"id\", `scatter-${id}`)\n    .selectAll(\"circle\")\n    .data(data)\n    .join(\"circle\")\n    .attr(\"cx\", d => xScaler(d.x))\n    .attr(\"cy\", d => yScaler(d.y))\n    .attr(\"r\", 7)\n    .style(\"opacity\", .5)\n    .style(\"fill\", \"#0C6291\");\n  \n  dots\n    .on(\"mousemove\", function(event, d) {\n      d3.select(this)\n        .transition().duration(50)\n        .attr(\"r\", 8)\n        .style(\"opacity\", .7)\n      tooltip\n        .style(\"display\", \"inline\")\n        .style(\"left\", event.pageX + 15 + \"px\")\n        .style(\"top\", event.pageY + 15 + \"px\")\n        .text(d.cntry);\n      d3.select(event.target).style(\"cursor\", \"pointer\");\n    })\n    .on(\"mouseleave\", function(event) {\n      d3.select(`#scatter-${id}`)\n        .selectAll(\"circle\")\n        .transition().duration(100)\n        .attr(\"r\", 7)\n        .style(\"opacity\", .5)\n      tooltip.style(\"display\", \"none\");\n      d3.select(event.target).style(\"cursor\", \"default\");\n    });\n  \n  selection.append(\"g\")\n    .append(\"path\")\n    .attr(\"d\", d3.line()([\n      [padding, yScaler(lm.intercept)], \n      [width - padding, yScaler(lm.intercept) + width * yScaler(lm.slope) / xScaler(1)]\n    ]))\n    .style(\"fill\", \"none\")\n    .style(\"stroke\", \"#B13D70\")\n    .style(\"stroke-width\", 2);\n  \n  selection.append(\"g\")\n    .append(\"path\")\n    .attr(\"d\", d3.line()([[width, height], [0, height], [0, 0]]))\n    .style(\"fill\", \"none\")\n    .style(\"stroke\", \"black\");\n  \n  selection.append(\"g\")\n    .append(\"text\")\n    .attr(\"x\", width / 2)\n    .attr(\"y\", height + 20)\n    .attr(\"text-anchor\", \"middle\")\n    .attr(\"alignment-baseline\", \"hanging\")\n    .text(titles.xAxis)\n    .style(\"fill\", \"black\")\n    .style(\"font-size\", \"1rem\")\n    \n  selection.append(\"g\")\n    .append(\"text\")\n    .attr(\"transform\", \"rotate(-90)\")\n    .attr(\"x\", -height / 2)\n    .attr(\"y\", -20)\n    .attr(\"text-anchor\", \"middle\")\n    .attr(\"alignment-baseline\", \"baseline\")\n    .text(titles.yAxis)\n    .style(\"fill\", \"black\")\n    .style(\"font-size\", \"1rem\")\n  \n  return selection.node()\n}\n\naddLegend = (selection, position) => {\n  \n  selection.append(\"path\")\n    .attr(\"d\", d3.line()([[position.x, position.y], [position.x + 30, position.y]]))\n    .style(\"fill\", \"none\")\n    .style(\"stroke\", \"#B13D70\")\n    .style(\"stroke-width\", 2);\n  \n  selection.append(\"text\")\n    .attr(\"x\", position.x + 40)\n    .attr(\"y\", position.y)\n    .attr(\"text-anchor\", \"start\")\n    .attr(\"alignment-baseline\", \"middle\")\n    .text(\"Estimated relationship from a multivariate linear model\")\n    .style(\"font-size\", \"1rem\")\n    .style(\"fill\", \"black\")\n  \n  return selection.node()\n}\n\naddStats = (selection, lm, positionStats) => {\n  \n  const stats = selection.append(\"g\")\n    .attr(\"transform\", `translate(${positionStats.x},${positionStats.y})`)\n    .attr(\"x\", 0)\n    .attr(\"y\", 0)\n    .style(\"font-size\", \".8rem\")\n    .style(\"fill\", \"black\")\n    .style(\"fill-opacity\", .5);\n  \n  stats.append(\"text\")\n    .text(`n = ${lm.n}`)\n  \n  stats.append(\"text\")\n    .attr(\"dy\", 18)\n    .text(`R² = ${lm.r2}`)\n  \n  return selection.node()\n}\n\n"},{"methodName":"interpret","cellName":"ojs-cell-13","inline":false,"source":"\n// Taken with modifications from https://observablehq.com/@ben-tanen/svg-text-and-tspan-word-wrapping\n\nwrapText = (textElement) => {\n  \n  // Word parameters\n  let words = textElement.text().split(\" \").reverse(),\n      word,\n      line = [],\n      lineNumber = 0;\n  \n  // Styling parameters\n  const lineHeight = 1.2;\n  const maxWidth = 650;\n  const x = textElement.attr(\"x\"),\n        y = textElement.attr(\"y\");\n  \n  // Clear textElement text\n  textElement.text(null);\n  \n  // Append first tspan element (to fill as we build the lines)\n  let tspan = textElement.append(\"tspan\")\n    .attr(\"x\", x)\n    .attr(\"y\", y)\n    .attr(\"dy\", 0);\n  \n  // Loop through all words and make new lines when we exceed our maxWidth\n  while (word = words.pop()) {\n    \n    line.push(word);\n    tspan.text(line.join(\" \"));\n    \n    if (measureWidth(tspan.text()) > maxWidth && lineNumber < 2) {\n      line.pop();\n      tspan.text(line.join(\" \"));\n      line = [word];\n      tspan = textElement.append(\"tspan\")\n        .attr(\"x\", x)\n        .attr(\"y\", y)\n        .attr(\"dy\", `${++lineNumber * lineHeight}em`)\n        .text(word);\n    }\n    \n    if (measureWidth(tspan.text()) > maxWidth - 10 && lineNumber === 2) {\n      line.pop();\n      line.push(\"[...]\");\n      tspan.text(line.join(\" \"));\n      break;\n    }\n  }\n};\n\nmeasureWidth = {\n  const context = document.createElement(\"canvas\").getContext(\"2d\");\n  return text => context.measureText(text).width;\n};\n"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxue1xuICBjb25zdCBkaW0gPSAoeyB3aWR0aDogOTkwLCBoZWlnaHQ6IDY2MCB9KTtcbiAgY29uc3QgbW90aWYgPSBcImY2NGFcIjtcbiAgXG4gIGNvbnN0IGNvbnRhaW5lciA9IGQzLmNyZWF0ZShcImRpdlwiKTtcbiAgXG4gIC8vIENoYXJ0IHRpdGxlIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG4gIFxuICBjb250YWluZXIuYXBwZW5kKFwiZGl2XCIpXG4gICAgLmF0dHIoXCJjbGFzc1wiLCBcIm9qcy10aXRsZVwiKVxuICAgIC5odG1sKGBQbG90IHBvaW50c2ApO1xuICAgIFxuICBjb250YWluZXIuYXBwZW5kKFwiZGl2XCIpXG4gICAgLmF0dHIoXCJjbGFzc1wiLCBcIm9qcy1zdWJ0aXRsZVwiKVxuICAgIC5zdHlsZShcIm1hcmdpbi1ib3R0b21cIiwgXCIxcmVtXCIpXG4gICAgLmh0bWwoYFByZXNlbmNlIG9mIGEgbW90aWYgaW4gdGhlIGZvbGtsb3JlIG9mIGxpbmd1aXN0aWMgZ3JvdXBzYCk7XG4gIFxuICAvLyBDaGFydCBwcm9wZXIgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICBcbiAgY29uc3Qgc3ZnID0gY29udGFpbmVyLmFwcGVuZChcInN2Z1wiKVxuICAgIC5hdHRyKFwid2lkdGhcIiwgZGltLndpZHRoKVxuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGRpbS5oZWlnaHQpXG4gICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFswLCAwLCBkaW0ud2lkdGgsIGRpbS5oZWlnaHRdKVxuICAgIC5hdHRyKFwic3R5bGVcIiwgXCJtYXgtd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgaGVpZ2h0OiBpbnRyaW5zaWM7XCIpO1xuXG4gIHN2Zy5jYWxsKGFkZE1hcCk7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5zZWxlY3RBbGwoXCJkb3RzTGF0ZW50XCIpXG4gICAgLmRhdGEoY29vcmRzKVxuICAgIC5qb2luKFwiY2lyY2xlXCIpXG4gICAgLmF0dHIoXCJjeFwiLCBkID0+IGQuY29vcmRpbmF0ZXNbMF0pXG4gICAgLmF0dHIoXCJjeVwiLCBkID0+IGQuY29vcmRpbmF0ZXNbMV0pXG4gICAgLmF0dHIoXCJyXCIsIDIpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvckRvdHNMYXRlbnQpO1xuICAgIFxuICBzdmcuYXBwZW5kKFwiZ1wiKS5hdHRyKFwiaWRcIiwgXCJkb3RzLWhpZ2hsaWdodGVkXCIpLmNhbGwoZG90c1NlbGVjdCwgbW90aWYpO1xuICBcbiAgLy8gTW90aWYgcmFuZG9taXplclxuICBzdmcuYXBwZW5kKFwiZ1wiKS5hdHRyKFwiaWRcIiwgXCJtb3RpZi1pZFwiKS5jYWxsKG1vdGlmU2VsZWN0SWQsIG1vdGlmKTtcbiAgc3ZnLmFwcGVuZChcImdcIikuYXR0cihcImlkXCIsIFwibW90aWYtdGl0bGVcIikuY2FsbChtb3RpZlNlbGVjdFRpdGxlLCBtb3RpZik7XG4gIHN2Zy5hcHBlbmQoXCJnXCIpLmF0dHIoXCJpZFwiLCBcIm1vdGlmLWRlc2NyaXB0aW9uXCIpLmNhbGwobW90aWZTZWxlY3REZXNjLCBtb3RpZik7XG4gIHN2Zy5hcHBlbmQoXCJnXCIpLmF0dHIoXCJpZFwiLCBcImJ1dHRvblwiKS5jYWxsKGFkZEJ1dHRvbik7XG4gIFxuICAvLyBDaGFydCBzb3VyY2VzIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuXG4gIGNvbnRhaW5lci5hcHBlbmQoXCJkaXZcIilcbiAgICAuYXR0cihcImNsYXNzXCIsIFwib2pzLXNvdXJjZVwiKVxuICAgIC5zdHlsZShcIm1hcmdpblwiLCBcIi41cmVtIDBcIilcbiAgICAuaHRtbChgU291cmNlOiBZLiBCZXJlemtpbiwgPGk+Rm9sa2xvcmUgYW5kIE15dGhvbG9neSBDYXRhbG9nPC9pPiAoMjAxOSkuYCk7XG4gICAgXG4gIHJldHVybiBjb250YWluZXIubm9kZSgpO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG57XG4gIGNvbnN0IGRpbSA9ICh7IHdpZHRoOiA5OTAsIGhlaWdodDogNTgwIH0pO1xuICBcbiAgY29uc3QgY29udGFpbmVyID0gZDMuY3JlYXRlKFwiZGl2XCIpO1xuICBcbiAgLy8gQ2hhcnQgdGl0bGUgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cbiAgXG4gIGNvbnRhaW5lci5hcHBlbmQoXCJkaXZcIilcbiAgICAuYXR0cihcImNsYXNzXCIsIFwib2pzLXRpdGxlXCIpXG4gICAgLmh0bWwoYFBsYW50ZWQgaWRlYXNgKTtcbiAgICBcbiAgY29udGFpbmVyLmFwcGVuZChcImRpdlwiKVxuICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJvanMtc3VidGl0bGVcIilcbiAgICAuc3R5bGUoXCJtYXJnaW4tYm90dG9tXCIsIFwiMXJlbVwiKVxuICAgIC5odG1sKGBTaGFyZSBvZiBtb3RpZnMgcmVsYXRlZCB0byB2YXJpb3VzIGNvbmNlcHRzIGluIHRoZSBmb2xrbG9yZSBvZiBsaW5ndWlzdGljIGdyb3Vwc2ApO1xuICBcbiAgLy8gTWFwIGJhc2UgbGF5ZXIgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy9cbiAgXG4gIGNvbnN0IHN2ZyA9IGNvbnRhaW5lci5hcHBlbmQoXCJzdmdcIilcbiAgICAuYXR0cihcIndpZHRoXCIsIGRpbS53aWR0aClcbiAgICAuYXR0cihcImhlaWdodFwiLCBkaW0uaGVpZ2h0KVxuICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgZGltLndpZHRoLCBkaW0uaGVpZ2h0XSlcbiAgICAuYXR0cihcInN0eWxlXCIsIFwibWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGhlaWdodDogaW50cmluc2ljO1wiKTtcbiAgXG4gIHN2Zy5jYWxsKGFkZE1hcCk7XG4gIFxuICAvLyBSYWRpbyBidXR0b25zIC8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICAgXG4gIGNvbnN0IHJhZGlvID0gc3ZnLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcImlkXCIsIFwicmFkaW9cIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInRyYW5zbGF0ZSgzMCw0MTApXCIpO1xuICBcbiAgY29uc3QgcmFkaW9CdXR0b25zID0gcmFkaW8uYXBwZW5kKFwiZm9yZWlnbk9iamVjdFwiKVxuICAgIC5hdHRyKFwieFwiLCAwKVxuICAgIC5hdHRyKFwieVwiLCAgMClcbiAgICAuYXR0cihcIndpZHRoXCIsIDI1MClcbiAgICAuYXR0cihcImhlaWdodFwiLCA1MDApO1xuICBcbiAgY29uc3QgcmFkaW9UaXRsZSA9IHJhZGlvQnV0dG9ucy5hcHBlbmQoXCJ4aHRtbDpkaXZcIilcbiAgICAuYXBwZW5kKFwidGV4dFwiKVxuICAgIC50ZXh0KFwiU2hhcmUgb2YgbW90aWZzIHJlbGF0ZWQgdG9cIilcbiAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcImJvbGRcIilcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuOXJlbVwiKTtcbiAgXG4gIHJhZGlvQnV0dG9uc1xuICAgIC5jYWxsKGFkZFJhZGlvLCBcImZhcm1pbmdcIiwgdHJ1ZSlcbiAgICAuY2FsbChhZGRSYWRpbywgXCJwYXN0b3JhbFwiKVxuICAgIC5jYWxsKGFkZFJhZGlvLCBcImZpc2hpbmdcIilcbiAgICAuY2FsbChhZGRSYWRpbywgXCJjb2xkbmVzc1wiKVxuICAgIC5jYWxsKGFkZFJhZGlvLCBcImVhcnRocXVha2VzXCIpO1xuICAgIFxuICByYWRpb0J1dHRvbnMub24oXCJjbGlja1wiLCAoKSA9PiB7XG4gICAgY29uc3Qgc2VsZWN0ZWROZXcgPSBkMy5zZWxlY3QoJ2lucHV0W25hbWU9XCJjb25jZXB0c1wiXTpjaGVja2VkJykubm9kZSgpLnZhbHVlO1xuICAgIHN2Zy5zZWxlY3QoXCIjYnViYmxlc1wiKS5jYWxsKGFkZEJ1YmJsZXMsIHNlbGVjdGVkTmV3KTtcbiAgfSk7XG4gIFxuICAvLyBQb2ludHMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL1xuICBcbiAgY29uc3Qgc2VsZWN0SW5pdCA9IFwiZmFybWluZ1wiXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgLmF0dHIoXCJpZFwiLCBcImJ1YmJsZXNcIilcbiAgICAuY2FsbChhZGRCdWJibGVzLCBzZWxlY3RJbml0KTtcbiAgXG4gIC8vIENoYXJ0IHNvdXJjZXMgLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vXG5cbiAgY29udGFpbmVyLmFwcGVuZChcImRpdlwiKVxuICAgIC5hdHRyKFwiY2xhc3NcIiwgXCJvanMtc291cmNlXCIpXG4gICAgLnN0eWxlKFwibWFyZ2luXCIsIFwiLjVyZW0gMFwiKVxuICAgIC5odG1sKGBTb3VyY2VzOiBZLiBCZXJlemtpbiwgPGk+Rm9sa2xvcmUgYW5kIE15dGhvbG9neSBDYXRhbG9nPC9pPiAoMjAxOSk7IFMuIE1pY2hhbG9wb3Vsb3MgYW5kIE0uIFh1ZSwgXCJGb2xrbG9yZVwiLCA8aT5RdWFydGVybHkgSm91cm5hbCBvZiBFY29ub21pY3M8L2k+LCB2b2wuIDEzNiwgbm8uIDQgKDIwMjEpLmApO1xuICAgIFxuICByZXR1cm4gY29udGFpbmVyLm5vZGUoKTtcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuaHRtbGBcbiAgPGRpdiBjbGFzcz1cIm9qcy10aXRsZVwiIHN0eWxlPVwibWFyZ2luLXRvcDoxcmVtO1wiPkEgbmlnaHRtYXJlIG9uIHRoZSBicmFpbnMgb2YgdGhlIGxpdmluZzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwib2pzLXN1YnRpdGxlXCI+UmVsYXRpb25zaGlwIGJldHdlZW4gZm9sa2xvcmUgY29udGVudCBhbmQgcHJlc2VudC1kYXkgYXR0aXR1ZGVzIGFuZCBiZWxpZWZzPC9kaXY+XG5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbntcbiAgY29uc3QgbWFyZ2luID0gKHsgdG9wOiA1MCwgcmlnaHQ6IDQwLCBib3R0b206IDQ1LCBsZWZ0OiA1MCB9KTtcbiAgY29uc3Qgd2lkdGggPSA3OTAgLSBtYXJnaW4ubGVmdCAtIG1hcmdpbi5yaWdodDtcbiAgY29uc3QgaGVpZ2h0ID0gNTAwIC0gbWFyZ2luLnRvcCAtIG1hcmdpbi5ib3R0b207XG4gIGNvbnN0IHBhZGRpbmcgPSA0MDtcbiAgXG4gIGNvbnN0IGRhdGEgPSByZWdyZXNzaW9uc1xuICAgIC5maWx0ZXIoZCA9PiBkLmxudHJ1c3Rfd3ZzYXZnICE9PSBudWxsICYgZC50cmlja3N0ZXJzX3B1bmlzaCAhPT0gbnVsbClcbiAgICAubWFwKGQgPT4gKHsuLi5kLCB4OiBkLnRyaWNrc3RlcnNfcHVuaXNoLCB5OiBkLmxudHJ1c3Rfd3ZzYXZnIH0pKTtcbiAgXG4gIGNvbnN0IGxtID0gKHsgXG4gICAgaW50ZXJjZXB0OiAyNC40OTY3MTQgLSAzLjIwNDI3MzUgKiA3LjU0MDAzOCAtIDAuMDIwNDY0MDkgKiAzLjM5NzA2OCxcbiAgICBzbG9wZTogMS44NTYwMDYsXG4gICAgbjogMTA0LCByMjogMC4yMDVcbiAgfSk7XG4gIFxuICBjb25zdCB0aXRsZXMgPSAoe1xuICAgIHhBeGlzOiBcIlJlbGF0aXZlIHB1bmlzaG1lbnQgb2YgYW50aXNvY2lhbCBiZWhhdmlvciBpbiBmb2xrbG9yZVwiLFxuICAgIHlBeGlzOiBcIlRydXN0IChXVlMpXCJcbiAgfSk7XG4gIGNvbnN0IHBvc2l0aW9uID0gKHsgeDogMTUwLCB5OiAxMCB9KTsgXG4gIGNvbnN0IHBvc2l0aW9uU3RhdHMgPSAoeyB4OiA2MDAsIHk6IGhlaWdodCAtIDQwIH0pOyBcbiAgXG4gIGNvbnN0IGNvbnRhaW5lciA9IGQzLmNyZWF0ZShcImRpdlwiKTtcbiAgXG4gIGNvbnN0IHN2ZyA9IGNvbnRhaW5lci5hcHBlbmQoXCJzdmdcIilcbiAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoICsgbWFyZ2luLmxlZnQgKyBtYXJnaW4ucmlnaHQpXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0ICsgbWFyZ2luLnRvcCArIG1hcmdpbi5ib3R0b20pXG4gICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFswLCAwLCB3aWR0aCArIG1hcmdpbi5sZWZ0ICsgbWFyZ2luLnJpZ2h0LCBoZWlnaHQgKyBtYXJnaW4udG9wICsgbWFyZ2luLmJvdHRvbV0pXG4gICAgLmF0dHIoXCJzdHlsZVwiLCBcIm1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBoZWlnaHQ6IGludHJpbnNpYztcIik7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHttYXJnaW4ubGVmdH0sICR7bWFyZ2luLnRvcH0pYClcbiAgICAuY2FsbChhZGRTY2F0dGVyLCBkYXRhLCBsbSwgdGl0bGVzKVxuICAgIC5jYWxsKGFkZFN0YXRzLCBsbSwgcG9zaXRpb25TdGF0cyk7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKS5jYWxsKGFkZExlZ2VuZCwgcG9zaXRpb24pO1xuICBcbiAgcmV0dXJuIGNvbnRhaW5lci5ub2RlKCk7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbntcbiAgY29uc3QgbWFyZ2luID0gKHsgdG9wOiA1MCwgcmlnaHQ6IDQwLCBib3R0b206IDQ1LCBsZWZ0OiA1MCB9KTtcbiAgY29uc3Qgd2lkdGggPSA3OTAgLSBtYXJnaW4ubGVmdCAtIG1hcmdpbi5yaWdodDtcbiAgY29uc3QgaGVpZ2h0ID0gNTAwIC0gbWFyZ2luLnRvcCAtIG1hcmdpbi5ib3R0b207XG4gIGNvbnN0IHBhZGRpbmcgPSA0MDtcbiAgXG4gIGNvbnN0IGRhdGEgPSByZWdyZXNzaW9uc1xuICAgIC5maWx0ZXIoZCA9PiBkLnJpc2t0YWtpbmcgIT09IG51bGwgJiBkLmNoYWxsZW5nZV9jb21wZXRpdGlvbiAhPT0gbnVsbClcbiAgICAubWFwKGQgPT4gKHsuLi5kLCB4OiBkLmNoYWxsZW5nZV9jb21wZXRpdGlvbiwgeTogZC5yaXNrdGFraW5nIH0pKTtcbiAgXG4gIGNvbnN0IGxtID0gKHsgXG4gICAgaW50ZXJjZXB0OiAxNy42OTE0IC0gMi4yNzgzMDYyICogNy41NDAzNjAgLSAwLjIzOTk2OTQ4ICogMy4zODQ3NjMsXG4gICAgc2xvcGU6IDUuNDM4MDc3LFxuICAgIG46IDc2LCByMjogXCIwLjEzMFwiXG4gIH0pO1xuICBcbiAgY29uc3QgdGl0bGVzID0gKHtcbiAgICB4QXhpczogXCJTaGFyZSBvZiBtb3RpZnMgd2l0aCBjaGFsbGVuZ2VzIGFuZCBjb21wZXRpdGlvbnNcIixcbiAgICB5QXhpczogXCJSaXNrLXRha2luZyAoR1BTKVwiXG4gIH0pO1xuICBjb25zdCBwb3NpdGlvbiA9ICh7IHg6IDE1MCwgeTogMTAgfSk7IFxuICBjb25zdCBwb3NpdGlvblN0YXRzID0gKHsgeDogNjAwLCB5OiBoZWlnaHQgLSA0MCB9KTsgXG4gIFxuICBjb25zdCBjb250YWluZXIgPSBkMy5jcmVhdGUoXCJkaXZcIik7XG4gIFxuICBjb25zdCBzdmcgPSBjb250YWluZXIuYXBwZW5kKFwic3ZnXCIpXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCB3aWR0aCArIG1hcmdpbi5sZWZ0ICsgbWFyZ2luLnJpZ2h0KVxuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodCArIG1hcmdpbi50b3AgKyBtYXJnaW4uYm90dG9tKVxuICAgIC5hdHRyKFwidmlld0JveFwiLCBbMCwgMCwgd2lkdGggKyBtYXJnaW4ubGVmdCArIG1hcmdpbi5yaWdodCwgaGVpZ2h0ICsgbWFyZ2luLnRvcCArIG1hcmdpbi5ib3R0b21dKVxuICAgIC5hdHRyKFwic3R5bGVcIiwgXCJtYXgtd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgaGVpZ2h0OiBpbnRyaW5zaWM7XCIpO1xuICBcbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7bWFyZ2luLmxlZnR9LCAke21hcmdpbi50b3B9KWApXG4gICAgLmNhbGwoYWRkU2NhdHRlciwgZGF0YSwgbG0sIHRpdGxlcylcbiAgICAuY2FsbChhZGRTdGF0cywgbG0sIHBvc2l0aW9uU3RhdHMpO1xuICBcbiAgc3ZnLmFwcGVuZChcImdcIikuY2FsbChhZGRMZWdlbmQsIHBvc2l0aW9uKTtcbiAgXG4gIHJldHVybiBjb250YWluZXIubm9kZSgpO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG57XG4gIGNvbnN0IG1hcmdpbiA9ICh7IHRvcDogNTAsIHJpZ2h0OiA0MCwgYm90dG9tOiA0NSwgbGVmdDogNTAgfSk7XG4gIGNvbnN0IHdpZHRoID0gNzkwIC0gbWFyZ2luLmxlZnQgLSBtYXJnaW4ucmlnaHQ7XG4gIGNvbnN0IGhlaWdodCA9IDUwMCAtIG1hcmdpbi50b3AgLSBtYXJnaW4uYm90dG9tO1xuICBjb25zdCBwYWRkaW5nID0gNDA7XG4gIFxuICBjb25zdCBkYXRhID0gcmVncmVzc2lvbnNcbiAgICAuZmlsdGVyKGQgPT4gZC5mZW0xOSAhPT0gbnVsbCAmIGQubWFsZWJpYXMgIT09IG51bGwpXG4gICAgLm1hcChkID0+ICh7Li4uZCwgeDogZC5tYWxlYmlhcywgeTogZC5mZW0xOSB9KSk7XG4gIFxuICBjb25zdCBsbSA9ICh7IFxuICAgIGludGVyY2VwdDogMTYyLjkyNzY3IC0gMTIuMjIzODUgKiA3LjU0MzI3NiArIDAuMjg2MjQyNjYgKiAzLjE4MTg0NCxcbiAgICBzbG9wZTogNS40MzgwNzcsXG4gICAgbjogMTc0LCByMjogMC4xMzZcbiAgfSk7XG4gIFxuICBjb25zdCB0aXRsZXMgPSAoe1xuICAgIHhBeGlzOiBcIkdlbmRlciBzdGVyZW90eXBpbmcgaW4gZm9sa2xvcmVcIixcbiAgICB5QXhpczogXCJGZW1hbGUgbGFib3IgZm9yY2UgcGFydGljaXBhdGlvbiwgMjAxOVwiXG4gIH0pO1xuICBjb25zdCBwb3NpdGlvbiA9ICh7IHg6IDE1MCwgeTogMTAgfSk7IFxuICBjb25zdCBwb3NpdGlvblN0YXRzID0gKHsgeDogNDAsIHk6IGhlaWdodCAtIDQwIH0pOyBcbiAgXG4gIGNvbnN0IGNvbnRhaW5lciA9IGQzLmNyZWF0ZShcImRpdlwiKTtcbiAgXG4gIGNvbnN0IHN2ZyA9IGNvbnRhaW5lci5hcHBlbmQoXCJzdmdcIilcbiAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoICsgbWFyZ2luLmxlZnQgKyBtYXJnaW4ucmlnaHQpXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0ICsgbWFyZ2luLnRvcCArIG1hcmdpbi5ib3R0b20pXG4gICAgLmF0dHIoXCJ2aWV3Qm94XCIsIFswLCAwLCB3aWR0aCArIG1hcmdpbi5sZWZ0ICsgbWFyZ2luLnJpZ2h0LCBoZWlnaHQgKyBtYXJnaW4udG9wICsgbWFyZ2luLmJvdHRvbV0pXG4gICAgLmF0dHIoXCJzdHlsZVwiLCBcIm1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBoZWlnaHQ6IGludHJpbnNpYztcIik7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHttYXJnaW4ubGVmdH0sICR7bWFyZ2luLnRvcH0pYClcbiAgICAuY2FsbChhZGRTY2F0dGVyLCBkYXRhLCBsbSwgdGl0bGVzKVxuICAgIC5jYWxsKGFkZFN0YXRzLCBsbSwgcG9zaXRpb25TdGF0cyk7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKS5jYWxsKGFkZExlZ2VuZCwgcG9zaXRpb24pO1xuICBcbiAgcmV0dXJuIGNvbnRhaW5lci5ub2RlKCk7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbmh0bWxgXG4gIDxkaXYgY2xhc3M9XCJvanMtY2FwdGlvblwiIHN0eWxlPVwibWFyZ2luLWJvdHRvbTogMXJlbTtcIj5UcmVuZGxpbmVzIGFyZSBmcm9tIG11bHRpdmFyaWF0ZSBjcm9zcy1jb3VudHJ5IHJlZ3Jlc3Npb25zIHdpdGggdHdvIG90aGVyIGNvbnRyb2wgdmFyaWFibGVzOiB0aGUgbG9nIG51bWJlciBvZiBwdWJsaWNhdGlvbnMgQmVyZXpraW4gY29uc3VsdGVkIGZvciBhIGdyb3VwIGFuZCB0aGUgbG9nIHllYXIgb2YgdGhlIGVhcmxpZXN0IHB1YmxpY2F0aW9uIGNpdGVkIGZvciBhIGdyb3VwLjwvZGl2PlxuICA8ZGl2IGNsYXNzPVwib2pzLXNvdXJjZVwiIHN0eWxlPVwibWFyZ2luLWJvdHRvbTogMXJlbTtcIj5HUFMgPSBHbG9iYWwgUHJlZmVyZW5jZSBTdXJ2ZXksIFdWUyA9IFdvcmxkIFZhbHVlIFN1cnZleXM8YnI+U291cmNlOiBTLiBNaWNoYWxvcG91bG9zIGFuZCBNLiBYdWUsIFwiRm9sa2xvcmVcIiwgPGk+UXVhcnRlcmx5IEpvdXJuYWwgb2YgRWNvbm9taWNzPC9pPiwgdm9sLiAxMzYsIG5vLiA0ICgyMDIxKS48L2Rpdj5cbmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbi8vIERhdGFcblxuY291bnRyaWVzMTEwbSA9IEZpbGVBdHRhY2htZW50KFwiLi4vLi4vZGF0YXNldHMvZm9sa2xvcmUvY291bnRyaWVzLTExMG0uanNvblwiKS5qc29uKCk7XG53b3JsZEFsbCA9IHRvcG9qc29uLmZlYXR1cmUoY291bnRyaWVzMTEwbSwgY291bnRyaWVzMTEwbS5vYmplY3RzLmNvdW50cmllcykuZmVhdHVyZXM7XG53b3JsZCA9IHdvcmxkQWxsLmZpbHRlcihkID0+IGQucHJvcGVydGllcy5uYW1lICE9PSBcIkFudGFyY3RpY2FcIik7XG5cbmNvb3Jkc1JhdyA9IEZpbGVBdHRhY2htZW50KFwiLi4vLi4vZGF0YXNldHMvZm9sa2xvcmUvY29vcmRzX2NsZWFuLmpzb25cIikuanNvbigpO1xuY29vcmRzID0gY29vcmRzUmF3Lm1hcChkID0+ICh7IGdyb3VwOiBkLmdyb3VwLCBjb29yZGluYXRlczogcHJvamVjdGlvbihbZC5sb25naXR1ZGUsIGQubGF0aXR1ZGVdKSB9KSk7XG5tb3RpZnMgPSBGaWxlQXR0YWNobWVudChcIi4uLy4uL2RhdGFzZXRzL2ZvbGtsb3JlL21vdGlmcy5jc3ZcIikuY3N2KHsgdHlwZWQ6IHRydWUgfSk7XG5ncm91cHNNb3RpZnMgPSBGaWxlQXR0YWNobWVudChcIi4uLy4uL2RhdGFzZXRzL2ZvbGtsb3JlL2dyb3Vwc19tb3RpZnMuY3N2XCIpLmNzdih7IHR5cGVkOiB0cnVlIH0pO1xuXG5ncm91cHNDb25jZXB0c1JhdyA9IEZpbGVBdHRhY2htZW50KFwiLi4vLi4vZGF0YXNldHMvZm9sa2xvcmUvZ3JvdXBzX2NvbmNlcHRzLmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KTtcbmdyb3Vwc0NvbmNlcHRzID0gZ3JvdXBzQ29uY2VwdHNSYXcubWFwKGQgPT4gKHsgXG4gIGdyb3VwOiBkLmdyb3VwLCBcbiAgY29vcmRpbmF0ZXM6IHByb2plY3Rpb24oW2QubG9uZ2l0dWRlLCBkLmxhdGl0dWRlXSksXG4gIGNvbmNlcHQ6IGQuY29uY2VwdCxcbiAgc2hhcmU6IGQuc2hhcmVcbn0pKTtcblxucmVncmVzc2lvbnMgPSBGaWxlQXR0YWNobWVudChcIi4uLy4uL2RhdGFzZXRzL2ZvbGtsb3JlL3JlZ3Jlc3Npb25zLmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KTtcblxuLy8gUGFyYW1ldGVyc1xuXG5jb2xvckRvdHNMYXRlbnQgPSBcIiM4NGIwYzVcIjtcbmNvbG9yRG90c1NlbGVjdCA9IFwiI0IxM0Q3MFwiO1xuY29sb3JMYW5kID0gXCIjZWVlZWVlXCI7XG5jb2xvckJvcmRlcnMgPSBcIiNjMGQ3ZGZcIjtcbmNvbG9yQkcgPSBcIiNjMGQ3ZGZcIjtcblxudG9vbHRpcCA9IGQzLnNlbGVjdChcImJvZHlcIilcbiAgLmFwcGVuZChcImRpdlwiKVxuICAuYXR0cihcImNsYXNzXCIsIFwidG9vbFRpcFwiKVxuICAuc3R5bGUoXCJkaXNwbGF5XCIsIFwibm9uZVwiKVxuICAuc3R5bGUoXCJwb3NpdGlvblwiLCBcImFic29sdXRlXCIpXG4gIC5zdHlsZShcInotaW5kZXhcIiwgOTk5KVxuICAuc3R5bGUoXCJ3aWR0aFwiLCAxMDApXG4gIC5zdHlsZShcImhlaWdodFwiLCAyMClcbiAgLnN0eWxlKFwiYmFja2dyb3VuZFwiLCBcIiNmN2Y3ZjdcIilcbiAgLnN0eWxlKFwiYm9yZGVyXCIsIFwiMXB4IHNvbGlkICNjZWNlY2VcIilcbiAgLnN0eWxlKFwib3BhY2l0eVwiLCAuOSlcbiAgLnN0eWxlKFwicGFkZGluZ1wiLCBcIi4yZW0gLjQ1ZW1cIilcbiAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiLjg1cmVtXCIpO1xuXG4vLyBIZWxwZXIgZnVuY3Rpb25zXG5cbnByb2plY3Rpb24gPSBkMy5nZW9NZXJjYXRvcigpLnNjYWxlKFsxNTVdKS5jZW50ZXIoWy01LCA0MF0pO1xucmFuZE1vdGlmID0gKCkgPT4gbW90aWZzW2QzLnJhbmRvbUludCgwLCBtb3RpZnMubGVuZ3RoLTEpKCldLm1vdGlmX2lkO1xubW90aWZTZWxlY3QgPSAobW90aWYpID0+IG1vdGlmcy5maWx0ZXIoZCA9PiBkLm1vdGlmX2lkID09PSBtb3RpZik7XG5cbmNvb3Jkc1NlbGVjdCA9IChtb3RpZikgPT4ge1xuICBjb25zdCBncm91cHMgPSBncm91cHNNb3RpZnMuZmlsdGVyKGQgPT4gZC5tb3RpZl9pZCA9PT0gbW90aWYpO1xuICBjb25zdCBjb29yZHNTZWxlY3QgPSBjb29yZHMuZmlsdGVyKGQgPT4gZ3JvdXBzLm1hcChvYmogPT4gb2JqLmdyb3VwKS5pbmNsdWRlcyhkLmdyb3VwKSk7XG4gIHJldHVybiBjb29yZHNTZWxlY3Q7XG59O1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuYWRkTWFwID0gKHNlbGVjdGlvbikgPT4ge1xuXG4gIHNlbGVjdGlvbi5hcHBlbmQoXCJyZWN0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIDApXG4gICAgLmF0dHIoXCJ5XCIsIDApXG4gICAgLmF0dHIoXCJ3aWR0aFwiLCBzZWxlY3Rpb24uYXR0cihcIndpZHRoXCIpKVxuICAgIC5hdHRyKFwiaGVpZ2h0XCIsIHNlbGVjdGlvbi5hdHRyKFwiaGVpZ2h0XCIpKVxuICAgIC5zdHlsZShcImZpbGxcIiwgY29sb3JCRyk7XG4gICAgXG4gIGNvbnN0IHBhdGhHZW5lcmF0b3IgPSBkMy5nZW9QYXRoKHByb2plY3Rpb24pO1xuICBjb25zdCBtYXAgPSBzZWxlY3Rpb24uYXBwZW5kKFwiZ1wiKTtcbiAgXG4gIG1hcC5zZWxlY3RBbGwoXCJiZ1wiKVxuICAgIC5kYXRhKHdvcmxkKVxuICAgIC5qb2luKFwicGF0aFwiKVxuICAgIC5hdHRyKFwiZFwiLCBwYXRoR2VuZXJhdG9yKVxuICAgIC5hdHRyKFwiZmlsbFwiLCBjb2xvckxhbmQpO1xuXG4gIG1hcC5zZWxlY3RBbGwoXCJib3JkZXJzXCIpXG4gICAgLmRhdGEod29ybGQpXG4gICAgLmpvaW4oXCJwYXRoXCIpXG4gICAgLmF0dHIoXCJkXCIsIHBhdGhHZW5lcmF0b3IpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAuc3R5bGUoXCJzdHJva2VcIiwgY29sb3JCb3JkZXJzKVxuICAgIC5zdHlsZShcInN0cm9rZS13aWR0aFwiLCAxKTtcbiAgICBcbiAgICByZXR1cm4gc2VsZWN0aW9uLm5vZGUoKVxufVxuXG5kb3RzU2VsZWN0ID0gKHNlbGVjdGlvbiwgbW90aWYpID0+IHtcblxuICBjb25zdCBkb3RzID0gc2VsZWN0aW9uLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgIC5kYXRhKGNvb3Jkc1NlbGVjdChtb3RpZiksIGQgPT4gZC5ncm91cClcbiAgICAuam9pbihcbiAgICAgIGVudGVyID0+IGVudGVyXG4gICAgICAgIC5hcHBlbmQoXCJjaXJjbGVcIilcbiAgICAgICAgICAuYXR0cihcImN4XCIsIGQgPT4gZC5jb29yZGluYXRlc1swXSlcbiAgICAgICAgICAuYXR0cihcImN5XCIsIGQgPT4gZC5jb29yZGluYXRlc1sxXSlcbiAgICAgICAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIDApXG4gICAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oNTAwKVxuICAgICAgICAgIC5hdHRyKFwiclwiLCA1KVxuICAgICAgICAgIC5zdHlsZShcInN0cm9rZVwiLCBcIndoaXRlXCIpXG4gICAgICAgICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvckRvdHNTZWxlY3QpXG4gICAgICAgICAgLnN0eWxlKFwib3BhY2l0eVwiLCAxKVxuICAgICAgICAuc2VsZWN0aW9uKCksXG4gICAgICB1cGRhdGUgPT4gdXBkYXRlLFxuICAgICAgZXhpdCA9PiBleGl0XG4gICAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oMzAwKVxuICAgICAgICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgMClcbiAgICAgICAgICAucmVtb3ZlKClcbiAgICApO1xuICAgIFxuICBkb3RzXG4gICAgLm9uKFwibW91c2Vtb3ZlXCIsIGZ1bmN0aW9uKGV2ZW50LCBkKSB7XG4gICAgICBkMy5zZWxlY3QodGhpcylcbiAgICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbig1MClcbiAgICAgICAgLmF0dHIoXCJyXCIsIDYpXG4gICAgICAgIC5zdHlsZShcImZpbGxcIiwgXCIjZjY5N2JiXCIpO1xuICAgICAgdG9vbHRpcFxuICAgICAgICAuc3R5bGUoXCJkaXNwbGF5XCIsIFwiaW5saW5lXCIpXG4gICAgICAgIC5zdHlsZShcImxlZnRcIiwgZXZlbnQucGFnZVggKyAxNSArIFwicHhcIilcbiAgICAgICAgLnN0eWxlKFwidG9wXCIsIGV2ZW50LnBhZ2VZICsgMTUgKyBcInB4XCIpXG4gICAgICAgIC50ZXh0KGQuZ3JvdXApO1xuICAgICAgZDMuc2VsZWN0KGV2ZW50LnRhcmdldCkuc3R5bGUoXCJjdXJzb3JcIiwgXCJwb2ludGVyXCIpO1xuICAgIH0pXG4gICAgLm9uKFwibW91c2VsZWF2ZVwiLCBmdW5jdGlvbihldmVudCkge1xuICAgICAgZDMuc2VsZWN0KFwiI2RvdHMtaGlnaGxpZ2h0ZWRcIilcbiAgICAgICAgLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDEwMClcbiAgICAgICAgLmF0dHIoXCJyXCIsIDUpXG4gICAgICAgIC5zdHlsZShcImZpbGxcIiwgY29sb3JEb3RzU2VsZWN0KTtcbiAgICAgIHRvb2x0aXAuc3R5bGUoXCJkaXNwbGF5XCIsIFwibm9uZVwiKTtcbiAgICAgIGQzLnNlbGVjdChldmVudC50YXJnZXQpLnN0eWxlKFwiY3Vyc29yXCIsIFwiZGVmYXVsdFwiKTtcbiAgICB9KTtcbiAgICBcbiAgcmV0dXJuIHNlbGVjdGlvbi5ub2RlKClcbn07XG5cbm1vdGlmU2VsZWN0SWQgPSAoc2VsZWN0aW9uLCBtb3RpZikgPT4ge1xuICAgIFxuICBzZWxlY3Rpb24uc2VsZWN0QWxsKFwidGV4dFwiKVxuICAgIC5kYXRhKG1vdGlmU2VsZWN0KG1vdGlmKSwgZCA9PiBkLm1vdGlmX2lkKVxuICAgIC5qb2luKFxuICAgICAgZW50ZXIgPT4gZW50ZXJcbiAgICAgICAgLmFwcGVuZChcInRleHRcIilcbiAgICAgICAgICAudGV4dChkID0+IGQubW90aWZfaWQpXG4gICAgICAgICAgLmF0dHIoXCJ4XCIsIC01MDApXG4gICAgICAgICAgLmF0dHIoXCJ5XCIsIDU1MylcbiAgICAgICAgICAuc3R5bGUoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAgICAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuN3JlbVwiKVxuICAgICAgICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgMClcbiAgICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbig1MDApXG4gICAgICAgICAgLmF0dHIoXCJ4XCIsIDMwKVxuICAgICAgICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgMSlcbiAgICAgICAgLnNlbGVjdGlvbigpLFxuICAgICAgdXBkYXRlID0+IHVwZGF0ZVxuICAgICAgICAgIC5hdHRyKFwieFwiLCAtNTAwKVxuICAgICAgICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgMClcbiAgICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbig1MDApXG4gICAgICAgICAgLmF0dHIoXCJ4XCIsIDMwKVxuICAgICAgICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgMSlcbiAgICAgICAgLnNlbGVjdGlvbigpLFxuICAgICAgZXhpdCA9PiBleGl0XG4gICAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oNTAwKVxuICAgICAgICAgIC5hdHRyKFwieFwiLCAxNTAwKVxuICAgICAgICAgIC5yZW1vdmUoKVxuICAgICk7XG4gICAgXG4gIHJldHVybiBzZWxlY3Rpb24ubm9kZSgpO1xufTtcblxubW90aWZTZWxlY3RUaXRsZSA9IChzZWxlY3Rpb24sIG1vdGlmKSA9PiB7XG4gICAgXG4gIHNlbGVjdGlvbi5zZWxlY3RBbGwoXCJ0ZXh0XCIpXG4gICAgLmRhdGEobW90aWZTZWxlY3QobW90aWYpLCBkID0+IGQudGl0bGUpXG4gICAgLmpvaW4oXG4gICAgICBlbnRlciA9PiBlbnRlclxuICAgICAgICAuYXBwZW5kKFwidGV4dFwiKVxuICAgICAgICAgIC50ZXh0KGQgPT4gZC50aXRsZSlcbiAgICAgICAgICAuYXR0cihcInhcIiwgLTUwMClcbiAgICAgICAgICAuYXR0cihcInlcIiwgNTgwKVxuICAgICAgICAgIC5zdHlsZShcImZpbGxcIiwgXCJibGFja1wiKVxuICAgICAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIjEuNXJlbVwiKVxuICAgICAgICAgIC5zdHlsZShcImZvbnQtZmFtaWx5XCIsIFwiS2FybGEsIEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWZcIilcbiAgICAgICAgICAuc3R5bGUoXCJmb250LXdlaWdodFwiLCBcImJvbGRcIilcbiAgICAgICAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIDApXG4gICAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oNTAwKVxuICAgICAgICAgIC5hdHRyKFwieFwiLCAzMClcbiAgICAgICAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIDEpXG4gICAgICAgIC5zZWxlY3Rpb24oKSxcbiAgICAgICB1cGRhdGUgPT4gdXBkYXRlXG4gICAgICAgICAgLmF0dHIoXCJ4XCIsIC01MDApXG4gICAgICAgICAgLnN0eWxlKFwib3BhY2l0eVwiLCAwKVxuICAgICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDUwMClcbiAgICAgICAgICAuYXR0cihcInhcIiwgMzApXG4gICAgICAgICAgLnN0eWxlKFwib3BhY2l0eVwiLCAxKVxuICAgICAgICAuc2VsZWN0aW9uKCksXG4gICAgICBleGl0ID0+IGV4aXRcbiAgICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbig1MDApXG4gICAgICAgICAgLmF0dHIoXCJ4XCIsIDE1MDApXG4gICAgICAgICAgLnJlbW92ZSgpXG4gICAgKTtcbiAgICBcbiAgcmV0dXJuIHNlbGVjdGlvbi5ub2RlKCk7XG59O1xuXG5tb3RpZlNlbGVjdERlc2MgPSAoc2VsZWN0aW9uLCBtb3RpZikgPT4ge1xuICBcbiAgc2VsZWN0aW9uLnNlbGVjdEFsbChcInRleHRcIilcbiAgICAuZGF0YShtb3RpZlNlbGVjdChtb3RpZiksIGQgPT4gZC5kZXNjcmlwdGlvbilcbiAgICAuam9pbihcbiAgICAgIGVudGVyID0+IGVudGVyXG4gICAgICAgIC5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgICAgICAgLmF0dHIoJ3RyYW5zZm9ybScsIFwidHJhbnNsYXRlKC01MDAsNjA1KVwiKVxuICAgICAgICAgIC5hdHRyKFwieFwiLCAwKVxuICAgICAgICAgIC5hdHRyKFwieVwiLCAwKVxuICAgICAgICAgIC50ZXh0KGQgPT4gZC5kZXNjcmlwdGlvbilcbiAgICAgICAgICAuY2FsbCh3cmFwVGV4dClcbiAgICAgICAgICAuc3R5bGUoXCJmaWxsXCIsIFwiIzJBNzY5RVwiKVxuICAgICAgICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIi44cmVtXCIpXG4gICAgICAgICAgLnN0eWxlKFwib3BhY2l0eVwiLCAwKVxuICAgICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDUwMClcbiAgICAgICAgICAuYXR0cigndHJhbnNmb3JtJywgXCJ0cmFuc2xhdGUoMzAsNjA1KVwiKVxuICAgICAgICAgIC5zdHlsZShcIm9wYWNpdHlcIiwgMSlcbiAgICAgICAgLnNlbGVjdGlvbigpLFxuICAgICAgIHVwZGF0ZSA9PiB1cGRhdGVcbiAgICAgICAgICAuYXR0cigndHJhbnNmb3JtJywgXCJ0cmFuc2xhdGUoLTUwMCw2MDUpXCIpXG4gICAgICAgICAgLnN0eWxlKFwib3BhY2l0eVwiLCAwKVxuICAgICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDUwMClcbiAgICAgICAgICAuYXR0cihcInhcIiwgMzApXG4gICAgICAgICAgLmF0dHIoJ3RyYW5zZm9ybScsIFwidHJhbnNsYXRlKDMwLDYwNSlcIilcbiAgICAgICAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIDEpXG4gICAgICAgIC5zZWxlY3Rpb24oKSxcbiAgICAgIGV4aXQgPT4gZXhpdFxuICAgICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDUwMClcbiAgICAgICAgICAuYXR0cigndHJhbnNmb3JtJywgXCJ0cmFuc2xhdGUoMTUwMCw2MDUpXCIpXG4gICAgICAgICAgLnJlbW92ZSgpXG4gICAgKTtcbiAgICBcbiAgcmV0dXJuIHNlbGVjdGlvbi5ub2RlKCk7XG59O1xuXG5hZGRCdXR0b24gPSAoc2VsZWN0aW9uKSA9PiB7XG4gIFxuICBjb25zdCBwb3MgPSAoeyB4OiAzMCwgeTogNTA3IH0pO1xuICBjb25zdCBkaW0gPSAoeyB3aWR0aDogMTYwLCBoZWlnaHQ6IDI1IH0pO1xuICBjb25zdCBjb2xvciA9ICh7IGJhc2U6IFwiI0IxM0Q3MFwiLCBob3ZlcjogXCIjQzg1Qjg5XCIsIGNsaWNrOiBcIiM5OTFFNTZcIiB9KTtcbiAgXG4gIHNlbGVjdGlvbi5hcHBlbmQoXCJyZWN0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIHBvcy54KVxuICAgIC5hdHRyKFwieVwiLCBwb3MueSlcbiAgICAuYXR0cihcIndpZHRoXCIsIGRpbS53aWR0aClcbiAgICAuYXR0cihcImhlaWdodFwiLCBkaW0uaGVpZ2h0KVxuICAgIC5zdHlsZShcInJ4XCIsIDMpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvci5iYXNlKTtcblxuICBzZWxlY3Rpb24uYXBwZW5kKFwidGV4dFwiKVxuICAgIC50ZXh0KFwiR0VUIEEgUkFORE9NIE1PVElGXCIpXG4gICAgLmF0dHIoXCJ4XCIsIHBvcy54ICsgZGltLndpZHRoLzIpXG4gICAgLmF0dHIoXCJ5XCIsIHBvcy55ICsgZGltLmhlaWdodC8yICsgMSlcbiAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpXG4gICAgLmF0dHIoXCJhbGlnbm1lbnQtYmFzZWxpbmVcIiwgXCJtaWRkbGVcIilcbiAgICAuc3R5bGUoXCJmaWxsXCIsIFwid2hpdGVcIilcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuOHJlbVwiKVxuICAgIC5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiYm9sZFwiKVxuICAgIC5zdHlsZShcImZvbnQtZmFtaWx5XCIsIFwiS2FybGEsIEFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWZcIik7XG5cbiAgc2VsZWN0aW9uLm9uKFwibW91c2VlbnRlclwiLCBmdW5jdGlvbihldmVudCkge1xuICAgIGQzLnNlbGVjdChldmVudC50YXJnZXQpLnN0eWxlKFwiY3Vyc29yXCIsIFwicG9pbnRlclwiKTtcbiAgICBkMy5zZWxlY3QodGhpcykuc2VsZWN0QWxsKFwicmVjdFwiKVxuICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbigyMDApXG4gICAgICAuc3R5bGUoXCJmaWxsXCIsIGNvbG9yLmhvdmVyKTtcbiAgfSk7XG5cbiAgc2VsZWN0aW9uLm9uKFwibW91c2VsZWF2ZVwiLCAoZXZlbnQpID0+IHtcbiAgICBkMy5zZWxlY3QoXCIjYnV0dG9uXCIpXG4gICAgICAuc2VsZWN0QWxsKFwicmVjdFwiKVxuICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbigxMDApXG4gICAgICAuc3R5bGUoXCJmaWxsXCIsIGNvbG9yLmJhc2UpO1xuICB9KTtcblxuICBzZWxlY3Rpb24ub24oXCJjbGlja1wiLCAoKSA9PiB7XG4gICAgY29uc3QgbmV3TW90aWYgPSByYW5kTW90aWYoKTtcbiAgICBkMy5zZWxlY3QoXCIjZG90cy1oaWdobGlnaHRlZFwiKS5jYWxsKGRvdHNTZWxlY3QsIG5ld01vdGlmKTtcbiAgICBkMy5zZWxlY3RBbGwoXCIjbW90aWYtaWRcIikuY2FsbChtb3RpZlNlbGVjdElkLCBuZXdNb3RpZik7XG4gICAgZDMuc2VsZWN0QWxsKFwiI21vdGlmLXRpdGxlXCIpLmNhbGwobW90aWZTZWxlY3RUaXRsZSwgbmV3TW90aWYpO1xuICAgIGQzLnNlbGVjdChcIiNtb3RpZi1kZXNjcmlwdGlvblwiKS5jYWxsKG1vdGlmU2VsZWN0RGVzYywgbmV3TW90aWYpO1xuICAgIGQzLnNlbGVjdChcIiNidXR0b25cIilcbiAgICAgIC5zZWxlY3RBbGwoXCJyZWN0XCIpLnN0eWxlKFwiZmlsbFwiLCBjb2xvci5jbGljaylcbiAgICAgIC50cmFuc2l0aW9uKCkuc3R5bGUoXCJmaWxsXCIsIGNvbG9yLmhvdmVyKTtcbiAgfSk7XG4gIFxuICByZXR1cm4gc2VsZWN0aW9uLm5vZGUoKTtcbn07XG5cblxuYWRkQnViYmxlcyA9IChzZWxlY3Rpb24sIHNlbGVjdGVkKSA9PiB7XG4gICBcbiAgY29uc3Qgc2hhcmVNYXggPSBNYXRoLm1heCguLi5PYmplY3QudmFsdWVzKGdyb3Vwc0NvbmNlcHRzKS5tYXAoaXRlbSA9PiBpdGVtLnNoYXJlKSk7XG4gIGNvbnN0IGRhdGFTZWxlY3QgPSBncm91cHNDb25jZXB0cy5maWx0ZXIoZCA9PiBkLmNvbmNlcHQgPT09IGAke3NlbGVjdGVkfWApO1xuICBjb25zdCByU2NhbGVyID0gZDMuc2NhbGVMaW5lYXIoKVxuICAgIC5kb21haW4oWzAsIHNoYXJlTWF4XSlcbiAgICAucmFuZ2UoWzAsIDIwXSk7XG4gIFxuICBjb25zdCBidWJibGVzID0gc2VsZWN0aW9uLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgIC5kYXRhKGRhdGFTZWxlY3QpXG4gICAgLmpvaW4oXCJjaXJjbGVcIilcbiAgICAgIC5hdHRyKFwiY3hcIiwgZCA9PiBkLmNvb3JkaW5hdGVzWzBdKVxuICAgICAgLmF0dHIoXCJjeVwiLCBkID0+IGQuY29vcmRpbmF0ZXNbMV0pXG4gICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbig1MDApXG4gICAgICAuYXR0cihcInJcIiwgZCA9PiByU2NhbGVyKGQuc2hhcmUpKVxuICAgICAgLnN0eWxlKFwiZmlsbFwiLCBjb2xvckRvdHNTZWxlY3QpXG4gICAgICAuc3R5bGUoXCJmaWxsLW9wYWNpdHlcIiwgLjIpXG4gICAgICAuc3R5bGUoXCJzdHJva2VcIiwgY29sb3JEb3RzU2VsZWN0KVxuICAgIC5zZWxlY3Rpb24oKTtcbiAgXG4gIGJ1YmJsZXNcbiAgICAub24oXCJtb3VzZW1vdmVcIiwgZnVuY3Rpb24oZXZlbnQsIGQpIHtcbiAgICAgIGNvbnNvbGUubG9nKFwiSGV5IVwiKVxuICAgICAgZDMuc2VsZWN0KHRoaXMpXG4gICAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oNTApXG4gICAgICAgIC5hdHRyKFwiclwiLCBkID0+IHJTY2FsZXIoZC5zaGFyZSkgKyAxKVxuICAgICAgICAuc3R5bGUoXCJmaWxsLW9wYWNpdHlcIiwgLjQpO1xuICAgICAgdG9vbHRpcFxuICAgICAgICAuc3R5bGUoXCJkaXNwbGF5XCIsIFwiaW5saW5lXCIpXG4gICAgICAgIC5zdHlsZShcImxlZnRcIiwgZXZlbnQucGFnZVggKyAxNSArIFwicHhcIilcbiAgICAgICAgLnN0eWxlKFwidG9wXCIsIGV2ZW50LnBhZ2VZICsgMTUgKyBcInB4XCIpXG4gICAgICAgIC50ZXh0KGQuZ3JvdXApO1xuICAgICAgZDMuc2VsZWN0KGV2ZW50LnRhcmdldCkuc3R5bGUoXCJjdXJzb3JcIiwgXCJwb2ludGVyXCIpO1xuICAgIH0pXG4gICAgLm9uKFwibW91c2VsZWF2ZVwiLCBmdW5jdGlvbihldmVudCkge1xuICAgICAgZDMuc2VsZWN0KFwiI2J1YmJsZXNcIilcbiAgICAgICAgLnNlbGVjdEFsbChcImNpcmNsZVwiKVxuICAgICAgICAudHJhbnNpdGlvbigpLmR1cmF0aW9uKDEwMClcbiAgICAgICAgLmF0dHIoXCJyXCIsIGQgPT4gclNjYWxlcihkLnNoYXJlKSlcbiAgICAgICAgLnN0eWxlKFwiZmlsbC1vcGFjaXR5XCIsIC4yKVxuICAgICAgdG9vbHRpcC5zdHlsZShcImRpc3BsYXlcIiwgXCJub25lXCIpO1xuICAgICAgZDMuc2VsZWN0KGV2ZW50LnRhcmdldCkuc3R5bGUoXCJjdXJzb3JcIiwgXCJkZWZhdWx0XCIpO1xuICAgIH0pO1xuICAgIFxuICByZXR1cm4gc2VsZWN0aW9uLm5vZGUoKTtcbn1cblxuYWRkUmFkaW8gPSAoc2VsZWN0aW9uLCBjb25jZXB0LCBjaGVja2VkID0gZmFsc2UpID0+IHtcbiAgXG4gIGNvbnN0IGNvbmNlcHRUaXRsZSA9IGNvbmNlcHQuY2hhckF0KDApLnRvVXBwZXJDYXNlKCkgKyBjb25jZXB0LnNsaWNlKDEpXG4gIFxuICBjb25zdCByYWRpbyA9IHNlbGVjdGlvbi5hcHBlbmQoXCJ4aHRtbDpkaXZcIilcbiAgcmFkaW8uYXBwZW5kKFwieGh0bWw6aW5wdXRcIilcbiAgICAuYXR0cihcInR5cGVcIiwgXCJyYWRpb1wiKVxuICAgIC5hdHRyKFwibmFtZVwiLCBcImNvbmNlcHRzXCIpXG4gICAgLmF0dHIoXCJ2YWx1ZVwiLCBjb25jZXB0KVxuICAgIC5wcm9wZXJ0eShcImNoZWNrZWRcIiwgY2hlY2tlZClcbiAgICAuc3R5bGUoXCJtYXJnaW4tcmlnaHRcIiwgXCIuNXJlbVwiKVxuICByYWRpby5hcHBlbmQoXCJ4aHRtbDpsYWJlbFwiKVxuICAgIC50ZXh0KGNvbmNlcHRUaXRsZSlcbiAgXG4gIHJldHVybiBzZWxlY3Rpb24ubm9kZSgpXG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEyIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5hZGRTY2F0dGVyID0gKHNlbGVjdGlvbiwgZGF0YSwgbG0sIHRpdGxlcykgPT4ge1xuICBcbiAgY29uc3QgaWQgPSBkMy5yYW5kb21JbnQoMTAwMDAwLCAxMDAwMDAwKSgpO1xuICBcbiAgY29uc3QgbWFyZ2luID0gKHsgdG9wOiA1MCwgcmlnaHQ6IDQwLCBib3R0b206IDQ1LCBsZWZ0OiA1MCB9KTtcbiAgY29uc3Qgd2lkdGggPSA3OTAgLSBtYXJnaW4ubGVmdCAtIG1hcmdpbi5yaWdodDtcbiAgY29uc3QgaGVpZ2h0ID0gNTAwIC0gbWFyZ2luLnRvcCAtIG1hcmdpbi5ib3R0b207XG4gIGNvbnN0IHBhZGRpbmcgPSA0MDtcbiAgXG4gIGNvbnN0IHhNaW4gPSBNYXRoLm1pbiguLi5kYXRhLm1hcChkID0+IGQueCkpO1xuICBjb25zdCB4TWF4ID0gTWF0aC5tYXgoLi4uZGF0YS5tYXAoZCA9PiBkLngpKTtcbiAgY29uc3QgeU1pbiA9IE1hdGgubWluKC4uLmRhdGEubWFwKGQgPT4gZC55KSk7XG4gIGNvbnN0IHlNYXggPSBNYXRoLm1heCguLi5kYXRhLm1hcChkID0+IGQueSkpO1xuICBcbiAgY29uc3QgeFNjYWxlciA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFt4TWluLCB4TWF4XSlcbiAgICAucmFuZ2UoW3BhZGRpbmcsIHdpZHRoIC0gcGFkZGluZ10pO1xuICAgIFxuICBjb25zdCB5U2NhbGVyID0gZDMuc2NhbGVMaW5lYXIoKVxuICAgIC5kb21haW4oW3lNaW4sIHlNYXhdKVxuICAgIC5yYW5nZShbaGVpZ2h0IC0gcGFkZGluZywgcGFkZGluZ10pO1xuICAgIFxuICBzZWxlY3Rpb24uYXBwZW5kKFwicmVjdFwiKVxuICAgIC5hdHRyKFwieFwiLCAwKVxuICAgIC5hdHRyKFwieVwiLCAwKVxuICAgIC5hdHRyKFwid2lkdGhcIiwgd2lkdGgpXG4gICAgLmF0dHIoXCJoZWlnaHRcIiwgaGVpZ2h0KVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCIjZjdmN2Y3XCIpO1xuICAgIFxuICBjb25zdCBkb3RzID0gc2VsZWN0aW9uLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcImlkXCIsIGBzY2F0dGVyLSR7aWR9YClcbiAgICAuc2VsZWN0QWxsKFwiY2lyY2xlXCIpXG4gICAgLmRhdGEoZGF0YSlcbiAgICAuam9pbihcImNpcmNsZVwiKVxuICAgIC5hdHRyKFwiY3hcIiwgZCA9PiB4U2NhbGVyKGQueCkpXG4gICAgLmF0dHIoXCJjeVwiLCBkID0+IHlTY2FsZXIoZC55KSlcbiAgICAuYXR0cihcInJcIiwgNylcbiAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIC41KVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCIjMEM2MjkxXCIpO1xuICBcbiAgZG90c1xuICAgIC5vbihcIm1vdXNlbW92ZVwiLCBmdW5jdGlvbihldmVudCwgZCkge1xuICAgICAgZDMuc2VsZWN0KHRoaXMpXG4gICAgICAgIC50cmFuc2l0aW9uKCkuZHVyYXRpb24oNTApXG4gICAgICAgIC5hdHRyKFwiclwiLCA4KVxuICAgICAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIC43KVxuICAgICAgdG9vbHRpcFxuICAgICAgICAuc3R5bGUoXCJkaXNwbGF5XCIsIFwiaW5saW5lXCIpXG4gICAgICAgIC5zdHlsZShcImxlZnRcIiwgZXZlbnQucGFnZVggKyAxNSArIFwicHhcIilcbiAgICAgICAgLnN0eWxlKFwidG9wXCIsIGV2ZW50LnBhZ2VZICsgMTUgKyBcInB4XCIpXG4gICAgICAgIC50ZXh0KGQuY250cnkpO1xuICAgICAgZDMuc2VsZWN0KGV2ZW50LnRhcmdldCkuc3R5bGUoXCJjdXJzb3JcIiwgXCJwb2ludGVyXCIpO1xuICAgIH0pXG4gICAgLm9uKFwibW91c2VsZWF2ZVwiLCBmdW5jdGlvbihldmVudCkge1xuICAgICAgZDMuc2VsZWN0KGAjc2NhdHRlci0ke2lkfWApXG4gICAgICAgIC5zZWxlY3RBbGwoXCJjaXJjbGVcIilcbiAgICAgICAgLnRyYW5zaXRpb24oKS5kdXJhdGlvbigxMDApXG4gICAgICAgIC5hdHRyKFwiclwiLCA3KVxuICAgICAgICAuc3R5bGUoXCJvcGFjaXR5XCIsIC41KVxuICAgICAgdG9vbHRpcC5zdHlsZShcImRpc3BsYXlcIiwgXCJub25lXCIpO1xuICAgICAgZDMuc2VsZWN0KGV2ZW50LnRhcmdldCkuc3R5bGUoXCJjdXJzb3JcIiwgXCJkZWZhdWx0XCIpO1xuICAgIH0pO1xuICBcbiAgc2VsZWN0aW9uLmFwcGVuZChcImdcIilcbiAgICAuYXBwZW5kKFwicGF0aFwiKVxuICAgIC5hdHRyKFwiZFwiLCBkMy5saW5lKCkoW1xuICAgICAgW3BhZGRpbmcsIHlTY2FsZXIobG0uaW50ZXJjZXB0KV0sIFxuICAgICAgW3dpZHRoIC0gcGFkZGluZywgeVNjYWxlcihsbS5pbnRlcmNlcHQpICsgd2lkdGggKiB5U2NhbGVyKGxtLnNsb3BlKSAvIHhTY2FsZXIoMSldXG4gICAgXSkpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAuc3R5bGUoXCJzdHJva2VcIiwgXCIjQjEzRDcwXCIpXG4gICAgLnN0eWxlKFwic3Ryb2tlLXdpZHRoXCIsIDIpO1xuICBcbiAgc2VsZWN0aW9uLmFwcGVuZChcImdcIilcbiAgICAuYXBwZW5kKFwicGF0aFwiKVxuICAgIC5hdHRyKFwiZFwiLCBkMy5saW5lKCkoW1t3aWR0aCwgaGVpZ2h0XSwgWzAsIGhlaWdodF0sIFswLCAwXV0pKVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpXG4gICAgLnN0eWxlKFwic3Ryb2tlXCIsIFwiYmxhY2tcIik7XG4gIFxuICBzZWxlY3Rpb24uYXBwZW5kKFwiZ1wiKVxuICAgIC5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIHdpZHRoIC8gMilcbiAgICAuYXR0cihcInlcIiwgaGVpZ2h0ICsgMjApXG4gICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcIm1pZGRsZVwiKVxuICAgIC5hdHRyKFwiYWxpZ25tZW50LWJhc2VsaW5lXCIsIFwiaGFuZ2luZ1wiKVxuICAgIC50ZXh0KHRpdGxlcy54QXhpcylcbiAgICAuc3R5bGUoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxcmVtXCIpXG4gICAgXG4gIHNlbGVjdGlvbi5hcHBlbmQoXCJnXCIpXG4gICAgLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInJvdGF0ZSgtOTApXCIpXG4gICAgLmF0dHIoXCJ4XCIsIC1oZWlnaHQgLyAyKVxuICAgIC5hdHRyKFwieVwiLCAtMjApXG4gICAgLmF0dHIoXCJ0ZXh0LWFuY2hvclwiLCBcIm1pZGRsZVwiKVxuICAgIC5hdHRyKFwiYWxpZ25tZW50LWJhc2VsaW5lXCIsIFwiYmFzZWxpbmVcIilcbiAgICAudGV4dCh0aXRsZXMueUF4aXMpXG4gICAgLnN0eWxlKFwiZmlsbFwiLCBcImJsYWNrXCIpXG4gICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMXJlbVwiKVxuICBcbiAgcmV0dXJuIHNlbGVjdGlvbi5ub2RlKClcbn1cblxuYWRkTGVnZW5kID0gKHNlbGVjdGlvbiwgcG9zaXRpb24pID0+IHtcbiAgXG4gIHNlbGVjdGlvbi5hcHBlbmQoXCJwYXRoXCIpXG4gICAgLmF0dHIoXCJkXCIsIGQzLmxpbmUoKShbW3Bvc2l0aW9uLngsIHBvc2l0aW9uLnldLCBbcG9zaXRpb24ueCArIDMwLCBwb3NpdGlvbi55XV0pKVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCJub25lXCIpXG4gICAgLnN0eWxlKFwic3Ryb2tlXCIsIFwiI0IxM0Q3MFwiKVxuICAgIC5zdHlsZShcInN0cm9rZS13aWR0aFwiLCAyKTtcbiAgXG4gIHNlbGVjdGlvbi5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgLmF0dHIoXCJ4XCIsIHBvc2l0aW9uLnggKyA0MClcbiAgICAuYXR0cihcInlcIiwgcG9zaXRpb24ueSlcbiAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwic3RhcnRcIilcbiAgICAuYXR0cihcImFsaWdubWVudC1iYXNlbGluZVwiLCBcIm1pZGRsZVwiKVxuICAgIC50ZXh0KFwiRXN0aW1hdGVkIHJlbGF0aW9uc2hpcCBmcm9tIGEgbXVsdGl2YXJpYXRlIGxpbmVhciBtb2RlbFwiKVxuICAgIC5zdHlsZShcImZvbnQtc2l6ZVwiLCBcIjFyZW1cIilcbiAgICAuc3R5bGUoXCJmaWxsXCIsIFwiYmxhY2tcIilcbiAgXG4gIHJldHVybiBzZWxlY3Rpb24ubm9kZSgpXG59XG5cbmFkZFN0YXRzID0gKHNlbGVjdGlvbiwgbG0sIHBvc2l0aW9uU3RhdHMpID0+IHtcbiAgXG4gIGNvbnN0IHN0YXRzID0gc2VsZWN0aW9uLmFwcGVuZChcImdcIilcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7cG9zaXRpb25TdGF0cy54fSwke3Bvc2l0aW9uU3RhdHMueX0pYClcbiAgICAuYXR0cihcInhcIiwgMClcbiAgICAuYXR0cihcInlcIiwgMClcbiAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIuOHJlbVwiKVxuICAgIC5zdHlsZShcImZpbGxcIiwgXCJibGFja1wiKVxuICAgIC5zdHlsZShcImZpbGwtb3BhY2l0eVwiLCAuNSk7XG4gIFxuICBzdGF0cy5hcHBlbmQoXCJ0ZXh0XCIpXG4gICAgLnRleHQoYG4gPSAke2xtLm59YClcbiAgXG4gIHN0YXRzLmFwcGVuZChcInRleHRcIilcbiAgICAuYXR0cihcImR5XCIsIDE4KVxuICAgIC50ZXh0KGBSwrIgPSAke2xtLnIyfWApXG4gIFxuICByZXR1cm4gc2VsZWN0aW9uLm5vZGUoKVxufVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEzIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG4vLyBUYWtlbiB3aXRoIG1vZGlmaWNhdGlvbnMgZnJvbSBodHRwczovL29ic2VydmFibGVocS5jb20vQGJlbi10YW5lbi9zdmctdGV4dC1hbmQtdHNwYW4td29yZC13cmFwcGluZ1xuXG53cmFwVGV4dCA9ICh0ZXh0RWxlbWVudCkgPT4ge1xuICBcbiAgLy8gV29yZCBwYXJhbWV0ZXJzXG4gIGxldCB3b3JkcyA9IHRleHRFbGVtZW50LnRleHQoKS5zcGxpdChcIiBcIikucmV2ZXJzZSgpLFxuICAgICAgd29yZCxcbiAgICAgIGxpbmUgPSBbXSxcbiAgICAgIGxpbmVOdW1iZXIgPSAwO1xuICBcbiAgLy8gU3R5bGluZyBwYXJhbWV0ZXJzXG4gIGNvbnN0IGxpbmVIZWlnaHQgPSAxLjI7XG4gIGNvbnN0IG1heFdpZHRoID0gNjUwO1xuICBjb25zdCB4ID0gdGV4dEVsZW1lbnQuYXR0cihcInhcIiksXG4gICAgICAgIHkgPSB0ZXh0RWxlbWVudC5hdHRyKFwieVwiKTtcbiAgXG4gIC8vIENsZWFyIHRleHRFbGVtZW50IHRleHRcbiAgdGV4dEVsZW1lbnQudGV4dChudWxsKTtcbiAgXG4gIC8vIEFwcGVuZCBmaXJzdCB0c3BhbiBlbGVtZW50ICh0byBmaWxsIGFzIHdlIGJ1aWxkIHRoZSBsaW5lcylcbiAgbGV0IHRzcGFuID0gdGV4dEVsZW1lbnQuYXBwZW5kKFwidHNwYW5cIilcbiAgICAuYXR0cihcInhcIiwgeClcbiAgICAuYXR0cihcInlcIiwgeSlcbiAgICAuYXR0cihcImR5XCIsIDApO1xuICBcbiAgLy8gTG9vcCB0aHJvdWdoIGFsbCB3b3JkcyBhbmQgbWFrZSBuZXcgbGluZXMgd2hlbiB3ZSBleGNlZWQgb3VyIG1heFdpZHRoXG4gIHdoaWxlICh3b3JkID0gd29yZHMucG9wKCkpIHtcbiAgICBcbiAgICBsaW5lLnB1c2god29yZCk7XG4gICAgdHNwYW4udGV4dChsaW5lLmpvaW4oXCIgXCIpKTtcbiAgICBcbiAgICBpZiAobWVhc3VyZVdpZHRoKHRzcGFuLnRleHQoKSkgPiBtYXhXaWR0aCAmJiBsaW5lTnVtYmVyIDwgMikge1xuICAgICAgbGluZS5wb3AoKTtcbiAgICAgIHRzcGFuLnRleHQobGluZS5qb2luKFwiIFwiKSk7XG4gICAgICBsaW5lID0gW3dvcmRdO1xuICAgICAgdHNwYW4gPSB0ZXh0RWxlbWVudC5hcHBlbmQoXCJ0c3BhblwiKVxuICAgICAgICAuYXR0cihcInhcIiwgeClcbiAgICAgICAgLmF0dHIoXCJ5XCIsIHkpXG4gICAgICAgIC5hdHRyKFwiZHlcIiwgYCR7KytsaW5lTnVtYmVyICogbGluZUhlaWdodH1lbWApXG4gICAgICAgIC50ZXh0KHdvcmQpO1xuICAgIH1cbiAgICBcbiAgICBpZiAobWVhc3VyZVdpZHRoKHRzcGFuLnRleHQoKSkgPiBtYXhXaWR0aCAtIDEwICYmIGxpbmVOdW1iZXIgPT09IDIpIHtcbiAgICAgIGxpbmUucG9wKCk7XG4gICAgICBsaW5lLnB1c2goXCJbLi4uXVwiKTtcbiAgICAgIHRzcGFuLnRleHQobGluZS5qb2luKFwiIFwiKSk7XG4gICAgICBicmVhaztcbiAgICB9XG4gIH1cbn07XG5cbm1lYXN1cmVXaWR0aCA9IHtcbiAgY29uc3QgY29udGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJjYW52YXNcIikuZ2V0Q29udGV4dChcIjJkXCIpO1xuICByZXR1cm4gdGV4dCA9PiBjb250ZXh0Lm1lYXN1cmVUZXh0KHRleHQpLndpZHRoO1xufTtcbiJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1582,18 +1593,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1625,11 +1625,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/twopoints\.blog");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1639,8 +1676,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1652,7 +1698,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1696,6 +1864,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1721,6 +1890,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1786,12 +1981,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
