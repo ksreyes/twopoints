@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@0,100;0,500;0,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Karla:wght@0,100;0,500;0,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 /*-- scss:defaults --*/
@@ -18,11 +19,11 @@ $font-size-navbar-title:         1.65rem;
 $font-size-navbar-subtitle:      .9rem;
 $font-size-navbar-item:          1.1rem;
 
-$font-size-listing-title:        1.5rem;
-$font-size-listing-subtitle:     .95rem;
-$font-size-listing-date:         .88rem;
-$font-size-categories:           .65rem;
-$font-size-rbloggers:            .9rem;
+$font-size-listing-title:        1.2em;
+$font-size-listing-subtitle:     .95em;
+$font-size-listing-date:         .88em;
+$font-size-categories:           .65em;
+$font-size-rbloggers:            .9em;
 
 $font-size-post-title:           2.5rem;
 $font-size-post-subtitle:        calc(1.25rem + .15vw);
@@ -132,7 +133,8 @@ p > a:not(.footnote-ref):hover {
 /*      NAVBAR                                                                */
 /******************************************************************************/
 
-nav.navbar-dark {                                /* Color */
+/* Color */
+.navbar {                                
   background-color: $color-blue;
 }
 
@@ -239,59 +241,56 @@ li.nav-item span.menu-text {                     /* Menu items */
 /*      HOME PAGE                                                             */
 /******************************************************************************/
 
-#quarto-content.page-layout-full 
-#title-block-header {                            /* No home page title */
+ /* No home page title */
+.page-layout-full #title-block-header {                           
   display: none;
-  margin: 0;
 }
 
-div.quarto-post .body {                          /* Space under navbar */
-  padding-top: 10px;
-}
-
-div.quarto-post .body h3.listing-title {         /* Post title */
+/* Post title */
+.quarto-post .listing-title a {         
   font-size: $font-size-listing-title;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
-div.quarto-post a:hover {
+.quarto-post a:hover {
   transition: color .2s;
   color: $color-category-text;
 }
 
-div.quarto-post .body .listing-subtitle {        /* Post subtitle */
+/* Post subtitle */
+.quarto-post .listing-subtitle {        
   font-size: $font-size-listing-subtitle;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-div.quarto-post .listing-categories {            /* Tags */
+ /* Tags */
+.quarto-post .listing-categories {           
   padding: 10px 0 20px 0;
 }
 
-div.quarto-post .listing-category:hover {        /* Tags hover */
+.quarto-post .listing-category:hover {
   background-color: $color-category-active;
   transition: background-color .2s;
 }
 
-div.quarto-post .metadata {                      /* Date */
+/* Date */
+.quarto-post .metadata {
   font-size: $font-size-listing-date;
   margin-top: 15px;
 }
 
-div.quarto-post .thumbnail a {                   /* Preview image */
+/* Preview image */
+.quarto-post .thumbnail > a img {                   
   border: solid 8px $color-listing-thumbnail-border;
   border-radius: 0.25rem;
+  margin: 0;
 }
 
-div.quarto-post .thumbnail a:hover {             /* Preview image hover */
+.quarto-post .thumbnail > a img:hover {
   border: solid 8px shift-color($color-listing-thumbnail-border, -50%);
   transform: scale(1.05, 1.05);
   transition: border .2s, transform .2s;
-}
-
-div.quarto-post .thumbnail img {
-  margin: 0;
 }
 
 /* --- Sidebar -------------------------------------------------------------- */
@@ -318,45 +317,6 @@ div.category:hover, div.category.active {
 div.category:hover {
   transform: scale(1.05, 1.05);
   transition: transform .2s;
-}
-
-@media only screen and (max-width: 768px) {
-  
-  div.quarto-post .body h3.listing-title {       /* Post title */
-    font-size: $font-size-listing-title * .9;
-    font-family: $font-family-headings;
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-  
-  div.quarto-post .body 
-  div.listing-subtitle {                         /* Post subtitle */
-    font-size: $font-size-listing-subtitle * .9;
-    line-height: 1.4;
-  }
-  
-  div.quarto-post .listing-categories 
-  .listing-category {                            /* Tags */
-    font-size: $font-size-post-date * .6;
-    padding: 1.5px 3.5px !important;
-    border-radius: 2px;
-  }
-  
-  div.quarto-post .listing-categories {
-    font-size: $font-size-post-date * .6;
-    padding: 5px 0 !important;
-  }
-  
-  div.quarto-post .thumbnail a {                 /* Preview image */
-    border: solid 5px #e9ecef !important;
-    border-radius: 0.25rem;
-  }
-  
-  div.quarto-post .metadata {                    /* Date */
-    font-size: $font-size-listing-date * .8;
-    margin: 5px 0 2px 0 !important;
-  }
-  
 }
 
 /******************************************************************************/
