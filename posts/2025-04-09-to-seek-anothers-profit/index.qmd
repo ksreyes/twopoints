@@ -1,0 +1,110 @@
+---
+title: "To seek another's profit"
+subtitle: "100 years ago, U.S. tariff policy gave the Philippines a taste of how sweet protectionism can be"
+date: 2025-04-09
+categories: [python, D3/OJS]
+image: thumbnail.png
+draft: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(knitr)
+library(showtext)
+library(here)
+
+showtext_auto()
+opts_chunk$set(fig.showtext = TRUE, dev = "png", dev.args = list(type = "cairo-png"))
+
+source(here("R", "functions.R"))
+font_add_google("Karla", "karla")
+```
+
+The bulk of President Donald Trump's [Liberation Day tariffs](https://www.whitehouse.gov/fact-sheets/2025/04/fact-sheet-president-donald-j-trump-declares-national-emergency-to-increase-our-competitive-edge-protect-our-sovereignty-and-strengthen-our-national-and-economic-security/) take effect today. Together with prior levies, these usher in the steepest set of tariff hikes the United States has seen since [the 1930s](https://www.piie.com/blogs/realtime-economics/2025/historic-significance-trumps-tariff-actions). As countries consider retaliation, the global trade order hangs in the balance.
+
+This article is not about these tariffs, but the tariffs of one hundred years ago. Questions over their contribution to the Great Depression or even the First World War are both fascinating and horrifying. But what I want to recount here is a lesser known by-product of that time. When the U.S. erected those tariff walls, it enclosed not just itself but its colony on the other side of the world, the Philippines. What followed is a compelling case study of how top-down policymaking leads to profound unintended consequences — consequences that reverberate in the Philippines to this day. 
+
+## Little brown brothers
+
+Outside the Philippines, it is not well known that the United States occupied the country for close to 50 years, though disembodied aspects of it have entered popular knowledge. For instance, Rudyard Kipling's 1899 poem "The White Man's Burden" was a plea in support of imperialism in the Philippines, not in Africa. 
+
+Nearly everything about the occupation was an accident. Situated on the other side of the globe, the Philippine Islands held no strategic, economic, or cultural significance for the United States. But it was a Spanish possession, and when the United States defeated Spain in their 1898 war for control over the Caribbean, the Philippines was part of the spoils. There was initially some debate over whether to retain the Islands, but President William McKinley, who couldn't locate them on a map, ultimately pushed his country to purchase them for what today amounts to $760 million. 
+
+```{ojs}
+//| code-fold: true
+{
+    const container = d3.create("div");
+
+    // Chart sources ////////////////////////////////////////////////////////////
+
+    container.append("div")
+        .attr("class", "ojs-source")
+        .style("margin", ".5rem 0")
+        .style("line-height", 1.25)
+        .html(`"When we received the cable from Admiral Dewey telling of the taking of the Philippines I looked up their location on the globe. I could not have told where those darned islands were within 2,000 miles!" – William McKinley, quoted in H. H. Kohlsaat, <a href='https://dn790007.ca.archive.org/0/items/frommckinleytoha00kohl/frommckinleytoha00kohl.pdf'><i>From McKinley to Harding</i></a> (1923), p. 68.`);
+    
+  return container.node();
+}
+```
+
+The McKinley government was eager to display an enlightened brand of colonialism, focusing on education, health, and economic development for their "little brown brothers". Nevermind the independence movement that had to be crushed in a [three-year war](https://en.wikipedia.org/wiki/Philippine%E2%80%93American_War). As areas were pacified, the Islands' first and most consequential American governor, future president William Howard Taft, wasted no time setting up local governments. He did this in collaboration with local elites, whom he appointed to positions of power. When formal elections were later held, those same elites, who derived their wealth from land, handily won. 
+
+It was Taft's belief that the best way to spur economic development in the Philippines was through mutual free trade with the United States. On the face of it, this is sound, even generous, policy. Philippine producers would profit from selling to the far wealthier markets of America; at the same time, duty-free imports of advanced machinery can jumpstart Philippine industrialization. Unfortunately, there were two fundamental problems to Taft's plan. 
+
+First, the United States at the time had erected very high tariff walls — over 40% of the value of dutiable imports. The only way free trade with the Philippines can work is if the Philippines enacted similarly high tariffs; otherwise, third countries can circumvent them through a Philippine backdoor. Thus, the 1909 Payne–Aldrich Tariff, while abolishing trade barriers between the U.S. and the Philippines, enclosed the two within the same prohibitive walls. For better or worse, Philippine trade had become firmly affixed to the United States.
+
+Moreover, the Philippines' main export to the U.S. was hemp, which *already entered duty-free*. There were no hemp producers in America that could be threatened by cheap hemp imports. Instead, due to Payne–Aldrich, another export suddenly received extremely high rates of protection: sugar. The policy of free trade became a boon to a single industry.
+
+## The sweetness of protetcion
+
+The sugar industry in the Philippines had been growing since the 1820s alongside growth in world demand. But it was just one of many producers and competition was stiff. Moreover, yields were depressed and the adoption of advanced milling techniques was slow, resulting in sugar that was both expensive to produce and of poor quality. An argument could be made that had it not been for the boon that access to U.S. markets granted, the industry would have soon dwindled to insignificance.
+
+Instead, exports skyrocketed.
+
+```{ojs}
+//| code-fold: true
+{
+    const container = d3.create("div");
+
+    // Chart sources ////////////////////////////////////////////////////////////
+
+    container.append("div")
+        .attr("class", "ojs-source")
+        .style("margin", ".5rem 0")
+        .style("line-height", 1.25)
+        .html(`Source: J. Larkin, <a href="https://publishing.cdlib.org/ucpressebooks/view?docId=ft4580066d&chunk.id=d0e11113&toc.depth=1&toc.id=&brand=ucpress/"><i>Sugar and the Origins of Modern Philippine Society</i></a> (1993), Appendix A, p. 250; Philippine Bureau of Customs, <i>Report</i> (1940), Table 7, pp. 105–106.`);
+    
+  return container.node();
+}
+```
+
+Plantation crops like sugar cane have long been associated with [high inequality](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.14.3.217). Such enterprises are typically supported by an economic structure where wealth and political power accumulate to an elite few. In the case of sugar, not only does cultivating the crop require abundant labor, it must also be milled immediately to avoid spoilage. To make the enterprise viable, millers and landholders are incentivized to exert maximum control over farmhands, either through outright slavery or [legal coercion](https://www.nber.org/system/files/working_papers/w20958/w20958.pdf). Lacking outside options or the capital to put up competing mills, farmhands are left subservient.
+
+This leads to the second problem of Taft's plan, which is that whatever gains free trade brought, they were concentrated in the hands of an unchecked landed elite. Indeed, it was the Americans' presumption that what benefited these elites (the only Filipinos they interacted with) benefited the country as a whole. The elites, in turn, converted their fabulous wealth into political power by capturing elective office. While nominally a democracy, a handful of prominent families functioned as an aristocratic class who passed down public office like hereditary titles. Coupled with the use of paramilitary forces to defend their turfs, the country slipped into what has been described as an "[anarchy of families](https://history.wisc.edu/publications/an-anarchy-of-families-state-and-family-in-the-philippines/)".
+
+Taft's plan, while intended as a form of economic aid, in practice amounted to a massive wealth transfer to an already privileged class. As the Philippine economy ossified around access to U.S. markets, economic and political leaders found little incentive to develop anything other than the extractive industry that generated their easy wealth. Rent-seeking, and not productive investments, became the dominant activity.
+
+## Aftermath
+
+By the 1930s, the share of the U.S. in Philippine exports reached 80%. Sugar was roughly half of total exports and virtually all of it was sold to the U.S. 
+
+```{ojs}
+//| code-fold: true
+{
+    const container = d3.create("div");
+
+    // Chart sources ////////////////////////////////////////////////////////////
+
+    container.append("div")
+        .attr("class", "ojs-source")
+        .style("margin", ".5rem 0")
+        .style("line-height", 1.25)
+        .html(`Source: Philippine Bureau of Customs, <i>Report</i> (1940), Table 7, pp. 105–106.`);
+    
+  return container.node();
+}
+```
+
+Tariff policy can be thought of as a way of keeping some products out while letting others in. Much of trade negotiations is a jostling to be among the privileged few whose products are let in. One hundred years ago, the Philippines was such a beneficiary. It turned out to be a mixed blessing. 
