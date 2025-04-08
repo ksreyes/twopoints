@@ -1,10 +1,10 @@
 ---
 title: "To seek another's profit"
-subtitle: "100 years ago, U.S. tariff policy gave the Philippines a taste of how sweet protectionism can be"
+subtitle: "One hundred years ago, the U.S. gave the Philippines free access to its highly protected markets. It was a mixed blessing"
 date: 2025-04-09
 categories: [python, D3/OJS]
 image: thumbnail.png
-draft: true
+draft: false
 ---
 
 ```{r}
@@ -22,28 +22,74 @@ source(here("R", "functions.R"))
 font_add_google("Karla", "karla")
 ```
 
-The bulk of President Donald Trump's [Liberation Day tariffs](https://www.whitehouse.gov/fact-sheets/2025/04/fact-sheet-president-donald-j-trump-declares-national-emergency-to-increase-our-competitive-edge-protect-our-sovereignty-and-strengthen-our-national-and-economic-security/) take effect today. Together with prior levies, these usher in the steepest set of tariff hikes the United States has seen since [the 1930s](https://www.piie.com/blogs/realtime-economics/2025/historic-significance-trumps-tariff-actions). As countries consider retaliation, the global trade order hangs in the balance.
+The bulk of President Donald Trump's [Liberation Day tariffs](https://www.reuters.com/world/us/whats-trumps-sweeping-new-reciprocal-tariff-regime-2025-04-03/) take effect today. Together with prior levies, these usher in the steepest set of tariff hikes the United States has seen since [the 1930s](https://www.piie.com/blogs/realtime-economics/2025/historic-significance-trumps-tariff-actions). As countries consider retaliation, the global trade order hangs in the balance.
 
-This article is not about these tariffs, but the tariffs of one hundred years ago. Questions over their contribution to the Great Depression or even the First World War are both fascinating and horrifying. But what I want to recount here is a lesser known by-product of that time. When the U.S. erected those tariff walls, it enclosed not just itself but its colony on the other side of the world, the Philippines. What followed is a compelling case study of how top-down policymaking leads to profound unintended consequences — consequences that reverberate in the Philippines to this day. 
+This article is not about these tariffs, but the tariffs of one hundred years ago. Questions over their contribution to the Great Depression or even the First World War are both fascinating and horrifying. But what I want to recount here is a lesser known by-product of that time. When the U.S. erected those tariff walls, it enclosed not just itself but its colony on the other side of the world, the Philippines. What followed is a compelling case study of how top-down policymaking led to profound unintended consequences — consequences that reverberate in the Philippines to this day. 
 
 ## Little brown brothers
 
-Outside the Philippines, it is not well known that the United States occupied the country for close to 50 years, though disembodied aspects of it have entered popular knowledge. For instance, Rudyard Kipling's 1899 poem "The White Man's Burden" was a plea in support of imperialism in the Philippines, not in Africa. 
+Outside the Philippines, it is not well known that the United States occupied the country for close to 50 years, though aspects of it have entered popular knowledge. Rudyard Kipling's 1899 poem "[The White Man's Burden](https://en.wikipedia.org/wiki/The_White_Man%27s_Burden)" was a plea in support of imperialism in the Philippines, not in Africa. The word "[boondocks](https://en.wikipedia.org/wiki/Boondocks)" was borrowed from the Tagalog word for "mountain" by American soldiers pacifying the country.
 
 Nearly everything about the occupation was an accident. Situated on the other side of the globe, the Philippine Islands held no strategic, economic, or cultural significance for the United States. But it was a Spanish possession, and when the United States defeated Spain in their 1898 war for control over the Caribbean, the Philippines was part of the spoils. There was initially some debate over whether to retain the Islands, but President William McKinley, who couldn't locate them on a map, ultimately pushed his country to purchase them for what today amounts to $760 million. 
 
 ```{ojs}
 //| code-fold: true
 {
-    const container = d3.create("div");
+    const dim = { width: 790, height: 400 };
 
-    // Chart sources ////////////////////////////////////////////////////////////
+    const data = topojson.feature(map, map.objects.countries);
+    
+    // Chart title //////////////////////////////
+  
+    const container = d3.create("div");
+    
+    container.append("div")
+      .attr("class", "ojs-title")
+      .text("Benevolent assimilation");
+      
+    container.append("div")
+      .attr("class", "ojs-subtitle")
+      .style("margin-bottom", "1rem")
+      .text("The United States and the Philippines");
+
+    // Map //////////////////////////////////////
+    
+    const projection = d3.geoNaturalEarth1()
+      .scale(150)
+      .center([50, -10])
+      //.translate([dim.width / 2, dim.height / 2]);
+      
+    const path = d3.geoPath().projection(projection);
+    
+    const svg = container.append("svg")
+      .attr("width", "100%")
+      .attr("viewBox", [0, 0, dim.width, dim.height]);
+      
+    svg.append("g")
+      .selectAll("path")
+      .data(data.features)
+      .join("path")
+      .attr("d", path)
+      .attr("fill", d => {
+        switch(d.properties.iso3c) {
+          case "USA": 
+            return colors.blue;
+          case "PHL": 
+            return colors.blue;
+          default: 
+            return colors.land;
+        }
+      })
+      .style("stroke", colors.borders)
+      .style("stroke-width", 1);
+    
+    // Chart sources ////////////////////////////
 
     container.append("div")
-        .attr("class", "ojs-source")
-        .style("margin", ".5rem 0")
-        .style("line-height", 1.25)
-        .html(`"When we received the cable from Admiral Dewey telling of the taking of the Philippines I looked up their location on the globe. I could not have told where those darned islands were within 2,000 miles!" – William McKinley, quoted in H. H. Kohlsaat, <a href='https://dn790007.ca.archive.org/0/items/frommckinleytoha00kohl/frommckinleytoha00kohl.pdf'><i>From McKinley to Harding</i></a> (1923), p. 68.`);
+      .attr("class", "ojs-source")
+      .style("margin", ".5rem 0")
+      .style("line-height", 1.25)
+      .html(`"When we received the cable from Admiral Dewey telling of the taking of the Philippines I looked up their location on the globe. I could not have told where those darned islands were within 2,000 miles!" – William McKinley, quoted in H. H. Kohlsaat, <a href='https://dn790007.ca.archive.org/0/items/frommckinleytoha00kohl/frommckinleytoha00kohl.pdf'><i>From McKinley to Harding</i></a> (1923), p. 68.`);
     
   return container.node();
 }
@@ -53,28 +99,149 @@ The McKinley government was eager to display an enlightened brand of colonialism
 
 It was Taft's belief that the best way to spur economic development in the Philippines was through mutual free trade with the United States. On the face of it, this is sound, even generous, policy. Philippine producers would profit from selling to the far wealthier markets of America; at the same time, duty-free imports of advanced machinery can jumpstart Philippine industrialization. Unfortunately, there were two fundamental problems to Taft's plan. 
 
-First, the United States at the time had erected very high tariff walls — over 40% of the value of dutiable imports. The only way free trade with the Philippines can work is if the Philippines enacted similarly high tariffs; otherwise, third countries can circumvent them through a Philippine backdoor. Thus, the 1909 Payne–Aldrich Tariff, while abolishing trade barriers between the U.S. and the Philippines, enclosed the two within the same prohibitive walls. For better or worse, Philippine trade had become firmly affixed to the United States.
+First, the United States at the time had erected very high tariff walls — over 40% of the value of dutiable imports. The only way free trade with the Philippines can work is if the Philippines enacted similarly high tariffs; otherwise, third countries can circumvent them through a Philippine backdoor. Thus, the 1909 Payne–Aldrich Tariff Act, while abolishing trade barriers between the U.S. and the Philippines, enclosed the two within the same prohibitive walls. For better or worse, Philippine trade had become firmly affixed to the United States.
 
 Moreover, the Philippines' main export to the U.S. was hemp, which *already entered duty-free*. There were no hemp producers in America that could be threatened by cheap hemp imports. Instead, due to Payne–Aldrich, another export suddenly received extremely high rates of protection: sugar. The policy of free trade became a boon to a single industry.
 
 ## The sweetness of protetcion
 
-The sugar industry in the Philippines had been growing since the 1820s alongside growth in world demand. But it was just one of many producers and competition was stiff. Moreover, yields were depressed and the adoption of advanced milling techniques was slow, resulting in sugar that was both expensive to produce and of poor quality. An argument could be made that had it not been for the boon that access to U.S. markets granted, the industry would have soon dwindled to insignificance.
+The sugar industry in the Philippines had been growing since the 1820s alongside growth in world demand. But it was just one of many producers and competition was stiff. Moreover, yields were depressed and the adoption of advanced milling techniques was slow, resulting in sugar that was both expensive to produce and of poor quality. An argument could be made that had it not been for the windfall that access to U.S. markets granted, the industry would have soon dwindled to insignificance.
 
 Instead, exports skyrocketed.
 
 ```{ojs}
 //| code-fold: true
 {
+    const dim = { width: 790, height: 550 };
+    const margin = { top: 20, right: 0, bottom: 50, left: 50 };
+    const gutter = { x: 12.5, y: 12.5, yin: 10 };
+    
+    const data = sugarexp;
+    
+    console.log(d3.extent(data, d => d.n))
+    const x = d3.scaleLinear()
+      .domain(d3.extent(data, d => d.t))
+      .range([margin.left + gutter.yin, dim.width - margin.right - gutter.yin]);
+    
+    const y = d3.scaleLinear()
+      .domain(d3.extent(data, d => d.n))
+      .range([dim.height - margin.bottom, margin.top]);
+    
+    // Chart title //////////////////////////////
+  
     const container = d3.create("div");
+    
+    container.append("div")
+      .attr("class", "ojs-title")
+      .text("Sugar rush");
+      
+    container.append("div")
+      .attr("class", "ojs-subtitle")
+      .style("margin-bottom", "1rem")
+      .text("Philippine sugar exports in metric tons, 1836–1938");
+    
+    // Line /////////////////////////////////////
+    
+    const svg = container.append("svg")
+      .attr("width", "100%")
+      .attr("viewBox", [0, 0, dim.width, dim.height])
+    
+    const line = d3.line()
+      .curve(d3.curveBasis)
+      .x(d => x(d.t))
+      .y(d => y(d.n));
+    
+    const lines = svg.append("g")
+      .append("path")
+      .datum(data)
+      .attr("d", line)
+      .style("fill", "none")
+      .style("stroke", colors.blue)
+      .style("stroke-width", 5);
+    
+    // Axes /////////////////////////////////////
+    
+    const xAxis = d3.axisBottom(x)
+      .tickFormat(d3.format(".0f"))
+      .tickSize(0)
+      .tickPadding([gutter.x]);
+    
+    const yAxis = d3.axisLeft(y)
+      .ticks(5, ".1s")
+      .tickSize(0)
+      .tickPadding([gutter.y]);
+      
+    const xAxisGroup = svg.append("g")
+      .attr("transform", `translate(0, ${ dim.height - margin.bottom })`)
+      .call(xAxis);
+    
+    const yAxisGroup = svg.append("g")
+      .attr("transform", `translate(${ margin.left }, 0)`)
+      .call(yAxis)
+      .call(g => g.select(".domain").remove())
+      .call(g => g.append("text")
+        .attr("x", -margin.left)
+        .attr("y", margin.top + 20)
+        .attr("fill", "black")
+        .attr("text-anchor", "start")
+        .style("font-size", ".9rem")
+        .text("Metric tons"));
+      
+    xAxisGroup.selectAll("text").style("font-size", ".8rem");
+    yAxisGroup.selectAll("text").style("font-size", ".8rem");
+    
+    // Annotations ////////////////////////////
+    
+    svg.call(addMarker, 1909, "Payne–Aldrich", 400);
+    svg.call(addMarker, 1930, "Smoot–Hawley", 400);
+    
+    svg.append("g")
+      .append("text")
+        .attr("text-anchor", "end")
+        .style("font-size", ".9rem")
+        .attr("x", x(1909)).attr("y", dim.height - margin.bottom - 355)
+        .attr("dx", -10)
+      .append("tspan")
+        .text("Mutual free trade")
+      .append("tspan")
+        .text("with U.S.")
+        .attr("x", x(1909)).attr("y", dim.height - margin.bottom - 355)
+        .attr("dx", -10).attr("dy", 20);
+    
+    function addMarker(container, year, name, ypos) {
+      
+      const marker = container.append("g")
+      
+      marker.append("path")
+        .attr("d", `M${ x(year) },
+          ${ dim.height - margin.bottom } V${ margin.top }`
+        )
+        .style("stroke", "black")
+        .style("stroke-dasharray", "4 2");
+      
+      marker.append("g")
+        .append("text")
+          .attr("text-anchor", "end")
+          .style("font-size", ".9rem")
+          .attr("x", x(year)).attr("y", dim.height - margin.bottom - ypos)
+          .attr("dx", -10)
+        .append("tspan")
+          .text(name)
+        .append("tspan")
+          .text("Tariff Act")
+          .attr("x", x(year)).attr("y", dim.height - margin.bottom - ypos)
+          .attr("dx", -10).attr("dy", 20);
+          
+      return container.node();
+    }
 
-    // Chart sources ////////////////////////////////////////////////////////////
+    // Chart sources ////////////////////////////
 
     container.append("div")
-        .attr("class", "ojs-source")
-        .style("margin", ".5rem 0")
-        .style("line-height", 1.25)
-        .html(`Source: J. Larkin, <a href="https://publishing.cdlib.org/ucpressebooks/view?docId=ft4580066d&chunk.id=d0e11113&toc.depth=1&toc.id=&brand=ucpress/"><i>Sugar and the Origins of Modern Philippine Society</i></a> (1993), Appendix A, p. 250; Philippine Bureau of Customs, <i>Report</i> (1940), Table 7, pp. 105–106.`);
+      .attr("class", "ojs-source")
+      .style("margin", ".5rem 0")
+      .style("line-height", 1.25)
+      .html(`Source: J. Larkin, <a href="https://publishing.cdlib.org/ucpressebooks/view?docId=ft4580066d&chunk.id=d0e11113&toc.depth=1&toc.id=&brand=ucpress/"><i>Sugar and the Origins of Modern Philippine Society</i></a> (1993), Appendix A, p. 250; Philippine Bureau of Customs, <i>Report</i> (1940), Table 7, pp. 105–106.`);
     
   return container.node();
 }
@@ -88,23 +255,201 @@ Taft's plan, while intended as a form of economic aid, in practice amounted to a
 
 ## Aftermath
 
-By the 1930s, the share of the U.S. in Philippine exports reached 80%. Sugar was roughly half of total exports and virtually all of it was sold to the U.S. 
+By the 1930s, the share of the U.S. in Philippine exports reached 80%. Sugar was roughly half of total exports and virtually all of it was sold to the U.S. Such were the vested interests in this arrangement that many Filipino elites actively worked against independence when the time came. 
 
 ```{ojs}
 //| code-fold: true
 {
+    const dim = { width: 790, height: 550 };
+    const margin = { top: 20, right: 0, bottom: 50, left: 50 };
+    const gutter = { x: 12.5, y: 12.5, yin: 10 };
+    
+    const dataWide = exports.map(d => ({
+      t: d.t,
+      sh_usa: +d.x_usa / +d.x,
+      sh_sug_usa: +d.x_usa_sug / +d.x_sug
+    }));
+    
+    const data = dataWide.flatMap(d => [
+      { t: d.t, var: "sh_usa", v: d.sh_usa },
+      { t: d.t, var: "sh_sug_usa", v: d.sh_sug_usa },
+    ]);
+    
+    const x = d3.scaleLinear()
+      .domain(d3.extent(data, d => d.t))
+      .range([margin.left + gutter.yin, dim.width - margin.right - gutter.yin]);
+    
+    const y = d3.scaleLinear()
+      .domain([0, 1])
+      .range([dim.height - margin.bottom, margin.top]);
+    
+    // Chart title //////////////////////////////
+  
     const container = d3.create("div");
+    
+    container.append("div")
+      .attr("class", "ojs-title")
+      .text("Purchasing power");
+      
+    container.append("div")
+      .attr("class", "ojs-subtitle")
+      .style("margin-bottom", "1rem")
+      .text("The United States in Philippine exports, 1899–1938");
+    
+    // Line /////////////////////////////////////
+    
+    const svg = container.append("svg")
+      .attr("width", "100%")
+      .attr("viewBox", [0, 0, dim.width, dim.height])
+    
+    const groups = d3.group(data, d => d.var);
 
-    // Chart sources ////////////////////////////////////////////////////////////
+    const line = d3.line()
+      .curve(d3.curveBasis)
+      .x(d => x(d.t))
+      .y(d => y(d.v));
+      
+    const color = d3.scaleOrdinal()
+      .domain(["sh_usa", "sh_sug_usa"])
+      .range([colors.blue, colors.red]);
+    
+    const lines = svg.append("g");
+    
+    for (const [key, values] of groups) {
+      lines.append("g")
+        .append("path")
+        .datum(values)
+        .attr("d", line)
+        .style("fill", "none")
+        .style("stroke", color(key))
+        .style("stroke-width", 5);
+    }
+    
+    // Axes /////////////////////////////////////
+    
+    const xAxis = d3.axisBottom(x)
+      .tickFormat(d3.format(".0f"))
+      .tickSize(0)
+      .tickPadding([gutter.x]);
+    
+    const yAxis = d3.axisLeft(y)
+      .ticks(5, ".0%")
+      .tickSize(0)
+      .tickPadding([gutter.y]);
+      
+    const xAxisGroup = svg.append("g")
+      .attr("transform", `translate(0, ${ dim.height - margin.bottom })`)
+      .call(xAxis);
+    
+    const yAxisGroup = svg.append("g")
+      .attr("transform", `translate(${ margin.left }, 0)`)
+      .call(yAxis)
+      .call(g => g.select(".domain").remove());
+      
+    xAxisGroup.selectAll("text").style("font-size", ".8rem");
+    yAxisGroup.selectAll("text").style("font-size", ".8rem");
+    
+    // Annotations ////////////////////////////
+    
+    svg.append("g")
+      .append("text")
+        .attr("x", x(1923)).attr("y", y(.64))
+        .style("text-anchor", "start")
+        .style("font-size", ".9rem")
+        .style("font-weight", "bold")
+        .style("fill", colors.blue)
+      .append("tspan")
+        .text("Share of U.S.")
+      .append("tspan")
+        .text("in total exports")
+        .attr("x", x(1923)).attr("y", y(.64))
+        .attr("dy", 20);
+        
+    svg.append("g")
+      .append("text")
+        .attr("x", x(1925)).attr("y", y(.98))
+        .style("text-anchor", "end")
+        .style("font-size", ".9rem")
+        .style("font-weight", "bold")
+        .style("fill", colors.red)
+      .append("tspan")
+        .text("Share of U.S.")
+      .append("tspan")
+        .text("in sugar exports")
+        .attr("x", x(1925)).attr("y", y(.98))
+        .attr("dy", 20);
+    
+    svg.call(addMarker, 1909, "Payne–Aldrich", .075)
+    svg.call(addMarker, 1930, "Smoot–Hawley", .075)
+    
+    function addMarker(container, year, name, ypos) {
+      
+      const marker = container.append("g")
+      
+      marker.append("path")
+        .attr("d", `M${ x(year) },${ y(0) } V${ y(1) }`)
+        .style("stroke", "black")
+        .style("stroke-dasharray", "4 2");
+      
+      marker.append("g")
+        .append("text")
+          .attr("text-anchor", "start")
+          .style("font-size", ".9rem")
+          .attr("x", x(year)).attr("y", y(ypos))
+          .attr("dx", 10)
+        .append("tspan")
+          .text(name)
+        .append("tspan")
+          .text("Tariff Act")
+          .attr("x", x(year)).attr("y", y(ypos))
+          .attr("dx", 10).attr("dy", 20);
+          
+      return container.node();
+    }
+      
+    // Chart sources ////////////////////////////
 
     container.append("div")
-        .attr("class", "ojs-source")
-        .style("margin", ".5rem 0")
-        .style("line-height", 1.25)
-        .html(`Source: Philippine Bureau of Customs, <i>Report</i> (1940), Table 7, pp. 105–106.`);
+      .attr("class", "ojs-source")
+      .style("margin", ".5rem 0")
+      .style("line-height", 1.25)
+      .html(`Source: Philippine Bureau of Customs, <i>Report</i> (1940), Table 7, pp. 105–106.`);
     
   return container.node();
 }
 ```
 
-Tariff policy can be thought of as a way of keeping some products out while letting others in. Much of trade negotiations is a jostling to be among the privileged few whose products are let in. One hundred years ago, the Philippines was such a beneficiary. It turned out to be a mixed blessing. 
+When independence did come in 1946, the U.S., suddenly awake to the threat of communism in the Pacific, imposed a thoroughly lopsided trade agreement on its former colony that, among others, granted Americans the same rights to Philippine natural resources that Filipinos did. It offered an extension of free trade in exchange. The Philippine government, headed by a member of a prominent business clan, [rammed the measure through](https://online.ucpress.edu/phr/article-abstract/49/3/499/66707/Philippine-Acceptance-of-the-Bell-Trade-Act-of?redirectedFrom=fulltext), illegally unseating uncooperative representatives to secure the votes.
+
+Tariff policy can be thought of as a way of keeping some products out while letting others in. Much of trade negotiations is a jostling to be among the privileged few whose products are let in. One hundred years ago, the Philippines received such a privilege. It turned out to be a mixed blessing. 
+
+## Data {.appendix}
+
+- [Philippine sugar exports, metric tons, 1836–1938](../../datasets/sugar/sugarexp.csv)
+- [Philippine exports, pesos, 1899–1938](../../datasets/sugar/exports.csv)
+
+## D3 / Observable code {.appendix}
+
+```{ojs}
+//| code-fold: true
+
+sugarexp = FileAttachment("../../datasets/sugar/sugarexp.csv").csv({ typed: true });
+exports = FileAttachment("../../datasets/sugar/exports.csv").csv({ typed: true });
+map = FileAttachment("../../datasets/maps/world_map.json").json();
+
+parseDate = d3.timeParse("%Y %b");
+colors = ({ 
+  blue: "#4889ab", 
+  red: "#C85B89",
+  land: "#eeeeee",
+  border: "#c0d7df",
+  ocean: "#c0d7df"
+});
+
+```
+
+
+
+
+
+
