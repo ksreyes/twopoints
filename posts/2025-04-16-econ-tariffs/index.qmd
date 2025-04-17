@@ -1,7 +1,7 @@
 ---
 title: "The economics of tariffs"
 subtitle: "Thinking clearly about the costs and benefits of taxing imports. Plus an aside on that odd tiny cross by the Marienkirche entrance"
-date: 2025-04-16
+date: 2025-04-17
 categories: [D3/OJS]
 page-layout: article
 image: thumbnail.gif
