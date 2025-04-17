@@ -1,0 +1,1488 @@
+---
+title: "The economics of tariffs"
+subtitle: "Thinking clearly about the costs and benefits of taxing imports. Plus an aside on that odd tiny cross by the Marienkirche entrance"
+date: 2025-04-16
+categories: [D3/OJS]
+page-layout: article
+image: thumbnail.gif
+format:
+  closeread-html:
+    cr-style:
+      section-background-color: transparent
+      narrative-background-color-overlay: "#f7f7f7"
+      narrative-border-radius: 0
+      narrative-text-color-overlay: black
+      narrative-font-size: 1em
+    theme:
+      - default
+      - ../../custom.scss
+      - style.css
+draft: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+source("../../R/functions.R")
+```
+
+Since my [last post](https://twopoints.blog/posts/2025-04-09-to-seek-anothers-profit/), the tariff policy of the United States has undergone a number of major shifts. [As things stand](https://www.tradecomplianceresourcehub.com/2025/04/14/trump-2-0-tariff-tracker/), the reciprocal tariffs announced on April 2 have been [paused for 90 days](https://truthsocial.com/@realDonaldTrump/posts/114309144289505174), leaving a blanket +10% rate on all countries except Canada and Mexico (who face +25%) and China (who faces +145%, but with the massive asterisk that consumer electronics are [exempted](https://www.reuters.com/markets/us-excludes-smartphones-computers-reciprocal-tariffs-2025-04-12/)... [for now](https://www.reuters.com/markets/trump-plans-separate-levy-exempted-electronics-amid-trade-war-lutnick-says-2025-04-13/)). In addition, steel, aluminum, and automobile imports had earlier been levied a +25% rate.^[These are additions to tariffs [already existing](https://www.nytimes.com/interactive/2025/04/12/business/economy/china-tariff-product-costs.html) prior to the second Trump administration.]
+
+Like any economic policy, tariffs have a set of costs and benefits that are challenging to disentangle. Tariffs are a tax on imports, so fundamentally money is being transferred from the private sector to the government. But who from the private sector is paying, the domestic consumer or the foreign firm? Taxing a product makes it more expensive, so we can also expect tariffs to dampen demand. To what extent do tariffs cause markets to shrink? What metric can we use to say whether benefits outweigh costs?
+
+These are questions that a few nifty diagrams from intermediate economics can shed light on. In this post, I take you through a crash course on the geometry of partial equilibrium tax analysis. The goal is not to determine definitively whether tariffs are good or bad but to identify the assumptions that lead to either conclusion. Once the logic is clarified, it becomes an empirical matter to determine which assumptions actually hold in the real world. 
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block}
+Let's start with the basics of supply and demand. @cr-fig1
+
+The **import demand curve** traces the total quantities domestic consumers as a whole are willing to buy at different price points. It is downward-sloping because the higher the price, the less consumers are willing to buy. @cr-fig1
+
+For example, suppose consumers are faced with a price of $17.10. Depending on preferences, the individual consumer may be willing to buy 1, 2, or any number of units. For the curve drawn, adding these individual demand together results in a total quantity demanded of 24 units. @cr-fig1
+
+Similarly, the **export supply curve** traces the quantity foreign firms as a whole are willing to sell at every possible price point. It is upward-sloping because the higher the price, the more firms are willing to sell. @cr-fig1
+
+The market **clears** when the price is such that the amount consumers are willing to buy is equal to the amount firms are willing to sell. In this example, the market-clearing price is $9.20. @cr-fig1
+
+Economists assume that markets generally tend towards this state of **equilibrium**. Any deviation results in a shortage or a glut, which in a free and competitive market will not be self-sustaining. @cr-fig1
+:::
+
+:::{#cr-fig1}
+```{ojs}
+//| echo: false
+{
+  const id = d3.randomInt(100000, 1000000)();
+  const params = { q: null, p: null, es: null, ed: null };
+  const axisTitles = { x: "Output", y: "$/unit" };
+
+  params.es = 1.5;
+  params.ed = -1.25;
+  params.q = qStar(params);
+  params.p = supplyFxn(params);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([0, max.p])
+    .range([dim.height, padding.top]);
+  
+  // Diagram
+  
+  const container = d3.create("div")
+    .attr("class", "diagram");
+  
+  const svg = container.append("svg")
+    .attr("width", "100%")
+    .attr("viewBox", [
+      0, 0, 
+      dim.width + margin.left + margin.right, 
+      dim.height + margin.top + margin.bottom
+    ])
+    .call(drawBackground);
+  
+  const panel = svg.append("g")
+    .attr("transform", `translate(${ margin.left },${ margin.top })`);
+    
+  let demandGuideSample = panel.append("g")
+    .call(yGuide, md, { q: 24, ed: params.ed }, yScaler, ",.1f")
+    .call(xGuides, md, { q: 24, ed: params.ed }, yScaler);
+    
+  let supplyCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xs, params, yScaler)
+    .call(
+      addLabel, "Export supply", 
+      xScaler(95), 
+      yScaler(supplyFxn({ q: 95, es: params.es })) - 15,
+      "middle"
+    )
+    .style("opacity", 0);
+    
+  let demandCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, md, params, yScaler)
+    .call(
+      addLabel, "Import demand", 
+      xScaler(70),
+      yScaler(demandFxn({ q: 50, ed: params.ed }))
+    );
+  
+  let guidesEq = panel.append("g")
+    .call(yGuide, xs, params, yScaler, ",.1f")
+    .call(xGuides, xs, params, yScaler);
+    
+  panel.call(panelAxes, axisTitles);
+  
+  // Scroll animations
+  
+  const pts = [
+    { start: .145, end: .165 },
+    { start: .340, end: .360 },
+    { start: .460, end: .480 },
+    { start: .525, end: .545 },
+    { start: .695, end: .715 },
+  ];
+  
+  demandCurve
+    .style("opacity", () => {
+      if (crProgressBlock >= .145 && crProgressBlock < .46) {
+        return fadeIn(pts[0])(crProgressBlock);
+      } else if (crProgressBlock >= .46 && crProgressBlock < .695) {
+        return fadeOut(pts[2])(crProgressBlock);
+      } else if (crProgressBlock >= .695) {
+        return fadeIn(pts[4])(crProgressBlock);
+      } else {
+        return 0;
+      }
+     });
+  
+  demandGuideSample
+    .style("opacity", () => {
+      if (crProgressBlock >= .34 && crProgressBlock < .46) {
+        return fadeIn(pts[1])(crProgressBlock);
+      } else if (crProgressBlock >= .46) {
+        return fadeOut(pts[2])(crProgressBlock);
+      } else {
+        return 0;
+      }
+     });
+    
+  supplyCurve
+    .style("opacity", () => {
+      if (crProgressBlock >= .525) {
+        return fadeIn(pts[3])(crProgressBlock);
+      } else {
+        return 0;
+      }
+     });
+    
+  guidesEq
+    .style("opacity", () => {
+      if (crProgressBlock >= .695) {
+        return fadeIn(pts[4])(crProgressBlock);
+      } else {
+        return 0;
+      }
+     });
+     
+  return container.node();
+}
+```
+:::
+
+::::
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block #fig2}
+Now let's add an **80% tax on imports**. @cr-fig2
+
+The tariff is represented by a second supply curve whose price points are 80% higher at all quantity levels. @cr-fig2
+
+The supply-and-demand diagram looks like this. Using the logic from earlier, the market clears at a price of **$12.20**. @cr-fig2
+
+But note that from the firms' perspective, \$12.20 isn't the unit price they receive since they have to pay the tariff. Using their original supply curve, the price they actually receive is \$6.80. [There is then a **wedge** between what consumers pay and what firms receive.]{.highlight} @cr-fig2
+
+This wedge is the government's tax revenue. It is equal to the area of the red box, which in this example is (\$12.20 – \$6.80) x 33 = \$178.20. @cr-fig2
+
+Here now are two scenarios: one without tariffs where the market clears at \$9.20 and another with an 80% tariff where the market clears at \$12.20. @cr-fig2
+:::
+
+:::{#cr-fig2}
+```{ojs}
+//| echo: false
+{
+  const id = d3.randomInt(100000, 1000000)();
+  const params = { q: null, p: null, es: null, ed: null, t: null };
+  const axisTitles = { x: "Output", y: "$/unit" };
+
+  const pts = [
+    { start: .140, end: .160 },
+    { start: .320, end: .340 },
+    { start: .500, end: .520 },
+    { start: .700, end: .720 },
+    { start: .870, end: .890 },
+  ];
+  
+  params.es = 1.5;
+  params.ed = -1.25;
+  params.t = .8 * fadeIn(pts[0])(crProgressBlock);
+  params.q = qStar(params);
+  params.p = supplyFxn(params);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([0, max.p])
+    .range([dim.height, padding.top]);
+  
+  // Diagram
+  
+  const container = d3.create("div")
+    .attr("class", "diagram");
+  
+  const svg = container.append("svg")
+    .attr("width", "100%")
+    .attr("viewBox", [
+      0, 0, 
+      dim.width + margin.left + margin.right, 
+      dim.height + margin.top + margin.bottom
+    ])
+    .call(drawBackground);
+  
+  const panel = svg.append("g")
+    .attr("transform", `translate(${ margin.left },${ margin.top })`);
+  
+  let revenue = panel.append("g")
+    .call(addAreaBox, 
+      id, 
+      { id: "revenue", label: "Government revenues" }, 
+      { 
+        x1: 0, 
+        y1: yScaler(supplyFxn({ q: 33, es: params.es })), 
+        x2: xScaler(33), 
+        y2: yScaler(supplyTaxedFxn({ q: 33, es: params.es, t: params.t })) 
+      }
+    )
+    
+  let supplyTaxedCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xst, params, yScaler)
+    .call(
+      addLabel, "Supply with tariff", 
+      xScaler(70) - 15, 
+      yScaler(supplyTaxedFxn({ q: 70, es: params.es, t: params.t })),
+      "end"
+    );
+  
+  let supplyCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xs, params, yScaler)
+    .call(
+      addLabel, "Export supply", 
+      xScaler(70) + 15, 
+      yScaler(supplyFxn({ q: 70, es: params.es })) + 10,
+      "start"
+    );
+  
+  let demandCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, md, params, yScaler)
+    .call(
+      addLabel, "Import demand", 
+      xScaler(70),
+      yScaler(demandFxn({ q: 50, ed: params.ed }))
+    );
+  
+  let supplyGuide = panel.append("g")
+    .call(yGuide, xs, { q: 33, es: params.es }, yScaler, ",.1f");
+  supplyGuide.select("text")
+    .style("fill", "#b3b3b3");
+  
+  let demandGuidesTaxed = panel.append("g")
+    .call(yGuide, xst, { q: 33, es: params.es, t: params.t }, yScaler, ",.1f")
+    .call(xGuides, xst, { q: 33, es: params.es, t: params.t }, yScaler);
+  
+  let guidesEq = panel.append("g")
+    .call(yGuide, xs, params, yScaler, ",.1f")
+    .call(xGuides, xs, params, yScaler);
+  
+  let points = panel.append("g");
+  
+  points.append("circle")
+    .attr("class", "guide-point primary")
+    .attr("cx", xScaler(46))
+    .attr("cy", yScaler(demandFxn({ q: 46, ed: params.ed })))
+    .attr("r", 5);
+    
+  points.append("circle")
+    .attr("class", "guide-point secondary")
+    .attr("cx", xScaler(33))
+    .attr("cy", yScaler(supplyTaxedFxn({ q: 33, es: params.es, t: params.t })))
+    .attr("r", 5);
+    
+  panel.call(panelAxes, axisTitles);
+    
+  // Scroll animations
+  
+  supplyTaxedCurve.select("text").style("opacity", () => {
+      return fadeIn(pts[0])(crProgressBlock);
+   });
+     
+  demandCurve
+    .style("opacity", () => {
+      if (crProgressBlock >= pts[1].start && crProgressBlock < pts[2].start) {
+        return fadeIn(pts[1])(crProgressBlock);
+      } else if (crProgressBlock >= pts[2].start && crProgressBlock < pts[3].start) {
+        return fadeOut(pts[2])(crProgressBlock);
+      } else if (crProgressBlock >= pts[4].start) {
+        return fadeIn(pts[4])(crProgressBlock);
+      } else {
+        return 0;
+      }
+     });
+     
+  demandGuidesTaxed.style("opacity", () => {
+      return fadeIn(pts[1])(crProgressBlock);
+   });
+  
+  supplyCurve
+    .style("opacity", () => {
+      if (crProgressBlock >= pts[1].start && crProgressBlock < pts[2].start) {
+        return fadeOut(pts[1])(crProgressBlock);
+      } else if (crProgressBlock >= pts[2].start) {
+        return fadeIn(pts[2])(crProgressBlock);
+      } else {
+        return 1;
+      }
+     });
+     
+  supplyGuide.style("opacity", () => {
+      return fadeIn(pts[2])(crProgressBlock);
+   });
+     
+  guidesEq.style("opacity", () => {
+      return fadeIn(pts[4])(crProgressBlock);
+   });
+     
+  points.style("opacity", () => {
+      return fadeIn(pts[4])(crProgressBlock);
+   });
+     
+  revenue.style("opacity", () => {
+    return fadeIn(pts[3])(crProgressBlock)
+  });
+
+  return container.node();
+}
+```
+:::
+
+::::
+
+Notice that the post-tariff market price is \$12.20, which is just 32% higher than the tariff-free price of \$9.20 --- even if the tariff rate is 80%. What happened? The market shrank: firms have to charge more so consumers in turn demand less, which pulls the price down. The market-clearing quantity level falls from 46 units to 33 units. This demonstrates an important point about tariffs. Unless firms want their products to languish on shelves, [they generally cannot pass the entire cost of the tariff to consumers]{.highlight}. Back-of-the-envelope calculations that see the iPhone selling for [over \$3,000](https://www.cnet.com/personal-finance/taxes/making-sense-of-phone-tariffs-see-how-much-prices-iphone-prices-could-rise/), for example, are eye-catching but hyperbolic. 
+
+But the market does shrink. Consumers pay more and buy less; likewise, firms sell less and earn less. The winner is the government, who receives the tariff revenue. The question is, if we tally up everyone's gains and losses, does the economy as a whole gain or lose? To answer this, we need to introduce the concept of **economic surplus**, the key metric in welfare analysis. 
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block #fig3}
+Let's return to the tariff-free market equilibrium. @cr-fig3
+
+Consumers pay \$9.20 under this equilibrium. @cr-fig3
+
+But the market demand curve implies that some are willing to pay more than that. For example, a total of 25 units are demanded by consumers who are willing to pay \$16.40 for the good. @cr-fig3
+
+Because they pay the market-clearing price of \$9.20, they get a **surplus** of \$7.20. @cr-fig3
+
+The total surplus consumers enjoy is represented by the shaded region above the price line and below the market demand curve. @cr-fig3
+
+Similarly, firms get a surplus from selling the product at a price above that at which they were willing to sell. @cr-fig3
+
+The sum of consumer and producer surplus represents the total surplus enjoyed by participants of the market in equilibrium. @cr-fig3
+:::
+
+:::{#cr-fig3}
+```{ojs}
+//| echo: false
+{
+  const id = d3.randomInt(100000, 1000000)();
+  const params = { q: null, p: null, es: null, ed: null, t: null };
+  const axisTitles = { x: "Output", y: "$/unit" };
+
+  params.es = 1.5;
+  params.ed = -1.25;
+  params.q = qStar(params);
+  params.p = supplyFxn(params);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([0, max.p])
+    .range([dim.height, padding.top]);
+  
+  // Diagram
+  
+  const container = d3.create("div")
+    .attr("class", "diagram");
+  
+  const svg = container.append("svg")
+    .attr("width", "100%")
+    .attr("viewBox", [
+      0, 0, 
+      dim.width + margin.left + margin.right, 
+      dim.height + margin.top + margin.bottom
+    ])
+    .call(drawBackground);
+  
+  const panel = svg.append("g")
+    .attr("transform", `translate(${ margin.left },${ margin.top })`);
+  
+  let cs = panel.append("g")
+    .call(clipWide, id)
+    .call(addAreaCurve, id, md, params, yScaler);
+    
+  let ps = panel.append("g")
+    .call(clipWide, id)
+    .call(addAreaCurve, id, xs, params, yScaler);
+
+  let supplyCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xs, params, yScaler)
+    .call(
+      addLabel, "Export supply", 
+      xScaler(95), 
+      yScaler(supplyFxn({ q: 95, es: params.es })) - 15,
+      "middle"
+    );
+  
+  let demandCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, md, params, yScaler)
+    .call(
+      addLabel, "Import demand", 
+      xScaler(70),
+      yScaler(demandFxn({ q: 50, ed: params.ed }))
+    );
+  
+  let demandGuideSample = panel.append("g")
+    .call(yGuide, md, { q: 25, ed: params.ed }, yScaler, ",.1f")
+    .call(xGuides, md, { q: 25, ed: params.ed }, yScaler);
+    
+  let csGuide = panel.append("g");
+  
+  csGuide.append("path")
+    .attr("class", "curlybrace")
+    .attr("d", () => curlyBrace(
+      [xScaler(25) - 5, yScaler(16.4) + 5], 
+      yScaler(9.2) - yScaler(16.4) - 15
+    ));
+    
+  csGuide.append("text")
+    .attr("class", "curlybrace-label")
+    .attr("x", xScaler(25) - 20)
+    .attr("y", yScaler(12.8))
+    .style("text-anchor", "end")
+    .text(7.2)
+  
+  let guidesEq = panel.append("g")
+    .call(yGuide, xs, params, yScaler, ",.1f")
+    .call(xGuides, xs, params, yScaler);
+  
+  panel.call(panelAxes, axisTitles);
+  
+  // Scroll animations
+  
+  const pts = [
+    { start: .120, end: .140 },  // 0
+    { start: .270, end: .290 },  // 1
+    { start: .430, end: .450 },  // 2
+    { start: .585, end: .605 },  // 3
+    { start: .735, end: .755 },  // 4
+    { start: .890, end: .910 },  // 5
+  ];
+  
+  demandCurve.style("opacity", () => {
+    if (prog >= pts[4].start && prog < pts[5].start) {
+      return fadeOut(pts[4])(prog);
+    } else if (prog >= pts[5].start) {
+      return fadeIn(pts[5])(prog);
+    } else {
+      return 1;
+    }
+  });
+  
+  supplyCurve.style("opacity", () => {
+    if (prog >= pts[0].start && prog < pts[4].start) {
+      return fadeOut(pts[0])(prog);
+    } else if (prog >= pts[4].start) {
+      return fadeIn(pts[4])(prog);
+    } else {
+      return 1;
+    }
+  });
+  
+  demandGuideSample.style("opacity", () => {
+    if (prog >= pts[1].start && prog < pts[3].start) {
+      return fadeIn(pts[1])(prog);
+    } else if (prog >= pts[3].start) {
+      return fadeOut(pts[3])(prog);
+    } else {
+      return 0;
+    }
+  });
+  
+  csGuide.style("opacity", () => {
+    if (prog >= pts[2].start && prog < pts[3].start) {
+      return fadeIn(pts[2])(prog);
+    } else if (prog >= pts[3].start) {
+      return fadeOut(pts[3])(prog);
+    } else {
+      return 0;
+    }
+  });
+  
+  cs.style("opacity", () => {
+    if (prog >= pts[1].start && prog < pts[4].start) {
+      return fadeIn(pts[3])(prog);
+    } else if (prog >= pts[4].start && prog < pts[5].start) {
+      return fadeOut(pts[4])(prog);
+    } else if (prog >= pts[5].start) {
+      return fadeIn(pts[5])(prog);
+    } else {
+      return 0;
+    }
+  });
+  
+  ps.style("opacity", () => {
+    return fadeIn(pts[4])(prog);
+  });
+
+  return container.node();
+}
+```
+:::
+
+::::
+
+"Surplus" is one of those esoteric concepts in economics that is nevertheless useful for real world questions. Everyone can agree that it is better for consumers to have as big a gap as possible between the price they're willing to pay and the price they actually pay. Likewise for firms. Therefore, [maximizing the total surplus in a market is desirable as a rule]{.highlight}.
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block #fig4}
+How does a tariff affect total surplus? @cr-fig4
+
+It reduces it! @cr-fig4
+
+But it's not all bad as some of this lost surplus ends up as revenues for the government. @cr-fig4
+
+This region, however, goes to no one. It reflects surplus lost due to the market shrinkage the tariff causes. It is known in economics as the **deadweight loss**. @cr-fig4
+:::
+
+:::{#cr-fig4}
+```{ojs}
+//| echo: false
+{
+  const id = d3.randomInt(100000, 1000000)();
+  const params = { q: null, p: null, es: null, ed: null, t: null };
+  const axisTitles = { x: "Output", y: "$/unit" };
+
+  const pts = [
+    { start: .15, end: .24 },  // 0
+    { start: .24, end: .25 },  // 1
+    { start: .51, end: .53 },  // 2
+    { start: .80, end: .82 },  // 3
+  ];
+  
+  params.es = 1.5;
+  params.ed = -1.25;
+  params.t = .8 * fadeIn(pts[0])(prog);
+  params.q = qStar(params);
+  let qtStar = Math.round(-16.58 * Math.pow(params.t, .78) + 46.44);
+  params.p = supplyFxn(params);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([0, max.p])
+    .range([dim.height, padding.top]);
+  
+  // Diagram
+  
+  const container = d3.create("div")
+    .attr("class", "diagram");
+  
+  const svg = container.append("svg")
+    .attr("width", "100%")
+    .attr("viewBox", [
+      0, 0, 
+      dim.width + margin.left + margin.right, 
+      dim.height + margin.top + margin.bottom
+    ])
+    .call(drawBackground);
+  
+  const panel = svg.append("g")
+    .attr("transform", `translate(${ margin.left },${ margin.top })`);
+  
+  let cs = panel.append("g")
+    .call(clipWide, id)
+    .call(addAreaCurve, id, md, { q: qtStar, ed: params.ed }, yScaler);
+    
+  let ps = panel.append("g")
+    .call(addAreaCurve, id, xs, { q: qtStar, es: params.es }, yScaler);
+  
+  let dwl = panel.append("g")
+    .attr("class", "area-dwl")
+    .call(addAreaCurve, id, md, { ed: params.ed }, yScaler, 33, 46)
+    .call(addAreaCurve, id, xs, { es: params.es }, yScaler, 33, 46);
+    
+  let revenue = panel.append("g")
+    .call(addAreaBox, 
+      id, 
+      { id: "revenue", label: "Government revenues" }, 
+      { 
+        x1: 0, 
+        y1: yScaler(supplyFxn({ q: qtStar, es: params.es })), 
+        x2: xScaler(qtStar), 
+        y2: yScaler(demandFxn({ q: qtStar, ed: params.ed })) 
+      }
+    );
+  revenue.append("text")
+    .attr("class", "area-label revenue")
+    .attr("x", xScaler(13))
+    .attr("y", yScaler(11))
+    .text("Tax revenue");
+    
+  let supplyTaxedCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xst, params, yScaler);
+  
+  let supplyTaxedCurveLabel = panel.append("g")
+    .call(
+      addLabel, "Supply with tariff", 
+      xScaler(70) - 15, 
+      yScaler(supplyTaxedFxn({ q: 70, es: params.es, t: params.t })),
+      "end"
+    );
+  
+  let supplyCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xs, params, yScaler)
+    .call(
+      addLabel, "Export supply", 
+      xScaler(70) + 15, 
+      yScaler(supplyFxn({ q: 70, es: params.es })) + 10,
+      "start"
+    );
+  
+  let demandCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, md, params, yScaler)
+    .call(
+      addLabel, "Import demand", 
+      xScaler(70),
+      yScaler(demandFxn({ q: 50, ed: params.ed }))
+    );
+  
+  let supplyGuide = panel.append("g")
+    .call(yGuide, xs, { q: qtStar, es: params.es }, yScaler, ",.1f");
+  supplyGuide.select("text")
+    .style("fill", "#b3b3b3");
+  
+  let demandGuidesTaxed = panel.append("g")
+    .call(yGuide, md, { q: qtStar, ed: params.ed }, yScaler, ",.1f")
+    .call(xGuides, xst, { q: qtStar, es: params.es, t: params.t }, yScaler);
+  
+  panel.call(panelAxes, axisTitles);
+    
+  // Scroll animations
+  
+  supplyTaxedCurveLabel.style("opacity", () => {
+    return fadeIn(pts[1])(prog);
+  })
+  
+  revenue.style("opacity", () => {
+    return fadeIn(pts[2])(prog);
+  })
+  
+  dwl.style("opacity", () => {
+    return fadeIn(pts[3])(prog);
+  })
+  
+  return container.node();
+}
+```
+:::
+
+::::
+
+We can refine this cost–benefit calculus further by being a bit more nationalistic. Firms in this market are foreign after all, so perhaps we don't mind their lost surplus so much. 
+
+
+::::{.cr-section layout="overlay-center"}
+
+:::{.progress-block #fig5}
+Let's examine the colored areas again. @cr-fig5
+
+This is the region of lost surplus. @cr-fig5
+
+This is the tax collected from foreign firms --- an unambiguous win for our country. @cr-fig5
+
+This is the tax collected from domestic consumers. Annoying for consumers but it could be put to good use. @cr-fig5
+
+This is the firms' share of the deadweight loss. Not our problem! @cr-fig5
+
+And finally, this is our consumers' share of the deadweight loss --- an unambiguous loss for our country. @cr-fig5
+
+Altogether, we are comparing the size of the red region (gain from taxing foreign firms) against the size of the gray region (lost surplus for domestic consumers). @cr-fig5
+:::
+
+:::{#cr-fig5}
+```{ojs}
+//| echo: false
+{
+  const id = d3.randomInt(100000, 1000000)();
+  const params = { q: null, p: null, es: null, ed: null, t: null };
+  const axisTitles = { x: "Output", y: "$/unit" };
+
+  params.es = 1.5;
+  params.ed = -1.25;
+  params.t = .8;
+  params.q = qStar(params);
+  let qtStar = Math.round(-16.58 * Math.pow(params.t, .78) + 46.44);
+  params.p = supplyFxn(params);
+  
+  const yScaler = d3.scaleLinear()
+    .domain([0, max.p])
+    .range([dim.height, padding.top]);
+  
+  // Diagram
+  
+  const container = d3.create("div")
+    .attr("class", "diagram");
+  
+  const svg = container.append("svg")
+    .attr("width", "100%")
+    .attr("viewBox", [
+      0, 0, 
+      dim.width + margin.left + margin.right, 
+      dim.height + margin.top + margin.bottom
+    ])
+    .call(drawBackground);
+  
+  const panel = svg.append("g")
+    .attr("transform", `translate(${ margin.left },${ margin.top })`);
+  
+  let cs = panel.append("g")
+    .call(clipWide, id)
+    .call(addAreaCurve, id, md, { q: qtStar, ed: params.ed }, yScaler);
+    
+  let ps = panel.append("g")
+    .call(addAreaCurve, id, xs, { q: qtStar, es: params.es }, yScaler);
+  
+  let dwlConsumer = panel.append("g")
+    .attr("class", "area-dwl")
+    .call(addAreaCurve, id, md, { ed: params.ed }, yScaler, 33, 46);
+    
+  let dwlProducer = panel.append("g")
+    .attr("class", "area-dwl")
+    .call(addAreaCurve, id, xs, { es: params.es }, yScaler, 33, 46);
+    
+  let revenue = panel.append("g")
+    .call(addAreaBox, 
+      id, 
+      { id: "revenue", label: "Government revenues" }, 
+      { 
+        x1: 0, 
+        y1: yScaler(supplyFxn({ q: qtStar, es: params.es })), 
+        x2: xScaler(qtStar), 
+        y2: yScaler(demandFxn({ q: qtStar, ed: params.ed })) 
+      }
+    );
+  
+  let lostSurplusRevenueDemand = panel.append("g")
+    .call(addAreaBox, 
+      id, 
+      { id: "dwl-consumer-revenue" }, 
+      { 
+        x1: 0, 
+        y1: yScaler(demandFxn(params)), 
+        x2: xScaler(qtStar), 
+        y2: yScaler(demandFxn({ q: qtStar, ed: params.ed })) 
+      }
+    );
+  
+  console.log(demandFxn({ q: qtStar, ed: params.ed }))
+  
+  let lostSurplusRevenueSupply = panel.append("g")
+    .call(addAreaBox, 
+      id, 
+      { id: "dwl-producer-revenue" }, 
+      { 
+        x1: 0, 
+        y1: yScaler(supplyFxn(params)), 
+        x2: xScaler(qtStar), 
+        y2: yScaler(supplyFxn({ q: qtStar, es: params.es })) 
+      }
+    );
+  
+  let supplyTaxedCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xst, params, yScaler);
+  
+  let supplyTaxedCurveLabel = panel.append("g")
+    .call(
+      addLabel, "Supply with tariff", 
+      xScaler(70) - 15, 
+      yScaler(supplyTaxedFxn({ q: 70, es: params.es, t: params.t })),
+      "end"
+    );
+  
+  let supplyCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, xs, params, yScaler)
+    .call(
+      addLabel, "Export supply", 
+      xScaler(70) + 15, 
+      yScaler(supplyFxn({ q: 70, es: params.es })) + 10,
+      "start"
+    );
+  
+  let demandCurve = panel.append("g")
+    .call(clip, id)
+    .call(addCurveFull, id, md, params, yScaler)
+    .call(
+      addLabel, "Import demand", 
+      xScaler(70),
+      yScaler(demandFxn({ q: 50, ed: params.ed }))
+    );
+  
+  let supplyGuide = panel.append("g")
+    .call(yGuide, xs, { q: qtStar, es: params.es }, yScaler, ",.1f");
+  supplyGuide.select("text")
+    .style("fill", "#b3b3b3");
+  
+  let demandGuidesTaxed = panel.append("g")
+    .call(yGuide, md, { q: qtStar, ed: params.ed }, yScaler, ",.1f")
+    .call(xGuides, xst, { q: qtStar, es: params.es, t: params.t }, yScaler);
+  
+  let guidesEq = panel.append("g")
+    .call(yGuide, xs, params, yScaler, ",.1f")
+    .call(xGuides, xs, params, yScaler);
+
+  panel.call(panelAxes, axisTitles);
+    
+  // Scroll animations
+  
+  const pts = [
+    { start: .125, end: .145 },  // 0
+    { start: .275, end: .295 },  // 1
+    { start: .430, end: .450 },  // 2
+    { start: .590, end: .610 },  // 3
+    { start: .740, end: .760 },  // 4
+    { start: .895, end: .915 },  // 5
+  ];
+  
+  cs.style("opacity", () => {
+    return fadeOut(pts[0])(prog);
+  });
+  
+  ps.style("opacity", () => {
+    return fadeOut(pts[0])(prog);
+  });
+  
+  revenue.style("opacity", () => {
+    return fadeOut(pts[1])(prog);
+  });
+  
+  dwlProducer.style("opacity", () => {
+    if (prog >= pts[1].start && prog < pts[3].start) {
+      return fadeOut(pts[1])(prog);
+    } else if (prog >= pts[3].start && prog < pts[4].start) {
+      return fadeIn(pts[3])(prog);
+    } else if (prog >= pts[4].start) {
+      return fadeOut(pts[4])(prog);
+    }
+  });
+  
+  dwlConsumer.style("opacity", () => {
+    if (prog >= pts[1].start && prog < pts[4].start) {
+      return fadeOut(pts[1])(prog);
+    } else if (prog >= pts[4].start) {
+      return fadeIn(pts[4])(prog);
+    } else {
+      return 1;
+    }
+  });
+  
+  lostSurplusRevenueSupply.style("opacity", () => {
+    if (prog >= pts[1].start && prog < pts[2].start) {
+      return fadeIn(pts[1])(prog);
+    } else if (prog >= pts[2].start && prog < pts[5].start) {
+      return fadeOut(pts[2])(prog);
+    } else if (prog >= pts[5].start) {
+      return fadeIn(pts[5])(prog);
+    } else {
+      return 0;
+    }
+  });
+  
+  lostSurplusRevenueDemand.style("opacity", () => {
+    if (prog >= pts[2].start && prog < pts[3].start) {
+      return fadeIn(pts[2])(prog);
+    } else if (prog >= pts[3].start) {
+      return fadeOut(pts[3])(prog);
+    } else {
+      return 0;
+    }
+  });
+  
+  return container.node();
+}
+```
+:::
+
+::::
+
+The exact areas of these shapes can be calculated by using real world data to trace out the market supply and demand curves. This relatively simple toolkit can then be used to weigh costs and benefits given any import tax. For instance, it has [been estimated](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.33.4.187) that the first Trump administration's tariffs back in 2018 raised \$3.2 billion in taxes per month while imposing \$1.4 billion in deadweight loss per month. In a future post, I will show how the slopes of the curves and the size of the tariff affect the sizes of these areas and the resulting cost–benefit calculus, but for now, let's wrap up with a few caveats to this approach.
+
+First, all of this is under a partial equilibrium setting. Economists say *partial* equilibrium when examining a single market while ignoring all others. In the real world, things aren't so clean because different markets can affect each other. If you place an import tax on foreign cars, for example, domestic consumers might opt to buy domestic cars instead. One market shrinks while another expands. On the other hand, more expensive imports might force cash-strapped consumers to cut back on discretionary spending in general, so the tariff shrinks not just one market but many others. A full cost–benefit accounting ideally incorporates gains and losses in the economy as a whole.
+
+Second, imposing tariffs on others generally elicits some form of retaliatory action. China for instance [has matched](https://www.reuters.com/world/china/china-increase-tariffs-us-goods-125-up-84-finance-ministry-says-2025-04-11/) U.S. tariff hikes tit-for-tat up to 125%. Thus, when weighing any tariff policy, losses for domestic exporters from retaliatory action should be accounted for.
+
+Finally, the time horizon of this analysis is firmly within the short run. Tariff policy is often less about raising tax revenues as it is part of a broader industrial policy to grow domestic firms over several years, even decades. The cost–benefit analysis we have developed here does not take such long-term goals into account. 
+
+---
+
+Tariffs are a terribly dry subject to be talking about at length, so as a palette cleanser, let me end this post with a fun bit of irreverent Berlin history from Barney White-Spunner's [book](https://www.amazon.de/Berlin-Biography-City-Barney-White-Spunner/dp/1471181537). In the 14th century, the area of Berlin was part of the Margraviate of Brandenburg ruled by the House of Ascania. This line died out in 1319, resulting in a power struggle between the Saxons and the Wittelsbach dynasty.
+
+Caught in the turmoil was a hapless priest named Nikolaus, the ranking clergyman and a vocal Saxon supporter in a city that was staunchly pro-Wittelsbach. He was beaten to death by a mob in 1325 somewhere around what is today Alexanderplatz. Outraged, the pope (incidentally anti-Wittelsbach) excommunicated Berlin for 20 years and demanded an atonement cross to mark the scene of the crime. Berliners dragged their feet and eventually put up a hilariously tiny unmarked cross. It now stands inconspicuous and graffitied by the Marienkirche entrance.
+
+![](atonementcross.jpg)
+
+May your petty acts of malicious compliance also survive for the next 700 years. Happy Easter weekend! `r end_mark()`
+
+```{ojs}
+//| code-fold: true
+//| code-summary: "Parameters"
+//| echo: false
+
+prog = crProgressBlock;
+
+dim = ({ width: 400, height: 280 });
+padding = ({ top: 10, right: 10 });
+margin = ({ top: 50, right: 100, bottom: 40, left: 70 });
+
+blue = ({ 
+  base: "#4889ab", 
+  dull: "#A2C4D2", 
+  baseSelect: "#0C6291", 
+  dullSelect: "#669DB8"
+});
+
+red = ({ 
+  base: "#C85B89", 
+  dull: "#E29FBC", 
+  baseSelect: "#B13D70", 
+  dullSelect: "#D1729A" 
+});
+
+green = ({ 
+  base: "#71B795", 
+  dull: "#B4D7C6", 
+  baseSelect: "#418462", 
+  dullSelect: "#73AA8E" 
+});
+
+gray = ({ 
+  base: "#DDDDDD", 
+  dull: "#DDDDDD", 
+  baseSelect: "#D0D0D0", 
+  dullSelect: "#D0D0D0" 
+});
+
+tooltip = d3.select("body")
+  .append("div")
+  .attr("class", "tooltip");
+
+line = d3.line().curve(d3.curveBasis);
+  
+xScaler = d3.scaleLinear()
+  .domain([0, max.q])
+  .range([0, dim.width - padding.right]);
+  
+function data(fxn, params, yScaler, start = 0, end = params.q) {
+
+  const q = params.q, 
+    p = params.p, 
+    es = params.es,
+    ed = params.ed,
+    t = params.t;
+  
+  return Array.from({ length: end - start + 1 }, (_, i) => {
+    const index = i + start
+    const y = yScaler(fxn({ q: index, p, es, ed, t })) ?? -500;
+    const x = (y == null) ? null : xScaler(index);
+    return [x, y];
+  });
+}
+
+function dataMax(fxn, params, yScaler) {
+
+  const q = max.q, 
+    p = params.p, 
+    es = params.es,
+    ed = params.ed,
+    t = params.t;
+
+  return Array.from({ length: q + 1 }, (_, i) => {
+    const y = yScaler(fxn({ q: i, p, es, ed, t })) ?? -500;
+    const x = (y == null) ? null : xScaler(i);
+    return [x, y];
+  });
+}
+
+function fadeIn({start, end}) {
+  return d3.scaleLinear()
+    .domain([start, end])
+    .range([0, 1])
+    .clamp(true);
+}
+
+function fadeOut({start, end}) {
+  return d3.scaleLinear()
+    .domain([start, end])
+    .range([1, 0])
+    .clamp(true);
+}
+
+```
+
+```{ojs}
+//| code-fold: true
+//| code-summary: "Curves"
+//| echo: false
+
+max = ({ q: 95, p: 27 });
+constant = ({ as: 50, ad: 750, bs: 3, bd: 3 });
+
+function supplyFxn({ q, es } = {}) {
+  return (1 / constant.as) * Math.pow(q, es) + constant.bs;
+}
+
+function supplyTaxedFxn({ q, es, t } = {}) {
+  return (1 + t) * ((1 / constant.as) * Math.pow(q, es) + constant.bs);
+}
+
+function demandFxn({ q, ed } = {}) {
+  if (q === 0) {
+    return constant.ad * 10;
+  } else {
+    return constant.ad * Math.pow(q, ed) + constant.bd;
+  }
+}
+
+function qStar({ es, ed } = {}) {
+  const rawQ = Math.pow(constant.as * constant.ad, 1 / (es - ed));
+  return Math.round(rawQ);
+}
+
+function qtStar({ es, ed } = {}) {
+  const rawQ = Math.pow(constant.as * constant.ad, 1 / (es - ed));
+  return Math.round(rawQ);
+}
+
+xs = ({ 
+  fxn: supplyFxn, 
+  label: "Export supply curve", 
+  areaLabel: "Firm surplus",
+  id: "xs-curve", 
+  scheme: green 
+});
+
+xst = ({ 
+  fxn: supplyTaxedFxn, 
+  label: "Supply with tariff", 
+  areaLabel: null,
+  id: "xst-curve", 
+  scheme: red 
+});
+
+md = ({ 
+  fxn: demandFxn, 
+  label: "Import demand curve", 
+  areaLabel: "Consumer surplus",
+  id: "md-curve", 
+  scheme: blue 
+});
+
+```
+
+```{ojs}
+//| code-fold: true
+//| code-summary: "Helper functions"
+//| echo: false
+
+function drawBackground(selection) {
+
+  selection.append("rect")
+    .attr("class", "bg")
+    .attr("x", 0).attr("y", 0)
+    .attr("width", selection.attr("width"))
+    .attr("height", "100%");
+}
+
+function addCurve(selection, 
+                  id, 
+                  fxnInfo, 
+                  params, 
+                  yScaler, 
+                  start = 0, 
+                  end = params.q) {
+
+  const point = data(fxnInfo.fxn, params, yScaler, start, end)[params.q]
+
+  const curves = selection.append("g")
+    .attr("id", `${ fxnInfo.id }-${ id }`)
+    .attr("pointer-events", "visibleStroke")
+  
+  // Non-highlighted portion
+  curves.append("path")
+    .attr("class", "curve dulled")
+    .attr("d", line(data(fxnInfo.fxn, params, yScaler, start, max.q)))
+    .style("stroke", fxnInfo.scheme.dull);
+  
+  // Highlighted portion
+  curves.append("path")
+    .attr("class", "curve colored")
+    .attr("d", line(data(fxnInfo.fxn, params, yScaler, start, end)))
+    .style("stroke", fxnInfo.scheme.base);
+
+  // Add hover effects
+  curves
+    .on("mousemove", (event) => {
+
+      d3.selectAll(`#${ fxnInfo.id }-${ id } .curve.colored`)
+        .classed("hovered", true)
+        .style("stroke", fxnInfo.scheme.baseSelect);
+
+      d3.selectAll(`#${ fxnInfo.id }-${ id } .curve.dulled`)
+        .classed("hovered", true)
+        .style("stroke", fxnInfo.scheme.dullSelect);
+
+      tooltip
+        .style("left", event.pageX + 10 + "px")
+        .style("top", event.pageY + 10 + "px")
+        .style("display", "block")
+        .text(fxnInfo.label);
+    })
+    .on("mouseleave", (event) => {
+
+      d3.selectAll(`#${ fxnInfo.id }-${ id } .curve.colored`)
+        .classed("hovered", false)
+        .style("stroke", fxnInfo.scheme.base);
+
+      d3.selectAll(`#${ fxnInfo.id }-${ id } .curve.dulled`)
+        .classed("hovered", false)
+        .style("stroke", fxnInfo.scheme.dull);
+
+      tooltip.style("display", "none");
+    });
+}
+  
+function addCurveFull(selection, 
+                      id, 
+                      fxnInfo, 
+                      params,
+                      yScaler, 
+                      scheme = fxnInfo.scheme) {
+  
+  const curves = selection.append("g")
+    .attr("id", `${ fxnInfo.id }-${ id }`)
+    .attr("pointer-events", "visibleStroke");
+  
+  curves.append("path")
+    .attr("class", "curve")
+    .attr("d", line(data(fxnInfo.fxn, params, yScaler, 0, max.q)))
+    .style("stroke", scheme.base);
+
+  // Add hover effects
+  curves
+    .on("mousemove", (event) => {
+  
+      d3.selectAll(`#${ fxnInfo.id }-${ id } .curve`)
+        .classed("hovered", true)
+        .style("stroke", scheme.baseSelect);
+  
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(fxnInfo.label);
+  
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", (event) => {
+  
+      d3.selectAll(`#${ fxnInfo.id }-${ id } .curve`)
+        .classed("hovered", false)
+        .style("stroke", scheme.base);
+  
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+}
+
+function addAreaBox(selection, id, info, corners) {
+
+  if (corners.x1 === undefined) corners.x1 = 0;
+  if (corners.x2 === undefined) corners.x2 = 0;
+  if (corners.y1 === undefined) corners.y1 = 0;
+  if (corners.y2 === undefined) corners.y2 = 0;
+  
+  const area = selection.append("path")
+    .attr("id", `area-${ info.id }-${ id }`)
+    .attr("class", `area area-${ info.id }`)
+    .attr("d", d3.line()([ 
+      [corners.x1, corners.y1], 
+      [corners.x2, corners.y1],
+      [corners.x2, corners.y2],
+      [corners.x1, corners.y2]
+    ]));
+  
+  // Add hover effects
+  area
+    .on("mousemove", (event) => {
+
+      d3.selectAll(`#area-${ info.id }-${ id }`)
+        .classed("hovered", true);
+  
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(info.label);
+  
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", (event) => {
+  
+      d3.selectAll(`#area-${ info.id }-${ id }`)
+        .classed("hovered", false);
+  
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+}
+
+function addAreaCurve(selection, 
+                      id, 
+                      fxnInfo, 
+                      params, 
+                      yScaler,
+                      start = 0, 
+                      end = params.q) {
+
+  const paramsend = { ...params };
+  paramsend.q = end;
+  const area = selection.append("path")
+    .attr("id", `area-${ fxnInfo.id }-${ id }`)
+    .attr("class", "area area-" + fxnInfo.id)
+    .attr("d", `
+      ${ line(data(fxnInfo.fxn, params, yScaler, start, end)) }
+      L ${ xScaler(start) },${ yScaler(fxnInfo.fxn(paramsend)) } Z
+    `);
+  
+  // Add hover effects
+  area
+    .on("mousemove", (event) => {
+  
+      d3.select(`#area-${ fxnInfo.id }-${ id }`)
+        .classed("hovered", true);
+  
+      tooltip
+        .style("left", event.pageX + 18 + "px")
+        .style("top", event.pageY + 18 + "px")
+        .style("display", "block")
+        .text(fxnInfo.areaLabel);
+  
+      d3.select(event.target).style("cursor", "pointer");
+    })
+    .on("mouseleave", (event) => {
+  
+      d3.selectAll(`#area-${ fxnInfo.id }-${ id }`)
+        .classed("hovered", false);
+  
+      tooltip.style("display", "none");
+      d3.select(event.target).style("cursor", "default");
+    });
+}
+
+function addAreaLostSurplus(selection, id, params, yScaler) {
+
+  const qStar = 46;
+  const qtStar = 33;
+  params.q = qStar;
+  const paramst = { ...params };
+  paramst.q = qtStar;
+  
+  const area = selection.append("g")
+    .attr("id", `area-lost-surplus-${id}`)
+    .attr("class", "area area-lost-surplus");
+    
+  const areaDemandDWL = area.append("path")
+    .attr("d", `
+      ${ line(data(demandFxn, params, yScaler, qtStar, qStar)) }
+      L ${ xScaler(qtStar) },${ yScaler(demandFxn(params)) } Z
+    `);
+    
+  const areaSupplyDWL = area.append("path")
+    .attr("d", `
+      ${ line(data(supplyFxn, params, yScaler, qtStar, qStar)) }
+      L ${ xScaler(qtStar) },${ yScaler(supplyFxn(params)) } Z
+    `);
+  
+  const areaRevenue = area.append("path")
+    .attr("d", d3.line()([ 
+      [0, yScaler(supplyFxn(paramst))], 
+      [xScaler(qtStar), yScaler(supplyFxn(paramst))],
+      [xScaler(qtStar), yScaler(demandFxn(paramst))],
+      [0, yScaler(demandFxn(paramst))]
+    ]));
+}
+
+function clip(selection, id) {
+    
+  selection.attr("clip-path", `url(#clip-${ id })`);
+  
+  const clip = selection.append("clipPath")
+    .attr("id", `clip-${ id }`);
+
+  clip.append("rect")
+    .attr("class", "clip")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", dim.width + margin.right)
+    .attr("height", dim.height);
+}
+
+function clipWide(selection, id) {
+    
+  selection.attr("clip-path", `url(#clip-wide-${id})`);
+  
+  const clip = selection.append("clipPath")
+    .attr("id", `clip-wide-${ id }`);
+
+  clip.append("rect")
+    .attr("class", "clip")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", dim.width + margin.right)
+    .attr("height", dim.height);
+
+  clip.append("rect")
+    .attr("class", "clip")
+    .attr("x", -margin.left)
+    .attr("y", -10)
+    .attr("width", margin.left)
+    .attr("height", dim.height + 20);
+}
+
+function panelAxes(selection, titles) {
+  
+  const axes = selection.append("g")
+    .attr("class", "axis");
+  
+  // Axis lines
+  axes.append("path")
+    .attr("class", "axis-line")
+    .attr("d", d3.line()([
+      [dim.width, dim.height], 
+      [0, dim.height], [0, 0]
+    ]));
+  
+  // Axis titles    
+  axes.append("g")
+    .append("text")
+    .attr("class", "axis-text axis-text-x")
+    .text(titles.x)
+    .attr("x", dim.width + 10)
+    .attr("y", dim.height);
+  
+  axes.append("text")
+    .attr("class", "axis-text axis-text-y")
+    .text(titles.y)
+    .attr("x", 0)
+    .attr("y", -15);
+}
+
+function xGuides(selection, fxnInfo, params, yScaler) {
+    
+  const point = data(fxnInfo.fxn, params, yScaler)[params.q];
+  const guide = selection.append("g")
+    .attr("class", "guide");
+  
+  // Dashed line
+  const dashedLine = guide.append("path")
+    .attr("class", "dashed-line")
+    .attr("d", line([
+      [point[0], point[1]], 
+      [point[0], dim.height]
+    ]));
+  
+  // Tick
+  const tick = guide.append("text")
+    .attr("class", "tick tick-x")
+    .text(d3.format(",.0f")(params.q))
+    .attr("x", xScaler(params.q))
+    .attr("y", dim.height);
+}
+    
+function yGuide(selection, fxnInfo, params, yScaler, format = ",.0f") {
+    
+  const point = data(fxnInfo.fxn, params, yScaler)[params.q];
+  const guide = selection.append("g")
+    .attr("class", "guide");
+  
+  // Dashed line
+  guide.append("path")
+    .attr("class", "dashed-line")
+    .attr("d", line([
+      [point[0], point[1]], 
+      [0, point[1]]
+    ]));
+  
+  // Axis tick
+  guide.append("text")
+    .attr("class", "tick tick-y")
+    .text(d3.format(format)(fxnInfo.fxn(params)))
+    .attr("x", 0)
+    .attr("y", point[1]);
+}
+
+function addLabel(selection, label, x, y, anchor = "start") {
+
+  selection.append("text")
+    .attr("class", "curve-label")
+    .text(label)
+    .attr("x", x)
+    .attr("y", y)
+    .attr("text-anchor", anchor);
+}
+
+function curlyBrace(start, length) {
+
+  const x0 = start[0];
+  const y0 = start[1];
+  const scale = 5;
+  const segment = (length / 2) - (scale * 2);
+  
+  const m = `M ${ x0 },${ y0 }`;
+  const q1 = `Q ${ x0 - scale },${ y0 } ${ x0 - scale },${ y0 + scale }`;
+  const l1 = `L ${ x0 - scale },${ y0 + scale + segment }`;
+  
+  const p = `
+    Q ${ x0 - scale },${ y0 + 2 * scale + segment }
+      ${ x0 - 2 * scale },${ y0 + 2 * scale + segment }
+    Q ${ x0 - scale },${ y0 + 2 * scale + segment }
+      ${ x0 - scale },${ y0 + 3 * scale + segment }`;
+  
+  const l2 = `L ${ x0 - scale },${ y0 + 2 * (scale + segment) + 2 * scale }`;
+  const q2 = `Q ${ x0 - scale },${ y0 + 2 * (scale + segment) + 3 * scale } 
+    ${ x0 },${ y0 + 2 * (scale + segment) + 3 * scale }`;
+
+  return `${m} ${q1} ${l1} ${p} ${l2} ${q2}`;
+}
+
+function labelsToggle(container, id) {
+
+  const form = container.append("form")
+    .attr("class", "toggle-labels");
+
+  form.append("input")
+    .attr("class", "toggle-checkbox")
+    .attr("type", "checkbox")
+    .attr("name", "toggle-label")
+    .attr("id", `checkbox-${ id }`)
+    .property("checked", true);
+  
+  form.append("label")
+    .attr("class", "toggle-label")
+    .attr("for", `checkbox-${ id }`)
+    .text("Labels");
+}
+```

@@ -1,0 +1,306 @@
+
+/*-- scss:rules --*/
+/* .cr-section.sidebar-left, 
+.cr-section.sidebar-right, 
+.cr-section.overlay-left, 
+.cr-section.overlay-right, 
+.cr-section.overlay-center{
+    grid-template-columns: minmax(0px, 1fr) !important;
+} */
+
+div.cr-section.cr-column-screen {
+    grid-column: body-content-start / body-content-end !important;
+}
+.cr-section .sticky-col .sticky-col-stack {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.cr-section .sticky-col .sticky-col-stack > * {
+    max-width: 100%;
+}
+
+.narrative {
+    border: 1px solid #cecece;
+}
+
+.progress-block > *:first-child {
+    padding-block-start: 20svh !important;
+    padding-block-end: 45svh !important;
+}
+
+.progress-block > *:last-child {
+    padding-block-start: 45svh !important;
+    padding-block-end: 20svh !important;
+}
+
+.diagram {
+    --width-diagram: 570px;
+    --width-axis: 2px;
+    --width-bg: 8px;
+    --width-curve: 5px;
+    --width-curve-hovered: 7px;
+    --width-form-label: 15ch;
+    --width-form-display: 4ch;
+    --width-form-input: 150px;
+    
+    --color-axis: #000000;
+    --color-bg: #EDF8FF;
+    --color-bg-stroke: #E0EDFB;
+    --color-dashed: #999999;
+    --color-tick: #000000;
+    --color-label: #000000;
+    --color-toggle: #84b0c5;
+    --color-area-blue: #4889ab;
+    --color-area-green: #7fc6a4;
+    --color-area-red: #f697bb;
+    --color-label-red: #D1729A;
+    --color-area-gray: #808080;
+    --color-area-yellow: #EDDE75;
+    
+    --font-size: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1em 0;
+    margin: 0 auto;
+
+    width: var(--width-diagram);
+    max-width: 100%;
+    position: relative;
+}
+
+.forms {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem;
+
+    width: 100%;
+
+    & > * {
+        flex-basis: 40%;
+    }
+
+    & .diagram-form {
+        display: flex;
+        flex-direction: row;
+
+        & .diagram-form-label {
+            width: var(--width-form-label);
+            color: var(--green3);
+        }
+
+        & .diagram-form-inputs {
+            
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+
+            & .display {
+                width: var(--width-form-display);
+                flex-shrink: 1.5;
+                font-weight: 700;
+                text-align: right;
+                padding-right: .5em;
+            }
+
+            & input[type=range] {
+                width: var(--width-form-input);
+            }
+        }
+
+    }
+}
+
+.bg {
+    fill: var(--color-bg);
+    stroke: var(--color-bg-stroke);
+    stroke-width: var(--width-bg);
+}
+
+svg {
+    position: relative;
+    display: block;
+}
+
+.curve {
+    fill: none;
+    stroke-width: var(--width-curve);
+    mix-blend-mode: darken;
+    cursor: pointer;
+
+    &.hovered {
+        stroke-width: var(--width-curve-hovered);
+    }
+}
+
+.curve-label {
+    fill: var(--color-label);
+    font-size: var(--font-size);
+    font-weight: bold;
+    dominant-baseline: middle;
+    transition: opacity .2s ease-in-out;
+
+    &.hide-label {
+        opacity: 0;
+    }
+}
+
+.clip {
+    fill: white;
+}
+
+.area {
+    fill: var(--color-area-green);
+    opacity: .25;
+
+    &.invert {
+        fill: var(--color-area-red);
+    }
+
+    &.hovered {
+        opacity: .5;
+    }
+
+    &.area-md-curve {
+        fill: var(--color-area-blue);
+    }
+
+    &.area-xs-curve {
+        fill: var(--color-area-green);
+    }
+
+    &.area-revenue, &.area-dwl-producer-revenue, &.area-dwl-consumer-revenue {
+        fill: var(--color-area-red);
+    }
+
+    &.area-lost-surplus {
+        fill: var(--color-area-gray);
+    }
+}
+
+.area-dwl path {
+    fill: var(--color-area-gray) !important;
+}
+
+.axis {
+
+    & .axis-line {
+        fill: none;
+        stroke: var(--color-axis);
+        stroke-width: var(--width-axis);
+    }
+
+    & .axis-text {
+        fill: var(--color-axis);
+        font-size: var(--font-size);
+        
+        &.axis-text-x {
+            text-anchor: start;
+            dominant-baseline: middle;
+        }
+
+        &.axis-text-y {
+            text-anchor: middle;
+        }
+    }
+}
+
+.guide {
+
+    & .dashed-line {
+        fill: none;
+        stroke: var(--color-dashed);
+        stroke-dasharray: 4 4;
+    }
+
+    & .tick {
+        fill: var(--color-tick);
+        font-size: var(--font-size);
+        
+        &.tick-x { 
+            text-anchor: middle;
+            dominant-baseline: hanging;
+            transform: translateY(10px);
+        }
+
+        &.tick-y { 
+            text-anchor: end;
+            dominant-baseline: middle;
+            transform: translateX(-10px);
+        }
+    }
+}
+
+.guide-point {
+    stroke: black;
+    stroke-width: 2px;
+
+    &.primary {
+        fill: #B4D7C6;
+    }
+
+    &.secondary {
+        fill: #E29FBC;
+    }
+}
+
+.curlybrace {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.curlybrace-label {
+    dominant-baseline: middle;
+}
+
+.area-label {
+    dominant-baseline: middle;
+    text-anchor: middle;
+
+    &.revenue {
+        fill: var(--color-label-red);
+    }
+}
+
+.toggle-labels {
+    position: absolute;
+    top: 1em;
+    right: 3%;
+
+    & .toggle-checkbox {
+        margin: 0 .35rem .15rem 0;
+        vertical-align: middle;
+    }
+
+    & .toggle-label {
+        color: var(--color-toggle);
+    }
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    width: auto;
+    height: auto;
+    background: #f7f7f7;
+    border: 1px solid #cecece;
+    padding: .2em .45em;
+    opacity: .9;
+
+    &.show {
+        display: block;
+        position: absolute;
+    }
+
+    & .tooltip-text {
+        font-size: .85em;
+        text-wrap: balance;
+    }
+}
