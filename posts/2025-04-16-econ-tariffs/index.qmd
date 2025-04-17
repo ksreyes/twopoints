@@ -541,7 +541,7 @@ The sum of consumer and producer surplus represents the total surplus enjoyed by
 
 ::::
 
-"Surplus" is one of those esoteric concepts in economics that is nevertheless useful for real world questions. Everyone can agree that it is better for consumers to have as big a gap as possible between the price they're willing to pay and the price they actually pay. Likewise for firms. Therefore, [maximizing the total surplus in a market is desirable as a rule]{.highlight}.
+"Surplus" is one of those esoteric concepts in economics that are nevertheless useful for real world questions. Everyone can agree that it is better for consumers to have as big a gap as possible between the price they're willing to pay and the price they actually pay. Likewise with firms for the price they're willing to sell at and the price they actually sell at. Therefore, [maximizing the total surplus in a market is desirable as a rule]{.highlight}.^[A cornerstone in economic theory is that perfectly competitive markets lead to the sole price and quantity pair that maximizes total surplus. It is called rather pompously as the [First Fundamental Theorem of Welfare Economics](https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics).]
 
 ::::{.cr-section layout="overlay-center"}
 
@@ -918,7 +918,7 @@ Altogether, we are comparing the size of the red region (gain from taxing foreig
 
 ::::
 
-The exact areas of these shapes can be calculated by using real world data to trace out the market supply and demand curves. This relatively simple toolkit can then be used to weigh costs and benefits given any import tax. For instance, it has [been estimated](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.33.4.187) that the first Trump administration's tariffs back in 2018 raised \$3.2 billion in taxes per month while imposing \$1.4 billion in deadweight loss per month. In a future post, I will show how the slopes of the curves and the size of the tariff affect the sizes of these areas and the resulting cost–benefit calculus, but for now, let's wrap up with a few caveats to this approach.
+The exact areas of these shapes can be calculated by using real world data to trace out the market supply and demand curves. This simple but powerful toolkit can now be used to weigh costs and benefits given any import tax. For instance, it has [been estimated](https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.33.4.187) that the first Trump administration's tariffs back in 2018 raised \$3.2 billion in taxes per month while imposing \$1.4 billion in deadweight loss per month. In a future post, I will show how the slopes of the curves and the size of the tariff affect the sizes of these areas and the resulting cost–benefit calculus, but for now, let's wrap up with a few caveats to this approach.
 
 First, all of this is under a partial equilibrium setting. Economists say *partial* equilibrium when examining a single market while ignoring all others. In the real world, things aren't so clean because different markets can affect each other. If you place an import tax on foreign cars, for example, domestic consumers might opt to buy domestic cars instead. One market shrinks while another expands. On the other hand, more expensive imports might force cash-strapped consumers to cut back on discretionary spending in general, so the tariff shrinks not just one market but many others. A full cost–benefit accounting ideally incorporates gains and losses in the economy as a whole.
 
@@ -926,13 +926,13 @@ Second, imposing tariffs on others generally elicits some form of retaliatory ac
 
 Finally, the time horizon of this analysis is firmly within the short run. Tariff policy is often less about raising tax revenues as it is part of a broader industrial policy to grow domestic firms over several years, even decades. The cost–benefit analysis we have developed here does not take such long-term goals into account. 
 
----
+![](../../images/logo-round-1.png){width=1cm fig-align="center"}
 
-Tariffs are a terribly dry subject to be talking about at length, so as a palette cleanser, let me end this post with a fun bit of irreverent Berlin history from Barney White-Spunner's [book](https://www.amazon.de/Berlin-Biography-City-Barney-White-Spunner/dp/1471181537). In the 14th century, the area of Berlin was part of the Margraviate of Brandenburg ruled by the House of Ascania. This line died out in 1319, resulting in a power struggle between the Saxons and the Wittelsbach dynasty.
+Tariffs are a terribly dry subject to be talking about at length, so as a palette cleanser, let me end this post with a fun bit of irreverent Berlin history from Barney White-Spunner's [*Berlin: The Story of a City*](https://www.amazon.de/Berlin-Biography-City-Barney-White-Spunner/dp/1471181537). In the 14th century, Berlin was part of the Margraviate of Brandenburg ruled by the House of Ascania. This line died out in 1319, resulting in a power struggle between the Saxons and the Wittelsbach dynasty.
 
-Caught in the turmoil was a hapless priest named Nikolaus, the ranking clergyman and a vocal Saxon supporter in a city that was staunchly pro-Wittelsbach. He was beaten to death by a mob in 1325 somewhere around what is today Alexanderplatz. Outraged, the pope (incidentally anti-Wittelsbach) excommunicated Berlin for 20 years and demanded an atonement cross to mark the scene of the crime. Berliners dragged their feet and eventually put up a hilariously tiny unmarked cross. It now stands inconspicuous and graffitied by the Marienkirche entrance.
+Caught in the turmoil was a hapless priest named Nikolaus, Berlin's ranking clergyman and a vocal Saxon supporter in a city that was staunchly pro-Wittelsbach. He was beaten to death by a mob in 1325 in what is today the busy Alexanderplatz public square. Outraged, the pope (incidentally anti-Wittelsbach) excommunicated Berlin for 20 years and demanded an atonement cross to mark the scene of the crime. Berliners dragged their feet and eventually put up a hilariously tiny unmarked cross. It now stands inconspicuous and graffitied by the Marienkirche entrance.
 
-![](atonementcross.jpg)
+![](../../images/atonementcross.jpg)
 
 May your petty acts of malicious compliance also survive for the next 700 years. Happy Easter weekend! `r end_mark()`
 
